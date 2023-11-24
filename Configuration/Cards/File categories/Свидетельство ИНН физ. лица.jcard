@@ -1,0 +1,52 @@
+﻿[
+  {
+    ".method::int": 2,
+    "Card": {
+      "Created::dtm": "2020-10-13T06:22:01.007Z",
+      "CreatedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "CreatedByName": "Admin",
+      "Files": null,
+      "Flags::int": 0,
+      "ID::uid": "74705b0d-bbd9-45ef-b561-3f8f90d0454e",
+      "Info": null,
+      "Modified::dtm": "2020-11-19T08:47:39.903Z",
+      "ModifiedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "ModifiedByName": "Admin",
+      "Permissions": null,
+      "Sections": {
+        "FileCategories": {
+          "Fields": {
+            "Name": "Свидетельство ИНН физ. лица *"
+          }
+        },
+        "PnrFileCategories_PartnerType": {
+          ".table::int": 1,
+          "Rows": [
+            {
+              "PartnerTypeID::int": 3,
+              "PartnerTypeName": "$PartnerType_SoleTrader",
+              "RowID::uid": "e790d58c-c555-4e04-8370-334bc56954ba"
+            },
+            {
+              "PartnerTypeID::int": 2,
+              "PartnerTypeName": "$PartnerType_Individual",
+              "RowID::uid": "a71d024f-bcf7-4dab-9891-56bdd870dcc2"
+            }
+          ]
+        }
+      },
+      "TaskHistory": null,
+      "TaskHistoryGroups": null,
+      "Tasks": null,
+      "Topics": null,
+      "TypeCaption": "$CardTypes_TypesNames_FileCategory",
+      "TypeID::uid": "97182afc-43ce-4bd9-9c96-73a4d2c5d5eb",
+      "TypeName": "FileCategory",
+      "Version::int": 0
+    },
+    "FileMapping": null,
+    "Info": {
+      ".importVersion::int": 3
+    }
+  }
+]

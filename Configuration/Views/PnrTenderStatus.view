@@ -1,0 +1,23 @@
+#tessa_exchange_format(Version:1, CreationTime:2020-09-10T12\:14\:47) {
+	#exchange_view(RowID:f599513a-1d7b-4c10-b721-ca7b7bd437d2, Alias:PnrTenderStatus, Caption:Статус тендера, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2020-09-10T11\:50\:55, GroupName:Pnr) {
+		#metadata {
+			#view(DefaultSortColumn: TS_Name, DefaultSortDirection: asc, Paging: no, QuickSearchParam: Name)
+			#column(Alias: TS_ID, Hidden: true)
+			#column(Alias: TS_Name, Caption: Статус, Hidden: false, SortBy: t.Name)
+			#param(Alias: Name, Caption: Статус, Hidden: false, Type: nvarchar, Multiple: false)
+			#reference(ColPrefix: TS_, RefSection: PnrTenderStatus, DisplayValueColumn: TS_Name, IsCard: false, OpenOnDoubleClick: false)
+		}
+		#description {}
+		#ms_query {
+			select
+			    t.ID as TS_ID\,
+			    t.Name as TS_Name
+			from PnrTenderStatus t with\(nolock\)
+			where 1=1
+			    \#param\(Name\, t.Name\)
+			order by \#order_by
+		}
+		#pg_query {}
+		#role(RoleID:7ff52dc0-ff6a-4c9d-ba25-b562c370004d, ViewID:f599513a-1d7b-4c10-b721-ca7b7bd437d2) 
+	}
+}

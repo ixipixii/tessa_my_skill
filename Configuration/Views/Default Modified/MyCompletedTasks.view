@@ -1,0 +1,208 @@
+#tessa_exchange_format(Version:1, CreationTime:2020-11-13T09\:29\:32) {
+	#exchange_view(RowID:89cf35b0-69bc-406a-9b95-77be879a94fa, Alias:MyCompletedTasks, Caption:Завершенные задания, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2020-10-21T13\:45\:33, GroupName:System) {
+		#metadata {
+			#view(DefaultSortColumn: Completed, DefaultSortDirection: desc, Paging: always)
+			#column(Alias: CardID, Hidden: true, Type: $TaskHistory.ID)
+			#column(Alias: CardName, Caption: $Views_CompletedTasks_Card, Type: $DocumentCommonInfo.FullNumber)
+			#column(Alias: CardTypeCaption, Caption: $Views_CompletedTasks_CardType, Type: $DocumentCommonInfo.DocTypeTitle, Localizable: true)
+			#column(Alias: Subject, Caption: $Views_Registers_Subject, Type: $DocumentCommonInfo.Subject)
+			#column(Alias: TypeID, Hidden: true, Type: $TaskHistory.TypeID)
+			#column(Alias: TypeCaption, Caption: $Views_CompletedTasks_TaskType, Type: $TaskHistory.KindCaption, Localizable: true)
+			#column(Alias: OptionID, Hidden: true, Type: $TaskHistory.OptionID)
+			#column(Alias: OptionCaption, Caption: $Views_CompletedTasks_CompletionOption, Type: $TaskHistory.OptionCaption, Localizable: true)
+			#column(Alias: Result, Caption: $Views_CompletedTasks_Result, Type: $TaskHistory.Result, MaxLength: 150, Localizable: true)
+			#column(Alias: RoleID, Hidden: true, Type: $TaskHistory.RoleID)
+			#column(Alias: RoleName, Caption: $Views_CompletedTasks_Role, Type: $TaskHistory.RoleName, Localizable: true)
+			#column(Alias: AuthorID, Hidden: true, Type: $TaskHistory.AuthorID)
+			#column(Alias: AuthorName, Caption: $Views_CompletedTasks_Author, Type: $TaskHistory.AuthorName)
+			#column(Alias: Completed, Caption: $Views_CompletedTasks_Completed, Type: $TaskHistory.Completed, SortBy: th.Completed)
+			#column(Alias: rn, Hidden: true, Type: Int64)
+			#param(Alias: FromMeMode, Caption: $Views_CompletedTasks_FromMeMode_Param, Hidden: true, Type: Int32, AllowedOperands: Equality)
+			#param(Alias: CompletionDate, Caption: $Views_CompletedTasks_CompletionDate_Param, Multiple: true, Type: $TaskHistory.Completed)
+			#param(Alias: TypeParam, Caption: $Views_CompletedTasks_CardType_Param, Multiple: false, Type: $DocumentCommonInfo.DocTypeID, RefSection: TypeForView, AllowedOperands: Equality) {
+				#autocomplete(View: KrTypesEffective, Param: Caption, PopupColumns: 1)
+				#dropdown(View: KrTypesEffective, PopupColumns: 1)
+			}
+			#param(Alias: TaskType, Caption: $Views_CompletedTasks_TaskType_Param, Multiple: true, Type: $TaskHistory.TypeID, RefSection: TaskTypes) {
+				#autocomplete(View: TaskTypes, Param: Caption)
+				#dropdown(View: TaskTypes, PopupColumns: 1)
+			}
+			#param(Alias: Role, Caption: $Views_CompletedTasks_RoleGroup_Param, Multiple: true, Type: $RoleUsers.ID, RefSection: Roles) {
+				#autocomplete(View: DurableRoles, Param: Name, RefPrefix: Role, PopupColumns: 1 3)
+			}
+			#param(Alias: Option, Caption: $Views_CompletedTasks_CompletionOption_Param, Multiple: true, Type: $TaskHistory.OptionID, RefSection: CompletionOptions) {
+				#autocomplete(View: CompletionOptions, Param: Caption)
+				#dropdown(View: CompletionOptions, PopupColumns: 1)
+			}
+			#reference(ColPrefix: Card, RefSection: Instances, DisplayValueColumn: CardName, IsCard: true, OpenOnDoubleClick: true)
+		}
+		#description {}
+		#ms_query {
+			DECLARE @NoName			nvarchar\(max\);
+			\#if\(TypeParam\) \{
+			DECLARE @CardTypeID		uniqueidentifier;
+			\}
+
+			SET @NoName = [dbo].[GetString]\(N'Views_CompletedTasks_NoName_Sql'\, \#param\(locale\)\);
+
+			\#if\(TypeParam\) \{
+			-- индексы в DocumentCommonInfo устроены так\, что нам быстрее сначала найти тип карточки по CardType\, а потом тип документа
+			SET @CardTypeID = \#param\(TypeParam\);
+
+			SELECT @CardTypeID = [CardTypeID]
+			FROM [KrDocType] WITH \(NOLOCK\)
+			WHERE [ID] = \#param\(TypeParam\);
+			\}
+
+			SELECT
+				[th].[ID]											AS [CardID]\,
+				COALESCE\([dci].[FullNumber]\, @NoName\)				AS [CardName]\,
+				[dci].[DocTypeTitle]								AS [CardTypeCaption]\,
+				[dci].[Subject]\,
+				[th].[TypeID]\,
+				COALESCE\([th].[KindCaption]\, [th].[TypeCaption]\)	AS [TypeCaption]\,
+				[th].[OptionID]\,
+				[th].[OptionCaption]\,
+				[th].[Result]\,
+				[th].[RoleID]\,
+				[th].[RoleName]\,
+				[th].[AuthorID]\,
+				[th].[AuthorName]\,
+				[th].[Completed]\,
+				[t].[rn]
+			FROM \(
+				SELECT
+					[th].[RowID]\,
+					row_number\(\) OVER \(ORDER BY \#order_by\) AS [rn]
+				FROM [TaskHistory] AS [th] WITH \(NOLOCK\)
+				\#if\(TypeParam\) \{
+				LEFT JOIN [DocumentCommonInfo] AS [dci] WITH \(NOLOCK\)
+					ON [dci].[ID] = [th].[ID]
+				\}
+				WHERE [th].[Completed] IS NOT NULL
+					\#param\(CompletionDate\, [th].[Completed]\)
+					\#param\(TaskType\, [th].[TypeID]\)
+					\#param\(SelUser\, [th].[UserID]\)
+					\#param\(Option\, [th].[OptionID]\)
+
+					\#if\(FromMeMode && FromMeMode.Value == 1\) \{
+					AND [th].[AuthorID] = \#param\(CurrentUserID\)
+					\} \{
+					AND [th].[UserID] = \#param\(CurrentUserID\)
+					\}
+
+					\#if\(Role\) \{
+					AND EXISTS \(
+						SELECT NULL
+						FROM [RoleUsers] AS [ru] WITH \(NOLOCK\)
+						WHERE [ru].[UserID] = [th].[UserID] \#param\(Role\, [ru].[ID]\)
+						\)
+					\}
+
+					\#if\(TypeParam\) \{
+					AND [dci].[CardTypeID] = @CardTypeID
+					AND COALESCE\([dci].[DocTypeID]\, [dci].[CardTypeID]\) = \#param\(TypeParam\)
+					\}
+				\) AS [t]
+			INNER JOIN [TaskHistory] AS [th] WITH \(NOLOCK\)
+				ON [th].[RowID] = [t].[RowID]
+			LEFT JOIN [DocumentCommonInfo] AS [dci] WITH \(NOLOCK\)
+				ON [dci].[ID] = [th].[ID]
+			\#if\(PageOffset\) \{
+			WHERE [t].[rn] >= \#param\(PageOffset\) AND [t].[rn] < \(\#param\(PageOffset\) + \#param\(PageLimit\)\)
+			\}
+			\#if\(Normal\) \{
+			ORDER BY [t].[rn]
+			\}
+			;
+		}
+		#pg_query {
+			DECLARE
+				"no_name"		text;
+				\#if\(TypeParam\) \{
+				"card_type_id"	uuid;
+				\}
+			BEGIN
+				"no_name" = "GetString"\('Views_CompletedTasks_NoName_Sql'\, \#param\(locale\)\);
+
+				\#if\(TypeParam\) \{
+				-- индексы в DocumentCommonInfo устроены так\, что нам быстрее сначала найти тип карточки по CardType\, а потом тип документа
+
+				SELECT "CardTypeID"
+				INTO "card_type_id"
+				FROM "KrDocType"
+				WHERE "ID" = \#param\(TypeParam\);
+				
+				IF "card_type_id" IS NULL THEN
+					"card_type_id" = \#param\(TypeParam\);
+				END IF;
+				\}
+
+				RETURN QUERY
+				SELECT
+					"th"."ID"											AS "CardID"\,
+					COALESCE\("dci"."FullNumber"\, "no_name"\)				AS "CardName"\,
+					"dci"."DocTypeTitle"								AS "CardTypeCaption"\,
+					"dci"."Subject"\,
+					"th"."TypeID"\,
+					COALESCE\("th"."KindCaption"\, "th"."TypeCaption"\)	AS "TypeCaption"\,
+					"th"."OptionID"\,
+					"th"."OptionCaption"\,
+					"th"."Result"\,
+					"th"."RoleID"\,
+					"th"."RoleName"\,
+					"th"."AuthorID"\,
+					"th"."AuthorName"\,
+					"th"."Completed"\,
+					0\:\:int8												AS "rn"
+				FROM \(
+					SELECT
+						"th"."RowID"
+					FROM "TaskHistory" AS "th"
+					\#if\(TypeParam\) \{
+					LEFT JOIN "DocumentCommonInfo" AS "dci"
+						ON "dci"."ID" = "th"."ID"
+					\}
+					WHERE "th"."Completed" IS NOT NULL
+						\#param\(CompletionDate\, "th"."Completed"\)
+						\#param\(TaskType\, "th"."TypeID"\)
+						\#param\(SelUser\, "th"."UserID"\)
+						\#param\(Option\, "th"."OptionID"\)
+
+						\#if\(FromMeMode && FromMeMode.Value == 1\) \{
+						AND "th"."AuthorID" = \#param\(CurrentUserID\)
+						\} \{
+						AND "th"."UserID" = \#param\(CurrentUserID\)
+						\}
+
+						\#if\(Role\) \{
+						AND EXISTS \(
+							SELECT NULL
+							FROM "RoleUsers" AS "ru"
+							WHERE "ru"."UserID" = "th"."UserID" \#param\(Role\, "ru"."ID"\)
+							\)
+						\}
+
+						\#if\(TypeParam\) \{
+						AND "dci"."CardTypeID" = "card_type_id"
+						AND COALESCE\("dci"."DocTypeID"\, "dci"."CardTypeID"\) = \#param\(TypeParam\)
+						\}
+					\#if\(Normal\) \{
+					ORDER BY \#order_by
+					\}
+					\#if\(PageOffset\) \{
+					OFFSET \#param\(PageOffset\) - 1 LIMIT \#param\(PageLimit\)
+					\}
+					\) AS "t"
+				INNER JOIN "TaskHistory" AS "th"
+					ON "th"."RowID" = "t"."RowID"
+				LEFT JOIN "DocumentCommonInfo" AS "dci"
+					ON "dci"."ID" = "th"."ID"
+				\#if\(Normal\) \{
+				ORDER BY \#order_by
+				\};
+			END;
+		}
+		#role(RoleID:7ff52dc0-ff6a-4c9d-ba25-b562c370004d, ViewID:89cf35b0-69bc-406a-9b95-77be879a94fa) 
+	}
+}

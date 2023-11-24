@@ -1,0 +1,249 @@
+﻿[
+  {
+    ".method::int": 2,
+    "Card": {
+      "Created::dtm": "2020-08-24T12:39:10.457Z",
+      "CreatedByID::uid": "fd99d8ea-f1c1-4e73-87b1-87e34c91296a",
+      "CreatedByName": "Харина Оксана",
+      "Files": null,
+      "Flags::int": 0,
+      "ID::uid": "43882482-8cb7-4ecc-b76c-f85313b53913",
+      "Info": {
+        ".satellite_krProcess": {
+          "Created::dtm": "2020-10-12T08:47:54.523Z",
+          "CreatedByID::uid": "9141b889-a4b1-47a9-9c95-ad9041002392",
+          "CreatedByName": "Хрулев С.Д.",
+          "Files": null,
+          "Flags::int": 0,
+          "ID::uid": "ce3caea6-bad7-46a4-98b0-569d920bc6d9",
+          "Info": null,
+          "Modified::dtm": "2020-10-12T08:47:54.523Z",
+          "ModifiedByID::uid": "9141b889-a4b1-47a9-9c95-ad9041002392",
+          "ModifiedByName": "Хрулев С.Д.",
+          "Permissions": {
+            "CardPermissions::int": 87381,
+            "FilePermissions": null,
+            "Sections": null
+          },
+          "Sections": {
+            "KrActiveTasks": {
+              ".table::int": 1,
+              "Rows": null
+            },
+            "KrApprovalCommonInfo": {
+              "Fields": {
+                "ApprovedBy": null,
+                "AuthorComment": null,
+                "AuthorID": null,
+                "AuthorName": null,
+                "CurrentApprovalStageRowID": null,
+                "CurrentHistoryGroup": null,
+                "DisapprovedBy": null,
+                "Info": null,
+                "MainCardID::uid": "43882482-8cb7-4ecc-b76c-f85313b53913",
+                "NestedWorkflowProcesses": null,
+                "StateChangedDateTimeUTC": null,
+                "StateID::int": 0,
+                "StateName": "$KrStates_Doc_Draft"
+              }
+            },
+            "KrApprovalHistory": {
+              ".table::int": 1,
+              "Rows": null
+            },
+            "KrStages": {
+              ".table::int": 1,
+              "Rows": null
+            },
+            "WorkflowCounters": {
+              ".table::int": 1,
+              "Rows": null
+            },
+            "WorkflowProcesses": {
+              ".table::int": 1,
+              "Rows": null
+            },
+            "WorkflowTasks": {
+              ".table::int": 1,
+              "Rows": null
+            }
+          },
+          "TaskHistory": null,
+          "TaskHistoryGroups": null,
+          "Tasks": null,
+          "Topics": null,
+          "TypeCaption": "$CardTypes_TypesNames_KrSatellite",
+          "TypeID::uid": "4115f07e-0aaa-4563-a749-0450c1a850af",
+          "TypeName": "KrSatellite",
+          "Version::int": 1
+        }
+      },
+      "Modified::dtm": "2020-10-14T10:32:24.303Z",
+      "ModifiedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "ModifiedByName": "Admin",
+      "Permissions": null,
+      "Sections": {
+        "DepartmentRoles": {
+          "Fields": {
+            "ActionStatusID": null,
+            "ActionStatusName": null,
+            "CFOID": null,
+            "CFOName": null,
+            "CuratorID": null,
+            "CuratorName": null,
+            "DepartmentTypeID": null,
+            "DepartmentTypeName": null,
+            "HeadUserID::uid": "23d28b44-9411-41eb-984a-7e0e23a3cd54",
+            "HeadUserName": "Прошин В.Е."
+          }
+        },
+        "FmAddTopicInfoVirtual": {
+          "Fields": {
+            "Description": null,
+            "Title": null
+          }
+        },
+        "FmTopicParticipantsInfoVirtual": {
+          "Fields": {
+            "IsModerator": false,
+            "ReadOnly": false
+          }
+        },
+        "FmTopicParticipantsVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "FmTopicRoleParticipantsInfoVirtual": {
+          "Fields": {
+            "IsSubscribe": false,
+            "ReadOnly": false
+          }
+        },
+        "KrActiveTasksVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrAdditionalApprovalInfoUsersCardVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrAdditionalApprovalUsersCardVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrApprovalCommonInfoVirtual": {
+          "Fields": {
+            "ApprovedBy": null,
+            "AuthorComment": null,
+            "AuthorID": null,
+            "AuthorName": null,
+            "CurrentApprovalStageRowID": null,
+            "DisapprovedBy": null,
+            "MainCardID": null,
+            "StateChangedDateTimeUTC": null,
+            "StateID::int": 0,
+            "StateName": "$KrStates_Doc_Draft"
+          }
+        },
+        "KrApprovalHistoryVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrDialogButtonSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrForkNestedProcessesSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrForkSecondaryProcessesSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPerformersVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrStagesVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrUniversalTaskOptionsSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "RoleDeputies": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "RoleDeputiesVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Roles": {
+          "Fields": {
+            "AdSyncDate": null,
+            "AdSyncDisableUpdate": null,
+            "AdSyncDistinguishedName": null,
+            "AdSyncID": null,
+            "AdSyncIndependent": false,
+            "AdSyncWhenChanged": null,
+            "Description": null,
+            "ExternalID": null,
+            "Hidden": false,
+            "Idx": "6-1",
+            "InheritTimeZone": true,
+            "Name": "ИТ дирекция",
+            "ParentID::uid": "ca8a1ac2-e115-4e45-865e-fc7ee528b23c",
+            "ParentName": "ГКП",
+            "TimeZoneCodeName": "Default",
+            "TimeZoneID::int": 0,
+            "TimeZoneShortName": "UTC+03:00",
+            "TimeZoneUtcOffsetMinutes::int": 180,
+            "TypeID::int": 2
+          }
+        },
+        "RoleUsers": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "RoleUsersVirtual": {
+          ".table::int": 1,
+          "Rows": [
+            {
+              ".state::int": 2,
+              "RowID::uid": "2ba5f6a2-c09a-422d-ad2e-943a2bb1a326",
+              "UserID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+              "UserName": "Admin"
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "d6c05eb5-2c92-4b01-b28d-080676aaf2be",
+              "UserID::uid": "cca862f2-b95e-4b78-af87-a30641458bab",
+              "UserName": "Gorchakova"
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "9119af3c-63a2-42c7-9cd8-563bab5c0e6e",
+              "UserID::uid": "23d28b44-9411-41eb-984a-7e0e23a3cd54",
+              "UserName": "Прошин В.Е."
+            }
+          ]
+        }
+      },
+      "TaskHistory": null,
+      "TaskHistoryGroups": null,
+      "Tasks": null,
+      "Topics": null,
+      "TypeCaption": "$CardTypes_TypesNames_DepartmentRole",
+      "TypeID::uid": "abe57cb7-e1cb-06f6-b7ca-ad1668bebd72",
+      "TypeName": "DepartmentRole",
+      "Version::int": 0
+    },
+    "FileMapping": null,
+    "Info": {
+      ".importVersion::int": 5
+    }
+  }
+]

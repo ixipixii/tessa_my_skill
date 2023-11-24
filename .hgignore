@@ -1,0 +1,17 @@
+syntax: glob
+*.suo
+app.config
+NLog.config
+pre-build.bat
+post-build.bat
+Bin/extensions/*
+Bin/Tessa.Chronos/*
+Bin/Tessa.Extensions.Chronos/*
+Bin/Tessa.Extensions.Client/*
+Bin/Tessa.Extensions.Server/*
+Bin/Tessa.Module.Sample.Client/*
+Bin/Tessa.Module.Sample.Server/*
+bin/Debug/*
+bin/Release/*
+obj/Debug/*
+obj/Release/*

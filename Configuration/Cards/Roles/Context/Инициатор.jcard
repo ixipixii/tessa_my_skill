@@ -1,0 +1,55 @@
+﻿[
+  {
+    ".method::int": 2,
+    "Card": {
+      "Created::dtm": "2020-07-13T12:33:15.607Z",
+      "CreatedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "CreatedByName": "Admin",
+      "Files": null,
+      "Flags::int": 0,
+      "ID::uid": "20d9bdeb-db40-45dd-bab4-9555c48840d7",
+      "Info": null,
+      "Modified::dtm": "2020-07-13T12:33:15.607Z",
+      "ModifiedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "ModifiedByName": "Admin",
+      "Permissions": null,
+      "Sections": {
+        "ContextRoles": {
+          "Fields": {
+            "SqlText": "SELECT [kr].[AuthorID], [kr].[AuthorName]\r\nFROM [KrApprovalCommonInfo] AS [kr] WITH(NOLOCK)\r\nWHERE [kr].[MainCardID] = #context_card_id\r\n  #and_user_id_is([kr].[AuthorID])",
+            "SqlTextForCard": null,
+            "SqlTextForUser": null
+          }
+        },
+        "RoleDeputies": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "RoleDeputiesVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Roles": {
+          "Fields": {
+            "Description": null,
+            "Hidden": false,
+            "Name": "Инициатор",
+            "TypeID::int": 4
+          }
+        }
+      },
+      "TaskHistory": null,
+      "TaskHistoryGroups": null,
+      "Tasks": null,
+      "Topics": null,
+      "TypeCaption": "$CardTypes_TypesNames_ContextRole",
+      "TypeID::uid": "b672e00c-0241-0485-9b07-4764bc96c9d3",
+      "TypeName": "ContextRole",
+      "Version::int": 0
+    },
+    "FileMapping": null,
+    "Info": {
+      ".importVersion::int": 6
+    }
+  }
+]

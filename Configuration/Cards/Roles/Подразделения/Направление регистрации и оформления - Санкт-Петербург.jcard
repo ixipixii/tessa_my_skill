@@ -1,0 +1,85 @@
+﻿[
+  {
+    ".method::int": 2,
+    "Card": {
+      "Created::dtm": "2020-08-24T12:18:46.52Z",
+      "CreatedByID::uid": "fd99d8ea-f1c1-4e73-87b1-87e34c91296a",
+      "CreatedByName": "Харина Оксана",
+      "Files": null,
+      "Flags::int": 0,
+      "ID::uid": "c881cbc9-aa1f-4020-bbd7-433a777d7ecd",
+      "Info": null,
+      "Modified::dtm": "2020-08-24T12:18:46.52Z",
+      "ModifiedByID::uid": "fd99d8ea-f1c1-4e73-87b1-87e34c91296a",
+      "ModifiedByName": "Харина Оксана",
+      "Permissions": null,
+      "Sections": {
+        "DepartmentRoles": {
+          "Fields": {
+            "ActionStatusID": null,
+            "ActionStatusName": null,
+            "CFOID": null,
+            "CFOName": null,
+            "CuratorID": null,
+            "CuratorName": null,
+            "DepartmentTypeID": null,
+            "DepartmentTypeName": null,
+            "HeadUserID": null,
+            "HeadUserName": null
+          }
+        },
+        "RoleDeputies": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "RoleDeputiesVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Roles": {
+          "Fields": {
+            "AdSyncDate": null,
+            "AdSyncDisableUpdate": null,
+            "AdSyncDistinguishedName": null,
+            "AdSyncID": null,
+            "AdSyncIndependent": false,
+            "AdSyncWhenChanged": null,
+            "Description": null,
+            "ExternalID": null,
+            "Hidden": false,
+            "Idx": "6-17",
+            "InheritTimeZone": true,
+            "Name": "Направление регистрации и оформления - Санкт-Петербург",
+            "ParentID": null,
+            "ParentName": null,
+            "TimeZoneCodeName": "Default",
+            "TimeZoneID::int": 0,
+            "TimeZoneShortName": "UTC+03:00",
+            "TimeZoneUtcOffsetMinutes::int": 180,
+            "TypeID::int": 2
+          }
+        },
+        "RoleUsers": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "RoleUsersVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        }
+      },
+      "TaskHistory": null,
+      "TaskHistoryGroups": null,
+      "Tasks": null,
+      "Topics": null,
+      "TypeCaption": "$CardTypes_TypesNames_DepartmentRole",
+      "TypeID::uid": "abe57cb7-e1cb-06f6-b7ca-ad1668bebd72",
+      "TypeName": "DepartmentRole",
+      "Version::int": 0
+    },
+    "FileMapping": null,
+    "Info": {
+      ".importVersion::int": 1
+    }
+  }
+]

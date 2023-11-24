@@ -1,0 +1,74 @@
+#tessa_exchange_format(Version:1, CreationTime:2020-11-03T13\:18\:53) {
+	#exchange_view(RowID:7aa4bb6b-2bd0-469b-aac4-90c46c2d3502, Alias:CompletionOptions, Caption:Варианты завершения, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2020-10-21T13\:45\:33, GroupName:System) {
+		#metadata {
+			#view(DefaultSortColumn: OptionCaption, DefaultSortDirection: asc, Paging: always, RowCountSubset: Count, MultiSelect: true, QuickSearchParam: Caption)
+			#column(Alias: OptionID, Hidden: true, Type: $CompletionOptions.ID)
+			#column(Alias: OptionCaption, Caption: $Views_CompletionOptions_Caption, Type: $CompletionOptions.Caption, Localizable: true, SortBy: l.Value)
+			#column(Alias: OptionName, Caption: $Views_CompletionOptions_Alias, Type: $CompletionOptions.Name, SortBy: co.Name)
+			#column(Alias: rn, Hidden: true, Type: Int64)
+			#param(Alias: OptionID, Caption: OptionID, Hidden: true, Multiple: true, Type: $CompletionOptions.ID)
+			#param(Alias: Caption, Caption: $Views_CompletionOptions_Caption_Param, Multiple: true, Type: $CompletionOptions.Caption)
+			#param(Alias: Name, Caption: $Views_CompletionOptions_Alias_Param, Multiple: true, Type: $CompletionOptions.Name)
+			#reference(ColPrefix: Option, RefSection: CompletionOptions, DisplayValueColumn: OptionCaption, IsCard: false, OpenOnDoubleClick: false)
+			#subset(Alias: Count)
+		}
+		#description {}
+		#ms_query {
+			SELECT
+				[t].*
+			FROM \(
+				SELECT
+					\#if\(Normal\) \{
+					[co].[ID]								AS [OptionID]\,
+					[co].[Caption]							AS [OptionCaption]\,
+					[co].[Name]								AS [OptionName]\,
+					row_number\(\) OVER \(ORDER BY \#order_by\)	AS [rn]
+					\}
+					\#if\(Count\) \{
+					count\(*\) AS [cnt]
+					\}
+				FROM [CompletionOptions] AS [co] WITH \(NOLOCK\)
+				\#if\(Caption || Normal && request.SortedBy\("OptionCaption"\)\) \{
+				CROSS APPLY [Localization]\([co].[Caption]\, \#param\(locale\)\) AS [l]
+				\}
+				WHERE 1 = 1
+					\#param\(OptionID\, [co].[ID]\)
+					\#param\(Name\, [co].[Name]\)
+					\#param\(Caption\, [l].[Value]\)
+				\) AS [t]
+			\#if\(PageOffset\) \{
+			WHERE [t].[rn] >= \#param\(PageOffset\) AND [t].[rn] < \(\#param\(PageOffset\) + \#param\(PageLimit\)\)
+			\}
+			\#if\(Normal\) \{
+			ORDER BY [t].[rn]
+			\}
+		}
+		#pg_query {
+			SELECT
+				\#if\(Normal\) \{
+				"co"."ID"			AS "OptionID"\,
+				"co"."Caption"		AS "OptionCaption"\,
+				"co"."Name"			AS "OptionName"\,
+				0\:\:int8				AS "rn"
+				\}
+				\#if\(Count\) \{
+				count\(*\) AS "cnt"
+				\}
+			FROM "CompletionOptions" AS "co"
+			\#if\(Caption || Normal && request.SortedBy\("OptionCaption"\)\) \{
+			CROSS JOIN "Localization"\("co"."Caption"\, \#param\(locale\)\) AS "l"
+			\}
+			WHERE true
+				\#param\(OptionID\, "co"."ID"\)
+				\#param\(Name\, "co"."Name"\)
+				\#param\(Caption\, "l"."Value"\)
+			\#if\(Normal\) \{
+			ORDER BY \#order_by
+			\}
+			\#if\(PageOffset\) \{
+			OFFSET \#param\(PageOffset\) - 1 LIMIT \#param\(PageLimit\)
+			\}
+		}
+		#role(RoleID:7ff52dc0-ff6a-4c9d-ba25-b562c370004d, ViewID:7aa4bb6b-2bd0-469b-aac4-90c46c2d3502) 
+	}
+}

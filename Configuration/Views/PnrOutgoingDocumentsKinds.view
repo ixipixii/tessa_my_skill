@@ -1,0 +1,25 @@
+#tessa_exchange_format(Version:1, CreationTime:2020-08-21T09\:28\:16) {
+	#exchange_view(RowID:4513ec9f-5c63-4ca6-8f8a-9e6bca8e8f98, Alias:PnrOutgoingDocumentsKinds, Caption:Виды исходящих документов, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2020-08-21T09\:23\:13, GroupName:Pnr) {
+		#metadata {
+			#view(DefaultSortColumn: OutgoingDocumentKindName, DefaultSortDirection: asc, Paging: no, QuickSearchParam: Name)
+			#column(Alias: OutgoingDocumentKindID, Hidden: true)
+			#column(Alias: OutgoingDocumentKindName, Caption: Название, Hidden: false, SortBy: t.Name)
+			#column(Alias: OutgoingDocumentKindIdx, Caption: Индекс, Hidden: false)
+			#param(Alias: Name, Caption: Название, Hidden: false, Type: nvarchar, Multiple: true)
+			#reference(ColPrefix: OutgoingDocumentKind, RefSection: PnrOutgoingDocumentsKinds, DisplayValueColumn: OutgoingDocumentKindName, IsCard: true, OpenOnDoubleClick: true)
+		}
+		#description {}
+		#ms_query {
+			select
+			    t.ID as OutgoingDocumentKindID\,
+			    t.Name as OutgoingDocumentKindName\,
+			    t.Idx as OutgoingDocumentKindIdx
+			from PnrOutgoingDocumentsKinds t with\(nolock\)
+			where 1=1
+			    \#param_expr\(Name\, t.Name\)
+			order by \#order_by
+		}
+		#pg_query {}
+		#role(RoleID:7ff52dc0-ff6a-4c9d-ba25-b562c370004d, ViewID:4513ec9f-5c63-4ca6-8f8a-9e6bca8e8f98) 
+	}
+}

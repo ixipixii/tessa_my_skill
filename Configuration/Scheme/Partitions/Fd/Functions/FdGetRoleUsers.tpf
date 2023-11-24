@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SchemeFunction Partition="c3b14969-a553-4005-9a07-e9705c15b1e1" ID="69f23c7e-f281-4bce-89f9-e8675079b7e7" Name="FdGetRoleUsers" Group="Fd">
+	<Description>Возвращает список сотрудников, входящих в указанную составную роль</Description>
+	<Definition Dbms="SqlServer" IsExternal="true" />
+	<Definition Dbms="PostgreSql" IsExternal="true" />
+</SchemeFunction>

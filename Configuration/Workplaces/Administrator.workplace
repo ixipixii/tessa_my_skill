@@ -1,0 +1,1264 @@
+#tessa_exchange_format(Version:1, CreatorName:Admin, CreationTime:2020-12-28T13\:00\:42) {
+	#exchange_workplace(RowID:ee693038-a5aa-4c3f-aa54-c230b4960d3f, Alias:$Workplaces_Administrator, FormatVersion:2) {
+		#role(RoleID:7ff52dc0-ff6a-4c9d-ba25-b562c370004d, WorkplaceID:ee693038-a5aa-4c3f-aa54-c230b4960d3f) 
+		#metadata {
+			#workplace(Alias:$Workplaces_Administrator, OrderPos:1, CompositionId:ee693038-a5aa-4c3f-aa54-c230b4960d3f, Version:515, FormatVersion:3, ParentCompositionId:4a8103c3-2b30-4ae1-b9a3-753745154e82) {
+				#view(Alias:Types, Caption:$Workplaces_Admin_CardTypes, CompositionId:dbcaeb08-91d5-4cd9-99e3-386757ad377a, ShowMode:SelectionMode, IsNode:True, ParentCompositionId:ee693038-a5aa-4c3f-aa54-c230b4960d3f, IconName:Thin53, ExpandedIconName:Thin53, MultiSelect:False, EnableAutoWidth:True) {
+					#layout(Caption:Типы карточек, CompositionId:ac9eae72-e578-42be-9753-e02cafeeda6c) {
+						#content {
+							#data_view(Alias:Types, CompositionId:dbcaeb08-91d5-4cd9-99e3-386757ad377a) 
+						}
+					}
+				}
+				#view(Alias:ActionHistoryTypes, Caption:$Workplaces_Admin_CardTypes, CompositionId:ba102efd-2175-4bc7-b376-4c11640a9c8a, OrderPos:1, ShowMode:SelectionMode, IsNode:True, ParentCompositionId:ee693038-a5aa-4c3f-aa54-c230b4960d3f, IconName:Thin53, ExpandedIconName:Thin53, EnableAutoWidth:True) {
+					#layout(Caption:Типы карточек, CompositionId:3d2bf7ab-436c-472b-aaf4-facaca405392) {
+						#content {
+							#data_view(Alias:ActionHistoryTypes, CompositionId:ba102efd-2175-4bc7-b376-4c11640a9c8a) 
+						}
+					}
+				}
+				#view(Alias:ActionTypes, Caption:$Workplaces_Admin_ActionTypes, CompositionId:a9bd1b8c-8822-40b5-9d3b-009ed909bdec, OrderPos:2, ShowMode:SelectionMode, IsNode:True, ParentCompositionId:ee693038-a5aa-4c3f-aa54-c230b4960d3f, IconName:Thin53, ExpandedIconName:Thin53, MultiSelect:False, EnableAutoWidth:True) {
+					#layout(Caption:Типы действий, CompositionId:d987b09d-fe39-49ac-8d7e-4c10b333e530) {
+						#content {
+							#data_view(Alias:ActionTypes, CompositionId:a9bd1b8c-8822-40b5-9d3b-009ed909bdec) 
+						}
+					}
+				}
+				#view(Alias:TimeZones, Caption:$Workplaces_Admin_TimeZones, CompositionId:1b2ff7eb-11dd-43fc-abac-6f948a8bdcfa, OrderPos:3, ShowMode:SelectionMode, IsNode:True, ParentCompositionId:ee693038-a5aa-4c3f-aa54-c230b4960d3f, IconName:Thin53, ExpandedIconName:Thin53, EnableAutoWidth:True) {
+					#layout(Caption:$Workplaces_Admin_TimeZones, CompositionId:55e69deb-b16a-44d5-adc9-bac2aadd247e) {
+						#content {
+							#data_view(Alias:TimeZones, CompositionId:1b2ff7eb-11dd-43fc-abac-6f948a8bdcfa) 
+						}
+					}
+				}
+				#view(Alias:Partitions, Caption:$Workplaces_Admin_StandSol_Partitions, CompositionId:ab41d000-2cab-464b-9d3b-fc3d9fc22880, OrderPos:4, ShowMode:SelectionMode, IsNode:True, ParentCompositionId:ee693038-a5aa-4c3f-aa54-c230b4960d3f, IconName:Thin53, ExpandedIconName:Thin53, EnableAutoWidth:True) {
+					#layout(Caption:$Workplaces_Admin_StandSol_Partitions, CompositionId:06a7aae4-3b5c-4b65-a468-a03bce898b17) {
+						#content {
+							#data_view(Alias:Partitions, CompositionId:ab41d000-2cab-464b-9d3b-fc3d9fc22880) 
+						}
+					}
+				}
+				#view(Alias:Sections, Caption:$Workplaces_Admin_Sections, CompositionId:ea8ead1b-6c3f-4430-8034-150c9fb5c0f7, OrderPos:5, ShowMode:SelectionMode, IsNode:True, ParentCompositionId:ee693038-a5aa-4c3f-aa54-c230b4960d3f, IconName:Thin53, ExpandedIconName:Thin53, EnableAutoWidth:True) {
+					#layout(SplitPosition:329, Caption:Секции, SecondChildSize:354, CompositionId:288993d9-6022-4800-b3c2-3a24550870bc) {
+						#content {
+							#data_view(Alias:Sections, CompositionId:ea8ead1b-6c3f-4430-8034-150c9fb5c0f7) 
+						}
+					}
+				}
+				#view(Alias:Fields, Caption:$Workplaces_Admin_Fields, CompositionId:7e4bb8c2-45eb-4698-a92b-23b3687b4a97, OrderPos:6, ShowMode:SelectionMode, IsNode:True, ParentCompositionId:ee693038-a5aa-4c3f-aa54-c230b4960d3f, IconName:Thin53, ExpandedIconName:Thin53, EnableAutoWidth:True) {
+					#layout(Caption:Поля, CompositionId:4eeb0068-618e-4a6a-84cb-bbe8c1f03c67) {
+						#content {
+							#data_view(Alias:Fields, CompositionId:7e4bb8c2-45eb-4698-a92b-23b3687b4a97) 
+						}
+					}
+				}
+				#view(Alias:FileTemplateTypes, Caption:$Workplaces_Admin_Types, CompositionId:74c05b38-2bc4-43e2-9dd7-1e9e73043ecf, OrderPos:7, ShowMode:SelectionMode, IsNode:True, ParentCompositionId:ee693038-a5aa-4c3f-aa54-c230b4960d3f, IconName:Thin53, ExpandedIconName:Thin53, MultiSelect:False, EnableAutoWidth:True) {
+					#layout(Caption:Типы, CompositionId:96a3b814-52be-4f36-a9aa-2ff1c7b0955a) {
+						#content {
+							#data_view(Alias:FileTemplateTypes, CompositionId:74c05b38-2bc4-43e2-9dd7-1e9e73043ecf) 
+						}
+					}
+				}
+				#view(Alias:Sessions, Caption:$Workplaces_Admin_ActiveSessions, CompositionId:fe3dbae4-009e-42eb-852b-0564e38fed42, OrderPos:8, ShowMode:NormalMode, IsNode:True, ParentCompositionId:ee693038-a5aa-4c3f-aa54-c230b4960d3f, IconName:Thin17, ExpandedIconName:Thin17, MultiSelect:True, EnableAutoWidth:True) {
+					#layout(SplitState:HorizontalSplit, Caption:Активные сессии, CompositionId:0b650fec-c9cd-45a7-8531-40b55d444e5f) {
+						#layout(CompositionId:e4cf8e5b-08d5-410a-abec-b534cf64cb53) {
+							#content {
+								#data_view(Alias:Sessions, CompositionId:fe3dbae4-009e-42eb-852b-0564e38fed42) 
+							}
+						}
+						#layout(Caption:История действий, CompositionId:7dd92572-89b0-42a3-90ba-3c9fe23b5610) {
+							#content {
+								#data_view(Alias:ActionHistory, CompositionId:8b6e3157-1ff2-49b3-be95-c4cf98540b99) 
+							}
+						}
+					}
+					#subset_settings(Alias:ByApplication, Visibility:OpenedAsDefault, CompositionId:0f1c4624-517f-43d8-b68e-c7f861d878ac, Caption:$Views_Sessions_Application_Param, ParentCompositionId:fe3dbae4-009e-42eb-852b-0564e38fed42, ExpandingMode:Expanded, OrderPos:0) {}
+					#subset_settings(Alias:ByAccessLevel, Visibility:OpenedAsDefault, CompositionId:465cb176-e7e9-42df-b534-83641c00c007, Caption:$Views_Sessions_AccessLevel_Param, ParentCompositionId:fe3dbae4-009e-42eb-852b-0564e38fed42, ExpandingMode:Expanded, OrderPos:1) {}
+					#subset_settings(Alias:ByLoginType, Visibility:OpenedAsDefault, CompositionId:58c0005d-2afd-4bf5-8d27-c1f52a7bfac5, Caption:$Views_Sessions_LoginType_Param, ParentCompositionId:fe3dbae4-009e-42eb-852b-0564e38fed42, ExpandingMode:Expanded, OrderPos:2) {}
+					#subset_settings(Alias:ByLicenseType, Visibility:OpenedAsDefault, CompositionId:1bdf1504-eab9-4654-a5b1-d94dfb36ac62, Caption:$Views_Sessions_LicenseType_Param, ParentCompositionId:fe3dbae4-009e-42eb-852b-0564e38fed42, ExpandingMode:Expanded, OrderPos:3) {}
+					#subset_settings(Alias:ByServiceType, Visibility:OpenedAsDefault, CompositionId:f64c2a6d-8c3f-441d-a0a3-e11fd1af155c, Caption:$Views_Sessions_ServiceType_Param, ParentCompositionId:fe3dbae4-009e-42eb-852b-0564e38fed42, ExpandingMode:Expanded, OrderPos:4) {}
+					#subset_settings(Alias:ByDeviceType, Visibility:OpenedAsDefault, CompositionId:45617430-dba4-4b95-ba45-8877ceed42b4, Caption:$Views_Sessions_DeviceType_Param, ParentCompositionId:fe3dbae4-009e-42eb-852b-0564e38fed42, ExpandingMode:Expanded, OrderPos:5) {}
+					#view(Alias:ActionHistory, Caption:$Workplaces_Admin_Misc_ActionHistory, CompositionId:8b6e3157-1ff2-49b3-be95-c4cf98540b99, OrderPos:6, ParentCompositionId:fe3dbae4-009e-42eb-852b-0564e38fed42, EnableAutoWidth:True) {
+						#master_link(SourceParam:SessionIDHidden, LinkedColumn:SessionID) 
+					}
+				}
+				#view(Alias:Users, Caption:$Workplaces_Admin_Employees_Users, CompositionId:de66548f-ae51-40b4-a1e5-3ae5eba64f33, OrderPos:9, ShowMode:NormalMode, IsNode:True, ParentCompositionId:ee693038-a5aa-4c3f-aa54-c230b4960d3f, ExpandingMode:Expanded, IconName:Thin193, ExpandedIconName:Thin193, MultiSelect:True, EnableAutoWidth:True) {
+					#layout(Caption:Пользователи, CompositionId:d6f4a701-1415-4df7-901d-640454991bcc) {
+						#content {
+							#data_view(Alias:Users, CompositionId:de66548f-ae51-40b4-a1e5-3ae5eba64f33) 
+						}
+					}
+					#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+						#extension_settings {
+							1gAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAAAAAAJUeXBlQWxpYXMADQAAAFBlcnNvbmFsUm9sZQAKRG9jVHlwZUlkZW50aWZpZXIACklEUGFyYW0AAA==
+						}
+					}
+					#subset_settings(Alias:ByDepartment, Visibility:OpenedAsDefault, CompositionId:4bd5d064-7d68-4e7c-bfbe-1d97415cd4c9, Caption:$Views_Users_ByDepartment_Param, ParentCompositionId:de66548f-ae51-40b4-a1e5-3ae5eba64f33, OrderPos:0) {}
+					#subset_settings(Alias:ByStaticRole, Visibility:OpenedAsDefault, CompositionId:9808e60c-e035-4d31-b347-2ec02aada8c9, Caption:$Views_Users_ByStaticRole_Param, ParentCompositionId:de66548f-ae51-40b4-a1e5-3ae5eba64f33, OrderPos:1) {}
+				}
+				#view(Alias:Roles, Caption:$Workplaces_Admin_Roles, CompositionId:b5c0c9a4-0ead-432a-b5bb-4f8319a3f98f, OrderPos:10, ShowMode:NormalMode, IsNode:True, ParentCompositionId:ee693038-a5aa-4c3f-aa54-c230b4960d3f, IconName:Thin195, ExpandedIconName:Thin195, MultiSelect:True, EnableAutoWidth:True) {
+					#layout(SplitState:HorizontalSplit, Caption:Роли, CompositionId:bda0fce7-dec8-4004-a0e5-8b226e90c9a8) {
+						#layout(CompositionId:1b99d3d6-12c9-4d3c-b0e3-7f03b919cf19) {
+							#content {
+								#data_view(Alias:Roles, CompositionId:b5c0c9a4-0ead-432a-b5bb-4f8319a3f98f) 
+							}
+						}
+						#layout(Caption:Сотрудники, CompositionId:8e716677-168e-4ca3-960f-521da7a8c43e) {
+							#content {
+								#data_view(Alias:Users, CompositionId:63949366-31ea-48d2-a786-dfaa8a32bbb8) 
+							}
+						}
+					}
+					#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+						#extension_settings {
+							xQAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAAAAABBDYXJkT3BlbmluZ0tpbmQAAAAAAApUeXBlQWxpYXMACkRvY1R5cGVJZGVudGlmaWVyAApJRFBhcmFtAAA=
+						}
+					}
+					#subset_settings(Alias:RoleTypes, Visibility:OpenedAsDefault, CompositionId:bfc31b23-1514-44a3-bab6-96132febab8a, Caption:$Views_Roles_ByType, ParentCompositionId:b5c0c9a4-0ead-432a-b5bb-4f8319a3f98f, ExpandingMode:Expanded, OrderPos:0) {}
+					#view(Alias:Users, Caption:Сотрудники, CompositionId:63949366-31ea-48d2-a786-dfaa8a32bbb8, OrderPos:1, ParentCompositionId:b5c0c9a4-0ead-432a-b5bb-4f8319a3f98f, EnableAutoWidth:True) {
+						#master_link(SourceParam:RoleID, LinkedColumn:RoleID) 
+					}
+				}
+				#node(Caption:$Workplaces_User_Dictionaries, OrderPos:11, CompositionId:a3d7fd16-cf9e-4a5c-95ca-aa834bd94d57, ParentCompositionId:ee693038-a5aa-4c3f-aa54-c230b4960d3f) {
+					#view(Alias:PnrActTypes, Caption:Типы акта, CompositionId:54cae88b-570f-46e0-97bc-fea5c8b543d5, IsNode:True, ParentCompositionId:a3d7fd16-cf9e-4a5c-95ca-aa834bd94d57, EnableAutoWidth:True) {
+						#layout(Caption:Типы акта, CompositionId:08698b17-b4be-41f4-b663-ada8c456394e) {
+							#content {
+								#data_view(Alias:PnrActTypes, CompositionId:54cae88b-570f-46e0-97bc-fea5c8b543d5) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								1AAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAAAAAAJUeXBlQWxpYXMACwAAAFBuckFjdFR5cGUACkRvY1R5cGVJZGVudGlmaWVyAApJRFBhcmFtAAA=
+							}
+						}
+					}
+					#view(Alias:PnrCFO, Caption:ЦФО, CompositionId:e9cd05f6-781a-4de8-8f41-fb42f3453a51, OrderPos:1, IsNode:True, ParentCompositionId:a3d7fd16-cf9e-4a5c-95ca-aa834bd94d57, EnableAutoWidth:True) {
+						#layout(Caption:ЦФО, CompositionId:95fa873b-be9a-434f-8131-96660dade35e) {
+							#content {
+								#data_view(Alias:PnrCFO, CompositionId:e9cd05f6-781a-4de8-8f41-fb42f3453a51) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								0AAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAAAAAAJUeXBlQWxpYXMABwAAAFBuckNGTwAKRG9jVHlwZUlkZW50aWZpZXIACklEUGFyYW0AAA==
+							}
+						}
+					}
+					#view(Alias:PnrComplaintFormats, Caption:Форматы рекламации, CompositionId:8bdaee16-c0ab-498f-a1ab-0426cfba344b, OrderPos:2, IsNode:True, ParentCompositionId:a3d7fd16-cf9e-4a5c-95ca-aa834bd94d57, EnableAutoWidth:True) {
+						#layout(Caption:Форматы рекламации, CompositionId:8da9dd38-461d-4bb7-abe3-ae42aeba2c23) {
+							#content {
+								#data_view(Alias:PnrComplaintFormats, CompositionId:8bdaee16-c0ab-498f-a1ab-0426cfba344b) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								3AAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAAAAAAJUeXBlQWxpYXMAEwAAAFBuckNvbXBsYWludEZvcm1hdAAKRG9jVHlwZUlkZW50aWZpZXIACklEUGFyYW0AAA==
+							}
+						}
+					}
+					#view(Alias:PnrComplaintKinds, Caption:Виды рекламации, CompositionId:6ae9d2bd-6202-475f-9bb2-bf56ad9a27c9, OrderPos:3, IsNode:True, ParentCompositionId:a3d7fd16-cf9e-4a5c-95ca-aa834bd94d57, EnableAutoWidth:True) {
+						#layout(Caption:Виды рекламации, CompositionId:e4eca8b3-8fe2-4654-9c22-3136733d908a) {
+							#content {
+								#data_view(Alias:PnrComplaintKinds, CompositionId:6ae9d2bd-6202-475f-9bb2-bf56ad9a27c9) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								2gAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAAAAAAJUeXBlQWxpYXMAEQAAAFBuckNvbXBsYWludEtpbmQACkRvY1R5cGVJZGVudGlmaWVyAApJRFBhcmFtAAA=
+							}
+						}
+					}
+					#view(Alias:PnrContractForms, Caption:Формы договора, CompositionId:1bb17d7c-13ea-4266-9367-727153793d95, OrderPos:4, IsNode:True, ParentCompositionId:a3d7fd16-cf9e-4a5c-95ca-aa834bd94d57, EnableAutoWidth:True) {
+						#layout(Caption:Формы договора, CompositionId:845d3062-818e-4b72-b88d-9d508d730e02) {
+							#content {
+								#data_view(Alias:PnrContractForms, CompositionId:1bb17d7c-13ea-4266-9367-727153793d95) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								2QAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAAAAAAJUeXBlQWxpYXMAEAAAAFBuckNvbnRyYWN0Rm9ybQAKRG9jVHlwZUlkZW50aWZpZXIACklEUGFyYW0AAA==
+							}
+						}
+					}
+					#view(Alias:PnrContractKinds, Caption:Виды договора, CompositionId:1b026923-c2ee-4a28-a198-cbace6df1de2, OrderPos:5, IsNode:True, ParentCompositionId:a3d7fd16-cf9e-4a5c-95ca-aa834bd94d57, EnableAutoWidth:True) {
+						#layout(Caption:Виды договора, CompositionId:29f54081-8201-427e-85b9-d536053655f2) {
+							#content {
+								#data_view(Alias:PnrContractKinds, CompositionId:1b026923-c2ee-4a28-a198-cbace6df1de2) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								2QAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAAAAAAJUeXBlQWxpYXMAEAAAAFBuckNvbnRyYWN0S2luZAAKRG9jVHlwZUlkZW50aWZpZXIACklEUGFyYW0AAA==
+							}
+						}
+					}
+					#view(Alias:PnrContractKindsDUP, Caption:Виды договора \(ДУП\), CompositionId:16fad468-47e0-4c49-ae59-091c69ea0943, OrderPos:6, IsNode:True, ParentCompositionId:a3d7fd16-cf9e-4a5c-95ca-aa834bd94d57, EnableAutoWidth:True) {
+						#layout(Caption:Виды договора \(ДУП\), CompositionId:0128b8fe-0153-4156-8f3c-dec47a007a9a) {
+							#content {
+								#data_view(Alias:PnrContractKindsDUP, CompositionId:16fad468-47e0-4c49-ae59-091c69ea0943) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								3AAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAAAAAAJUeXBlQWxpYXMAEwAAAFBuckNvbnRyYWN0S2luZERVUAAKRG9jVHlwZUlkZW50aWZpZXIACklEUGFyYW0AAA==
+							}
+						}
+					}
+					#view(Alias:PnrContractTypes, Caption:Типы договора, CompositionId:36753cd0-772b-4d21-b216-37b0a31056ec, OrderPos:7, IsNode:True, ParentCompositionId:a3d7fd16-cf9e-4a5c-95ca-aa834bd94d57, EnableAutoWidth:True) {
+						#layout(Caption:Типы договора, CompositionId:ce938ea3-f75f-4c50-83e3-d923bc9b7ad2) {
+							#content {
+								#data_view(Alias:PnrContractTypes, CompositionId:36753cd0-772b-4d21-b216-37b0a31056ec) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								2QAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAAAAAAJUeXBlQWxpYXMAEAAAAFBuckNvbnRyYWN0VHlwZQAKRG9jVHlwZUlkZW50aWZpZXIACklEUGFyYW0AAA==
+							}
+						}
+					}
+					#view(Alias:PnrCostItems, Caption:Статьи затрат, CompositionId:6e2a97f3-2298-4f66-83e8-ab690968428c, OrderPos:8, IsNode:True, ParentCompositionId:a3d7fd16-cf9e-4a5c-95ca-aa834bd94d57, EnableAutoWidth:True) {
+						#layout(Caption:Статьи затрат, CompositionId:e098e654-8696-4d38-a4f9-cecc453f1cd2) {
+							#content {
+								#data_view(Alias:PnrCostItems, CompositionId:6e2a97f3-2298-4f66-83e8-ab690968428c) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								1QAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAAAAAAJUeXBlQWxpYXMADAAAAFBuckNvc3RJdGVtAApEb2NUeXBlSWRlbnRpZmllcgAKSURQYXJhbQAA
+							}
+						}
+					}
+					#view(Alias:Currencies, Caption:Валюты, CompositionId:7d15ec39-9d3a-4c9e-87f5-436356132931, OrderPos:9, IsNode:True, ParentCompositionId:a3d7fd16-cf9e-4a5c-95ca-aa834bd94d57, EnableAutoWidth:True) {
+						#layout(Caption:Валюты, CompositionId:3af2e96e-9d44-4976-a210-6d7e0f633806) {
+							#content {
+								#data_view(Alias:Currencies, CompositionId:7d15ec39-9d3a-4c9e-87f5-436356132931) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								1QAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAAAAAAJUeXBlQWxpYXMADAAAAFBuckN1cnJlbmN5AApEb2NUeXBlSWRlbnRpZmllcgAKSURQYXJhbQAA
+							}
+						}
+					}
+					#view(Alias:PnrDeliveryTypes, Caption:Типы доставки, CompositionId:1edc4fe5-2a64-4c60-a9dd-ea8fbf5c880f, OrderPos:10, IsNode:True, ParentCompositionId:a3d7fd16-cf9e-4a5c-95ca-aa834bd94d57, EnableAutoWidth:True) {
+						#layout(Caption:Типы доставки, CompositionId:204e8be5-f5dc-4433-859e-631ac7592444) {
+							#content {
+								#data_view(Alias:PnrDeliveryTypes, CompositionId:1edc4fe5-2a64-4c60-a9dd-ea8fbf5c880f) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								2QAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAAAAAAJUeXBlQWxpYXMAEAAAAFBuckRlbGl2ZXJ5VHlwZQAKRG9jVHlwZUlkZW50aWZpZXIACklEUGFyYW0AAA==
+							}
+						}
+					}
+					#view(Alias:PnrDirections, Caption:Направления, CompositionId:c2f67587-6e4a-4ddd-9eb2-d8aed2d4f7ef, OrderPos:11, IsNode:True, ParentCompositionId:a3d7fd16-cf9e-4a5c-95ca-aa834bd94d57, EnableAutoWidth:True) {
+						#layout(Caption:Направления, CompositionId:9c80ad5c-c5de-4f20-9eca-41e5c8bde09e) {
+							#content {
+								#data_view(Alias:PnrDirections, CompositionId:c2f67587-6e4a-4ddd-9eb2-d8aed2d4f7ef) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								1gAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAAAAAAJUeXBlQWxpYXMADQAAAFBuckRpcmVjdGlvbgAKRG9jVHlwZUlkZW50aWZpZXIACklEUGFyYW0AAA==
+							}
+						}
+					}
+					#view(Alias:PnrIncomingDocumentsKinds, Caption:Виды входящих документов, CompositionId:9e8130f4-9eac-45e5-bf06-ee4791cbbc81, OrderPos:12, IsNode:True, ParentCompositionId:a3d7fd16-cf9e-4a5c-95ca-aa834bd94d57, EnableAutoWidth:True) {
+						#layout(Caption:Виды входящих документов, CompositionId:f91b3c3d-7ffd-41e6-b782-94ac6acd2433) {
+							#content {
+								#data_view(Alias:PnrIncomingDocumentsKinds, CompositionId:9e8130f4-9eac-45e5-bf06-ee4791cbbc81) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								4QAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAAAAAAJUeXBlQWxpYXMAGAAAAFBuckluY29taW5nRG9jdW1lbnRLaW5kAApEb2NUeXBlSWRlbnRpZmllcgAKSURQYXJhbQAA
+							}
+						}
+					}
+					#view(Alias:PnrIncomingDocumentsKindsUK, Caption:Виды входящих документов УК ПС, CompositionId:79586bf4-5e7b-441c-9110-4cf077c4bb9e, OrderPos:13, IsNode:True, ParentCompositionId:a3d7fd16-cf9e-4a5c-95ca-aa834bd94d57, EnableAutoWidth:True) {
+						#layout(Caption:Виды входящих документов УК ПС, CompositionId:087277ce-6f7e-402f-8920-47969efbfa87) {
+							#content {
+								#data_view(Alias:PnrIncomingDocumentsKindsUK, CompositionId:79586bf4-5e7b-441c-9110-4cf077c4bb9e) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								4wAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAAAAAAJUeXBlQWxpYXMAGgAAAFBuckluY29taW5nRG9jdW1lbnRLaW5kVUsACkRvY1R5cGVJZGVudGlmaWVyAApJRFBhcmFtAAA=
+							}
+						}
+					}
+					#view(Alias:PnrOrdersTypes, Caption:Виды приказов, CompositionId:7e8267d7-5fa5-4854-85d6-caa1041a439a, OrderPos:14, IsNode:True, ParentCompositionId:a3d7fd16-cf9e-4a5c-95ca-aa834bd94d57, EnableAutoWidth:True) {
+						#layout(Caption:Виды приказов, CompositionId:0551d260-6c2b-4d3a-b400-c6252484c69d) {
+							#content {
+								#data_view(Alias:PnrOrdersTypes, CompositionId:7e8267d7-5fa5-4854-85d6-caa1041a439a) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								1gAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAAAAAAJUeXBlQWxpYXMADQAAAFBuck9yZGVyVHlwZQAKRG9jVHlwZUlkZW50aWZpZXIACklEUGFyYW0AAA==
+							}
+						}
+					}
+					#view(Alias:PnrOriginalsTypes, Caption:Виды оригиналов, CompositionId:88fd1bd5-f57c-4c54-a038-28c54d9127c3, OrderPos:15, IsNode:True, ParentCompositionId:a3d7fd16-cf9e-4a5c-95ca-aa834bd94d57, EnableAutoWidth:True) {
+						#layout(Caption:Виды оригиналов, CompositionId:d71e50cf-c0c3-4282-9dca-484a55544e31) {
+							#content {
+								#data_view(Alias:PnrOriginalsTypes, CompositionId:88fd1bd5-f57c-4c54-a038-28c54d9127c3) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								2gAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAAAAAAJUeXBlQWxpYXMAEQAAAFBuck9yaWdpbmFsc1R5cGUACkRvY1R5cGVJZGVudGlmaWVyAApJRFBhcmFtAAA=
+							}
+						}
+					}
+					#view(Alias:PnrOutgoingDocumentsKinds, Caption:Виды исходящих документов, CompositionId:11016f8d-3ddf-4375-86b6-2d1e81bf027c, OrderPos:16, IsNode:True, ParentCompositionId:a3d7fd16-cf9e-4a5c-95ca-aa834bd94d57, EnableAutoWidth:True) {
+						#layout(Caption:Виды исходящих документов, CompositionId:2184979e-91e9-4c0d-ad6e-aae7b059934e) {
+							#content {
+								#data_view(Alias:PnrOutgoingDocumentsKinds, CompositionId:11016f8d-3ddf-4375-86b6-2d1e81bf027c) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								4QAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAAAAAAJUeXBlQWxpYXMAGAAAAFBuck91dGdvaW5nRG9jdW1lbnRLaW5kAApEb2NUeXBlSWRlbnRpZmllcgAKSURQYXJhbQAA
+							}
+						}
+					}
+					#view(Alias:PnrOutgoingDocumentsKindsUK, Caption:Виды исходящих документов УК ПС, CompositionId:dea7a684-d80e-4ffc-a046-deb9b3f77e60, OrderPos:17, IsNode:True, ParentCompositionId:a3d7fd16-cf9e-4a5c-95ca-aa834bd94d57, EnableAutoWidth:True) {
+						#layout(Caption:Виды исходящих документов УК ПС, CompositionId:b907005c-75b2-4264-b4d6-64f38cfa17ac) {
+							#content {
+								#data_view(Alias:PnrOutgoingDocumentsKindsUK, CompositionId:dea7a684-d80e-4ffc-a046-deb9b3f77e60) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								4wAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAAAAAAJUeXBlQWxpYXMAGgAAAFBuck91dGdvaW5nRG9jdW1lbnRLaW5kVUsACkRvY1R5cGVJZGVudGlmaWVyAApJRFBhcmFtAAA=
+							}
+						}
+					}
+					#view(Alias:PnrPowerAttorneyTypes, Caption:Типы доверенностей, CompositionId:fb1ad502-6cce-490e-a61a-4d09b1c75411, OrderPos:18, IsNode:True, ParentCompositionId:a3d7fd16-cf9e-4a5c-95ca-aa834bd94d57, EnableAutoWidth:True) {
+						#layout(Caption:Типы доверенностей, CompositionId:4e1b3fef-b1f7-4bd9-8de0-7c55fe252add) {
+							#content {
+								#data_view(Alias:PnrPowerAttorneyTypes, CompositionId:fb1ad502-6cce-490e-a61a-4d09b1c75411) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								3gAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAAAAAAJUeXBlQWxpYXMAFQAAAFBuclBvd2VyQXR0b3JuZXlUeXBlAApEb2NUeXBlSWRlbnRpZmllcgAKSURQYXJhbQAA
+							}
+						}
+					}
+					#view(Alias:PnrServiceNoteThemes, Caption:Тематики служебных записок, CompositionId:c39473f8-d41b-4689-b99f-43509a44a578, OrderPos:19, IsNode:True, ParentCompositionId:a3d7fd16-cf9e-4a5c-95ca-aa834bd94d57, EnableAutoWidth:True) {
+						#layout(Caption:Тематики служебных записок, CompositionId:dd6e9dec-7295-4535-ad5d-33e682023854) {
+							#content {
+								#data_view(Alias:PnrServiceNoteThemes, CompositionId:c39473f8-d41b-4689-b99f-43509a44a578) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								3QAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAAAAAAJUeXBlQWxpYXMAFAAAAFBuclNlcnZpY2VOb3RlVGhlbWUACkRvY1R5cGVJZGVudGlmaWVyAApJRFBhcmFtAAA=
+							}
+						}
+					}
+					#view(Alias:PnrWorkStages, Caption:Стадии работ, CompositionId:5efa7614-dc73-41db-9cf7-f5b3ad62f306, OrderPos:20, IsNode:True, ParentCompositionId:a3d7fd16-cf9e-4a5c-95ca-aa834bd94d57, EnableAutoWidth:True) {
+						#layout(Caption:Стадии работ, CompositionId:62712a7a-bf40-459d-a285-801a6bc5a61b) {
+							#content {
+								#data_view(Alias:PnrWorkStages, CompositionId:5efa7614-dc73-41db-9cf7-f5b3ad62f306) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								1gAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAAAAAAJUeXBlQWxpYXMADQAAAFBucldvcmtTdGFnZQAKRG9jVHlwZUlkZW50aWZpZXIACklEUGFyYW0AAA==
+							}
+						}
+					}
+					#view(Alias:PnrOrganizations, Caption:Организации ГКП, CompositionId:dd84e25c-e39f-4a2b-a1f1-f6c58d15061c, OrderPos:21, IsNode:True, ParentCompositionId:a3d7fd16-cf9e-4a5c-95ca-aa834bd94d57, EnableAutoWidth:True) {
+						#layout(Caption:Организации, CompositionId:0c83df14-977d-4cf2-b941-6e9a486403a0) {
+							#content {
+								#data_view(Alias:PnrOrganizations, CompositionId:dd84e25c-e39f-4a2b-a1f1-f6c58d15061c) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								2QAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAAAAAAJUeXBlQWxpYXMAEAAAAFBuck9yZ2FuaXphdGlvbgAKRG9jVHlwZUlkZW50aWZpZXIACklEUGFyYW0AAA==
+							}
+						}
+					}
+					#view(Alias:Departments, Caption:$Workplaces_Admin_Employees_Departments, CompositionId:35dcfb3a-724e-4706-bf17-1ed9bb74c781, OrderPos:22, ShowMode:NormalMode, IsNode:True, ParentCompositionId:a3d7fd16-cf9e-4a5c-95ca-aa834bd94d57, IconName:Thin48, ExpandedIconName:Thin48, MultiSelect:True, EnableAutoWidth:True) {
+						#layout(SplitState:HorizontalSplit, Caption:Подразделения, CompositionId:5d2b8d76-c00b-4665-b1d4-d69f75c37f0c) {
+							#layout(CompositionId:6c803ec6-b301-47fa-a664-e9a320de4d4b) {
+								#content {
+									#data_view(Alias:Departments, CompositionId:35dcfb3a-724e-4706-bf17-1ed9bb74c781) 
+								}
+							}
+							#layout(Caption:Сотрудники, CompositionId:06b902cc-4536-4a5c-8fc6-0705d35d1efc) {
+								#content {
+									#data_view(Alias:Users, CompositionId:7488f793-6580-4ed3-9a03-8eafb66f4110) 
+								}
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								2AAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAAAAAAJUeXBlQWxpYXMADwAAAERlcGFydG1lbnRSb2xlAApEb2NUeXBlSWRlbnRpZmllcgAKSURQYXJhbQAA
+							}
+						}
+						#subset_settings(Alias:ByDep, Visibility:OpenedAsDefault, CompositionId:117bec78-7f74-4041-96e4-cc87919e4287, Caption:$Views_Departments_ByDep_Param, ParentCompositionId:35dcfb3a-724e-4706-bf17-1ed9bb74c781, ExpandingMode:Expanded, OrderPos:0) {}
+						#view(Alias:Users, Caption:Сотрудники, CompositionId:7488f793-6580-4ed3-9a03-8eafb66f4110, OrderPos:1, ParentCompositionId:35dcfb3a-724e-4706-bf17-1ed9bb74c781, EnableAutoWidth:True) {
+							#master_link(SourceParam:RoleID, LinkedColumn:RoleID) 
+						}
+					}
+					#view(Alias:PnrProjects, Caption:Проекты, CompositionId:901b285b-3488-4dcd-805a-a74753c7cd27, OrderPos:23, ShowMode:NormalMode, IsNode:True, ParentCompositionId:a3d7fd16-cf9e-4a5c-95ca-aa834bd94d57, EnableAutoWidth:True) {
+						#layout(Caption:Проекты, CompositionId:4e4c9b2c-56f2-4b2f-a191-d59cbfa985df) {
+							#content {
+								#data_view(Alias:PnrProjects, CompositionId:901b285b-3488-4dcd-805a-a74753c7cd27) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								1AAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAAAAAAJUeXBlQWxpYXMACwAAAFBuclByb2plY3QACkRvY1R5cGVJZGVudGlmaWVyAApJRFBhcmFtAAA=
+							}
+						}
+					}
+					#view(Alias:Partners, Caption:Контрагенты, CompositionId:b46df0b2-5cfc-4b55-9e3e-09d5886ab066, OrderPos:24, IsNode:True, ParentCompositionId:a3d7fd16-cf9e-4a5c-95ca-aa834bd94d57, EnableAutoWidth:True) {
+						#layout(Caption:Контрагенты, CompositionId:bbd19889-9939-4923-98b8-056eead900d0) {
+							#content {
+								#data_view(Alias:Partners, CompositionId:b46df0b2-5cfc-4b55-9e3e-09d5886ab066) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								0QAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAAAAAAJUeXBlQWxpYXMACAAAAFBhcnRuZXIACkRvY1R5cGVJZGVudGlmaWVyAApJRFBhcmFtAAA=
+							}
+						}
+					}
+					#view(Alias:PnrLegalEntitiesIndexes, Caption:Индексы юридических лиц, CompositionId:fe0ab19a-c3b0-4ff5-a96f-53284f81a80e, OrderPos:25, IsNode:True, ParentCompositionId:a3d7fd16-cf9e-4a5c-95ca-aa834bd94d57, EnableAutoWidth:True) {
+						#layout(Caption:Индексы юридических лиц, CompositionId:1acac2ac-82f7-481c-8cf0-7d0c84a58b77) {
+							#content {
+								#data_view(Alias:PnrLegalEntitiesIndexes, CompositionId:fe0ab19a-c3b0-4ff5-a96f-53284f81a80e) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								3QAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAAAAAAJUeXBlQWxpYXMAFAAAAFBuckxlZ2FsRW50aXR5SW5kZXgACkRvY1R5cGVJZGVudGlmaWVyAApJRFBhcmFtAAA=
+							}
+						}
+					}
+					#view(Alias:PnrDocumentKinds, Caption:Виды документа, CompositionId:c58272c5-9972-4a3c-b364-d902f141df18, OrderPos:26, IsNode:True, ParentCompositionId:a3d7fd16-cf9e-4a5c-95ca-aa834bd94d57, EnableAutoWidth:True) {
+						#layout(Caption:Виды документа, CompositionId:d78a3883-ea1a-4625-b546-c9053b28f650) {
+							#content {
+								#data_view(Alias:PnrDocumentKinds, CompositionId:c58272c5-9972-4a3c-b364-d902f141df18) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								2QAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAAAAAAJUeXBlQWxpYXMAEAAAAFBuckRvY3VtZW50S2luZAAKRG9jVHlwZUlkZW50aWZpZXIACklEUGFyYW0AAA==
+							}
+						}
+					}
+					#view(Alias:PnrContractKinds1C, Caption:Виды договора \(1C\), CompositionId:868740d1-9839-4c53-b01a-bbf16fd0f85e, OrderPos:27, IsNode:True, ParentCompositionId:a3d7fd16-cf9e-4a5c-95ca-aa834bd94d57, EnableAutoWidth:True) {
+						#layout(Caption:Виды договора \(1C\), CompositionId:cf1d7fb4-acf8-4309-8b5f-1388be207252) {
+							#content {
+								#data_view(Alias:PnrContractKinds1C, CompositionId:868740d1-9839-4c53-b01a-bbf16fd0f85e) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								2wAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAAAAAAJUeXBlQWxpYXMAEgAAAFBuckNvbnRyYWN0S2luZDFDAApEb2NUeXBlSWRlbnRpZmllcgAKSURQYXJhbQAA
+							}
+						}
+					}
+					#view(Alias:PnrServiceNoteTypes, Caption:Типы служебных записок, CompositionId:c2dd708a-1994-4cef-b593-ba7727842629, OrderPos:28, IsNode:True, ParentCompositionId:a3d7fd16-cf9e-4a5c-95ca-aa834bd94d57, EnableAutoWidth:True) {
+						#layout(Caption:Типы служебных записок, CompositionId:dd4ae040-8ae0-46a1-85dc-3a107f69c5ff) {
+							#content {
+								#data_view(Alias:PnrServiceNoteTypes, CompositionId:c2dd708a-1994-4cef-b593-ba7727842629) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								3AAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAAAAAAJUeXBlQWxpYXMAEwAAAFBuclNlcnZpY2VOb3RlVHlwZQAKRG9jVHlwZUlkZW50aWZpZXIACklEUGFyYW0AAA==
+							}
+						}
+					}
+					#view(Alias:PnrReasonsSupplementaryAgreement, Caption:Причины заключения ДС, CompositionId:261a401e-cecf-4fe4-b3c1-e3bf42553b34, OrderPos:29, IsNode:True, ParentCompositionId:a3d7fd16-cf9e-4a5c-95ca-aa834bd94d57, EnableAutoWidth:True) {
+						#layout(Caption:Причины заключения ДС, CompositionId:bbb9cd1e-12e8-471b-84c5-1d9926d7b699) {
+							#content {
+								#data_view(Alias:PnrReasonsSupplementaryAgreement, CompositionId:261a401e-cecf-4fe4-b3c1-e3bf42553b34) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								6QAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAAAAAAJUeXBlQWxpYXMAIAAAAFBuclJlYXNvblN1cHBsZW1lbnRhcnlBZ3JlZW1lbnQACkRvY1R5cGVJZGVudGlmaWVyAApJRFBhcmFtAAA=
+							}
+						}
+					}
+					#view(Alias:PnrContractTypesDUP, Caption:Типы договора ДУП, CompositionId:bc5c3372-8623-4ae4-96be-8853e35dadba, OrderPos:30, IsNode:True, ParentCompositionId:a3d7fd16-cf9e-4a5c-95ca-aa834bd94d57, EnableAutoWidth:True) {
+						#layout(Caption:Типы договора ДУП, CompositionId:788e6160-feda-4740-8ed4-3bf0ad71cc39) {
+							#content {
+								#data_view(Alias:PnrContractTypesDUP, CompositionId:bc5c3372-8623-4ae4-96be-8853e35dadba) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								3AAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAAAAAAJUeXBlQWxpYXMAEwAAAFBuckNvbnRyYWN0VHlwZURVUAAKRG9jVHlwZUlkZW50aWZpZXIACklEUGFyYW0AAA==
+							}
+						}
+					}
+					#view(Alias:PnrCountries, Caption:Страны, CompositionId:a915bc73-36ed-48e4-be5e-5ef55c9040c3, OrderPos:31, IsNode:True, ParentCompositionId:a3d7fd16-cf9e-4a5c-95ca-aa834bd94d57, EnableAutoWidth:True) {
+						#layout(Caption:Страны, CompositionId:d3386eee-7d41-4d60-b82f-a1ece9f7f028) {
+							#content {
+								#data_view(Alias:PnrCountries, CompositionId:a915bc73-36ed-48e4-be5e-5ef55c9040c3) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								1AAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAAAAAAJUeXBlQWxpYXMACwAAAFBuckNvdW50cnkACkRvY1R5cGVJZGVudGlmaWVyAApJRFBhcmFtAAA=
+							}
+						}
+					}
+					#view(Alias:PnrCities, Caption:Города, CompositionId:ee754e6e-c565-4895-a339-e2f81c5bd7a7, OrderPos:32, IsNode:True, ParentCompositionId:a3d7fd16-cf9e-4a5c-95ca-aa834bd94d57, EnableAutoWidth:True) {
+						#layout(Caption:Города, CompositionId:7ada4883-3ee8-4b64-9a37-6abb5305fc2f) {
+							#content {
+								#data_view(Alias:PnrCities, CompositionId:ee754e6e-c565-4895-a339-e2f81c5bd7a7) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								0QAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAAAAAAJUeXBlQWxpYXMACAAAAFBuckNpdHkACkRvY1R5cGVJZGVudGlmaWVyAApJRFBhcmFtAAA=
+							}
+						}
+					}
+					#view(Alias:PnrConditionsStartingWork, Caption:Условия начала выполнения работ, CompositionId:17ea38fb-017e-43c8-94b2-77d2f49baff0, OrderPos:33, IsNode:True, ParentCompositionId:a3d7fd16-cf9e-4a5c-95ca-aa834bd94d57, EnableAutoWidth:True) {
+						#layout(Caption:Условия начала выполнения работ, CompositionId:8f17ace9-44db-44a6-9917-6523d57471c3) {
+							#content {
+								#data_view(Alias:PnrConditionsStartingWork, CompositionId:17ea38fb-017e-43c8-94b2-77d2f49baff0) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								4gAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAAAAAAJUeXBlQWxpYXMAGQAAAFBuckNvbmRpdGlvblN0YXJ0aW5nV29yawAKRG9jVHlwZUlkZW50aWZpZXIACklEUGFyYW0AAA==
+							}
+						}
+					}
+					#view(Alias:PnrImplementationStages, Caption:Стадии реализации, CompositionId:dd45db2c-64e9-4149-aa9e-4db9b9d1cd6a, OrderPos:34, IsNode:True, ParentCompositionId:a3d7fd16-cf9e-4a5c-95ca-aa834bd94d57, EnableAutoWidth:True) {
+						#layout(Caption:Стадии реализации, CompositionId:e5254192-40a8-40d2-985a-d40454c684c6) {
+							#content {
+								#data_view(Alias:PnrImplementationStages, CompositionId:dd45db2c-64e9-4149-aa9e-4db9b9d1cd6a) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								4AAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAAAAAAJUeXBlQWxpYXMAFwAAAFBuckltcGxlbWVudGF0aW9uU3RhZ2UACkRvY1R5cGVJZGVudGlmaWVyAApJRFBhcmFtAAA=
+							}
+						}
+					}
+					#view(Alias:PnrPartnerRequestDirections, Caption:Направления заявки на контрагента, CompositionId:0a12f5a9-8c04-4557-b21a-5f045b6ad83b, OrderPos:35, IsNode:True, ParentCompositionId:a3d7fd16-cf9e-4a5c-95ca-aa834bd94d57, EnableAutoWidth:True) {
+						#layout(Caption:Направления заявки на контрагента, CompositionId:1505a973-98b7-4f62-9444-9611bc88b063) {
+							#content {
+								#data_view(Alias:PnrPartnerRequestDirections, CompositionId:0a12f5a9-8c04-4557-b21a-5f045b6ad83b) 
+							}
+						}
+					}
+				}
+				#view(Alias:ConditionUsePlaces, Caption:$Workplaces_Admin_ConditionUsePlaces, CompositionId:503855d4-e646-40af-894f-79384d7d4102, OrderPos:12, ShowMode:SelectionMode, IsNode:True, ParentCompositionId:ee693038-a5aa-4c3f-aa54-c230b4960d3f, IconName:Thin53, ExpandedIconName:Thin53, EnableAutoWidth:True) {
+					#layout(Caption:Места использования условий, CompositionId:a7cdff0d-03cd-4682-bb90-b6a3be41d7d7) {
+						#content {
+							#data_view(Alias:ConditionUsePlaces, CompositionId:503855d4-e646-40af-894f-79384d7d4102) 
+						}
+					}
+				}
+				#view(Alias:Views, Caption:$Workplaces_User_Dictionaries_Views, CompositionId:a8b99ef8-c656-4921-9293-a4e7d70c4651, OrderPos:13, ShowMode:SelectionMode, IsNode:True, ParentCompositionId:ee693038-a5aa-4c3f-aa54-c230b4960d3f, IconName:Thin426, ExpandedIconName:Thin426, MultiSelect:False, EnableAutoWidth:True) {
+					#layout(Caption:Представления, CompositionId:c0791282-9830-4b92-bccf-4997045cefde) {
+						#content {
+							#data_view(Alias:Views, CompositionId:a8b99ef8-c656-4921-9293-a4e7d70c4651) 
+						}
+					}
+				}
+				#node(Caption:$Workplaces_Admin_Route, OrderPos:14, CompositionId:ba012c45-5fe4-4584-94b8-14ba07209c06, ParentCompositionId:ee693038-a5aa-4c3f-aa54-c230b4960d3f) {
+					#view(Alias:KrStageTemplates, Caption:$Workplaces_Admin_Route_KrStageTemplates, CompositionId:cd2174f2-9432-4de4-8e3c-8f440b4a9f40, IsNode:True, ParentCompositionId:ba012c45-5fe4-4584-94b8-14ba07209c06, ExpandingMode:Expanded, IconName:Thin3, ExpandedIconName:Thin3, EnableAutoWidth:True) {
+						#layout(SplitState:HorizontalSplit, Caption:$Workplaces_Admin_Route_KrStageTemplates, CompositionId:febcd7bf-f59f-4d82-8091-a2baef64d3b8) {
+							#layout(CompositionId:401eb0dc-8ec8-4f60-80f0-175b59f60f49) {
+								#content {
+									#data_view(Alias:KrStageTemplates, CompositionId:cd2174f2-9432-4de4-8e3c-8f440b4a9f40) 
+								}
+							}
+							#layout(Caption:KrStageRows, CompositionId:26ed193c-01e9-4f74-93a3-c16294edbe88) {
+								#content {
+									#data_view(Alias:KrStageRows, CompositionId:b9a47e96-7c66-4e8a-961e-9b29e5f7ce82) 
+								}
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								3QAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAAAJUeXBlQWxpYXMAEAAAAEtyU3RhZ2VUZW1wbGF0ZQAKRG9jVHlwZUlkZW50aWZpZXIAAklEUGFyYW0AFQAAAFN0YWdlVGVtcGxhdGVJRFBhcmFtAAA=
+							}
+						}
+						#subset_settings(Alias:ByType, Visibility:OpenedAsDefault, CompositionId:cf930e75-5e54-422d-9caa-aa8aa14480c0, Caption:$Views_KrStageTemplates_ByTypeSubset, ParentCompositionId:cd2174f2-9432-4de4-8e3c-8f440b4a9f40, OrderPos:0) {
+							#subset_settings(Alias:ByStartupType, Visibility:OpenedAsDefault, CompositionId:8d710f29-a5e5-4b88-97c1-68538ce50631, Caption:$Views_KrStageTemplates_ByStartupTypeSubset, ParentCompositionId:cf930e75-5e54-422d-9caa-aa8aa14480c0, ExpandingMode:Expanded, OrderPos:0) {}
+						}
+						#subset_settings(Alias:ByStartupType, Visibility:OpenedAsDefault, CompositionId:8d040c66-76f6-4591-816a-81d56750fe25, Caption:$Views_KrStageTemplates_ByStartupTypeSubset, ParentCompositionId:cd2174f2-9432-4de4-8e3c-8f440b4a9f40, OrderPos:1) {}
+						#view(Alias:KrStageRows, Caption:KrStageRows, CompositionId:b9a47e96-7c66-4e8a-961e-9b29e5f7ce82, OrderPos:2, ParentCompositionId:cd2174f2-9432-4de4-8e3c-8f440b4a9f40, EnableAutoWidth:True) {
+							#master_link(SourceParam:StageTemplateIDParam, LinkedColumn:StageTemplateID) 
+						}
+					}
+					#view(Alias:KrStageGroups, Caption:$Workplaces_Admin_Route_KrStageGroups, CompositionId:6f28113f-5802-4132-9451-2afbcccdcdd2, OrderPos:1, IsNode:True, ParentCompositionId:ba012c45-5fe4-4584-94b8-14ba07209c06, ExpandingMode:Expanded, IconName:Thin9, ExpandedIconName:Thin9, EnableAutoWidth:True) {
+						#layout(SplitState:HorizontalSplit, Caption:$Workplaces_Admin_Route_KrStageGroups, CompositionId:0628f8a5-e68f-4f8b-b42e-ea2af51cfe72) {
+							#layout(CompositionId:14f99821-c509-42fa-b350-738cf54e282e) {
+								#content {
+									#data_view(Alias:KrStageGroups, CompositionId:6f28113f-5802-4132-9451-2afbcccdcdd2) 
+								}
+							}
+							#layout(Caption:KrStageTemplates, CompositionId:20f88f57-5c93-4194-a411-15c647ed20e9) {
+								#content {
+									#data_view(Alias:KrStageTemplates, CompositionId:413707ff-21ed-403e-a815-6ce115b20a61) 
+								}
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								1wAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAAAJUeXBlQWxpYXMADQAAAEtyU3RhZ2VHcm91cAAKRG9jVHlwZUlkZW50aWZpZXIAAklEUGFyYW0AEgAAAFN0YWdlR3JvdXBJRFBhcmFtAAA=
+							}
+						}
+						#subset_settings(Alias:ByType, Visibility:OpenedAsDefault, CompositionId:a1ab37e9-5a39-4612-a7e3-283d4334a004, Caption:$Views_KrStageGroups_ByTypeSubset, ParentCompositionId:6f28113f-5802-4132-9451-2afbcccdcdd2, OrderPos:0) {
+							#subset_settings(Alias:ByStartupType, Visibility:OpenedAsDefault, CompositionId:c96e7479-9706-4a54-be5d-bb5996936c8f, Caption:$Views_KrStageGroups_ByStartupTypeSubset, ParentCompositionId:a1ab37e9-5a39-4612-a7e3-283d4334a004, ExpandingMode:Expanded, OrderPos:0) {}
+						}
+						#subset_settings(Alias:ByStartupType, Visibility:OpenedAsDefault, CompositionId:3d17d4fa-1628-49ee-834e-3f28d3cf0079, Caption:$Views_KrStageGroups_ByStartupTypeSubset, ParentCompositionId:6f28113f-5802-4132-9451-2afbcccdcdd2, OrderPos:1) {}
+						#view(Alias:KrStageTemplates, Caption:KrStageTemplates, CompositionId:413707ff-21ed-403e-a815-6ce115b20a61, OrderPos:2, ParentCompositionId:6f28113f-5802-4132-9451-2afbcccdcdd2, EnableAutoWidth:True) {
+							#master_link(SourceParam:StageGroupParam, LinkedColumn:StageGroupID) 
+							#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {}
+						}
+					}
+					#view(Alias:KrSecondaryProcesses, Caption:$Workplaces_Admin_Route_KrSecondaryProcess, CompositionId:2612807d-91ad-4fb7-862a-8837681de508, OrderPos:2, IsNode:True, ParentCompositionId:ba012c45-5fe4-4584-94b8-14ba07209c06, IconName:Thin128, ExpandedIconName:Thin128, EnableAutoWidth:True) {
+						#layout(Caption:$Workplaces_Admin_Route_KrProcessButton, CompositionId:e32a37f9-f778-4d7a-9d55-eb958f18d4c5) {
+							#content {
+								#data_view(Alias:KrSecondaryProcesses, CompositionId:2612807d-91ad-4fb7-862a-8837681de508) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								4wAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAAAJUeXBlQWxpYXMAEwAAAEtyU2Vjb25kYXJ5UHJvY2VzcwAKRG9jVHlwZUlkZW50aWZpZXIAAklEUGFyYW0AGAAAAFNlY29uZGFyeVByb2Nlc3NJRFBhcmFtAAA=
+							}
+						}
+					}
+					#view(Alias:KrStageCommonMethods, Caption:$Workplaces_Admin_KrStageCommonMethods, CompositionId:9321c495-8051-40b0-9a0d-cdc94686cf1d, OrderPos:3, IsNode:True, ParentCompositionId:ba012c45-5fe4-4584-94b8-14ba07209c06, IconName:Thin93, ExpandedIconName:Thin93, EnableAutoWidth:True) {
+						#layout(Caption:KrStageCommonMethods, CompositionId:f800c538-2126-4d70-aad8-a2c1a4f8bc98) {
+							#content {
+								#data_view(Alias:KrStageCommonMethods, CompositionId:9321c495-8051-40b0-9a0d-cdc94686cf1d) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								2gAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAAAJUeXBlQWxpYXMAFAAAAEtyU3RhZ2VDb21tb25NZXRob2QACkRvY1R5cGVJZGVudGlmaWVyAAJJRFBhcmFtAA4AAABNZXRob2RJRFBhcmFtAAA=
+							}
+						}
+					}
+					#view(Alias:KrStageTypes, Caption:$Workplaces_Admin_Route_KrStageTypes, CompositionId:3d6eb971-dbfd-4b52-aeeb-3b78563e8b07, OrderPos:4, ShowMode:SelectionMode, IsNode:True, ParentCompositionId:ba012c45-5fe4-4584-94b8-14ba07209c06, IconName:Thin53, ExpandedIconName:Thin53, EnableAutoWidth:True) {
+						#layout(Caption:$Workplaces_Admin_Route_KrStageTypes, CompositionId:94f36fd1-ac89-40e8-9143-5cfd5298b10d) {
+							#content {
+								#data_view(Alias:KrStageTypes, CompositionId:3d6eb971-dbfd-4b52-aeeb-3b78563e8b07) 
+							}
+						}
+					}
+					#view(Alias:KrRouteModes, Caption:$Workplaces_Admin_Route_KrRouteModes, CompositionId:447583d7-3ee7-4f72-9b20-390e298e3757, OrderPos:5, ShowMode:SelectionMode, IsNode:True, ParentCompositionId:ba012c45-5fe4-4584-94b8-14ba07209c06, IconName:Thin53, ExpandedIconName:Thin53, EnableAutoWidth:True) {
+						#layout(Caption:KrRouteModes, CompositionId:a9e063c8-ee4b-4f2d-a710-c48f0692396e) {
+							#content {
+								#data_view(Alias:KrRouteModes, CompositionId:447583d7-3ee7-4f72-9b20-390e298e3757) 
+							}
+						}
+					}
+				}
+				#node(Caption:$Workplaces_Admin_BusinessProcesses, OrderPos:15, CompositionId:3398d530-b10b-4172-8515-7f8d6ea6d55b, ParentCompositionId:ee693038-a5aa-4c3f-aa54-c230b4960d3f) {
+					#view(Alias:BusinessProcessTemplates, Caption:$Workplaces_Admin_BusinessProcesses_BusinessProcessTemplates, CompositionId:c92225a7-4836-4b9f-a127-65e3d788d37d, IsNode:True, ParentCompositionId:3398d530-b10b-4172-8515-7f8d6ea6d55b, ExpandingMode:Expanded, IconName:Thin3, ExpandedIconName:Thin3, EnableAutoWidth:True) {
+						#layout(Caption:Бизнес-процессы, CompositionId:d738ba64-1e67-4c49-b6ac-74be40b9dbbc) {
+							#content {
+								#data_view(Alias:BusinessProcessTemplates, CompositionId:c92225a7-4836-4b9f-a127-65e3d788d37d) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								wwAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAAAJUeXBlQWxpYXMAGAAAAEJ1c2luZXNzUHJvY2Vzc1RlbXBsYXRlAApEb2NUeXBlSWRlbnRpZmllcgAA
+							}
+						}
+						#subset_settings(Alias:ByGroup, Visibility:OpenedAsDefault, CompositionId:f2451747-1a4c-48f9-8274-bf776a588d2b, Caption:$Views_BusinessProcessTemplates_Group, ParentCompositionId:c92225a7-4836-4b9f-a127-65e3d788d37d, ExpandingMode:Expanded, OrderPos:0) {}
+					}
+					#view(Alias:ActiveWorkflows, Caption:$Workplaces_Admin_BusinessProcesses_ActiveWorkflows, CompositionId:fc3ae81d-18a2-42dd-8d9f-95fb95141580, OrderPos:1, IsNode:True, ParentCompositionId:3398d530-b10b-4172-8515-7f8d6ea6d55b, IconName:Thin27, ExpandedIconName:Thin27, EnableAutoWidth:True) {
+						#layout(Caption:Бизнес-процессы, CompositionId:8b933545-9b99-49c1-a2dd-aff9f32b053a) {
+							#content {
+								#data_view(Alias:ActiveWorkflows, CompositionId:fc3ae81d-18a2-42dd-8d9f-95fb95141580) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Platform.Client.Cards.OpenWorkflowEditorOnDoubleClickExtension, Order:0) {}
+					}
+					#view(Alias:ErrorWorkflows, Caption:$Workplaces_Admin_BusinessProcesses_ErrorWorkflows, CompositionId:a45abf60-1aaf-48dc-a876-895e8d270138, OrderPos:2, IsNode:True, ParentCompositionId:3398d530-b10b-4172-8515-7f8d6ea6d55b, IconName:Thin221, ExpandedIconName:Thin221, EnableAutoWidth:True) {
+						#layout(SplitState:HorizontalSplit, Caption:Активные бизнес-процессы, CompositionId:d4524674-1247-4999-9a54-aded789559e4) {
+							#layout(CompositionId:e81a6bd0-89a6-4c7f-88b4-41b646aa361b) {
+								#content {
+									#data_view(Alias:ErrorWorkflows, CompositionId:a45abf60-1aaf-48dc-a876-895e8d270138) 
+								}
+							}
+							#layout(Caption:Ошибки процесса, CompositionId:cc11e17a-f2d5-44aa-b518-128de90a0929) {
+								#content {
+									#data_view(Alias:WorkflowEngineErrors, CompositionId:6ff652a3-683d-42ba-b09e-d904453d61fd) 
+								}
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Platform.Client.Cards.OpenWorkflowEditorOnDoubleClickExtension, Order:0) {}
+						#view(Alias:WorkflowEngineErrors, Caption:$Workplaces_Admin_BusinessProcesses_WorkflowEngineErrors, CompositionId:6ff652a3-683d-42ba-b09e-d904453d61fd, ParentCompositionId:a45abf60-1aaf-48dc-a876-895e8d270138, EnableAutoWidth:True) {
+							#master_link(SourceParam:ProcessInstance, LinkedColumn:ProcessRowID) 
+							#request_parameter {
+								#param(Alias:Active, Caption:$Views_WorkflowEngineErrors_ShowActiveOnly_Param, Multiple:True, Type:Boolean Not Null, RefSection:, ConvertToUtc:True, AllowedOperands:o, DisallowedOperands:o) {}
+								#request_criteria(Name:IsTrue) {}
+							}
+						}
+					}
+					#view(Alias:WorkflowEngineLinksTessaView, Caption:$Workplaces_Admin_BusinessProcesses_WorkflowEngineLinks, CompositionId:0806d04a-5ce0-4ca3-8632-c7f70e5bd6cf, OrderPos:3, ShowMode:SelectionMode, IsNode:True, ParentCompositionId:3398d530-b10b-4172-8515-7f8d6ea6d55b, IconName:Thin53, ExpandedIconName:Thin53, EnableAutoWidth:True) {
+						#layout(Caption:Доступные переходы, CompositionId:1ff6449a-a54e-43d8-96de-c67b3034396c) {
+							#content {
+								#data_view(Alias:WorkflowEngineLinksTessaView, CompositionId:0806d04a-5ce0-4ca3-8632-c7f70e5bd6cf) 
+							}
+						}
+					}
+					#view(Alias:WorkflowSignalTypes, Caption:$Workplaces_Admin_BusinessProcesses_SignalTypes, CompositionId:9cb16b7f-e9f6-4198-8bda-c35f8619ec8a, OrderPos:4, ShowMode:SelectionMode, IsNode:True, ParentCompositionId:3398d530-b10b-4172-8515-7f8d6ea6d55b, IconName:Thin53, ExpandedIconName:Thin53, EnableAutoWidth:True) {
+						#layout(Caption:Типы сигналов, CompositionId:5daa547e-90ec-4aab-a7ff-b251ad35ab77) {
+							#content {
+								#data_view(Alias:WorkflowSignalTypes, CompositionId:9cb16b7f-e9f6-4198-8bda-c35f8619ec8a) 
+							}
+						}
+					}
+					#view(Alias:WeTaskGroupActionOptionTypes, Caption:$Workplaces_Admin_BusinessProcesses_TaskGroupActionOptionTypes, CompositionId:eb614558-45c1-45ef-bd90-d8a89e1acbca, OrderPos:5, ShowMode:SelectionMode, IsNode:True, ParentCompositionId:3398d530-b10b-4172-8515-7f8d6ea6d55b, IconName:Thin53, ExpandedIconName:Thin53, EnableAutoWidth:True) {
+						#layout(Caption:Доступные переходы, CompositionId:f9cf191a-b0b3-4f71-b2bb-2cb57e6357b3) {
+							#content {
+								#data_view(Alias:WeTaskGroupActionOptionTypes, CompositionId:eb614558-45c1-45ef-bd90-d8a89e1acbca) 
+							}
+						}
+					}
+					#view(Alias:WorkflowEngineTileManagerExtensions, Caption:$Workplaces_Admin_BusinessProcesses_TileProcessExtensions, CompositionId:a6549508-4f31-456c-abe4-2bb82a0b6795, OrderPos:6, ShowMode:SelectionMode, IsNode:True, ParentCompositionId:3398d530-b10b-4172-8515-7f8d6ea6d55b, IconName:Thin53, ExpandedIconName:Thin53, EnableAutoWidth:True) {
+						#layout(Caption:Расширения для тайлов в процессах, CompositionId:ca6da9b0-aba0-4c93-8dc1-3fa85f6e7aab) {
+							#content {
+								#data_view(Alias:WorkflowEngineTileManagerExtensions, CompositionId:a6549508-4f31-456c-abe4-2bb82a0b6795) 
+							}
+						}
+					}
+					#view(Alias:WorkflowEngineCompiledBaseTypes, Caption:$Workplaces_Admin_BusinessProcesses_WorkflowBaseClasses, CompositionId:2bf9862f-6d64-4160-a5d6-a45e0606c196, OrderPos:7, ShowMode:SelectionMode, IsNode:True, ParentCompositionId:3398d530-b10b-4172-8515-7f8d6ea6d55b, IconName:Thin53, ExpandedIconName:Thin53, EnableAutoWidth:True) {
+						#layout(Caption:Базовые классы для процесса, CompositionId:40dec111-48ad-4c45-a0da-377bf5b75eef) {
+							#content {
+								#data_view(Alias:WorkflowEngineCompiledBaseTypes, CompositionId:2bf9862f-6d64-4160-a5d6-a45e0606c196) 
+							}
+						}
+					}
+				}
+				#node(Caption:$Workplaces_Admin_StandardSolution, OrderPos:16, CompositionId:c5fef909-8e24-4b57-b356-41c02f67681a, ParentCompositionId:ee693038-a5aa-4c3f-aa54-c230b4960d3f) {
+					#view(Alias:KrPermissions, Caption:$Workplaces_Admin_StandSol_AccessRules, CompositionId:5334e54a-e6f2-4ec8-b3da-b08fb381c900, IsNode:True, ParentCompositionId:c5fef909-8e24-4b57-b356-41c02f67681a, IconName:Thin431, ExpandedIconName:Thin431, MultiSelect:True, EnableAutoWidth:True) {
+						#layout(SplitState:HorizontalSplit, Caption:Правила доступа, CompositionId:66572754-d343-495c-98e9-dd31854c5c83) {
+							#layout(CompositionId:b11a3cc3-f23d-4c49-a4a8-528a72c83107) {
+								#content {
+									#data_view(Alias:KrPermissions, CompositionId:5334e54a-e6f2-4ec8-b3da-b08fb381c900) 
+								}
+							}
+							#layout(Caption:$Workplaces_Admin_StandSol_AccessRuleRoles, CompositionId:ff95eef3-171f-43db-af12-8f254af67c72) {
+								#content {
+									#layout(Caption:$Workplaces_Admin_StandSol_AccessRuleRoles, CompositionId:4b159d49-40c6-40d3-8da2-7bf454ebd163) {
+										#content {
+											#data_view(Alias:KrPermissionRoles, CompositionId:aeb2483a-c5a6-4cc9-974e-7d03f39281f4) 
+										}
+									}
+									#layout(Caption:$Workplaces_Admin_StandSol_AccessRuleStates, CompositionId:31fb11de-9f7f-4e57-b77b-fac8eee02713) {
+										#content {
+											#data_view(Alias:KrPermissionStates, CompositionId:88843584-48bb-4ec3-9fbe-20fd09eb459b) 
+										}
+									}
+									#layout(Caption:$Workplaces_Admin_StandSol_AccessRuleTypes, CompositionId:fba77f55-04cf-4c43-8846-6f64acaddfa4) {
+										#content {
+											#data_view(Alias:KrPermissionTypes, CompositionId:2968fda9-b3e4-454b-9c3d-8b9681122b83) 
+										}
+									}
+								}
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								1wAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAAAAAAJUeXBlQWxpYXMADgAAAEtyUGVybWlzc2lvbnMACkRvY1R5cGVJZGVudGlmaWVyAApJRFBhcmFtAAA=
+							}
+						}
+						#subset_settings(Alias:ByType, CompositionId:aedfad79-accd-4218-a0da-058d270cc69f, Caption:$Views_KrPermissions_ByType_Param, ParentCompositionId:5334e54a-e6f2-4ec8-b3da-b08fb381c900, ExpandingMode:Expanded, OrderPos:0) {}
+						#subset_settings(Alias:ByState, CompositionId:b9f923c6-d1b9-4ba0-aad3-763e7164c1de, Caption:$Views_KrPermissions_ByState_Param, ParentCompositionId:5334e54a-e6f2-4ec8-b3da-b08fb381c900, ExpandingMode:Expanded, OrderPos:1) {}
+						#subset_settings(Alias:ByRole, CompositionId:d5728adf-6b7b-463c-8769-a78801ba6deb, Caption:$Views_KrPermissions_ByRole_Param, ParentCompositionId:5334e54a-e6f2-4ec8-b3da-b08fb381c900, ExpandingMode:Expanded, OrderPos:2) {}
+						#subset_settings(Alias:ByPermission, CompositionId:b713d845-e9bb-4674-a9b3-24a1c26a71a1, Caption:$Views_KrPermissions_ByPermission_Param, ParentCompositionId:5334e54a-e6f2-4ec8-b3da-b08fb381c900, ExpandingMode:Expanded, OrderPos:3) {}
+						#view(Alias:KrPermissionRoles, Caption:$Workplaces_Admin_StandSol_AccessRuleRoles, CompositionId:aeb2483a-c5a6-4cc9-974e-7d03f39281f4, OrderPos:4, ParentCompositionId:5334e54a-e6f2-4ec8-b3da-b08fb381c900, EnableAutoWidth:True) {
+							#master_link(SourceParam:AccessRule, LinkedColumn:KrPermissionsID) 
+						}
+						#view(Alias:KrPermissionStates, Caption:$Workplaces_Admin_StandSol_AccessRuleStates, CompositionId:88843584-48bb-4ec3-9fbe-20fd09eb459b, OrderPos:5, ParentCompositionId:5334e54a-e6f2-4ec8-b3da-b08fb381c900, EnableAutoWidth:True) {
+							#master_link(SourceParam:AccessRule, LinkedColumn:KrPermissionsID) 
+						}
+						#view(Alias:KrPermissionTypes, Caption:$Workplaces_Admin_StandSol_AccessRuleTypes, CompositionId:2968fda9-b3e4-454b-9c3d-8b9681122b83, OrderPos:6, ParentCompositionId:5334e54a-e6f2-4ec8-b3da-b08fb381c900, EnableAutoWidth:True) {
+							#master_link(SourceParam:AccessRule, LinkedColumn:KrPermissionsID) 
+						}
+					}
+					#view(Alias:KrPermissions, Caption:$Workplaces_Admin_StandSol_ExtendedAccessRules, CompositionId:fcb9dbba-58e0-41b4-9f8b-6d493fc5e6cb, OrderPos:1, IsNode:True, ParentCompositionId:c5fef909-8e24-4b57-b356-41c02f67681a, IconName:Thin431, ExpandedIconName:Thin431, MultiSelect:True, EnableAutoWidth:True) {
+						#request_parameter {
+							#param(Alias:IsExtended, Caption:$Views_KrPermissions_UseExtendedSettings_Param, Multiple:True, Type:Boolean Not Null, RefSection:, ConvertToUtc:True, AllowedOperands:o IsFalse, DisallowedOperands:o IsFalse) {}
+							#request_criteria(Name:IsTrue) {}
+						}
+						#layout(SplitState:HorizontalSplit, CompositionId:df450fa4-3666-4b95-ad2a-8431c1756008) {
+							#layout(Caption:Правила доступа, CompositionId:118643ff-05ba-4816-9e4f-4395bf9861f8) {
+								#content {
+									#data_view(Alias:KrPermissions, CompositionId:fcb9dbba-58e0-41b4-9f8b-6d493fc5e6cb) 
+								}
+							}
+							#layout(Caption:Расширенные настройки прав доступа карточки, CompositionId:fea36780-9cee-4057-9b82-fb9b9ff41756) {
+								#content {
+									#layout(Caption:$Workplaces_Admin_StandSol_ExtendedAccessSettingsForCards, CompositionId:b2efe38f-09a9-46dc-b583-143d66236c10) {
+										#content {
+											#data_view(Alias:KrPermissionsExtendedCards, CompositionId:e769aeee-5e1d-4054-8bb6-9414e0644b0a) 
+										}
+									}
+									#layout(Caption:$Workplaces_Admin_StandSol_ExtendedAccessSettingsForTasks, CompositionId:04f2f9fc-aba1-44ce-a762-4a1570b198e9) {
+										#content {
+											#data_view(Alias:KrPermissionsExtendedTasks, CompositionId:51ff3a52-f3bf-4239-addf-00ad5239b0aa) 
+										}
+									}
+									#layout(Caption:$Workplaces_Admin_StandSol_ExtendedMandatorySettings, CompositionId:0bb0e236-da52-4665-8c75-ef4c90b6bf6e) {
+										#content {
+											#data_view(Alias:KrPermissionsExtendedMandatory, CompositionId:bc2aa3e2-8051-4a5f-86af-94202d828c4b) 
+										}
+									}
+									#layout(Caption:$Workplaces_Admin_StandSol_ExtendedVisibilitySettings, CompositionId:55bb5383-1897-416c-83fe-dc888c83886f) {
+										#content {
+											#data_view(Alias:KrPermissionsExtendedVisibility, CompositionId:d77d8644-2135-49e9-9317-b803bb6a8060) 
+										}
+									}
+									#layout(Caption:$Workplaces_Admin_StandSol_ExtendedFilesAccessSettings, CompositionId:27f0e173-7732-43cc-ac7e-95d85954e35e) {
+										#content {
+											#data_view(Alias:KrPermissionsExtendedFiles, CompositionId:5509aa17-eb56-4979-825f-22eac211a39d) 
+										}
+									}
+								}
+							}
+						}
+						#view(Alias:KrPermissionsExtendedCards, Caption:$Workplaces_Admin_StandSol_ExtendedAccessSettingsForCards, CompositionId:e769aeee-5e1d-4054-8bb6-9414e0644b0a, ParentCompositionId:fcb9dbba-58e0-41b4-9f8b-6d493fc5e6cb, EnableAutoWidth:True) {
+							#master_link(SourceParam:AccessRule, LinkedColumn:KrPermissionsID) 
+						}
+						#view(Alias:KrPermissionsExtendedTasks, Caption:$Workplaces_Admin_StandSol_ExtendedAccessSettingsForTasks, CompositionId:51ff3a52-f3bf-4239-addf-00ad5239b0aa, OrderPos:1, ParentCompositionId:fcb9dbba-58e0-41b4-9f8b-6d493fc5e6cb, EnableAutoWidth:True) {
+							#master_link(SourceParam:AccessRule, LinkedColumn:KrPermissionsID) 
+						}
+						#view(Alias:KrPermissionsExtendedCards, Caption:$Workplaces_Admin_StandSol_ExtendedAccessSettingsForCards, CompositionId:ffefb007-751c-4a2b-842f-dc531d8e26cc, OrderPos:2, IsNode:True, ParentCompositionId:fcb9dbba-58e0-41b4-9f8b-6d493fc5e6cb, IconName:Thin431, ExpandedIconName:Thin431, EnableAutoWidth:True) {
+							#layout(Caption:$Workplaces_Admin_StandSol_ExtendedAccessSettingsForCard, CompositionId:3bf0d066-50cc-4386-913d-f4cdfbb0d8a2) {
+								#content {
+									#data_view(Alias:KrPermissionsExtendedCards, CompositionId:ffefb007-751c-4a2b-842f-dc531d8e26cc) 
+								}
+							}
+						}
+						#view(Alias:KrPermissionsExtendedTasks, Caption:$Workplaces_Admin_StandSol_ExtendedAccessSettingsForTasks, CompositionId:18519939-3f50-4720-ac15-dde1a56205af, OrderPos:3, IsNode:True, ParentCompositionId:fcb9dbba-58e0-41b4-9f8b-6d493fc5e6cb, IconName:Thin431, ExpandedIconName:Thin431, EnableAutoWidth:True) {
+							#layout(Caption:$Workplaces_Admin_StandSol_ExtendedAccessSettingsForTasks, CompositionId:5015d844-70ff-438e-a3c1-407e389e4515) {
+								#content {
+									#data_view(Alias:KrPermissionsExtendedTasks, CompositionId:18519939-3f50-4720-ac15-dde1a56205af) 
+								}
+							}
+						}
+						#view(Alias:KrPermissionsExtendedMandatory, Caption:$Workplaces_Admin_StandSol_ExtendedMandatorySettings, CompositionId:bc2aa3e2-8051-4a5f-86af-94202d828c4b, OrderPos:4, ParentCompositionId:fcb9dbba-58e0-41b4-9f8b-6d493fc5e6cb, EnableAutoWidth:True) {
+							#master_link(SourceParam:AccessRule, LinkedColumn:KrPermissionsID) 
+						}
+						#view(Alias:KrPermissionsExtendedMandatory, Caption:$Workplaces_Admin_StandSol_ExtendedMandatorySettings, CompositionId:af4f8837-cd85-4ee5-8d6e-4579cb644bea, OrderPos:5, IsNode:True, ParentCompositionId:fcb9dbba-58e0-41b4-9f8b-6d493fc5e6cb, IconName:Thin431, ExpandedIconName:Thin431, EnableAutoWidth:True) {
+							#layout(Caption:$Workplaces_Admin_StandSol_ExtendedMandatorySettings, CompositionId:84cc004e-8311-4a09-9f5b-cc018ba8ae00) {
+								#content {
+									#data_view(Alias:KrPermissionsExtendedMandatory, CompositionId:af4f8837-cd85-4ee5-8d6e-4579cb644bea) 
+								}
+							}
+						}
+						#view(Alias:KrPermissionsExtendedVisibility, Caption:$Workplaces_Admin_StandSol_ExtendedVisibilitySettings, CompositionId:d77d8644-2135-49e9-9317-b803bb6a8060, OrderPos:6, ParentCompositionId:fcb9dbba-58e0-41b4-9f8b-6d493fc5e6cb, EnableAutoWidth:True) {
+							#master_link(SourceParam:AccessRule, LinkedColumn:KrPermissionsID) 
+						}
+						#view(Alias:KrPermissionsExtendedVisibility, Caption:$Workplaces_Admin_StandSol_ExtendedVisibilitySettings, CompositionId:20fb68c0-ca15-4290-8064-58cffbe106d2, OrderPos:7, IsNode:True, ParentCompositionId:fcb9dbba-58e0-41b4-9f8b-6d493fc5e6cb, IconName:Thin431, ExpandedIconName:Thin431, EnableAutoWidth:True) {
+							#layout(Caption:Расширенные настройки видимости, CompositionId:47c106d3-64b2-41a5-8889-ef22b33b24b4) {
+								#content {
+									#data_view(Alias:KrPermissionsExtendedVisibility, CompositionId:20fb68c0-ca15-4290-8064-58cffbe106d2) 
+								}
+							}
+						}
+						#view(Alias:KrPermissionsExtendedFiles, Caption:$Workplaces_Admin_StandSol_ExtendedFilesAccessSettings, CompositionId:5509aa17-eb56-4979-825f-22eac211a39d, OrderPos:8, ParentCompositionId:fcb9dbba-58e0-41b4-9f8b-6d493fc5e6cb, EnableAutoWidth:True) {
+							#master_link(SourceParam:AccessRule, LinkedColumn:KrPermissionsID) 
+						}
+						#view(Alias:KrPermissionsExtendedFiles, Caption:$Workplaces_Admin_StandSol_ExtendedFilesAccessSettings, CompositionId:b0f2988c-91c5-4f02-9fdb-88da92618c72, OrderPos:9, IsNode:True, ParentCompositionId:fcb9dbba-58e0-41b4-9f8b-6d493fc5e6cb, IconName:Thin431, ExpandedIconName:Thin431, EnableAutoWidth:True) {
+							#layout(Caption:$Workplaces_Admin_StandSol_ExtendedFilesAccessSettings, CompositionId:cd135e79-cfa1-4b1d-a6c1-2eb8cb48af59) {
+								#content {
+									#data_view(Alias:KrPermissionsExtendedFiles, CompositionId:b0f2988c-91c5-4f02-9fdb-88da92618c72) 
+								}
+							}
+						}
+					}
+					#view(Alias:ReportCurrentTasksRules, Caption:$Workplaces_Admin_Misc_CurrentTasksReportRules, CompositionId:69010f11-54ba-4ebf-800b-ab32f75bfede, OrderPos:2, IsNode:True, ParentCompositionId:c5fef909-8e24-4b57-b356-41c02f67681a, IconName:Thin344, ExpandedIconName:Thin344, MultiSelect:True, EnableAutoWidth:True) {
+						#layout(Caption:$Workplaces_Admin_Misc_CurrentTasksReportRules, CompositionId:171ad542-1b15-41fa-b5c9-29dbf932a19c) {
+							#content {
+								#data_view(Alias:ReportCurrentTasksRules, CompositionId:69010f11-54ba-4ebf-800b-ab32f75bfede) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								2wAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAQAAAAJUeXBlQWxpYXMAEgAAAFJlcG9ydFBlcm1pc3Npb25zAApEb2NUeXBlSWRlbnRpZmllcgAKSURQYXJhbQAA
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Platform.Client.Cards.OpenInModalDialogOnDoubleClickExtension, Order:1) {}
+					}
+					#view(Alias:KrDocTypes, Caption:$Workplaces_Admin_StandSol_DocumentTypes, CompositionId:1024c587-9a93-4b7f-9123-5d78d2f8696a, OrderPos:3, IsNode:True, ParentCompositionId:c5fef909-8e24-4b57-b356-41c02f67681a, IconName:Int1029, ExpandedIconName:Int1029, MultiSelect:True, EnableAutoWidth:True) {
+						#layout(Caption:Типы документов \(подтипы\), CompositionId:4ce56fca-c798-4eb3-8e6f-49fa7db86a5d) {
+							#content {
+								#data_view(Alias:KrDocTypes, CompositionId:1024c587-9a93-4b7f-9123-5d78d2f8696a) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								0wAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAAAAAAJUeXBlQWxpYXMACgAAAEtyRG9jVHlwZQAKRG9jVHlwZUlkZW50aWZpZXIACklEUGFyYW0AAA==
+							}
+						}
+					}
+					#view(Alias:DocumentCategories, Caption:$Workplaces_User_Dictionaries_DocumentCategories, CompositionId:928b78f3-0ac4-4e66-90ac-9a04a4e67b3f, OrderPos:4, ShowMode:NormalMode, IsNode:True, ParentCompositionId:c5fef909-8e24-4b57-b356-41c02f67681a, IconName:Thin63, ExpandedIconName:Thin63, EnableAutoWidth:True) {
+						#layout(Caption:Валюты, CompositionId:1ffb4401-c838-41bf-80de-0b6dd68fd8ab) {
+							#content {
+								#data_view(Alias:DocumentCategories, CompositionId:928b78f3-0ac4-4e66-90ac-9a04a4e67b3f) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								2gAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAQAAAAJUeXBlQWxpYXMAEQAAAERvY3VtZW50Q2F0ZWdvcnkACkRvY1R5cGVJZGVudGlmaWVyAApJRFBhcmFtAAA=
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Platform.Client.Cards.OpenInModalDialogOnDoubleClickExtension, Order:1) {}
+					}
+					#view(Alias:KrDocStateCards, Caption:$Workplaces_Admin_StandSol_DocumentStates, CompositionId:be93b441-64a0-4dde-a567-b5fb616e3d34, OrderPos:5, ShowMode:NormalMode, IsNode:True, ParentCompositionId:c5fef909-8e24-4b57-b356-41c02f67681a, IconName:Thin127, ExpandedIconName:Thin127, EnableAutoWidth:True) {
+						#layout(Caption:$Workplaces_Admin_StandSol_DocumentStates, CompositionId:a13dc120-ebe9-4081-a8cf-a586ec38779a) {
+							#content {
+								#data_view(Alias:KrDocStateCards, CompositionId:be93b441-64a0-4dde-a567-b5fb616e3d34) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Cards.OpenFromKrDocStatesOnDoubleClickExtension, Order:0) {}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:1) {
+							#extension_settings {
+								1AAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAQAAAAJUeXBlQWxpYXMACwAAAEtyRG9jU3RhdGUACkRvY1R5cGVJZGVudGlmaWVyAApJRFBhcmFtAAA=
+							}
+						}
+					}
+					#view(Alias:TaskKinds, Caption:$Workplaces_Admin_StandSol_TaskKinds, CompositionId:ad905524-5518-4bee-826f-6c6ce03fd952, OrderPos:6, ShowMode:NormalMode, IsNode:True, ParentCompositionId:c5fef909-8e24-4b57-b356-41c02f67681a, IconName:Thin91, ExpandedIconName:Thin91, MultiSelect:True, EnableAutoWidth:True) {
+						#layout(Caption:$Workplaces_Admin_StandSol_TaskKinds, CompositionId:5244c1fa-4fea-4c42-81c1-acf135e06624) {
+							#content {
+								#data_view(Alias:TaskKinds, CompositionId:ad905524-5518-4bee-826f-6c6ce03fd952) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								0gAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAQAAAAJUeXBlQWxpYXMACQAAAFRhc2tLaW5kAApEb2NUeXBlSWRlbnRpZmllcgAKSURQYXJhbQAA
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Platform.Client.Cards.OpenInModalDialogOnDoubleClickExtension, Order:1) {}
+					}
+					#view(Alias:TaskHistoryGroupTypes, Caption:$Workplaces_Admin_StandSol_TaskHistoryGroupTypes, CompositionId:910544f6-56d2-465d-ae71-7081a42c8896, OrderPos:7, IsNode:True, ParentCompositionId:c5fef909-8e24-4b57-b356-41c02f67681a, IconName:Thin20, ExpandedIconName:Thin20, EnableAutoWidth:True) {
+						#layout(Caption:$Workplaces_Admin_StandSol_TaskHistoryGroupTypes, CompositionId:e7b9b4c0-6c1b-4160-88fe-e97c61763418) {
+							#content {
+								#data_view(Alias:TaskHistoryGroupTypes, CompositionId:910544f6-56d2-465d-ae71-7081a42c8896) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								3gAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAQAAAAJUeXBlQWxpYXMAFQAAAFRhc2tIaXN0b3J5R3JvdXBUeXBlAApEb2NUeXBlSWRlbnRpZmllcgAKSURQYXJhbQAA
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Platform.Client.Cards.OpenInModalDialogOnDoubleClickExtension, Order:1) {}
+					}
+					#view(Alias:Notifications, Caption:$Workplaces_Admin_Notifications, CompositionId:b72d6fec-e6a9-4290-86a1-66dee4846d1b, OrderPos:8, ShowMode:NormalMode, IsNode:True, ParentCompositionId:c5fef909-8e24-4b57-b356-41c02f67681a, IconName:Thin11, ExpandedIconName:Thin11, EnableAutoWidth:True) {
+						#layout(Caption:$Workplaces_Admin_Notifications, CompositionId:d29cd58c-817b-49b2-9d59-f216219b5fcc) {
+							#content {
+								#data_view(Alias:Notifications, CompositionId:b72d6fec-e6a9-4290-86a1-66dee4846d1b) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								1gAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAAAAAAJUeXBlQWxpYXMADQAAAE5vdGlmaWNhdGlvbgAKRG9jVHlwZUlkZW50aWZpZXIACklEUGFyYW0AAA==
+							}
+						}
+						#subset_settings(Alias:ByNotificationType, Visibility:OpenedAsDefault, CompositionId:464d182e-eea5-4d8f-bb0a-6ff2d7b82588, Caption:$Views_Notifications_ByNotificationType, ParentCompositionId:b72d6fec-e6a9-4290-86a1-66dee4846d1b, ExpandingMode:Expanded, OrderPos:0) {}
+					}
+					#view(Alias:NotificationTypes, Caption:$Workplaces_Admin_NotificationTypes, CompositionId:86da3e5a-ad75-4340-8e04-47b964165e08, OrderPos:9, ShowMode:NormalMode, IsNode:True, ParentCompositionId:c5fef909-8e24-4b57-b356-41c02f67681a, IconName:Thin11, ExpandedIconName:Thin11, EnableAutoWidth:True) {
+						#request_parameter {
+							#param(Alias:ShowHidden, Caption:$Views_NotificationTypes_ShowHidden_Param, Hidden:True, Multiple:True, Type:Boolean Not Null, RefSection:, ConvertToUtc:True, AllowedOperands:o, DisallowedOperands:o) {}
+							#request_criteria(Name:IsTrue) {}
+						}
+						#layout(Caption:$Workplaces_Admin_NotificationTypes, CompositionId:74a8be17-bdc1-4db3-9160-fb88ae3c71f4) {
+							#content {
+								#data_view(Alias:NotificationTypes, CompositionId:86da3e5a-ad75-4340-8e04-47b964165e08) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								2gAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAQAAAAJUeXBlQWxpYXMAEQAAAE5vdGlmaWNhdGlvblR5cGUACkRvY1R5cGVJZGVudGlmaWVyAApJRFBhcmFtAAA=
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Platform.Client.Cards.OpenInModalDialogOnDoubleClickExtension, Order:1) {}
+					}
+					#view(Alias:ConditionTypes, Caption:$Workplaces_Admin_ConditionTypes, CompositionId:519c2a4e-d881-4776-b480-3adffe0e71ae, OrderPos:10, ShowMode:NormalMode, IsNode:True, ParentCompositionId:c5fef909-8e24-4b57-b356-41c02f67681a, IconName:Thin11, ExpandedIconName:Thin11, EnableAutoWidth:True) {
+						#layout(Caption:Типы, CompositionId:cc81380d-aad9-4bb5-8e48-4b74394e3b0d) {
+							#content {
+								#data_view(Alias:ConditionTypes, CompositionId:519c2a4e-d881-4776-b480-3adffe0e71ae) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								1wAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAAAAAAJUeXBlQWxpYXMADgAAAENvbmRpdGlvblR5cGUACkRvY1R5cGVJZGVudGlmaWVyAApJRFBhcmFtAAA=
+							}
+						}
+					}
+					#view(Alias:KrTypes, Caption:$Workplaces_Admin_StandSol_Types, CompositionId:094244ec-671e-4dac-9c7d-ee7065088636, OrderPos:11, ShowMode:SelectionMode, IsNode:True, ParentCompositionId:c5fef909-8e24-4b57-b356-41c02f67681a, IconName:Thin53, ExpandedIconName:Thin53, MultiSelect:False, EnableAutoWidth:True) {
+						#layout(Caption:Типы карточек, CompositionId:45bec7d2-6fd5-45f3-9fa9-35e36797a33b) {
+							#content {
+								#data_view(Alias:KrTypes, CompositionId:094244ec-671e-4dac-9c7d-ee7065088636) 
+							}
+						}
+					}
+					#view(Alias:KrTypesForPermissionsExtension, Caption:$Workplaces_Admin_StandSol_Types, CompositionId:e585466d-d3b8-4973-9f32-e242c46815bc, OrderPos:12, ShowMode:SelectionMode, IsNode:True, ParentCompositionId:c5fef909-8e24-4b57-b356-41c02f67681a, IconName:Thin53, ExpandedIconName:Thin53, MultiSelect:False, EnableAutoWidth:True) {
+						#layout(Caption:$Workplaces_Admin_StandSol_Types, CompositionId:0e38ee7e-67be-482f-8a3c-5a30ff354e00) {
+							#content {
+								#data_view(Alias:KrTypesForPermissionsExtension, CompositionId:e585466d-d3b8-4973-9f32-e242c46815bc) 
+							}
+						}
+					}
+					#view(Alias:BarcodeTypes, Caption:$Views_BarcodeTypes_Caption, CompositionId:b6e66463-b6e8-49d7-9346-63b56dbb2e5f, OrderPos:13, ShowMode:SelectionMode, IsNode:True, ParentCompositionId:c5fef909-8e24-4b57-b356-41c02f67681a, IconName:Thin53, ExpandedIconName:Thin53, EnableAutoWidth:True) {
+						#layout(Caption:Типы штрих-кодов, CompositionId:00ba3f52-d677-4a26-9cef-9abe42da52c0) {
+							#content {
+								#data_view(Alias:BarcodeTypes, CompositionId:b6e66463-b6e8-49d7-9346-63b56dbb2e5f) 
+							}
+						}
+					}
+					#view(Alias:KrPermissionFlags, Caption:$Workplaces_Admin_StandSol_Permissions, CompositionId:659e3327-23b5-4b34-9280-e59555651183, OrderPos:14, ShowMode:SelectionMode, IsNode:True, ParentCompositionId:c5fef909-8e24-4b57-b356-41c02f67681a, IconName:Thin431, ExpandedIconName:Thin431, MultiSelect:False, EnableAutoWidth:True) {
+						#layout(Caption:Разрешения, CompositionId:6cf26f75-4239-4103-92fd-8f6f66ed252f) {
+							#content {
+								#data_view(Alias:KrPermissionFlags, CompositionId:659e3327-23b5-4b34-9280-e59555651183) 
+							}
+						}
+					}
+					#view(Alias:KrVirtualFiles, Caption:$Workplaces_Admin_VirtualFiles, CompositionId:4927cebb-f641-4faf-a633-7929f14ac260, OrderPos:15, IsNode:True, ParentCompositionId:c5fef909-8e24-4b57-b356-41c02f67681a, IconName:Thin87, ExpandedIconName:Thin87, EnableAutoWidth:True) {
+						#layout(Caption:Виртуальные файлы, CompositionId:3142a1f0-6113-4bc4-8adf-e865cec21428) {
+							#content {
+								#data_view(Alias:KrVirtualFiles, CompositionId:4927cebb-f641-4faf-a633-7929f14ac260) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								1wAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAAAAAAJUeXBlQWxpYXMADgAAAEtyVmlydHVhbEZpbGUACkRvY1R5cGVJZGVudGlmaWVyAApJRFBhcmFtAAA=
+							}
+						}
+					}
+				}
+				#node(Caption:$Workplaces_Admin_ViewExtensions, OrderPos:17, CompositionId:f240beac-7e75-4651-baf3-02bc5a0a2d98, ParentCompositionId:ee693038-a5aa-4c3f-aa54-c230b4960d3f) {
+					#view(Alias:Cars, Caption:$Workplaces_Admin_Misc_Cars, CompositionId:23d03a10-e610-442d-9e8d-714ff05829f4, ShowMode:NormalMode, IsNode:True, ParentCompositionId:f240beac-7e75-4651-baf3-02bc5a0a2d98, MultiSelect:True, EnableAutoWidth:True) {
+						#layout(Caption:Автомобили, CompositionId:64b69923-a5ae-4178-b395-f3fb09e789ea) {
+							#content {
+								#data_view(Alias:Cars, CompositionId:23d03a10-e610-442d-9e8d-714ff05829f4) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								zQAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAAAAAAJUeXBlQWxpYXMABAAAAENhcgAKRG9jVHlwZUlkZW50aWZpZXIACklEUGFyYW0AAA==
+							}
+						}
+					}
+					#view(Alias:TransientViewExample, Caption:$Workplaces_Admin_ViewExtensions_Generator, CompositionId:4ee5e990-6fb1-4ab4-9462-9b4e0cb051d7, OrderPos:1, ShowMode:NormalMode, IsNode:True, ParentCompositionId:f240beac-7e75-4651-baf3-02bc5a0a2d98, EnableAutoWidth:True) {
+						#layout(Caption:Генератор, CompositionId:3479104c-ac20-4295-bcd8-a0b53f06b8f4) {
+							#content {
+								#data_view(Alias:TransientViewExample, CompositionId:4ee5e990-6fb1-4ab4-9462-9b4e0cb051d7) 
+							}
+						}
+					}
+					#view(Alias:ViewFiles, Caption:$Workplaces_Admin_ViewExtensions_FilesList, CompositionId:126e2e0a-187f-4022-ae98-22b6b2d8e578, OrderPos:2, ShowMode:NormalMode, IsNode:True, ParentCompositionId:f240beac-7e75-4651-baf3-02bc5a0a2d98, MultiSelect:False, EnableAutoWidth:True) {
+						#layout(SplitState:HorizontalSplit, Caption:Список файлов, CompositionId:14d3a987-7d61-4e08-9076-b27f59ea7048) {
+							#layout(CompositionId:3fb35a89-4427-4129-b8d3-8b1860b1de73) {
+								#content {
+									#data_view(Alias:ViewFiles, CompositionId:126e2e0a-187f-4022-ae98-22b6b2d8e578) 
+								}
+							}
+							#layout(Caption:GetFileNameView, CompositionId:c3c580bf-a698-485c-8bd9-50d3e929ada9) {
+								#content {
+									#data_view(Alias:GetFileNameView, CompositionId:17aa88bd-0c1f-41a8-87d6-91673749d7ac) 
+								}
+							}
+						}
+						#subset_settings(Alias:ByFolder, CompositionId:d4387df2-7c7a-4e64-9a0f-cdbc50f3c2f4, Caption:$Workplaces_Admin_ViewExtensions_FilesList_ByFolder, ParentCompositionId:126e2e0a-187f-4022-ae98-22b6b2d8e578, ExpandingMode:Expanded, OrderPos:0) {}
+						#view(Alias:GetFileNameView, Caption:GetFileNameView, CompositionId:17aa88bd-0c1f-41a8-87d6-91673749d7ac, OrderPos:1, ParentCompositionId:126e2e0a-187f-4022-ae98-22b6b2d8e578, EnableAutoWidth:True) {
+							#master_link(SourceParam:FileName, LinkedColumn:FullFileName) 
+							#extension(TypeName:Tessa.Extensions.Default.Client.Views.PreviewExtension, Order:0) {}
+						}
+					}
+				}
+				#node(Caption:$Workplaces_Admin_Misc, OrderPos:18, CompositionId:5226f62c-9512-46bf-89d9-2cb8ce02a660, ParentCompositionId:ee693038-a5aa-4c3f-aa54-c230b4960d3f) {
+					#view(Alias:FileTemplates, Caption:$Workplaces_Admin_Misc_FileTemplates, CompositionId:0d78f140-50b8-4858-9d20-5fd0bce49fd0, IsNode:True, ParentCompositionId:5226f62c-9512-46bf-89d9-2cb8ce02a660, IconName:Thin2, ExpandedIconName:Thin2, MultiSelect:True, EnableAutoWidth:True) {
+						#layout(Caption:Шаблоны файлов, CompositionId:98274b4f-9557-47f8-b278-3b64ba99cba2) {
+							#content {
+								#data_view(Alias:FileTemplates, CompositionId:0d78f140-50b8-4858-9d20-5fd0bce49fd0) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								1gAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAAAAAAJUeXBlQWxpYXMADQAAAEZpbGVUZW1wbGF0ZQAKRG9jVHlwZUlkZW50aWZpZXIACklEUGFyYW0AAA==
+							}
+						}
+					}
+					#view(Alias:PnrKaFileCategories, Caption:Все категории, CompositionId:8bcaef7a-0352-4523-8992-7bbae327d7b0, OrderPos:1, IsNode:True, ParentCompositionId:5226f62c-9512-46bf-89d9-2cb8ce02a660, IconName:Thin20, ExpandedIconName:Thin20, EnableAutoWidth:True) {
+						#layout(Caption:Все категории, CompositionId:7751b320-bdac-4e6b-89f9-e972fb60ff0c) {
+							#content {
+								#data_view(Alias:PnrKaFileCategories, CompositionId:8bcaef7a-0352-4523-8992-7bbae327d7b0) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								1gAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAQAAAAJUeXBlQWxpYXMADQAAAEZpbGVDYXRlZ29yeQAKRG9jVHlwZUlkZW50aWZpZXIACklEUGFyYW0AAA==
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Platform.Client.Cards.OpenInModalDialogOnDoubleClickExtension, Order:1) {}
+					}
+					#view(Alias:PnrCardCategories, Caption:Категории карточек, CompositionId:e7632586-7fc6-4100-aeb6-67f744a0256f, OrderPos:2, IsNode:True, ParentCompositionId:5226f62c-9512-46bf-89d9-2cb8ce02a660, IconName:Thin20, ExpandedIconName:Thin20, EnableAutoWidth:True) {
+						#layout(Caption:Все категории, CompositionId:1a0ec9dd-482e-4c6e-9775-e62a9b0ad01f) {
+							#content {
+								#data_view(Alias:PnrCardCategories, CompositionId:e7632586-7fc6-4100-aeb6-67f744a0256f) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								2QAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAQAAAAJUeXBlQWxpYXMAEAAAAFBuckZpbGVDYXRlZ29yeQAKRG9jVHlwZUlkZW50aWZpZXIACklEUGFyYW0AAA==
+							}
+						}
+					}
+					#view(Alias:Sequences, Caption:$Workplaces_Admin_Misc_Sequences, CompositionId:80e40fa7-2df6-4af7-8b12-a42b5440a24e, OrderPos:3, IsNode:True, ParentCompositionId:5226f62c-9512-46bf-89d9-2cb8ce02a660, IconName:Thin164, ExpandedIconName:Thin164, MultiSelect:True, EnableAutoWidth:True) {
+						#layout(Caption:Последовательности, CompositionId:55b58812-0344-4be9-988f-21c971f411e1) {
+							#content {
+								#data_view(Alias:Sequences, CompositionId:80e40fa7-2df6-4af7-8b12-a42b5440a24e) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								0gAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAQAAAAJUeXBlQWxpYXMACQAAAFNlcXVlbmNlAApEb2NUeXBlSWRlbnRpZmllcgAKSURQYXJhbQAA
+							}
+						}
+					}
+					#view(Alias:Deleted, Caption:$Workplaces_Admin_Misc_DeletedCards, CompositionId:df7da62c-6986-4796-9aef-8d27ea4244a1, OrderPos:4, ShowMode:NormalMode, IsNode:True, ParentCompositionId:5226f62c-9512-46bf-89d9-2cb8ce02a660, IconName:Thin58, ExpandedIconName:Thin58, MultiSelect:True, EnableAutoWidth:True) {
+						#layout(Caption:Удалённые карточки, CompositionId:1b52beb9-2898-4cb3-b1ad-146f569248db) {
+							#content {
+								#data_view(Alias:Deleted, CompositionId:df7da62c-6986-4796-9aef-8d27ea4244a1) 
+							}
+						}
+					}
+					#view(Alias:ActionHistory, Caption:$Workplaces_Admin_Misc_ActionHistory, CompositionId:5b8b9296-96a9-4ed7-a8e8-e92849633d18, OrderPos:5, ShowMode:NormalMode, IsNode:True, ParentCompositionId:5226f62c-9512-46bf-89d9-2cb8ce02a660, IconName:Thin61, ExpandedIconName:Thin61, MultiSelect:False, EnableAutoWidth:True) {
+						#layout(Caption:История действий, CompositionId:31606bc2-3390-4d5b-a26a-704359612357) {
+							#content {
+								#data_view(Alias:ActionHistory, CompositionId:5b8b9296-96a9-4ed7-a8e8-e92849633d18) 
+							}
+						}
+					}
+					#view(Alias:Errors, Caption:$Workplaces_Admin_Misc_Errors, CompositionId:3da8c589-5502-43cb-a94e-bed07fd0e2a9, OrderPos:6, IsNode:True, ParentCompositionId:5226f62c-9512-46bf-89d9-2cb8ce02a660, IconName:Thin221, ExpandedIconName:Thin221, EnableAutoWidth:True) {
+						#layout(Caption:$Workplaces_Admin_Misc_Errors, CompositionId:4878a8ae-43d7-4801-98dd-5139c4fd14cf) {
+							#content {
+								#data_view(Alias:Errors, CompositionId:3da8c589-5502-43cb-a94e-bed07fd0e2a9) 
+							}
+						}
+					}
+					#view(Alias:Operations, Caption:$Workplaces_Admin_Misc_ActiveOperations, CompositionId:4c7f58c3-b6e3-47b7-b482-abde0acedef2, OrderPos:7, ShowMode:NormalMode, IsNode:True, ParentCompositionId:5226f62c-9512-46bf-89d9-2cb8ce02a660, IconName:Thin27, ExpandedIconName:Thin27, EnableAutoWidth:True) {
+						#layout(Caption:Активные операции, CompositionId:952c8ea6-50d8-45af-a43e-c94d88c63b50) {
+							#content {
+								#data_view(Alias:Operations, CompositionId:4c7f58c3-b6e3-47b7-b482-abde0acedef2) 
+							}
+						}
+					}
+					#view(Alias:RoleGenerators, Caption:$Workplaces_Admin_Misc_MetarolesGenerators, CompositionId:4a8562bc-2c9b-4140-aa27-2fd35db889c6, OrderPos:8, IsNode:True, ParentCompositionId:5226f62c-9512-46bf-89d9-2cb8ce02a660, IconName:Thin200, ExpandedIconName:Thin200, MultiSelect:True, EnableAutoWidth:True) {
+						#layout(SplitState:HorizontalSplit, Caption:Генераторы метаролей, CompositionId:5bb1bce8-c25d-46fe-b588-10ec92c78793) {
+							#layout(CompositionId:36842494-eec3-406f-8c40-58de82323f92) {
+								#content {
+									#data_view(Alias:RoleGenerators, CompositionId:4a8562bc-2c9b-4140-aa27-2fd35db889c6) 
+								}
+							}
+							#layout(Caption:$Workplaces_Admin_Roles, CompositionId:db2ea2f6-8633-4c7c-89fd-a8d9f84e2776) {
+								#content {
+									#data_view(Alias:Roles, CompositionId:d9c3689a-4853-4453-a7f5-2aa6694f4f96) 
+								}
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								3AAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAAAAAAJUeXBlQWxpYXMADgAAAFJvbGVHZW5lcmF0b3IACkRvY1R5cGVJZGVudGlmaWVyAAJJRFBhcmFtAAEAAAAAAA==
+							}
+						}
+						#view(Alias:Roles, Caption:$Workplaces_Admin_Roles, CompositionId:d9c3689a-4853-4453-a7f5-2aa6694f4f96, ParentCompositionId:4a8562bc-2c9b-4140-aa27-2fd35db889c6, EnableAutoWidth:True) {
+							#master_link(SourceParam:GeneratorID, LinkedColumn:GeneratorID) 
+						}
+					}
+					#view(Alias:CompletionOptionCards, Caption:$Workplaces_Admin_Misc_CompletionOptions, CompositionId:74422c74-d416-43f4-bd71-9a4d36f1947b, OrderPos:9, ShowMode:NormalMode, IsNode:True, ParentCompositionId:5226f62c-9512-46bf-89d9-2cb8ce02a660, IconName:Thin128, ExpandedIconName:Thin128, EnableAutoWidth:True) {
+						#layout(Caption:Варианты завершения, CompositionId:e8f3d87f-228e-4512-a2eb-14d3f1f79191) {
+							#content {
+								#data_view(Alias:CompletionOptionCards, CompositionId:74422c74-d416-43f4-bd71-9a4d36f1947b) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:1) {
+							#extension_settings {
+								5wAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAQAAAAJUeXBlQWxpYXMAEQAAAENvbXBsZXRpb25PcHRpb24ACkRvY1R5cGVJZGVudGlmaWVyAAJJRFBhcmFtAAkAAABPcHRpb25JRAAA
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Platform.Client.Cards.OpenFromCompletionOptionsOnDoubleClickExtension, Order:0) {}
+					}
+					#view(Alias:FunctionRoleCards, Caption:$Workplaces_Admin_Misc_FunctionRoles, CompositionId:f4b07b4a-22e2-4893-b8d4-fba98b780778, OrderPos:10, ShowMode:NormalMode, IsNode:True, ParentCompositionId:5226f62c-9512-46bf-89d9-2cb8ce02a660, IconName:Thin195, ExpandedIconName:Thin195, EnableAutoWidth:True) {
+						#layout(Caption:$Workplaces_Admin_Misc_FunctionRoles, CompositionId:42805bf1-9e66-4ca0-a596-aa30cf5fd7b9) {
+							#content {
+								#data_view(Alias:FunctionRoleCards, CompositionId:f4b07b4a-22e2-4893-b8d4-fba98b780778) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Platform.Client.Cards.OpenFromFunctionRolesOnDoubleClickExtension, Order:0) {}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:1) {
+							#extension_settings {
+								6QAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAQAAABBDYXJkT3BlbmluZ0tpbmQAAQAAAAJUeXBlQWxpYXMADQAAAEZ1bmN0aW9uUm9sZQAKRG9jVHlwZUlkZW50aWZpZXIAAklEUGFyYW0ADwAAAEZ1bmN0aW9uUm9sZUlEAAA=
+							}
+						}
+					}
+					#view(Alias:Applications, Caption:$Workplaces_Admin_Misc_Applications, CompositionId:ad74839e-3264-4e94-b232-90e01d82577a, OrderPos:11, IsNode:True, ParentCompositionId:5226f62c-9512-46bf-89d9-2cb8ce02a660, IconName:Thin172, ExpandedIconName:Thin172, MultiSelect:True, EnableAutoWidth:True) {
+						#layout(Caption:Applications, CompositionId:9d38e82b-65f2-427f-aae5-50548bb58883) {
+							#content {
+								#data_view(Alias:Applications, CompositionId:ad74839e-3264-4e94-b232-90e01d82577a) 
+							}
+						}
+					}
+					#view(Alias:Views, Caption:$Workplaces_User_Dictionaries_Views, CompositionId:7df9ef3b-3e4a-4e1d-b5c4-c4cf10fa4dd5, OrderPos:12, ShowMode:NormalMode, IsNode:True, ParentCompositionId:5226f62c-9512-46bf-89d9-2cb8ce02a660, IconName:Thin426, ExpandedIconName:Thin426, EnableAutoWidth:True) {
+						#layout(Caption:Представления, CompositionId:2b26020b-71ec-4c96-9e9c-daa4397c866f) {
+							#content {
+								#data_view(Alias:Views, CompositionId:7df9ef3b-3e4a-4e1d-b5c4-c4cf10fa4dd5) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Platform.Client.Cards.OpenFromViewsOnDoubleClickExtension, Order:0) {}
+					}
+					#view(Alias:Workplaces, Caption:$Workplaces_Workplaces, CompositionId:a68f7198-3862-43b7-8519-4c0e7bad1716, OrderPos:13, ShowMode:NormalMode, IsNode:True, ParentCompositionId:5226f62c-9512-46bf-89d9-2cb8ce02a660, IconName:Thin340, ExpandedIconName:Thin340, EnableAutoWidth:True) {
+						#layout(Caption:Рабочие места, CompositionId:3744e8a8-b999-441a-8a52-5f5d0b5f877d) {
+							#content {
+								#data_view(Alias:Workplaces, CompositionId:a68f7198-3862-43b7-8519-4c0e7bad1716) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Platform.Client.Cards.OpenFromWorkplacesOnDoubleClickExtension, Order:0) {}
+					}
+					#view(Alias:Currencies, Caption:$Workplaces_User_Dictionaries_Currencies, CompositionId:8f9c79f5-a303-4fa6-a016-6973416c1eb5, OrderPos:14, ShowMode:NormalMode, IsNode:True, ParentCompositionId:5226f62c-9512-46bf-89d9-2cb8ce02a660, IconName:Thin151, ExpandedIconName:Thin151, MultiSelect:True, EnableAutoWidth:True) {
+						#layout(Caption:Валюты, CompositionId:97c18de8-61f3-46b1-975f-3ecf5687fcda) {
+							#content {
+								#data_view(Alias:Currencies, CompositionId:8f9c79f5-a303-4fa6-a016-6973416c1eb5) 
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Default.Client.Views.CreateCardExtension, Order:0) {
+							#extension_settings {
+								xQAAAAIkdHlwZQBjAAAAVGVzc2EuRXh0ZW5zaW9ucy5EZWZhdWx0LlNoYXJlZC5WaWV3cy5DcmVhdGVDYXJkRXh0ZW5zaW9uU2V0dGluZ3MsIFRlc3NhLkV4dGVuc2lvbnMuRGVmYXVsdC5TaGFyZWQAEENhcmRDcmVhdGlvbktpbmQAAAAAABBDYXJkT3BlbmluZ0tpbmQAAQAAAApUeXBlQWxpYXMACkRvY1R5cGVJZGVudGlmaWVyAApJRFBhcmFtAAA=
+							}
+						}
+						#extension(TypeName:Tessa.Extensions.Platform.Client.Cards.OpenInModalDialogOnDoubleClickExtension, Order:1) {}
+					}
+				}
+				#view(Alias:PnrTemplateTypes, Caption:Шаблон, CompositionId:93f2c450-791c-4891-9c5e-241b76212ca8, OrderPos:19, ShowMode:SelectionMode, IsNode:True, ParentCompositionId:ee693038-a5aa-4c3f-aa54-c230b4960d3f, EnableAutoWidth:True) {
+					#layout(CompositionId:cd6a9d26-71de-422f-8f6c-e52349c4a240) {}
+				}
+				#view(Alias:PnrTemplatesPublish, Caption:Шаблоны к публикации в CRM, CompositionId:bd38e345-ff59-40b4-ac8e-a10b1661049d, OrderPos:20, ShowMode:SelectionMode, IsNode:True, ParentCompositionId:ee693038-a5aa-4c3f-aa54-c230b4960d3f, EnableAutoWidth:True) {
+					#layout(Caption:Шаблоны к публикации в CRM, CompositionId:4d19de9a-fdc1-4a44-853c-25851761a06d) {
+						#content {
+							#data_view(Alias:PnrTemplatesPublish, CompositionId:bd38e345-ff59-40b4-ac8e-a10b1661049d) 
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,239 @@
+﻿[
+  {
+    ".method::int": 2,
+    "Card": {
+      "Created::dtm": "2020-11-24T07:09:52.92Z",
+      "CreatedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "CreatedByName": "Admin",
+      "Files": null,
+      "Flags::int": 0,
+      "ID::uid": "ffbc5cc4-54f5-440a-aaf3-a16e966435f6",
+      "Info": null,
+      "Modified::dtm": "2020-11-29T12:40:55.633Z",
+      "ModifiedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "ModifiedByName": "Admin",
+      "Permissions": null,
+      "Sections": {
+        "Condition_KrDepartmentCondition": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Condition_KrDocStateCondition": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Condition_KrDocTypeCondition": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Condition_KrPartnerCondition": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Condition_KrTaskTypeCondition": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Condition_KrUsersCondition": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "ConditionsVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "FdPermissionStates": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedCardRuleFields": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedCardRules": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedFileRuleCategories": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedFileRules": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedMandatoryRuleFields": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedMandatoryRuleOptions": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedMandatoryRules": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedMandatoryRuleTypes": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedTaskRuleFields": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedTaskRules": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedTaskRuleTypes": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedVisibilityRules": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionRoles": {
+          ".table::int": 1,
+          "Rows": [
+            {
+              "IsContext": false,
+              "RoleID::uid": "5a09a719-c992-49c5-9c98-fb21a374930d",
+              "RoleName": "Группа для проверки оформления",
+              "RowID::uid": "3b1d279f-27f6-48e6-9c30-b96d622d38e7"
+            },
+            {
+              "IsContext": false,
+              "RoleID::uid": "0412fedc-35bf-4554-ae01-b084afeb8289",
+              "RoleName": "Бухгалтерия (все)",
+              "RowID::uid": "9ce247c8-5543-4967-8f65-3e5e02bdba9e"
+            }
+          ]
+        },
+        "KrPermissions": {
+          "Fields": {
+            "CanAddFiles": true,
+            "CanAddTopics": false,
+            "CanCreateCard": false,
+            "CanCreateResolutions": false,
+            "CanCreateTemplateAndCopy": false,
+            "CanDeleteCard": false,
+            "CanDeleteFiles": false,
+            "CanDeleteOwnFiles": false,
+            "CanEditCard": false,
+            "CanEditFiles": false,
+            "CanEditNumber": false,
+            "CanEditOwnFiles": false,
+            "CanEditRoute": false,
+            "CanFullRecalcRoute": false,
+            "CanReadCard": false,
+            "CanSignFiles": false,
+            "CanSkipStages": false,
+            "CanSubscribeForNotifications": false,
+            "CanSuperModeratorMode": false,
+            "Caption": "Договор, ДС С покупателями - добавление файлов",
+            "Conditions": "[{\"ConditionTypeID::uid\":\"196d13d2-77e6-48bb-922a-14f4b0c6e6e0\",\"ConditionTypeName\":\"Договор, ДС С покупателями\",\"Description\":\"Вид документа ДУП\",\"InvertCondition\":false,\"InvertConditionString\":\"$Notification_ConditionDescription_Include\",\"Order::int\":0,\"RowID::uid\":\"daccf882-8004-411f-ac5f-1c8052162968\",\"Settings\":null}]",
+            "Description": null,
+            "IsDisabled": true,
+            "IsExtended": false,
+            "IsRequired": false,
+            "Permissions": "{$KrPermissions_AddFiles}",
+            "Roles": "Группа для проверки оформления\r\nБухгалтерия (все)",
+            "States": "{$KrStates_Doc_Registered}\r\n{$KrStates_Doc_Editing}\r\n{$KrStates_Doc_Signing}\r\n{$KrStates_Doc_Registration}\r\n{$KrStates_Doc_Active}\r\n{$KrStates_Doc_Disapproved}\r\n{$KrStates_Doc_Declined}\r\n{$KrStates_Doc_Canceled}\r\n{$KrStates_Doc_Signed}\r\n{$KrStates_Doc_Draft}\r\n{$KrStates_Doc_Approved}",
+            "Types": "Договор\r\nДополнительное соглашение"
+          }
+        },
+        "KrPermissionStates": {
+          ".table::int": 1,
+          "Rows": [
+            {
+              "RowID::uid": "806c772d-c41a-4051-8dad-94a30180cdc3",
+              "StateID::int": 6,
+              "StateName": "$KrStates_Doc_Registered"
+            },
+            {
+              "RowID::uid": "44a892a5-0e52-4e67-afab-9fd86948fb8d",
+              "StateID::int": 4,
+              "StateName": "$KrStates_Doc_Editing"
+            },
+            {
+              "RowID::uid": "fc31e981-8920-4a11-9cb1-090ad3e1fecf",
+              "StateID::int": 10,
+              "StateName": "$KrStates_Doc_Signing"
+            },
+            {
+              "RowID::uid": "a10cb09b-b651-4226-b82c-59618d5cfc6e",
+              "StateID::int": 7,
+              "StateName": "$KrStates_Doc_Registration"
+            },
+            {
+              "RowID::uid": "46221997-afb5-4fbd-9075-96c264ba0630",
+              "StateID::int": 1,
+              "StateName": "$KrStates_Doc_Active"
+            },
+            {
+              "RowID::uid": "b78d0cdf-c98f-4d72-87ba-74f2de47dc2c",
+              "StateID::int": 3,
+              "StateName": "$KrStates_Doc_Disapproved"
+            },
+            {
+              "RowID::uid": "5063b4ed-93f0-45d2-9f89-3f07b08b4a84",
+              "StateID::int": 9,
+              "StateName": "$KrStates_Doc_Declined"
+            },
+            {
+              "RowID::uid": "173b6d3f-a5ba-4926-9ce1-f8aa87d8f3aa",
+              "StateID::int": 5,
+              "StateName": "$KrStates_Doc_Canceled"
+            },
+            {
+              "RowID::uid": "5206b625-de27-48e4-a51f-887370952645",
+              "StateID::int": 8,
+              "StateName": "$KrStates_Doc_Signed"
+            },
+            {
+              "RowID::uid": "0fbe287e-ee44-495b-bb78-985ebd5687b2",
+              "StateID::int": 0,
+              "StateName": "$KrStates_Doc_Draft"
+            },
+            {
+              "RowID::uid": "2543f6be-0051-46fe-b11e-c65fa1dddcd4",
+              "StateID::int": 2,
+              "StateName": "$KrStates_Doc_Approved"
+            }
+          ]
+        },
+        "KrPermissionTypes": {
+          ".table::int": 1,
+          "Rows": [
+            {
+              "RowID::uid": "4c972205-444f-4b25-ae6c-f7645e37e0a3",
+              "TypeCaption": "Договор",
+              "TypeID::uid": "1c7a5718-09ae-4f65-aa67-e66f23bb7aee",
+              "TypeIsDocType": false
+            },
+            {
+              "RowID::uid": "979c1f88-14ef-49c9-b445-878c363177b3",
+              "TypeCaption": "Дополнительное соглашение",
+              "TypeID::uid": "f5a33228-32ae-483f-beca-8b2e3453a615",
+              "TypeIsDocType": false
+            }
+          ]
+        }
+      },
+      "TaskHistory": null,
+      "TaskHistoryGroups": null,
+      "Tasks": null,
+      "Topics": null,
+      "TypeCaption": "$CardTypes_TypesNames_KrPermissions",
+      "TypeID::uid": "fa9dbdac-8708-41df-bd72-900f69655dfa",
+      "TypeName": "KrPermissions",
+      "Version::int": 0
+    },
+    "FileMapping": null,
+    "Info": {
+      ".importVersion::int": 5
+    }
+  }
+]

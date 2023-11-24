@@ -1,0 +1,233 @@
+﻿[
+  {
+    ".method::int": 2,
+    "Card": {
+      "Created::dtm": "2020-11-25T01:15:46.393Z",
+      "CreatedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "CreatedByName": "Admin",
+      "Files": null,
+      "Flags::int": 0,
+      "ID::uid": "b8e71a51-8ea0-48ee-8e1f-3661d7b50a40",
+      "Info": null,
+      "Modified::dtm": "2020-11-27T11:40:41.587Z",
+      "ModifiedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "ModifiedByName": "Admin",
+      "Permissions": null,
+      "Sections": {
+        "Condition_KrDepartmentCondition": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Condition_KrDocStateCondition": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Condition_KrDocTypeCondition": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Condition_KrPartnerCondition": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Condition_KrTaskTypeCondition": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Condition_KrUsersCondition": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "ConditionsVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "FdPermissionStates": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedCardRuleFields": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedCardRules": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedFileRuleCategories": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedFileRules": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedMandatoryRuleFields": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedMandatoryRuleOptions": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedMandatoryRules": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedMandatoryRuleTypes": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedTaskRuleFields": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedTaskRules": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedTaskRuleTypes": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedVisibilityRules": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionRoles": {
+          ".table::int": 1,
+          "Rows": [
+            {
+              "IsContext": true,
+              "RoleID::uid": "b0918beb-94ad-4ec9-a728-749e14f14b28",
+              "RoleName": "Создатель карточки",
+              "RowID::uid": "643b0738-691e-4b59-98ca-7031c8081900"
+            },
+            {
+              "IsContext": false,
+              "RoleID::uid": "c365e148-71f9-4731-8025-3aeb5225af9f",
+              "RoleName": "Сотрудник ГК",
+              "RowID::uid": "847cf282-89f0-42ec-aa50-ded94ca25414"
+            }
+          ]
+        },
+        "KrPermissions": {
+          "Fields": {
+            "CanAddFiles": true,
+            "CanAddTopics": false,
+            "CanCreateCard": true,
+            "CanCreateResolutions": false,
+            "CanCreateTemplateAndCopy": false,
+            "CanDeleteCard": false,
+            "CanDeleteFiles": false,
+            "CanDeleteOwnFiles": false,
+            "CanEditCard": true,
+            "CanEditFiles": false,
+            "CanEditNumber": false,
+            "CanEditOwnFiles": true,
+            "CanEditRoute": false,
+            "CanFullRecalcRoute": false,
+            "CanReadCard": false,
+            "CanSignFiles": false,
+            "CanSkipStages": false,
+            "CanSubscribeForNotifications": false,
+            "CanSuperModeratorMode": false,
+            "Caption": "Доверенность - редактирование карточки при создании",
+            "Conditions": "[{\"ConditionTypeID::uid\":\"c6a5315a-ac5a-45cf-91dc-6bd5b081db00\",\"ConditionTypeName\":\"При создании карточки\",\"Description\":\"Состояние карточки: \",\"InvertCondition\":false,\"InvertConditionString\":\"$Notification_ConditionDescription_Include\",\"Order::int\":0,\"RowID::uid\":\"96b0bc6a-5247-47fb-9c36-7997243b641a\",\"Settings\":null}]",
+            "Description": null,
+            "IsDisabled": false,
+            "IsExtended": false,
+            "IsRequired": true,
+            "Permissions": "{$KrPermissions_CreateCard}\r\n{$KrPermissions_EditCard}\r\n{$KrPermissions_AddFiles}\r\n{$KrPermissions_EditOwnFiles}",
+            "Roles": "Создатель карточки\r\nСотрудник ГК",
+            "States": "{$KrStates_Doc_Disapproved}\r\n{$KrStates_Doc_Registered}\r\n{$KrStates_Doc_Editing}\r\n{$KrStates_Doc_Signing}\r\n{$KrStates_Doc_Registration}\r\n{$KrStates_Doc_Active}\r\n{$KrStates_Doc_Declined}\r\n{$KrStates_Doc_Canceled}\r\n{$KrStates_Doc_Signed}\r\n{$KrStates_Doc_Draft}\r\n{$KrStates_Doc_Approved}",
+            "Types": "Доверенность"
+          }
+        },
+        "KrPermissionStates": {
+          ".table::int": 1,
+          "Rows": [
+            {
+              "RowID::uid": "c583ecb4-cd13-470b-95bb-d04ec311b037",
+              "StateID::int": 3,
+              "StateName": "$KrStates_Doc_Disapproved"
+            },
+            {
+              "RowID::uid": "06c4c0e0-6a7e-481b-b7eb-ae1e14c820cc",
+              "StateID::int": 6,
+              "StateName": "$KrStates_Doc_Registered"
+            },
+            {
+              "RowID::uid": "20ba11e2-a345-46eb-aff6-ee08830e16bf",
+              "StateID::int": 4,
+              "StateName": "$KrStates_Doc_Editing"
+            },
+            {
+              "RowID::uid": "b1d754d1-ac79-4ba3-a8cd-a7cc65d3efbb",
+              "StateID::int": 10,
+              "StateName": "$KrStates_Doc_Signing"
+            },
+            {
+              "RowID::uid": "77d3e355-25de-423a-9b9d-e0fb91526163",
+              "StateID::int": 7,
+              "StateName": "$KrStates_Doc_Registration"
+            },
+            {
+              "RowID::uid": "34d5d1c3-661e-448f-a963-b76143cd7fa5",
+              "StateID::int": 1,
+              "StateName": "$KrStates_Doc_Active"
+            },
+            {
+              "RowID::uid": "828fcebb-dbde-4386-9ef7-8db8b9d1c77b",
+              "StateID::int": 9,
+              "StateName": "$KrStates_Doc_Declined"
+            },
+            {
+              "RowID::uid": "393201d7-8e61-42d9-9f04-6fdd433b682f",
+              "StateID::int": 5,
+              "StateName": "$KrStates_Doc_Canceled"
+            },
+            {
+              "RowID::uid": "5251567a-5056-4ef2-aa58-d69cb0a15134",
+              "StateID::int": 8,
+              "StateName": "$KrStates_Doc_Signed"
+            },
+            {
+              "RowID::uid": "c49f43b1-f4ca-452a-be65-3087685d1e99",
+              "StateID::int": 0,
+              "StateName": "$KrStates_Doc_Draft"
+            },
+            {
+              "RowID::uid": "4aacf3f0-06ba-44ed-9753-9f952a489394",
+              "StateID::int": 2,
+              "StateName": "$KrStates_Doc_Approved"
+            }
+          ]
+        },
+        "KrPermissionTypes": {
+          ".table::int": 1,
+          "Rows": [
+            {
+              "RowID::uid": "d1d6778a-88c5-441c-b224-71d6aa320eca",
+              "TypeCaption": "Доверенность",
+              "TypeID::uid": "f9c07ae1-4e87-4cfe-8229-26ce6af5c326",
+              "TypeIsDocType": false
+            }
+          ]
+        }
+      },
+      "TaskHistory": null,
+      "TaskHistoryGroups": null,
+      "Tasks": null,
+      "Topics": null,
+      "TypeCaption": "$CardTypes_TypesNames_KrPermissions",
+      "TypeID::uid": "fa9dbdac-8708-41df-bd72-900f69655dfa",
+      "TypeName": "KrPermissions",
+      "Version::int": 0
+    },
+    "FileMapping": null,
+    "Info": {
+      ".importVersion::int": 3
+    }
+  }
+]

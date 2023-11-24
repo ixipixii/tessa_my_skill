@@ -1,0 +1,195 @@
+﻿[
+  {
+    ".method::int": 2,
+    "Card": {
+      "Created::dtm": "2020-11-25T02:00:20.54Z",
+      "CreatedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "CreatedByName": "Admin",
+      "Files": null,
+      "Flags::int": 0,
+      "ID::uid": "dfaa6e60-48b6-4390-84b8-d3fcb10e5899",
+      "Info": null,
+      "Modified::dtm": "2020-11-27T11:38:21.813Z",
+      "ModifiedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "ModifiedByName": "Admin",
+      "Permissions": null,
+      "Sections": {
+        "Condition_KrDepartmentCondition": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Condition_KrDocStateCondition": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Condition_KrDocTypeCondition": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Condition_KrPartnerCondition": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Condition_KrTaskTypeCondition": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Condition_KrUsersCondition": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "ConditionsVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "FdPermissionStates": {
+          ".table::int": 1,
+          "Rows": [
+            {
+              "RowID::uid": "a401331f-b97f-477e-bc20-f2aeafdf60c9",
+              "StateCardTypeCaption": "Акт",
+              "StateID::uid": "d7352ee9-0e80-4e61-810f-2327fb3dc022",
+              "StateName": "Проект"
+            },
+            {
+              "RowID::uid": "c6a7fc39-3e8f-4fa1-91ec-cb02e653503e",
+              "StateCardTypeCaption": "Акт",
+              "StateID::uid": "dc57f90b-d3d2-4551-b568-1d522690e488",
+              "StateName": "На доработке"
+            }
+          ]
+        },
+        "KrPermissionExtendedCardRuleFields": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedCardRules": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedFileRuleCategories": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedFileRules": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedMandatoryRuleFields": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedMandatoryRuleOptions": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedMandatoryRules": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedMandatoryRuleTypes": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedTaskRuleFields": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedTaskRules": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedTaskRuleTypes": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedVisibilityRules": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionRoles": {
+          ".table::int": 1,
+          "Rows": [
+            {
+              "IsContext": true,
+              "RoleID::uid": "b0918beb-94ad-4ec9-a728-749e14f14b28",
+              "RoleName": "Создатель карточки",
+              "RowID::uid": "34bdc0fb-7ee3-417a-9115-0bcd79521436"
+            }
+          ]
+        },
+        "KrPermissions": {
+          "Fields": {
+            "CanAddFiles": true,
+            "CanAddTopics": false,
+            "CanCreateCard": true,
+            "CanCreateResolutions": false,
+            "CanCreateTemplateAndCopy": false,
+            "CanDeleteCard": false,
+            "CanDeleteFiles": false,
+            "CanDeleteOwnFiles": false,
+            "CanEditCard": true,
+            "CanEditFiles": false,
+            "CanEditNumber": false,
+            "CanEditOwnFiles": true,
+            "CanEditRoute": false,
+            "CanFullRecalcRoute": false,
+            "CanReadCard": false,
+            "CanSignFiles": false,
+            "CanSkipStages": false,
+            "CanSubscribeForNotifications": false,
+            "CanSuperModeratorMode": false,
+            "Caption": "Акт - редактирование",
+            "Conditions": "[]",
+            "Description": null,
+            "IsDisabled": false,
+            "IsExtended": false,
+            "IsRequired": true,
+            "Permissions": "{$KrPermissions_CreateCard}\r\n{$KrPermissions_EditCard}\r\n{$KrPermissions_AddFiles}\r\n{$KrPermissions_EditOwnFiles}",
+            "Roles": "Создатель карточки",
+            "States": "{$KrStates_Doc_Draft}\r\n{$KrStates_Doc_Editing}",
+            "Types": "Акт"
+          }
+        },
+        "KrPermissionStates": {
+          ".table::int": 1,
+          "Rows": [
+            {
+              "RowID::uid": "2252101b-d242-4307-9d30-4d592d0e5585",
+              "StateID::int": 0,
+              "StateName": "$KrStates_Doc_Draft"
+            },
+            {
+              "RowID::uid": "3e7200cf-15fd-4d9f-8383-78d11e6eb606",
+              "StateID::int": 4,
+              "StateName": "$KrStates_Doc_Editing"
+            }
+          ]
+        },
+        "KrPermissionTypes": {
+          ".table::int": 1,
+          "Rows": [
+            {
+              "RowID::uid": "850970bd-6cb9-4758-8789-1bd4c26ec4f1",
+              "TypeCaption": "Акт",
+              "TypeID::uid": "156df436-74e3-4e08-aba8-cbc609c6c1c7",
+              "TypeIsDocType": false
+            }
+          ]
+        }
+      },
+      "TaskHistory": null,
+      "TaskHistoryGroups": null,
+      "Tasks": null,
+      "Topics": null,
+      "TypeCaption": "$CardTypes_TypesNames_KrPermissions",
+      "TypeID::uid": "fa9dbdac-8708-41df-bd72-900f69655dfa",
+      "TypeName": "KrPermissions",
+      "Version::int": 0
+    },
+    "FileMapping": null,
+    "Info": {
+      ".importVersion::int": 4
+    }
+  }
+]

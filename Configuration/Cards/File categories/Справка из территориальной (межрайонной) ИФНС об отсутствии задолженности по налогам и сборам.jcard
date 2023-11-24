@@ -1,0 +1,47 @@
+﻿[
+  {
+    ".method::int": 2,
+    "Card": {
+      "Created::dtm": "2020-08-26T07:24:06.857Z",
+      "CreatedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "CreatedByName": "Admin",
+      "Files": null,
+      "Flags::int": 0,
+      "ID::uid": "a34bf635-7f8f-4c97-aa0f-b187b9fa5008",
+      "Info": null,
+      "Modified::dtm": "2020-11-19T08:46:50.777Z",
+      "ModifiedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "ModifiedByName": "Admin",
+      "Permissions": null,
+      "Sections": {
+        "FileCategories": {
+          "Fields": {
+            "Name": "Справка из территориальной (межрайонной) ИФНС об отсутствии задолженности по налогам и сборам *"
+          }
+        },
+        "PnrFileCategories_PartnerType": {
+          ".table::int": 1,
+          "Rows": [
+            {
+              "PartnerTypeID::int": 1,
+              "PartnerTypeName": "$PartnerType_LegalEntity",
+              "RowID::uid": "126e0b45-208c-40ac-97cd-03f90cddfde3"
+            }
+          ]
+        }
+      },
+      "TaskHistory": null,
+      "TaskHistoryGroups": null,
+      "Tasks": null,
+      "Topics": null,
+      "TypeCaption": "$CardTypes_TypesNames_FileCategory",
+      "TypeID::uid": "97182afc-43ce-4bd9-9c96-73a4d2c5d5eb",
+      "TypeName": "FileCategory",
+      "Version::int": 0
+    },
+    "FileMapping": null,
+    "Info": {
+      ".importVersion::int": 4
+    }
+  }
+]

@@ -1,0 +1,55 @@
+﻿[
+  {
+    ".method::int": 2,
+    "Card": {
+      "Created::dtm": "2020-11-15T11:05:45.103Z",
+      "CreatedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "CreatedByName": "Admin",
+      "Files": null,
+      "Flags::int": 0,
+      "ID::uid": "1c8f33b7-4d68-43fd-bb40-665fec4d4966",
+      "Info": null,
+      "Modified::dtm": "2020-11-15T15:44:09.77Z",
+      "ModifiedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "ModifiedByName": "Admin",
+      "Permissions": null,
+      "Sections": {
+        "ContextRoles": {
+          "Fields": {
+            "SqlText": "SELECT [proj].[GIPID], [proj].[GIPName]\r\nfrom\r\n(\r\n-- Договор\r\nselect [ProjectID]\r\nfrom [PnrContracts] WITH(NOLOCK)\r\nWHERE [ID] = #context_card_id\r\nunion\r\n-- ДС\r\nselect [ProjectID]\r\nfrom [PnrSupplementaryAgreements] WITH(NOLOCK)\r\nWHERE [ID] = #context_card_id\r\nunion\r\n-- Акт\r\nselect [ProjectID]\r\nfrom [PnrActs] WITH(NOLOCK)\r\nWHERE [ID] = #context_card_id\r\n) t\r\ncross apply\r\n(\r\n\t-- среди текущего проекта и всех родительских ищем первый подходящий с непустым значением\r\n\tselect top 1 p.GIPID, p.GIPName\r\n\tfrom PnrGetProjectWithAllParents([t].[ProjectID]) p\r\n\twhere p.GIPID is not null\r\n\torder by p.Level\r\n) as [proj]",
+            "SqlTextForCard": null,
+            "SqlTextForUser": null
+          }
+        },
+        "RoleDeputies": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "RoleDeputiesVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Roles": {
+          "Fields": {
+            "Description": null,
+            "Hidden": false,
+            "Name": "ГИП проекта для Договора, ДС и Акта",
+            "TypeID::int": 4
+          }
+        }
+      },
+      "TaskHistory": null,
+      "TaskHistoryGroups": null,
+      "Tasks": null,
+      "Topics": null,
+      "TypeCaption": "$CardTypes_TypesNames_ContextRole",
+      "TypeID::uid": "b672e00c-0241-0485-9b07-4764bc96c9d3",
+      "TypeName": "ContextRole",
+      "Version::int": 0
+    },
+    "FileMapping": null,
+    "Info": {
+      ".importVersion::int": 7
+    }
+  }
+]

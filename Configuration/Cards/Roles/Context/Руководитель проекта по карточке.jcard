@@ -1,0 +1,55 @@
+﻿[
+  {
+    ".method::int": 2,
+    "Card": {
+      "Created::dtm": "2020-11-15T11:05:45.137Z",
+      "CreatedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "CreatedByName": "Admin",
+      "Files": null,
+      "Flags::int": 0,
+      "ID::uid": "ce61a58a-33c2-4a7b-a10f-dbf6b2a37ceb",
+      "Info": null,
+      "Modified::dtm": "2020-11-15T15:42:26.653Z",
+      "ModifiedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "ModifiedByName": "Admin",
+      "Permissions": null,
+      "Sections": {
+        "ContextRoles": {
+          "Fields": {
+            "SqlText": "SELECT [proj].[ProjectManagerID] as [UserID], [proj].[ProjectManagerName] as [UserName]\nfrom\n(\n-- Договор\nselect [ProjectID]\nfrom [PnrContracts] WITH(NOLOCK)\nWHERE [ID] = #context_card_id\nunion\n-- ДС\nselect [ProjectID]\nfrom [PnrSupplementaryAgreements] WITH(NOLOCK)\nWHERE [ID] = #context_card_id\nunion\n-- Акт\nselect [ProjectID]\nfrom [PnrActs] WITH(NOLOCK)\nWHERE [ID] = #context_card_id\nunion\n-- Служебки\nselect [ProjectID]\nfrom [PnrServiceNote] WITH(NOLOCK)\nWHERE [ID] = #context_card_id\nunion\n-- Тендер\nselect [ProjectID]\nfrom [PnrTenders] WITH(NOLOCK)\nWHERE [ID] = #context_card_id\nunion\n-- Приказ\nselect [ProjectID]\nfrom [PnrOrder] WITH(NOLOCK)\nWHERE [ID] = #context_card_id\n) t\ncross apply\n(\n\t-- среди текущего проекта и всех родительских ищем первый подходящий с непустым значением\n\tselect top 1 p.ProjectManagerID, p.ProjectManagerName\n\tfrom PnrGetProjectWithAllParents([t].[ProjectID]) p\n\twhere p.ProjectManagerID is not null\n\torder by p.Level\n) as [proj]",
+            "SqlTextForCard": null,
+            "SqlTextForUser": null
+          }
+        },
+        "RoleDeputies": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "RoleDeputiesVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Roles": {
+          "Fields": {
+            "Description": null,
+            "Hidden": false,
+            "Name": "Руководитель проекта по карточке",
+            "TypeID::int": 4
+          }
+        }
+      },
+      "TaskHistory": null,
+      "TaskHistoryGroups": null,
+      "Tasks": null,
+      "Topics": null,
+      "TypeCaption": "$CardTypes_TypesNames_ContextRole",
+      "TypeID::uid": "b672e00c-0241-0485-9b07-4764bc96c9d3",
+      "TypeName": "ContextRole",
+      "Version::int": 0
+    },
+    "FileMapping": null,
+    "Info": {
+      ".importVersion::int": 12
+    }
+  }
+]

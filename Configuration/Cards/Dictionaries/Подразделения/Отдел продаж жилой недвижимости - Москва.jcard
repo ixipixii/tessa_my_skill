@@ -1,0 +1,294 @@
+﻿[
+  {
+    ".method::int": 2,
+    "Card": {
+      "Created::dtm": "2020-08-24T12:19:07.383Z",
+      "CreatedByID::uid": "fd99d8ea-f1c1-4e73-87b1-87e34c91296a",
+      "CreatedByName": "Харина Оксана",
+      "Files": null,
+      "Flags::int": 0,
+      "ID::uid": "4a1ee849-03b1-431c-9498-3255106a8e85",
+      "Info": null,
+      "Modified::dtm": "2020-08-24T15:52:28.3Z",
+      "ModifiedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "ModifiedByName": "Admin",
+      "Permissions": null,
+      "Sections": {
+        "DepartmentRoles": {
+          "Fields": {
+            "ActionStatusID": null,
+            "ActionStatusName": null,
+            "CFOID": null,
+            "CFOName": null,
+            "CuratorID": null,
+            "CuratorName": null,
+            "DepartmentTypeID": null,
+            "DepartmentTypeName": null,
+            "HeadUserID": null,
+            "HeadUserName": null
+          }
+        },
+        "FmAddTopicInfoVirtual": {
+          "Fields": {
+            "Description": null,
+            "Title": null
+          }
+        },
+        "FmTopicParticipantsInfoVirtual": {
+          "Fields": {
+            "IsModerator": false,
+            "ReadOnly": false
+          }
+        },
+        "FmTopicParticipantsVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "FmTopicRoleParticipantsInfoVirtual": {
+          "Fields": {
+            "IsSubscribe": false,
+            "ReadOnly": false
+          }
+        },
+        "KrActiveTasksVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrAdditionalApprovalInfoUsersCardVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrAdditionalApprovalUsersCardVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrApprovalCommonInfoVirtual": {
+          "Fields": {
+            "ApprovedBy": null,
+            "AuthorComment": null,
+            "AuthorID": null,
+            "AuthorName": null,
+            "CurrentApprovalStageRowID": null,
+            "DisapprovedBy": null,
+            "MainCardID": null,
+            "StateChangedDateTimeUTC": null,
+            "StateID::int": 0,
+            "StateName": "$KrStates_Doc_Draft"
+          }
+        },
+        "KrApprovalHistoryVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrDialogButtonSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrForkNestedProcessesSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrForkSecondaryProcessesSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPerformersVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrStagesVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrUniversalTaskOptionsSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "RoleDeputies": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "RoleDeputiesVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Roles": {
+          "Fields": {
+            "AdSyncDate": null,
+            "AdSyncDisableUpdate": null,
+            "AdSyncDistinguishedName": null,
+            "AdSyncID": null,
+            "AdSyncIndependent": false,
+            "AdSyncWhenChanged": null,
+            "Description": null,
+            "ExternalID": null,
+            "Hidden": false,
+            "Idx": "6-18",
+            "InheritTimeZone": true,
+            "Name": "Отдел продаж жилой недвижимости - Москва",
+            "ParentID::uid": "cc9bc1ca-ef7e-4ad4-a9b9-edbfdb5f16e1",
+            "ParentName": "Дирекция по продажам",
+            "TimeZoneCodeName": "Default",
+            "TimeZoneID::int": 0,
+            "TimeZoneShortName": "UTC+03:00",
+            "TimeZoneUtcOffsetMinutes::int": 180,
+            "TypeID::int": 2
+          }
+        },
+        "RoleUsers": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "RoleUsersVirtual": {
+          ".table::int": 1,
+          "Rows": [
+            {
+              ".state::int": 2,
+              "RowID::uid": "f8eab4c8-6c1e-4196-95ee-a13567b8a98d",
+              "UserID::uid": "1aa7f1cd-12f4-459a-b8ee-0ab107eae3df",
+              "UserName": "Мякота Я. С."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "fcc89272-a73e-4000-b56c-c0d1298c5921",
+              "UserID::uid": "c146dcac-825c-4102-b3d3-157746b5f5c1",
+              "UserName": "Прытова А. А."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "2247b73f-c8f7-4836-a4b4-2013cb826b5d",
+              "UserID::uid": "a3f74c21-813d-4ba7-a61d-21276748fde9",
+              "UserName": "Позняк Е. В."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "68d68c87-3df5-4901-8634-475602a3fca6",
+              "UserID::uid": "a76acf07-20ef-45ce-a723-2575ebd3d1ba",
+              "UserName": "Наливайко А. М."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "a189d0c6-a8ea-4009-8b50-491cd1f93343",
+              "UserID::uid": "4c430864-3b61-4958-bfb2-2b0ca6bb5fe5",
+              "UserName": "Артебякин А. А."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "e8609a77-7858-44f3-9118-71bebd95490b",
+              "UserID::uid": "b5eb4c71-5965-4348-be65-314382f1576f",
+              "UserName": "Гавриков В. В."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "309ec35a-806f-4dd9-a480-9f43955e6068",
+              "UserID::uid": "09c66a5e-48c6-4ca6-878c-41a64ec7ef0f",
+              "UserName": "Москалев Е. Г."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "86b254bd-2168-4849-8bef-7aee61dff19a",
+              "UserID::uid": "309b3724-5565-4403-8103-515f5522ffff",
+              "UserName": "Мелешина О. С."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "4bba03d5-d90b-4bd3-a80c-a0986d1665af",
+              "UserID::uid": "57009486-0ce6-49c6-b7ec-51742674dbaf",
+              "UserName": "Ваапова М. Р."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "ad31a71b-1ca7-4105-8be6-f0e48ef78106",
+              "UserID::uid": "37e7767d-38a7-45ac-9b9b-56d640d30b84",
+              "UserName": "Черкашина И. В."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "c99e73f5-5015-41f8-974f-3b66d0c42feb",
+              "UserID::uid": "5f6e233d-5270-41cb-b863-5799a823398e",
+              "UserName": "Николаев М. С."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "458d9af1-e4e6-41ef-afb2-58ed40da2115",
+              "UserID::uid": "5297b2ad-a1a3-46bc-b037-7eba29832020",
+              "UserName": "Хазова А. А."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "02470a15-8d41-46d8-9c37-135b90adec47",
+              "UserID::uid": "1b66ad25-4dd6-4790-a0f0-923e9e27b7ab",
+              "UserName": "Карандашова А. И."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "4a28e942-d2c1-4698-a880-e5da52fea233",
+              "UserID::uid": "42e77a46-08cb-4bfc-8136-93cd522eba7b",
+              "UserName": "Ширяев А. И."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "d37acc68-060c-494f-a211-e21739bd3204",
+              "UserID::uid": "3bf5ab16-e527-45bb-bf26-a0082a636d7f",
+              "UserName": "Канайкин И. Ю."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "8c98bcda-da5f-45c8-a335-65f6e5481a95",
+              "UserID::uid": "0712713f-8ad2-43ed-bf01-b4b224c82a86",
+              "UserName": "Соловьев К.Г."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "745452a6-0c8d-4fda-8f20-2f045477997e",
+              "UserID::uid": "8b71bee1-a68c-4584-a2e5-b980d2d069ea",
+              "UserName": "Гусева Н. С."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "d6f0f9ba-99d8-4683-8c4e-50175f996f13",
+              "UserID::uid": "71234bfd-122d-4b94-8612-c3f0f8fde612",
+              "UserName": "Исламова Г.В."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "c5f2ca7f-79b0-42db-a68f-dc956c5fe491",
+              "UserID::uid": "da058e4d-61cc-4dc3-b232-d9d1a2da8c4a",
+              "UserName": "Попов А. В."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "8da68c75-078d-44b4-ac2f-7a053e0b829e",
+              "UserID::uid": "72bd8f15-d090-43fa-acfb-e4327d222c2c",
+              "UserName": "Наумова Ю. А."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "12c88394-f91b-4699-a989-f8987050b7b5",
+              "UserID::uid": "63aacd18-4b15-4ccd-ad61-e778c08ae49e",
+              "UserName": "Степанова Н. В."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "41027872-4780-4578-9a6a-43212bebd410",
+              "UserID::uid": "d6d90cb0-da6c-42a8-a81c-f8d5140cb27a",
+              "UserName": "Белянчиков М.П."
+            }
+          ]
+        }
+      },
+      "TaskHistory": null,
+      "TaskHistoryGroups": null,
+      "Tasks": null,
+      "Topics": null,
+      "TypeCaption": "$CardTypes_TypesNames_DepartmentRole",
+      "TypeID::uid": "abe57cb7-e1cb-06f6-b7ca-ad1668bebd72",
+      "TypeName": "DepartmentRole",
+      "Version::int": 0
+    },
+    "FileMapping": null,
+    "Info": {
+      ".importVersion::int": 2
+    }
+  }
+]

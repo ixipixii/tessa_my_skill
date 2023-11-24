@@ -1,0 +1,131 @@
+﻿[
+  {
+    ".method::int": 2,
+    "Card": {
+      "Created::dtm": "2020-08-28T15:49:06.72Z",
+      "CreatedByID::uid": "11111111-1111-1111-1111-111111111111",
+      "CreatedByName": "System",
+      "Files": null,
+      "Flags::int": 0,
+      "ID::uid": "124c38df-c55f-479f-900c-c2ca4e8fe8e0",
+      "Info": null,
+      "Modified::dtm": "2020-08-28T15:49:06.72Z",
+      "ModifiedByID::uid": "11111111-1111-1111-1111-111111111111",
+      "ModifiedByName": "System",
+      "Permissions": null,
+      "Sections": {
+        "FmAddTopicInfoVirtual": {
+          "Fields": {
+            "Description": null,
+            "Title": null
+          }
+        },
+        "FmTopicParticipantsInfoVirtual": {
+          "Fields": {
+            "IsModerator": false,
+            "ReadOnly": false
+          }
+        },
+        "FmTopicParticipantsVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "FmTopicRoleParticipantsInfoVirtual": {
+          "Fields": {
+            "IsSubscribe": false,
+            "ReadOnly": false
+          }
+        },
+        "KrActiveTasksVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrAdditionalApprovalInfoUsersCardVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrAdditionalApprovalUsersCardVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrApprovalCommonInfoVirtual": {
+          "Fields": {
+            "ApprovedBy": null,
+            "AuthorComment": null,
+            "AuthorID": null,
+            "AuthorName": null,
+            "CurrentApprovalStageRowID": null,
+            "DisapprovedBy": null,
+            "MainCardID": null,
+            "StateChangedDateTimeUTC": null,
+            "StateID::int": 0,
+            "StateName": "$KrStates_Doc_Draft"
+          }
+        },
+        "KrApprovalHistoryVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrDialogButtonSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrForkNestedProcessesSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrForkSecondaryProcessesSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPerformersVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrStagesVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrUniversalTaskOptionsSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "PnrProjects": {
+          "Fields": {
+            "Code": "0К-000086",
+            "Description": null,
+            "EndDate": null,
+            "EstimatorID::uid": "f9f377d1-35fa-4224-9412-b39a00d9b27e",
+            "EstimatorName": "Карасева О.Е.",
+            "GIPID::uid": "0293469f-0724-42ff-9b31-2265bdd5173a",
+            "GIPName": "Верховская Р. Г.",
+            "InArchive": false,
+            "IsHidden": null,
+            "MDMKey": "5a600869-29ca-11e7-950b-005056bf03bd",
+            "Name": "Технопарк",
+            "ParentProjectID": null,
+            "ParentProjectName": null,
+            "ProjectAdministratorID::uid": "a53c40ef-82a9-4372-8479-ee38fc295cad",
+            "ProjectAdministratorName": "Медведев М. В.",
+            "ProjectEconomistID": null,
+            "ProjectEconomistName": null,
+            "ProjectManagerID::uid": "d84eafea-a6fc-4832-b2b1-96ca953d9159",
+            "ProjectManagerName": "Махоткин Н. И."
+          }
+        }
+      },
+      "TaskHistory": null,
+      "TaskHistoryGroups": null,
+      "Tasks": null,
+      "Topics": null,
+      "TypeCaption": "Проект",
+      "TypeID::uid": "c17a5031-e7d8-4ea6-b03f-4c88b4bd6063",
+      "TypeName": "PnrProject",
+      "Version::int": 0
+    },
+    "FileMapping": null,
+    "Info": {
+      ".importVersion::int": 1
+    }
+  }
+]

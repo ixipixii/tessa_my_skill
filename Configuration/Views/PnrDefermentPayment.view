@@ -1,0 +1,23 @@
+#tessa_exchange_format(Version:1, CreationTime:2020-08-20T11\:09\:09) {
+	#exchange_view(RowID:1585d4b4-c795-4d13-88b0-90928cceafc3, Alias:PnrDefermentPayment, Caption:Острочка платежа, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2020-08-20T10\:56\:30, GroupName:Pnr) {
+		#metadata {
+			#view(DefaultSortColumn: DefermentPaymentID, DefaultSortDirection: asc, Paging: no, QuickSearchParam: Value)
+			#column(Alias: DefermentPaymentID, Hidden: true, SortBy: t.ID)
+			#column(Alias: DefermentPaymentValue, Caption: раб.дней, Hidden: false)
+			#param(Alias: Value, Caption: раб.дней, Hidden: false, Type: nvarchar, Multiple: false)
+			#reference(ColPrefix: DefermentPayment, RefSection: PnrDefermentPayment, DisplayValueColumn: DefermentPaymentValue, IsCard: false, OpenOnDoubleClick: false)
+		}
+		#description {}
+		#ms_query {
+			select
+			    t.ID as DefermentPaymentID\,
+			    t.Value as DefermentPaymentValue
+			from PnrDefermentPayment t with\(nolock\)
+			where 1=1
+			    \#param_expr\(Value\, t.Value\)
+			order by \#order_by
+		}
+		#pg_query {}
+		#role(RoleID:7ff52dc0-ff6a-4c9d-ba25-b562c370004d, ViewID:1585d4b4-c795-4d13-88b0-90928cceafc3) 
+	}
+}

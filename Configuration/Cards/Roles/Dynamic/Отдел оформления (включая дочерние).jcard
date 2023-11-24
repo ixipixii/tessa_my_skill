@@ -1,0 +1,68 @@
+﻿[
+  {
+    ".method::int": 2,
+    "Card": {
+      "Created::dtm": "2020-12-02T06:25:20.443Z",
+      "CreatedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "CreatedByName": "Admin",
+      "Files": null,
+      "Flags::int": 0,
+      "ID::uid": "d249fc5a-12e7-49cd-bdae-81925056025e",
+      "Info": null,
+      "Modified::dtm": "2020-12-02T06:31:29.95Z",
+      "ModifiedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "ModifiedByName": "Admin",
+      "Permissions": null,
+      "Sections": {
+        "DynamicRoles": {
+          "Fields": {
+            "CronScheduling": null,
+            "LastErrorDate": null,
+            "LastErrorText": null,
+            "LastSuccessfulRecalcDate": null,
+            "Name": "Отдел оформления (включая дочерние)",
+            "PeriodScheduling::int": 60,
+            "SchedulingTypeID::int": 0,
+            "SqlText": "SELECT DISTINCT RU.UserID, RU.UserName\r\nFROM DepartmentRoles AS DR WITH(NOLOCK)\r\nJOIN RoleUsers AS RU WITH(NOLOCK) ON RU.ID = DR.ID\r\nJOIN Roles AS R WITH(NOLOCK) ON R.ID = DR.ID\r\nWHERE R.Idx IN ('6-14', '6-15', '6-16', '6-17')"
+          }
+        },
+        "RoleDeputies": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "RoleDeputiesVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Roles": {
+          "Fields": {
+            "Description": "Все сотрудники отдела оформления и дочерних подразделений. Индекс равен 6-14, 6-15, 6-16 или 6-17.",
+            "Hidden": false,
+            "Name": "Отдел оформления (включая дочерние)",
+            "TimeZoneCodeName": "Default",
+            "TimeZoneID::int": 0,
+            "TimeZoneShortName": "UTC+03:00",
+            "TimeZoneUtcOffsetMinutes::int": 180,
+            "TypeID::int": 3
+          }
+        },
+        "RoleUsers": {
+          ".table::int": 1,
+          "Rows": null
+        }
+      },
+      "TaskHistory": null,
+      "TaskHistoryGroups": null,
+      "Tasks": null,
+      "Topics": null,
+      "TypeCaption": "$CardTypes_TypesNames_DynamicRole",
+      "TypeID::uid": "97a945bc-58f5-07fa-a274-b6a7f0f1282c",
+      "TypeName": "DynamicRole",
+      "Version::int": 0
+    },
+    "FileMapping": null,
+    "Info": {
+      ".importVersion::int": 2
+    }
+  }
+]

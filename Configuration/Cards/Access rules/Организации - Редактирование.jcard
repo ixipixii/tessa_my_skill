@@ -1,0 +1,257 @@
+﻿[
+  {
+    ".method::int": 2,
+    "Card": {
+      "Created::dtm": "2020-11-27T07:01:30.47Z",
+      "CreatedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "CreatedByName": "Admin",
+      "Files": null,
+      "Flags::int": 0,
+      "ID::uid": "eb97580f-85bb-42cb-afe8-eb620b383fe6",
+      "Info": null,
+      "Modified::dtm": "2020-12-11T08:16:15.257Z",
+      "ModifiedByID::uid": "b437522f-509a-460d-b44b-3c528d8ba7d6",
+      "ModifiedByName": "Пятибратова А.В.",
+      "Permissions": null,
+      "Sections": {
+        "Condition_KrDepartmentCondition": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Condition_KrDocStateCondition": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Condition_KrDocTypeCondition": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Condition_KrPartnerCondition": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Condition_KrTaskTypeCondition": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Condition_KrUsersCondition": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "ConditionsVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "FdPermissionStates": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedCardRuleFields": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedCardRules": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedFileRuleCategories": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedFileRules": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedMandatoryRuleFields": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedMandatoryRuleOptions": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedMandatoryRules": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedMandatoryRuleTypes": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedTaskRuleFields": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedTaskRules": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedTaskRuleTypes": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedVisibilityRules": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionRoles": {
+          ".table::int": 1,
+          "Rows": [
+            {
+              "IsContext": false,
+              "RoleID::uid": "9d1d1d21-8796-4379-832d-c4641f5f452a",
+              "RoleName": "Руководитель АХО",
+              "RowID::uid": "9e5233bb-9bb9-4a68-8f23-0c1dd58f54af"
+            },
+            {
+              "IsContext": false,
+              "RoleID::uid": "70581786-21b5-4614-8086-251302611616",
+              "RoleName": "Корпоративный отдел",
+              "RowID::uid": "c74a3aa9-0d79-487d-b7c9-671b715f7408"
+            },
+            {
+              "IsContext": false,
+              "RoleID::uid": "9077c568-9479-48cb-8bba-fc46bd532a6f",
+              "RoleName": "Миронова М. А.",
+              "RowID::uid": "0f88c8d4-f493-4843-bf79-c8f481f2f3c5"
+            },
+            {
+              "IsContext": false,
+              "RoleID::uid": "9ab797a2-4a9b-451e-b590-5fb40b4e4afc",
+              "RoleName": "СБ (все)",
+              "RowID::uid": "91f97176-bc84-4ab2-aeca-beb06d8cf2b9"
+            },
+            {
+              "IsContext": false,
+              "RoleID::uid": "aace84c9-ddb0-40f5-9457-db0e1aec0f77",
+              "RoleName": "Делопроизводитель",
+              "RowID::uid": "5943359b-f407-4cce-aea0-edd87a689a99"
+            },
+            {
+              "IsContext": false,
+              "RoleID::uid": "cd2a8bc8-d42d-4ce1-8bb4-8d900aded714",
+              "RoleName": "Отдел казначейских операций",
+              "RowID::uid": "e90aaa0e-98b6-4380-a54c-7714e7b18ca9"
+            }
+          ]
+        },
+        "KrPermissions": {
+          "Fields": {
+            "CanAddFiles": true,
+            "CanAddTopics": false,
+            "CanCreateCard": false,
+            "CanCreateResolutions": false,
+            "CanCreateTemplateAndCopy": false,
+            "CanDeleteCard": false,
+            "CanDeleteFiles": false,
+            "CanDeleteOwnFiles": false,
+            "CanEditCard": true,
+            "CanEditFiles": true,
+            "CanEditNumber": false,
+            "CanEditOwnFiles": true,
+            "CanEditRoute": false,
+            "CanFullRecalcRoute": false,
+            "CanReadCard": false,
+            "CanSignFiles": false,
+            "CanSkipStages": false,
+            "CanSubscribeForNotifications": false,
+            "CanSuperModeratorMode": false,
+            "Caption": "Организации - Редактирование",
+            "Conditions": "[]",
+            "Description": null,
+            "IsDisabled": false,
+            "IsExtended": false,
+            "IsRequired": true,
+            "Permissions": "{$KrPermissions_EditCard}\r\n{$KrPermissions_AddFiles}\r\n{$KrPermissions_EditOwnFiles}\r\n{$KrPermissions_EditFiles}",
+            "Roles": "Руководитель АХО\r\nКорпоративный отдел\r\nМиронова М. А.\r\nСБ (все)\r\nДелопроизводитель\r\nОтдел казначейских операций",
+            "States": "{$KrStates_Doc_Registered}\r\n{$KrStates_Doc_Editing}\r\n{$KrStates_Doc_Signing}\r\n{$KrStates_Doc_Registration}\r\n{$KrStates_Doc_Active}\r\n{$KrStates_Doc_Disapproved}\r\n{$KrStates_Doc_Declined}\r\n{$KrStates_Doc_Canceled}\r\n{$KrStates_Doc_Signed}\r\n{$KrStates_Doc_Draft}\r\n{$KrStates_Doc_Approved}",
+            "Types": "Организация"
+          }
+        },
+        "KrPermissionStates": {
+          ".table::int": 1,
+          "Rows": [
+            {
+              "RowID::uid": "71987cc6-60a4-4bed-a44c-4d26f61abd38",
+              "StateID::int": 6,
+              "StateName": "$KrStates_Doc_Registered"
+            },
+            {
+              "RowID::uid": "45ea29d1-f3b3-4419-87ae-34d144478dab",
+              "StateID::int": 4,
+              "StateName": "$KrStates_Doc_Editing"
+            },
+            {
+              "RowID::uid": "ea029f85-d152-4355-8ede-388a36eb0084",
+              "StateID::int": 10,
+              "StateName": "$KrStates_Doc_Signing"
+            },
+            {
+              "RowID::uid": "ae39a3d3-91d2-4fe1-9a9c-176afeb3fe31",
+              "StateID::int": 7,
+              "StateName": "$KrStates_Doc_Registration"
+            },
+            {
+              "RowID::uid": "b41dd381-65c3-4dbb-bfc5-bfff45434628",
+              "StateID::int": 1,
+              "StateName": "$KrStates_Doc_Active"
+            },
+            {
+              "RowID::uid": "c0a300b4-fa79-4258-9b08-1194c02df524",
+              "StateID::int": 3,
+              "StateName": "$KrStates_Doc_Disapproved"
+            },
+            {
+              "RowID::uid": "021c703d-e89d-48b4-bee9-61d825bbc6c9",
+              "StateID::int": 9,
+              "StateName": "$KrStates_Doc_Declined"
+            },
+            {
+              "RowID::uid": "ee34f886-1252-48ab-92cc-9abd3b6593b4",
+              "StateID::int": 5,
+              "StateName": "$KrStates_Doc_Canceled"
+            },
+            {
+              "RowID::uid": "244c0d9b-7246-4612-b533-bdd8fe0a9bb0",
+              "StateID::int": 8,
+              "StateName": "$KrStates_Doc_Signed"
+            },
+            {
+              "RowID::uid": "8b247fe4-9cb0-4b45-93e5-9d868a137bc0",
+              "StateID::int": 0,
+              "StateName": "$KrStates_Doc_Draft"
+            },
+            {
+              "RowID::uid": "789a4fd6-1fa7-404c-a607-56bc134aecbd",
+              "StateID::int": 2,
+              "StateName": "$KrStates_Doc_Approved"
+            }
+          ]
+        },
+        "KrPermissionTypes": {
+          ".table::int": 1,
+          "Rows": [
+            {
+              "RowID::uid": "3d60f09c-6180-4ec6-ac83-58799928ca6d",
+              "TypeCaption": "Организация",
+              "TypeID::uid": "a668f7ea-efcd-47f0-a3c7-c4d1e7ed0bc8",
+              "TypeIsDocType": false
+            }
+          ]
+        }
+      },
+      "TaskHistory": null,
+      "TaskHistoryGroups": null,
+      "Tasks": null,
+      "Topics": null,
+      "TypeCaption": "$CardTypes_TypesNames_KrPermissions",
+      "TypeID::uid": "fa9dbdac-8708-41df-bd72-900f69655dfa",
+      "TypeName": "KrPermissions",
+      "Version::int": 0
+    },
+    "FileMapping": null,
+    "Info": {
+      ".importVersion::int": 22
+    }
+  }
+]

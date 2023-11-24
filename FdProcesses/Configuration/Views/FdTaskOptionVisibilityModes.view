@@ -1,0 +1,33 @@
+#tessa_exchange_format(Version:1, CreationTime:2019-11-08T13\:43\:17) {
+	#exchange_view(RowID:8cab8ef0-8158-459c-96ef-a081dc20de19, Alias:FdTaskOptionVisibilityModes, Caption:Режимы видимости варианта завершения, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2019-11-07T14\:56\:49, GroupName:Fd Awf) {
+		#metadata {
+			#column(Alias: ModeID, Caption: ID, Type: Int32, Hidden: true)
+			#column(Alias: ModeName, Caption: Название, Type: String)
+
+			#param(Alias: Name, Caption: Название, Hidden: false, Type: String, Multiple: false)
+
+			#reference(ColPrefix: Mode, RefSection: FdTaskOptionVisibilityModes, DisplayValueColumn: ModeName, IsCard: false, OpenOnDoubleClick: false)
+		}
+		#description {}
+		#ms_query {
+			select *
+			from
+			\(
+				SELECT 
+						t.[ID] as ModeID
+					      \,t.[Name] as ModeName
+				  FROM [FdTaskOptionVisibilityModes] t with\(nolock\)
+				  where 1=1
+					  \#param\(Name\, t.Name\)
+			  \) t
+		}
+		#pg_query {
+			SELECT 
+				"t"."ID" 	as "ModeID"\,
+				"t"."Name" 	as "ModeName"
+			FROM "FdTaskOptionVisibilityModes" "t"
+			where true
+				\#param\(Name\, "t"."Name"\)
+		}
+	}
+}

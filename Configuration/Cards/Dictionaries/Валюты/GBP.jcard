@@ -1,0 +1,186 @@
+﻿[
+  {
+    ".method::int": 2,
+    "Card": {
+      "Created::dtm": "2020-11-16T11:10:41.307Z",
+      "CreatedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "CreatedByName": "Admin",
+      "Files": null,
+      "Flags::int": 0,
+      "ID::uid": "d054ddfd-796a-4325-b9a3-c79cb70f29db",
+      "Info": {
+        ".satellite_krProcess": {
+          "Created::dtm": "2020-11-16T11:10:41.36Z",
+          "CreatedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+          "CreatedByName": "Admin",
+          "Files": null,
+          "Flags::int": 0,
+          "ID::uid": "f1f53706-5f4b-4911-b2ea-1b5fe9225fd7",
+          "Info": null,
+          "Modified::dtm": "2020-11-16T11:10:41.36Z",
+          "ModifiedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+          "ModifiedByName": "Admin",
+          "Permissions": {
+            "CardPermissions::int": 87381,
+            "FilePermissions": null,
+            "Sections": null
+          },
+          "Sections": {
+            "KrActiveTasks": {
+              ".table::int": 1,
+              "Rows": null
+            },
+            "KrApprovalCommonInfo": {
+              "Fields": {
+                "ApprovedBy": null,
+                "AuthorComment": null,
+                "AuthorID": null,
+                "AuthorName": null,
+                "CurrentApprovalStageRowID": null,
+                "CurrentHistoryGroup": null,
+                "DisapprovedBy": null,
+                "Info": null,
+                "MainCardID::uid": "d054ddfd-796a-4325-b9a3-c79cb70f29db",
+                "NestedWorkflowProcesses": null,
+                "StateChangedDateTimeUTC": null,
+                "StateID::int": 0,
+                "StateName": "$KrStates_Doc_Draft"
+              }
+            },
+            "KrApprovalHistory": {
+              ".table::int": 1,
+              "Rows": null
+            },
+            "KrStages": {
+              ".table::int": 1,
+              "Rows": null
+            },
+            "WorkflowCounters": {
+              ".table::int": 1,
+              "Rows": null
+            },
+            "WorkflowProcesses": {
+              ".table::int": 1,
+              "Rows": null
+            },
+            "WorkflowTasks": {
+              ".table::int": 1,
+              "Rows": null
+            }
+          },
+          "TaskHistory": null,
+          "TaskHistoryGroups": null,
+          "Tasks": null,
+          "Topics": null,
+          "TypeCaption": "$CardTypes_TypesNames_KrSatellite",
+          "TypeID::uid": "4115f07e-0aaa-4563-a749-0450c1a850af",
+          "TypeName": "KrSatellite",
+          "Version::int": 1
+        }
+      },
+      "Modified::dtm": "2020-11-16T11:10:41.307Z",
+      "ModifiedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "ModifiedByName": "Admin",
+      "Permissions": null,
+      "Sections": {
+        "Currencies": {
+          "Fields": {
+            "Caption": "Фунт стерлингов",
+            "Code": "826",
+            "IsHidden": null,
+            "MDMKey": "67f7fbb2-0196-11e9-ab4b-005056bf2b25",
+            "Name": "GBP"
+          }
+        },
+        "FmAddTopicInfoVirtual": {
+          "Fields": {
+            "Description": null,
+            "Title": null
+          }
+        },
+        "FmTopicParticipantsInfoVirtual": {
+          "Fields": {
+            "IsModerator": false,
+            "ReadOnly": false
+          }
+        },
+        "FmTopicParticipantsVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "FmTopicRoleParticipantsInfoVirtual": {
+          "Fields": {
+            "IsSubscribe": false,
+            "ReadOnly": false
+          }
+        },
+        "KrActiveTasksVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrAdditionalApprovalInfoUsersCardVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrAdditionalApprovalUsersCardVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrApprovalCommonInfoVirtual": {
+          "Fields": {
+            "ApprovedBy": null,
+            "AuthorComment": null,
+            "AuthorID": null,
+            "AuthorName": null,
+            "CurrentApprovalStageRowID": null,
+            "DisapprovedBy": null,
+            "MainCardID": null,
+            "StateChangedDateTimeUTC": null,
+            "StateID::int": 0,
+            "StateName": "$KrStates_Doc_Draft"
+          }
+        },
+        "KrApprovalHistoryVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrDialogButtonSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrForkNestedProcessesSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrForkSecondaryProcessesSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPerformersVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrStagesVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrUniversalTaskOptionsSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        }
+      },
+      "TaskHistory": null,
+      "TaskHistoryGroups": null,
+      "Tasks": null,
+      "Topics": null,
+      "TypeCaption": "$CardTypes_TypesNames_Currency",
+      "TypeID::uid": "4bce97d2-6b76-468d-9b09-711ba189cb1e",
+      "TypeName": "Currency",
+      "Version::int": 0
+    },
+    "FileMapping": null,
+    "Info": {
+      ".importVersion::int": 1
+    }
+  }
+]

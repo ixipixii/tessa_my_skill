@@ -1,0 +1,25 @@
+#tessa_exchange_format(Version:1, CreationTime:2020-08-25T07\:49\:49) {
+	#exchange_view(RowID:269f6220-4426-436d-93a5-441ff5a90723, Alias:PnrIncomingDocumentsKinds, Caption:Виды входящих документов, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2020-08-21T12\:12\:39, GroupName:Pnr) {
+		#metadata {
+			#view(DefaultSortColumn: IncomingDocumentKindName, DefaultSortDirection: asc, Paging: no, QuickSearchParam: Name)
+			#column(Alias: IncomingDocumentKindID, Hidden: true)
+			#column(Alias: IncomingDocumentKindIdx, Caption: Индекс, Hidden: false)
+			#column(Alias: IncomingDocumentKindName, Caption: Название, Hidden: false, SortBy: t.Name)
+			#param(Alias: Name, Caption: Название, Hidden: false, Type: nvarchar, Multiple: true)
+			#reference(ColPrefix: IncomingDocumentKind, RefSection: PnrIncomingDocumentsKinds, DisplayValueColumn: IncomingDocumentKindName, IsCard: true, OpenOnDoubleClick: true)
+		}
+		#description {}
+		#ms_query {
+			select
+			    t.ID as IncomingDocumentKindID\,
+			    t.Name as IncomingDocumentKindName\,
+			    t.Idx as IncomingDocumentKindIdx
+			from PnrIncomingDocumentsKinds t with\(nolock\)
+			where 1=1
+			    \#param_expr\(Name\, t.Name\)
+			order by \#order_by
+		}
+		#pg_query {}
+		#role(RoleID:7ff52dc0-ff6a-4c9d-ba25-b562c370004d, ViewID:269f6220-4426-436d-93a5-441ff5a90723) 
+	}
+}

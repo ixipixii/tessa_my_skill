@@ -1,0 +1,68 @@
+﻿[
+  {
+    ".method::int": 2,
+    "Card": {
+      "Created::dtm": "2020-10-26T18:43:05.93Z",
+      "CreatedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "CreatedByName": "Admin",
+      "Files": null,
+      "Flags::int": 0,
+      "ID::uid": "c365e148-71f9-4731-8025-3aeb5225af9f",
+      "Info": null,
+      "Modified::dtm": "2020-12-28T05:43:51.533Z",
+      "ModifiedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "ModifiedByName": "Admin",
+      "Permissions": null,
+      "Sections": {
+        "DynamicRoles": {
+          "Fields": {
+            "CronScheduling": null,
+            "LastErrorDate": null,
+            "LastErrorText": null,
+            "LastSuccessfulRecalcDate": null,
+            "Name": "Сотрудник ГК",
+            "PeriodScheduling::int": 60,
+            "SchedulingTypeID::int": 0,
+            "SqlText": "DECLARE @AllTreeElements TABLE(ID UNIQUEIDENTIFIER);\r\nWITH\r\nUnderTreeElements (ID, ParentID) -- Элементы иерархии вниз по дереву\r\nAS (\r\n\tSELECT ID, ParentID\r\n\tFROM Roles\r\n\tWHERE \r\n\tIdx LIKE '1-%' OR Idx LIKE '2-%' OR Idx LIKE '3-%' OR Idx LIKE '4-%' OR Idx LIKE '5-%' OR Idx LIKE '6-%' OR Idx LIKE '7-%' OR Idx LIKE '8-%'\r\n\tUNION ALL\r\n\tSELECT Roles.ID, Roles.ParentID\r\n\tFROM Roles\r\n\tJOIN UnderTreeElements \r\n\tON Roles.ParentID = UnderTreeElements.ID\r\n)\r\nSELECT DISTINCT RU.UserID, RU.UserName\r\nFROM DepartmentRoles AS DR WITH(NOLOCK)\r\nJOIN RoleUsers AS RU WITH(NOLOCK) ON RU.ID = DR.ID\r\nJOIN Roles AS R WITH(NOLOCK) ON R.ID = DR.ID\r\nWHERE r.ID IN\r\n( SELECT ID FROM UnderTreeElements)"
+          }
+        },
+        "RoleDeputies": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "RoleDeputiesVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Roles": {
+          "Fields": {
+            "Description": null,
+            "Hidden": false,
+            "Name": "Сотрудник ГК",
+            "TimeZoneCodeName": "Default",
+            "TimeZoneID::int": 0,
+            "TimeZoneShortName": "UTC+03:00",
+            "TimeZoneUtcOffsetMinutes::int": 180,
+            "TypeID::int": 3
+          }
+        },
+        "RoleUsers": {
+          ".table::int": 1,
+          "Rows": null
+        }
+      },
+      "TaskHistory": null,
+      "TaskHistoryGroups": null,
+      "Tasks": null,
+      "Topics": null,
+      "TypeCaption": "$CardTypes_TypesNames_DynamicRole",
+      "TypeID::uid": "97a945bc-58f5-07fa-a274-b6a7f0f1282c",
+      "TypeName": "DynamicRole",
+      "Version::int": 0
+    },
+    "FileMapping": null,
+    "Info": {
+      ".importVersion::int": 3
+    }
+  }
+]

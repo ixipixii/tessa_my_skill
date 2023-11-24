@@ -1,0 +1,191 @@
+﻿[
+  {
+    ".method::int": 2,
+    "Card": {
+      "Created::dtm": "2020-09-16T07:25:59.06Z",
+      "CreatedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "CreatedByName": "Admin",
+      "Files": null,
+      "Flags::int": 0,
+      "ID::uid": "2976bf92-4aa1-4ca6-898e-31e16d96d0ad",
+      "Info": null,
+      "Modified::dtm": "2020-12-03T11:17:06.907Z",
+      "ModifiedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "ModifiedByName": "Admin",
+      "Permissions": null,
+      "Sections": {
+        "FdSettings": {
+          "Fields": {
+            "ApprovalListRoleUsersLimit::int": 5,
+            "IsTaskNotificationsEnabled": true
+          }
+        },
+        "FdSettings_ApproveCategoryTaskTypes": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "FdSettingsCardTypes": {
+          ".table::int": 1,
+          "Rows": [
+            {
+              "CardTypeCaption": "Входящий",
+              "CardTypeID::uid": "476fa752-133d-4571-8f28-86002241f2fe",
+              "HideFdHistoryList": false,
+              "HideKrHistoryList": false,
+              "RowID::uid": "64fae24f-a1a9-4b07-afe9-ab1c1e5ba573",
+              "UseProcesses": true
+            },
+            {
+              "CardTypeCaption": "Исходящий",
+              "CardTypeID::uid": "40dab24a-0b6f-4609-947c-f1916348a540",
+              "HideFdHistoryList": true,
+              "HideKrHistoryList": false,
+              "RowID::uid": "e3eb2876-4a22-4f52-8481-f8830c6b8591",
+              "UseProcesses": true
+            },
+            {
+              "CardTypeCaption": "Поручение",
+              "CardTypeID::uid": "531e41ec-639f-41a9-9313-94f3eada0427",
+              "HideFdHistoryList": false,
+              "HideKrHistoryList": false,
+              "RowID::uid": "94c62dd9-4eac-4174-a329-dfd9d7a68b2f",
+              "UseProcesses": true
+            },
+            {
+              "CardTypeCaption": "Приказ и распоряжение",
+              "CardTypeID::uid": "df141f0f-7e73-48fb-9cdb-6d46665cc0fb",
+              "HideFdHistoryList": true,
+              "HideKrHistoryList": false,
+              "RowID::uid": "f278b2aa-8193-4d88-a95c-083925b18a01",
+              "UseProcesses": true
+            },
+            {
+              "CardTypeCaption": "Регламентирующий документ (ВНД)",
+              "CardTypeID::uid": "cd45788f-1576-4836-83c1-c55714eba28a",
+              "HideFdHistoryList": true,
+              "HideKrHistoryList": false,
+              "RowID::uid": "505493ad-43f0-46f9-89a1-e5e6e3bc9d4e",
+              "UseProcesses": true
+            },
+            {
+              "CardTypeCaption": "Доверенность",
+              "CardTypeID::uid": "f9c07ae1-4e87-4cfe-8229-26ce6af5c326",
+              "HideFdHistoryList": true,
+              "HideKrHistoryList": false,
+              "RowID::uid": "3fc7108e-07dc-4c31-9aef-489bf4209dfe",
+              "UseProcesses": true
+            },
+            {
+              "CardTypeCaption": "Служебная записка",
+              "CardTypeID::uid": "dceb0c7e-4147-410c-8a6c-f30781226007",
+              "HideFdHistoryList": true,
+              "HideKrHistoryList": false,
+              "RowID::uid": "3fc9967f-b739-4333-b5d6-cfecb779dbb4",
+              "UseProcesses": true
+            },
+            {
+              "CardTypeCaption": "Акт",
+              "CardTypeID::uid": "156df436-74e3-4e08-aba8-cbc609c6c1c7",
+              "HideFdHistoryList": true,
+              "HideKrHistoryList": false,
+              "RowID::uid": "35ee0719-ee21-48fe-957e-c2346430653d",
+              "UseProcesses": true
+            },
+            {
+              "CardTypeCaption": "Договор",
+              "CardTypeID::uid": "1c7a5718-09ae-4f65-aa67-e66f23bb7aee",
+              "HideFdHistoryList": true,
+              "HideKrHistoryList": false,
+              "RowID::uid": "bf16275a-2890-4848-9126-83e1fb7fc094",
+              "UseProcesses": true
+            },
+            {
+              "CardTypeCaption": "Дополнительное соглашение",
+              "CardTypeID::uid": "f5a33228-32ae-483f-beca-8b2e3453a615",
+              "HideFdHistoryList": true,
+              "HideKrHistoryList": false,
+              "RowID::uid": "e09e514c-fc11-45c1-953e-5295e5378b00",
+              "UseProcesses": true
+            },
+            {
+              "CardTypeCaption": "Шаблон",
+              "CardTypeID::uid": "dc10a79d-4bb2-4aad-acb8-82d5838408a9",
+              "HideFdHistoryList": true,
+              "HideKrHistoryList": false,
+              "RowID::uid": "179ace4b-410a-4c2c-bc48-07e49e2d9154",
+              "UseProcesses": true
+            },
+            {
+              "CardTypeCaption": "Заявка на контрагента",
+              "CardTypeID::uid": "ca76dbb5-e4f0-46b7-b5fa-2f7f77c7cae2",
+              "HideFdHistoryList": false,
+              "HideKrHistoryList": false,
+              "RowID::uid": "1917fab7-2ec1-48f6-b2d9-24ab0d187ac0",
+              "UseProcesses": true
+            },
+            {
+              "CardTypeCaption": "Тендер",
+              "CardTypeID::uid": "78cc3cc5-6314-45c1-bafc-5d41d7da7640",
+              "HideFdHistoryList": true,
+              "HideKrHistoryList": false,
+              "RowID::uid": "e9932e08-f8e8-44ba-9013-1a2ace1658e9",
+              "UseProcesses": true
+            },
+            {
+              "CardTypeCaption": "Входящий УК",
+              "CardTypeID::uid": "42eb6143-d431-4bb9-b4bf-19a521205ca5",
+              "HideFdHistoryList": false,
+              "HideKrHistoryList": false,
+              "RowID::uid": "6bca60d1-8950-4437-90d0-61b40b6e3a3e",
+              "UseProcesses": true
+            },
+            {
+              "CardTypeCaption": "Исходящий УК",
+              "CardTypeID::uid": "10e5967d-8282-4b43-89c6-8d8c9fd9558f",
+              "HideFdHistoryList": false,
+              "HideKrHistoryList": false,
+              "RowID::uid": "d4476546-c5f8-4ed9-bdcd-04b0167e54af",
+              "UseProcesses": true
+            },
+            {
+              "CardTypeCaption": "Договор УК",
+              "CardTypeID::uid": "25ea1e75-6ff9-4fd1-94e3-f6bc266d6544",
+              "HideFdHistoryList": false,
+              "HideKrHistoryList": false,
+              "RowID::uid": "447d0c02-960b-41bf-8a1a-1021fd09b155",
+              "UseProcesses": true
+            },
+            {
+              "CardTypeCaption": "Дополнительное соглашение УК",
+              "CardTypeID::uid": "87adb0cb-7c5f-4c82-974f-5d4e3c4a050f",
+              "HideFdHistoryList": false,
+              "HideKrHistoryList": false,
+              "RowID::uid": "f89feb04-529d-42c9-b902-93d29368c3cf",
+              "UseProcesses": true
+            },
+            {
+              "CardTypeCaption": "Приказ и распоряжение УК",
+              "CardTypeID::uid": "8d8d1098-3b12-4a77-a988-4278f11d9039",
+              "HideFdHistoryList": false,
+              "HideKrHistoryList": false,
+              "RowID::uid": "cfa877d6-0f9d-44c1-b814-c19050223d01",
+              "UseProcesses": true
+            }
+          ]
+        }
+      },
+      "TaskHistory": null,
+      "TaskHistoryGroups": null,
+      "Tasks": null,
+      "Topics": null,
+      "TypeCaption": "Настройка процессов",
+      "TypeID::uid": "68f02cba-6fce-479f-aa86-55733bb092eb",
+      "TypeName": "FdSettings",
+      "Version::int": 0
+    },
+    "FileMapping": null,
+    "Info": {
+      ".importVersion::int": 32
+    }
+  }
+]

@@ -1,0 +1,4005 @@
+﻿{
+  "Blocks": [
+    {
+      "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+      "BlockSettings": {
+        "AlwaysMultipleColumn": false,
+        "CollapsedByDefault": false,
+        "ColumnsCount::int": 2,
+        "DoNotCollapseWithTopBlock": false,
+        "HorizontalInterval::int": 5,
+        "IsHidden": false,
+        "LeftCaptions": false,
+        "StretchVertically": false,
+        "VerticalInterval::int": 5
+      },
+      "Caption": "Системная информация",
+      "Controls": [
+        {
+          "BlockSettings": {
+            "CaptionStyle": {
+              "TextColor": "#FF505050",
+              "TextStyle": {
+                "SelectedFontFamily": "Segoe UI",
+                "SelectedFontSize": 12.0,
+                "SelectedFontStretch": "Normal",
+                "SelectedFontStyle": "Normal",
+                "SelectedFontWeight": "SemiBold",
+                "SelectedTextBaseline": false,
+                "SelectedTextOverLine": false,
+                "SelectedTextStrikethrough": false,
+                "SelectedTextUnderline": false
+              }
+            },
+            "ColumnSpan::int": 1,
+            "ControlSpan": false,
+            "EmptyColumnsToTheLeft::int": 0,
+            "HideCaption": false,
+            "HorizontalAlignment::int": 3,
+            "Margin": "0,0,0,0",
+            "MaxWidth": 0.0,
+            "MinWidth": 0.0,
+            "StartAtNewLine": false,
+            "VerticalAlignment::int": 3
+          },
+          "Caption": "Создал",
+          "ComplexColumnID::uid": "aa152ba8-dc1f-4efa-8c68-03ba804ef6f1",
+          "ControlSettings": {
+            "ComboBoxMode": false,
+            "ExtendendLocalization": false,
+            "HideSelectorButton": true,
+            "IsAllowOpenRefs": true,
+            "ManualInput": false,
+            "ManualInputColumnID": null,
+            "MaxResultsCount::int": 15,
+            "ParameterAlias": "",
+            "RefSection": null,
+            "SearchDelay": null,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "SemiBold",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "ViewAlias": "",
+            "ViewAliasComboBox": "",
+            "ViewMap": null,
+            "ViewReferencePrefix": null
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 1,
+          "Name": null,
+          "Order::int": 0,
+          "PhysicalColumnIDList": [],
+          "RequiredText": "",
+          "SectionID::uid": "a161e289-2f99-4699-9e95-6e3336be8527",
+          "ToolTip": null,
+          "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+        },
+        {
+          "BlockSettings": {
+            "CaptionStyle": {
+              "TextColor": "#FF505050",
+              "TextStyle": {
+                "SelectedFontFamily": "Segoe UI",
+                "SelectedFontSize": 12.0,
+                "SelectedFontStretch": "Normal",
+                "SelectedFontStyle": "Normal",
+                "SelectedFontWeight": "SemiBold",
+                "SelectedTextBaseline": false,
+                "SelectedTextOverLine": false,
+                "SelectedTextStrikethrough": false,
+                "SelectedTextUnderline": false
+              }
+            },
+            "ColumnSpan::int": 1,
+            "ControlSpan": false,
+            "EmptyColumnsToTheLeft::int": 0,
+            "HideCaption": false,
+            "HorizontalAlignment::int": 3,
+            "Margin": "0,0,0,0",
+            "MaxWidth": 0.0,
+            "MinWidth": 0.0,
+            "StartAtNewLine": false,
+            "VerticalAlignment::int": 3
+          },
+          "Caption": "Дата создания",
+          "ComplexColumnID": null,
+          "ControlSettings": {
+            "DateFormat": true,
+            "DateNullable": true,
+            "IgnoreTimezone": false,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "SemiBold",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "TimeEnabled": false
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 1,
+          "Name": null,
+          "Order::int": 1,
+          "PhysicalColumnIDList": [
+            {
+              "::types": [
+                "uid"
+              ]
+            },
+            "d804eb6c-9f50-4299-b31c-2fef064fae9e"
+          ],
+          "RequiredText": "",
+          "SectionID::uid": "a161e289-2f99-4699-9e95-6e3336be8527",
+          "ToolTip": null,
+          "Type::uid": "c08b81f3-ed18-005a-bae6-a61679812709"
+        }
+      ],
+      "FormSettings": {
+        "HideCaption": false
+      },
+      "Name": "SystemInfoBlock",
+      "Order::int": 0
+    },
+    {
+      "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+      "BlockSettings": {
+        "AlwaysMultipleColumn": false,
+        "CollapsedByDefault": false,
+        "ColumnsCount::int": 2,
+        "DoNotCollapseWithTopBlock": false,
+        "HorizontalInterval::int": 5,
+        "IsHidden": false,
+        "LeftCaptions": false,
+        "StretchVertically": false,
+        "VerticalInterval::int": 5
+      },
+      "Caption": "Основная информация",
+      "Controls": [
+        {
+          "BlockSettings": {
+            "CaptionStyle": {
+              "TextColor": "#FF505050",
+              "TextStyle": {
+                "SelectedFontFamily": "Segoe UI",
+                "SelectedFontSize": 12.0,
+                "SelectedFontStretch": "Normal",
+                "SelectedFontStyle": "Normal",
+                "SelectedFontWeight": "SemiBold",
+                "SelectedTextBaseline": false,
+                "SelectedTextOverLine": false,
+                "SelectedTextStrikethrough": false,
+                "SelectedTextUnderline": false
+              }
+            },
+            "ColumnSpan::int": 1,
+            "ControlSpan": false,
+            "EmptyColumnsToTheLeft::int": 0,
+            "HideCaption": false,
+            "HorizontalAlignment::int": 3,
+            "Margin": "0,0,0,0",
+            "MaxWidth": 0.0,
+            "MinWidth": 0.0,
+            "StartAtNewLine": false,
+            "VerticalAlignment::int": 3
+          },
+          "Caption": "Номер",
+          "ControlSettings": {
+            "FullNumberColumnID::uid": "eeb023b5-f473-4a8b-bef2-88e07b0d0688",
+            "NumberColumnID::uid": "434a798f-bd1f-4c5c-b291-80490cd0dccf",
+            "NumberType": "Primary",
+            "SectionID::uid": "a161e289-2f99-4699-9e95-6e3336be8527",
+            "SequenceColumnID::uid": "5a78f218-dae8-41de-92aa-6746d44468c3",
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "SemiBold",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            }
+          },
+          "ControlType::int": 3,
+          "Flags::int": 4,
+          "Name": null,
+          "Order::int": 0,
+          "RequiredText": "",
+          "ToolTip": null,
+          "Type::uid": "84685aee-f6d7-480c-a1f8-e2229ddbfff2"
+        },
+        {
+          "BlockSettings": {
+            "CaptionStyle": {
+              "TextColor": "#FF505050",
+              "TextStyle": {
+                "SelectedFontFamily": "Segoe UI",
+                "SelectedFontSize": 12.0,
+                "SelectedFontStretch": "Normal",
+                "SelectedFontStyle": "Normal",
+                "SelectedFontWeight": "Normal",
+                "SelectedTextBaseline": false,
+                "SelectedTextOverLine": false,
+                "SelectedTextStrikethrough": false,
+                "SelectedTextUnderline": false
+              }
+            },
+            "ColumnSpan::int": 1,
+            "ControlSpan": false,
+            "EmptyColumnsToTheLeft::int": 0,
+            "HideCaption": false,
+            "HorizontalAlignment::int": 3,
+            "Margin": "0,0,0,0",
+            "MaxWidth": 0.0,
+            "MinWidth": 0.0,
+            "StartAtNewLine": false,
+            "VerticalAlignment::int": 3
+          },
+          "Caption": "Дата регистрации",
+          "ComplexColumnID": null,
+          "ControlSettings": {
+            "DateFormat": true,
+            "DateNullable": true,
+            "IgnoreTimezone": false,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "TimeEnabled": false
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": "RegistrationDate",
+          "Order::int": 1,
+          "PhysicalColumnIDList": [
+            {
+              "::types": [
+                "uid"
+              ]
+            },
+            "ec87f923-9553-4c1c-8fd1-d173a0baea91"
+          ],
+          "RequiredText": "",
+          "SectionID::uid": "dadfadd9-d28c-454e-aebb-d900fda5a6eb",
+          "ToolTip": null,
+          "Type::uid": "c08b81f3-ed18-005a-bae6-a61679812709"
+        },
+        {
+          "BlockSettings": {
+            "CaptionStyle": {
+              "TextColor": "#FF505050",
+              "TextStyle": {
+                "SelectedFontFamily": "Segoe UI",
+                "SelectedFontSize": 12.0,
+                "SelectedFontStretch": "Normal",
+                "SelectedFontStyle": "Normal",
+                "SelectedFontWeight": "SemiBold",
+                "SelectedTextBaseline": false,
+                "SelectedTextOverLine": false,
+                "SelectedTextStrikethrough": false,
+                "SelectedTextUnderline": false
+              }
+            },
+            "ColumnSpan::int": 1,
+            "ControlSpan": false,
+            "EmptyColumnsToTheLeft::int": 0,
+            "HideCaption": false,
+            "HorizontalAlignment::int": 3,
+            "Margin": "0,0,0,0",
+            "MaxWidth": 0.0,
+            "MinWidth": 0.0,
+            "StartAtNewLine": false,
+            "VerticalAlignment::int": 3
+          },
+          "Caption": "Тип документа",
+          "ComplexColumnID::uid": "99037f7d-c376-4cb5-a06a-006fb96548d5",
+          "ControlSettings": {
+            "ComboBoxMode": false,
+            "ExtendendLocalization": false,
+            "HideSelectorButton": true,
+            "IsAllowOpenRefs": false,
+            "ManualInput": false,
+            "ManualInputColumnID": null,
+            "MaxResultsCount::int": 15,
+            "ParameterAlias": "Caption",
+            "RefSection": "Types",
+            "SearchDelay": null,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "SemiBold",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "ViewAlias": "Types",
+            "ViewAliasComboBox": "Types",
+            "ViewMap": [
+              {
+                "CardColumn::uid": "99037f7d-c376-00b5-4000-006fb96548d5",
+                "CardSection::uid": "a161e289-2f99-4699-9e95-6e3336be8527",
+                "ColumnType::int": 0,
+                "ConstantValue": false,
+                "ConstantValueType::int": 4,
+                "SkipNullParams": true,
+                "ViewMasterLinkName": "",
+                "ViewMasterLinkType::int": 0,
+                "ViewParamName": "ID",
+                "ViewParamSetName": ""
+              }
+            ],
+            "ViewReferencePrefix": "Type"
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "{2}",
+          "Flags::int": 1,
+          "Name": null,
+          "Order::int": 2,
+          "PhysicalColumnIDList": [],
+          "RequiredText": "",
+          "SectionID::uid": "a161e289-2f99-4699-9e95-6e3336be8527",
+          "ToolTip": null,
+          "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+        },
+        {
+          "BlockSettings": {
+            "CaptionStyle": {
+              "TextColor": "#FF505050",
+              "TextStyle": {
+                "SelectedFontFamily": "Segoe UI",
+                "SelectedFontSize": 12.0,
+                "SelectedFontStretch": "Normal",
+                "SelectedFontStyle": "Normal",
+                "SelectedFontWeight": "SemiBold",
+                "SelectedTextBaseline": false,
+                "SelectedTextOverLine": false,
+                "SelectedTextStrikethrough": false,
+                "SelectedTextUnderline": false
+              }
+            },
+            "ColumnSpan::int": 1,
+            "ControlSpan": false,
+            "EmptyColumnsToTheLeft::int": 0,
+            "HideCaption": false,
+            "HorizontalAlignment::int": 3,
+            "Margin": "0,0,0,0",
+            "MaxWidth": 0.0,
+            "MinWidth": 0.0,
+            "StartAtNewLine": false,
+            "VerticalAlignment::int": 3
+          },
+          "Caption": "Статус",
+          "ComplexColumnID::uid": "53cd2159-752f-41b9-8ada-cecdc8d136fe",
+          "ControlSettings": {
+            "ComboBoxMode": false,
+            "ExtendendLocalization": false,
+            "HideSelectorButton": true,
+            "IsAllowOpenRefs": true,
+            "ManualInput": false,
+            "ManualInputColumnID": null,
+            "MaxResultsCount::int": 15,
+            "ParameterAlias": "",
+            "RefSection": null,
+            "SearchDelay": null,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "SemiBold",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "ViewAlias": "",
+            "ViewAliasComboBox": "",
+            "ViewMap": null,
+            "ViewReferencePrefix": null
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 1,
+          "Name": null,
+          "Order::int": 3,
+          "PhysicalColumnIDList": [],
+          "RequiredText": "",
+          "SectionID::uid": "53ad6a32-f205-4c68-8df4-bfbba18a1cea",
+          "ToolTip": null,
+          "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+        },
+        {
+          "BlockSettings": {
+            "CaptionStyle": {
+              "TextColor": "#FF505050",
+              "TextStyle": {
+                "SelectedFontFamily": "Segoe UI",
+                "SelectedFontSize": 12.0,
+                "SelectedFontStretch": "Normal",
+                "SelectedFontStyle": "Normal",
+                "SelectedFontWeight": "Normal",
+                "SelectedTextBaseline": false,
+                "SelectedTextOverLine": false,
+                "SelectedTextStrikethrough": false,
+                "SelectedTextUnderline": false
+              }
+            },
+            "ColumnSpan::int": 1,
+            "ControlSpan": false,
+            "EmptyColumnsToTheLeft::int": 0,
+            "HideCaption": false,
+            "HorizontalAlignment::int": 3,
+            "Margin": "0,0,0,0",
+            "MaxWidth": 0.0,
+            "MinWidth": 0.0,
+            "StartAtNewLine": false,
+            "VerticalAlignment::int": 3
+          },
+          "Caption": "Тип заявки",
+          "ComplexColumnID::uid": "3228c4b9-303a-4ee3-8ec2-58b628010602",
+          "ControlSettings": {
+            "ComboBoxMode": true,
+            "ExtendendLocalization": false,
+            "HideSelectorButton": true,
+            "IsAllowOpenRefs": true,
+            "ManualInput": false,
+            "ManualInputColumnID": null,
+            "MaxResultsCount::int": 15,
+            "ParameterAlias": "Name",
+            "RefSection": "PnrPartnerRequestTypes",
+            "SearchDelay": null,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "ViewAlias": "PnrPartnerRequestTypes",
+            "ViewAliasComboBox": "PnrPartnerRequestTypes",
+            "ViewMap": null,
+            "ViewReferencePrefix": null
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": "RequestType",
+          "Order::int": 4,
+          "PhysicalColumnIDList": [],
+          "RequiredText": "",
+          "SectionID::uid": "dadfadd9-d28c-454e-aebb-d900fda5a6eb",
+          "ToolTip": null,
+          "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+        },
+        {
+          "BlockSettings": {
+            "CaptionStyle": {
+              "TextColor": "#FF505050",
+              "TextStyle": {
+                "SelectedFontFamily": "Segoe UI",
+                "SelectedFontSize": 12.0,
+                "SelectedFontStretch": "Normal",
+                "SelectedFontStyle": "Normal",
+                "SelectedFontWeight": "Normal",
+                "SelectedTextBaseline": false,
+                "SelectedTextOverLine": false,
+                "SelectedTextStrikethrough": false,
+                "SelectedTextUnderline": false
+              }
+            },
+            "ColumnSpan::int": 2,
+            "ControlSpan": true,
+            "EmptyColumnsToTheLeft::int": 0,
+            "HideCaption": false,
+            "HorizontalAlignment::int": 3,
+            "Margin": "0,0,0,0",
+            "MaxWidth": 0.0,
+            "MinWidth": 0.0,
+            "StartAtNewLine": false,
+            "VerticalAlignment::int": 3
+          },
+          "Caption": "Контрагент",
+          "ComplexColumnID::uid": "9f3dd989-04f8-463f-9c7a-3ffc64c8de92",
+          "ControlSettings": {
+            "ComboBoxMode": false,
+            "ExtendendLocalization": false,
+            "HideSelectorButton": false,
+            "IsAllowOpenRefs": true,
+            "ManualInput": false,
+            "ManualInputColumnID": null,
+            "MaxResultsCount::int": 15,
+            "ParameterAlias": "Name",
+            "PopupColumnLengths": "",
+            "PopupColumnLengthsComboBox": "",
+            "PopupColumnsIndexes": "1, 4, 9",
+            "PopupColumnsIndexesComboBox": "",
+            "PopupScreenLengthPercent::int": 100,
+            "RefSection": "Partners",
+            "SearchDelay": null,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "ViewAlias": "Partners",
+            "ViewAliasComboBox": "",
+            "ViewMap": null,
+            "ViewReferencePrefix": null
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 6,
+          "Name": "Partner",
+          "Order::int": 5,
+          "PhysicalColumnIDList": [],
+          "RequiredText": "",
+          "SectionID::uid": "dadfadd9-d28c-454e-aebb-d900fda5a6eb",
+          "ToolTip": null,
+          "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+        }
+      ],
+      "FormSettings": {
+        "HideCaption": false
+      },
+      "Name": "BasicInformationBlock",
+      "Order::int": 1
+    },
+    {
+      "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+      "BlockSettings": {
+        "AlwaysMultipleColumn": false,
+        "CollapsedByDefault": false,
+        "ColumnsCount::int": 2,
+        "DoNotCollapseWithTopBlock": false,
+        "HorizontalInterval::int": 5,
+        "IsHidden": false,
+        "LeftCaptions": false,
+        "StretchVertically": false,
+        "VerticalInterval::int": 5
+      },
+      "Caption": "Создание нового КА",
+      "Controls": [
+        {
+          "BlockSettings": {
+            "CaptionStyle": {
+              "TextColor": "#FF505050",
+              "TextStyle": {
+                "SelectedFontFamily": "Segoe UI",
+                "SelectedFontSize": 12.0,
+                "SelectedFontStretch": "Normal",
+                "SelectedFontStyle": "Normal",
+                "SelectedFontWeight": "Normal",
+                "SelectedTextBaseline": false,
+                "SelectedTextOverLine": false,
+                "SelectedTextStrikethrough": false,
+                "SelectedTextUnderline": false
+              }
+            },
+            "ColumnSpan::int": 1,
+            "ControlSpan": false,
+            "EmptyColumnsToTheLeft::int": 0,
+            "HideCaption": false,
+            "HorizontalAlignment::int": 3,
+            "Margin": "0,0,0,0",
+            "MaxWidth": 0.0,
+            "MinWidth": 0.0,
+            "StartAtNewLine": true,
+            "VerticalAlignment::int": 3
+          },
+          "Caption": "Тип контрагента",
+          "ComplexColumnID::uid": "af585588-d825-4940-aaa4-29e6c36f6738",
+          "ControlSettings": {
+            "ComboBoxMode": true,
+            "ExtendendLocalization": false,
+            "HideSelectorButton": true,
+            "IsAllowOpenRefs": true,
+            "ManualInput": false,
+            "ManualInputColumnID": null,
+            "MaxResultsCount::int": 15,
+            "ParameterAlias": "Name",
+            "RefSection": null,
+            "SearchDelay": null,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "ViewAlias": "PartnersTypes",
+            "ViewAliasComboBox": "PartnersTypes",
+            "ViewMap": null,
+            "ViewReferencePrefix": null
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 4,
+          "Name": "Type",
+          "Order::int": 0,
+          "PhysicalColumnIDList": [],
+          "RequiredText": "",
+          "SectionID::uid": "dadfadd9-d28c-454e-aebb-d900fda5a6eb",
+          "ToolTip": null,
+          "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+        },
+        {
+          "BlockSettings": {
+            "CaptionStyle": {
+              "TextColor": "#FF505050",
+              "TextStyle": {
+                "SelectedFontFamily": "Segoe UI",
+                "SelectedFontSize": 12.0,
+                "SelectedFontStretch": "Normal",
+                "SelectedFontStyle": "Normal",
+                "SelectedFontWeight": "Normal",
+                "SelectedTextBaseline": false,
+                "SelectedTextOverLine": false,
+                "SelectedTextStrikethrough": false,
+                "SelectedTextUnderline": false
+              }
+            },
+            "ColumnSpan::int": 1,
+            "ControlSpan": false,
+            "EmptyColumnsToTheLeft::int": 0,
+            "HideCaption": false,
+            "HorizontalAlignment::int": 3,
+            "Margin": "0,0,0,0",
+            "MaxWidth": 0.0,
+            "MinWidth": 0.0,
+            "StartAtNewLine": false,
+            "VerticalAlignment::int": 3
+          },
+          "Caption": "Рег. №",
+          "ComplexColumnID": null,
+          "ControlSettings": {
+            "MaxLength::int": 2147483647,
+            "MaxRows::int": 1,
+            "MinRows::int": 1,
+            "ShowExpandButton": true,
+            "TextColor": "#FF000000",
+            "TextMode::int": 0,
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "TextWrap": true
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": "RegistrationNo",
+          "Order::int": 1,
+          "PhysicalColumnIDList": [
+            {
+              "::types": [
+                "uid"
+              ]
+            },
+            "bd487677-54a9-40f6-a3f3-600e6cc688f8"
+          ],
+          "RequiredText": "",
+          "SectionID::uid": "dadfadd9-d28c-454e-aebb-d900fda5a6eb",
+          "ToolTip": null,
+          "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+        },
+        {
+          "BlockSettings": {
+            "ControlSpan": true,
+            "HideCaption": false
+          },
+          "Caption": "Наименование",
+          "ComplexColumnID": null,
+          "ControlSettings": {
+            "MaxLength::int": 2147483647,
+            "MaxRows::int": 1,
+            "MinRows::int": 1,
+            "ShowExpandButton": true,
+            "TextColor": "#FF000000",
+            "TextMode::int": 0,
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "TextWrap": true
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 2,
+          "Name": "Name",
+          "Order::int": 2,
+          "PhysicalColumnIDList": [
+            {
+              "::types": [
+                "uid"
+              ]
+            },
+            "16438fc3-c5a9-4064-90b0-597d2afe0065"
+          ],
+          "RequiredText": "",
+          "SectionID::uid": "dadfadd9-d28c-454e-aebb-d900fda5a6eb",
+          "ToolTip": null,
+          "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+        },
+        {
+          "BlockSettings": {
+            "ControlSpan": true,
+            "HideCaption": false
+          },
+          "Caption": "Полное наименование контрагента",
+          "ComplexColumnID": null,
+          "ControlSettings": {
+            "MaxLength::int": 2147483647,
+            "MaxRows::int": 1,
+            "MinRows::int": 1,
+            "ShowExpandButton": true,
+            "TextColor": "#FF000000",
+            "TextMode::int": 0,
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "TextWrap": true
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 4,
+          "Name": "FullName",
+          "Order::int": 3,
+          "PhysicalColumnIDList": [
+            {
+              "::types": [
+                "uid"
+              ]
+            },
+            "9ae94b2f-f7f9-4ac0-86d0-086166615ad0"
+          ],
+          "RequiredText": "",
+          "SectionID::uid": "dadfadd9-d28c-454e-aebb-d900fda5a6eb",
+          "ToolTip": null,
+          "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+        },
+        {
+          "BlockSettings": {
+            "ControlSpan": true,
+            "HideCaption": false
+          },
+          "Caption": "Краткое наименование контагента",
+          "ComplexColumnID": null,
+          "ControlSettings": {
+            "MaxLength::int": 2147483647,
+            "MaxRows::int": 1,
+            "MinRows::int": 1,
+            "ShowExpandButton": true,
+            "TextColor": "#FF000000",
+            "TextMode::int": 0,
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "TextWrap": true
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 4,
+          "Name": "ShortName",
+          "Order::int": 4,
+          "PhysicalColumnIDList": [
+            {
+              "::types": [
+                "uid"
+              ]
+            },
+            "067e9e76-be83-4bba-a448-d46c46d49458"
+          ],
+          "RequiredText": "",
+          "SectionID::uid": "dadfadd9-d28c-454e-aebb-d900fda5a6eb",
+          "ToolTip": null,
+          "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+        },
+        {
+          "BlockSettings": {
+            "CaptionStyle": {
+              "TextColor": "#FF505050",
+              "TextStyle": {
+                "SelectedFontFamily": "Segoe UI",
+                "SelectedFontSize": 12.0,
+                "SelectedFontStretch": "Normal",
+                "SelectedFontStyle": "Normal",
+                "SelectedFontWeight": "Normal",
+                "SelectedTextBaseline": false,
+                "SelectedTextOverLine": false,
+                "SelectedTextStrikethrough": false,
+                "SelectedTextUnderline": false
+              }
+            },
+            "ColumnSpan::int": 1,
+            "ControlSpan": false,
+            "EmptyColumnsToTheLeft::int": 0,
+            "HideCaption": false,
+            "HorizontalAlignment::int": 3,
+            "Margin": "0,0,0,0",
+            "MaxWidth": 0.0,
+            "MinWidth": 0.0,
+            "StartAtNewLine": false,
+            "VerticalAlignment::int": 3
+          },
+          "Caption": "Особый признак контрагента",
+          "ComplexColumnID::uid": "a8a148c5-66a1-4f74-a7d2-a6d7a84712b7",
+          "ControlSettings": {
+            "ComboBoxMode": true,
+            "ExtendendLocalization": false,
+            "HideSelectorButton": true,
+            "IsAllowOpenRefs": true,
+            "ManualInput": false,
+            "ManualInputColumnID": null,
+            "MaxResultsCount::int": 15,
+            "ParameterAlias": "Name",
+            "RefSection": "PnrSpecialPartnerSign",
+            "SearchDelay": null,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "ViewAlias": "PnrSpecialPartnerSign",
+            "ViewAliasComboBox": "PnrSpecialPartnerSign",
+            "ViewMap": null,
+            "ViewReferencePrefix": null
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 4,
+          "Name": "SpecialSign",
+          "Order::int": 5,
+          "PhysicalColumnIDList": [],
+          "RequiredText": "",
+          "SectionID::uid": "dadfadd9-d28c-454e-aebb-d900fda5a6eb",
+          "ToolTip": null,
+          "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+        },
+        {
+          "BlockSettings": {
+            "CaptionStyle": {
+              "TextColor": "#FF505050",
+              "TextStyle": {
+                "SelectedFontFamily": "Segoe UI",
+                "SelectedFontSize": 12.0,
+                "SelectedFontStretch": "Normal",
+                "SelectedFontStyle": "Normal",
+                "SelectedFontWeight": "Normal",
+                "SelectedTextBaseline": false,
+                "SelectedTextOverLine": false,
+                "SelectedTextStrikethrough": false,
+                "SelectedTextUnderline": false
+              }
+            },
+            "ColumnSpan::int": 1,
+            "ControlSpan": false,
+            "EmptyColumnsToTheLeft::int": 0,
+            "HideCaption": false,
+            "HorizontalAlignment::int": 3,
+            "Margin": "0,0,0,0",
+            "MaxWidth": 0.0,
+            "MinWidth": 0.0,
+            "StartAtNewLine": true,
+            "VerticalAlignment::int": 3
+          },
+          "Caption": "Нерезидент",
+          "ComplexColumnID::uid": "3cdeac59-26b1-4024-8330-0877951e8adc",
+          "ControlSettings": {
+            "ComboBoxMode": true,
+            "ExtendendLocalization": false,
+            "HideSelectorButton": true,
+            "IsAllowOpenRefs": true,
+            "ManualInput": false,
+            "ManualInputColumnID": null,
+            "MaxResultsCount::int": 15,
+            "ParameterAlias": "Name",
+            "RefSection": null,
+            "SearchDelay": null,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "ViewAlias": "PnrYesNoReference",
+            "ViewAliasComboBox": "PnrYesNoReference",
+            "ViewMap": null,
+            "ViewReferencePrefix": null
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": "NonResident",
+          "Order::int": 6,
+          "PhysicalColumnIDList": [],
+          "RequiredText": "",
+          "SectionID::uid": "dadfadd9-d28c-454e-aebb-d900fda5a6eb",
+          "ToolTip": null,
+          "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+        },
+        {
+          "BlockSettings": {
+            "CaptionStyle": {
+              "TextColor": "#FF505050",
+              "TextStyle": {
+                "SelectedFontFamily": "Segoe UI",
+                "SelectedFontSize": 12.0,
+                "SelectedFontStretch": "Normal",
+                "SelectedFontStyle": "Normal",
+                "SelectedFontWeight": "Normal",
+                "SelectedTextBaseline": false,
+                "SelectedTextOverLine": false,
+                "SelectedTextStrikethrough": false,
+                "SelectedTextUnderline": false
+              }
+            },
+            "ColumnSpan::int": 1,
+            "ControlSpan": false,
+            "EmptyColumnsToTheLeft::int": 0,
+            "HideCaption": false,
+            "HorizontalAlignment::int": 3,
+            "Margin": "0,0,0,0",
+            "MaxWidth": 0.0,
+            "MinWidth": 0.0,
+            "StartAtNewLine": true,
+            "VerticalAlignment::int": 3
+          },
+          "Caption": "ИНН",
+          "ComplexColumnID": null,
+          "ControlSettings": {
+            "MaxLength::int": 2147483647,
+            "MaxRows::int": 1,
+            "MinRows::int": 1,
+            "ShowExpandButton": true,
+            "TextColor": "#FF000000",
+            "TextMode::int": 0,
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "TextWrap": true
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 2,
+          "Name": "INN",
+          "Order::int": 7,
+          "PhysicalColumnIDList": [
+            {
+              "::types": [
+                "uid"
+              ]
+            },
+            "95954600-c5db-4e82-96b6-748385a54d5d"
+          ],
+          "RequiredText": "",
+          "SectionID::uid": "dadfadd9-d28c-454e-aebb-d900fda5a6eb",
+          "ToolTip": null,
+          "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+        },
+        {
+          "BlockSettings": {
+            "CaptionStyle": {
+              "TextColor": "#FF505050",
+              "TextStyle": {
+                "SelectedFontFamily": "Segoe UI",
+                "SelectedFontSize": 12.0,
+                "SelectedFontStretch": "Normal",
+                "SelectedFontStyle": "Normal",
+                "SelectedFontWeight": "Normal",
+                "SelectedTextBaseline": false,
+                "SelectedTextOverLine": false,
+                "SelectedTextStrikethrough": false,
+                "SelectedTextUnderline": false
+              }
+            },
+            "ColumnSpan::int": 1,
+            "ControlSpan": false,
+            "EmptyColumnsToTheLeft::int": 0,
+            "HideCaption": false,
+            "HorizontalAlignment::int": 3,
+            "Margin": "0,0,0,0",
+            "MaxWidth": 0.0,
+            "MinWidth": 0.0,
+            "StartAtNewLine": false,
+            "VerticalAlignment::int": 3
+          },
+          "Caption": "КПП",
+          "ComplexColumnID": null,
+          "ControlSettings": {
+            "MaxLength::int": 2147483647,
+            "MaxRows::int": 1,
+            "MinRows::int": 1,
+            "ShowExpandButton": true,
+            "TextColor": "#FF000000",
+            "TextMode::int": 0,
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "TextWrap": true
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 2,
+          "Name": "KPP",
+          "Order::int": 8,
+          "PhysicalColumnIDList": [
+            {
+              "::types": [
+                "uid"
+              ]
+            },
+            "64d77c0a-df94-4435-8f26-abbc9edd6b13"
+          ],
+          "RequiredText": "",
+          "SectionID::uid": "dadfadd9-d28c-454e-aebb-d900fda5a6eb",
+          "ToolTip": null,
+          "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+        },
+        {
+          "BlockSettings": {
+            "CaptionStyle": {
+              "TextColor": "#FF505050",
+              "TextStyle": {
+                "SelectedFontFamily": "Segoe UI",
+                "SelectedFontSize": 12.0,
+                "SelectedFontStretch": "Normal",
+                "SelectedFontStyle": "Normal",
+                "SelectedFontWeight": "Normal",
+                "SelectedTextBaseline": false,
+                "SelectedTextOverLine": false,
+                "SelectedTextStrikethrough": false,
+                "SelectedTextUnderline": false
+              }
+            },
+            "ColumnSpan::int": 1,
+            "ControlSpan": false,
+            "EmptyColumnsToTheLeft::int": 0,
+            "HideCaption": false,
+            "HorizontalAlignment::int": 3,
+            "Margin": "0,0,0,0",
+            "MaxWidth": 0.0,
+            "MinWidth": 0.0,
+            "StartAtNewLine": false,
+            "VerticalAlignment::int": 3
+          },
+          "Caption": "ОГРН",
+          "ComplexColumnID": null,
+          "ControlSettings": {
+            "MaxLength::int": 2147483647,
+            "MaxRows::int": 1,
+            "MinRows::int": 1,
+            "ShowExpandButton": true,
+            "TextColor": "#FF000000",
+            "TextMode::int": 0,
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "TextWrap": true
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 2,
+          "Name": "OGRN",
+          "Order::int": 9,
+          "PhysicalColumnIDList": [
+            {
+              "::types": [
+                "uid"
+              ]
+            },
+            "19b4705e-40b9-46a4-b5ad-0cf64c96ad62"
+          ],
+          "RequiredText": "",
+          "SectionID::uid": "dadfadd9-d28c-454e-aebb-d900fda5a6eb",
+          "ToolTip": null,
+          "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+        },
+        {
+          "BlockSettings": {
+            "CaptionStyle": {
+              "TextColor": "#FF505050",
+              "TextStyle": {
+                "SelectedFontFamily": "Segoe UI",
+                "SelectedFontSize": 12.0,
+                "SelectedFontStretch": "Normal",
+                "SelectedFontStyle": "Normal",
+                "SelectedFontWeight": "Normal",
+                "SelectedTextBaseline": false,
+                "SelectedTextOverLine": false,
+                "SelectedTextStrikethrough": false,
+                "SelectedTextUnderline": false
+              }
+            },
+            "ColumnSpan::int": 1,
+            "ControlSpan": false,
+            "EmptyColumnsToTheLeft::int": 0,
+            "HideCaption": false,
+            "HorizontalAlignment::int": 3,
+            "Margin": "0,0,0,0",
+            "MaxWidth": 0.0,
+            "MinWidth": 0.0,
+            "StartAtNewLine": false,
+            "VerticalAlignment::int": 3
+          },
+          "Caption": "День рождения",
+          "ComplexColumnID": null,
+          "ControlSettings": {
+            "DateFormat": true,
+            "DateNullable": true,
+            "IgnoreTimezone": false,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "TimeEnabled": false
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 2,
+          "Name": "Birthday",
+          "Order::int": 10,
+          "PhysicalColumnIDList": [
+            {
+              "::types": [
+                "uid"
+              ]
+            },
+            "ce3c1a76-b0de-4905-81c6-a1b95f3d4668"
+          ],
+          "RequiredText": "",
+          "SectionID::uid": "dadfadd9-d28c-454e-aebb-d900fda5a6eb",
+          "ToolTip": null,
+          "Type::uid": "c08b81f3-ed18-005a-bae6-a61679812709"
+        },
+        {
+          "BlockSettings": {
+            "CaptionStyle": {
+              "TextColor": "#FF505050",
+              "TextStyle": {
+                "SelectedFontFamily": "Segoe UI",
+                "SelectedFontSize": 12.0,
+                "SelectedFontStretch": "Normal",
+                "SelectedFontStyle": "Normal",
+                "SelectedFontWeight": "Normal",
+                "SelectedTextBaseline": false,
+                "SelectedTextOverLine": false,
+                "SelectedTextStrikethrough": false,
+                "SelectedTextUnderline": false
+              }
+            },
+            "ColumnSpan::int": 1,
+            "ControlSpan": false,
+            "EmptyColumnsToTheLeft::int": 0,
+            "HideCaption": false,
+            "HorizontalAlignment::int": 3,
+            "Margin": "0,0,0,0",
+            "MaxWidth": 0.0,
+            "MinWidth": 0.0,
+            "StartAtNewLine": true,
+            "VerticalAlignment::int": 3
+          },
+          "Caption": "Страна регистрации",
+          "ComplexColumnID::uid": "5376755a-690e-488e-8ca0-12821bc6f917",
+          "ControlSettings": {
+            "ComboBoxMode": false,
+            "ExtendendLocalization": false,
+            "HideSelectorButton": false,
+            "IsAllowOpenRefs": true,
+            "ManualInput": false,
+            "ManualInputColumnID": null,
+            "MaxResultsCount::int": 15,
+            "ParameterAlias": "Name",
+            "RefSection": "PnrCountries",
+            "SearchDelay": null,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "ViewAlias": "PnrCountries",
+            "ViewAliasComboBox": "PnrCountries",
+            "ViewMap": null,
+            "ViewReferencePrefix": null
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 4,
+          "Name": "CountryRegistration",
+          "Order::int": 11,
+          "PhysicalColumnIDList": [],
+          "RequiredText": "",
+          "SectionID::uid": "dadfadd9-d28c-454e-aebb-d900fda5a6eb",
+          "ToolTip": null,
+          "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+        },
+        {
+          "BlockSettings": {
+            "ControlSpan": true,
+            "HideCaption": false
+          },
+          "Caption": "Комментарий",
+          "ComplexColumnID": null,
+          "ControlSettings": {
+            "MaxLength::int": 2147483647,
+            "MaxRows::int": 6,
+            "MinRows::int": 2,
+            "ShowExpandButton": true,
+            "TextColor": "#FF000000",
+            "TextMode::int": 0,
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "TextWrap": true
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": "Comment",
+          "Order::int": 12,
+          "PhysicalColumnIDList": [
+            {
+              "::types": [
+                "uid"
+              ]
+            },
+            "58890cb8-0ed2-4912-a339-8d37d61cc0ff"
+          ],
+          "RequiredText": "",
+          "SectionID::uid": "dadfadd9-d28c-454e-aebb-d900fda5a6eb",
+          "ToolTip": null,
+          "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+        },
+        {
+          "BlockSettings": {
+            "CaptionStyle": {
+              "TextColor": "#FF505050",
+              "TextStyle": {
+                "SelectedFontFamily": "Segoe UI",
+                "SelectedFontSize": 12.0,
+                "SelectedFontStretch": "Normal",
+                "SelectedFontStyle": "Normal",
+                "SelectedFontWeight": "Normal",
+                "SelectedTextBaseline": false,
+                "SelectedTextOverLine": false,
+                "SelectedTextStrikethrough": false,
+                "SelectedTextUnderline": false
+              }
+            },
+            "ColumnSpan::int": 1,
+            "ControlSpan": false,
+            "EmptyColumnsToTheLeft::int": 0,
+            "HideCaption": true,
+            "HorizontalAlignment::int": 3,
+            "Margin": "0,0,0,0",
+            "MaxWidth": 0.0,
+            "MinWidth": 0.0,
+            "StartAtNewLine": false,
+            "VerticalAlignment::int": 3
+          },
+          "Caption": "Требует согласование КА",
+          "ComplexColumnID": null,
+          "ControlSettings": {
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            }
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": "RequiresApprovalCA",
+          "Order::int": 13,
+          "PhysicalColumnIDList": [
+            {
+              "::types": [
+                "uid"
+              ]
+            },
+            "64a216d2-2d15-4dd9-a3ef-181b532f359c"
+          ],
+          "RequiredText": "",
+          "SectionID::uid": "dadfadd9-d28c-454e-aebb-d900fda5a6eb",
+          "ToolTip": null,
+          "Type::uid": "79633881-a684-010a-b1ea-027d714bda5d"
+        }
+      ],
+      "FormSettings": {
+        "HideCaption": true
+      },
+      "Name": "NewPartnerBlock",
+      "Order::int": 2
+    },
+    {
+      "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+      "BlockSettings": {
+        "AlwaysMultipleColumn": false,
+        "CollapsedByDefault": false,
+        "ColumnsCount::int": 2,
+        "DoNotCollapseWithTopBlock": false,
+        "HorizontalInterval::int": 5,
+        "IsHidden": true,
+        "LeftCaptions": false,
+        "StretchVertically": false,
+        "VerticalInterval::int": 5
+      },
+      "Caption": "Физическое лицо",
+      "Controls": [
+        {
+          "BlockSettings": {
+            "ControlSpan": false,
+            "HideCaption": false
+          },
+          "Caption": "Документ, удостоверяющий личность",
+          "ComplexColumnID": null,
+          "ControlSettings": {
+            "MaxLength::int": 2147483647,
+            "MaxRows::int": 1,
+            "MinRows::int": 1,
+            "ShowExpandButton": true,
+            "TextColor": "#FF000000",
+            "TextMode::int": 0,
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "TextWrap": true
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": null,
+          "Order::int": 0,
+          "PhysicalColumnIDList": [
+            {
+              "::types": [
+                "uid"
+              ]
+            },
+            "5c9ffcc3-84a6-43eb-9173-41d497177b3f"
+          ],
+          "RequiredText": "",
+          "SectionID::uid": "dadfadd9-d28c-454e-aebb-d900fda5a6eb",
+          "ToolTip": null,
+          "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+        },
+        {
+          "BlockSettings": {
+            "ControlSpan": false,
+            "HideCaption": false
+          },
+          "Caption": "Вид документа",
+          "ComplexColumnID": null,
+          "ControlSettings": {
+            "MaxLength::int": 2147483647,
+            "MaxRows::int": 1,
+            "MinRows::int": 1,
+            "ShowExpandButton": true,
+            "TextColor": "#FF000000",
+            "TextMode::int": 0,
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "TextWrap": true
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": null,
+          "Order::int": 1,
+          "PhysicalColumnIDList": [
+            {
+              "::types": [
+                "uid"
+              ]
+            },
+            "ef8286e4-e2e4-4bd8-8637-aa31132f4bd3"
+          ],
+          "RequiredText": "",
+          "SectionID::uid": "dadfadd9-d28c-454e-aebb-d900fda5a6eb",
+          "ToolTip": null,
+          "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+        },
+        {
+          "BlockSettings": {
+            "ControlSpan": false,
+            "HideCaption": false
+          },
+          "Caption": "Серия",
+          "ComplexColumnID": null,
+          "ControlSettings": {
+            "MaxLength::int": 2147483647,
+            "MaxRows::int": 1,
+            "MinRows::int": 1,
+            "ShowExpandButton": true,
+            "TextColor": "#FF000000",
+            "TextMode::int": 0,
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "TextWrap": true
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": null,
+          "Order::int": 2,
+          "PhysicalColumnIDList": [
+            {
+              "::types": [
+                "uid"
+              ]
+            },
+            "78167913-126f-48bf-848d-4cfb8fc7914d"
+          ],
+          "RequiredText": "",
+          "SectionID::uid": "dadfadd9-d28c-454e-aebb-d900fda5a6eb",
+          "ToolTip": null,
+          "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+        },
+        {
+          "BlockSettings": {
+            "ControlSpan": false,
+            "HideCaption": false
+          },
+          "Caption": "Номер",
+          "ComplexColumnID": null,
+          "ControlSettings": {
+            "MaxLength::int": 2147483647,
+            "MaxRows::int": 1,
+            "MinRows::int": 1,
+            "ShowExpandButton": true,
+            "TextColor": "#FF000000",
+            "TextMode::int": 0,
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "TextWrap": true
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": null,
+          "Order::int": 3,
+          "PhysicalColumnIDList": [
+            {
+              "::types": [
+                "uid"
+              ]
+            },
+            "76928df2-2b6a-4f0b-a535-c8a70ec60d84"
+          ],
+          "RequiredText": "",
+          "SectionID::uid": "dadfadd9-d28c-454e-aebb-d900fda5a6eb",
+          "ToolTip": null,
+          "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+        },
+        {
+          "BlockSettings": {
+            "ControlSpan": false,
+            "HideCaption": false
+          },
+          "Caption": "Кем выдан",
+          "ComplexColumnID": null,
+          "ControlSettings": {
+            "MaxLength::int": 2147483647,
+            "MaxRows::int": 4,
+            "MinRows::int": 2,
+            "ShowExpandButton": true,
+            "TextColor": "#FF000000",
+            "TextMode::int": 0,
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "TextWrap": true
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": null,
+          "Order::int": 4,
+          "PhysicalColumnIDList": [
+            {
+              "::types": [
+                "uid"
+              ]
+            },
+            "3ae10722-922b-4004-9bc4-4fc4a733d2cf"
+          ],
+          "RequiredText": "",
+          "SectionID::uid": "dadfadd9-d28c-454e-aebb-d900fda5a6eb",
+          "ToolTip": null,
+          "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+        },
+        {
+          "BlockSettings": {
+            "ControlSpan": false,
+            "HideCaption": false
+          },
+          "Caption": "Когда выдан",
+          "ComplexColumnID": null,
+          "ControlSettings": {
+            "DateFormat": true,
+            "DateNullable": true,
+            "IgnoreTimezone": false,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "TimeEnabled": false
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": null,
+          "Order::int": 5,
+          "PhysicalColumnIDList": [
+            {
+              "::types": [
+                "uid"
+              ]
+            },
+            "9bc99888-967a-48b9-90be-444c18429a25"
+          ],
+          "RequiredText": "",
+          "SectionID::uid": "dadfadd9-d28c-454e-aebb-d900fda5a6eb",
+          "ToolTip": null,
+          "Type::uid": "c08b81f3-ed18-005a-bae6-a61679812709"
+        }
+      ],
+      "FormSettings": {
+        "HideCaption": true
+      },
+      "Name": "BlockIndividual",
+      "Order::int": 3
+    },
+    {
+      "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+      "BlockSettings": {
+        "AlwaysMultipleColumn": false,
+        "CollapsedByDefault": false,
+        "ColumnsCount::int": 1,
+        "DoNotCollapseWithTopBlock": false,
+        "HorizontalInterval::int": 5,
+        "IsHidden": false,
+        "LeftCaptions": false,
+        "StretchVertically": false,
+        "VerticalInterval::int": 5
+      },
+      "Caption": "Направление",
+      "Controls": [
+        {
+          "BlockSettings": {
+            "CaptionStyle": {
+              "TextColor": "#FF505050",
+              "TextStyle": {
+                "SelectedFontFamily": "Segoe UI",
+                "SelectedFontSize": 12.0,
+                "SelectedFontStretch": "Normal",
+                "SelectedFontStyle": "Normal",
+                "SelectedFontWeight": "Normal",
+                "SelectedTextBaseline": false,
+                "SelectedTextOverLine": false,
+                "SelectedTextStrikethrough": false,
+                "SelectedTextUnderline": false
+              }
+            },
+            "ColumnSpan::int": 1,
+            "ControlSpan": false,
+            "EmptyColumnsToTheLeft::int": 0,
+            "HideCaption": false,
+            "HorizontalAlignment::int": 3,
+            "Margin": "0,0,0,0",
+            "MaxWidth": 0.0,
+            "MinWidth": 0.0,
+            "StartAtNewLine": false,
+            "VerticalAlignment::int": 3
+          },
+          "Caption": "Направление",
+          "ComplexColumnID::uid": "33a33ba4-24be-43ec-bb83-4d4bd6b6dcdd",
+          "ControlSettings": {
+            "ComboBoxMode": true,
+            "ExtendendLocalization": false,
+            "HideSelectorButton": true,
+            "IsAllowOpenRefs": true,
+            "ManualInput": false,
+            "ManualInputColumnID": null,
+            "MaxResultsCount::int": 15,
+            "ParameterAlias": "Name",
+            "RefSection": "PnrPartnerRequestDirections",
+            "SearchDelay": null,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "ViewAlias": "PnrPartnerRequestDirections",
+            "ViewAliasComboBox": "PnrPartnerRequestDirections",
+            "ViewMap": null,
+            "ViewReferencePrefix": null
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 4,
+          "Name": "ControlDirection",
+          "Order::int": 0,
+          "PhysicalColumnIDList": [],
+          "RequiredText": "",
+          "SectionID::uid": "dadfadd9-d28c-454e-aebb-d900fda5a6eb",
+          "ToolTip": null,
+          "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+        }
+      ],
+      "FormSettings": {
+        "HideCaption": true
+      },
+      "Name": "BlockDirection",
+      "Order::int": 4
+    },
+    {
+      "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+      "BlockSettings": {
+        "AlwaysMultipleColumn": false,
+        "CollapsedByDefault": false,
+        "ColumnsCount::int": 1,
+        "DoNotCollapseWithTopBlock": false,
+        "HorizontalInterval::int": 5,
+        "IsHidden": false,
+        "LeftCaptions": false,
+        "StretchVertically": false,
+        "VerticalInterval::int": 5
+      },
+      "Caption": "Ссылки на другие документы",
+      "Controls": [
+        {
+          "BlockSettings": {
+            "ControlSpan": true,
+            "HideCaption": false
+          },
+          "Caption": "$CardTypes_Blocks_Controls_References",
+          "Columns": [
+            {
+              "AggregationFormat": "",
+              "Alignment::int": 0,
+              "Caption": "Reference",
+              "ComplexColumnID::uid": "4856d3e1-fda0-42eb-bd87-8c2cea592e9f",
+              "DisplayFormat": "[ {1} ]",
+              "Flags::int": 0,
+              "HeaderAlignment::int": 2,
+              "MaxLength": null,
+              "Order::int": 0,
+              "OwnedComplexColumnID": null,
+              "OwnedOrderColumnID": null,
+              "OwnedPhysicalColumnIDList": [],
+              "OwnedSectionID": null,
+              "PhysicalColumnIDList": [],
+              "SelectableControlName": "",
+              "Separator": "",
+              "ToolTipLineLength::int": 100
+            }
+          ],
+          "ControlSettings": {
+            "ExtendendLocalization": false,
+            "HideSelectorButton": false,
+            "IsAllowOpenRefs": true,
+            "LineBreakSetting": true,
+            "ManualInput": false,
+            "ManualInputColumnID": null,
+            "MaxResultsCount::int": 15,
+            "OrderColumnID::uid": "f9708dec-9a21-4f0a-85a5-9f90385f44d1",
+            "ParameterAlias": "Description",
+            "PopupColumnLengths": "1, 1, 1, 1",
+            "PopupColumnsIndexes": "1, 2, 3, 4",
+            "PopupScreenLengthPercent::int": 50,
+            "RefSection": "DocRefsSection",
+            "SearchDelay": null,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI, ./Fonts/#Open Sans",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "ViewAlias": "RefDocumentsLookup",
+            "ViewMap": [],
+            "ViewReferencePrefix": "Doc"
+          },
+          "ControlType::int": 1,
+          "Flags::int": 0,
+          "Form": null,
+          "Name": null,
+          "Order::int": 0,
+          "RequiredText": "",
+          "SectionID::uid": "73320234-fc44-4126-a7a6-5dd0bdaa4880",
+          "ToolTip": null,
+          "Type::uid": "5d95340a-0f22-0d14-b9d2-a5471f607261"
+        },
+        {
+          "BlockSettings": {
+            "ControlSpan": true,
+            "HideCaption": false
+          },
+          "Caption": "$CardTypes_Controls_ReferenceToThisDocument",
+          "Columns": [
+            {
+              "AggregationFormat": "",
+              "Alignment::int": 0,
+              "Caption": "Reference",
+              "ComplexColumnID::uid": "e53b1a76-83f6-4c8f-a362-74529b358028",
+              "DisplayFormat": "[ {1} ]",
+              "Flags::int": 0,
+              "HeaderAlignment::int": 2,
+              "MaxLength": null,
+              "Order::int": 0,
+              "OwnedComplexColumnID": null,
+              "OwnedOrderColumnID": null,
+              "OwnedPhysicalColumnIDList": [],
+              "OwnedSectionID": null,
+              "PhysicalColumnIDList": [],
+              "SelectableControlName": "",
+              "Separator": "",
+              "ToolTipLineLength::int": 100
+            }
+          ],
+          "ControlSettings": {
+            "ExtendendLocalization": false,
+            "HideSelectorButton": true,
+            "IsAllowOpenRefs": true,
+            "LineBreakSetting": true,
+            "ManualInput": false,
+            "ManualInputColumnID": null,
+            "MaxResultsCount::int": 15,
+            "OrderColumnID": null,
+            "ParameterAlias": "Description",
+            "PopupColumnsIndexes": "",
+            "RefSection": null,
+            "SearchDelay": null,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI, ./Fonts/#Open Sans",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "ViewAlias": "RefDocumentsLookup",
+            "ViewMap": null,
+            "ViewReferencePrefix": null
+          },
+          "ControlType::int": 1,
+          "Flags::int": 1,
+          "Form": null,
+          "Name": "IncomingRefsControl",
+          "Order::int": 1,
+          "RequiredText": "",
+          "SectionID::uid": "83785076-d844-4ea4-9e84-0a389c951ef4",
+          "ToolTip": null,
+          "Type::uid": "5d95340a-0f22-0d14-b9d2-a5471f607261"
+        },
+        {
+          "BlockSettings": {
+            "CaptionStyle": {
+              "TextColor": "#FF505050",
+              "TextStyle": {
+                "SelectedFontFamily": "Segoe UI",
+                "SelectedFontSize": 12.0,
+                "SelectedFontStretch": "Normal",
+                "SelectedFontStyle": "Normal",
+                "SelectedFontWeight": "Normal",
+                "SelectedTextBaseline": false,
+                "SelectedTextOverLine": false,
+                "SelectedTextStrikethrough": false,
+                "SelectedTextUnderline": false
+              }
+            },
+            "ColumnSpan::int": 1,
+            "ControlSpan": true,
+            "EmptyColumnsToTheLeft::int": 0,
+            "HideCaption": true,
+            "HorizontalAlignment::int": 3,
+            "Margin": "0,0,0,0",
+            "MaxWidth": 0.0,
+            "MinWidth": 0.0,
+            "StartAtNewLine": false,
+            "VerticalAlignment::int": 3
+          },
+          "Caption": "FileCategoryHelperContainer",
+          "ControlSettings": {
+            "EnableScrolling": false
+          },
+          "ControlType::int": 2,
+          "Flags::int": 0,
+          "Forms": [
+            {
+              "Blocks": [
+                {
+                  "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+                  "BlockSettings": {
+                    "AlwaysMultipleColumn": false,
+                    "CollapsedByDefault": false,
+                    "ColumnsCount::int": 1,
+                    "DoNotCollapseWithTopBlock": false,
+                    "HorizontalInterval::int": 5,
+                    "IsHidden": false,
+                    "LeftCaptions": false,
+                    "StretchVertically": false,
+                    "VerticalInterval::int": 5
+                  },
+                  "Caption": "ЮЛ",
+                  "Controls": [
+                    {
+                      "BlockSettings": {
+                        "CaptionStyle": {
+                          "TextColor": "#FF505050",
+                          "TextStyle": {
+                            "SelectedFontFamily": "Segoe UI",
+                            "SelectedFontSize": 12.0,
+                            "SelectedFontStretch": "Normal",
+                            "SelectedFontStyle": "Normal",
+                            "SelectedFontWeight": "Normal",
+                            "SelectedTextBaseline": false,
+                            "SelectedTextOverLine": false,
+                            "SelectedTextStrikethrough": false,
+                            "SelectedTextUnderline": false
+                          }
+                        },
+                        "ColumnSpan::int": 1,
+                        "ControlSpan": false,
+                        "EmptyColumnsToTheLeft::int": 0,
+                        "HideCaption": true,
+                        "HorizontalAlignment::int": 0,
+                        "Margin": "0,0,0,0",
+                        "MaxWidth": 0.0,
+                        "MinWidth": 0.0,
+                        "StartAtNewLine": false,
+                        "VerticalAlignment::int": 3
+                      },
+                      "Caption": "HelperTextBlockTitle",
+                      "ControlSettings": {
+                        "Hyperlink": false,
+                        "LinkCommand": "",
+                        "Text": "Перечень файлов для типа 'Юридическое лицо'",
+                        "TextColor": "#FF000000",
+                        "TextStyle": {
+                          "SelectedFontFamily": "Segoe UI",
+                          "SelectedFontSize": 14.0,
+                          "SelectedFontStretch": "Normal",
+                          "SelectedFontStyle": "Normal",
+                          "SelectedFontWeight": "SemiBold",
+                          "SelectedTextBaseline": false,
+                          "SelectedTextOverLine": false,
+                          "SelectedTextStrikethrough": false,
+                          "SelectedTextUnderline": true
+                        }
+                      },
+                      "ControlType::int": 3,
+                      "Flags::int": 0,
+                      "Name": null,
+                      "Order::int": 0,
+                      "RequiredText": "",
+                      "ToolTip": null,
+                      "Type::uid": "057d966f-52de-01e3-8a11-1b6e91221e9b"
+                    },
+                    {
+                      "BlockSettings": {
+                        "CaptionStyle": {
+                          "TextColor": "#FF505050",
+                          "TextStyle": {
+                            "SelectedFontFamily": "Segoe UI",
+                            "SelectedFontSize": 12.0,
+                            "SelectedFontStretch": "Normal",
+                            "SelectedFontStyle": "Normal",
+                            "SelectedFontWeight": "Normal",
+                            "SelectedTextBaseline": false,
+                            "SelectedTextOverLine": false,
+                            "SelectedTextStrikethrough": false,
+                            "SelectedTextUnderline": false
+                          }
+                        },
+                        "ColumnSpan::int": 1,
+                        "ControlSpan": false,
+                        "EmptyColumnsToTheLeft::int": 0,
+                        "HideCaption": true,
+                        "HorizontalAlignment::int": 0,
+                        "Margin": "0,0,0,0",
+                        "MaxWidth": 0.0,
+                        "MinWidth": 0.0,
+                        "StartAtNewLine": false,
+                        "VerticalAlignment::int": 3
+                      },
+                      "Caption": "HelperText",
+                      "ControlSettings": {
+                        "Hyperlink": false,
+                        "LinkCommand": "",
+                        "Text": "Учетная карточка предприятия с контактными телефонами (номера телефонов не мобильные) *",
+                        "TextColor": "#FF000000",
+                        "TextStyle": {
+                          "SelectedFontFamily": "Segoe UI",
+                          "SelectedFontSize": 12.0,
+                          "SelectedFontStretch": "Normal",
+                          "SelectedFontStyle": "Normal",
+                          "SelectedFontWeight": "SemiBold",
+                          "SelectedTextBaseline": false,
+                          "SelectedTextOverLine": false,
+                          "SelectedTextStrikethrough": false,
+                          "SelectedTextUnderline": false
+                        }
+                      },
+                      "ControlType::int": 3,
+                      "Flags::int": 0,
+                      "Name": null,
+                      "Order::int": 1,
+                      "RequiredText": "",
+                      "ToolTip": null,
+                      "Type::uid": "057d966f-52de-01e3-8a11-1b6e91221e9b"
+                    },
+                    {
+                      "BlockSettings": {
+                        "CaptionStyle": {
+                          "TextColor": "#FF505050",
+                          "TextStyle": {
+                            "SelectedFontFamily": "Segoe UI",
+                            "SelectedFontSize": 12.0,
+                            "SelectedFontStretch": "Normal",
+                            "SelectedFontStyle": "Normal",
+                            "SelectedFontWeight": "Normal",
+                            "SelectedTextBaseline": false,
+                            "SelectedTextOverLine": false,
+                            "SelectedTextStrikethrough": false,
+                            "SelectedTextUnderline": false
+                          }
+                        },
+                        "ColumnSpan::int": 1,
+                        "ControlSpan": false,
+                        "EmptyColumnsToTheLeft::int": 0,
+                        "HideCaption": true,
+                        "HorizontalAlignment::int": 0,
+                        "Margin": "0,0,0,0",
+                        "MaxWidth": 0.0,
+                        "MinWidth": 0.0,
+                        "StartAtNewLine": false,
+                        "VerticalAlignment::int": 3
+                      },
+                      "Caption": "HelperText",
+                      "ControlSettings": {
+                        "Hyperlink": false,
+                        "LinkCommand": "",
+                        "Text": "Бухгалтерский баланс ф.1, ф.2 за последний отчетный год *",
+                        "TextColor": "#FF000000",
+                        "TextStyle": {
+                          "SelectedFontFamily": "Segoe UI",
+                          "SelectedFontSize": 12.0,
+                          "SelectedFontStretch": "Normal",
+                          "SelectedFontStyle": "Normal",
+                          "SelectedFontWeight": "SemiBold",
+                          "SelectedTextBaseline": false,
+                          "SelectedTextOverLine": false,
+                          "SelectedTextStrikethrough": false,
+                          "SelectedTextUnderline": false
+                        }
+                      },
+                      "ControlType::int": 3,
+                      "Flags::int": 0,
+                      "Name": null,
+                      "Order::int": 2,
+                      "RequiredText": "",
+                      "ToolTip": null,
+                      "Type::uid": "057d966f-52de-01e3-8a11-1b6e91221e9b"
+                    },
+                    {
+                      "BlockSettings": {
+                        "CaptionStyle": {
+                          "TextColor": "#FF505050",
+                          "TextStyle": {
+                            "SelectedFontFamily": "Segoe UI",
+                            "SelectedFontSize": 12.0,
+                            "SelectedFontStretch": "Normal",
+                            "SelectedFontStyle": "Normal",
+                            "SelectedFontWeight": "Normal",
+                            "SelectedTextBaseline": false,
+                            "SelectedTextOverLine": false,
+                            "SelectedTextStrikethrough": false,
+                            "SelectedTextUnderline": false
+                          }
+                        },
+                        "ColumnSpan::int": 1,
+                        "ControlSpan": false,
+                        "EmptyColumnsToTheLeft::int": 0,
+                        "HideCaption": true,
+                        "HorizontalAlignment::int": 0,
+                        "Margin": "0,0,0,0",
+                        "MaxWidth": 0.0,
+                        "MinWidth": 0.0,
+                        "StartAtNewLine": false,
+                        "VerticalAlignment::int": 3
+                      },
+                      "Caption": "HelperText",
+                      "ControlSettings": {
+                        "Hyperlink": false,
+                        "LinkCommand": "",
+                        "Text": "Договор аренды по фактическому адресу (аренда офиса + свидетельство о собственности помещения) *",
+                        "TextColor": "#FF000000",
+                        "TextStyle": {
+                          "SelectedFontFamily": "Segoe UI",
+                          "SelectedFontSize": 12.0,
+                          "SelectedFontStretch": "Normal",
+                          "SelectedFontStyle": "Normal",
+                          "SelectedFontWeight": "SemiBold",
+                          "SelectedTextBaseline": false,
+                          "SelectedTextOverLine": false,
+                          "SelectedTextStrikethrough": false,
+                          "SelectedTextUnderline": false
+                        }
+                      },
+                      "ControlType::int": 3,
+                      "Flags::int": 0,
+                      "Name": null,
+                      "Order::int": 3,
+                      "RequiredText": "",
+                      "ToolTip": null,
+                      "Type::uid": "057d966f-52de-01e3-8a11-1b6e91221e9b"
+                    },
+                    {
+                      "BlockSettings": {
+                        "CaptionStyle": {
+                          "TextColor": "#FF505050",
+                          "TextStyle": {
+                            "SelectedFontFamily": "Segoe UI",
+                            "SelectedFontSize": 12.0,
+                            "SelectedFontStretch": "Normal",
+                            "SelectedFontStyle": "Normal",
+                            "SelectedFontWeight": "Normal",
+                            "SelectedTextBaseline": false,
+                            "SelectedTextOverLine": false,
+                            "SelectedTextStrikethrough": false,
+                            "SelectedTextUnderline": false
+                          }
+                        },
+                        "ColumnSpan::int": 1,
+                        "ControlSpan": false,
+                        "EmptyColumnsToTheLeft::int": 0,
+                        "HideCaption": true,
+                        "HorizontalAlignment::int": 0,
+                        "Margin": "0,0,0,0",
+                        "MaxWidth": 0.0,
+                        "MinWidth": 0.0,
+                        "StartAtNewLine": false,
+                        "VerticalAlignment::int": 3
+                      },
+                      "Caption": "HelperText",
+                      "ControlSettings": {
+                        "Hyperlink": false,
+                        "LinkCommand": "",
+                        "Text": "Решение о создании юридического лица *",
+                        "TextColor": "#FF000000",
+                        "TextStyle": {
+                          "SelectedFontFamily": "Segoe UI",
+                          "SelectedFontSize": 12.0,
+                          "SelectedFontStretch": "Normal",
+                          "SelectedFontStyle": "Normal",
+                          "SelectedFontWeight": "SemiBold",
+                          "SelectedTextBaseline": false,
+                          "SelectedTextOverLine": false,
+                          "SelectedTextStrikethrough": false,
+                          "SelectedTextUnderline": false
+                        }
+                      },
+                      "ControlType::int": 3,
+                      "Flags::int": 0,
+                      "Name": null,
+                      "Order::int": 4,
+                      "RequiredText": "",
+                      "ToolTip": null,
+                      "Type::uid": "057d966f-52de-01e3-8a11-1b6e91221e9b"
+                    },
+                    {
+                      "BlockSettings": {
+                        "CaptionStyle": {
+                          "TextColor": "#FF505050",
+                          "TextStyle": {
+                            "SelectedFontFamily": "Segoe UI",
+                            "SelectedFontSize": 12.0,
+                            "SelectedFontStretch": "Normal",
+                            "SelectedFontStyle": "Normal",
+                            "SelectedFontWeight": "Normal",
+                            "SelectedTextBaseline": false,
+                            "SelectedTextOverLine": false,
+                            "SelectedTextStrikethrough": false,
+                            "SelectedTextUnderline": false
+                          }
+                        },
+                        "ColumnSpan::int": 1,
+                        "ControlSpan": false,
+                        "EmptyColumnsToTheLeft::int": 0,
+                        "HideCaption": true,
+                        "HorizontalAlignment::int": 0,
+                        "Margin": "0,0,0,0",
+                        "MaxWidth": 0.0,
+                        "MinWidth": 0.0,
+                        "StartAtNewLine": false,
+                        "VerticalAlignment::int": 3
+                      },
+                      "Caption": "HelperText",
+                      "ControlSettings": {
+                        "Hyperlink": false,
+                        "LinkCommand": "",
+                        "Text": "Приказ о назначении генерального директора *",
+                        "TextColor": "#FF000000",
+                        "TextStyle": {
+                          "SelectedFontFamily": "Segoe UI",
+                          "SelectedFontSize": 12.0,
+                          "SelectedFontStretch": "Normal",
+                          "SelectedFontStyle": "Normal",
+                          "SelectedFontWeight": "SemiBold",
+                          "SelectedTextBaseline": false,
+                          "SelectedTextOverLine": false,
+                          "SelectedTextStrikethrough": false,
+                          "SelectedTextUnderline": false
+                        }
+                      },
+                      "ControlType::int": 3,
+                      "Flags::int": 0,
+                      "Name": null,
+                      "Order::int": 5,
+                      "RequiredText": "",
+                      "ToolTip": null,
+                      "Type::uid": "057d966f-52de-01e3-8a11-1b6e91221e9b"
+                    },
+                    {
+                      "BlockSettings": {
+                        "CaptionStyle": {
+                          "TextColor": "#FF505050",
+                          "TextStyle": {
+                            "SelectedFontFamily": "Segoe UI",
+                            "SelectedFontSize": 12.0,
+                            "SelectedFontStretch": "Normal",
+                            "SelectedFontStyle": "Normal",
+                            "SelectedFontWeight": "Normal",
+                            "SelectedTextBaseline": false,
+                            "SelectedTextOverLine": false,
+                            "SelectedTextStrikethrough": false,
+                            "SelectedTextUnderline": false
+                          }
+                        },
+                        "ColumnSpan::int": 1,
+                        "ControlSpan": false,
+                        "EmptyColumnsToTheLeft::int": 0,
+                        "HideCaption": true,
+                        "HorizontalAlignment::int": 0,
+                        "Margin": "0,0,0,0",
+                        "MaxWidth": 0.0,
+                        "MinWidth": 0.0,
+                        "StartAtNewLine": false,
+                        "VerticalAlignment::int": 3
+                      },
+                      "Caption": "HelperText",
+                      "ControlSettings": {
+                        "Hyperlink": false,
+                        "LinkCommand": "",
+                        "Text": "РСВ1 за последнюю отчетную дату *",
+                        "TextColor": "#FF000000",
+                        "TextStyle": {
+                          "SelectedFontFamily": "Segoe UI",
+                          "SelectedFontSize": 12.0,
+                          "SelectedFontStretch": "Normal",
+                          "SelectedFontStyle": "Normal",
+                          "SelectedFontWeight": "SemiBold",
+                          "SelectedTextBaseline": false,
+                          "SelectedTextOverLine": false,
+                          "SelectedTextStrikethrough": false,
+                          "SelectedTextUnderline": false
+                        }
+                      },
+                      "ControlType::int": 3,
+                      "Flags::int": 0,
+                      "Name": null,
+                      "Order::int": 6,
+                      "RequiredText": "",
+                      "ToolTip": null,
+                      "Type::uid": "057d966f-52de-01e3-8a11-1b6e91221e9b"
+                    },
+                    {
+                      "BlockSettings": {
+                        "CaptionStyle": {
+                          "TextColor": "#FF505050",
+                          "TextStyle": {
+                            "SelectedFontFamily": "Segoe UI",
+                            "SelectedFontSize": 12.0,
+                            "SelectedFontStretch": "Normal",
+                            "SelectedFontStyle": "Normal",
+                            "SelectedFontWeight": "Normal",
+                            "SelectedTextBaseline": false,
+                            "SelectedTextOverLine": false,
+                            "SelectedTextStrikethrough": false,
+                            "SelectedTextUnderline": false
+                          }
+                        },
+                        "ColumnSpan::int": 1,
+                        "ControlSpan": false,
+                        "EmptyColumnsToTheLeft::int": 0,
+                        "HideCaption": true,
+                        "HorizontalAlignment::int": 0,
+                        "Margin": "0,0,0,0",
+                        "MaxWidth": 0.0,
+                        "MinWidth": 0.0,
+                        "StartAtNewLine": false,
+                        "VerticalAlignment::int": 3
+                      },
+                      "Caption": "HelperText",
+                      "ControlSettings": {
+                        "Hyperlink": false,
+                        "LinkCommand": "",
+                        "Text": "ССЧ (справка о среднесписочной численности)",
+                        "TextColor": "#FF000000",
+                        "TextStyle": {
+                          "SelectedFontFamily": "Segoe UI",
+                          "SelectedFontSize": 12.0,
+                          "SelectedFontStretch": "Normal",
+                          "SelectedFontStyle": "Normal",
+                          "SelectedFontWeight": "Normal",
+                          "SelectedTextBaseline": false,
+                          "SelectedTextOverLine": false,
+                          "SelectedTextStrikethrough": false,
+                          "SelectedTextUnderline": false
+                        }
+                      },
+                      "ControlType::int": 3,
+                      "Flags::int": 0,
+                      "Name": null,
+                      "Order::int": 7,
+                      "RequiredText": "",
+                      "ToolTip": null,
+                      "Type::uid": "057d966f-52de-01e3-8a11-1b6e91221e9b"
+                    },
+                    {
+                      "BlockSettings": {
+                        "CaptionStyle": {
+                          "TextColor": "#FF505050",
+                          "TextStyle": {
+                            "SelectedFontFamily": "Segoe UI",
+                            "SelectedFontSize": 12.0,
+                            "SelectedFontStretch": "Normal",
+                            "SelectedFontStyle": "Normal",
+                            "SelectedFontWeight": "Normal",
+                            "SelectedTextBaseline": false,
+                            "SelectedTextOverLine": false,
+                            "SelectedTextStrikethrough": false,
+                            "SelectedTextUnderline": false
+                          }
+                        },
+                        "ColumnSpan::int": 1,
+                        "ControlSpan": false,
+                        "EmptyColumnsToTheLeft::int": 0,
+                        "HideCaption": true,
+                        "HorizontalAlignment::int": 0,
+                        "Margin": "0,0,0,0",
+                        "MaxWidth": 0.0,
+                        "MinWidth": 0.0,
+                        "StartAtNewLine": false,
+                        "VerticalAlignment::int": 3
+                      },
+                      "Caption": "HelperText",
+                      "ControlSettings": {
+                        "Hyperlink": false,
+                        "LinkCommand": "",
+                        "Text": "Справка по форме 6 ндфл (отражающая лиц, получивших доход)",
+                        "TextColor": "#FF000000",
+                        "TextStyle": {
+                          "SelectedFontFamily": "Segoe UI",
+                          "SelectedFontSize": 12.0,
+                          "SelectedFontStretch": "Normal",
+                          "SelectedFontStyle": "Normal",
+                          "SelectedFontWeight": "Normal",
+                          "SelectedTextBaseline": false,
+                          "SelectedTextOverLine": false,
+                          "SelectedTextStrikethrough": false,
+                          "SelectedTextUnderline": false
+                        }
+                      },
+                      "ControlType::int": 3,
+                      "Flags::int": 0,
+                      "Name": null,
+                      "Order::int": 8,
+                      "RequiredText": "",
+                      "ToolTip": null,
+                      "Type::uid": "057d966f-52de-01e3-8a11-1b6e91221e9b"
+                    },
+                    {
+                      "BlockSettings": {
+                        "CaptionStyle": {
+                          "TextColor": "#FF505050",
+                          "TextStyle": {
+                            "SelectedFontFamily": "Segoe UI",
+                            "SelectedFontSize": 12.0,
+                            "SelectedFontStretch": "Normal",
+                            "SelectedFontStyle": "Normal",
+                            "SelectedFontWeight": "Normal",
+                            "SelectedTextBaseline": false,
+                            "SelectedTextOverLine": false,
+                            "SelectedTextStrikethrough": false,
+                            "SelectedTextUnderline": false
+                          }
+                        },
+                        "ColumnSpan::int": 1,
+                        "ControlSpan": false,
+                        "EmptyColumnsToTheLeft::int": 0,
+                        "HideCaption": true,
+                        "HorizontalAlignment::int": 0,
+                        "Margin": "0,0,0,0",
+                        "MaxWidth": 0.0,
+                        "MinWidth": 0.0,
+                        "StartAtNewLine": false,
+                        "VerticalAlignment::int": 3
+                      },
+                      "Caption": "HelperText",
+                      "ControlSettings": {
+                        "Hyperlink": false,
+                        "LinkCommand": "",
+                        "Text": "Свидетельство ИНН *",
+                        "TextColor": "#FF000000",
+                        "TextStyle": {
+                          "SelectedFontFamily": "Segoe UI",
+                          "SelectedFontSize": 12.0,
+                          "SelectedFontStretch": "Normal",
+                          "SelectedFontStyle": "Normal",
+                          "SelectedFontWeight": "SemiBold",
+                          "SelectedTextBaseline": false,
+                          "SelectedTextOverLine": false,
+                          "SelectedTextStrikethrough": false,
+                          "SelectedTextUnderline": false
+                        }
+                      },
+                      "ControlType::int": 3,
+                      "Flags::int": 0,
+                      "Name": null,
+                      "Order::int": 9,
+                      "RequiredText": "",
+                      "ToolTip": null,
+                      "Type::uid": "057d966f-52de-01e3-8a11-1b6e91221e9b"
+                    },
+                    {
+                      "BlockSettings": {
+                        "CaptionStyle": {
+                          "TextColor": "#FF505050",
+                          "TextStyle": {
+                            "SelectedFontFamily": "Segoe UI",
+                            "SelectedFontSize": 12.0,
+                            "SelectedFontStretch": "Normal",
+                            "SelectedFontStyle": "Normal",
+                            "SelectedFontWeight": "Normal",
+                            "SelectedTextBaseline": false,
+                            "SelectedTextOverLine": false,
+                            "SelectedTextStrikethrough": false,
+                            "SelectedTextUnderline": false
+                          }
+                        },
+                        "ColumnSpan::int": 1,
+                        "ControlSpan": false,
+                        "EmptyColumnsToTheLeft::int": 0,
+                        "HideCaption": true,
+                        "HorizontalAlignment::int": 0,
+                        "Margin": "0,0,0,0",
+                        "MaxWidth": 0.0,
+                        "MinWidth": 0.0,
+                        "StartAtNewLine": false,
+                        "VerticalAlignment::int": 3
+                      },
+                      "Caption": "HelperText",
+                      "ControlSettings": {
+                        "Hyperlink": false,
+                        "LinkCommand": "",
+                        "Text": "Выписка ЕГРЮЛ *",
+                        "TextColor": "#FF000000",
+                        "TextStyle": {
+                          "SelectedFontFamily": "Segoe UI",
+                          "SelectedFontSize": 12.0,
+                          "SelectedFontStretch": "Normal",
+                          "SelectedFontStyle": "Normal",
+                          "SelectedFontWeight": "SemiBold",
+                          "SelectedTextBaseline": false,
+                          "SelectedTextOverLine": false,
+                          "SelectedTextStrikethrough": false,
+                          "SelectedTextUnderline": false
+                        }
+                      },
+                      "ControlType::int": 3,
+                      "Flags::int": 0,
+                      "Name": null,
+                      "Order::int": 10,
+                      "RequiredText": "",
+                      "ToolTip": null,
+                      "Type::uid": "057d966f-52de-01e3-8a11-1b6e91221e9b"
+                    },
+                    {
+                      "BlockSettings": {
+                        "CaptionStyle": {
+                          "TextColor": "#FF505050",
+                          "TextStyle": {
+                            "SelectedFontFamily": "Segoe UI",
+                            "SelectedFontSize": 12.0,
+                            "SelectedFontStretch": "Normal",
+                            "SelectedFontStyle": "Normal",
+                            "SelectedFontWeight": "Normal",
+                            "SelectedTextBaseline": false,
+                            "SelectedTextOverLine": false,
+                            "SelectedTextStrikethrough": false,
+                            "SelectedTextUnderline": false
+                          }
+                        },
+                        "ColumnSpan::int": 1,
+                        "ControlSpan": false,
+                        "EmptyColumnsToTheLeft::int": 0,
+                        "HideCaption": true,
+                        "HorizontalAlignment::int": 0,
+                        "Margin": "0,0,0,0",
+                        "MaxWidth": 0.0,
+                        "MinWidth": 0.0,
+                        "StartAtNewLine": false,
+                        "VerticalAlignment::int": 3
+                      },
+                      "Caption": "HelperText",
+                      "ControlSettings": {
+                        "Hyperlink": false,
+                        "LinkCommand": "",
+                        "Text": "Справка из территориальной (межрайонной) ИФНС об отсутствии задолженности по налогам и сборам *",
+                        "TextColor": "#FF000000",
+                        "TextStyle": {
+                          "SelectedFontFamily": "Segoe UI",
+                          "SelectedFontSize": 12.0,
+                          "SelectedFontStretch": "Normal",
+                          "SelectedFontStyle": "Normal",
+                          "SelectedFontWeight": "SemiBold",
+                          "SelectedTextBaseline": false,
+                          "SelectedTextOverLine": false,
+                          "SelectedTextStrikethrough": false,
+                          "SelectedTextUnderline": false
+                        }
+                      },
+                      "ControlType::int": 3,
+                      "Flags::int": 0,
+                      "Name": null,
+                      "Order::int": 11,
+                      "RequiredText": "",
+                      "ToolTip": null,
+                      "Type::uid": "057d966f-52de-01e3-8a11-1b6e91221e9b"
+                    },
+                    {
+                      "BlockSettings": {
+                        "CaptionStyle": {
+                          "TextColor": "#FF505050",
+                          "TextStyle": {
+                            "SelectedFontFamily": "Segoe UI",
+                            "SelectedFontSize": 12.0,
+                            "SelectedFontStretch": "Normal",
+                            "SelectedFontStyle": "Normal",
+                            "SelectedFontWeight": "Normal",
+                            "SelectedTextBaseline": false,
+                            "SelectedTextOverLine": false,
+                            "SelectedTextStrikethrough": false,
+                            "SelectedTextUnderline": false
+                          }
+                        },
+                        "ColumnSpan::int": 1,
+                        "ControlSpan": false,
+                        "EmptyColumnsToTheLeft::int": 0,
+                        "HideCaption": true,
+                        "HorizontalAlignment::int": 0,
+                        "Margin": "0,0,0,0",
+                        "MaxWidth": 0.0,
+                        "MinWidth": 0.0,
+                        "StartAtNewLine": false,
+                        "VerticalAlignment::int": 3
+                      },
+                      "Caption": "HelperText",
+                      "ControlSettings": {
+                        "Hyperlink": false,
+                        "LinkCommand": "",
+                        "Text": "СРО, лицензии (при наличии)",
+                        "TextColor": "#FF000000",
+                        "TextStyle": {
+                          "SelectedFontFamily": "Segoe UI",
+                          "SelectedFontSize": 12.0,
+                          "SelectedFontStretch": "Normal",
+                          "SelectedFontStyle": "Normal",
+                          "SelectedFontWeight": "Normal",
+                          "SelectedTextBaseline": false,
+                          "SelectedTextOverLine": false,
+                          "SelectedTextStrikethrough": false,
+                          "SelectedTextUnderline": false
+                        }
+                      },
+                      "ControlType::int": 3,
+                      "Flags::int": 0,
+                      "Name": null,
+                      "Order::int": 12,
+                      "RequiredText": "",
+                      "ToolTip": null,
+                      "Type::uid": "057d966f-52de-01e3-8a11-1b6e91221e9b"
+                    },
+                    {
+                      "BlockSettings": {
+                        "CaptionStyle": {
+                          "TextColor": "#FF505050",
+                          "TextStyle": {
+                            "SelectedFontFamily": "Segoe UI",
+                            "SelectedFontSize": 12.0,
+                            "SelectedFontStretch": "Normal",
+                            "SelectedFontStyle": "Normal",
+                            "SelectedFontWeight": "Normal",
+                            "SelectedTextBaseline": false,
+                            "SelectedTextOverLine": false,
+                            "SelectedTextStrikethrough": false,
+                            "SelectedTextUnderline": false
+                          }
+                        },
+                        "ColumnSpan::int": 1,
+                        "ControlSpan": false,
+                        "EmptyColumnsToTheLeft::int": 0,
+                        "HideCaption": true,
+                        "HorizontalAlignment::int": 0,
+                        "Margin": "0,0,0,0",
+                        "MaxWidth": 0.0,
+                        "MinWidth": 0.0,
+                        "StartAtNewLine": false,
+                        "VerticalAlignment::int": 3
+                      },
+                      "Caption": "HelperText",
+                      "ControlSettings": {
+                        "Hyperlink": false,
+                        "LinkCommand": "",
+                        "Text": "Копия паспорта генерального директора (1 и 2 страницы)",
+                        "TextColor": "#FF000000",
+                        "TextStyle": {
+                          "SelectedFontFamily": "Segoe UI",
+                          "SelectedFontSize": 12.0,
+                          "SelectedFontStretch": "Normal",
+                          "SelectedFontStyle": "Normal",
+                          "SelectedFontWeight": "Normal",
+                          "SelectedTextBaseline": false,
+                          "SelectedTextOverLine": false,
+                          "SelectedTextStrikethrough": false,
+                          "SelectedTextUnderline": false
+                        }
+                      },
+                      "ControlType::int": 3,
+                      "Flags::int": 0,
+                      "Name": null,
+                      "Order::int": 13,
+                      "RequiredText": "",
+                      "ToolTip": null,
+                      "Type::uid": "057d966f-52de-01e3-8a11-1b6e91221e9b"
+                    },
+                    {
+                      "BlockSettings": {
+                        "CaptionStyle": {
+                          "TextColor": "#FF505050",
+                          "TextStyle": {
+                            "SelectedFontFamily": "Segoe UI",
+                            "SelectedFontSize": 12.0,
+                            "SelectedFontStretch": "Normal",
+                            "SelectedFontStyle": "Normal",
+                            "SelectedFontWeight": "Normal",
+                            "SelectedTextBaseline": false,
+                            "SelectedTextOverLine": false,
+                            "SelectedTextStrikethrough": false,
+                            "SelectedTextUnderline": false
+                          }
+                        },
+                        "ColumnSpan::int": 1,
+                        "ControlSpan": false,
+                        "EmptyColumnsToTheLeft::int": 0,
+                        "HideCaption": true,
+                        "HorizontalAlignment::int": 0,
+                        "Margin": "0,0,0,0",
+                        "MaxWidth": 0.0,
+                        "MinWidth": 0.0,
+                        "StartAtNewLine": false,
+                        "VerticalAlignment::int": 3
+                      },
+                      "Caption": "HelperText",
+                      "ControlSettings": {
+                        "Hyperlink": false,
+                        "LinkCommand": "",
+                        "Text": "Прочие документы",
+                        "TextColor": "#FF000000",
+                        "TextStyle": {
+                          "SelectedFontFamily": "Segoe UI",
+                          "SelectedFontSize": 12.0,
+                          "SelectedFontStretch": "Normal",
+                          "SelectedFontStyle": "Normal",
+                          "SelectedFontWeight": "Normal",
+                          "SelectedTextBaseline": false,
+                          "SelectedTextOverLine": false,
+                          "SelectedTextStrikethrough": false,
+                          "SelectedTextUnderline": false
+                        }
+                      },
+                      "ControlType::int": 3,
+                      "Flags::int": 0,
+                      "Name": null,
+                      "Order::int": 14,
+                      "RequiredText": "",
+                      "ToolTip": null,
+                      "Type::uid": "057d966f-52de-01e3-8a11-1b6e91221e9b"
+                    },
+                    {
+                      "BlockSettings": {
+                        "CaptionStyle": {
+                          "TextColor": "#FF505050",
+                          "TextStyle": {
+                            "SelectedFontFamily": "Segoe UI",
+                            "SelectedFontSize": 12.0,
+                            "SelectedFontStretch": "Normal",
+                            "SelectedFontStyle": "Normal",
+                            "SelectedFontWeight": "Normal",
+                            "SelectedTextBaseline": false,
+                            "SelectedTextOverLine": false,
+                            "SelectedTextStrikethrough": false,
+                            "SelectedTextUnderline": false
+                          }
+                        },
+                        "ColumnSpan::int": 1,
+                        "ControlSpan": false,
+                        "EmptyColumnsToTheLeft::int": 0,
+                        "HideCaption": true,
+                        "HorizontalAlignment::int": 0,
+                        "Margin": "0,0,0,0",
+                        "MaxWidth": 0.0,
+                        "MinWidth": 0.0,
+                        "StartAtNewLine": false,
+                        "VerticalAlignment::int": 3
+                      },
+                      "Caption": "HelperText",
+                      "ControlSettings": {
+                        "Hyperlink": false,
+                        "LinkCommand": "",
+                        "Text": "Справка по расчетам по налогам, сборам, страховым взносам, пеням, штрафам, процентам организаций и ИП. По форме КНД 1160080",
+                        "TextColor": "#FF000000",
+                        "TextStyle": {
+                          "SelectedFontFamily": "Segoe UI",
+                          "SelectedFontSize": 12.0,
+                          "SelectedFontStretch": "Normal",
+                          "SelectedFontStyle": "Normal",
+                          "SelectedFontWeight": "Normal",
+                          "SelectedTextBaseline": false,
+                          "SelectedTextOverLine": false,
+                          "SelectedTextStrikethrough": false,
+                          "SelectedTextUnderline": false
+                        }
+                      },
+                      "ControlType::int": 3,
+                      "Flags::int": 0,
+                      "Name": null,
+                      "Order::int": 15,
+                      "RequiredText": "",
+                      "ToolTip": null,
+                      "Type::uid": "057d966f-52de-01e3-8a11-1b6e91221e9b"
+                    }
+                  ],
+                  "FormSettings": {
+                    "HideCaption": true
+                  },
+                  "Name": "FileHelperLegalEntity",
+                  "Order::int": 0
+                },
+                {
+                  "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+                  "BlockSettings": {
+                    "AlwaysMultipleColumn": false,
+                    "CollapsedByDefault": false,
+                    "ColumnsCount::int": 1,
+                    "DoNotCollapseWithTopBlock": false,
+                    "HorizontalInterval::int": 5,
+                    "IsHidden": false,
+                    "LeftCaptions": false,
+                    "StretchVertically": false,
+                    "VerticalInterval::int": 5
+                  },
+                  "Caption": "Индивидуальный предприниматель",
+                  "Controls": [
+                    {
+                      "BlockSettings": {
+                        "CaptionStyle": {
+                          "TextColor": "#FF505050",
+                          "TextStyle": {
+                            "SelectedFontFamily": "Segoe UI",
+                            "SelectedFontSize": 12.0,
+                            "SelectedFontStretch": "Normal",
+                            "SelectedFontStyle": "Normal",
+                            "SelectedFontWeight": "Normal",
+                            "SelectedTextBaseline": false,
+                            "SelectedTextOverLine": false,
+                            "SelectedTextStrikethrough": false,
+                            "SelectedTextUnderline": false
+                          }
+                        },
+                        "ColumnSpan::int": 1,
+                        "ControlSpan": false,
+                        "EmptyColumnsToTheLeft::int": 0,
+                        "HideCaption": true,
+                        "HorizontalAlignment::int": 0,
+                        "Margin": "0,0,0,0",
+                        "MaxWidth": 0.0,
+                        "MinWidth": 0.0,
+                        "StartAtNewLine": false,
+                        "VerticalAlignment::int": 3
+                      },
+                      "Caption": "HelperTextBlockTitle",
+                      "ControlSettings": {
+                        "Hyperlink": false,
+                        "LinkCommand": "",
+                        "Text": "Перечень файлов для типа 'Индивидуальный предприниматель'",
+                        "TextColor": "#FF000000",
+                        "TextStyle": {
+                          "SelectedFontFamily": "Segoe UI",
+                          "SelectedFontSize": 14.0,
+                          "SelectedFontStretch": "Normal",
+                          "SelectedFontStyle": "Normal",
+                          "SelectedFontWeight": "SemiBold",
+                          "SelectedTextBaseline": false,
+                          "SelectedTextOverLine": false,
+                          "SelectedTextStrikethrough": false,
+                          "SelectedTextUnderline": true
+                        }
+                      },
+                      "ControlType::int": 3,
+                      "Flags::int": 0,
+                      "Name": null,
+                      "Order::int": 0,
+                      "RequiredText": "",
+                      "ToolTip": null,
+                      "Type::uid": "057d966f-52de-01e3-8a11-1b6e91221e9b"
+                    },
+                    {
+                      "BlockSettings": {
+                        "CaptionStyle": {
+                          "TextColor": "#FF505050",
+                          "TextStyle": {
+                            "SelectedFontFamily": "Segoe UI",
+                            "SelectedFontSize": 12.0,
+                            "SelectedFontStretch": "Normal",
+                            "SelectedFontStyle": "Normal",
+                            "SelectedFontWeight": "Normal",
+                            "SelectedTextBaseline": false,
+                            "SelectedTextOverLine": false,
+                            "SelectedTextStrikethrough": false,
+                            "SelectedTextUnderline": false
+                          }
+                        },
+                        "ColumnSpan::int": 1,
+                        "ControlSpan": false,
+                        "EmptyColumnsToTheLeft::int": 0,
+                        "HideCaption": true,
+                        "HorizontalAlignment::int": 0,
+                        "Margin": "0,0,0,0",
+                        "MaxWidth": 0.0,
+                        "MinWidth": 0.0,
+                        "StartAtNewLine": false,
+                        "VerticalAlignment::int": 3
+                      },
+                      "Caption": "HelperText",
+                      "ControlSettings": {
+                        "Hyperlink": false,
+                        "LinkCommand": "",
+                        "Text": "Учетная карточка Контрагента *",
+                        "TextColor": "#FF000000",
+                        "TextStyle": {
+                          "SelectedFontFamily": "Segoe UI",
+                          "SelectedFontSize": 12.0,
+                          "SelectedFontStretch": "Normal",
+                          "SelectedFontStyle": "Normal",
+                          "SelectedFontWeight": "SemiBold",
+                          "SelectedTextBaseline": false,
+                          "SelectedTextOverLine": false,
+                          "SelectedTextStrikethrough": false,
+                          "SelectedTextUnderline": false
+                        }
+                      },
+                      "ControlType::int": 3,
+                      "Flags::int": 0,
+                      "Name": null,
+                      "Order::int": 1,
+                      "RequiredText": "",
+                      "ToolTip": null,
+                      "Type::uid": "057d966f-52de-01e3-8a11-1b6e91221e9b"
+                    },
+                    {
+                      "BlockSettings": {
+                        "CaptionStyle": {
+                          "TextColor": "#FF505050",
+                          "TextStyle": {
+                            "SelectedFontFamily": "Segoe UI",
+                            "SelectedFontSize": 12.0,
+                            "SelectedFontStretch": "Normal",
+                            "SelectedFontStyle": "Normal",
+                            "SelectedFontWeight": "Normal",
+                            "SelectedTextBaseline": false,
+                            "SelectedTextOverLine": false,
+                            "SelectedTextStrikethrough": false,
+                            "SelectedTextUnderline": false
+                          }
+                        },
+                        "ColumnSpan::int": 1,
+                        "ControlSpan": false,
+                        "EmptyColumnsToTheLeft::int": 0,
+                        "HideCaption": true,
+                        "HorizontalAlignment::int": 0,
+                        "Margin": "0,0,0,0",
+                        "MaxWidth": 0.0,
+                        "MinWidth": 0.0,
+                        "StartAtNewLine": false,
+                        "VerticalAlignment::int": 3
+                      },
+                      "Caption": "HelperText",
+                      "ControlSettings": {
+                        "Hyperlink": false,
+                        "LinkCommand": "",
+                        "Text": "Свидетельство о регистрации физического лица в качестве индивидуального предпринимателя *",
+                        "TextColor": "#FF000000",
+                        "TextStyle": {
+                          "SelectedFontFamily": "Segoe UI",
+                          "SelectedFontSize": 12.0,
+                          "SelectedFontStretch": "Normal",
+                          "SelectedFontStyle": "Normal",
+                          "SelectedFontWeight": "SemiBold",
+                          "SelectedTextBaseline": false,
+                          "SelectedTextOverLine": false,
+                          "SelectedTextStrikethrough": false,
+                          "SelectedTextUnderline": false
+                        }
+                      },
+                      "ControlType::int": 3,
+                      "Flags::int": 0,
+                      "Name": null,
+                      "Order::int": 2,
+                      "RequiredText": "",
+                      "ToolTip": null,
+                      "Type::uid": "057d966f-52de-01e3-8a11-1b6e91221e9b"
+                    },
+                    {
+                      "BlockSettings": {
+                        "CaptionStyle": {
+                          "TextColor": "#FF505050",
+                          "TextStyle": {
+                            "SelectedFontFamily": "Segoe UI",
+                            "SelectedFontSize": 12.0,
+                            "SelectedFontStretch": "Normal",
+                            "SelectedFontStyle": "Normal",
+                            "SelectedFontWeight": "Normal",
+                            "SelectedTextBaseline": false,
+                            "SelectedTextOverLine": false,
+                            "SelectedTextStrikethrough": false,
+                            "SelectedTextUnderline": false
+                          }
+                        },
+                        "ColumnSpan::int": 1,
+                        "ControlSpan": false,
+                        "EmptyColumnsToTheLeft::int": 0,
+                        "HideCaption": true,
+                        "HorizontalAlignment::int": 0,
+                        "Margin": "0,0,0,0",
+                        "MaxWidth": 0.0,
+                        "MinWidth": 0.0,
+                        "StartAtNewLine": false,
+                        "VerticalAlignment::int": 3
+                      },
+                      "Caption": "HelperText",
+                      "ControlSettings": {
+                        "Hyperlink": false,
+                        "LinkCommand": "",
+                        "Text": "Свидетельство ИНН физ. лица *",
+                        "TextColor": "#FF000000",
+                        "TextStyle": {
+                          "SelectedFontFamily": "Segoe UI",
+                          "SelectedFontSize": 12.0,
+                          "SelectedFontStretch": "Normal",
+                          "SelectedFontStyle": "Normal",
+                          "SelectedFontWeight": "SemiBold",
+                          "SelectedTextBaseline": false,
+                          "SelectedTextOverLine": false,
+                          "SelectedTextStrikethrough": false,
+                          "SelectedTextUnderline": false
+                        }
+                      },
+                      "ControlType::int": 3,
+                      "Flags::int": 0,
+                      "Name": null,
+                      "Order::int": 3,
+                      "RequiredText": "",
+                      "ToolTip": null,
+                      "Type::uid": "057d966f-52de-01e3-8a11-1b6e91221e9b"
+                    },
+                    {
+                      "BlockSettings": {
+                        "CaptionStyle": {
+                          "TextColor": "#FF505050",
+                          "TextStyle": {
+                            "SelectedFontFamily": "Segoe UI",
+                            "SelectedFontSize": 12.0,
+                            "SelectedFontStretch": "Normal",
+                            "SelectedFontStyle": "Normal",
+                            "SelectedFontWeight": "Normal",
+                            "SelectedTextBaseline": false,
+                            "SelectedTextOverLine": false,
+                            "SelectedTextStrikethrough": false,
+                            "SelectedTextUnderline": false
+                          }
+                        },
+                        "ColumnSpan::int": 1,
+                        "ControlSpan": false,
+                        "EmptyColumnsToTheLeft::int": 0,
+                        "HideCaption": true,
+                        "HorizontalAlignment::int": 0,
+                        "Margin": "0,0,0,0",
+                        "MaxWidth": 0.0,
+                        "MinWidth": 0.0,
+                        "StartAtNewLine": false,
+                        "VerticalAlignment::int": 3
+                      },
+                      "Caption": "HelperText",
+                      "ControlSettings": {
+                        "Hyperlink": false,
+                        "LinkCommand": "",
+                        "Text": "Паспорт (1 страница и страница с регистрацией) *",
+                        "TextColor": "#FF000000",
+                        "TextStyle": {
+                          "SelectedFontFamily": "Segoe UI",
+                          "SelectedFontSize": 12.0,
+                          "SelectedFontStretch": "Normal",
+                          "SelectedFontStyle": "Normal",
+                          "SelectedFontWeight": "SemiBold",
+                          "SelectedTextBaseline": false,
+                          "SelectedTextOverLine": false,
+                          "SelectedTextStrikethrough": false,
+                          "SelectedTextUnderline": false
+                        }
+                      },
+                      "ControlType::int": 3,
+                      "Flags::int": 0,
+                      "Name": null,
+                      "Order::int": 4,
+                      "RequiredText": "",
+                      "ToolTip": null,
+                      "Type::uid": "057d966f-52de-01e3-8a11-1b6e91221e9b"
+                    },
+                    {
+                      "BlockSettings": {
+                        "CaptionStyle": {
+                          "TextColor": "#FF505050",
+                          "TextStyle": {
+                            "SelectedFontFamily": "Segoe UI",
+                            "SelectedFontSize": 12.0,
+                            "SelectedFontStretch": "Normal",
+                            "SelectedFontStyle": "Normal",
+                            "SelectedFontWeight": "Normal",
+                            "SelectedTextBaseline": false,
+                            "SelectedTextOverLine": false,
+                            "SelectedTextStrikethrough": false,
+                            "SelectedTextUnderline": false
+                          }
+                        },
+                        "ColumnSpan::int": 1,
+                        "ControlSpan": false,
+                        "EmptyColumnsToTheLeft::int": 0,
+                        "HideCaption": true,
+                        "HorizontalAlignment::int": 0,
+                        "Margin": "0,0,0,0",
+                        "MaxWidth": 0.0,
+                        "MinWidth": 0.0,
+                        "StartAtNewLine": false,
+                        "VerticalAlignment::int": 3
+                      },
+                      "Caption": "HelperText",
+                      "ControlSettings": {
+                        "Hyperlink": false,
+                        "LinkCommand": "",
+                        "Text": "Правоустанавливающие документы на фактический адрес (свидетельство о собственности, договор аренды (субаренды) с актом приема-передачи помещений и свидетельством о собственности основного бенефициара)",
+                        "TextColor": "#FF000000",
+                        "TextStyle": {
+                          "SelectedFontFamily": "Segoe UI",
+                          "SelectedFontSize": 12.0,
+                          "SelectedFontStretch": "Normal",
+                          "SelectedFontStyle": "Normal",
+                          "SelectedFontWeight": "Normal",
+                          "SelectedTextBaseline": false,
+                          "SelectedTextOverLine": false,
+                          "SelectedTextStrikethrough": false,
+                          "SelectedTextUnderline": false
+                        }
+                      },
+                      "ControlType::int": 3,
+                      "Flags::int": 0,
+                      "Name": null,
+                      "Order::int": 5,
+                      "RequiredText": "",
+                      "ToolTip": null,
+                      "Type::uid": "057d966f-52de-01e3-8a11-1b6e91221e9b"
+                    },
+                    {
+                      "BlockSettings": {
+                        "CaptionStyle": {
+                          "TextColor": "#FF505050",
+                          "TextStyle": {
+                            "SelectedFontFamily": "Segoe UI",
+                            "SelectedFontSize": 12.0,
+                            "SelectedFontStretch": "Normal",
+                            "SelectedFontStyle": "Normal",
+                            "SelectedFontWeight": "Normal",
+                            "SelectedTextBaseline": false,
+                            "SelectedTextOverLine": false,
+                            "SelectedTextStrikethrough": false,
+                            "SelectedTextUnderline": false
+                          }
+                        },
+                        "ColumnSpan::int": 1,
+                        "ControlSpan": false,
+                        "EmptyColumnsToTheLeft::int": 0,
+                        "HideCaption": true,
+                        "HorizontalAlignment::int": 0,
+                        "Margin": "0,0,0,0",
+                        "MaxWidth": 0.0,
+                        "MinWidth": 0.0,
+                        "StartAtNewLine": false,
+                        "VerticalAlignment::int": 3
+                      },
+                      "Caption": "HelperText",
+                      "ControlSettings": {
+                        "Hyperlink": false,
+                        "LinkCommand": "",
+                        "Text": "Справка ФНС об отсутствии задолженности по налогам и сборам",
+                        "TextColor": "#FF000000",
+                        "TextStyle": {
+                          "SelectedFontFamily": "Segoe UI",
+                          "SelectedFontSize": 12.0,
+                          "SelectedFontStretch": "Normal",
+                          "SelectedFontStyle": "Normal",
+                          "SelectedFontWeight": "Normal",
+                          "SelectedTextBaseline": false,
+                          "SelectedTextOverLine": false,
+                          "SelectedTextStrikethrough": false,
+                          "SelectedTextUnderline": false
+                        }
+                      },
+                      "ControlType::int": 3,
+                      "Flags::int": 0,
+                      "Name": null,
+                      "Order::int": 6,
+                      "RequiredText": "",
+                      "ToolTip": null,
+                      "Type::uid": "057d966f-52de-01e3-8a11-1b6e91221e9b"
+                    },
+                    {
+                      "BlockSettings": {
+                        "CaptionStyle": {
+                          "TextColor": "#FF505050",
+                          "TextStyle": {
+                            "SelectedFontFamily": "Segoe UI",
+                            "SelectedFontSize": 12.0,
+                            "SelectedFontStretch": "Normal",
+                            "SelectedFontStyle": "Normal",
+                            "SelectedFontWeight": "Normal",
+                            "SelectedTextBaseline": false,
+                            "SelectedTextOverLine": false,
+                            "SelectedTextStrikethrough": false,
+                            "SelectedTextUnderline": false
+                          }
+                        },
+                        "ColumnSpan::int": 1,
+                        "ControlSpan": false,
+                        "EmptyColumnsToTheLeft::int": 0,
+                        "HideCaption": true,
+                        "HorizontalAlignment::int": 0,
+                        "Margin": "0,0,0,0",
+                        "MaxWidth": 0.0,
+                        "MinWidth": 0.0,
+                        "StartAtNewLine": false,
+                        "VerticalAlignment::int": 3
+                      },
+                      "Caption": "HelperText",
+                      "ControlSettings": {
+                        "Hyperlink": false,
+                        "LinkCommand": "",
+                        "Text": "Балансовый отчет",
+                        "TextColor": "#FF000000",
+                        "TextStyle": {
+                          "SelectedFontFamily": "Segoe UI",
+                          "SelectedFontSize": 12.0,
+                          "SelectedFontStretch": "Normal",
+                          "SelectedFontStyle": "Normal",
+                          "SelectedFontWeight": "Normal",
+                          "SelectedTextBaseline": false,
+                          "SelectedTextOverLine": false,
+                          "SelectedTextStrikethrough": false,
+                          "SelectedTextUnderline": false
+                        }
+                      },
+                      "ControlType::int": 3,
+                      "Flags::int": 0,
+                      "Name": null,
+                      "Order::int": 7,
+                      "RequiredText": "",
+                      "ToolTip": null,
+                      "Type::uid": "057d966f-52de-01e3-8a11-1b6e91221e9b"
+                    },
+                    {
+                      "BlockSettings": {
+                        "CaptionStyle": {
+                          "TextColor": "#FF505050",
+                          "TextStyle": {
+                            "SelectedFontFamily": "Segoe UI",
+                            "SelectedFontSize": 12.0,
+                            "SelectedFontStretch": "Normal",
+                            "SelectedFontStyle": "Normal",
+                            "SelectedFontWeight": "Normal",
+                            "SelectedTextBaseline": false,
+                            "SelectedTextOverLine": false,
+                            "SelectedTextStrikethrough": false,
+                            "SelectedTextUnderline": false
+                          }
+                        },
+                        "ColumnSpan::int": 1,
+                        "ControlSpan": false,
+                        "EmptyColumnsToTheLeft::int": 0,
+                        "HideCaption": true,
+                        "HorizontalAlignment::int": 0,
+                        "Margin": "0,0,0,0",
+                        "MaxWidth": 0.0,
+                        "MinWidth": 0.0,
+                        "StartAtNewLine": false,
+                        "VerticalAlignment::int": 3
+                      },
+                      "Caption": "HelperText",
+                      "ControlSettings": {
+                        "Hyperlink": false,
+                        "LinkCommand": "",
+                        "Text": "Справка по расчетам по налогам, сборам, страховым взносам, пеням, штрафам, процентам организаций и ИП. По форме КНД 1160080",
+                        "TextColor": "#FF000000",
+                        "TextStyle": {
+                          "SelectedFontFamily": "Segoe UI",
+                          "SelectedFontSize": 12.0,
+                          "SelectedFontStretch": "Normal",
+                          "SelectedFontStyle": "Normal",
+                          "SelectedFontWeight": "Normal",
+                          "SelectedTextBaseline": false,
+                          "SelectedTextOverLine": false,
+                          "SelectedTextStrikethrough": false,
+                          "SelectedTextUnderline": false
+                        }
+                      },
+                      "ControlType::int": 3,
+                      "Flags::int": 0,
+                      "Name": null,
+                      "Order::int": 8,
+                      "RequiredText": "",
+                      "ToolTip": null,
+                      "Type::uid": "057d966f-52de-01e3-8a11-1b6e91221e9b"
+                    }
+                  ],
+                  "FormSettings": {
+                    "HideCaption": true
+                  },
+                  "Name": "FileHelperSoleTrader",
+                  "Order::int": 1
+                },
+                {
+                  "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+                  "BlockSettings": {
+                    "AlwaysMultipleColumn": false,
+                    "CollapsedByDefault": false,
+                    "ColumnsCount::int": 1,
+                    "DoNotCollapseWithTopBlock": false,
+                    "HorizontalInterval::int": 5,
+                    "IsHidden": false,
+                    "LeftCaptions": false,
+                    "StretchVertically": false,
+                    "VerticalInterval::int": 5
+                  },
+                  "Caption": "Физическое лицо",
+                  "Controls": [
+                    {
+                      "BlockSettings": {
+                        "CaptionStyle": {
+                          "TextColor": "#FF505050",
+                          "TextStyle": {
+                            "SelectedFontFamily": "Segoe UI",
+                            "SelectedFontSize": 12.0,
+                            "SelectedFontStretch": "Normal",
+                            "SelectedFontStyle": "Normal",
+                            "SelectedFontWeight": "Normal",
+                            "SelectedTextBaseline": false,
+                            "SelectedTextOverLine": false,
+                            "SelectedTextStrikethrough": false,
+                            "SelectedTextUnderline": false
+                          }
+                        },
+                        "ColumnSpan::int": 1,
+                        "ControlSpan": false,
+                        "EmptyColumnsToTheLeft::int": 0,
+                        "HideCaption": true,
+                        "HorizontalAlignment::int": 0,
+                        "Margin": "0,0,0,0",
+                        "MaxWidth": 0.0,
+                        "MinWidth": 0.0,
+                        "StartAtNewLine": false,
+                        "VerticalAlignment::int": 3
+                      },
+                      "Caption": "HelperTextBlockTitle",
+                      "ControlSettings": {
+                        "Hyperlink": false,
+                        "LinkCommand": "",
+                        "Text": "Перечень файлов для типа 'Физическое лицо'",
+                        "TextColor": "#FF000000",
+                        "TextStyle": {
+                          "SelectedFontFamily": "Segoe UI",
+                          "SelectedFontSize": 14.0,
+                          "SelectedFontStretch": "Normal",
+                          "SelectedFontStyle": "Normal",
+                          "SelectedFontWeight": "SemiBold",
+                          "SelectedTextBaseline": false,
+                          "SelectedTextOverLine": false,
+                          "SelectedTextStrikethrough": false,
+                          "SelectedTextUnderline": true
+                        }
+                      },
+                      "ControlType::int": 3,
+                      "Flags::int": 0,
+                      "Name": null,
+                      "Order::int": 0,
+                      "RequiredText": "",
+                      "ToolTip": null,
+                      "Type::uid": "057d966f-52de-01e3-8a11-1b6e91221e9b"
+                    },
+                    {
+                      "BlockSettings": {
+                        "CaptionStyle": {
+                          "TextColor": "#FF505050",
+                          "TextStyle": {
+                            "SelectedFontFamily": "Segoe UI",
+                            "SelectedFontSize": 12.0,
+                            "SelectedFontStretch": "Normal",
+                            "SelectedFontStyle": "Normal",
+                            "SelectedFontWeight": "Normal",
+                            "SelectedTextBaseline": false,
+                            "SelectedTextOverLine": false,
+                            "SelectedTextStrikethrough": false,
+                            "SelectedTextUnderline": false
+                          }
+                        },
+                        "ColumnSpan::int": 1,
+                        "ControlSpan": false,
+                        "EmptyColumnsToTheLeft::int": 0,
+                        "HideCaption": true,
+                        "HorizontalAlignment::int": 0,
+                        "Margin": "0,0,0,0",
+                        "MaxWidth": 0.0,
+                        "MinWidth": 0.0,
+                        "StartAtNewLine": false,
+                        "VerticalAlignment::int": 3
+                      },
+                      "Caption": "HelperText",
+                      "ControlSettings": {
+                        "Hyperlink": false,
+                        "LinkCommand": "",
+                        "Text": "Учетная карточка Контрагента *",
+                        "TextColor": "#FF000000",
+                        "TextStyle": {
+                          "SelectedFontFamily": "Segoe UI",
+                          "SelectedFontSize": 12.0,
+                          "SelectedFontStretch": "Normal",
+                          "SelectedFontStyle": "Normal",
+                          "SelectedFontWeight": "SemiBold",
+                          "SelectedTextBaseline": false,
+                          "SelectedTextOverLine": false,
+                          "SelectedTextStrikethrough": false,
+                          "SelectedTextUnderline": false
+                        }
+                      },
+                      "ControlType::int": 3,
+                      "Flags::int": 0,
+                      "Name": null,
+                      "Order::int": 1,
+                      "RequiredText": "",
+                      "ToolTip": null,
+                      "Type::uid": "057d966f-52de-01e3-8a11-1b6e91221e9b"
+                    },
+                    {
+                      "BlockSettings": {
+                        "CaptionStyle": {
+                          "TextColor": "#FF505050",
+                          "TextStyle": {
+                            "SelectedFontFamily": "Segoe UI",
+                            "SelectedFontSize": 12.0,
+                            "SelectedFontStretch": "Normal",
+                            "SelectedFontStyle": "Normal",
+                            "SelectedFontWeight": "Normal",
+                            "SelectedTextBaseline": false,
+                            "SelectedTextOverLine": false,
+                            "SelectedTextStrikethrough": false,
+                            "SelectedTextUnderline": false
+                          }
+                        },
+                        "ColumnSpan::int": 1,
+                        "ControlSpan": false,
+                        "EmptyColumnsToTheLeft::int": 0,
+                        "HideCaption": true,
+                        "HorizontalAlignment::int": 0,
+                        "Margin": "0,0,0,0",
+                        "MaxWidth": 0.0,
+                        "MinWidth": 0.0,
+                        "StartAtNewLine": false,
+                        "VerticalAlignment::int": 3
+                      },
+                      "Caption": "HelperText",
+                      "ControlSettings": {
+                        "Hyperlink": false,
+                        "LinkCommand": "",
+                        "Text": "Свидетельство ИНН физ. лица *",
+                        "TextColor": "#FF000000",
+                        "TextStyle": {
+                          "SelectedFontFamily": "Segoe UI",
+                          "SelectedFontSize": 12.0,
+                          "SelectedFontStretch": "Normal",
+                          "SelectedFontStyle": "Normal",
+                          "SelectedFontWeight": "SemiBold",
+                          "SelectedTextBaseline": false,
+                          "SelectedTextOverLine": false,
+                          "SelectedTextStrikethrough": false,
+                          "SelectedTextUnderline": false
+                        }
+                      },
+                      "ControlType::int": 3,
+                      "Flags::int": 0,
+                      "Name": null,
+                      "Order::int": 2,
+                      "RequiredText": "",
+                      "ToolTip": null,
+                      "Type::uid": "057d966f-52de-01e3-8a11-1b6e91221e9b"
+                    },
+                    {
+                      "BlockSettings": {
+                        "CaptionStyle": {
+                          "TextColor": "#FF505050",
+                          "TextStyle": {
+                            "SelectedFontFamily": "Segoe UI",
+                            "SelectedFontSize": 12.0,
+                            "SelectedFontStretch": "Normal",
+                            "SelectedFontStyle": "Normal",
+                            "SelectedFontWeight": "Normal",
+                            "SelectedTextBaseline": false,
+                            "SelectedTextOverLine": false,
+                            "SelectedTextStrikethrough": false,
+                            "SelectedTextUnderline": false
+                          }
+                        },
+                        "ColumnSpan::int": 1,
+                        "ControlSpan": false,
+                        "EmptyColumnsToTheLeft::int": 0,
+                        "HideCaption": true,
+                        "HorizontalAlignment::int": 0,
+                        "Margin": "0,0,0,0",
+                        "MaxWidth": 0.0,
+                        "MinWidth": 0.0,
+                        "StartAtNewLine": false,
+                        "VerticalAlignment::int": 3
+                      },
+                      "Caption": "HelperText",
+                      "ControlSettings": {
+                        "Hyperlink": false,
+                        "LinkCommand": "",
+                        "Text": "Паспорт (1 страница и страница с регистрацией) *",
+                        "TextColor": "#FF000000",
+                        "TextStyle": {
+                          "SelectedFontFamily": "Segoe UI",
+                          "SelectedFontSize": 12.0,
+                          "SelectedFontStretch": "Normal",
+                          "SelectedFontStyle": "Normal",
+                          "SelectedFontWeight": "SemiBold",
+                          "SelectedTextBaseline": false,
+                          "SelectedTextOverLine": false,
+                          "SelectedTextStrikethrough": false,
+                          "SelectedTextUnderline": false
+                        }
+                      },
+                      "ControlType::int": 3,
+                      "Flags::int": 0,
+                      "Name": null,
+                      "Order::int": 3,
+                      "RequiredText": "",
+                      "ToolTip": null,
+                      "Type::uid": "057d966f-52de-01e3-8a11-1b6e91221e9b"
+                    },
+                    {
+                      "BlockSettings": {
+                        "CaptionStyle": {
+                          "TextColor": "#FF505050",
+                          "TextStyle": {
+                            "SelectedFontFamily": "Segoe UI",
+                            "SelectedFontSize": 12.0,
+                            "SelectedFontStretch": "Normal",
+                            "SelectedFontStyle": "Normal",
+                            "SelectedFontWeight": "Normal",
+                            "SelectedTextBaseline": false,
+                            "SelectedTextOverLine": false,
+                            "SelectedTextStrikethrough": false,
+                            "SelectedTextUnderline": false
+                          }
+                        },
+                        "ColumnSpan::int": 1,
+                        "ControlSpan": false,
+                        "EmptyColumnsToTheLeft::int": 0,
+                        "HideCaption": true,
+                        "HorizontalAlignment::int": 0,
+                        "Margin": "0,0,0,0",
+                        "MaxWidth": 0.0,
+                        "MinWidth": 0.0,
+                        "StartAtNewLine": false,
+                        "VerticalAlignment::int": 3
+                      },
+                      "Caption": "HelperText",
+                      "ControlSettings": {
+                        "Hyperlink": false,
+                        "LinkCommand": "",
+                        "Text": "Правоустанавливающие документы на фактический адрес (свидетельство о собственности, договор аренды (субаренды) с актом приема-передачи помещений и свидетельством о собственности основного бенефициара)",
+                        "TextColor": "#FF000000",
+                        "TextStyle": {
+                          "SelectedFontFamily": "Segoe UI",
+                          "SelectedFontSize": 12.0,
+                          "SelectedFontStretch": "Normal",
+                          "SelectedFontStyle": "Normal",
+                          "SelectedFontWeight": "Normal",
+                          "SelectedTextBaseline": false,
+                          "SelectedTextOverLine": false,
+                          "SelectedTextStrikethrough": false,
+                          "SelectedTextUnderline": false
+                        }
+                      },
+                      "ControlType::int": 3,
+                      "Flags::int": 0,
+                      "Name": null,
+                      "Order::int": 4,
+                      "RequiredText": "",
+                      "ToolTip": null,
+                      "Type::uid": "057d966f-52de-01e3-8a11-1b6e91221e9b"
+                    },
+                    {
+                      "BlockSettings": {
+                        "CaptionStyle": {
+                          "TextColor": "#FF505050",
+                          "TextStyle": {
+                            "SelectedFontFamily": "Segoe UI",
+                            "SelectedFontSize": 12.0,
+                            "SelectedFontStretch": "Normal",
+                            "SelectedFontStyle": "Normal",
+                            "SelectedFontWeight": "Normal",
+                            "SelectedTextBaseline": false,
+                            "SelectedTextOverLine": false,
+                            "SelectedTextStrikethrough": false,
+                            "SelectedTextUnderline": false
+                          }
+                        },
+                        "ColumnSpan::int": 1,
+                        "ControlSpan": false,
+                        "EmptyColumnsToTheLeft::int": 0,
+                        "HideCaption": true,
+                        "HorizontalAlignment::int": 0,
+                        "Margin": "0,0,0,0",
+                        "MaxWidth": 0.0,
+                        "MinWidth": 0.0,
+                        "StartAtNewLine": false,
+                        "VerticalAlignment::int": 3
+                      },
+                      "Caption": "HelperText",
+                      "ControlSettings": {
+                        "Hyperlink": false,
+                        "LinkCommand": "",
+                        "Text": "Справка ФНС об отсутствии задолженности по налогам и сборам",
+                        "TextColor": "#FF000000",
+                        "TextStyle": {
+                          "SelectedFontFamily": "Segoe UI",
+                          "SelectedFontSize": 12.0,
+                          "SelectedFontStretch": "Normal",
+                          "SelectedFontStyle": "Normal",
+                          "SelectedFontWeight": "Normal",
+                          "SelectedTextBaseline": false,
+                          "SelectedTextOverLine": false,
+                          "SelectedTextStrikethrough": false,
+                          "SelectedTextUnderline": false
+                        }
+                      },
+                      "ControlType::int": 3,
+                      "Flags::int": 0,
+                      "Name": null,
+                      "Order::int": 5,
+                      "RequiredText": "",
+                      "ToolTip": null,
+                      "Type::uid": "057d966f-52de-01e3-8a11-1b6e91221e9b"
+                    },
+                    {
+                      "BlockSettings": {
+                        "CaptionStyle": {
+                          "TextColor": "#FF505050",
+                          "TextStyle": {
+                            "SelectedFontFamily": "Segoe UI",
+                            "SelectedFontSize": 12.0,
+                            "SelectedFontStretch": "Normal",
+                            "SelectedFontStyle": "Normal",
+                            "SelectedFontWeight": "Normal",
+                            "SelectedTextBaseline": false,
+                            "SelectedTextOverLine": false,
+                            "SelectedTextStrikethrough": false,
+                            "SelectedTextUnderline": false
+                          }
+                        },
+                        "ColumnSpan::int": 1,
+                        "ControlSpan": false,
+                        "EmptyColumnsToTheLeft::int": 0,
+                        "HideCaption": true,
+                        "HorizontalAlignment::int": 0,
+                        "Margin": "0,0,0,0",
+                        "MaxWidth": 0.0,
+                        "MinWidth": 0.0,
+                        "StartAtNewLine": false,
+                        "VerticalAlignment::int": 3
+                      },
+                      "Caption": "HelperText",
+                      "ControlSettings": {
+                        "Hyperlink": false,
+                        "LinkCommand": "",
+                        "Text": "Балансовый отчет",
+                        "TextColor": "#FF000000",
+                        "TextStyle": {
+                          "SelectedFontFamily": "Segoe UI",
+                          "SelectedFontSize": 12.0,
+                          "SelectedFontStretch": "Normal",
+                          "SelectedFontStyle": "Normal",
+                          "SelectedFontWeight": "Normal",
+                          "SelectedTextBaseline": false,
+                          "SelectedTextOverLine": false,
+                          "SelectedTextStrikethrough": false,
+                          "SelectedTextUnderline": false
+                        }
+                      },
+                      "ControlType::int": 3,
+                      "Flags::int": 0,
+                      "Name": null,
+                      "Order::int": 6,
+                      "RequiredText": "",
+                      "ToolTip": null,
+                      "Type::uid": "057d966f-52de-01e3-8a11-1b6e91221e9b"
+                    }
+                  ],
+                  "FormSettings": {
+                    "HideCaption": true
+                  },
+                  "Name": "FileHelperIndividual",
+                  "Order::int": 2
+                }
+              ],
+              "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+              "FormSettings": {
+                "HorizontalInterval::int": 10,
+                "Interval::int": 10
+              },
+              "TabCaption": "Вкладка",
+              "TabOrder::int": 0
+            }
+          ],
+          "Name": "FileCategoryHelperFor",
+          "Order::int": 2,
+          "ToolTip": null,
+          "Type::uid": "5f24f4f0-954b-4996-af69-1ce23cd692d2"
+        },
+        {
+          "BlockSettings": {
+            "ControlSpan": true,
+            "HideCaption": false
+          },
+          "Caption": "Файлы",
+          "ControlSettings": {
+            "CategoriesViewMap": [
+              {
+                "CardColumn::uid": "af585588-d825-0040-4000-09e6c36f6738",
+                "CardSection::uid": "dadfadd9-d28c-454e-aebb-d900fda5a6eb",
+                "ColumnType::int": 0,
+                "ConstantValue": false,
+                "ConstantValueType::int": 4,
+                "SkipNullParams": true,
+                "ViewMasterLinkName": "",
+                "ViewMasterLinkType::int": 0,
+                "ViewParamName": "PartnerTypeID",
+                "ViewParamSetName": ""
+              }
+            ],
+            "FilePreviewControlName": null,
+            "FileSortingDirection::int": 0,
+            "FileSortingType": "Name",
+            "GroupByTypes::int": 1,
+            "GroupType": "Category",
+            "IsCategoriesEnabled": true,
+            "IsIgnoreExistingCategories": false,
+            "IsManualCategoriesCreationDisabled": true,
+            "IsNullCategoryCreationDisabled": true,
+            "IsPreservingCategoriesOrder": false,
+            "ViewAlias": "KAFileCategoriesFiltered"
+          },
+          "ControlType::int": 3,
+          "Flags::int": 0,
+          "Name": "Files",
+          "Order::int": 3,
+          "RequiredText": "",
+          "ToolTip": null,
+          "Type::uid": "6867130d-0858-0d60-ac87-3ab49bb8d7ed"
+        }
+      ],
+      "FormSettings": {
+        "HideCaption": false
+      },
+      "Name": "LinksBlock",
+      "Order::int": 5
+    }
+  ],
+  "Caption": "Заявка на контрагента",
+  "CompletionOptions": [],
+  "DigestFormat": null,
+  "Extensions": [],
+  "Flags::int": 11,
+  "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+  "Forms": [],
+  "FormSettings": {
+    "FilePreviewIsDisabled": false,
+    "HorizontalInterval::int": 10,
+    "Interval::int": 10
+  },
+  "Group": "Documents",
+  "ID::uid": "ca76dbb5-e4f0-46b7-b5fa-2f7f77c7cae2",
+  "InstanceType::int": 0,
+  "Name": "PnrPartnerRequest",
+  "SchemeItems": [
+    {
+      "ColumnIDList": [
+        {
+          "::types": [
+            "uid"
+          ]
+        },
+        "53cd2159-752f-41b9-8ada-cecdc8d136fe"
+      ],
+      "SectionID::uid": "53ad6a32-f205-4c68-8df4-bfbba18a1cea"
+    },
+    {
+      "ColumnIDList": [
+        {
+          "::types": [
+            "uid",
+            "uid"
+          ]
+        },
+        "4856d3e1-fda0-42eb-bd87-8c2cea592e9f",
+        "f9708dec-9a21-4f0a-85a5-9f90385f44d1"
+      ],
+      "SectionID::uid": "73320234-fc44-4126-a7a6-5dd0bdaa4880"
+    },
+    {
+      "ColumnIDList": [
+        {
+          "::types": [
+            "uid"
+          ]
+        },
+        "e53b1a76-83f6-4c8f-a362-74529b358028"
+      ],
+      "SectionID::uid": "83785076-d844-4ea4-9e84-0a389c951ef4"
+    },
+    {
+      "ColumnIDList": [
+        {
+          "::types": [
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid"
+          ]
+        },
+        "99037f7d-c376-4cb5-a06a-006fb96548d5",
+        "434a798f-bd1f-4c5c-b291-80490cd0dccf",
+        "eeb023b5-f473-4a8b-bef2-88e07b0d0688",
+        "5a78f218-dae8-41de-92aa-6746d44468c3",
+        "46115821-4126-40ab-a14f-64f33d17d271",
+        "e43c836d-63d7-460d-ab81-b5823383e150",
+        "dadb1130-034d-493c-b7a0-a7c74eae078b",
+        "aa152ba8-dc1f-4efa-8c68-03ba804ef6f1",
+        "d804eb6c-9f50-4299-b31c-2fef064fae9e",
+        "d713fa35-af02-4520-bc91-47f5a04e44fa",
+        "cc4329a5-3c39-4200-be26-8b555ded499c"
+      ],
+      "SectionID::uid": "a161e289-2f99-4699-9e95-6e3336be8527"
+    },
+    {
+      "ColumnIDList": [
+        {
+          "::types": [
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid"
+          ]
+        },
+        "3228c4b9-303a-4ee3-8ec2-58b628010602",
+        "bd487677-54a9-40f6-a3f3-600e6cc688f8",
+        "ec87f923-9553-4c1c-8fd1-d173a0baea91",
+        "9f3dd989-04f8-463f-9c7a-3ffc64c8de92",
+        "16438fc3-c5a9-4064-90b0-597d2afe0065",
+        "9ae94b2f-f7f9-4ac0-86d0-086166615ad0",
+        "067e9e76-be83-4bba-a448-d46c46d49458",
+        "af585588-d825-4940-aaa4-29e6c36f6738",
+        "95954600-c5db-4e82-96b6-748385a54d5d",
+        "64d77c0a-df94-4435-8f26-abbc9edd6b13",
+        "19b4705e-40b9-46a4-b5ad-0cf64c96ad62",
+        "ce3c1a76-b0de-4905-81c6-a1b95f3d4668",
+        "5376755a-690e-488e-8ca0-12821bc6f917",
+        "58890cb8-0ed2-4912-a339-8d37d61cc0ff",
+        "64a216d2-2d15-4dd9-a3ef-181b532f359c",
+        "a8a148c5-66a1-4f74-a7d2-a6d7a84712b7",
+        "3cdeac59-26b1-4024-8330-0877951e8adc",
+        "33a33ba4-24be-43ec-bb83-4d4bd6b6dcdd",
+        "5c9ffcc3-84a6-43eb-9173-41d497177b3f",
+        "ef8286e4-e2e4-4bd8-8637-aa31132f4bd3",
+        "78167913-126f-48bf-848d-4cfb8fc7914d",
+        "76928df2-2b6a-4f0b-a535-c8a70ec60d84",
+        "3ae10722-922b-4004-9bc4-4fc4a733d2cf",
+        "9bc99888-967a-48b9-90be-444c18429a25",
+        "b55dc889-0258-42d2-bcee-9293d19902b4"
+      ],
+      "SectionID::uid": "dadfadd9-d28c-454e-aebb-d900fda5a6eb"
+    }
+  ],
+  "TabCaption": "$CardTypes_Tabs_Card",
+  "TabOrder::int": 0,
+  "Validators": [
+    {
+      "TypeID::uid": "9b24ab01-5f46-05d1-bdfa-615212761dd8",
+      "ValidatorSettings": {
+        "ColumnID::uid": "3228c4b9-303a-4ee3-8ec2-58b628010602",
+        "ErrorMessage": "\"Тип заявки\" обязательно к заполнению.",
+        "SectionID::uid": "dadfadd9-d28c-454e-aebb-d900fda5a6eb",
+        "Warning": false
+      }
+    }
+  ]
+}

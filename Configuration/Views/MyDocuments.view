@@ -1,0 +1,406 @@
+#tessa_exchange_format(Version:1, CreationTime:2020-08-24T08\:58\:18) {
+	#exchange_view(RowID:198282c6-a340-472f-97fb-e8895c3cc3ca, Alias:MyDocuments, Caption:Мои документы, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2020-08-24T07\:52\:59, GroupName:KrDocuments) {
+		#metadata {
+			#view(DefaultSortColumn: CreationDate, DefaultSortDirection: desc, Paging: always, RowCountSubset: Count, MultiSelect: true, QuickSearchParam: Number, Appearance: Background)
+			#column(Alias: DocID, Hidden: true, Type: $DocumentCommonInfo.ID)
+			#column(Alias: DocNumber, Caption: $Views_Registers_Number, Type: $DocumentCommonInfo.FullNumber, SortBy: mi.Number)
+			#column(Alias: DocSubject, Caption: $Views_Registers_Subject, Type: $DocumentCommonInfo.DocTypeTitle, SortBy: mi.Subject)
+			#column(Alias: DocDescription, Caption: $Views_Registers_DocDescription, Hidden: true, Type: String)
+			#column(Alias: AuthorID, Hidden: true, Type: $DocumentCommonInfo.AuthorID)
+			#column(Alias: AuthorName, Caption: $Views_Registers_Author, Type: $DocumentCommonInfo.AuthorName, SortBy: mi.AuthorName)
+			#column(Alias: RegistratorID, Hidden: true, Type: $DocumentCommonInfo.RegistratorID)
+			#column(Alias: RegistratorName, Caption: $Views_Registers_Registrator, Type: $DocumentCommonInfo.RegistratorName, SortBy: mi.RegistratorName)
+			#column(Alias: KrState, Caption: Статус, Type: $KrApprovalCommonInfo.StateName, Localizable: true)
+			#column(Alias: KrStateModified, Caption: $Views_Registers_StateModified, Type: Date, Localizable: true)
+			#column(Alias: DocDate, Caption: $Views_Registers_DocDate, Type: Date, SortBy: mi.DocDate)
+			#column(Alias: CreationDate, Caption: $Views_Registers_CreationDate, Type: Date, SortBy: mi.CreationDate)
+			#column(Alias: Department, Caption: $Views_Registers_Department, Type: $DocumentCommonInfo.DepartmentName)
+			#column(Alias: ApprovedBy, Caption: $Views_Registers_ApprovedBy, Type: $KrApprovalCommonInfo.ApprovedBy)
+			#column(Alias: DisapprovedBy, Caption: $Views_Registers_DisapprovedBy, Type: $KrApprovalCommonInfo.DisapprovedBy)
+			#column(Alias: Background, Hidden: true, Type: String)
+			#column(Alias: rn, Hidden: true, Type: Int64)
+			#param(Alias: IsAuthor, Caption: $Views_Registers_IsAuthor_Param, Type: Boolean, AllowedOperands: IsTrue IsFalse)
+			#param(Alias: IsInitiator, Caption: $Views_Registers_IsInitiator_Param, Type: Boolean, AllowedOperands: IsTrue IsFalse)
+			#param(Alias: IsRegistrator, Caption: $Views_Registers_IsRegistrator_Param, Type: Boolean, AllowedOperands: IsTrue IsFalse)
+			#param(Alias: Number, Caption: $Views_Registers_Number_Param, Multiple: true, Type: $DocumentCommonInfo.FullNumber)
+			#param(Alias: Subject, Caption: $Views_Registers_Subject_Param, Multiple: true, Type: $DocumentCommonInfo.Subject)
+			#param(Alias: DocDate, Caption: $Views_Registers_DocDate_Param, Multiple: true, Type: Date)
+			#param(Alias: Author, Caption: $Views_Registers_Author_Param, Multiple: true, Type: $DocumentCommonInfo.AuthorID, RefSection: PersonalRoles, AllowedOperands: Equality NonEquality) {
+				#autocomplete(View: Users, Param: Name, PopupColumns: 1 4)
+			}
+			#param(Alias: Registrator, Caption: $Views_Registers_Registrator_Param, Multiple: true, Type: $DocumentCommonInfo.RegistratorID, RefSection: PersonalRoles, AllowedOperands: Equality NonEquality) {
+				#autocomplete(View: Users, Param: Name, PopupColumns: 1 4)
+			}
+			#param(Alias: State, Caption: $Views_Registers_State_Param, Multiple: true, Type: $KrApprovalCommonInfo.StateID, RefSection: KrDocState, AllowedOperands: Equality NonEquality IsNull IsNotNull) {
+				#autocomplete(View: KrDocStates, Param: Name, PopupColumns: 1)
+				#dropdown(View: KrDocStates, PopupColumns: 1)
+			}
+			#param(Alias: Type, Caption: $Views_Registers_Type_Param, Multiple: true, Type: $DocumentCommonInfo.DocTypeID, RefSection: KrCardTypesVirtual) {
+				#autocomplete(View: KrTypesEffective, Param: Caption, PopupColumns: 1)
+				#dropdown(View: KrTypesEffective, PopupColumns: 1)
+			}
+			#param(Alias: Department, Caption: $Views_Registers_Department_Param, Type: $DocumentCommonInfo.DepartmentID, RefSection: DepartmentRoles) {
+				#autocomplete(View: Departments, Param: Name, PopupColumns: 1 3 5)
+			}
+			#reference(ColPrefix: Doc, RefSection: DocumentCommonInfo DocRefsSection, DisplayValueColumn: DocNumber, IsCard: true, OpenOnDoubleClick: true)
+			#reference(ColPrefix: Author, RefSection: Roles DurableRoles PersonalRoles, DisplayValueColumn: AuthorName, IsCard: true, OpenOnDoubleClick: false)
+			#reference(ColPrefix: Registrator, RefSection: Roles DurableRoles PersonalRoles, DisplayValueColumn: RegistratorName, IsCard: true, OpenOnDoubleClick: false)
+			#subset(Alias: ByType, Caption: $Views_Registers_ByType_Subset, RefParam: Type, RefColumn: TypeID, CaptionColumn: TypeName, CountColumn: TypeCount)
+			#subset(Alias: ByState, Caption: По статусу, RefParam: State, RefColumn: StateID, CaptionColumn: StateName, CountColumn: StateCount)
+			#subset(Alias: Count)
+		}
+		#description {}
+		#ms_query {
+			\#var\(UseCommonInfo\: Normal || ByType || Number || Subject || DocDate || Author || Registrator || Department || Type || IsAuthor || IsRegistrator\)
+
+			DECLARE @Project nvarchar\(max\);
+			SET @Project = [dbo].[GetString]\(N'Views_Registers_Project_Sql'\, \#param\(locale\)\);
+
+			SELECT
+				\#if\(Normal\) \{
+				[mi].[ID]																		AS [DocID]\,
+				[mi].[FullNumber]																AS [DocNumber]\,
+				[mi].[Subject]																	AS [DocSubject]\,
+				COALESCE\([mi].[FullNumber]\, N''\) + N'\, ' + COALESCE\([mi].[Subject]\, N''\)		AS [DocDescription]\, 	-- autocomplete
+				[mi].[AuthorID]\,
+				[mi].[AuthorName]\,
+				[mi].[RegistratorID]\,
+				[mi].[RegistratorName]\,
+				COALESCE\([kr].[StateName]\, @Project\)											AS [KrState]\,
+				CAST\(COALESCE\([kr].[StateChangedDateTimeUTC]\, [mi].[CreationDate]\) AS date\)		AS [KrStateModified]\,
+				CAST\([mi].[DocDate] AS date\)													AS [DocDate]\,
+				CAST\([mi].[CreationDate] AS date\)												AS [CreationDate]\,
+				[mi].[DepartmentName]															AS [Department]\,
+				[kr].[ApprovedBy]\,
+				[kr].[DisapprovedBy]\,
+				N'\#appearance\(Background\: ' + CASE
+					WHEN \([kr].[StateID] = 1 OR [kr].[StateID] = 10\) AND [kr].[DisapprovedBy] IS NOT NULL AND [kr].[DisapprovedBy] <> N''	-- Red\: active/signing AND has disapprovers
+						THEN N'\#70FF0000'
+					WHEN [kr].[StateID] = 2 OR [kr].[StateID] = 6 OR [kr].[StateID] = 8														-- Green\: approved/signed/registered
+						THEN N'\#7000FF00'
+					WHEN [kr].[StateID] = 4																									-- Yellow\: editing
+						THEN N'\#70FFFF00'
+					ELSE N'\#00000000'																										-- Transparent\: other
+				END + N'\)'																		AS [Background]\,
+				[t].[rn]
+				\}
+
+				\#if\(Count\) \{
+				[t].*
+				\}
+
+				\#if\(ByType\) \{
+				[t].[TypeID]\,
+				[lName].[Value] AS [TypeName]\,
+				[t].[TypeCount]
+				\}
+
+				\#if\(ByState\) \{
+				[t].*
+				\}
+			FROM \(
+				SELECT
+					\#if\(Normal\) \{
+					[t].[ID]\,
+					row_number\(\) OVER \(ORDER BY \#order_by\) AS [rn]
+					\}
+
+					\#if\(Count\) \{
+					count\(*\) AS [cnt]
+					\}
+
+					\#if\(ByType\) \{
+					COALESCE\([mi].[DocTypeID]\, [mi].[CardTypeID]\)		AS [TypeID]\,
+					count\(*\)											AS [TypeCount]
+					\}
+
+					\#if\(ByState\) \{
+					COALESCE\([kr].[StateID]\, CAST\(0 AS smallint\)\)		AS [StateID]\,
+					COALESCE\([kr].[StateName]\, N'$KrStates_Doc_Draft'\)	AS [StateName]\,
+					count\(*\)											AS [StateCount]
+					\}
+				FROM \(
+					-- я автор
+					SELECT [ID]
+					FROM [DocumentCommonInfo] AS [mi] WITH \(NOLOCK\)
+					WHERE [mi].[AuthorID] = \#param\(CurrentUserID\)
+
+					UNION
+					-- я регистратор
+					SELECT [ID]
+					FROM [DocumentCommonInfo] AS [mi] WITH \(NOLOCK\)
+					WHERE [mi].[RegistratorID] = \#param\(CurrentUserID\)
+
+					UNION
+					-- я инициатор
+					SELECT [MainCardID]
+					FROM [KrApprovalCommonInfo] AS [kr] WITH \(NOLOCK\)
+					WHERE [kr].[AuthorID] = \#param\(CurrentUserID\)
+					\) AS [t]
+
+				\#if\(UseCommonInfo\) \{
+				INNER JOIN [DocumentCommonInfo] AS [mi] WITH \(NOLOCK\)
+					ON [mi].[ID] = [t].[ID]
+				\}
+
+				\#if\(ByState || State || IsInitiator\) \{
+				LEFT JOIN [KrApprovalCommonInfo] AS [kr] WITH \(NOLOCK\)
+					ON [kr].[MainCardID] = [t].[ID]
+				\}
+
+				WHERE 1 = 1
+					\#param\(Number\, [mi].[FullNumber]\)
+					\#param\(Subject\, [mi].[Subject]\)
+					\#param\(DocDate\, [mi].[DocDate]\)
+					\#param\(State\, COALESCE\([kr].[StateID]\, 0\)\)
+					\#param\(Author\, [mi].[AuthorID]\)
+					\#param\(Registrator\, [mi].[RegistratorID]\)
+					\#param\(Department\, [mi].[DepartmentID]\)
+
+					\#if\(Type\) \{
+					AND \(1 = 1 \#param\(Type\, [mi].[DocTypeID]\) OR 1 = 1 \#param\(Type\, [mi].[CardTypeID]\)\)
+					\}
+
+					\#if\(IsAuthor\) \{
+						\#if\(IsAuthor.CriteriaName == "IsTrue"\) \{
+					AND [mi].[AuthorID] = \#param\(CurrentUserID\)
+						\} \{
+					AND \([mi].[AuthorID] IS NULL OR [mi].[AuthorID] <> \#param\(CurrentUserID\)\)
+						\}
+					\}
+
+					\#if\(IsRegistrator\) \{
+						\#if\(IsRegistrator.CriteriaName == "IsTrue"\) \{
+					AND [mi].[RegistratorID] = \#param\(CurrentUserID\)
+						\} \{
+					AND \([mi].[RegistratorID] IS NULL OR [mi].[RegistratorID] <> \#param\(CurrentUserID\)\)
+						\}
+					\}
+
+					\#if\(IsInitiator\) \{
+						\#if\(IsInitiator.CriteriaName == "IsTrue"\) \{
+					AND [kr].[AuthorID] = \#param\(CurrentUserID\)
+						\} \{
+					AND \([kr].[AuthorID] IS NULL OR [kr].[AuthorID] <> \#param\(CurrentUserID\)\)
+						\}
+					\}
+
+				\#if\(ByType\) \{
+				GROUP BY COALESCE\([mi].[DocTypeID]\, [mi].[CardTypeID]\)
+				\}
+
+				\#if\(ByState\) \{
+				GROUP BY COALESCE\([kr].[StateID]\, CAST\(0 AS smallint\)\)\, COALESCE\([kr].[StateName]\, N'$KrStates_Doc_Draft'\)
+				\}
+				\) AS [t]
+
+			\#if\(Normal\) \{
+			INNER JOIN [DocumentCommonInfo] AS [mi] WITH \(NOLOCK\)
+				ON [mi].[ID] = [t].[ID]
+			INNER JOIN [Types] AS [tt] WITH \(NOLOCK\)
+				ON [tt].[ID] = [mi].[CardTypeID]
+			LEFT JOIN [KrApprovalCommonInfo] AS [kr] WITH \(NOLOCK\)
+				ON [kr].[MainCardID] = [t].[ID]
+			\#if\(PageOffset\) \{
+			WHERE [t].[rn] >= \#param\(PageOffset\) AND [t].[rn] < \(\#param\(PageOffset\) + \#param\(PageLimit\)\)
+			\}
+			ORDER BY [t].[rn]
+			\}
+
+			\#if\(ByState\) \{
+			CROSS APPLY [Localization]\([t].[StateName]\, \#param\(locale\)\) AS [lStateName]
+			ORDER BY [lStateName].[Value]
+			\}
+
+			\#if\(ByType\) \{
+			LEFT JOIN [KrDocType] AS [kdt] WITH \(NOLOCK\)
+				ON [kdt].[ID] = [t].[TypeID]
+			LEFT JOIN [Types] AS [tt] WITH \(NOLOCK\)
+				ON [tt].[ID] = [t].[TypeID]
+			CROSS APPLY [Localization]\(COALESCE\([kdt].[Title]\, [tt].[Caption]\)\, \#param\(locale\)\) AS [lName]
+			ORDER BY [lName].[Value]
+			\}
+			;
+		}
+		#pg_query {
+			DECLARE
+				"project" text;
+			BEGIN
+				\#var\(UseCommonInfo\: Normal || ByType || Number || Subject || DocDate || Author || Registrator || Department || Type || IsAuthor || IsRegistrator\)
+
+				"project" = "GetString"\('Views_Registers_Project_Sql'\, \#param\(locale\)\);
+				
+				RETURN QUERY
+				SELECT
+					\#if\(Normal\) \{
+					"mi"."ID"																		AS "DocID"\,
+					"mi"."FullNumber"																AS "DocNumber"\,
+					"mi"."Subject"																	AS "DocSubject"\,
+					COALESCE\("mi"."FullNumber"\, ''\) || '\, ' || COALESCE\("mi"."Subject"\, ''\)			AS "DocDescription"\,		-- autocomplete
+					"mi"."AuthorID"\,
+					"mi"."AuthorName"\,
+					"mi"."RegistratorID"\,
+					"mi"."RegistratorName"\,
+					COALESCE\("kr"."StateName"\, "project"\)											AS "KrState"\,
+					CAST\(COALESCE\("kr"."StateChangedDateTimeUTC"\, "mi"."CreationDate"\) AS date\)		AS "KrStateModified"\,
+					CAST\("mi"."DocDate" AS date\)													AS "DocDate"\,
+					CAST\("mi"."CreationDate" AS date\)												AS "CreationDate"\,
+					"mi"."DepartmentName"															AS "Department"\,
+					"kr"."ApprovedBy"\,
+					"kr"."DisapprovedBy"\,
+					'\#appearance\(Background\: ' || CASE
+						WHEN \("kr"."StateID" = 1 OR "kr"."StateID" = 10\) AND "kr"."DisapprovedBy" IS NOT NULL AND "kr"."DisapprovedBy" <> ''	-- Red\: active/signing AND has disapprovers
+							THEN '\#70FF0000'
+						WHEN "kr"."StateID" = 2 OR "kr"."StateID" = 6 OR "kr"."StateID" = 8														-- Green\: approved/signed/registered
+							THEN '\#7000FF00'
+						WHEN "kr"."StateID" = 4																									-- Yellow\: editing
+							THEN '\#70FFFF00'
+						ELSE '\#00000000'																										-- Transparent\: other
+					END || '\)'																		AS "Background"\,
+					0\:\:int8																			AS "rn"
+					\}
+
+					\#if\(Count\) \{
+					"t".*
+					\}
+
+					\#if\(ByType\) \{
+					"t"."TypeID"\,
+					"lName"."Value" AS "TypeName"\,
+					"t"."TypeCount"
+					\}
+
+					\#if\(ByState\) \{
+					"t".*
+					\}
+				FROM \(
+					SELECT
+						\#if\(Normal\) \{
+						"t"."ID"
+						\}
+
+						\#if\(Count\) \{
+						count\(*\) AS "cnt"
+						\}
+
+						\#if\(ByType\) \{
+						COALESCE\("mi"."DocTypeID"\, "mi"."CardTypeID"\)		AS "TypeID"\,
+						count\(*\)											AS "TypeCount"
+						\}
+
+						\#if\(ByState\) \{
+						COALESCE\("kr"."StateID"\, CAST\(0 AS smallint\)\)		AS "StateID"\,
+						COALESCE\("kr"."StateName"\, '$KrStates_Doc_Draft'\)	AS "StateName"\,
+						count\(*\)											AS "StateCount"
+						\}
+					FROM \(
+						-- я автор
+						SELECT "ID"
+						FROM "DocumentCommonInfo" AS "mi"
+						WHERE "mi"."AuthorID" = \#param\(CurrentUserID\)
+
+						UNION
+						-- я регистратор
+						SELECT "ID"
+						FROM "DocumentCommonInfo" AS "mi"
+						WHERE "mi"."RegistratorID" = \#param\(CurrentUserID\)
+
+						UNION
+						-- я инициатор
+						SELECT "MainCardID"
+						FROM "KrApprovalCommonInfo" AS "kr"
+						WHERE "kr"."AuthorID" = \#param\(CurrentUserID\)
+						\) AS "t"
+
+					\#if\(UseCommonInfo\) \{
+					INNER JOIN "DocumentCommonInfo" AS "mi"
+						ON "mi"."ID" = "t"."ID"
+					\}
+
+					\#if\(ByState || State || IsInitiator\) \{
+					LEFT JOIN "KrApprovalCommonInfo" AS "kr"
+						ON "kr"."MainCardID" = "t"."ID"
+					\}
+
+					WHERE true
+						\#param\(Number\, "mi"."FullNumber"\)
+						\#param\(Subject\, "mi"."Subject"\)
+						\#param\(DocDate\, "mi"."DocDate"\)
+						\#param\(State\, COALESCE\("kr"."StateID"\, 0\)\)
+						\#param\(Author\, "mi"."AuthorID"\)
+						\#param\(Registrator\, "mi"."RegistratorID"\)
+						\#param\(Department\, "mi"."DepartmentID"\)
+
+						\#if\(Type\) \{
+						AND \(true \#param\(Type\, "mi"."DocTypeID"\) OR true \#param\(Type\, "mi"."CardTypeID"\)\)
+						\}
+
+						\#if\(IsAuthor\) \{
+							\#if\(IsAuthor.CriteriaName == "IsTrue"\) \{
+						AND "mi"."AuthorID" = \#param\(CurrentUserID\)
+							\} \{
+						AND \("mi"."AuthorID" IS NULL OR "mi"."AuthorID" <> \#param\(CurrentUserID\)\)
+							\}
+						\}
+
+						\#if\(IsRegistrator\) \{
+							\#if\(IsRegistrator.CriteriaName == "IsTrue"\) \{
+						AND "mi"."RegistratorID" = \#param\(CurrentUserID\)
+							\} \{
+						AND \("mi"."RegistratorID" IS NULL OR "mi"."RegistratorID" <> \#param\(CurrentUserID\)\)
+							\}
+						\}
+
+						\#if\(IsInitiator\) \{
+							\#if\(IsInitiator.CriteriaName == "IsTrue"\) \{
+						AND "kr"."AuthorID" = \#param\(CurrentUserID\)
+							\} \{
+						AND \("kr"."AuthorID" IS NULL OR "kr"."AuthorID" <> \#param\(CurrentUserID\)\)
+							\}
+						\}
+
+					\#if\(Normal\) \{
+					ORDER BY \#order_by
+					\}
+
+					\#if\(PageOffset\) \{
+					OFFSET \#param\(PageOffset\) - 1 LIMIT \#param\(PageLimit\)
+					\}
+
+					\#if\(ByType\) \{
+					GROUP BY COALESCE\("mi"."DocTypeID"\, "mi"."CardTypeID"\)
+					\}
+
+					\#if\(ByState\) \{
+					GROUP BY COALESCE\("kr"."StateID"\, CAST\(0 AS smallint\)\)\, COALESCE\("kr"."StateName"\, '$KrStates_Doc_Draft'\)
+					\}
+					\) AS "t"
+
+				\#if\(Normal\) \{
+				INNER JOIN "DocumentCommonInfo" AS "mi"
+					ON "mi"."ID" = "t"."ID"
+				INNER JOIN "Types" AS "tt"
+					ON "tt"."ID" = "mi"."CardTypeID"
+				LEFT JOIN "KrApprovalCommonInfo" AS "kr"
+					ON "kr"."MainCardID" = "t"."ID"
+				ORDER BY \#order_by
+				\}
+
+				\#if\(ByState\) \{
+				CROSS JOIN "Localization"\("t"."StateName"\, \#param\(locale\)\) AS "lStateName"
+				ORDER BY "lStateName"."Value"
+				\}
+
+				\#if\(ByType\) \{
+				LEFT JOIN "KrDocType" AS "kdt"
+					ON "kdt"."ID" = "t"."TypeID"
+				LEFT JOIN "Types" AS "tt"
+					ON "tt"."ID" = "t"."TypeID"
+				CROSS JOIN "Localization"\(COALESCE\("kdt"."Title"\, "tt"."Caption"\)\, \#param\(locale\)\) AS "lName"
+				ORDER BY "lName"."Value"
+				\};
+			END;
+		}
+		#role(RoleID:7ff52dc0-ff6a-4c9d-ba25-b562c370004d, ViewID:198282c6-a340-472f-97fb-e8895c3cc3ca) 
+	}
+}

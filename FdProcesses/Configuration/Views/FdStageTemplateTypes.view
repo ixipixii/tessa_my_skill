@@ -1,0 +1,61 @@
+#tessa_exchange_format(Version:1, CreationTime:2019-11-08T13\:43\:17) {
+	#exchange_view(RowID:831a5c43-d35b-43b6-bde1-e01ce42a7b71, Alias:FdStageTemplateTypes, Caption:Типы этапов, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2019-11-07T14\:59\:47, GroupName:Fd Awf) {
+		#metadata {
+			#view(DefaultSortColumn: StageTypeID, Paging: always, PageLimit: 10, RowCountSubset: Count, QuickSearchParam: Name)
+
+			#column(Alias: StageTypeID, Caption: ID, Type: Int32, Hidden: true, SortBy: stt.ID)
+			#column(Alias: StageTypeName, Caption: Тип этапа, Type: String, SortBy: stt.Name)
+			#column(Alias: rn, Type: Int64, Hidden: true)
+
+			#param(Alias: Name, Caption: Название, Hidden: false, Type: String, Multiple: false)
+
+			#reference(ColPrefix: StageType, RefSection: FdStageTemplateTypes, DisplayValueColumn: StageTypeName, IsCard: true, OpenOnDoubleClick: true)
+
+			#subset(Alias: Count)
+		}
+		#description {}
+		#ms_query {
+			select *
+			from
+			\(
+				SELECT 
+					\#if\(Normal\)\{
+						stt.[ID] as StageTypeID
+					      \,stt.[Name] as StageTypeName
+					      \,row_number\(\) over \(order by \#order_by\) as rn
+				      \}
+				      \#if\(Count\)\{
+				      		count\(*\) as cnt
+				      \}
+				  FROM [FdStageTemplateTypes] stt with\(nolock\)
+				  where 1=1
+					  \#param\(Name\, stt.Name\)
+			  \) t
+			  
+			  
+			  \#if\(PageOffset\) \{
+				where rn >= \#param\(PageOffset\) and rn < \(\#param\(PageOffset\) + \#param\(PageLimit\)\)
+			\}
+		}
+		#pg_query {
+			SELECT 
+			\#if\(Normal\)\{
+				"stt"."ID" 		as "StageTypeID"\,
+				"stt"."Name" 	as "StageTypeName"\,
+				0\:\:int8 		as "rn"
+			  \}
+			  \#if\(Count\)\{
+			  		count\(*\) as "cnt"
+			  \}
+			FROM "FdStageTemplateTypes" "stt"
+			where true
+				\#param\(Name\, "stt"."Name"\)
+			\#if\(Normal\) \{
+			ORDER BY \#order_by
+			\}
+			\#if\(PageOffset\) \{
+			OFFSET \#param\(PageOffset\) - 1 LIMIT \#param\(PageLimit\)
+			\}
+		}
+	}
+}

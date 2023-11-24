@@ -1,0 +1,131 @@
+﻿[
+  {
+    ".method::int": 2,
+    "Card": {
+      "Created::dtm": "2020-10-16T17:32:05.15Z",
+      "CreatedByID::uid": "11111111-1111-1111-1111-111111111111",
+      "CreatedByName": "System",
+      "Files": null,
+      "Flags::int": 0,
+      "ID::uid": "ec67642a-f224-494c-a67f-c8c8fd1bf95a",
+      "Info": null,
+      "Modified::dtm": "2020-10-16T17:32:05.15Z",
+      "ModifiedByID::uid": "11111111-1111-1111-1111-111111111111",
+      "ModifiedByName": "System",
+      "Permissions": null,
+      "Sections": {
+        "FmAddTopicInfoVirtual": {
+          "Fields": {
+            "Description": null,
+            "Title": null
+          }
+        },
+        "FmTopicParticipantsInfoVirtual": {
+          "Fields": {
+            "IsModerator": false,
+            "ReadOnly": false
+          }
+        },
+        "FmTopicParticipantsVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "FmTopicRoleParticipantsInfoVirtual": {
+          "Fields": {
+            "IsSubscribe": false,
+            "ReadOnly": false
+          }
+        },
+        "KrActiveTasksVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrAdditionalApprovalInfoUsersCardVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrAdditionalApprovalUsersCardVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrApprovalCommonInfoVirtual": {
+          "Fields": {
+            "ApprovedBy": null,
+            "AuthorComment": null,
+            "AuthorID": null,
+            "AuthorName": null,
+            "CurrentApprovalStageRowID": null,
+            "DisapprovedBy": null,
+            "MainCardID": null,
+            "StateChangedDateTimeUTC": null,
+            "StateID::int": 0,
+            "StateName": "$KrStates_Doc_Draft"
+          }
+        },
+        "KrApprovalHistoryVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrDialogButtonSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrForkNestedProcessesSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrForkSecondaryProcessesSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPerformersVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrStagesVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrUniversalTaskOptionsSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "PnrProjects": {
+          "Fields": {
+            "Code": "0К-000438",
+            "Description": null,
+            "EndDate": null,
+            "EstimatorID": null,
+            "EstimatorName": null,
+            "GIPID::uid": "9b0a95f5-014e-4968-a52e-1dcbb2b5eb73",
+            "GIPName": "Лукашевич А. В.",
+            "InArchive": false,
+            "IsHidden": null,
+            "MDMKey": "9379cdd2-522a-11ea-ab57-005056bf2b25",
+            "Name": "Life-Павелецкая / Общее по проекту",
+            "ParentProjectID::uid": "c1ff803b-67f3-40e9-9a87-8bada933d65f",
+            "ParentProjectName": "Life-Павелецкая",
+            "ProjectAdministratorID": null,
+            "ProjectAdministratorName": null,
+            "ProjectEconomistID": null,
+            "ProjectEconomistName": null,
+            "ProjectManagerID::uid": "4ff4a0eb-eed2-4f62-930b-a64027f3b5ca",
+            "ProjectManagerName": "Богдановский С. А."
+          }
+        }
+      },
+      "TaskHistory": null,
+      "TaskHistoryGroups": null,
+      "Tasks": null,
+      "Topics": null,
+      "TypeCaption": "Проект",
+      "TypeID::uid": "c17a5031-e7d8-4ea6-b03f-4c88b4bd6063",
+      "TypeName": "PnrProject",
+      "Version::int": 0
+    },
+    "FileMapping": null,
+    "Info": {
+      ".importVersion::int": 1
+    }
+  }
+]

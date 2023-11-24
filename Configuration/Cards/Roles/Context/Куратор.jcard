@@ -1,0 +1,55 @@
+﻿[
+  {
+    ".method::int": 2,
+    "Card": {
+      "Created::dtm": "2020-08-18T14:56:41.947Z",
+      "CreatedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "CreatedByName": "Admin",
+      "Files": null,
+      "Flags::int": 0,
+      "ID::uid": "28fc5c30-ff70-48fa-adb2-def3f5168379",
+      "Info": null,
+      "Modified::dtm": "2020-08-18T14:56:41.947Z",
+      "ModifiedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "ModifiedByName": "Admin",
+      "Permissions": null,
+      "Sections": {
+        "ContextRoles": {
+          "Fields": {
+            "SqlText": "SELECT\r\n  [dr].[HeadUserID], [dr].[HeadUserName]\r\nFROM [DepartmentRoles] AS [dr] WITH(NOLOCK)\r\nINNER JOIN [RoleUsers] AS [ru] WITH(NOLOCK) ON [ru].[ID] = [dr].[ID]\r\nWHERE [dr].[HeadUserID] IS NOT NULL\r\n  AND [ru].[UserID] IN \r\n  (\r\n\tSELECT\r\n\t  [dr].[HeadUserID]\r\n\tFROM [DepartmentRoles] AS [dr] WITH(NOLOCK)\r\n\tINNER JOIN [RoleUsers] AS [ru] WITH(NOLOCK) ON [ru].[ID] = [dr].[ID]\r\n\tINNER JOIN [DocumentCommonInfo] AS [dci] WITH(NOLOCK) ON [dci].[AuthorID] = [ru].[UserID]\r\n\tWHERE [dr].[HeadUserID] IS NOT NULL\r\n\t  AND [dci].[ID] = #context_card_id\r\n  )",
+            "SqlTextForCard": null,
+            "SqlTextForUser": null
+          }
+        },
+        "RoleDeputies": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "RoleDeputiesVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Roles": {
+          "Fields": {
+            "Description": "Руководитель руководителя инициатора в карточке\r\n",
+            "Hidden": false,
+            "Name": "Куратор",
+            "TypeID::int": 4
+          }
+        }
+      },
+      "TaskHistory": null,
+      "TaskHistoryGroups": null,
+      "Tasks": null,
+      "Topics": null,
+      "TypeCaption": "$CardTypes_TypesNames_ContextRole",
+      "TypeID::uid": "b672e00c-0241-0485-9b07-4764bc96c9d3",
+      "TypeName": "ContextRole",
+      "Version::int": 0
+    },
+    "FileMapping": null,
+    "Info": {
+      ".importVersion::int": 1
+    }
+  }
+]

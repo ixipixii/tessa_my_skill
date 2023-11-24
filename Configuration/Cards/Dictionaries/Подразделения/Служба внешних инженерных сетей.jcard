@@ -1,0 +1,222 @@
+﻿[
+  {
+    ".method::int": 2,
+    "Card": {
+      "Created::dtm": "2020-08-24T12:26:48.193Z",
+      "CreatedByID::uid": "fd99d8ea-f1c1-4e73-87b1-87e34c91296a",
+      "CreatedByName": "Харина Оксана",
+      "Files": null,
+      "Flags::int": 0,
+      "ID::uid": "901cdd5f-47b5-4dc4-b0d7-ed1fb3877eca",
+      "Info": null,
+      "Modified::dtm": "2020-08-24T17:35:29.943Z",
+      "ModifiedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "ModifiedByName": "Admin",
+      "Permissions": null,
+      "Sections": {
+        "DepartmentRoles": {
+          "Fields": {
+            "ActionStatusID": null,
+            "ActionStatusName": null,
+            "CFOID": null,
+            "CFOName": null,
+            "CuratorID": null,
+            "CuratorName": null,
+            "DepartmentTypeID": null,
+            "DepartmentTypeName": null,
+            "HeadUserID": null,
+            "HeadUserName": null
+          }
+        },
+        "FmAddTopicInfoVirtual": {
+          "Fields": {
+            "Description": null,
+            "Title": null
+          }
+        },
+        "FmTopicParticipantsInfoVirtual": {
+          "Fields": {
+            "IsModerator": false,
+            "ReadOnly": false
+          }
+        },
+        "FmTopicParticipantsVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "FmTopicRoleParticipantsInfoVirtual": {
+          "Fields": {
+            "IsSubscribe": false,
+            "ReadOnly": false
+          }
+        },
+        "KrActiveTasksVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrAdditionalApprovalInfoUsersCardVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrAdditionalApprovalUsersCardVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrApprovalCommonInfoVirtual": {
+          "Fields": {
+            "ApprovedBy": null,
+            "AuthorComment": null,
+            "AuthorID": null,
+            "AuthorName": null,
+            "CurrentApprovalStageRowID": null,
+            "DisapprovedBy": null,
+            "MainCardID": null,
+            "StateChangedDateTimeUTC": null,
+            "StateID::int": 0,
+            "StateName": "$KrStates_Doc_Draft"
+          }
+        },
+        "KrApprovalHistoryVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrDialogButtonSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrForkNestedProcessesSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrForkSecondaryProcessesSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPerformersVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrStagesVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrUniversalTaskOptionsSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "RoleDeputies": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "RoleDeputiesVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Roles": {
+          "Fields": {
+            "AdSyncDate": null,
+            "AdSyncDisableUpdate": null,
+            "AdSyncDistinguishedName": null,
+            "AdSyncID": null,
+            "AdSyncIndependent": false,
+            "AdSyncWhenChanged": null,
+            "Description": null,
+            "ExternalID": null,
+            "Hidden": false,
+            "Idx": "5-11",
+            "InheritTimeZone": true,
+            "Name": "Служба внешних инженерных сетей",
+            "ParentID::uid": "edf46e3c-54b8-4d59-bda2-e9ad2a67ce1e",
+            "ParentName": "Дирекция по управлению проектами",
+            "TimeZoneCodeName": "Default",
+            "TimeZoneID::int": 0,
+            "TimeZoneShortName": "UTC+03:00",
+            "TimeZoneUtcOffsetMinutes::int": 180,
+            "TypeID::int": 2
+          }
+        },
+        "RoleUsers": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "RoleUsersVirtual": {
+          ".table::int": 1,
+          "Rows": [
+            {
+              ".state::int": 2,
+              "RowID::uid": "544af949-cd34-4f11-ae19-db48060f15f8",
+              "UserID::uid": "5c1ac833-b105-467c-8981-0aa5f15824f5",
+              "UserName": "Казанцева В. В."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "6b6188c7-3b73-49bf-98bf-32849857e897",
+              "UserID::uid": "3097bb4a-d3db-4b7b-a7dc-2339250f765e",
+              "UserName": "Карпинская Н. А."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "61054108-14f3-4b50-9faa-d39140e4ad48",
+              "UserID::uid": "e2eed9d8-388c-490f-a430-2cc778834254",
+              "UserName": "Логинова И.А."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "0e7158b9-b27e-46b8-8323-5e7620ced61a",
+              "UserID::uid": "2b15a41b-7d0a-45b0-a9ce-3c11297d8bfb",
+              "UserName": "Енин А.Н."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "7de74545-8e5b-4df1-944f-cd7a9f5155d8",
+              "UserID::uid": "2bb09791-6f48-4870-a429-799b4508f7e8",
+              "UserName": "Ениколопова Н. В."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "68ab840a-e8dc-4653-9629-e204c843c493",
+              "UserID::uid": "3253ab40-cc3a-40ab-bd60-830ba0c8e1ca",
+              "UserName": "Шаихов А. Р."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "dd052709-79ba-44c4-be8c-e8e23027a07c",
+              "UserID::uid": "74f7d003-5027-4031-b4f9-8716ce593720",
+              "UserName": "Колобаев К. А."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "6ba1939e-c10a-4e27-b48a-cdb31131e92d",
+              "UserID::uid": "44dd446e-4c57-4988-b113-88131fda0383",
+              "UserName": "Архипов А. С."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "ed7da7fa-474f-442b-9456-45ecc7def89d",
+              "UserID::uid": "990e53e7-bb60-46fc-b9e4-bcb49aad3c4b",
+              "UserName": "Окунев Е. В."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "88a1bf02-11d0-4748-b534-e129baffbe9e",
+              "UserID::uid": "4f6dd8cb-bbb1-46ea-b25b-34a7a75b5c38",
+              "UserName": "Медведовский Д.В."
+            }
+          ]
+        }
+      },
+      "TaskHistory": null,
+      "TaskHistoryGroups": null,
+      "Tasks": null,
+      "Topics": null,
+      "TypeCaption": "$CardTypes_TypesNames_DepartmentRole",
+      "TypeID::uid": "abe57cb7-e1cb-06f6-b7ca-ad1668bebd72",
+      "TypeName": "DepartmentRole",
+      "Version::int": 0
+    },
+    "FileMapping": null,
+    "Info": {
+      ".importVersion::int": 2
+    }
+  }
+]

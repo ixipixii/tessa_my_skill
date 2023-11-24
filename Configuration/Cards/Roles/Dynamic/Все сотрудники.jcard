@@ -1,0 +1,68 @@
+﻿[
+  {
+    ".method::int": 2,
+    "Card": {
+      "Created::dtm": "2020-07-13T12:33:15.477Z",
+      "CreatedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "CreatedByName": "Admin",
+      "Files": null,
+      "Flags::int": 0,
+      "ID::uid": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d",
+      "Info": null,
+      "Modified::dtm": "2020-07-13T12:33:15.477Z",
+      "ModifiedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "ModifiedByName": "Admin",
+      "Permissions": null,
+      "Sections": {
+        "DynamicRoles": {
+          "Fields": {
+            "CronScheduling": null,
+            "LastErrorDate": null,
+            "LastErrorText": null,
+            "LastSuccessfulRecalcDate": null,
+            "Name": "Все сотрудники",
+            "PeriodScheduling::int": 1800,
+            "SchedulingTypeID::int": 0,
+            "SqlText": "select t.ID, t.Name\r\nfrom PersonalRoles t with(nolock)\r\nwhere t.ID <> '11111111-1111-1111-1111-111111111111'"
+          }
+        },
+        "RoleDeputies": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "RoleDeputiesVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Roles": {
+          "Fields": {
+            "Description": null,
+            "Hidden": false,
+            "Name": "Все сотрудники",
+            "TimeZoneCodeName": "Default",
+            "TimeZoneID::int": 0,
+            "TimeZoneShortName": "UTC+03:00",
+            "TimeZoneUtcOffsetMinutes::int": 180,
+            "TypeID::int": 3
+          }
+        },
+        "RoleUsers": {
+          ".table::int": 1,
+          "Rows": null
+        }
+      },
+      "TaskHistory": null,
+      "TaskHistoryGroups": null,
+      "Tasks": null,
+      "Topics": null,
+      "TypeCaption": "$CardTypes_TypesNames_DynamicRole",
+      "TypeID::uid": "97a945bc-58f5-07fa-a274-b6a7f0f1282c",
+      "TypeName": "DynamicRole",
+      "Version::int": 0
+    },
+    "FileMapping": null,
+    "Info": {
+      ".importVersion::int": 7
+    }
+  }
+]

@@ -1,0 +1,2148 @@
+﻿[
+  {
+    ".method::int": 2,
+    "Card": {
+      "Created::dtm": "2020-11-22T19:29:46.883Z",
+      "CreatedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "CreatedByName": "Admin",
+      "Files": null,
+      "Flags::int": 0,
+      "ID::uid": "e70403f9-c31c-4dbe-8474-d2d11577aa13",
+      "Info": {
+        ".processTemplateCardStates": [
+          {
+            "Created::dtm": "2020-09-04T12:35:52.173Z",
+            "CreatedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+            "CreatedByName": "Admin",
+            "Files": null,
+            "Flags::int": 0,
+            "ID::uid": "e093e1c4-3077-42f7-beae-db033f7868f3",
+            "Info": null,
+            "Modified::dtm": "2020-09-06T11:00:44.147Z",
+            "ModifiedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+            "ModifiedByName": "Admin",
+            "Permissions": {
+              "CardPermissions::int": 87381,
+              "FilePermissions": null,
+              "Sections": null
+            },
+            "Sections": {
+              "FdCardState": {
+                "Fields": {
+                  "CardTypeCaption": "Договор",
+                  "CardTypeID::uid": "1c7a5718-09ae-4f65-aa67-e66f23bb7aee",
+                  "IsDefaultState": true,
+                  "Name": "Проект"
+                }
+              }
+            },
+            "TaskHistory": null,
+            "TaskHistoryGroups": null,
+            "Tasks": null,
+            "Topics": null,
+            "TypeCaption": "Состояние карточки",
+            "TypeID::uid": "172caa7c-1bdd-4f15-a972-89d472268e4a",
+            "TypeName": "FdCardState",
+            "Version::int": 3
+          },
+          {
+            "Created::dtm": "2020-09-04T12:35:52.08Z",
+            "CreatedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+            "CreatedByName": "Admin",
+            "Files": null,
+            "Flags::int": 0,
+            "ID::uid": "8065ee25-07df-4c17-8b35-d542aaa3cbed",
+            "Info": null,
+            "Modified::dtm": "2020-09-04T12:35:52.08Z",
+            "ModifiedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+            "ModifiedByName": "Admin",
+            "Permissions": {
+              "CardPermissions::int": 87381,
+              "FilePermissions": null,
+              "Sections": null
+            },
+            "Sections": {
+              "FdCardState": {
+                "Fields": {
+                  "CardTypeCaption": "Договор",
+                  "CardTypeID::uid": "1c7a5718-09ae-4f65-aa67-e66f23bb7aee",
+                  "IsDefaultState": false,
+                  "Name": "На согласовании"
+                }
+              }
+            },
+            "TaskHistory": null,
+            "TaskHistoryGroups": null,
+            "Tasks": null,
+            "Topics": null,
+            "TypeCaption": "Состояние карточки",
+            "TypeID::uid": "172caa7c-1bdd-4f15-a972-89d472268e4a",
+            "TypeName": "FdCardState",
+            "Version::int": 1
+          },
+          {
+            "Created::dtm": "2020-09-04T12:35:51.97Z",
+            "CreatedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+            "CreatedByName": "Admin",
+            "Files": null,
+            "Flags::int": 0,
+            "ID::uid": "5b49161e-2f9c-4087-90ac-e9d62ee50ccf",
+            "Info": null,
+            "Modified::dtm": "2020-09-04T12:35:51.97Z",
+            "ModifiedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+            "ModifiedByName": "Admin",
+            "Permissions": {
+              "CardPermissions::int": 87381,
+              "FilePermissions": null,
+              "Sections": null
+            },
+            "Sections": {
+              "FdCardState": {
+                "Fields": {
+                  "CardTypeCaption": "Договор",
+                  "CardTypeID::uid": "1c7a5718-09ae-4f65-aa67-e66f23bb7aee",
+                  "IsDefaultState": false,
+                  "Name": "На доработке"
+                }
+              }
+            },
+            "TaskHistory": null,
+            "TaskHistoryGroups": null,
+            "Tasks": null,
+            "Topics": null,
+            "TypeCaption": "Состояние карточки",
+            "TypeID::uid": "172caa7c-1bdd-4f15-a972-89d472268e4a",
+            "TypeName": "FdCardState",
+            "Version::int": 1
+          },
+          {
+            "Created::dtm": "2020-09-04T12:35:52.003Z",
+            "CreatedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+            "CreatedByName": "Admin",
+            "Files": null,
+            "Flags::int": 0,
+            "ID::uid": "77246376-ffae-466e-bbc9-d70e0ffe8964",
+            "Info": null,
+            "Modified::dtm": "2020-09-04T12:35:52.003Z",
+            "ModifiedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+            "ModifiedByName": "Admin",
+            "Permissions": {
+              "CardPermissions::int": 87381,
+              "FilePermissions": null,
+              "Sections": null
+            },
+            "Sections": {
+              "FdCardState": {
+                "Fields": {
+                  "CardTypeCaption": "Договор",
+                  "CardTypeID::uid": "1c7a5718-09ae-4f65-aa67-e66f23bb7aee",
+                  "IsDefaultState": false,
+                  "Name": "На подписании"
+                }
+              }
+            },
+            "TaskHistory": null,
+            "TaskHistoryGroups": null,
+            "Tasks": null,
+            "Topics": null,
+            "TypeCaption": "Состояние карточки",
+            "TypeID::uid": "172caa7c-1bdd-4f15-a972-89d472268e4a",
+            "TypeName": "FdCardState",
+            "Version::int": 1
+          },
+          {
+            "Created::dtm": "2020-08-20T09:54:06.243Z",
+            "CreatedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+            "CreatedByName": "Admin",
+            "Files": null,
+            "Flags::int": 0,
+            "ID::uid": "a787669e-32f7-470a-839c-d916222fb9da",
+            "Info": null,
+            "Modified::dtm": "2020-09-04T11:49:21.06Z",
+            "ModifiedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+            "ModifiedByName": "Admin",
+            "Permissions": {
+              "CardPermissions::int": 87381,
+              "FilePermissions": null,
+              "Sections": null
+            },
+            "Sections": {
+              "FdCardState": {
+                "Fields": {
+                  "CardTypeCaption": "Договор",
+                  "CardTypeID::uid": "1c7a5718-09ae-4f65-aa67-e66f23bb7aee",
+                  "IsDefaultState": false,
+                  "Name": "Действует"
+                }
+              }
+            },
+            "TaskHistory": null,
+            "TaskHistoryGroups": null,
+            "Tasks": null,
+            "Topics": null,
+            "TypeCaption": "Состояние карточки",
+            "TypeID::uid": "172caa7c-1bdd-4f15-a972-89d472268e4a",
+            "TypeName": "FdCardState",
+            "Version::int": 2
+          }
+        ],
+        ".processTemplateStages": [
+          {
+            "Created::dtm": "2020-11-22T19:29:46.913Z",
+            "CreatedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+            "CreatedByName": "Admin",
+            "Files": null,
+            "Flags::int": 0,
+            "ID::uid": "84982705-9754-4dad-a7ec-c475dac353fe",
+            "Info": null,
+            "Modified::dtm": "2020-11-22T19:29:46.913Z",
+            "ModifiedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+            "ModifiedByName": "Admin",
+            "Permissions": {
+              "CardPermissions::int": 87381,
+              "FilePermissions": null,
+              "Sections": {
+                "FdStageTemplate_SubstagesVirtual": {
+                  "FieldPermissions": null,
+                  "Rows": null,
+                  "SectionPermissions::int": 32
+                }
+              }
+            },
+            "Sections": {
+              "FdCriteriaList": {
+                ".table::int": 1,
+                "Rows": [
+                  {
+                    "CriteriaOperatorCaption": "Равен",
+                    "CriteriaOperatorID::int": 0,
+                    "CriteriaOperatorName": "Equals",
+                    "CriteriaValueComplexGuidID::uid": "5d232548-c3fa-414e-94fa-9ccfd187dd4e",
+                    "CriteriaValueComplexGuidName": "Внутрихолдинговый",
+                    "CriteriaValueComplexInt32ID": null,
+                    "CriteriaValueComplexInt32Name": null,
+                    "CriteriaValueDateTime": null,
+                    "CriteriaValueDateTime2": null,
+                    "CriteriaValueDecimal": null,
+                    "CriteriaValueDecimal2": null,
+                    "CriteriaValueDouble": null,
+                    "CriteriaValueDouble2": null,
+                    "CriteriaValueInt": null,
+                    "CriteriaValueInt2": null,
+                    "CriteriaValueResult": "Внутрихолдинговый",
+                    "CriteriaValueString": null,
+                    "FieldCaption": "Вид договора",
+                    "FieldComplexColumnID::uid": "1db25ac0-9123-4aca-9129-073a93fca5d8",
+                    "FieldComplexColumnName": "Kind",
+                    "FieldComplexColumnReferencedTableID::uid": "4e9d936c-89c0-470d-be69-b4ce3e0aa294",
+                    "FieldComplexColumnReferencedTableName": "PnrContractKinds",
+                    "FieldDataTypeCaption": "Ссылка",
+                    "FieldDataTypeID::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c",
+                    "FieldID::uid": "31f156f2-c209-45be-8485-ca99cfceade9",
+                    "FieldPhysicalColumnID": null,
+                    "FieldPhysicalColumnName": null,
+                    "FieldSectionID::uid": "018d6a5b-9d0e-4a97-a762-86b91f82fbfb",
+                    "FieldSectionName": "PnrContracts",
+                    "FieldSectionTypeName": "Строковая секция",
+                    "Order::int": 0,
+                    "RowID::uid": "aa5586e9-e25e-497c-873b-f940eff72a21"
+                  }
+                ]
+              },
+              "FdCriteriaList_CriteriaValueTableGuid": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdCriteriaList_CriteriaValueTableInt32": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdCriteriaList_CriteriaValueTableRoles": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdCriteriaList_CriteriaValueTableString": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdParticipantCriteriaList": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplate": {
+                "Fields": {
+                  "AppropriateCompletionIsRequired": true,
+                  "CheckAtLeastOneCriteriaFit": false,
+                  "Description": null,
+                  "FilesAutoLoadModeID": null,
+                  "FilesAutoLoadModeName": null,
+                  "IsAggregate": false,
+                  "IsDistinctParticipantRoles": true,
+                  "IsEmailNotificationsEnabled": true,
+                  "IsParallel": false,
+                  "Name": "Запуск процесса согласования внутрихолдингового договора",
+                  "NewCardStateWhenStageStartID::uid": "e093e1c4-3077-42f7-beae-db033f7868f3",
+                  "NewCardStateWhenStageStartName": "Проект",
+                  "Order::int": 0,
+                  "ParentStageTemplateID": null,
+                  "ParentStageTemplateName": null,
+                  "ParticipantsText": "Создал",
+                  "ProcessTemplateID::uid": "e70403f9-c31c-4dbe-8474-d2d11577aa13",
+                  "ProcessTemplateName": "Обработка внутрихолдингового договора",
+                  "StageTypeID::int": 0,
+                  "StageTypeName": "Запуск процесса",
+                  "TaskDigest": null,
+                  "TaskTimeLimitationInWorkingDaysNormal": 1.0,
+                  "TaskTimeLimitationInWorkingDaysUrgent": null,
+                  "TaskTimeLimitationInWorkingHoursNormal": 0.0,
+                  "TaskTimeLimitationInWorkingHoursUrgent": null,
+                  "TaskTimePlannedFromCardFieldColumnName": null,
+                  "TaskTimePlannedFromCardFieldComplexColumnID": null,
+                  "TaskTimePlannedFromCardFieldControlTypeID": null,
+                  "TaskTimePlannedFromCardFieldControlTypeName": null,
+                  "TaskTimePlannedFromCardFieldID": null,
+                  "TaskTimePlannedFromCardFieldName": null,
+                  "TaskTimePlannedFromCardFieldPhysicalColumnID": null,
+                  "TaskTimePlannedFromCardFieldReferencedTableID": null,
+                  "TaskTimePlannedFromCardFieldReferencedTableName": null,
+                  "TaskTimePlannedFromCardFieldSectionID": null,
+                  "TaskTimePlannedFromCardFieldSectionName": null,
+                  "TaskTimePlannedFromCardFieldSpecialMode": null,
+                  "TaskTypeCaption": "Запуск процесса",
+                  "TaskTypeID::uid": "28954717-89e4-48db-b174-e5d034fc3ed4",
+                  "TaskTypeName": "FdStartProcess",
+                  "UrgentFlagCardFieldColumnName": null,
+                  "UrgentFlagCardFieldComplexColumnID": null,
+                  "UrgentFlagCardFieldControlTypeID": null,
+                  "UrgentFlagCardFieldControlTypeName": null,
+                  "UrgentFlagCardFieldID": null,
+                  "UrgentFlagCardFieldName": null,
+                  "UrgentFlagCardFieldPhysicalColumnID": null,
+                  "UrgentFlagCardFieldReferencedTableID": null,
+                  "UrgentFlagCardFieldReferencedTableName": null,
+                  "UrgentFlagCardFieldSectionID": null,
+                  "UrgentFlagCardFieldSectionName": null,
+                  "UrgentFlagCardFieldSpecialMode": null
+                }
+              },
+              "FdStageTemplate_CardFieldSettings": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplate_ErrorsVirtual": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplate_HiddenTaskOptions": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplate_HiddenTaskOptions_Roles": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplate_StartupSubstages": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplate_SubstagesVirtual": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplate_TaskFieldSettings": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplateCompletion_NextProcesses": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplateCompletion_NextStagesWithCriterias": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplateCompletion_ProcessesToRevoke": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplateCompletion_SubstageCompletions": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplateCompletion_Substages": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplateCompletions": {
+                ".table::int": 1,
+                "Rows": [
+                  {
+                    "CompletionConditionCaption": "Хотя бы один",
+                    "CompletionConditionID::int": 1,
+                    "CompletionConditionName": "AtLeastOne",
+                    "CompletionOptionCaption": "Запустить процесс",
+                    "CompletionOptionID::uid": "24139f8f-27d4-4c48-9cc2-3c746d7687ce",
+                    "CompletionOptionName": "FdStartProcess",
+                    "CompletionText": "[Условие: \"Хотя бы один\"], [Результат: \"Запустить процесс\"], [Действия: \"Запуск следующего этапа\", \"Смена состояния карточки\"]",
+                    "Description": null,
+                    "NeedToCancelProcessStart": false,
+                    "NeedToChangeCardState": true,
+                    "NeedToCompleteProcess": false,
+                    "NeedToCompleteProcessWhenAllStagesCompleted": false,
+                    "NeedToRevokeActiveProcesses": false,
+                    "NeedToStartNextProcesses": false,
+                    "NeedToStartNextStage": true,
+                    "NeedToStartNextStageByCriterias": false,
+                    "NextCardStateID::uid": "8065ee25-07df-4c17-8b35-d542aaa3cbed",
+                    "NextCardStateName": "На согласовании",
+                    "NextStageTemplateID::uid": "69e96433-6248-4f5b-8ddf-d08412b615ae",
+                    "NextStageTemplateName": "Согласование руководителем бухгалтерии",
+                    "Order::int": 0,
+                    "PerformCheckAfterEachTaskOrSubstageComplete": false,
+                    "RowID::uid": "92c55ed4-6cae-4cb7-b8e5-357dc32d6a3d",
+                    "TaskTypeRoleFieldColumnName": null,
+                    "TaskTypeRoleFieldComplexColumnID": null,
+                    "TaskTypeRoleFieldControlTypeID": null,
+                    "TaskTypeRoleFieldControlTypeName": null,
+                    "TaskTypeRoleFieldID": null,
+                    "TaskTypeRoleFieldName": null,
+                    "TaskTypeRoleFieldPhysicalColumnID": null,
+                    "TaskTypeRoleFieldReferencedTableID": null,
+                    "TaskTypeRoleFieldReferencedTableName": null,
+                    "TaskTypeRoleFieldSectionID": null,
+                    "TaskTypeRoleFieldSectionName": null,
+                    "TaskTypeRoleFieldSpecialMode": null
+                  },
+                  {
+                    "CompletionConditionCaption": "Хотя бы один",
+                    "CompletionConditionID::int": 1,
+                    "CompletionConditionName": "AtLeastOne",
+                    "CompletionOptionCaption": "Отмена",
+                    "CompletionOptionID::uid": "5c5f013e-c854-4e2b-9320-f21c5b4d38da",
+                    "CompletionOptionName": "FdCancel",
+                    "CompletionText": "[Условие: \"Хотя бы один\"], [Результат: \"Отмена\"], [Действия: \"Завершение процесса\", \"Отменить запуск процесса\"]",
+                    "Description": null,
+                    "NeedToCancelProcessStart": true,
+                    "NeedToChangeCardState": false,
+                    "NeedToCompleteProcess": true,
+                    "NeedToCompleteProcessWhenAllStagesCompleted": false,
+                    "NeedToRevokeActiveProcesses": false,
+                    "NeedToStartNextProcesses": false,
+                    "NeedToStartNextStage": false,
+                    "NeedToStartNextStageByCriterias": false,
+                    "NextCardStateID": null,
+                    "NextCardStateName": null,
+                    "NextStageTemplateID": null,
+                    "NextStageTemplateName": null,
+                    "Order::int": 1,
+                    "PerformCheckAfterEachTaskOrSubstageComplete": false,
+                    "RowID::uid": "548adefa-d812-4fe4-8aab-3391a7a5e52d",
+                    "TaskTypeRoleFieldColumnName": null,
+                    "TaskTypeRoleFieldComplexColumnID": null,
+                    "TaskTypeRoleFieldControlTypeID": null,
+                    "TaskTypeRoleFieldControlTypeName": null,
+                    "TaskTypeRoleFieldID": null,
+                    "TaskTypeRoleFieldName": null,
+                    "TaskTypeRoleFieldPhysicalColumnID": null,
+                    "TaskTypeRoleFieldReferencedTableID": null,
+                    "TaskTypeRoleFieldReferencedTableName": null,
+                    "TaskTypeRoleFieldSectionID": null,
+                    "TaskTypeRoleFieldSectionName": null,
+                    "TaskTypeRoleFieldSpecialMode": null
+                  }
+                ]
+              },
+              "FdStageTemplateParticipants": {
+                ".table::int": 1,
+                "Rows": [
+                  {
+                    "CardFieldParticipantColumnName": "Author",
+                    "CardFieldParticipantComplexColumnID::uid": "aa152ba8-dc1f-4efa-8c68-03ba804ef6f1",
+                    "CardFieldParticipantControlTypeID::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c",
+                    "CardFieldParticipantControlTypeName": "AutoCompleteEntry",
+                    "CardFieldParticipantID::uid": "6e0b52ca-9557-4bd2-97e1-017391ee21df",
+                    "CardFieldParticipantName": "Создал",
+                    "CardFieldParticipantPhysicalColumnID": null,
+                    "CardFieldParticipantReferencedTableID::uid": "6c977939-bbfc-456f-a133-f1c2244e3cc3",
+                    "CardFieldParticipantReferencedTableName": "PersonalRoles",
+                    "CardFieldParticipantSectionID::uid": "a161e289-2f99-4699-9e95-6e3336be8527",
+                    "CardFieldParticipantSectionName": "DocumentCommonInfo",
+                    "CardFieldParticipantSpecialMode::int": 2,
+                    "CheckAtLeastOneCriteriaFit": false,
+                    "CreateIndividualTaskForEachUserInRole": false,
+                    "IgnoreOtherParticipantsWhenCriteriasFit": false,
+                    "NotificationID": null,
+                    "NotificationName": null,
+                    "Order::int": 0,
+                    "ParticipantText": "Создал",
+                    "ParticipantTypeID::int": 1,
+                    "ParticipantTypeName": "Поле карточки",
+                    "RoleParticipantID": null,
+                    "RoleParticipantName": null,
+                    "RowID::uid": "9bd68e07-e0c1-4bd6-a736-0b8c2fce9789",
+                    "SkipEmptyContextRoles": null,
+                    "SpecialRoleFieldColumnName": null,
+                    "SpecialRoleFieldComplexColumnID": null,
+                    "SpecialRoleFieldControlTypeID": null,
+                    "SpecialRoleFieldControlTypeName": null,
+                    "SpecialRoleFieldID": null,
+                    "SpecialRoleFieldName": null,
+                    "SpecialRoleFieldPhysicalColumnID": null,
+                    "SpecialRoleFieldReferencedTableID": null,
+                    "SpecialRoleFieldReferencedTableName": null,
+                    "SpecialRoleFieldSectionID": null,
+                    "SpecialRoleFieldSectionName": null,
+                    "SpecialRoleFieldSpecialMode": null,
+                    "SpecialRoleParticipantFieldColumnName": null,
+                    "SpecialRoleParticipantFieldComplexColumnID": null,
+                    "SpecialRoleParticipantFieldControlTypeID": null,
+                    "SpecialRoleParticipantFieldControlTypeName": null,
+                    "SpecialRoleParticipantFieldID": null,
+                    "SpecialRoleParticipantFieldName": null,
+                    "SpecialRoleParticipantFieldPhysicalColumnID": null,
+                    "SpecialRoleParticipantFieldReferencedTableID": null,
+                    "SpecialRoleParticipantFieldReferencedTableName": null,
+                    "SpecialRoleParticipantFieldSectionID": null,
+                    "SpecialRoleParticipantFieldSectionName": null,
+                    "SpecialRoleParticipantFieldSpecialMode": null,
+                    "SpecialRoleValueID": null,
+                    "SpecialRoleValueName": null,
+                    "TaskTimeLimitationInWorkingDaysNormal": null,
+                    "TaskTimeLimitationInWorkingDaysUrgent": null,
+                    "TaskTimeLimitationInWorkingHoursNormal": null,
+                    "TaskTimeLimitationInWorkingHoursUrgent": null
+                  }
+                ]
+              },
+              "FdStageTemplateVirtual": {
+                "Fields": {
+                  "CardTypeCaption": "Договор",
+                  "CardTypeID::uid": "1c7a5718-09ae-4f65-aa67-e66f23bb7aee"
+                }
+              }
+            },
+            "TaskHistory": null,
+            "TaskHistoryGroups": null,
+            "Tasks": null,
+            "Topics": null,
+            "TypeCaption": "Шаблон этапа",
+            "TypeID::uid": "fb468242-0e0b-4166-921c-16e61eac2266",
+            "TypeName": "FdStageTemplate",
+            "Version::int": 1
+          },
+          {
+            "Created::dtm": "2020-11-22T19:29:46.937Z",
+            "CreatedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+            "CreatedByName": "Admin",
+            "Files": null,
+            "Flags::int": 0,
+            "ID::uid": "69e96433-6248-4f5b-8ddf-d08412b615ae",
+            "Info": null,
+            "Modified::dtm": "2020-11-22T19:29:46.937Z",
+            "ModifiedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+            "ModifiedByName": "Admin",
+            "Permissions": {
+              "CardPermissions::int": 87381,
+              "FilePermissions": null,
+              "Sections": {
+                "FdStageTemplate_SubstagesVirtual": {
+                  "FieldPermissions": null,
+                  "Rows": null,
+                  "SectionPermissions::int": 32
+                }
+              }
+            },
+            "Sections": {
+              "FdCriteriaList": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdCriteriaList_CriteriaValueTableGuid": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdCriteriaList_CriteriaValueTableInt32": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdCriteriaList_CriteriaValueTableRoles": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdCriteriaList_CriteriaValueTableString": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdParticipantCriteriaList": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplate": {
+                "Fields": {
+                  "AppropriateCompletionIsRequired": true,
+                  "CheckAtLeastOneCriteriaFit": false,
+                  "Description": null,
+                  "FilesAutoLoadModeID": null,
+                  "FilesAutoLoadModeName": null,
+                  "IsAggregate": false,
+                  "IsDistinctParticipantRoles": true,
+                  "IsEmailNotificationsEnabled": true,
+                  "IsParallel": false,
+                  "Name": "Согласование руководителем бухгалтерии",
+                  "NewCardStateWhenStageStartID::uid": "8065ee25-07df-4c17-8b35-d542aaa3cbed",
+                  "NewCardStateWhenStageStartName": "На согласовании",
+                  "Order::int": 1,
+                  "ParentStageTemplateID": null,
+                  "ParentStageTemplateName": null,
+                  "ParticipantsText": "Руководитель бухгалтерии",
+                  "ProcessTemplateID::uid": "e70403f9-c31c-4dbe-8474-d2d11577aa13",
+                  "ProcessTemplateName": "Обработка внутрихолдингового договора",
+                  "StageTypeID::int": 1,
+                  "StageTypeName": "Стандартный этап",
+                  "TaskDigest": null,
+                  "TaskTimeLimitationInWorkingDaysNormal": 1.0,
+                  "TaskTimeLimitationInWorkingDaysUrgent": null,
+                  "TaskTimeLimitationInWorkingHoursNormal": 0.0,
+                  "TaskTimeLimitationInWorkingHoursUrgent": null,
+                  "TaskTimePlannedFromCardFieldColumnName": null,
+                  "TaskTimePlannedFromCardFieldComplexColumnID": null,
+                  "TaskTimePlannedFromCardFieldControlTypeID": null,
+                  "TaskTimePlannedFromCardFieldControlTypeName": null,
+                  "TaskTimePlannedFromCardFieldID": null,
+                  "TaskTimePlannedFromCardFieldName": null,
+                  "TaskTimePlannedFromCardFieldPhysicalColumnID": null,
+                  "TaskTimePlannedFromCardFieldReferencedTableID": null,
+                  "TaskTimePlannedFromCardFieldReferencedTableName": null,
+                  "TaskTimePlannedFromCardFieldSectionID": null,
+                  "TaskTimePlannedFromCardFieldSectionName": null,
+                  "TaskTimePlannedFromCardFieldSpecialMode": null,
+                  "TaskTypeCaption": "Согласование",
+                  "TaskTypeID::uid": "e0c70afe-bcc9-47e0-9b85-95755315e933",
+                  "TaskTypeName": "FdApprove",
+                  "UrgentFlagCardFieldColumnName": null,
+                  "UrgentFlagCardFieldComplexColumnID": null,
+                  "UrgentFlagCardFieldControlTypeID": null,
+                  "UrgentFlagCardFieldControlTypeName": null,
+                  "UrgentFlagCardFieldID": null,
+                  "UrgentFlagCardFieldName": null,
+                  "UrgentFlagCardFieldPhysicalColumnID": null,
+                  "UrgentFlagCardFieldReferencedTableID": null,
+                  "UrgentFlagCardFieldReferencedTableName": null,
+                  "UrgentFlagCardFieldSectionID": null,
+                  "UrgentFlagCardFieldSectionName": null,
+                  "UrgentFlagCardFieldSpecialMode": null
+                }
+              },
+              "FdStageTemplate_CardFieldSettings": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplate_ErrorsVirtual": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplate_HiddenTaskOptions": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplate_HiddenTaskOptions_Roles": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplate_StartupSubstages": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplate_SubstagesVirtual": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplate_TaskFieldSettings": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplateCompletion_NextProcesses": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplateCompletion_NextStagesWithCriterias": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplateCompletion_ProcessesToRevoke": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplateCompletion_SubstageCompletions": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplateCompletion_Substages": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplateCompletions": {
+                ".table::int": 1,
+                "Rows": [
+                  {
+                    "CompletionConditionCaption": "Все",
+                    "CompletionConditionID::int": 0,
+                    "CompletionConditionName": "All",
+                    "CompletionOptionCaption": "Согласовать",
+                    "CompletionOptionID::uid": "efb52208-e923-430f-9066-a2949cf5a5ba",
+                    "CompletionOptionName": "FdApprove",
+                    "CompletionText": "[Условие: \"Все\"], [Результат: \"Согласовать\"], [Действия: \"Запуск следующего этапа\"]",
+                    "Description": null,
+                    "NeedToCancelProcessStart": false,
+                    "NeedToChangeCardState": false,
+                    "NeedToCompleteProcess": false,
+                    "NeedToCompleteProcessWhenAllStagesCompleted": false,
+                    "NeedToRevokeActiveProcesses": false,
+                    "NeedToStartNextProcesses": false,
+                    "NeedToStartNextStage": true,
+                    "NeedToStartNextStageByCriterias": false,
+                    "NextCardStateID": null,
+                    "NextCardStateName": null,
+                    "NextStageTemplateID::uid": "94e14f68-7aa9-4149-9968-6a21d58d7b56",
+                    "NextStageTemplateName": "Дополнительное согласование",
+                    "Order::int": 0,
+                    "PerformCheckAfterEachTaskOrSubstageComplete": false,
+                    "RowID::uid": "905b17ed-bf5f-4d91-8df6-6f4acc35e765",
+                    "TaskTypeRoleFieldColumnName": null,
+                    "TaskTypeRoleFieldComplexColumnID": null,
+                    "TaskTypeRoleFieldControlTypeID": null,
+                    "TaskTypeRoleFieldControlTypeName": null,
+                    "TaskTypeRoleFieldID": null,
+                    "TaskTypeRoleFieldName": null,
+                    "TaskTypeRoleFieldPhysicalColumnID": null,
+                    "TaskTypeRoleFieldReferencedTableID": null,
+                    "TaskTypeRoleFieldReferencedTableName": null,
+                    "TaskTypeRoleFieldSectionID": null,
+                    "TaskTypeRoleFieldSectionName": null,
+                    "TaskTypeRoleFieldSpecialMode": null
+                  },
+                  {
+                    "CompletionConditionCaption": "Все",
+                    "CompletionConditionID::int": 0,
+                    "CompletionConditionName": "All",
+                    "CompletionOptionCaption": "Не согласовать",
+                    "CompletionOptionID::uid": "e37b3166-16bc-43d4-a180-1a4b62126142",
+                    "CompletionOptionName": "FdDisapprove",
+                    "CompletionText": "[Условие: \"Все\"], [Результат: \"Не согласовать\"], [Действия: \"Запуск следующего этапа\", \"Смена состояния карточки\"]",
+                    "Description": null,
+                    "NeedToCancelProcessStart": false,
+                    "NeedToChangeCardState": true,
+                    "NeedToCompleteProcess": false,
+                    "NeedToCompleteProcessWhenAllStagesCompleted": false,
+                    "NeedToRevokeActiveProcesses": false,
+                    "NeedToStartNextProcesses": false,
+                    "NeedToStartNextStage": true,
+                    "NeedToStartNextStageByCriterias": false,
+                    "NextCardStateID::uid": "5b49161e-2f9c-4087-90ac-e9d62ee50ccf",
+                    "NextCardStateName": "На доработке",
+                    "NextStageTemplateID::uid": "db324c5e-4512-4d2f-8bd8-c6975f56a06d",
+                    "NextStageTemplateName": "Доработка",
+                    "Order::int": 1,
+                    "PerformCheckAfterEachTaskOrSubstageComplete": false,
+                    "RowID::uid": "45f807c0-263b-4045-9b45-0277cbef588c",
+                    "TaskTypeRoleFieldColumnName": null,
+                    "TaskTypeRoleFieldComplexColumnID": null,
+                    "TaskTypeRoleFieldControlTypeID": null,
+                    "TaskTypeRoleFieldControlTypeName": null,
+                    "TaskTypeRoleFieldID": null,
+                    "TaskTypeRoleFieldName": null,
+                    "TaskTypeRoleFieldPhysicalColumnID": null,
+                    "TaskTypeRoleFieldReferencedTableID": null,
+                    "TaskTypeRoleFieldReferencedTableName": null,
+                    "TaskTypeRoleFieldSectionID": null,
+                    "TaskTypeRoleFieldSectionName": null,
+                    "TaskTypeRoleFieldSpecialMode": null
+                  },
+                  {
+                    "CompletionConditionCaption": "Все",
+                    "CompletionConditionID::int": 0,
+                    "CompletionConditionName": "All",
+                    "CompletionOptionCaption": "Делегировать",
+                    "CompletionOptionID::uid": "6adfc3c9-7bde-4339-8863-768e673aaaad",
+                    "CompletionOptionName": "FdDelegate",
+                    "CompletionText": "[Условие: \"Все\"], [Результат: \"Делегировать\"], [Действия: \"Запуск следующего этапа\"]",
+                    "Description": null,
+                    "NeedToCancelProcessStart": false,
+                    "NeedToChangeCardState": false,
+                    "NeedToCompleteProcess": false,
+                    "NeedToCompleteProcessWhenAllStagesCompleted": false,
+                    "NeedToRevokeActiveProcesses": false,
+                    "NeedToStartNextProcesses": false,
+                    "NeedToStartNextStage": true,
+                    "NeedToStartNextStageByCriterias": false,
+                    "NextCardStateID": null,
+                    "NextCardStateName": null,
+                    "NextStageTemplateID::uid": "69e96433-6248-4f5b-8ddf-d08412b615ae",
+                    "NextStageTemplateName": "Согласование руководителем бухгалтерии",
+                    "Order::int": 2,
+                    "PerformCheckAfterEachTaskOrSubstageComplete": false,
+                    "RowID::uid": "8ff39fcd-257a-4227-9d47-450708c7374f",
+                    "TaskTypeRoleFieldColumnName": "Delegate",
+                    "TaskTypeRoleFieldComplexColumnID::uid": "f9ce1cc0-7c38-4d9f-a1f9-0007048b31d4",
+                    "TaskTypeRoleFieldControlTypeID::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c",
+                    "TaskTypeRoleFieldControlTypeName": "AutoCompleteEntry",
+                    "TaskTypeRoleFieldID::uid": "6115aeef-b3b0-4b31-ae22-32221e4b385f",
+                    "TaskTypeRoleFieldName": "Роль",
+                    "TaskTypeRoleFieldPhysicalColumnID": null,
+                    "TaskTypeRoleFieldReferencedTableID::uid": "81f6010b-9641-4aa5-8897-b8e8603fbf4b",
+                    "TaskTypeRoleFieldReferencedTableName": "Roles",
+                    "TaskTypeRoleFieldSectionID::uid": "41932ab3-2575-42ad-ad4e-1dbd29162372",
+                    "TaskTypeRoleFieldSectionName": "FdTask",
+                    "TaskTypeRoleFieldSpecialMode::int": 2
+                  },
+                  {
+                    "CompletionConditionCaption": "Все",
+                    "CompletionConditionID::int": 0,
+                    "CompletionConditionName": "All",
+                    "CompletionOptionCaption": "Дополнительное согласование",
+                    "CompletionOptionID::uid": "b97e16f8-1fd2-4689-ab1f-b6b9fc58c4a4",
+                    "CompletionOptionName": "FdAdditionalApproval",
+                    "CompletionText": "[Условие: \"Все\"], [Результат: \"Дополнительное согласование\"]",
+                    "Description": null,
+                    "NeedToCancelProcessStart": false,
+                    "NeedToChangeCardState": false,
+                    "NeedToCompleteProcess": false,
+                    "NeedToCompleteProcessWhenAllStagesCompleted": false,
+                    "NeedToRevokeActiveProcesses": false,
+                    "NeedToStartNextProcesses": false,
+                    "NeedToStartNextStage": false,
+                    "NeedToStartNextStageByCriterias": false,
+                    "NextCardStateID": null,
+                    "NextCardStateName": null,
+                    "NextStageTemplateID": null,
+                    "NextStageTemplateName": null,
+                    "Order::int": 3,
+                    "PerformCheckAfterEachTaskOrSubstageComplete": false,
+                    "RowID::uid": "5e10c520-1aca-4d03-a971-aab40195d2e8",
+                    "TaskTypeRoleFieldColumnName": null,
+                    "TaskTypeRoleFieldComplexColumnID": null,
+                    "TaskTypeRoleFieldControlTypeID": null,
+                    "TaskTypeRoleFieldControlTypeName": null,
+                    "TaskTypeRoleFieldID": null,
+                    "TaskTypeRoleFieldName": null,
+                    "TaskTypeRoleFieldPhysicalColumnID": null,
+                    "TaskTypeRoleFieldReferencedTableID": null,
+                    "TaskTypeRoleFieldReferencedTableName": null,
+                    "TaskTypeRoleFieldSectionID": null,
+                    "TaskTypeRoleFieldSectionName": null,
+                    "TaskTypeRoleFieldSpecialMode": null
+                  },
+                  {
+                    "CompletionConditionCaption": "Все",
+                    "CompletionConditionID::int": 0,
+                    "CompletionConditionName": "All",
+                    "CompletionOptionCaption": "Запросить комментарии",
+                    "CompletionOptionID::uid": "f29ffa11-1d7e-4006-9df7-911b7942703d",
+                    "CompletionOptionName": "FdRequestComments",
+                    "CompletionText": "[Условие: \"Все\"], [Результат: \"Запросить комментарии\"]",
+                    "Description": null,
+                    "NeedToCancelProcessStart": false,
+                    "NeedToChangeCardState": false,
+                    "NeedToCompleteProcess": false,
+                    "NeedToCompleteProcessWhenAllStagesCompleted": false,
+                    "NeedToRevokeActiveProcesses": false,
+                    "NeedToStartNextProcesses": false,
+                    "NeedToStartNextStage": false,
+                    "NeedToStartNextStageByCriterias": false,
+                    "NextCardStateID": null,
+                    "NextCardStateName": null,
+                    "NextStageTemplateID": null,
+                    "NextStageTemplateName": null,
+                    "Order::int": 4,
+                    "PerformCheckAfterEachTaskOrSubstageComplete": false,
+                    "RowID::uid": "7be1956f-124a-4d27-b561-2bad4755d975",
+                    "TaskTypeRoleFieldColumnName": null,
+                    "TaskTypeRoleFieldComplexColumnID": null,
+                    "TaskTypeRoleFieldControlTypeID": null,
+                    "TaskTypeRoleFieldControlTypeName": null,
+                    "TaskTypeRoleFieldID": null,
+                    "TaskTypeRoleFieldName": null,
+                    "TaskTypeRoleFieldPhysicalColumnID": null,
+                    "TaskTypeRoleFieldReferencedTableID": null,
+                    "TaskTypeRoleFieldReferencedTableName": null,
+                    "TaskTypeRoleFieldSectionID": null,
+                    "TaskTypeRoleFieldSectionName": null,
+                    "TaskTypeRoleFieldSpecialMode": null
+                  }
+                ]
+              },
+              "FdStageTemplateParticipants": {
+                ".table::int": 1,
+                "Rows": [
+                  {
+                    "CardFieldParticipantColumnName": null,
+                    "CardFieldParticipantComplexColumnID": null,
+                    "CardFieldParticipantControlTypeID": null,
+                    "CardFieldParticipantControlTypeName": null,
+                    "CardFieldParticipantID": null,
+                    "CardFieldParticipantName": null,
+                    "CardFieldParticipantPhysicalColumnID": null,
+                    "CardFieldParticipantReferencedTableID": null,
+                    "CardFieldParticipantReferencedTableName": null,
+                    "CardFieldParticipantSectionID": null,
+                    "CardFieldParticipantSectionName": null,
+                    "CardFieldParticipantSpecialMode": null,
+                    "CheckAtLeastOneCriteriaFit": false,
+                    "CreateIndividualTaskForEachUserInRole": false,
+                    "IgnoreOtherParticipantsWhenCriteriasFit": false,
+                    "NotificationID": null,
+                    "NotificationName": null,
+                    "Order::int": 0,
+                    "ParticipantText": "Руководитель бухгалтерии",
+                    "ParticipantTypeID::int": 0,
+                    "ParticipantTypeName": "Роль",
+                    "RoleParticipantID::uid": "93c06e52-e450-4061-beae-04b0a9e77028",
+                    "RoleParticipantName": "Руководитель бухгалтерии",
+                    "RowID::uid": "396a494b-6b9d-4899-8cad-f2113407f01a",
+                    "SkipEmptyContextRoles": null,
+                    "SpecialRoleFieldColumnName": null,
+                    "SpecialRoleFieldComplexColumnID": null,
+                    "SpecialRoleFieldControlTypeID": null,
+                    "SpecialRoleFieldControlTypeName": null,
+                    "SpecialRoleFieldID": null,
+                    "SpecialRoleFieldName": null,
+                    "SpecialRoleFieldPhysicalColumnID": null,
+                    "SpecialRoleFieldReferencedTableID": null,
+                    "SpecialRoleFieldReferencedTableName": null,
+                    "SpecialRoleFieldSectionID": null,
+                    "SpecialRoleFieldSectionName": null,
+                    "SpecialRoleFieldSpecialMode": null,
+                    "SpecialRoleParticipantFieldColumnName": null,
+                    "SpecialRoleParticipantFieldComplexColumnID": null,
+                    "SpecialRoleParticipantFieldControlTypeID": null,
+                    "SpecialRoleParticipantFieldControlTypeName": null,
+                    "SpecialRoleParticipantFieldID": null,
+                    "SpecialRoleParticipantFieldName": null,
+                    "SpecialRoleParticipantFieldPhysicalColumnID": null,
+                    "SpecialRoleParticipantFieldReferencedTableID": null,
+                    "SpecialRoleParticipantFieldReferencedTableName": null,
+                    "SpecialRoleParticipantFieldSectionID": null,
+                    "SpecialRoleParticipantFieldSectionName": null,
+                    "SpecialRoleParticipantFieldSpecialMode": null,
+                    "SpecialRoleValueID": null,
+                    "SpecialRoleValueName": null,
+                    "TaskTimeLimitationInWorkingDaysNormal": null,
+                    "TaskTimeLimitationInWorkingDaysUrgent": null,
+                    "TaskTimeLimitationInWorkingHoursNormal": null,
+                    "TaskTimeLimitationInWorkingHoursUrgent": null
+                  }
+                ]
+              },
+              "FdStageTemplateVirtual": {
+                "Fields": {
+                  "CardTypeCaption": "Договор",
+                  "CardTypeID::uid": "1c7a5718-09ae-4f65-aa67-e66f23bb7aee"
+                }
+              }
+            },
+            "TaskHistory": null,
+            "TaskHistoryGroups": null,
+            "Tasks": null,
+            "Topics": null,
+            "TypeCaption": "Шаблон этапа",
+            "TypeID::uid": "fb468242-0e0b-4166-921c-16e61eac2266",
+            "TypeName": "FdStageTemplate",
+            "Version::int": 1
+          },
+          {
+            "Created::dtm": "2020-11-22T19:29:46.967Z",
+            "CreatedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+            "CreatedByName": "Admin",
+            "Files": null,
+            "Flags::int": 0,
+            "ID::uid": "94e14f68-7aa9-4149-9968-6a21d58d7b56",
+            "Info": null,
+            "Modified::dtm": "2020-11-22T19:29:46.967Z",
+            "ModifiedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+            "ModifiedByName": "Admin",
+            "Permissions": {
+              "CardPermissions::int": 87381,
+              "FilePermissions": null,
+              "Sections": {
+                "FdStageTemplate_SubstagesVirtual": {
+                  "FieldPermissions": null,
+                  "Rows": null,
+                  "SectionPermissions::int": 32
+                }
+              }
+            },
+            "Sections": {
+              "FdCriteriaList": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdCriteriaList_CriteriaValueTableGuid": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdCriteriaList_CriteriaValueTableInt32": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdCriteriaList_CriteriaValueTableRoles": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdCriteriaList_CriteriaValueTableString": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdParticipantCriteriaList": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplate": {
+                "Fields": {
+                  "AppropriateCompletionIsRequired": true,
+                  "CheckAtLeastOneCriteriaFit": false,
+                  "Description": "Согласование руководителем отдела проектной и договорной работы и финансовым директором",
+                  "FilesAutoLoadModeID": null,
+                  "FilesAutoLoadModeName": null,
+                  "IsAggregate": false,
+                  "IsDistinctParticipantRoles": true,
+                  "IsEmailNotificationsEnabled": true,
+                  "IsParallel": true,
+                  "Name": "Дополнительное согласование",
+                  "NewCardStateWhenStageStartID::uid": "8065ee25-07df-4c17-8b35-d542aaa3cbed",
+                  "NewCardStateWhenStageStartName": "На согласовании",
+                  "Order::int": 2,
+                  "ParentStageTemplateID": null,
+                  "ParentStageTemplateName": null,
+                  "ParticipantsText": "Руководитель отдела проектной и договорной работы; Финансовый директор",
+                  "ProcessTemplateID::uid": "e70403f9-c31c-4dbe-8474-d2d11577aa13",
+                  "ProcessTemplateName": "Обработка внутрихолдингового договора",
+                  "StageTypeID::int": 1,
+                  "StageTypeName": "Стандартный этап",
+                  "TaskDigest": null,
+                  "TaskTimeLimitationInWorkingDaysNormal": 1.0,
+                  "TaskTimeLimitationInWorkingDaysUrgent": null,
+                  "TaskTimeLimitationInWorkingHoursNormal": 0.0,
+                  "TaskTimeLimitationInWorkingHoursUrgent": null,
+                  "TaskTimePlannedFromCardFieldColumnName": null,
+                  "TaskTimePlannedFromCardFieldComplexColumnID": null,
+                  "TaskTimePlannedFromCardFieldControlTypeID": null,
+                  "TaskTimePlannedFromCardFieldControlTypeName": null,
+                  "TaskTimePlannedFromCardFieldID": null,
+                  "TaskTimePlannedFromCardFieldName": null,
+                  "TaskTimePlannedFromCardFieldPhysicalColumnID": null,
+                  "TaskTimePlannedFromCardFieldReferencedTableID": null,
+                  "TaskTimePlannedFromCardFieldReferencedTableName": null,
+                  "TaskTimePlannedFromCardFieldSectionID": null,
+                  "TaskTimePlannedFromCardFieldSectionName": null,
+                  "TaskTimePlannedFromCardFieldSpecialMode": null,
+                  "TaskTypeCaption": "Согласование",
+                  "TaskTypeID::uid": "e0c70afe-bcc9-47e0-9b85-95755315e933",
+                  "TaskTypeName": "FdApprove",
+                  "UrgentFlagCardFieldColumnName": null,
+                  "UrgentFlagCardFieldComplexColumnID": null,
+                  "UrgentFlagCardFieldControlTypeID": null,
+                  "UrgentFlagCardFieldControlTypeName": null,
+                  "UrgentFlagCardFieldID": null,
+                  "UrgentFlagCardFieldName": null,
+                  "UrgentFlagCardFieldPhysicalColumnID": null,
+                  "UrgentFlagCardFieldReferencedTableID": null,
+                  "UrgentFlagCardFieldReferencedTableName": null,
+                  "UrgentFlagCardFieldSectionID": null,
+                  "UrgentFlagCardFieldSectionName": null,
+                  "UrgentFlagCardFieldSpecialMode": null
+                }
+              },
+              "FdStageTemplate_CardFieldSettings": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplate_ErrorsVirtual": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplate_HiddenTaskOptions": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplate_HiddenTaskOptions_Roles": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplate_StartupSubstages": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplate_SubstagesVirtual": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplate_TaskFieldSettings": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplateCompletion_NextProcesses": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplateCompletion_NextStagesWithCriterias": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplateCompletion_ProcessesToRevoke": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplateCompletion_SubstageCompletions": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplateCompletion_Substages": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplateCompletions": {
+                ".table::int": 1,
+                "Rows": [
+                  {
+                    "CompletionConditionCaption": "Все",
+                    "CompletionConditionID::int": 0,
+                    "CompletionConditionName": "All",
+                    "CompletionOptionCaption": "Согласовать",
+                    "CompletionOptionID::uid": "efb52208-e923-430f-9066-a2949cf5a5ba",
+                    "CompletionOptionName": "FdApprove",
+                    "CompletionText": "[Условие: \"Все\"], [Результат: \"Согласовать\"], [Действия: \"Запуск следующего этапа\", \"Смена состояния карточки\"]",
+                    "Description": null,
+                    "NeedToCancelProcessStart": false,
+                    "NeedToChangeCardState": true,
+                    "NeedToCompleteProcess": false,
+                    "NeedToCompleteProcessWhenAllStagesCompleted": false,
+                    "NeedToRevokeActiveProcesses": false,
+                    "NeedToStartNextProcesses": false,
+                    "NeedToStartNextStage": true,
+                    "NeedToStartNextStageByCriterias": false,
+                    "NextCardStateID::uid": "77246376-ffae-466e-bbc9-d70e0ffe8964",
+                    "NextCardStateName": "На подписании",
+                    "NextStageTemplateID::uid": "56cf6716-2315-458a-9180-fb56ab4b09ae",
+                    "NextStageTemplateName": "Подписание",
+                    "Order::int": 0,
+                    "PerformCheckAfterEachTaskOrSubstageComplete": false,
+                    "RowID::uid": "dec73e36-3347-4bfd-9a6c-99b227b07d2b",
+                    "TaskTypeRoleFieldColumnName": null,
+                    "TaskTypeRoleFieldComplexColumnID": null,
+                    "TaskTypeRoleFieldControlTypeID": null,
+                    "TaskTypeRoleFieldControlTypeName": null,
+                    "TaskTypeRoleFieldID": null,
+                    "TaskTypeRoleFieldName": null,
+                    "TaskTypeRoleFieldPhysicalColumnID": null,
+                    "TaskTypeRoleFieldReferencedTableID": null,
+                    "TaskTypeRoleFieldReferencedTableName": null,
+                    "TaskTypeRoleFieldSectionID": null,
+                    "TaskTypeRoleFieldSectionName": null,
+                    "TaskTypeRoleFieldSpecialMode": null
+                  },
+                  {
+                    "CompletionConditionCaption": "Все",
+                    "CompletionConditionID::int": 0,
+                    "CompletionConditionName": "All",
+                    "CompletionOptionCaption": "Не согласовать",
+                    "CompletionOptionID::uid": "e37b3166-16bc-43d4-a180-1a4b62126142",
+                    "CompletionOptionName": "FdDisapprove",
+                    "CompletionText": "[Условие: \"Все\"], [Результат: \"Не согласовать\"], [Действия: \"Запуск следующего этапа\", \"Смена состояния карточки\"]",
+                    "Description": null,
+                    "NeedToCancelProcessStart": false,
+                    "NeedToChangeCardState": true,
+                    "NeedToCompleteProcess": false,
+                    "NeedToCompleteProcessWhenAllStagesCompleted": false,
+                    "NeedToRevokeActiveProcesses": false,
+                    "NeedToStartNextProcesses": false,
+                    "NeedToStartNextStage": true,
+                    "NeedToStartNextStageByCriterias": false,
+                    "NextCardStateID::uid": "5b49161e-2f9c-4087-90ac-e9d62ee50ccf",
+                    "NextCardStateName": "На доработке",
+                    "NextStageTemplateID::uid": "db324c5e-4512-4d2f-8bd8-c6975f56a06d",
+                    "NextStageTemplateName": "Доработка",
+                    "Order::int": 1,
+                    "PerformCheckAfterEachTaskOrSubstageComplete": false,
+                    "RowID::uid": "a6bdf5ee-49ec-4e3d-b7b7-58d77cb61ca2",
+                    "TaskTypeRoleFieldColumnName": null,
+                    "TaskTypeRoleFieldComplexColumnID": null,
+                    "TaskTypeRoleFieldControlTypeID": null,
+                    "TaskTypeRoleFieldControlTypeName": null,
+                    "TaskTypeRoleFieldID": null,
+                    "TaskTypeRoleFieldName": null,
+                    "TaskTypeRoleFieldPhysicalColumnID": null,
+                    "TaskTypeRoleFieldReferencedTableID": null,
+                    "TaskTypeRoleFieldReferencedTableName": null,
+                    "TaskTypeRoleFieldSectionID": null,
+                    "TaskTypeRoleFieldSectionName": null,
+                    "TaskTypeRoleFieldSpecialMode": null
+                  },
+                  {
+                    "CompletionConditionCaption": "Все",
+                    "CompletionConditionID::int": 0,
+                    "CompletionConditionName": "All",
+                    "CompletionOptionCaption": "Делегировать",
+                    "CompletionOptionID::uid": "6adfc3c9-7bde-4339-8863-768e673aaaad",
+                    "CompletionOptionName": "FdDelegate",
+                    "CompletionText": "[Условие: \"Все\"], [Результат: \"Делегировать\"], [Действия: \"Запуск следующего этапа\"]",
+                    "Description": null,
+                    "NeedToCancelProcessStart": false,
+                    "NeedToChangeCardState": false,
+                    "NeedToCompleteProcess": false,
+                    "NeedToCompleteProcessWhenAllStagesCompleted": false,
+                    "NeedToRevokeActiveProcesses": false,
+                    "NeedToStartNextProcesses": false,
+                    "NeedToStartNextStage": true,
+                    "NeedToStartNextStageByCriterias": false,
+                    "NextCardStateID": null,
+                    "NextCardStateName": null,
+                    "NextStageTemplateID::uid": "94e14f68-7aa9-4149-9968-6a21d58d7b56",
+                    "NextStageTemplateName": "Дополнительное согласование",
+                    "Order::int": 2,
+                    "PerformCheckAfterEachTaskOrSubstageComplete": false,
+                    "RowID::uid": "cb1ea4ce-0427-44a5-9eeb-c0bb223dab87",
+                    "TaskTypeRoleFieldColumnName": "Delegate",
+                    "TaskTypeRoleFieldComplexColumnID::uid": "f9ce1cc0-7c38-4d9f-a1f9-0007048b31d4",
+                    "TaskTypeRoleFieldControlTypeID::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c",
+                    "TaskTypeRoleFieldControlTypeName": "AutoCompleteEntry",
+                    "TaskTypeRoleFieldID::uid": "55a99ee4-1bc1-4636-b67c-1fef8072ff14",
+                    "TaskTypeRoleFieldName": "Роль",
+                    "TaskTypeRoleFieldPhysicalColumnID": null,
+                    "TaskTypeRoleFieldReferencedTableID::uid": "81f6010b-9641-4aa5-8897-b8e8603fbf4b",
+                    "TaskTypeRoleFieldReferencedTableName": "Roles",
+                    "TaskTypeRoleFieldSectionID::uid": "41932ab3-2575-42ad-ad4e-1dbd29162372",
+                    "TaskTypeRoleFieldSectionName": "FdTask",
+                    "TaskTypeRoleFieldSpecialMode::int": 2
+                  },
+                  {
+                    "CompletionConditionCaption": "Все",
+                    "CompletionConditionID::int": 0,
+                    "CompletionConditionName": "All",
+                    "CompletionOptionCaption": "Дополнительное согласование",
+                    "CompletionOptionID::uid": "b97e16f8-1fd2-4689-ab1f-b6b9fc58c4a4",
+                    "CompletionOptionName": "FdAdditionalApproval",
+                    "CompletionText": "[Условие: \"Все\"], [Результат: \"Дополнительное согласование\"]",
+                    "Description": null,
+                    "NeedToCancelProcessStart": false,
+                    "NeedToChangeCardState": false,
+                    "NeedToCompleteProcess": false,
+                    "NeedToCompleteProcessWhenAllStagesCompleted": false,
+                    "NeedToRevokeActiveProcesses": false,
+                    "NeedToStartNextProcesses": false,
+                    "NeedToStartNextStage": false,
+                    "NeedToStartNextStageByCriterias": false,
+                    "NextCardStateID": null,
+                    "NextCardStateName": null,
+                    "NextStageTemplateID": null,
+                    "NextStageTemplateName": null,
+                    "Order::int": 3,
+                    "PerformCheckAfterEachTaskOrSubstageComplete": false,
+                    "RowID::uid": "8240d08e-4a27-4c95-baa8-41ef2bc36f1e",
+                    "TaskTypeRoleFieldColumnName": null,
+                    "TaskTypeRoleFieldComplexColumnID": null,
+                    "TaskTypeRoleFieldControlTypeID": null,
+                    "TaskTypeRoleFieldControlTypeName": null,
+                    "TaskTypeRoleFieldID": null,
+                    "TaskTypeRoleFieldName": null,
+                    "TaskTypeRoleFieldPhysicalColumnID": null,
+                    "TaskTypeRoleFieldReferencedTableID": null,
+                    "TaskTypeRoleFieldReferencedTableName": null,
+                    "TaskTypeRoleFieldSectionID": null,
+                    "TaskTypeRoleFieldSectionName": null,
+                    "TaskTypeRoleFieldSpecialMode": null
+                  },
+                  {
+                    "CompletionConditionCaption": "Все",
+                    "CompletionConditionID::int": 0,
+                    "CompletionConditionName": "All",
+                    "CompletionOptionCaption": "Запросить комментарии",
+                    "CompletionOptionID::uid": "f29ffa11-1d7e-4006-9df7-911b7942703d",
+                    "CompletionOptionName": "FdRequestComments",
+                    "CompletionText": "[Условие: \"Все\"], [Результат: \"Запросить комментарии\"]",
+                    "Description": null,
+                    "NeedToCancelProcessStart": false,
+                    "NeedToChangeCardState": false,
+                    "NeedToCompleteProcess": false,
+                    "NeedToCompleteProcessWhenAllStagesCompleted": false,
+                    "NeedToRevokeActiveProcesses": false,
+                    "NeedToStartNextProcesses": false,
+                    "NeedToStartNextStage": false,
+                    "NeedToStartNextStageByCriterias": false,
+                    "NextCardStateID": null,
+                    "NextCardStateName": null,
+                    "NextStageTemplateID": null,
+                    "NextStageTemplateName": null,
+                    "Order::int": 4,
+                    "PerformCheckAfterEachTaskOrSubstageComplete": false,
+                    "RowID::uid": "c50abf77-b925-4671-ab8f-55bba1cfb901",
+                    "TaskTypeRoleFieldColumnName": null,
+                    "TaskTypeRoleFieldComplexColumnID": null,
+                    "TaskTypeRoleFieldControlTypeID": null,
+                    "TaskTypeRoleFieldControlTypeName": null,
+                    "TaskTypeRoleFieldID": null,
+                    "TaskTypeRoleFieldName": null,
+                    "TaskTypeRoleFieldPhysicalColumnID": null,
+                    "TaskTypeRoleFieldReferencedTableID": null,
+                    "TaskTypeRoleFieldReferencedTableName": null,
+                    "TaskTypeRoleFieldSectionID": null,
+                    "TaskTypeRoleFieldSectionName": null,
+                    "TaskTypeRoleFieldSpecialMode": null
+                  }
+                ]
+              },
+              "FdStageTemplateParticipants": {
+                ".table::int": 1,
+                "Rows": [
+                  {
+                    "CardFieldParticipantColumnName": null,
+                    "CardFieldParticipantComplexColumnID": null,
+                    "CardFieldParticipantControlTypeID": null,
+                    "CardFieldParticipantControlTypeName": null,
+                    "CardFieldParticipantID": null,
+                    "CardFieldParticipantName": null,
+                    "CardFieldParticipantPhysicalColumnID": null,
+                    "CardFieldParticipantReferencedTableID": null,
+                    "CardFieldParticipantReferencedTableName": null,
+                    "CardFieldParticipantSectionID": null,
+                    "CardFieldParticipantSectionName": null,
+                    "CardFieldParticipantSpecialMode": null,
+                    "CheckAtLeastOneCriteriaFit": false,
+                    "CreateIndividualTaskForEachUserInRole": false,
+                    "IgnoreOtherParticipantsWhenCriteriasFit": false,
+                    "NotificationID": null,
+                    "NotificationName": null,
+                    "Order::int": 0,
+                    "ParticipantText": "Руководитель отдела проектной и договорной работы",
+                    "ParticipantTypeID::int": 0,
+                    "ParticipantTypeName": "Роль",
+                    "RoleParticipantID::uid": "97a50f28-96e0-4581-9f7e-33c95f0970e4",
+                    "RoleParticipantName": "Руководитель отдела проектной и договорной работы",
+                    "RowID::uid": "a0dea1e9-e8f6-41d7-83c2-9aa110a66f3b",
+                    "SkipEmptyContextRoles": null,
+                    "SpecialRoleFieldColumnName": null,
+                    "SpecialRoleFieldComplexColumnID": null,
+                    "SpecialRoleFieldControlTypeID": null,
+                    "SpecialRoleFieldControlTypeName": null,
+                    "SpecialRoleFieldID": null,
+                    "SpecialRoleFieldName": null,
+                    "SpecialRoleFieldPhysicalColumnID": null,
+                    "SpecialRoleFieldReferencedTableID": null,
+                    "SpecialRoleFieldReferencedTableName": null,
+                    "SpecialRoleFieldSectionID": null,
+                    "SpecialRoleFieldSectionName": null,
+                    "SpecialRoleFieldSpecialMode": null,
+                    "SpecialRoleParticipantFieldColumnName": null,
+                    "SpecialRoleParticipantFieldComplexColumnID": null,
+                    "SpecialRoleParticipantFieldControlTypeID": null,
+                    "SpecialRoleParticipantFieldControlTypeName": null,
+                    "SpecialRoleParticipantFieldID": null,
+                    "SpecialRoleParticipantFieldName": null,
+                    "SpecialRoleParticipantFieldPhysicalColumnID": null,
+                    "SpecialRoleParticipantFieldReferencedTableID": null,
+                    "SpecialRoleParticipantFieldReferencedTableName": null,
+                    "SpecialRoleParticipantFieldSectionID": null,
+                    "SpecialRoleParticipantFieldSectionName": null,
+                    "SpecialRoleParticipantFieldSpecialMode": null,
+                    "SpecialRoleValueID": null,
+                    "SpecialRoleValueName": null,
+                    "TaskTimeLimitationInWorkingDaysNormal": null,
+                    "TaskTimeLimitationInWorkingDaysUrgent": null,
+                    "TaskTimeLimitationInWorkingHoursNormal": null,
+                    "TaskTimeLimitationInWorkingHoursUrgent": null
+                  },
+                  {
+                    "CardFieldParticipantColumnName": null,
+                    "CardFieldParticipantComplexColumnID": null,
+                    "CardFieldParticipantControlTypeID": null,
+                    "CardFieldParticipantControlTypeName": null,
+                    "CardFieldParticipantID": null,
+                    "CardFieldParticipantName": null,
+                    "CardFieldParticipantPhysicalColumnID": null,
+                    "CardFieldParticipantReferencedTableID": null,
+                    "CardFieldParticipantReferencedTableName": null,
+                    "CardFieldParticipantSectionID": null,
+                    "CardFieldParticipantSectionName": null,
+                    "CardFieldParticipantSpecialMode": null,
+                    "CheckAtLeastOneCriteriaFit": false,
+                    "CreateIndividualTaskForEachUserInRole": false,
+                    "IgnoreOtherParticipantsWhenCriteriasFit": false,
+                    "NotificationID": null,
+                    "NotificationName": null,
+                    "Order::int": 1,
+                    "ParticipantText": "Финансовый директор",
+                    "ParticipantTypeID::int": 0,
+                    "ParticipantTypeName": "Роль",
+                    "RoleParticipantID::uid": "fcafcc66-133e-4a77-b0f6-686a5c12ac94",
+                    "RoleParticipantName": "Финансовый директор",
+                    "RowID::uid": "083fa1b0-d5dd-4d46-bb82-9015713305c8",
+                    "SkipEmptyContextRoles": null,
+                    "SpecialRoleFieldColumnName": null,
+                    "SpecialRoleFieldComplexColumnID": null,
+                    "SpecialRoleFieldControlTypeID": null,
+                    "SpecialRoleFieldControlTypeName": null,
+                    "SpecialRoleFieldID": null,
+                    "SpecialRoleFieldName": null,
+                    "SpecialRoleFieldPhysicalColumnID": null,
+                    "SpecialRoleFieldReferencedTableID": null,
+                    "SpecialRoleFieldReferencedTableName": null,
+                    "SpecialRoleFieldSectionID": null,
+                    "SpecialRoleFieldSectionName": null,
+                    "SpecialRoleFieldSpecialMode": null,
+                    "SpecialRoleParticipantFieldColumnName": null,
+                    "SpecialRoleParticipantFieldComplexColumnID": null,
+                    "SpecialRoleParticipantFieldControlTypeID": null,
+                    "SpecialRoleParticipantFieldControlTypeName": null,
+                    "SpecialRoleParticipantFieldID": null,
+                    "SpecialRoleParticipantFieldName": null,
+                    "SpecialRoleParticipantFieldPhysicalColumnID": null,
+                    "SpecialRoleParticipantFieldReferencedTableID": null,
+                    "SpecialRoleParticipantFieldReferencedTableName": null,
+                    "SpecialRoleParticipantFieldSectionID": null,
+                    "SpecialRoleParticipantFieldSectionName": null,
+                    "SpecialRoleParticipantFieldSpecialMode": null,
+                    "SpecialRoleValueID": null,
+                    "SpecialRoleValueName": null,
+                    "TaskTimeLimitationInWorkingDaysNormal": null,
+                    "TaskTimeLimitationInWorkingDaysUrgent": null,
+                    "TaskTimeLimitationInWorkingHoursNormal": null,
+                    "TaskTimeLimitationInWorkingHoursUrgent": null
+                  }
+                ]
+              },
+              "FdStageTemplateVirtual": {
+                "Fields": {
+                  "CardTypeCaption": "Договор",
+                  "CardTypeID::uid": "1c7a5718-09ae-4f65-aa67-e66f23bb7aee"
+                }
+              }
+            },
+            "TaskHistory": null,
+            "TaskHistoryGroups": null,
+            "Tasks": null,
+            "Topics": null,
+            "TypeCaption": "Шаблон этапа",
+            "TypeID::uid": "fb468242-0e0b-4166-921c-16e61eac2266",
+            "TypeName": "FdStageTemplate",
+            "Version::int": 1
+          },
+          {
+            "Created::dtm": "2020-11-22T19:29:47.007Z",
+            "CreatedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+            "CreatedByName": "Admin",
+            "Files": null,
+            "Flags::int": 0,
+            "ID::uid": "56cf6716-2315-458a-9180-fb56ab4b09ae",
+            "Info": null,
+            "Modified::dtm": "2020-11-22T19:29:47.007Z",
+            "ModifiedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+            "ModifiedByName": "Admin",
+            "Permissions": {
+              "CardPermissions::int": 87381,
+              "FilePermissions": null,
+              "Sections": {
+                "FdStageTemplate_SubstagesVirtual": {
+                  "FieldPermissions": null,
+                  "Rows": null,
+                  "SectionPermissions::int": 32
+                }
+              }
+            },
+            "Sections": {
+              "FdCriteriaList": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdCriteriaList_CriteriaValueTableGuid": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdCriteriaList_CriteriaValueTableInt32": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdCriteriaList_CriteriaValueTableRoles": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdCriteriaList_CriteriaValueTableString": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdParticipantCriteriaList": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplate": {
+                "Fields": {
+                  "AppropriateCompletionIsRequired": true,
+                  "CheckAtLeastOneCriteriaFit": false,
+                  "Description": null,
+                  "FilesAutoLoadModeID": null,
+                  "FilesAutoLoadModeName": null,
+                  "IsAggregate": false,
+                  "IsDistinctParticipantRoles": true,
+                  "IsEmailNotificationsEnabled": true,
+                  "IsParallel": false,
+                  "Name": "Подписание",
+                  "NewCardStateWhenStageStartID::uid": "77246376-ffae-466e-bbc9-d70e0ffe8964",
+                  "NewCardStateWhenStageStartName": "На подписании",
+                  "Order::int": 3,
+                  "ParentStageTemplateID": null,
+                  "ParentStageTemplateName": null,
+                  "ParticipantsText": "Группа для проверки оформления",
+                  "ProcessTemplateID::uid": "e70403f9-c31c-4dbe-8474-d2d11577aa13",
+                  "ProcessTemplateName": "Обработка внутрихолдингового договора",
+                  "StageTypeID::int": 1,
+                  "StageTypeName": "Стандартный этап",
+                  "TaskDigest": null,
+                  "TaskTimeLimitationInWorkingDaysNormal": 1.0,
+                  "TaskTimeLimitationInWorkingDaysUrgent": null,
+                  "TaskTimeLimitationInWorkingHoursNormal": 0.0,
+                  "TaskTimeLimitationInWorkingHoursUrgent": null,
+                  "TaskTimePlannedFromCardFieldColumnName": null,
+                  "TaskTimePlannedFromCardFieldComplexColumnID": null,
+                  "TaskTimePlannedFromCardFieldControlTypeID": null,
+                  "TaskTimePlannedFromCardFieldControlTypeName": null,
+                  "TaskTimePlannedFromCardFieldID": null,
+                  "TaskTimePlannedFromCardFieldName": null,
+                  "TaskTimePlannedFromCardFieldPhysicalColumnID": null,
+                  "TaskTimePlannedFromCardFieldReferencedTableID": null,
+                  "TaskTimePlannedFromCardFieldReferencedTableName": null,
+                  "TaskTimePlannedFromCardFieldSectionID": null,
+                  "TaskTimePlannedFromCardFieldSectionName": null,
+                  "TaskTimePlannedFromCardFieldSpecialMode": null,
+                  "TaskTypeCaption": "Подписание",
+                  "TaskTypeID::uid": "6a0004cb-dba8-4126-acfa-6a6734e3910d",
+                  "TaskTypeName": "PnrTaskSigning",
+                  "UrgentFlagCardFieldColumnName": null,
+                  "UrgentFlagCardFieldComplexColumnID": null,
+                  "UrgentFlagCardFieldControlTypeID": null,
+                  "UrgentFlagCardFieldControlTypeName": null,
+                  "UrgentFlagCardFieldID": null,
+                  "UrgentFlagCardFieldName": null,
+                  "UrgentFlagCardFieldPhysicalColumnID": null,
+                  "UrgentFlagCardFieldReferencedTableID": null,
+                  "UrgentFlagCardFieldReferencedTableName": null,
+                  "UrgentFlagCardFieldSectionID": null,
+                  "UrgentFlagCardFieldSectionName": null,
+                  "UrgentFlagCardFieldSpecialMode": null
+                }
+              },
+              "FdStageTemplate_CardFieldSettings": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplate_ErrorsVirtual": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplate_HiddenTaskOptions": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplate_HiddenTaskOptions_Roles": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplate_StartupSubstages": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplate_SubstagesVirtual": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplate_TaskFieldSettings": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplateCompletion_NextProcesses": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplateCompletion_NextStagesWithCriterias": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplateCompletion_ProcessesToRevoke": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplateCompletion_SubstageCompletions": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplateCompletion_Substages": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplateCompletions": {
+                ".table::int": 1,
+                "Rows": [
+                  {
+                    "CompletionConditionCaption": "Все",
+                    "CompletionConditionID::int": 0,
+                    "CompletionConditionName": "All",
+                    "CompletionOptionCaption": "Подписать",
+                    "CompletionOptionID::uid": "06cebf80-8b25-43d2-a8ab-5b494e8119a2",
+                    "CompletionOptionName": "FdSign",
+                    "CompletionText": "[Условие: \"Все\"], [Результат: \"Подписать\"], [Действия: \"Завершение процесса\", \"Смена состояния карточки\"]",
+                    "Description": null,
+                    "NeedToCancelProcessStart": false,
+                    "NeedToChangeCardState": true,
+                    "NeedToCompleteProcess": true,
+                    "NeedToCompleteProcessWhenAllStagesCompleted": false,
+                    "NeedToRevokeActiveProcesses": false,
+                    "NeedToStartNextProcesses": false,
+                    "NeedToStartNextStage": false,
+                    "NeedToStartNextStageByCriterias": false,
+                    "NextCardStateID::uid": "a787669e-32f7-470a-839c-d916222fb9da",
+                    "NextCardStateName": "Действует",
+                    "NextStageTemplateID": null,
+                    "NextStageTemplateName": null,
+                    "Order::int": 0,
+                    "PerformCheckAfterEachTaskOrSubstageComplete": false,
+                    "RowID::uid": "9cb94735-27a3-4c3e-b12d-5ff46c096ebd",
+                    "TaskTypeRoleFieldColumnName": null,
+                    "TaskTypeRoleFieldComplexColumnID": null,
+                    "TaskTypeRoleFieldControlTypeID": null,
+                    "TaskTypeRoleFieldControlTypeName": null,
+                    "TaskTypeRoleFieldID": null,
+                    "TaskTypeRoleFieldName": null,
+                    "TaskTypeRoleFieldPhysicalColumnID": null,
+                    "TaskTypeRoleFieldReferencedTableID": null,
+                    "TaskTypeRoleFieldReferencedTableName": null,
+                    "TaskTypeRoleFieldSectionID": null,
+                    "TaskTypeRoleFieldSectionName": null,
+                    "TaskTypeRoleFieldSpecialMode": null
+                  },
+                  {
+                    "CompletionConditionCaption": "Все",
+                    "CompletionConditionID::int": 0,
+                    "CompletionConditionName": "All",
+                    "CompletionOptionCaption": "Не подписать",
+                    "CompletionOptionID::uid": "03beefd2-e6b6-438d-871f-ca628fec53c0",
+                    "CompletionOptionName": "FdNotSign",
+                    "CompletionText": "[Условие: \"Все\"], [Результат: \"Не подписать\"], [Действия: \"Запуск следующего этапа\", \"Смена состояния карточки\"]",
+                    "Description": null,
+                    "NeedToCancelProcessStart": false,
+                    "NeedToChangeCardState": true,
+                    "NeedToCompleteProcess": false,
+                    "NeedToCompleteProcessWhenAllStagesCompleted": false,
+                    "NeedToRevokeActiveProcesses": false,
+                    "NeedToStartNextProcesses": false,
+                    "NeedToStartNextStage": true,
+                    "NeedToStartNextStageByCriterias": false,
+                    "NextCardStateID::uid": "5b49161e-2f9c-4087-90ac-e9d62ee50ccf",
+                    "NextCardStateName": "На доработке",
+                    "NextStageTemplateID::uid": "db324c5e-4512-4d2f-8bd8-c6975f56a06d",
+                    "NextStageTemplateName": "Доработка",
+                    "Order::int": 1,
+                    "PerformCheckAfterEachTaskOrSubstageComplete": false,
+                    "RowID::uid": "b2f7824f-cbef-41e0-8ab2-641040237c9b",
+                    "TaskTypeRoleFieldColumnName": null,
+                    "TaskTypeRoleFieldComplexColumnID": null,
+                    "TaskTypeRoleFieldControlTypeID": null,
+                    "TaskTypeRoleFieldControlTypeName": null,
+                    "TaskTypeRoleFieldID": null,
+                    "TaskTypeRoleFieldName": null,
+                    "TaskTypeRoleFieldPhysicalColumnID": null,
+                    "TaskTypeRoleFieldReferencedTableID": null,
+                    "TaskTypeRoleFieldReferencedTableName": null,
+                    "TaskTypeRoleFieldSectionID": null,
+                    "TaskTypeRoleFieldSectionName": null,
+                    "TaskTypeRoleFieldSpecialMode": null
+                  }
+                ]
+              },
+              "FdStageTemplateParticipants": {
+                ".table::int": 1,
+                "Rows": [
+                  {
+                    "CardFieldParticipantColumnName": null,
+                    "CardFieldParticipantComplexColumnID": null,
+                    "CardFieldParticipantControlTypeID": null,
+                    "CardFieldParticipantControlTypeName": null,
+                    "CardFieldParticipantID": null,
+                    "CardFieldParticipantName": null,
+                    "CardFieldParticipantPhysicalColumnID": null,
+                    "CardFieldParticipantReferencedTableID": null,
+                    "CardFieldParticipantReferencedTableName": null,
+                    "CardFieldParticipantSectionID": null,
+                    "CardFieldParticipantSectionName": null,
+                    "CardFieldParticipantSpecialMode": null,
+                    "CheckAtLeastOneCriteriaFit": false,
+                    "CreateIndividualTaskForEachUserInRole": false,
+                    "IgnoreOtherParticipantsWhenCriteriasFit": false,
+                    "NotificationID": null,
+                    "NotificationName": null,
+                    "Order::int": 0,
+                    "ParticipantText": "Группа для проверки оформления",
+                    "ParticipantTypeID::int": 0,
+                    "ParticipantTypeName": "Роль",
+                    "RoleParticipantID::uid": "5a09a719-c992-49c5-9c98-fb21a374930d",
+                    "RoleParticipantName": "Группа для проверки оформления",
+                    "RowID::uid": "803b643d-7536-4a58-8335-2bbf67829c75",
+                    "SkipEmptyContextRoles": null,
+                    "SpecialRoleFieldColumnName": null,
+                    "SpecialRoleFieldComplexColumnID": null,
+                    "SpecialRoleFieldControlTypeID": null,
+                    "SpecialRoleFieldControlTypeName": null,
+                    "SpecialRoleFieldID": null,
+                    "SpecialRoleFieldName": null,
+                    "SpecialRoleFieldPhysicalColumnID": null,
+                    "SpecialRoleFieldReferencedTableID": null,
+                    "SpecialRoleFieldReferencedTableName": null,
+                    "SpecialRoleFieldSectionID": null,
+                    "SpecialRoleFieldSectionName": null,
+                    "SpecialRoleFieldSpecialMode": null,
+                    "SpecialRoleParticipantFieldColumnName": null,
+                    "SpecialRoleParticipantFieldComplexColumnID": null,
+                    "SpecialRoleParticipantFieldControlTypeID": null,
+                    "SpecialRoleParticipantFieldControlTypeName": null,
+                    "SpecialRoleParticipantFieldID": null,
+                    "SpecialRoleParticipantFieldName": null,
+                    "SpecialRoleParticipantFieldPhysicalColumnID": null,
+                    "SpecialRoleParticipantFieldReferencedTableID": null,
+                    "SpecialRoleParticipantFieldReferencedTableName": null,
+                    "SpecialRoleParticipantFieldSectionID": null,
+                    "SpecialRoleParticipantFieldSectionName": null,
+                    "SpecialRoleParticipantFieldSpecialMode": null,
+                    "SpecialRoleValueID": null,
+                    "SpecialRoleValueName": null,
+                    "TaskTimeLimitationInWorkingDaysNormal": null,
+                    "TaskTimeLimitationInWorkingDaysUrgent": null,
+                    "TaskTimeLimitationInWorkingHoursNormal": null,
+                    "TaskTimeLimitationInWorkingHoursUrgent": null
+                  }
+                ]
+              },
+              "FdStageTemplateVirtual": {
+                "Fields": {
+                  "CardTypeCaption": "Договор",
+                  "CardTypeID::uid": "1c7a5718-09ae-4f65-aa67-e66f23bb7aee"
+                }
+              }
+            },
+            "TaskHistory": null,
+            "TaskHistoryGroups": null,
+            "Tasks": null,
+            "Topics": null,
+            "TypeCaption": "Шаблон этапа",
+            "TypeID::uid": "fb468242-0e0b-4166-921c-16e61eac2266",
+            "TypeName": "FdStageTemplate",
+            "Version::int": 1
+          },
+          {
+            "Created::dtm": "2020-11-22T19:29:47.023Z",
+            "CreatedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+            "CreatedByName": "Admin",
+            "Files": null,
+            "Flags::int": 0,
+            "ID::uid": "db324c5e-4512-4d2f-8bd8-c6975f56a06d",
+            "Info": null,
+            "Modified::dtm": "2020-11-22T19:29:47.023Z",
+            "ModifiedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+            "ModifiedByName": "Admin",
+            "Permissions": {
+              "CardPermissions::int": 87381,
+              "FilePermissions": null,
+              "Sections": {
+                "FdStageTemplate_SubstagesVirtual": {
+                  "FieldPermissions": null,
+                  "Rows": null,
+                  "SectionPermissions::int": 32
+                }
+              }
+            },
+            "Sections": {
+              "FdCriteriaList": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdCriteriaList_CriteriaValueTableGuid": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdCriteriaList_CriteriaValueTableInt32": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdCriteriaList_CriteriaValueTableRoles": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdCriteriaList_CriteriaValueTableString": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdParticipantCriteriaList": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplate": {
+                "Fields": {
+                  "AppropriateCompletionIsRequired": true,
+                  "CheckAtLeastOneCriteriaFit": false,
+                  "Description": null,
+                  "FilesAutoLoadModeID": null,
+                  "FilesAutoLoadModeName": null,
+                  "IsAggregate": false,
+                  "IsDistinctParticipantRoles": true,
+                  "IsEmailNotificationsEnabled": true,
+                  "IsParallel": false,
+                  "Name": "Доработка",
+                  "NewCardStateWhenStageStartID::uid": "5b49161e-2f9c-4087-90ac-e9d62ee50ccf",
+                  "NewCardStateWhenStageStartName": "На доработке",
+                  "Order::int": 4,
+                  "ParentStageTemplateID": null,
+                  "ParentStageTemplateName": null,
+                  "ParticipantsText": "Создал",
+                  "ProcessTemplateID::uid": "e70403f9-c31c-4dbe-8474-d2d11577aa13",
+                  "ProcessTemplateName": "Обработка внутрихолдингового договора",
+                  "StageTypeID::int": 1,
+                  "StageTypeName": "Стандартный этап",
+                  "TaskDigest": null,
+                  "TaskTimeLimitationInWorkingDaysNormal": 1.0,
+                  "TaskTimeLimitationInWorkingDaysUrgent": null,
+                  "TaskTimeLimitationInWorkingHoursNormal": 0.0,
+                  "TaskTimeLimitationInWorkingHoursUrgent": null,
+                  "TaskTimePlannedFromCardFieldColumnName": null,
+                  "TaskTimePlannedFromCardFieldComplexColumnID": null,
+                  "TaskTimePlannedFromCardFieldControlTypeID": null,
+                  "TaskTimePlannedFromCardFieldControlTypeName": null,
+                  "TaskTimePlannedFromCardFieldID": null,
+                  "TaskTimePlannedFromCardFieldName": null,
+                  "TaskTimePlannedFromCardFieldPhysicalColumnID": null,
+                  "TaskTimePlannedFromCardFieldReferencedTableID": null,
+                  "TaskTimePlannedFromCardFieldReferencedTableName": null,
+                  "TaskTimePlannedFromCardFieldSectionID": null,
+                  "TaskTimePlannedFromCardFieldSectionName": null,
+                  "TaskTimePlannedFromCardFieldSpecialMode": null,
+                  "TaskTypeCaption": "Доработка",
+                  "TaskTypeID::uid": "22b2c5aa-d9e5-46ee-aa32-8013e1e70253",
+                  "TaskTypeName": "PnrEdit",
+                  "UrgentFlagCardFieldColumnName": null,
+                  "UrgentFlagCardFieldComplexColumnID": null,
+                  "UrgentFlagCardFieldControlTypeID": null,
+                  "UrgentFlagCardFieldControlTypeName": null,
+                  "UrgentFlagCardFieldID": null,
+                  "UrgentFlagCardFieldName": null,
+                  "UrgentFlagCardFieldPhysicalColumnID": null,
+                  "UrgentFlagCardFieldReferencedTableID": null,
+                  "UrgentFlagCardFieldReferencedTableName": null,
+                  "UrgentFlagCardFieldSectionID": null,
+                  "UrgentFlagCardFieldSectionName": null,
+                  "UrgentFlagCardFieldSpecialMode": null
+                }
+              },
+              "FdStageTemplate_CardFieldSettings": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplate_ErrorsVirtual": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplate_HiddenTaskOptions": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplate_HiddenTaskOptions_Roles": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplate_StartupSubstages": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplate_SubstagesVirtual": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplate_TaskFieldSettings": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplateCompletion_NextProcesses": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplateCompletion_NextStagesWithCriterias": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplateCompletion_ProcessesToRevoke": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplateCompletion_SubstageCompletions": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplateCompletion_Substages": {
+                ".table::int": 1,
+                "Rows": null
+              },
+              "FdStageTemplateCompletions": {
+                ".table::int": 1,
+                "Rows": [
+                  {
+                    "CompletionConditionCaption": "Все",
+                    "CompletionConditionID::int": 0,
+                    "CompletionConditionName": "All",
+                    "CompletionOptionCaption": "Отправить на согласование",
+                    "CompletionOptionID::uid": "cf947e5f-8ebe-4534-aa18-7c5f308b3f59",
+                    "CompletionOptionName": "PnrStartAgreement",
+                    "CompletionText": "[Условие: \"Все\"], [Результат: \"Отправить на согласование\"], [Действия: \"Запуск следующего этапа\", \"Смена состояния карточки\"]",
+                    "Description": null,
+                    "NeedToCancelProcessStart": false,
+                    "NeedToChangeCardState": true,
+                    "NeedToCompleteProcess": false,
+                    "NeedToCompleteProcessWhenAllStagesCompleted": false,
+                    "NeedToRevokeActiveProcesses": false,
+                    "NeedToStartNextProcesses": false,
+                    "NeedToStartNextStage": true,
+                    "NeedToStartNextStageByCriterias": false,
+                    "NextCardStateID::uid": "8065ee25-07df-4c17-8b35-d542aaa3cbed",
+                    "NextCardStateName": "На согласовании",
+                    "NextStageTemplateID::uid": "69e96433-6248-4f5b-8ddf-d08412b615ae",
+                    "NextStageTemplateName": "Согласование руководителем бухгалтерии",
+                    "Order::int": 0,
+                    "PerformCheckAfterEachTaskOrSubstageComplete": false,
+                    "RowID::uid": "add7f56a-5777-4147-b7eb-373101c881fd",
+                    "TaskTypeRoleFieldColumnName": null,
+                    "TaskTypeRoleFieldComplexColumnID": null,
+                    "TaskTypeRoleFieldControlTypeID": null,
+                    "TaskTypeRoleFieldControlTypeName": null,
+                    "TaskTypeRoleFieldID": null,
+                    "TaskTypeRoleFieldName": null,
+                    "TaskTypeRoleFieldPhysicalColumnID": null,
+                    "TaskTypeRoleFieldReferencedTableID": null,
+                    "TaskTypeRoleFieldReferencedTableName": null,
+                    "TaskTypeRoleFieldSectionID": null,
+                    "TaskTypeRoleFieldSectionName": null,
+                    "TaskTypeRoleFieldSpecialMode": null
+                  },
+                  {
+                    "CompletionConditionCaption": "Все",
+                    "CompletionConditionID::int": 0,
+                    "CompletionConditionName": "All",
+                    "CompletionOptionCaption": "Отозвать процесс",
+                    "CompletionOptionID::uid": "50a58b0d-1f54-4239-bdbf-586c5da4a6dc",
+                    "CompletionOptionName": "FdRejectProcess",
+                    "CompletionText": "[Условие: \"Все\"], [Результат: \"Отозвать процесс\"], [Действия: \"Завершение процесса\", \"Смена состояния карточки\"]",
+                    "Description": null,
+                    "NeedToCancelProcessStart": false,
+                    "NeedToChangeCardState": true,
+                    "NeedToCompleteProcess": true,
+                    "NeedToCompleteProcessWhenAllStagesCompleted": false,
+                    "NeedToRevokeActiveProcesses": false,
+                    "NeedToStartNextProcesses": false,
+                    "NeedToStartNextStage": false,
+                    "NeedToStartNextStageByCriterias": false,
+                    "NextCardStateID::uid": "e093e1c4-3077-42f7-beae-db033f7868f3",
+                    "NextCardStateName": "Проект",
+                    "NextStageTemplateID": null,
+                    "NextStageTemplateName": null,
+                    "Order::int": 1,
+                    "PerformCheckAfterEachTaskOrSubstageComplete": false,
+                    "RowID::uid": "899aa39d-d971-48e9-a160-d5d257a5fe95",
+                    "TaskTypeRoleFieldColumnName": null,
+                    "TaskTypeRoleFieldComplexColumnID": null,
+                    "TaskTypeRoleFieldControlTypeID": null,
+                    "TaskTypeRoleFieldControlTypeName": null,
+                    "TaskTypeRoleFieldID": null,
+                    "TaskTypeRoleFieldName": null,
+                    "TaskTypeRoleFieldPhysicalColumnID": null,
+                    "TaskTypeRoleFieldReferencedTableID": null,
+                    "TaskTypeRoleFieldReferencedTableName": null,
+                    "TaskTypeRoleFieldSectionID": null,
+                    "TaskTypeRoleFieldSectionName": null,
+                    "TaskTypeRoleFieldSpecialMode": null
+                  }
+                ]
+              },
+              "FdStageTemplateParticipants": {
+                ".table::int": 1,
+                "Rows": [
+                  {
+                    "CardFieldParticipantColumnName": "Author",
+                    "CardFieldParticipantComplexColumnID::uid": "aa152ba8-dc1f-4efa-8c68-03ba804ef6f1",
+                    "CardFieldParticipantControlTypeID::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c",
+                    "CardFieldParticipantControlTypeName": "AutoCompleteEntry",
+                    "CardFieldParticipantID::uid": "87163b6e-e57b-4010-99a7-94f558e3540a",
+                    "CardFieldParticipantName": "Создал",
+                    "CardFieldParticipantPhysicalColumnID": null,
+                    "CardFieldParticipantReferencedTableID::uid": "6c977939-bbfc-456f-a133-f1c2244e3cc3",
+                    "CardFieldParticipantReferencedTableName": "PersonalRoles",
+                    "CardFieldParticipantSectionID::uid": "a161e289-2f99-4699-9e95-6e3336be8527",
+                    "CardFieldParticipantSectionName": "DocumentCommonInfo",
+                    "CardFieldParticipantSpecialMode::int": 2,
+                    "CheckAtLeastOneCriteriaFit": false,
+                    "CreateIndividualTaskForEachUserInRole": false,
+                    "IgnoreOtherParticipantsWhenCriteriasFit": false,
+                    "NotificationID": null,
+                    "NotificationName": null,
+                    "Order::int": 0,
+                    "ParticipantText": "Создал",
+                    "ParticipantTypeID::int": 1,
+                    "ParticipantTypeName": "Поле карточки",
+                    "RoleParticipantID": null,
+                    "RoleParticipantName": null,
+                    "RowID::uid": "0b287f23-3dc5-4715-87ca-3c730a78ff3e",
+                    "SkipEmptyContextRoles": null,
+                    "SpecialRoleFieldColumnName": null,
+                    "SpecialRoleFieldComplexColumnID": null,
+                    "SpecialRoleFieldControlTypeID": null,
+                    "SpecialRoleFieldControlTypeName": null,
+                    "SpecialRoleFieldID": null,
+                    "SpecialRoleFieldName": null,
+                    "SpecialRoleFieldPhysicalColumnID": null,
+                    "SpecialRoleFieldReferencedTableID": null,
+                    "SpecialRoleFieldReferencedTableName": null,
+                    "SpecialRoleFieldSectionID": null,
+                    "SpecialRoleFieldSectionName": null,
+                    "SpecialRoleFieldSpecialMode": null,
+                    "SpecialRoleParticipantFieldColumnName": null,
+                    "SpecialRoleParticipantFieldComplexColumnID": null,
+                    "SpecialRoleParticipantFieldControlTypeID": null,
+                    "SpecialRoleParticipantFieldControlTypeName": null,
+                    "SpecialRoleParticipantFieldID": null,
+                    "SpecialRoleParticipantFieldName": null,
+                    "SpecialRoleParticipantFieldPhysicalColumnID": null,
+                    "SpecialRoleParticipantFieldReferencedTableID": null,
+                    "SpecialRoleParticipantFieldReferencedTableName": null,
+                    "SpecialRoleParticipantFieldSectionID": null,
+                    "SpecialRoleParticipantFieldSectionName": null,
+                    "SpecialRoleParticipantFieldSpecialMode": null,
+                    "SpecialRoleValueID": null,
+                    "SpecialRoleValueName": null,
+                    "TaskTimeLimitationInWorkingDaysNormal": null,
+                    "TaskTimeLimitationInWorkingDaysUrgent": null,
+                    "TaskTimeLimitationInWorkingHoursNormal": null,
+                    "TaskTimeLimitationInWorkingHoursUrgent": null
+                  }
+                ]
+              },
+              "FdStageTemplateVirtual": {
+                "Fields": {
+                  "CardTypeCaption": "Договор",
+                  "CardTypeID::uid": "1c7a5718-09ae-4f65-aa67-e66f23bb7aee"
+                }
+              }
+            },
+            "TaskHistory": null,
+            "TaskHistoryGroups": null,
+            "Tasks": null,
+            "Topics": null,
+            "TypeCaption": "Шаблон этапа",
+            "TypeID::uid": "fb468242-0e0b-4166-921c-16e61eac2266",
+            "TypeName": "FdStageTemplate",
+            "Version::int": 1
+          }
+        ]
+      },
+      "Modified::dtm": "2020-12-09T16:07:15.57Z",
+      "ModifiedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "ModifiedByName": "Admin",
+      "Permissions": null,
+      "Sections": {
+        "FdCommonErrorsVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "FdProcessTemplate": {
+          "Fields": {
+            "AllowCompleteExistingTasks": false,
+            "AutoStartOnCardStore": false,
+            "CancelProcessStartWhenParticipantsEmpty": false,
+            "CardTypeCaption": "Договор",
+            "CardTypeID::uid": "1c7a5718-09ae-4f65-aa67-e66f23bb7aee",
+            "CheckInitialStageFound": false,
+            "Description": null,
+            "IsActive": false,
+            "Name": "Обработка внутрихолдингового договора (без мультиделегирования)",
+            "NameIcon": "Thin360",
+            "StartTileCaption": "Запуск процесса по внутрихолдинговому договору",
+            "StartTileIcon": "Thin258",
+            "UnlimitedActiveInstancesCount": false,
+            "WhenProcessRevokedNewStateID": null,
+            "WhenProcessRevokedNewStateName": null
+          }
+        },
+        "FdProcessTemplate_CardStates": {
+          ".table::int": 1,
+          "Rows": [
+            {
+              "RowID::uid": "7bbaf748-12c2-4d73-b28b-704df79390ba",
+              "StateID::uid": "e093e1c4-3077-42f7-beae-db033f7868f3",
+              "StateName": "Проект"
+            }
+          ]
+        },
+        "FdProcessTemplate_ManageProcessRoles": {
+          ".table::int": 1,
+          "Rows": [
+            {
+              "CanRestartFromStage": false,
+              "CanRevokeProcess": true,
+              "CanStartProcess": true,
+              "RoleID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+              "RoleName": "Admin",
+              "RowID::uid": "2c20dedf-baa5-4331-92be-b933e939b2df"
+            },
+            {
+              "CanRestartFromStage": false,
+              "CanRevokeProcess": true,
+              "CanStartProcess": true,
+              "RoleID::uid": "53471dfa-3724-40d9-abce-2c28a9c0850a",
+              "RoleName": "Администратор проекта для Договора",
+              "RowID::uid": "875ae9bb-0c88-4125-bbd8-7f753d82a997"
+            },
+            {
+              "CanRestartFromStage": false,
+              "CanRevokeProcess": true,
+              "CanStartProcess": true,
+              "RoleID::uid": "47e91ffe-227e-4db2-a15a-524fda092d92",
+              "RoleName": "Инициатор Fd процесса",
+              "RowID::uid": "3722f314-1692-446a-9260-eb9964150ca4"
+            },
+            {
+              "CanRestartFromStage": false,
+              "CanRevokeProcess": true,
+              "CanStartProcess": true,
+              "RoleID::uid": "a0cc7cc6-7cd8-4e04-86e1-eb245373f84e",
+              "RoleName": "Администратор",
+              "RowID::uid": "cbaf5350-ddac-4117-ae57-1716ff625e0a"
+            }
+          ]
+        },
+        "FdProcessTemplate_ScheduledActions": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "FdProcessTemplate_StageTemplateErrorsVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "FdProcessTemplateStagesVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        }
+      },
+      "TaskHistory": null,
+      "TaskHistoryGroups": null,
+      "Tasks": null,
+      "Topics": null,
+      "TypeCaption": "Шаблон процесса",
+      "TypeID::uid": "d0a1425a-f233-4d75-80af-8b6d5cc529b4",
+      "TypeName": "FdProcessTemplate",
+      "Version::int": 0
+    },
+    "FileMapping": null,
+    "Info": {
+      ".importVersion::int": 3
+    }
+  }
+]

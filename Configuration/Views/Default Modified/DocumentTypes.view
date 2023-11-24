@@ -1,0 +1,75 @@
+#tessa_exchange_format(Version:1, CreationTime:2020-10-19T12\:15\:48) {
+	#exchange_view(RowID:b05eebcc-eb4b-4f5c-b4b8-d8bd134e27c6, Alias:DocumentTypes, Caption:Типы документов, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2020-10-19T12\:04\:01, GroupName:System) {
+		#metadata {
+			#view(DefaultSortColumn: TypeCaption, DefaultSortDirection: asc, Paging: always, RowCountSubset: Count, MultiSelect: true, QuickSearchParam: Caption)
+			#column(Alias: TypeID, Hidden: true, Type: $Types.ID)
+			#column(Alias: TypeCaption, Caption: $View_DocumentTypes_Caption, Type: $Types.Caption, Localizable: true, SortBy: lCaption.Value)
+			#column(Alias: TypeName, Caption: $View_DocumentTypes_Name, Type: $Types.Name, SortBy: t.Name, Hidden: true)
+			#column(Alias: rn, Hidden: true, Type: Int64)
+			#param(Alias: Caption, Caption: $View_DocumentTypes_Caption_Param, Multiple: true, Type: $Types.Caption)
+			#param(Alias: Name, Caption: $View_DocumentTypes_Name_Param, Multiple: true, Type: $Types.Name)
+			#reference(ColPrefix: Type, RefSection: DocumentTypes, DisplayValueColumn: TypeCaption, IsCard: false, OpenOnDoubleClick: false)
+			#subset(Alias: Count)
+		}
+		#description {}
+		#ms_query {
+			SELECT
+				[t].*
+			FROM \(
+				SELECT
+					\#if\(Normal\) \{
+					[t].[ID]								AS [TypeID]\,
+					[t].[Caption]							AS [TypeCaption]\,
+					[t].[Name]								AS [TypeName]\,
+					row_number\(\) OVER \(ORDER BY \#order_by\)	AS [rn]
+					\}
+					\#if\(Count\) \{
+					count\(*\) AS [cnt]
+					\}
+				FROM [Types] AS [t] WITH \(NOLOCK\)
+				\#if\(Caption || Normal && request.SortedBy\("TypeCaption"\)\) \{
+				CROSS APPLY [Localization]\([t].[Caption]\, \#param\(locale\)\) AS [lCaption]
+				\}
+				WHERE
+					-- Проверяем что тип не hidden \(16\)\, не административный \(256\)\, и для него разрешены задания \(8\)
+					\([t].[Definition].value\('\(/cardType/@flags\)[1]'\, 'int'\) & 280\) = 8
+					\#param\(Caption\, [lCaption].[Value]\)
+					\#param\(Name\, [t].[Name]\)
+				\) AS [t]
+			\#if\(PageOffset\) \{
+			WHERE [t].[rn] >= \#param\(PageOffset\) AND [t].[rn] < \(\#param\(PageOffset\) + \#param\(PageLimit\)\)
+			\}
+			\#if\(Normal\) \{
+			ORDER BY [t].[rn]
+			\}
+		}
+		#pg_query {
+			SELECT
+				\#if\(Normal\) \{
+				"t"."ID"									AS "TypeID"\,
+				"t"."Caption"								AS "TypeCaption"\,
+				"t"."Name"									AS "TypeName"\,
+				0\:\:int8										AS "rn"
+				\}
+				\#if\(Count\) \{
+				count\(*\) AS "cnt"
+				\}
+			FROM "Types" AS "t"
+			\#if\(Caption || Normal && request.SortedBy\("TypeCaption"\)\) \{
+			CROSS JOIN "Localization"\("t"."Caption"\, \#param\(locale\)\) AS "lCaption"
+			\}
+			WHERE
+				-- Проверяем что тип не hidden \(16\)\, не административный \(256\)\, и для него разрешены задания \(8\)
+				\(\(\(xpath\('/cardType/@flags'\, "t"."Definition"\)\:\:text[]\)\:\:int[]\)[1] & 280\) = 8
+				\#param\(Caption\, "lCaption"."Value"\)
+				\#param\(Name\, "t"."Name"\)
+			\#if\(Normal\) \{
+			ORDER BY \#order_by
+			\}
+			\#if\(PageOffset\) \{
+			OFFSET \#param\(PageOffset\) - 1 LIMIT \#param\(PageLimit\)
+			\}
+		}
+		#role(RoleID:7ff52dc0-ff6a-4c9d-ba25-b562c370004d, ViewID:b05eebcc-eb4b-4f5c-b4b8-d8bd134e27c6) 
+	}
+}

@@ -1,0 +1,131 @@
+﻿[
+  {
+    ".method::int": 2,
+    "Card": {
+      "Created::dtm": "2020-08-28T15:49:06.72Z",
+      "CreatedByID::uid": "11111111-1111-1111-1111-111111111111",
+      "CreatedByName": "System",
+      "Files": null,
+      "Flags::int": 0,
+      "ID::uid": "e8e594d2-f6a4-481e-9635-bb719b3196c6",
+      "Info": null,
+      "Modified::dtm": "2020-08-28T15:49:06.72Z",
+      "ModifiedByID::uid": "11111111-1111-1111-1111-111111111111",
+      "ModifiedByName": "System",
+      "Permissions": null,
+      "Sections": {
+        "FmAddTopicInfoVirtual": {
+          "Fields": {
+            "Description": null,
+            "Title": null
+          }
+        },
+        "FmTopicParticipantsInfoVirtual": {
+          "Fields": {
+            "IsModerator": false,
+            "ReadOnly": false
+          }
+        },
+        "FmTopicParticipantsVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "FmTopicRoleParticipantsInfoVirtual": {
+          "Fields": {
+            "IsSubscribe": false,
+            "ReadOnly": false
+          }
+        },
+        "KrActiveTasksVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrAdditionalApprovalInfoUsersCardVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrAdditionalApprovalUsersCardVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrApprovalCommonInfoVirtual": {
+          "Fields": {
+            "ApprovedBy": null,
+            "AuthorComment": null,
+            "AuthorID": null,
+            "AuthorName": null,
+            "CurrentApprovalStageRowID": null,
+            "DisapprovedBy": null,
+            "MainCardID": null,
+            "StateChangedDateTimeUTC": null,
+            "StateID::int": 0,
+            "StateName": "$KrStates_Doc_Draft"
+          }
+        },
+        "KrApprovalHistoryVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrDialogButtonSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrForkNestedProcessesSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrForkSecondaryProcessesSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPerformersVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrStagesVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrUniversalTaskOptionsSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "PnrProjects": {
+          "Fields": {
+            "Code": "0К-000241",
+            "Description": null,
+            "EndDate": null,
+            "EstimatorID::uid": "f9f377d1-35fa-4224-9412-b39a00d9b27e",
+            "EstimatorName": "Карасева О.Е.",
+            "GIPID::uid": "ee1817bd-2221-4f54-9f77-7705c0a1a7a1",
+            "GIPName": "Олейник С. А.",
+            "InArchive": false,
+            "IsHidden": null,
+            "MDMKey": "bf50a72b-667a-11e9-ab4f-005056bf2b25",
+            "Name": "Ботанический сад ТПУ / Апарт-Отель / Сети / Тепловые сети",
+            "ParentProjectID::uid": "40991cc9-655b-4655-af81-e167eea7a011",
+            "ParentProjectName": "Ботанический сад ТПУ / Апарт-отель / Сети",
+            "ProjectAdministratorID::uid": "92a34620-d468-4b39-af22-b776f3ada0ff",
+            "ProjectAdministratorName": "Захарова П. А.",
+            "ProjectEconomistID": null,
+            "ProjectEconomistName": null,
+            "ProjectManagerID::uid": "d84eafea-a6fc-4832-b2b1-96ca953d9159",
+            "ProjectManagerName": "Махоткин Н. И."
+          }
+        }
+      },
+      "TaskHistory": null,
+      "TaskHistoryGroups": null,
+      "Tasks": null,
+      "Topics": null,
+      "TypeCaption": "Проект",
+      "TypeID::uid": "c17a5031-e7d8-4ea6-b03f-4c88b4bd6063",
+      "TypeName": "PnrProject",
+      "Version::int": 0
+    },
+    "FileMapping": null,
+    "Info": {
+      ".importVersion::int": 1
+    }
+  }
+]

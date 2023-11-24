@@ -1,0 +1,82 @@
+#tessa_exchange_format(Version:1, CreationTime:2020-11-13T09\:49\:41) {
+	#exchange_view(RowID:b2a82532-c275-4c13-b087-91aa10bfcfd8, Alias:PnrTaskTypes, Caption:Типы заданий, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2020-11-13T09\:48\:59, GroupName:Pnr) {
+		#metadata {
+			#view(DefaultSortColumn: TypeName, DefaultSortDirection: asc, Paging: always, RowCountSubset: Count, QuickSearchParam: Caption)
+			#column(Alias: TypeID, Hidden: true, Type: $Types.ID)
+			#column(Alias: TypeName, Caption: $Views_TaskTypes_Name, Type: $Types.Name, SortBy: t.Caption)
+			#column(Alias: rn, Hidden: true, Type: Int64)
+			#param(Alias: Name, Caption: $Views_TaskTypes_Alias_Param, Multiple: true, Type: $Types.Name)
+			#param(Alias:OnlyEnabledForRoutes, Caption: OnlyEnabledForRoutes, Hidden: true, Type: Boolean)
+			#reference(ColPrefix: Type, RefSection: PnrTaskTypes, DisplayValueColumn: TypeName, IsCard: false, OpenOnDoubleClick: false)
+			#subset(Alias: Count)
+		}
+		#description {}
+		#ms_query {
+			DECLARE @TypesRus TABLE \(ID UNIQUEIDENTIFIER\, Name varchar\(max\)\, Caption varchar\(max\)\)
+
+			INSERT INTO @TypesRus \(ID\, Name\, Caption\)
+			SELECT ID\, Name\, [dbo].Localize\(Caption\,'25'\) CaptionRus
+			FROM Types
+			WHERE \(Definition.value\('\(/cardType/@flags\)[1]'\, 'int'\) & 16\) = 0 -- Проверяем что тип не hidden
+			AND \(Definition.value\('\(/cardType/@type\)[1]'\, 'int'\)\) = 2
+
+			SELECT
+				[t].*
+			FROM \(
+				SELECT
+					\#if\(Normal\) \{
+					MIN\([t].[ID]\)							AS [TypeID]\,
+					[t].[Caption]							AS [TypeName]\,
+					row_number\(\) OVER \(ORDER BY \#order_by\)	AS [rn]
+					\}
+					\#if\(Count\) \{
+					count\(*\) AS [cnt]
+					\}
+				FROM @TypesRus AS [t]
+				\#if\(OnlyEnabledForRoutes\) \{
+				INNER JOIN [KrSettingsRouteExtraTaskTypes] AS [krsrett] WITH\(NOLOCK\) ON [krsrett].[TaskTypeID] = [t].[ID]
+				\}
+				WHERE 1=1
+					\#param\(Name\, [t].[Caption]\)
+				GROUP BY [t].[Caption]
+				\) AS [t]
+			\#if\(PageOffset\) \{
+			WHERE [t].[rn] >= \#param\(PageOffset\) AND [t].[rn] < \(\#param\(PageOffset\) + \#param\(PageLimit\)\)
+			\}
+			\#if\(Normal\) \{
+			ORDER BY [t].[rn]
+			\}
+		}
+		#pg_query {
+			SELECT
+				\#if\(Normal\) \{
+				"t"."ID"									AS "TypeID"\,
+				"t"."Caption"								AS "TypeCaption"\,
+				"t"."Name"									AS "TypeName"\,
+				0\:\:int8										AS "rn"
+				\}
+				\#if\(Count\) \{
+				count\(*\) AS "cnt"
+				\}
+			FROM "Types" AS "t"
+			\#if\(Caption || Normal && request.SortedBy\("TypeCaption"\)\) \{
+			CROSS JOIN "Localization"\("t"."Caption"\, \#param\(locale\)\) AS "lCaption"
+			\}
+			\#if\(OnlyEnabledForRoutes\) \{
+			INNER JOIN "KrSettingsRouteExtraTaskTypes" AS "krsrett" ON "krsrett"."TaskTypeID" = "t"."ID"
+			\}
+			WHERE \(\(\(xpath\('/cardType/@flags'\, "t"."Definition"\)\:\:text[]\)\:\:int[]\)[1] & 16\) = 0 -- Проверяем что тип не hidden
+				AND \(\(\(xpath\('/cardType/@type'\, "t"."Definition"\)\:\:text[]\)\:\:int[]\)[1]\) = 2
+				\#param\(Name\, "t"."Name"\)
+				\#param\(Caption\, "lCaption"."Value"\)
+				and \(true \#param\(NameOrCaption\, "t"."Name"\) or true \#param\(NameOrCaption\, "lCaption"."Value"\)\)
+			\#if\(Normal\) \{
+			ORDER BY \#order_by
+			\}
+			\#if\(PageOffset\) \{
+			OFFSET \#param\(PageOffset\) - 1 LIMIT \#param\(PageLimit\)
+			\}
+		}
+		#role(RoleID:7ff52dc0-ff6a-4c9d-ba25-b562c370004d, ViewID:b2a82532-c275-4c13-b087-91aa10bfcfd8) 
+	}
+}

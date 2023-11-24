@@ -1,0 +1,72 @@
+#tessa_exchange_format(Version:1, CreationTime:2020-11-03T12\:00\:42) {
+	#exchange_view(RowID:d3ea70c0-0f72-41d3-8235-b0563dababdb, Alias:PnrExistingCardStates, Caption:Состояния карточек, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2020-11-03T11\:30\:24, GroupName:Pnr) {
+		#metadata {
+			#view(DefaultSortColumn: ExistingCardStateName, Paging: always, PageLimit: 20, RowCountSubset: Count, QuickSearchParam: Name, MultiSelect: true)
+
+			#column(Alias: ExistingCardStateID, Caption: ID, Hidden: true, Type: Guid)
+			#column(Alias: ExistingCardStateName, Caption: Состояние карточки, Type: String, SortBy: ecs.Name)
+			#column(Alias: rn, Hidden: true, Type: Int64)
+
+			#param(Alias: Name, Caption: Название, Hidden: false, Type: String, Multiple: false)
+			#param(Alias: CardType, Caption: Тип карточки, Hidden: true, Type: Guid, Multiple: false, RefSection: PnrExistingCardStates) {
+				#autocomplete(View: PnrExistingCardStates, Param: Caption, PopupColumns: 1 2)
+				#dropdown(View: PnrExistingCardStates, PopupColumns: 1 2)
+			}
+
+			#reference(ColPrefix: ExistingCardState, RefSection: PnrExistingCardStates, DisplayValueColumn: ExistingCardStateName, IsCard: true, OpenOnDoubleClick: true)
+
+			#subset(Alias: Count) 
+		}
+		#description {}
+		#ms_query {
+			DECLARE @FdSatelliteCommonInfo TABLE \(CountStateID INT\, ID UNIQUEIDENTIFIER\, StateName VARCHAR\(MAX\)\);
+
+			INSERT INTO @FdSatelliteCommonInfo \(CountStateID\, ID\, StateName\)
+
+				SELECT COUNT\(StateID\) as CountStateID\, ID\, StateName
+				FROM FdSatelliteCommonInfo
+				group by ID\, StateName
+				order by StateName\, CountStateID;
+
+			WITH fsci AS
+			\(
+			   SELECT *\,
+			         ROW_NUMBER\(\) OVER \(PARTITION BY StateName ORDER BY CountStateID DESC\) AS rn
+			   FROM @FdSatelliteCommonInfo
+			\)
+
+			select *
+			from
+			\(
+				SELECT 
+					\#if\(Normal\)\{
+						ecs.[ID] as ExistingCardStateID\,
+						ecs.[Name] as ExistingCardStateName\,
+						row_number\(\) over \(order by \#order_by\) as rn
+				      \}
+				      
+				      \#if\(Count\)\{
+				      		count\(*\) as cnt
+				      \}
+				      
+				  FROM 
+				  	\(
+				  		SELECT ID as ID\,
+				  		StateName as Name
+				  		FROM fsci
+				  		WHERE rn = 1
+				  		\) ecs
+				  	
+				  	where 1=1
+				  	\#param\(Name\, ecs.Name\)
+			  \) t
+			  
+			  
+			  \#if\(PageOffset\) \{
+				where rn >= \#param\(PageOffset\) and rn < \(\#param\(PageOffset\) + \#param\(PageLimit\)\)
+			\}
+		}
+		#pg_query {}
+		#role(RoleID:7ff52dc0-ff6a-4c9d-ba25-b562c370004d, ViewID:d3ea70c0-0f72-41d3-8235-b0563dababdb) 
+	}
+}

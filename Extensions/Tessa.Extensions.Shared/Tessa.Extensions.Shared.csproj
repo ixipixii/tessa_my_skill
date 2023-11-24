@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>3.0.3</Version>
+    <Authors>Syntellect</Authors>
+    <Company>Syntellect</Company>
+    <Product>Document automation system Tessa</Product>
+    <Copyright>Copyright © Syntellect 2019</Copyright>
+    <PackageProjectUrl>https://mytessa.ru/</PackageProjectUrl>
+    <RestoreSources>$(RestoreSources);../../Bin/packages;https://api.nuget.org/v3/index.json</RestoreSources>
+    <NoWarn>$(NoWarn);1998</NoWarn>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Helpers\ServiceConnectionData.cs" />
+    <Compile Remove="Interfaces\IApiSynchronizationPlugin.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Tessa.Extensions.Default.Shared\Tessa.Extensions.Default.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
+  </ItemGroup>
+
+  <Target Condition="'$(OS)' == 'Windows_NT'" Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="if exist &quot;$(ProjectDir)pre-build.bat&quot; call &quot;$(ProjectDir)pre-build.bat&quot; &quot;$(ProjectDir)..\..\&quot;" />
+  </Target>
+
+  <Target Condition="'$(OS)' == 'Unix'" Name="PreBuild-linux" AfterTargets="PreBuildEvent">
+    <Exec Command=":" />
+  </Target>
+
+  <Target Condition="'$(OS)' == 'Windows_NT'" Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="(mkdir &quot;$(ProjectDir)..\..\Bin\Tessa.Extensions.Client&quot;)&gt;nul 2&gt;&amp;1&#xD;&#xA;xcopy &quot;$(OutDir)$(TargetFileName)&quot; &quot;$(ProjectDir)..\..\Bin\Tessa.Extensions.Client&quot; /Y /R /Q&gt;nul&#xD;&#xA;xcopy &quot;$(OutDir)$(TargetName).pdb&quot; &quot;$(ProjectDir)..\..\Bin\Tessa.Extensions.Client&quot; /Y /R /Q&gt;nul&#xD;&#xA;&#xD;&#xA;(mkdir &quot;$(ProjectDir)..\..\Bin\Tessa.Extensions.Server&quot;)&gt;nul 2&gt;&amp;1&#xD;&#xA;xcopy &quot;$(OutDir)$(TargetFileName)&quot; &quot;$(ProjectDir)..\..\Bin\Tessa.Extensions.Server&quot; /Y /R /Q&gt;nul&#xD;&#xA;xcopy &quot;$(OutDir)$(TargetName).pdb&quot; &quot;$(ProjectDir)..\..\Bin\Tessa.Extensions.Server&quot; /Y /R /Q&gt;nul&#xD;&#xA;&#xD;&#xA;if exist &quot;$(ProjectDir)post-build.bat&quot; call &quot;$(ProjectDir)post-build.bat&quot; &quot;$(ProjectDir)..\..\&quot;" />
+  </Target>
+
+  <Target Condition="'$(OS)' == 'Unix'" Name="PostBuild-linux" AfterTargets="PostBuildEvent">
+    <Exec Command=":" />
+  </Target>
+
+</Project>

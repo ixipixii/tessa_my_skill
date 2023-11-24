@@ -1,0 +1,131 @@
+﻿[
+  {
+    ".method::int": 2,
+    "Card": {
+      "Created::dtm": "2020-08-28T15:49:06.72Z",
+      "CreatedByID::uid": "11111111-1111-1111-1111-111111111111",
+      "CreatedByName": "System",
+      "Files": null,
+      "Flags::int": 0,
+      "ID::uid": "b6a92dd4-e0e1-4795-ac48-297e854b2169",
+      "Info": null,
+      "Modified::dtm": "2020-08-28T15:49:06.72Z",
+      "ModifiedByID::uid": "11111111-1111-1111-1111-111111111111",
+      "ModifiedByName": "System",
+      "Permissions": null,
+      "Sections": {
+        "FmAddTopicInfoVirtual": {
+          "Fields": {
+            "Description": null,
+            "Title": null
+          }
+        },
+        "FmTopicParticipantsInfoVirtual": {
+          "Fields": {
+            "IsModerator": false,
+            "ReadOnly": false
+          }
+        },
+        "FmTopicParticipantsVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "FmTopicRoleParticipantsInfoVirtual": {
+          "Fields": {
+            "IsSubscribe": false,
+            "ReadOnly": false
+          }
+        },
+        "KrActiveTasksVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrAdditionalApprovalInfoUsersCardVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrAdditionalApprovalUsersCardVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrApprovalCommonInfoVirtual": {
+          "Fields": {
+            "ApprovedBy": null,
+            "AuthorComment": null,
+            "AuthorID": null,
+            "AuthorName": null,
+            "CurrentApprovalStageRowID": null,
+            "DisapprovedBy": null,
+            "MainCardID": null,
+            "StateChangedDateTimeUTC": null,
+            "StateID::int": 0,
+            "StateName": "$KrStates_Doc_Draft"
+          }
+        },
+        "KrApprovalHistoryVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrDialogButtonSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrForkNestedProcessesSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrForkSecondaryProcessesSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPerformersVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrStagesVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrUniversalTaskOptionsSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "PnrProjects": {
+          "Fields": {
+            "Code": "НЛ/3",
+            "Description": null,
+            "EndDate": null,
+            "EstimatorID": null,
+            "EstimatorName": null,
+            "GIPID::uid": "0f050a21-7393-4024-8885-6d8412b2be9b",
+            "GIPName": "Колпаков Илья В.",
+            "InArchive": false,
+            "IsHidden": null,
+            "MDMKey": "197d080b-a1e4-11e7-bf8f-005056ae703c",
+            "Name": "Life Лесная_3 очередь_ корпус 3.2",
+            "ParentProjectID::uid": "d27cf47f-9e05-4e4d-8a2c-0d4aae287d51",
+            "ParentProjectName": "Life Лесная_3 очередь",
+            "ProjectAdministratorID::uid": "4c552576-51a5-43b6-8e26-e330620b4ea0",
+            "ProjectAdministratorName": "Кямяря С. И.",
+            "ProjectEconomistID": null,
+            "ProjectEconomistName": null,
+            "ProjectManagerID::uid": "593f66ed-151c-4092-8e31-624878f23bcc",
+            "ProjectManagerName": "Санкин Н.В."
+          }
+        }
+      },
+      "TaskHistory": null,
+      "TaskHistoryGroups": null,
+      "Tasks": null,
+      "Topics": null,
+      "TypeCaption": "Проект",
+      "TypeID::uid": "c17a5031-e7d8-4ea6-b03f-4c88b4bd6063",
+      "TypeName": "PnrProject",
+      "Version::int": 0
+    },
+    "FileMapping": null,
+    "Info": {
+      ".importVersion::int": 1
+    }
+  }
+]

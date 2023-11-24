@@ -1,0 +1,55 @@
+﻿[
+  {
+    ".method::int": 2,
+    "Card": {
+      "Created::dtm": "2020-08-18T14:56:42.123Z",
+      "CreatedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "CreatedByName": "Admin",
+      "Files": null,
+      "Flags::int": 0,
+      "ID::uid": "f195932b-1978-48f1-bb4e-59e78ffccb5e",
+      "Info": null,
+      "Modified::dtm": "2020-08-18T14:56:42.123Z",
+      "ModifiedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "ModifiedByName": "Admin",
+      "Permissions": null,
+      "Sections": {
+        "ContextRoles": {
+          "Fields": {
+            "SqlText": "SELECT [RegistratorID], [RegistratorName]\r\nFROM [DocumentCommonInfo] WITH(NOLOCK)\r\nWHERE [ID] = #context_card_id\r\n  #and_user_id_is([RegistratorID])",
+            "SqlTextForCard": null,
+            "SqlTextForUser": null
+          }
+        },
+        "RoleDeputies": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "RoleDeputiesVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Roles": {
+          "Fields": {
+            "Description": null,
+            "Hidden": false,
+            "Name": "Регистратор документа",
+            "TypeID::int": 4
+          }
+        }
+      },
+      "TaskHistory": null,
+      "TaskHistoryGroups": null,
+      "Tasks": null,
+      "Topics": null,
+      "TypeCaption": "$CardTypes_TypesNames_ContextRole",
+      "TypeID::uid": "b672e00c-0241-0485-9b07-4764bc96c9d3",
+      "TypeName": "ContextRole",
+      "Version::int": 0
+    },
+    "FileMapping": null,
+    "Info": {
+      ".importVersion::int": 6
+    }
+  }
+]

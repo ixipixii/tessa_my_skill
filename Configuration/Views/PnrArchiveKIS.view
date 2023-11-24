@@ -1,0 +1,159 @@
+#tessa_exchange_format(Version:1, CreationTime:2020-12-29T07\:46\:31) {
+	#exchange_view(RowID:d5d6093c-d90d-4610-889c-4f036f28af34, Alias:PnrArchiveKIS, Caption:Архив КИС, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2020-12-29T07\:45\:56, GroupName:Pnr) {
+		#metadata {
+			#view(DefaultSortColumn: DocNumber, DefaultSortDirection: asc, Paging: always, QuickSearchParam: QuickSearch, RowCountSubset: cnt)
+
+			#column(Alias: KISAuthorID, Caption: AuthorID, Hidden: true)
+			#column(Alias: KISAuthorInTessaID, Caption: AuthorInTessaID, Hidden: true)
+			#column(Alias: KISAuthorInTessaName, Caption: AuthorInTessaName, Hidden: true, SortBy: tt.KISAuthorInTessaName)
+
+			#column(Alias: DocID, Hidden: true)
+			#column(Alias: DocNumber, Caption: Номер, SortBy: tt.DocNumber)
+
+			#column(Alias: DocSubject, Caption: Документ, MaxLength: 100)
+
+			#column(Alias: KISAuthorFio, Caption: Автор)
+			#column(Alias: KISAuthorLogin, Caption: AuthorLogin, Hidden: true)
+			#column(Alias: KISAuthorEmail, Caption: AuthorEmail, Hidden: true)
+
+			#column(Alias: KISEditorFio, Caption: Редактор)
+			#column(Alias: KISEditorLogin, Caption: EditorLogin, Hidden: true)
+			#column(Alias: KISEditorEmail, Caption: EditorEmail, Hidden: true)
+
+			#column(Alias: KISNumber, Caption: KISNumber, Hidden: true)
+
+			#column(Alias: KISEditorID, Caption: EditorID, Hidden: true)
+			#column(Alias: KISEditorInTessaID, Caption: EditorInTessaID, Hidden: true)
+			#column(Alias: KISEditorInTessaName, Caption: EditorInTessaName, Hidden: true)
+
+			#column(Alias: KISID, Hidden: true)
+			#column(Alias: KISCreated, Caption: Дата создания, SortBy: tt.KISCreated, Type: Date)
+			#column(Alias: KISModified, Caption: Дата последнего изменения, SortBy: tt.Modified, Type: Date, Hidden: true)
+
+			#column(Alias: KISAmount, Caption: Сумма, SortBy: tt.KISAmount, Hidden: true)
+			#column(Alias: KISOrganizationID, Hidden: true)
+			#column(Alias: KISOrganizationName, Caption: Организация ГК Пионер, Hidden: true)
+			#column(Alias: KISPartnerID, Hidden: true)
+			#column(Alias: KISPartnerName, Caption: Контрагент, Hidden: true)
+
+			#column(Alias: KISExtID, Hidden: true)
+			#column(Alias: rn, 	Caption: Номер строки, 	Hidden: true)
+
+			#column(Alias: KISProjectID, Hidden: true)
+			#column(Alias: KISProjectName, Caption: Проект, Hidden: true)
+			#column(Alias: KISDate, Hidden: true)
+
+			#param(Alias: Number, Caption: Номер, Type: nvarchar, Multiple: true)
+			#param(Alias: Subject, Caption: Название, Type: nvarchar, Multiple: true)
+			#param(Alias: Created, Caption: Дата создания, Type: Date, Multiple: true)
+			#param(Alias: Author, Caption: Создал, Multiple: true, Type: Guid, RefSection: PersonalRoles) {
+				#autocomplete(View: Users, Param: Name, PopupColumns: 1 4)
+			}
+				  
+			#param(Alias: QuickSearch, Caption: Быстрый поиск, Hidden: false, Type: nvarchar, Multiple: true)
+				  
+			#reference(ColPrefix: KIS, RefSection: PnrArchiveKIS, DisplayValueColumn: DocSubject, IsCard: true, OpenOnDoubleClick: true)
+
+			#subset(Alias: ByAuthor, Caption: По автору, RefParam: Author, RefColumn: SubAuthorID, CaptionColumn: SubAuthorFio, CountColumn: SubCnt)
+
+			#subset(Alias: cnt)
+		}
+		#description {}
+		#ms_query {
+			DECLARE @DocumentTypeID uniqueidentifier = '9c8da932-22bc-45d1-9cb7-6edb7d97698b'
+			DECLARE @Project nvarchar\(max\) = [dbo].[GetString]\(N'Views_Registers_Project_Sql'\, \#param\(locale\)\);
+			\#if\(QuickSearch\) \{
+			declare @QuickSearchParam nvarchar\(4000\) = \#param\(QuickSearch\)
+			\}
+
+			SELECT tt.*
+			FROM
+			\(
+				SELECT
+					tt.*
+					\#if\(normal\) \{
+				    \,row_number\(\) OVER \(ORDER BY \#order_by\)					AS rn
+				    \}
+				FROM
+				\(
+					SELECT
+					\#if\(cnt\) \{ 
+						Count\(*\)											AS [cnt]
+					\}
+					
+					\#if\(ByAuthor\)\{
+						COALESCE\([t].[AuthorInTessaID]\, NULL\) 				AS [SubAuthorID]\,
+			        	COALESCE\([t].[AuthorInTessaName]\, N'Не указан'\)		AS [SubAuthorFio]\,
+			    		count\(*\)											AS [SubCnt]
+			    	\}
+			    	
+					\#if\(normal\) \{
+					t.ID as KISID\,
+					t.Number as KISNumber\,
+				    t.Amount as KISAmount\,
+				    t.OrganizationID as KISOrganizationID\,
+				    t.OrganizationName as KISOrganizationName\,
+				    t.PartnerID as KISPartnerID\,
+				    t.PartnerName as KISPartnerName\,
+					t.ExtID as KISExtID\,
+					t.Created as KISCreated\,
+					t.Modified as KISModified\,
+					
+					t.AuthorInTessaID as KISAuthorInTessaID\,
+					t.AuthorInTessaName as KISAuthorInTessaName\,
+					
+					t.AuthorID as KISAuthorID\,
+					t.AuthorFio as KISAuthorFio\,
+					t.AuthorLogin as KISAuthorLogin\,
+					t.AuthorEmail as KISAuthorEmail\,
+					
+					t.EditorInTessaID as KISEditorInTessaID\,
+					t.EditorInTessaName as KISEditorInTessaName\,
+					
+					t.EditorID as KISEditorID\,
+					t.EditorFio as KISEditorFio\,
+					t.EditorLogin as KISEditorLogin\,
+					t.EditorEmail as KISEditorEmail\,
+					
+					t.ProjectID		as KISProjectID\,
+					t.ProjectName	as KISProjectName\,
+					t.Date			as KISDate\,
+				    -- Doc - DocumentCommonInfo
+					d.ID						as DocID\,
+				    d.Number					as DocNumber\,
+				    d.Subject					as DocSubject
+				    \}
+				from PnrArchiveKIS t with\(nolock\)
+				inner join Instances i with\(nolock\) on i.ID = t.ID
+			    -- inner join \(select ID from PnrGetUserPermissionsCards \(\#param\(CurrentUserID\)\, @DocumentTypeID\)\) pcards on pcards.ID = i.ID
+				left join DocumentCommonInfo d with\(nolock\) on d.ID = t.ID
+				where 1=1
+					\#param\(Number\, d.Number\)
+				    \#param\(Subject\, d.Subject\)
+				    \#param\(Created\, t.Created\)
+				    \#param\(Author\, t.AuthorInTessaID\)
+				    \#if\(QuickSearch && !string.IsNullOrWhiteSpace\(QuickSearch.Value\)\) \{
+						AND \(
+							-- Номер
+							1 = 1 \#param\(QuickSearch\, d.Number\) 
+							-- Наименование
+							OR 1 = 1 \#param\(QuickSearch\, d.Subject\) 
+						\)
+						\}
+					\#if\(ByAuthor\) \{
+						GROUP BY [t].[AuthorInTessaID]\, [t].[AuthorInTessaName]
+					\}
+				\) AS [tt]
+			\) AS [tt]
+			\#if\(PageOffset\) \{
+			WHERE [tt].[rn] >= \#param\(PageOffset\) AND [tt].[rn] < \(\#param\(PageOffset\) + \#param\(PageLimit\)\)
+			\}
+			\#if\(normal\) \{
+			ORDER BY \#order_by
+			\}
+		}
+		#pg_query {}
+		#role(RoleID:c365e148-71f9-4731-8025-3aeb5225af9f, ViewID:d5d6093c-d90d-4610-889c-4f036f28af34) 
+		#role(RoleID:b620333e-0fcb-4b69-9576-02208bc8d0d4, ViewID:d5d6093c-d90d-4610-889c-4f036f28af34) 
+	}
+}

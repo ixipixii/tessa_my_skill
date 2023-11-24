@@ -1,0 +1,230 @@
+#tessa_exchange_format(Version:1, CreationTime:2020-12-11T17\:52\:12) {
+	#exchange_view(RowID:8dab0a1f-0e1b-436a-9c30-05076643be3c, Alias:PnrServiceNotes, Caption:Служебные записки, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2020-12-11T17\:51\:49, GroupName:Pnr) {
+		#metadata {
+			#view(DefaultSortColumn: DocNumber, DefaultSortDirection: desc, Paging: always, RowCountSubset: Count, QuickSearchParam: Number)
+			#column(Alias: DocID, Hidden: true)
+			#column(Alias: DocNumber, Caption: №, Hidden: true, SortBy: d.Number)
+			#column(Alias: DocFullNumber, Caption: Номер)
+			#column(Alias: SNServiceNoteTypeID, Hidden: true)
+			#column(Alias: SNServiceNoteTypeName, Caption: Тип служебной записки)
+			#column(Alias: SNServiceNoteThemeID, Hidden: true)
+			#column(Alias: SNServiceNoteThemeName, Caption: Тематика СЗ)
+			#column(Alias: DocSubject, Caption: Тема)
+			#column(Alias: SNProjectID, Hidden: true)
+			#column(Alias: SNProjectName, Caption: Проект)
+			#column(Alias: SNProjectDate, Caption: Дата проекта, Type: Date)
+			#column(Alias: DocAuthorID, Hidden: true)
+			#column(Alias: DocAuthorName, Caption: Создал)
+			#column(Alias: InstModified, Caption: Изменено, Type: Date)
+			#column(Alias: FdID, Hidden: true)
+			#column(Alias: FdMainCardId, Hidden: true)
+			#column(Alias: FdStateID, Hidden: true)
+			#column(Alias: FdStateName, Caption: Статус)
+			#column(Alias: DocCreationDate, Caption: Дата создания, Type: Date)
+			#column(Alias: SNID, Hidden: true)
+			#column(Alias: SNSummary, Caption: Краткое содержание, Hidden: true)
+			#column(Alias: SNOrganizationID, Hidden: true)
+			#column(Alias: SNOrganizationName, Caption: Организация ГК Пионер, Hidden: true)
+			#column(Alias: SNDepartmentID, Hidden: true)
+			#column(Alias: SNDepartmentName, Caption: Подразделение, Hidden: true)
+			#column(Alias: SNDepartmentIdx, Hidden: true)
+			#column(Alias: SNDestinationDepartmentID, Hidden: true)
+			#column(Alias: SNDestinationDepartmentName, Caption: Подразделение адресата, Hidden: true)
+			#column(Alias: SNDestinationDepartmentIdx, Hidden: true)
+			#column(Alias: SNDestinationID, Hidden: true)
+			#column(Alias: SNDestinationName, Caption: Адресат, Hidden: true)
+			#column(Alias: SNComments, Caption: Комментарии, Hidden: true)
+			#column(Alias: SNGroupDocumentsID, Hidden: true)
+			#column(Alias: SNGroupDocumentsName, Caption: Группа документов, Hidden: true)
+			#column(Alias: SNLegalEntityIndexID, Hidden: true)
+			#column(Alias: SNLegalEntityIndexIdx, Hidden: true)
+			#column(Alias: SNWriteOffID, Hidden: true)
+			#column(Alias: SNWriteOffName, Caption: Списать в дело, Hidden: true)
+			#column(Alias: SNWriteOffIndex, Caption: Индекс, Hidden: true)
+			#column(Alias: SNThemeID, Hidden: true)
+			#column(Alias: SNThemeName, Caption: Тематика служебной записки, Hidden: false)
+			#column(Alias: SNCFOID, Hidden: true)
+			#column(Alias: SNCFOName, Caption: ЦФО, Hidden: true)
+			#column(Alias: SNOrganizationBlockID, Hidden: true)
+			#column(Alias: SNOrganizationBlockName, Caption: Организация в блоке, Hidden: true)
+			#param(Alias: IsAuthor, Caption: Я создатель, Type: Boolean, AllowedOperands: IsTrue IsFalse)
+			#param(Alias: Number, Caption: Номер, Type: nvarchar, Multiple: true)
+			#param(Alias: ServiceNoteTheme, Caption: Тематика СЗ, Multiple: true, Type: Guid, RefSection: PnrServiceNoteThemes) {
+				#autocomplete(View: PnrServiceNoteThemes, Param: Name, PopupColumns: 1)
+			}
+			#param(Alias: Subject, Caption: Заголовок, Multiple: true, Type: $DocumentCommonInfo.Subject)
+			#param(Alias: Project, Caption: Проект, Multiple: true, Type: Guid, RefSection: PnrProjects) {
+				#autocomplete(View: PnrProjects, Param: Name, PopupColumns: 1 2)
+			}
+			#param(Alias: ProjectDate, Caption: Дата проекта, Multiple: true, Type: Date)
+			#param(Alias: Destination, Caption: Адресат, Multiple: true, Type: Guid, RefSection: PersonalRoles) {
+				#autocomplete(View: PersonalRoles, Param: Name, PopupColumns: 1)
+			}
+			#param(Alias: DestinationDepartment, Caption: Подразделение адресата, Multiple: true, Type: Guid, RefSection: DepartmentRoles) {
+				#autocomplete(View: Departments, Param: Name, PopupColumns: 1)
+			}
+			#param(Alias: Author, Caption: Создал, Multiple: true, Type: Guid, RefSection: PersonalRoles) {
+				#autocomplete(View: Users, Param: Name, PopupColumns: 1 4)
+			}
+			#param(Alias: State, Caption: Состояние, Hidden: false, Type: uniqueidentifier, RefSection: PnrFdCardStatesNotes, Multiple: true, AllowedOperands: Equality NonEquality IsNull IsNotNull) {
+				#autocomplete(View: PnrFdCardStatesNotes, Param: Name, PopupColumns: 1 2)
+				#dropdown(View: PnrFdCardStatesNotes, PopupColumns: 1 2)
+			}
+			#param(Alias: ServiceNoteType, Caption: Вид документа, Multiple: true, Type: Guid, RefSection: PnrServiceNoteTypes) {
+				#autocomplete(View: PnrServiceNoteTypes, Param: Name, PopupColumns: 1 2)
+			}
+			#param(Alias: SNTheme, Caption: Тематика СЗ, Multiple: true, Type: Guid, RefSection: PnrServiceNoteThemes) {
+				#autocomplete(View: PnrServiceNoteThemes, Param: Name, PopupColumns: 1 2)
+			}
+			#reference(ColPrefix: Doc, RefSection: DocumentCommonInfo, DisplayValueColumn: DocNumber, IsCard: true, OpenOnDoubleClick: true)
+			#reference(ColPrefix: Reg, RefSection: PnrServiceNote, DisplayValueColumn: RegRegistrationDate, IsCard: true, OpenOnDoubleClick: true)
+			#subset(Alias: ByState, Caption: По статусу, RefParam: State, RefColumn: StateID, CaptionColumn: StateName, CountColumn: SubCnt)
+			#subset(Alias: ByServiceNoteType, Caption: По виду документа, RefParam: ServiceNoteType, RefColumn: ServiceNoteTypeID, CaptionColumn: ServiceNoteTypeName, CountColumn: SubCnt)
+			#subset(Alias: Count)
+		}
+		#description {}
+		#ms_query {
+			;WITH
+			-- ДОЧЕРНИЕ ПРОЕКТЫ
+			     childs AS \(
+			         SELECT p.ID
+			         FROM PnrProjects p
+			         WHERE 1=1 
+			         \#param\(Project\, p.id\)
+			         UNION ALL
+			         SELECT p.ID
+			         FROM PnrProjects p
+			                INNER JOIN childs c
+			                    ON p.ParentProjectID = c.ID
+			     \)
+
+			select
+			    \#if\(Normal\) \{
+			    -- SN - PnrServiceNotes
+			    t.ID						as SNID\,
+			    t.Summary					as SNSummary\,
+			    t.OrganizationID			as SNOrganizationID\,
+				t.OrganizationName			as SNOrganizationName\,
+				t.ProjectID					as SNProjectID\,
+				t.ProjectName				as SNProjectName\,
+				t.DepartmentID				as SNDepartmentID\,
+				t.DepartmentName			as SNDepartmentName\,
+				t.DepartmentIdx				as SNDepartmentIdx\,
+				t.DestinationDepartmentID	as SNDestinationDepartmentID\,
+				t.DestinationDepartmentName	as SNDestinationDepartmentName\,
+				t.DestinationDepartmentIdx	as SNDestinationDepartmentIdx\,
+				t.DestinationID				as SNDestinationID\,
+				t.DestinationName			as SNDestinationName\,
+			    t.Comments					as SNComments\,
+			    t.GroupDocumentsID			as SNGroupDocumentsID\,
+				t.GroupDocumentsName		as SNGroupDocumentsName\,
+				t.ProjectDate				as SNProjectDate\,
+				t.LegalEntityIndexID		as SNLegalEntityIndexID\,
+				t.LegalEntityIndexIdx		as SNLegalEntityIndexIdx\,
+				t.ServiceNoteTypeID			as SNServiceNoteTypeID\,
+				t.ServiceNoteTypeName		as SNServiceNoteTypeName\,
+				t.WriteOffID				as SNWriteOffID\,
+				t.WriteOffName				as SNWriteOffName\,
+				t.WriteOffIdx				as SNWriteOffIndex\,
+				t.ServiceNoteThemeID		as SNThemeID\,
+				t.ServiceNoteThemeName		as SNThemeName\,
+				t.CFOID						as SNCFOID\,
+				t.CFOName					as SNCFOName\,
+				t.OrganizationBlockID		as SNOrganizationBlockID\,
+				t.OrganizationBlockName		as SNOrganizationBlockName\,
+				-- Doc - DocumentCommonInfo
+				d.ID						as DocID\,
+			    d.Number					as DocNumber\,
+			    d.FullNumber				as DocFullNumber\,
+			    d.CreationDate				as DocCreationDate\,
+			    d.AuthorID					as DocAuthorID\,
+			    d.AuthorName				as DocAuthorName\,
+			    d.Subject					as DocSubject\,
+			    -- Fd - FdSatelliteCommonInfo
+			    f.ID						as FdID\,
+			    f.MainCardId				as FdMainCardId\,
+			    f.StateID					as FdStateID\,
+			    f.StateName					as FdStateName\,
+			    -- Inst - Instances
+			    i.Modified					as InstModified
+			    \} 
+			    \#if\(Count | ByState | ByServiceNoteType\)\{
+			    	[t2].*
+			    \}
+			from
+			\(
+			    select
+			        \#if\(Normal\) \{
+			        t.ID\,
+			        row_number\(\) over \(order by \#order_by\) as rn
+			        \}
+			        \#if\(Count\) \{
+			        count\(*\) as cnt
+			        \}
+			        \#if\(ByState\)\{
+			        	COALESCE\([f].[StateID]\, NULL\) 							as [StateID]\,
+			        	COALESCE\([f].[StateName]\, N'Не указано'\) 				as [StateName]\,
+			    		count\(*\)												AS [SubCnt]
+			    	\}
+			        \#if\(ByServiceNoteType\)\{
+			        	COALESCE\([t].[ServiceNoteTypeID]\, NULL\) 						as [ServiceNoteTypeID]\,
+			        	COALESCE\([t].[ServiceNoteTypeName]\, N'Не указан'\) 				as [ServiceNoteTypeName]\,
+			    		count\(*\)												AS [SubCnt]
+			    	\}
+			    from PnrServiceNote t with\(nolock\)
+			    left join FdSatelliteCommonInfo f with\(nolock\) on f.MainCardId = t.ID
+			    left join DocumentCommonInfo d with\(nolock\) on d.ID = t.ID
+			    left join Instances i with\(nolock\) on i.ID = t.ID
+			    where d.CardTypeID = 'dceb0c7e-4147-410c-8a6c-f30781226007'
+			        \#param\(Number\, d.FullNumber\)
+			        \#param\(ServiceNoteTheme\, t.ServiceNoteThemeID\)
+			        \#param\(Subject\, d.Subject\)
+			        \#if\(Project\) 
+			        \{ 
+			        	AND t.ProjectID IN 
+			        	\(
+			        		SELECT ID FROM childs
+			        	\)
+			        	
+			        \}
+			        \#param\(ProjectDate\, t.ProjectDate\)
+			        \#param\(Destination\, t.DestinationID\)
+			        \#param\(DestinationDepartment\, t.DestinationDepartmentID\)
+					\#param\(Author\, d.AuthorID\)
+			        \#param\(State\, f.StateID\)
+			        \#param\(SNTheme\, t.ServiceNoteThemeID\)
+			        \#param\(ServiceNoteType\, t.ServiceNoteTypeID\)
+			        \#if\(IsAuthor\) \{
+			        	\#if\(IsAuthor.CriteriaName == "IsTrue"\)
+			        	\{
+			        		AND d.AuthorID = \#param\(CurrentUserID\)
+			        	\}
+			        	\{
+			        		AND \(d.AuthorID IS NULL OR d.AuthorID <> \#param\(CurrentUserID\)\)
+			        	\}
+			        \}
+			        \#if\(ByState\) \{
+						GROUP BY [f].[StateID]\, [f].[StateName]
+					\}
+			        \#if\(ByServiceNoteType\) \{
+						GROUP BY [t].[ServiceNoteTypeID]\, [t].[ServiceNoteTypeName]
+					\}
+			\) t2
+			\#if\(Normal\) \{
+			left join PnrServiceNote t with\(nolock\) on t.ID = t2.ID
+			left join FdSatelliteCommonInfo f with\(nolock\) on f.MainCardId = t2.ID
+			left join DocumentCommonInfo d with\(nolock\) on d.ID = t2.ID
+			left join Instances i with\(nolock\) on i.ID = t2.ID
+			\}
+			\#if\(PageOffset\) \{
+			where t2.rn >= \#param_expr\(PageOffset\) and t2.rn < \(\#param_expr\(PageOffset\) + \#param_expr\(PageLimit\)\)
+			\}
+			\#if\(Normal\) \{
+			order by t2.rn
+			\}
+			;
+		}
+		#pg_query {}
+		#role(RoleID:c365e148-71f9-4731-8025-3aeb5225af9f, ViewID:8dab0a1f-0e1b-436a-9c30-05076643be3c) 
+	}
+}

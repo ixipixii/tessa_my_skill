@@ -1,0 +1,295 @@
+#tessa_exchange_format(Version:1, CreationTime:2020-12-22T23\:33\:50) {
+	#exchange_view(RowID:2d096965-7170-41c4-ba62-604b288c883b, Alias:PnrDocumentsAllTypes, Caption:Все документы, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2020-12-22T23\:29\:27, GroupName:Pnr) {
+		#metadata {
+			#view(DefaultSortColumn: CreationDate, DefaultSortDirection: desc, Paging: always, RowCountSubset: Count, MultiSelect: true, QuickSearchParam: QuickSearch)
+			#column(Alias: DocID, Hidden: true, Type: $DocumentCommonInfo.ID)
+			#column(Alias: DocNumber, Caption: $Views_Registers_Number, Type: $DocumentCommonInfo.FullNumber)
+			#column(Alias: TypeName, Caption: $Views_Registers_Type, Type: $DocumentCommonInfo.DocTypeTitle, Localizable: true)
+			#column(Alias: DocSubject, Caption: Название, Type: $DocumentCommonInfo.Subject)
+
+			#column(Alias: ProjectID, Hidden: true)
+			#column(Alias: ProjectName, Caption: Проект, Type: nvarchar)
+
+			#column(Alias: PartnerCard, Caption: Контрагент, Type: nvarchar)
+
+			#column(Alias: FdState, Caption: Состояние, Type: $KrApprovalCommonInfo.StateName, Localizable: true)
+			#column(Alias: DocDescription, Caption: $Views_Registers_DocDescription, Hidden: true, Type: String)
+			#column(Alias: PartnerID, Hidden: true, Type: $DocumentCommonInfo.PartnerID)
+			#column(Alias: PartnerName, Hidden: true, Caption: $Views_Registers_Partner, Type: $DocumentCommonInfo.PartnerName)
+			#column(Alias: AuthorID, Hidden: true, Type: $DocumentCommonInfo.AuthorID)
+			#column(Alias: AuthorName, Caption: $Views_Registers_Author, Type: $DocumentCommonInfo.AuthorName)
+			#column(Alias: RegistratorID, Hidden: true, Type: $DocumentCommonInfo.RegistratorID)
+			#column(Alias: RegistratorName, Hidden: true, Caption: $Views_Registers_Registrator, Type: $DocumentCommonInfo.RegistratorName)
+			#column(Alias: DocDate, Hidden: true, Caption: $Views_Registers_DocDate, Type: $DocumentCommonInfo.DocDate)
+			#column(Alias: CreationDate, Hidden: true, Caption: $Views_Registers_CreationDate, Type: Date, SortBy: mi.CreationDate)
+			#column(Alias: Department, Hidden: true, Caption: $Views_Registers_Department, Type: $DocumentCommonInfo.DepartmentName)
+
+			#column(Alias: Summary, Hidden: true, Caption: Краткое содержание, Type: nvarchar)
+			#column(Alias: Comments, Hidden: true, Caption: Комментарии, Type: nvarchar)
+			#column(Alias: Subject, Hidden: true, Caption: Предмет договора, Type: nvarchar)
+			#column(Alias: Credentials, Hidden: true, Caption: Полномочия по доверенности, Type: nvarchar)
+			#column(Alias: Content, Hidden: true, Caption: Содержание, Type: nvarchar)
+
+			#param(Alias: Number, Caption: $Views_Registers_Number_Param, Multiple: true, Type: $DocumentCommonInfo.FullNumber)
+			#param(Alias: Subject, Caption: $Views_Registers_Subject_Param, Multiple: true, Type: $DocumentCommonInfo.Subject)
+			#param(Alias: DocDate, Caption: $Views_Registers_DocDate_Param, Multiple: true, Type: Date)
+			#param(Alias: Author, Caption: $Views_Registers_Author_Param, Multiple: true, Type: $DocumentCommonInfo.AuthorID, RefSection: PersonalRoles, AllowedOperands: Equality NonEquality) {
+				#autocomplete(View: Users, Param: Name, PopupColumns: 1 4)
+			}
+			#param(Alias: Type, Caption: $Views_Registers_Type_Param, Multiple: true, Type: $DocumentCommonInfo.DocTypeID, RefSection: DocumentTypes) {
+				#autocomplete(View: DocumentTypes, Param: Caption, PopupColumns: 1)
+				#dropdown(View: DocumentTypes, PopupColumns: 1)
+			}
+			#param(Alias: CreationDate, Caption: $Views_Registers_CreationDate_Param, Type: $DocumentCommonInfo.CreationDate)
+
+			#param(Alias: Content, Caption: Поиск по файлам, Hidden: false, Type: nvarchar, Multiple: false, AllowedOperands: Contains)
+			#param(Alias: QuickSearch, Caption: Быстрый поиск, Hidden: false, Type: nvarchar, Multiple: true)
+
+			#reference(ColPrefix: Doc, RefSection: DocumentCommonInfo DocRefsSection, DisplayValueColumn: DocNumber, IsCard: true, OpenOnDoubleClick: true)
+			#reference(ColPrefix: Author, RefSection: Roles DurableRoles PersonalRoles, DisplayValueColumn: AuthorName, IsCard: true, OpenOnDoubleClick: false)
+			#reference(ColPrefix: Registrator, RefSection: Roles DurableRoles PersonalRoles, DisplayValueColumn: RegistratorName, IsCard: true, OpenOnDoubleClick: false)
+			#reference(ColPrefix: Partner, RefSection: Partners, DisplayValueColumn: PartnerName, IsCard: true, OpenOnDoubleClick: false)
+			#subset(Alias: Count)
+		}
+		#description {}
+		#ms_query {
+			DECLARE @UserID UNIQUEIDENTIFIER = \#param\(CurrentUserId\)
+			DECLARE @GkID UNIQUEIDENTIFIER = 'CA8A1AC2-E115-4E45-865E-FC7EE528B23C' -- ГКП \(все\)
+			DECLARE @UkID UNIQUEIDENTIFIER = '8A6B1698-0DC4-4A4C-8691-8A9F374E1A1A' -- УК ПС \(все\)
+			DECLARE @ClerkUkID UNIQUEIDENTIFIER = 'c19cfeed-ca11-47f3-9e5b-35360a290de4' -- Делопроизводитель УК ПС
+
+
+			-------------------------------------------------------------------------------------------------------
+			DECLARE @Project nvarchar\(max\) = [dbo].[GetString]\(N'Views_Registers_Project_Sql'\, \#param\(locale\)\);
+			\#if\(Content\) \{
+			declare @ContentParam nvarchar\(4000\) = \#param\(Content\)
+			\}
+			\#if\(QuickSearch\) \{
+			declare @QuickSearchParam nvarchar\(4000\) = \#param\(QuickSearch\)
+			\}
+
+			SELECT
+				\#if\(Normal\) \{
+				[t].[DocID]\,
+				[t].[DocNumber]\,
+				[t].[TypeName]\,
+				[t].[DocSubject]\,
+				COALESCE\([t].[DocNumber]\, N''\) + N'\, ' + COALESCE\([t].[DocSubject]\, N''\) AS [DocDescription]\, 	-- autocomplete
+				[t].[PartnerID]\,
+				[t].[PartnerName]\,
+				[t].[AuthorID]\,
+				[t].[AuthorName]\,
+				[t].[RegistratorID]\,
+				[t].[RegistratorName]\,
+				[t].[DocDate]\,
+				[t].[CreationDate]\,
+				[t].[Department]\,
+				[t].[FdState]\,
+				[t].[ProjectID]\,
+				[t].[ProjectName]\,
+				[t].[Summary]\,
+				[t].[Comments]\,
+				[t].[Subject]\,
+				[t].[Credentials]\,
+				[t].[Content]\,
+				[t].[PartnerCard]
+				\}
+				\#if\(Count\) \{
+				[t].[cnt]
+				\}
+			FROM \(
+				SELECT
+					\#if\(Normal\) \{
+					[mi].[ID] AS [DocID]\,
+					[mi].[FullNumber] AS [DocNumber]\,
+					coalesce\([mi].[DocTypeTitle]\, [i].[TypeCaption]\) AS [TypeName]\,
+					[mi].[Subject] AS [DocSubject]\,
+					[mi].[PartnerID]\,
+					[mi].[PartnerName]\,
+					[mi].[AuthorID]\,
+					[mi].[AuthorName]\,
+					[mi].[RegistratorID]\,
+					[mi].[RegistratorName]\,
+					[mi].[DocDate]\,
+					CAST\([mi].[CreationDate] AS date\) AS [CreationDate]\,
+					[mi].[DepartmentName] AS [Department]\,
+					COALESCE\([fd].[StateName]\, @Project\) AS [FdState]\,
+					COALESCE\([inc].[ProjectID]\, [out].[ProjectID]\, [c].[ProjectID]\, [sa].[ProjectID]\, [a].[ProjectID]\, [o].[ProjectID]\, [sn].[ProjectID]\, [e].[ProjectID]\, [tn].[ProjectID]\, [tp].[ProjectID]\) AS [ProjectID]\,
+					COALESCE\([inc].[ProjectName]\, [out].[ProjectName]\, [c].[ProjectName]\, [sa].[ProjectName]\, [a].[ProjectName]\, [o].[ProjectName]\, [sn].[ProjectName]\, [e].[ProjectName]\, [tn].[ProjectName]\, [tp].[ProjectName]\) AS [ProjectName]\,
+					COALESCE\([inc].[Summary]\, [out].[Summary]\, [sn].[Summary]\, [outuk].[Summary]\) AS [Summary]\,
+					COALESCE\([inc].[Comments]\, [out].[Comments]\, [c].[Comment]\, [sa].[Comment]\, [o].[Comments]\, [sn].[Comments]\, [r].[Comments]\, [tn].[Comment]\, [pr].[Comment]\, [incuk].[Comments]\, [outuk].[Comments]\, [ouk].[Comments]\) AS [Comments]\,
+					COALESCE\([c].[Subject]\, [sa].[Subject]\, [tp].[SubjectContract]\, [cuk].[Subject]\, [sauk].[Subject]\) AS [Subject]\,
+					COALESCE\([inc].[CorrespondentName]\, [out].[DestinationName]\, [c].[PartnerName]\, [sa].[PartnerName]\, [pr].[PartnerName]\, [incuk].[CorrespondentName]\, [outuk].[DestinationName]\, [cuk].[PartnerName]\, [sauk].[PartnerName]\) AS [PartnerCard]\,
+					[pa].[Credentials] AS [Credentials]\,
+					[tp].[Content] AS [Content]\,
+					row_number\(\) OVER \(ORDER BY \#order_by\) AS [rn]
+					\}
+					\#if\(Count\) \{
+					count\(*\) AS [cnt]
+					\}
+				FROM [DocumentCommonInfo] AS [mi] WITH \(NOLOCK\)		
+				INNER JOIN [Instances] 					as [i] WITH \(NOLOCK\) 		ON [mi].[ID] = [i].[ID] 	
+				-- INNER JOIN \(SELECT ID FROM PnrGetUserPermissionsCards \(\#param\(CurrentUserID\)\, NULL\)\) pcards ON pcards.ID = i.ID
+				
+				LEFT JOIN [FdSatelliteCommonInfo] 		AS [fd] WITH \(NOLOCK\)		ON [fd].[MainCardId] = [mi].[ID]
+				LEFT JOIN [PnrIncoming] 				AS [inc] WITH \(NOLOCK\) 		ON [inc].[ID] = [mi].[ID]
+				LEFT JOIN [PnrOutgoing] 				AS [out] WITH \(NOLOCK\) 		ON [out].[ID] = [mi].[ID]
+				LEFT JOIN [PnrContracts] 				AS [c] WITH \(NOLOCK\) 		ON [c].[ID] = [mi].[ID]
+				LEFT JOIN [PnrSupplementaryAgreements] 	AS [sa] WITH \(NOLOCK\) 		ON [sa].[ID] = [mi].[ID]
+				LEFT JOIN [PnrActs] 					AS [a] WITH \(NOLOCK\) 		ON [a].[ID] = [mi].[ID]
+				LEFT JOIN [PnrOrder] 					AS [o] WITH \(NOLOCK\) 		ON [o].[ID] = [mi].[ID]
+				LEFT JOIN [PnrServiceNote] 				AS [sn] WITH \(NOLOCK\) 		ON [sn].[ID] = [mi].[ID]
+				LEFT JOIN [PnrErrands] 					AS [e] WITH \(NOLOCK\) 		ON [e].[ID] = [mi].[ID]
+				LEFT JOIN [PnrRegulations] 				AS [r] WITH \(NOLOCK\) 		ON [r].[ID] = [mi].[ID]
+				LEFT JOIN [PnrPowerAttorney] 			AS [pa] WITH \(NOLOCK\) 		ON [pa].[ID] = [mi].[ID]
+				LEFT JOIN [PnrTenders] 					AS [tn] WITH \(NOLOCK\) 		ON [tn].[ID] = [mi].[ID]
+				LEFT JOIN [PnrTemplates] 				AS [tp] WITH \(NOLOCK\) 		ON [tp].[ID] = [mi].[ID]
+				LEFT JOIN [PnrPartnerRequests]			AS [pr] WITH \(NOLOCK\) 		ON [pr].[ID] = [mi].[ID]
+				LEFT JOIN [PnrIncomingUK] 				AS [incuk] WITH \(NOLOCK\) 	ON [incuk].[ID] = [mi].[ID]
+				LEFT JOIN [PnrOutgoingUK] 				AS [outuk] WITH \(NOLOCK\)	ON [outuk].[ID] = [mi].[ID]
+				LEFT JOIN [PnrContractsUK] 				AS [cuk] WITH \(NOLOCK\) 		ON [cuk].[ID] = [mi].[ID]
+				LEFT JOIN [PnrSupplementaryAgreementsUK] AS [sauk] WITH \(NOLOCK\) 	ON [sauk].[ID] = [mi].[ID]
+				LEFT JOIN [PnrOrderUK] 					AS [ouk] WITH \(NOLOCK\) 		ON [ouk].[ID] = [mi].[ID]
+				WHERE 1 = 1
+						\#param\(Partner\, [mi].[PartnerID]\)
+						\#param\(Number\, [mi].[FullNumber]\)
+						\#param\(Subject\, [mi].[Subject]\)
+						\#param\(DocDate\, [mi].[DocDate]\)
+						\#if\(Type\) \{
+						AND \(1 = 1 \#param\(Type\, [mi].[DocTypeID]\) OR 1 = 1 \#param\(Type\, [mi].[CardTypeID]\)\)
+						\}
+						\#param\(Author\, [mi].[AuthorID]\)
+						\#param\(Registrator\, [mi].[RegistratorID]\)
+						\#param\(Department\, [mi].[DepartmentID]\)
+						\#param\(CreationDate\, [mi].[CreationDate]\)
+						\#if\(Content && !string.IsNullOrWhiteSpace\(Content.Value\)\) \{
+						and exists \(
+							select 1
+							from Files f with\(nolock\)
+							inner join FileVersions fv with\(nolock\) on fv.ID = f.RowID
+							inner join [FileContent] ft with\(nolock\) on ft.VersionRowID = fv.RowID
+							where f.ID = mi.ID
+								and freetext\(ft.Content\, @ContentParam\)
+						\)
+						\}
+						\#if\(QuickSearch && !string.IsNullOrWhiteSpace\(QuickSearch.Value\)\) \{
+							AND 
+							\(
+								[mi].[ID] IN
+								\(
+									SELECT ID
+									FROM DocumentCommonInfo dci
+									WHERE 1=1
+									AND
+									\(
+										dci.FullNumber LIKE '%' + \#param\(QuickSearch\) + '%'
+										OR
+										dci.Subject LIKE '%' + \#param\(QuickSearch\) + '%'
+									\)
+									
+									UNION
+									
+									SELECT ID FROM PnrIncoming WHERE CorrespondentName LIKE '%' + \#param\(QuickSearch\) + '%' UNION
+									SELECT ID FROM PnrOutgoing WHERE DestinationName LIKE '%' + \#param\(QuickSearch\) + '%' UNION
+									SELECT ID FROM PnrContracts WHERE PartnerName LIKE '%' + \#param\(QuickSearch\) + '%' UNION
+									SELECT ID FROM PnrSupplementaryAgreements WHERE PartnerName LIKE '%' + \#param\(QuickSearch\) + '%' UNION
+									SELECT ID FROM PnrPartnerRequests WHERE PartnerName LIKE '%' + \#param\(QuickSearch\) + '%' UNION
+									SELECT ID FROM PnrIncomingUK WHERE CorrespondentName LIKE '%' + \#param\(QuickSearch\) + '%' UNION
+									SELECT ID FROM PnrOutgoingUK WHERE DestinationName LIKE '%' + \#param\(QuickSearch\) + '%' UNION
+									SELECT ID FROM PnrContractsUK WHERE PartnerName LIKE '%' + \#param\(QuickSearch\) + '%' UNION
+									SELECT ID FROM PnrSupplementaryAgreementsUK WHERE PartnerName LIKE '%' + \#param\(QuickSearch\) + '%'
+									
+									UNION
+									
+									SELECT ID
+									FROM DocumentCommonInfo dci
+									WHERE EXISTS
+									\(
+										SELECT 1
+										FROM Files f WITH\(NOLOCK\)
+										INNER JOIN FileVersions fv WITH\(NOLOCK\) ON fv.ID = f.RowID
+										INNER JOIN FileContent ft WITH\(NOLOCK\) ON ft.VersionRowID = fv.RowID
+										WHERE f.ID = dci.ID
+										AND freetext\(ft.Content\, @QuickSearchParam\)
+									\)
+								\)
+							\)
+						\}
+				\) AS [t]
+			\#if\(Normal\) \{
+			WHERE [t].[rn] >= \#param\(PageOffset\) AND [t].[rn] < \(\#param\(PageOffset\) + \#param\(PageLimit\)\)
+			\}
+			\#if\(PageOffset\) \{
+			ORDER BY [t].[rn]
+			\}
+			OPTION\(RECOMPILE\);
+		}
+		#pg_query {
+			DECLARE
+				"project" text;
+			BEGIN
+
+				"project" = "GetString"\('Views_Registers_Project_Sql'\, \#param\(locale\)\);
+
+				RETURN QUERY
+				SELECT
+					\#if\(Normal\) \{
+					"mi"."ID" AS "DocID"\,
+					"mi"."FullNumber" AS "DocNumber"\,
+					coalesce\("mi"."DocTypeTitle"\, "i"."TypeCaption"\) AS "TypeName"\,
+					"mi"."Subject" AS "DocSubject"\,
+					COALESCE\("mi"."FullNumber"\, ''\) || '\, ' || COALESCE\("mi"."Subject"\, ''\) AS "DocDescription"\,	-- autocomplete
+					"mi"."PartnerID"\,
+					"mi"."PartnerName"\,
+					"mi"."AuthorID"\,
+					"mi"."AuthorName"\,
+					"mi"."RegistratorID"\,
+					"mi"."RegistratorName"\,
+					"mi"."DocDate"\,
+					CAST\("mi"."CreationDate" AS date\) AS "CreationDate"\,
+					"mi"."DepartmentName" AS "Department"\,
+					COALESCE\("fd"."StateName"\, "project"\) AS "FdState"
+					\}
+					\#if\(Count\) \{
+					count\(*\) AS "cnt"
+					\}
+				FROM "DocumentCommonInfo" AS "mi"
+				inner join "Instances" as "i"
+					on "mi"."ID" = "i"."ID"
+				LEFT JOIN "FdSatelliteCommonInfo" AS "fd"
+					ON "fd"."MainCardId" = "mi"."ID"
+				\#if \(ProcessTemplateID\) \{
+				inner join 
+				\(
+					select "fsci"."MainCardId"
+					from "FdSatelliteCommonInfo" as "fsci"
+					inner join "FdProcessInstances" as "fpi" on "fsci"."ID" = "fpi"."ID"
+					where 
+						"fpi"."BasedOnProcessTemplateID" = \#param\(ProcessTemplateID\)
+							\#param\(ProcessStateID\, "fpi"."StateID"\)
+					group by "fsci"."MainCardId"
+				\) as "fsci" on "mi"."ID" = "fsci"."MainCardId"
+			    \}
+				WHERE true
+						\#param\(Partner\, "mi"."PartnerID"\)
+						\#param\(Number\, "mi"."FullNumber"\)
+						\#param\(Subject\, "mi"."Subject"\)
+						\#param\(DocDate\, "mi"."DocDate"\)
+						\#if\(Type\) \{
+						AND \(true \#param\(Type\, "mi"."DocTypeID"\) OR true \#param\(Type\, "mi"."CardTypeID"\)\)
+						\}
+						\#param\(Author\, "mi"."AuthorID"\)
+						\#param\(Registrator\, "mi"."RegistratorID"\)
+						\#param\(Department\, "mi"."DepartmentID"\)
+						\#param\(CreationDate\, "mi"."CreationDate"\)
+				\#if\(Normal\) \{
+				ORDER BY \#order_by
+				\}
+				\#if\(PageOffset\) \{
+				OFFSET \#param\(PageOffset\) - 1 LIMIT \#param\(PageLimit\)
+				\};
+			END;
+		}
+		#role(RoleID:7ff52dc0-ff6a-4c9d-ba25-b562c370004d, ViewID:2d096965-7170-41c4-ba62-604b288c883b) 
+	}
+}

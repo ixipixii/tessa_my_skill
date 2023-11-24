@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <Version>3.0.3</Version>
+    <Authors>Syntellect</Authors>
+    <Company>Syntellect</Company>
+    <Product>Document automation system Tessa</Product>
+    <Copyright>Copyright © Syntellect 2019</Copyright>
+    <PackageProjectUrl>https://mytessa.ru/</PackageProjectUrl>
+    <RestoreSources>$(RestoreSources);../../Bin/packages;https://api.nuget.org/v3/index.json</RestoreSources>
+    <NoWarn>$(NoWarn);1998</NoWarn>
+    <LangVersion>8</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Tessa.Extensions.Default.Server\Tessa.Extensions.Default.Server.csproj" />
+    <ProjectReference Include="..\Tessa.Extensions.Shared\Tessa.Extensions.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Tessa.FdProcesses.Server">
+      <HintPath>..\..\FdProcesses\Bin\Module.Tessa.FdProcesses.Server\Tessa.FdProcesses.Server.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="Tessa.FdProcesses.Shared">
+      <HintPath>..\..\FdProcesses\Bin\Module.Tessa.FdProcesses.Server\Tessa.FdProcesses.Shared.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <Target Condition="'$(OS)' == 'Windows_NT'" Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="if exist &quot;$(ProjectDir)pre-build.bat&quot; call &quot;$(ProjectDir)pre-build.bat&quot; &quot;$(ProjectDir)..\..\&quot;" />
+  </Target>
+
+  <Target Condition="'$(OS)' == 'Unix'" Name="PreBuild-linux" AfterTargets="PreBuildEvent">
+    <Exec Command=":" />
+  </Target>
+
+  <Target Condition="'$(OS)' == 'Windows_NT'" Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="(mkdir &quot;$(ProjectDir)..\..\Bin\Tessa.Extensions.Server&quot;)&gt;nul 2&gt;&amp;1&#xD;&#xA;xcopy &quot;$(OutDir)$(TargetFileName)&quot; &quot;$(ProjectDir)..\..\Bin\Tessa.Extensions.Server&quot; /Y /R /Q&gt;nul&#xD;&#xA;xcopy &quot;$(OutDir)$(TargetName).pdb&quot; &quot;$(ProjectDir)..\..\Bin\Tessa.Extensions.Server&quot; /Y /R /Q&gt;nul&#xD;&#xA;&#xD;&#xA;if exist &quot;$(ProjectDir)post-build.bat&quot; call &quot;$(ProjectDir)post-build.bat&quot; &quot;$(ProjectDir)..\..\&quot;" />
+  </Target>
+
+  <Target Condition="'$(OS)' == 'Unix'" Name="PostBuild-linux" AfterTargets="PostBuildEvent">
+    <Exec Command=":" />
+  </Target>
+
+</Project>

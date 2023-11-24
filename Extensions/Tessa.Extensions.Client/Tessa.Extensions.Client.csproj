@@ -1,0 +1,59 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <Version>3.0.3</Version>
+    <Authors>Syntellect</Authors>
+    <Company>Syntellect</Company>
+    <Product>Document automation system Tessa</Product>
+    <Copyright>Copyright © Syntellect 2019</Copyright>
+    <PackageProjectUrl>https://mytessa.ru/</PackageProjectUrl>
+    <Configurations>Debug;Release</Configurations>
+    <OutputType>Library</OutputType>
+    <RestoreSources>$(RestoreSources);../../Bin/packages;https://api.nuget.org/v3/index.json</RestoreSources>
+    <NoWarn>$(NoWarn);1701;1702;1998;3074</NoWarn>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Page Include="**\*.xaml" SubType="Designer" Generator="MSBuild:Compile" />
+    <Compile Update="**\*.xaml.cs" SubType="Designer" DependentUpon="%(Filename)" />
+
+    <None Remove="*.DotSettings" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Tessa.Extensions.Default.Client\Tessa.Extensions.Default.Client.csproj" />
+    <ProjectReference Include="..\Tessa.Extensions.Shared\Tessa.Extensions.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Store\" />
+  </ItemGroup>
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="if exist &quot;$(ProjectDir)pre-build.bat&quot; call &quot;$(ProjectDir)pre-build.bat&quot; &quot;$(ProjectDir)..\..\&quot;" />
+  </Target>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="(mkdir &quot;$(ProjectDir)..\..\Bin\Tessa.Extensions.Client&quot;)&gt;nul 2&gt;&amp;1&#xD;&#xA;xcopy &quot;$(OutDir)$(TargetFileName)&quot; &quot;$(ProjectDir)..\..\Bin\Tessa.Extensions.Client&quot; /Y /R /Q&gt;nul&#xD;&#xA;xcopy &quot;$(OutDir)$(TargetName).pdb&quot; &quot;$(ProjectDir)..\..\Bin\Tessa.Extensions.Client&quot; /Y /R /Q&gt;nul&#xD;&#xA;&#xD;&#xA;if exist &quot;$(ProjectDir)post-build.bat&quot; call &quot;$(ProjectDir)post-build.bat&quot; &quot;$(ProjectDir)..\..\&quot;" />
+  </Target>
+</Project>

@@ -1,0 +1,29 @@
+#tessa_exchange_format(Version:1, CreationTime:2020-08-20T11\:09\:09) {
+	#exchange_view(RowID:f303b327-c2af-488d-80d1-ce6b7bd7b25e, Alias:PnrCurrencies, Caption:Валюты, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2020-08-20T10\:28\:17, GroupName:Pnr) {
+		#metadata {
+			#view(DefaultSortColumn: CurrencySymbolCode, DefaultSortDirection: asc, Paging: no, QuickSearchParam: Name)
+			#column(Alias: CurrencySymbolCode, Caption: Код символьный, Hidden: false, SortBy: t.SymbolCode)
+			#column(Alias: CurrencyName, Caption: Наименование валюты, Hidden: false)
+			#column(Alias: CurrencyNumberCode, Caption: Код числовой, Hidden: false)
+			#column(Alias: CurrencyHideOnSelection, Caption: Скрывать при выборе, Hidden: false)
+			#column(Alias: CurrencyMDMKey, Caption: MDM-Key, Hidden: false)
+			#param(Alias: SymbolCode, Caption: Код символьный, Hidden: false, Type: nvarchar, Multiple: true)
+			#reference(ColPrefix: Currency, RefSection: PnrCurrencies, DisplayValueColumn: CurrencySymbolCode, IsCard: true, OpenOnDoubleClick: true)
+		}
+		#description {}
+		#ms_query {
+			select
+			    t.SymbolCode as CurrencySymbolCode\,
+			    t.Name as CurrencyName\,
+			    t.NumberCode as CurrencyNumberCode\,
+			    t.HideOnSelection as CurrencyHideOnSelection\,
+			    t.MDMKey as CurrencyMDMKey
+			from PnrCurrencies t with\(nolock\)
+			where 1=1
+			    \#param_expr\(SymbolCode\, t.SymbolCode\)
+			order by \#order_by
+		}
+		#pg_query {}
+		#role(RoleID:7ff52dc0-ff6a-4c9d-ba25-b562c370004d, ViewID:f303b327-c2af-488d-80d1-ce6b7bd7b25e) 
+	}
+}

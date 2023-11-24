@@ -1,0 +1,88 @@
+﻿[
+  {
+    ".method::int": 2,
+    "Card": {
+      "Created::dtm": "2020-10-06T15:19:30.007Z",
+      "CreatedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "CreatedByName": "Admin",
+      "Files": null,
+      "Flags::int": 0,
+      "ID::uid": "e82c451c-5cd8-4aa9-b552-e3a974546b63",
+      "Info": null,
+      "Modified::dtm": "2020-10-06T15:19:30.007Z",
+      "ModifiedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "ModifiedByName": "Admin",
+      "Permissions": null,
+      "Sections": {
+        "RoleDeputies": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "RoleDeputiesVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Roles": {
+          "Fields": {
+            "AdSyncDate": null,
+            "AdSyncDisableUpdate": null,
+            "AdSyncDistinguishedName": null,
+            "AdSyncID": null,
+            "AdSyncIndependent": false,
+            "AdSyncWhenChanged": null,
+            "Description": null,
+            "Hidden": false,
+            "InheritTimeZone": true,
+            "Name": "Руководитель направления тендеров",
+            "ParentID": null,
+            "ParentName": null,
+            "TimeZoneCodeName": "Default",
+            "TimeZoneID::int": 0,
+            "TimeZoneShortName": "UTC+03:00",
+            "TimeZoneUtcOffsetMinutes::int": 180,
+            "TypeID::int": 0
+          }
+        },
+        "RoleUsers": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "RoleUsersVirtual": {
+          ".table::int": 1,
+          "Rows": [
+            {
+              ".state::int": 2,
+              "RowID::uid": "ce9392c3-3ded-48e7-8fe9-aa26d0790cb0",
+              "UserID::uid": "fd99d8ea-f1c1-4e73-87b1-87e34c91296a",
+              "UserName": "Харина Оксана"
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "1549fda7-1a40-41e2-8565-12116dcc3565",
+              "UserID::uid": "9141b889-a4b1-47a9-9c95-ad9041002392",
+              "UserName": "Хрулев С.Д."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "8aa3c43c-f90c-49ea-bd04-8000d924e231",
+              "UserID::uid": "b437522f-509a-460d-b44b-3c528d8ba7d6",
+              "UserName": "Пятибратова А.В."
+            }
+          ]
+        }
+      },
+      "TaskHistory": null,
+      "TaskHistoryGroups": null,
+      "Tasks": null,
+      "Topics": null,
+      "TypeCaption": "$CardTypes_TypesNames_StaticRole",
+      "TypeID::uid": "825dbacc-ddec-00d1-a550-2a837792542e",
+      "TypeName": "StaticRole",
+      "Version::int": 0
+    },
+    "FileMapping": null,
+    "Info": {
+      ".importVersion::int": 1
+    }
+  }
+]

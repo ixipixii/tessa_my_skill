@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SchemeFunction Partition="54ed79f5-11c0-4f74-b8b0-793d596699d6" ID="56782b6a-09ee-4cb4-b233-c7fb56d64373" Name="PnrGetProjectWithAllParents" Group="Pnr">
+	<Description>Рекурсивно возвращает данные по текущему проекту и всем его родителям</Description>
+	<Definition Dbms="SqlServer" IsExternal="true" />
+</SchemeFunction>

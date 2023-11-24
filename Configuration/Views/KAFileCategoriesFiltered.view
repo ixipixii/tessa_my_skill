@@ -1,0 +1,71 @@
+#tessa_exchange_format(Version:1, CreationTime:2020-10-29T07\:36\:17) {
+	#exchange_view(RowID:f5e930f2-a95a-488e-80f7-262d92fde2dc, Alias:KAFileCategoriesFiltered, Caption:Перечень документов КА, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2020-10-28T16\:54\:18, GroupName:System) {
+		#metadata {
+			#view(DefaultSortColumn: CategoryName, DefaultSortDirection: asc, Paging: always, RowCountSubset: Count, QuickSearchParam: Name)
+			#column(Alias: CategoryID, Hidden: true, Type: $FileCategories.ID)
+			#column(Alias: CategoryName, Caption: $Views_FileCategoriesFiltered_Name, Type: $FileCategories.Name, Localizable: true, SortBy: lName.Value)
+			#column(Alias: rn, Hidden: true, Type: Int64)
+			#param(Alias: Name, Caption: $Views_FileCategoriesFiltered_Name_Param, Multiple: true, Type: $FileCategories.Name)
+			#param(Alias: PartnerTypeID, Caption: КА, Multiple: true, Type: int)
+			#reference(ColPrefix: Category, RefSection: FileCategory, DisplayValueColumn: CategoryName, IsCard: true, OpenOnDoubleClick: true)
+			#subset(Alias: Count)
+		}
+		#description {}
+		#ms_query {
+			SELECT
+				[t].*
+			FROM \(
+				SELECT
+					\#if\(Normal\) \{
+					[t].[ID]								AS [CategoryID]\,
+					[t].[Name]								AS [CategoryName]\,
+					row_number\(\) OVER \(ORDER BY \#order_by\)	AS [rn]
+					\}
+					\#if\(Count\) \{
+					count\(*\) AS [cnt]
+					\}
+				FROM [FileCategories] AS [t] WITH \(NOLOCK\)
+				\#if\(Name || Normal && request.SortedBy\("CategoryName"\)\) \{
+				CROSS APPLY [Localization]\([t].[Name]\, \#param\(locale\)\) AS [lName]
+				\}
+				WHERE 1 = 1
+					\#param\(Name\, [lName].[Value]\)
+					\#if\(PartnerTypeID\) \{
+						and exists
+						\(
+							select top 1 1
+							from PnrFileCategories_PartnerType pt with\(nolock\)
+							where
+								pt.ID = t.ID
+								\#param\(PartnerTypeID\, pt.PartnerTypeID\)
+						\)
+					\}
+				\) AS [t]
+			ORDER BY [t].[CategoryID]
+		}
+		#pg_query {
+			SELECT
+				\#if\(Normal\) \{
+				"t"."ID"									AS "CategoryID"\,
+				"t"."Name"									AS "CategoryName"\,
+				0\:\:int8										AS "rn"
+				\}
+				\#if\(Count\) \{
+				count\(*\) AS "cnt"
+				\}
+			FROM "FileCategories" AS "t"
+			\#if\(Name || Normal && request.SortedBy\("CategoryName"\)\) \{
+			CROSS JOIN "Localization"\("t"."Name"\, \#param\(locale\)\) AS "lName"
+			\}
+			WHERE true
+				\#param\(Name\, "lName"."Value"\)
+			\#if\(Normal\) \{
+			ORDER BY \#order_by
+			\}
+			\#if\(PageOffset\) \{
+			OFFSET \#param\(PageOffset\) - 1 LIMIT \#param\(PageLimit\)
+			\}
+		}
+		#role(RoleID:7ff52dc0-ff6a-4c9d-ba25-b562c370004d, ViewID:f5e930f2-a95a-488e-80f7-262d92fde2dc) 
+	}
+}

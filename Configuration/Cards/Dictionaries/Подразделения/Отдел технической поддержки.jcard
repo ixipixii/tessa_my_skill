@@ -1,0 +1,255 @@
+﻿[
+  {
+    ".method::int": 2,
+    "Card": {
+      "Created::dtm": "2020-08-24T12:41:17.75Z",
+      "CreatedByID::uid": "fd99d8ea-f1c1-4e73-87b1-87e34c91296a",
+      "CreatedByName": "Харина Оксана",
+      "Files": null,
+      "Flags::int": 0,
+      "ID::uid": "09801c54-02be-4c80-8be2-e7084b76bfec",
+      "Info": {
+        ".satellite_krProcess": {
+          "Created::dtm": "2020-10-12T13:29:54.333Z",
+          "CreatedByID::uid": "b437522f-509a-460d-b44b-3c528d8ba7d6",
+          "CreatedByName": "Пятибратова А.В.",
+          "Files": null,
+          "Flags::int": 0,
+          "ID::uid": "a0d34b4d-021d-4604-8a1c-7b8473b99cf9",
+          "Info": null,
+          "Modified::dtm": "2020-10-12T13:29:54.333Z",
+          "ModifiedByID::uid": "b437522f-509a-460d-b44b-3c528d8ba7d6",
+          "ModifiedByName": "Пятибратова А.В.",
+          "Permissions": {
+            "CardPermissions::int": 87381,
+            "FilePermissions": null,
+            "Sections": null
+          },
+          "Sections": {
+            "KrActiveTasks": {
+              ".table::int": 1,
+              "Rows": null
+            },
+            "KrApprovalCommonInfo": {
+              "Fields": {
+                "ApprovedBy": null,
+                "AuthorComment": null,
+                "AuthorID": null,
+                "AuthorName": null,
+                "CurrentApprovalStageRowID": null,
+                "CurrentHistoryGroup": null,
+                "DisapprovedBy": null,
+                "Info": null,
+                "MainCardID::uid": "09801c54-02be-4c80-8be2-e7084b76bfec",
+                "NestedWorkflowProcesses": null,
+                "StateChangedDateTimeUTC": null,
+                "StateID::int": 0,
+                "StateName": "$KrStates_Doc_Draft"
+              }
+            },
+            "KrApprovalHistory": {
+              ".table::int": 1,
+              "Rows": null
+            },
+            "KrStages": {
+              ".table::int": 1,
+              "Rows": null
+            },
+            "WorkflowCounters": {
+              ".table::int": 1,
+              "Rows": null
+            },
+            "WorkflowProcesses": {
+              ".table::int": 1,
+              "Rows": null
+            },
+            "WorkflowTasks": {
+              ".table::int": 1,
+              "Rows": null
+            }
+          },
+          "TaskHistory": null,
+          "TaskHistoryGroups": null,
+          "Tasks": null,
+          "Topics": null,
+          "TypeCaption": "$CardTypes_TypesNames_KrSatellite",
+          "TypeID::uid": "4115f07e-0aaa-4563-a749-0450c1a850af",
+          "TypeName": "KrSatellite",
+          "Version::int": 1
+        }
+      },
+      "Modified::dtm": "2020-10-19T13:53:15.807Z",
+      "ModifiedByID::uid": "b437522f-509a-460d-b44b-3c528d8ba7d6",
+      "ModifiedByName": "Пятибратова А.В.",
+      "Permissions": null,
+      "Sections": {
+        "DepartmentRoles": {
+          "Fields": {
+            "ActionStatusID": null,
+            "ActionStatusName": null,
+            "CFOID": null,
+            "CFOName": null,
+            "CuratorID": null,
+            "CuratorName": null,
+            "DepartmentTypeID": null,
+            "DepartmentTypeName": null,
+            "HeadUserID::uid": "b437522f-509a-460d-b44b-3c528d8ba7d6",
+            "HeadUserName": "Пятибратова А.В."
+          }
+        },
+        "FmAddTopicInfoVirtual": {
+          "Fields": {
+            "Description": null,
+            "Title": null
+          }
+        },
+        "FmTopicParticipantsInfoVirtual": {
+          "Fields": {
+            "IsModerator": false,
+            "ReadOnly": false
+          }
+        },
+        "FmTopicParticipantsVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "FmTopicRoleParticipantsInfoVirtual": {
+          "Fields": {
+            "IsSubscribe": false,
+            "ReadOnly": false
+          }
+        },
+        "KrActiveTasksVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrAdditionalApprovalInfoUsersCardVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrAdditionalApprovalUsersCardVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrApprovalCommonInfoVirtual": {
+          "Fields": {
+            "ApprovedBy": null,
+            "AuthorComment": null,
+            "AuthorID": null,
+            "AuthorName": null,
+            "CurrentApprovalStageRowID": null,
+            "DisapprovedBy": null,
+            "MainCardID": null,
+            "StateChangedDateTimeUTC": null,
+            "StateID::int": 0,
+            "StateName": "$KrStates_Doc_Draft"
+          }
+        },
+        "KrApprovalHistoryVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrDialogButtonSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrForkNestedProcessesSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrForkSecondaryProcessesSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPerformersVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrStagesVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrUniversalTaskOptionsSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "RoleDeputies": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "RoleDeputiesVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Roles": {
+          "Fields": {
+            "AdSyncDate": null,
+            "AdSyncDisableUpdate": null,
+            "AdSyncDistinguishedName": null,
+            "AdSyncID": null,
+            "AdSyncIndependent": false,
+            "AdSyncWhenChanged": null,
+            "Description": null,
+            "ExternalID": null,
+            "Hidden": false,
+            "Idx": "6-4",
+            "InheritTimeZone": true,
+            "Name": "Отдел технической поддержки",
+            "ParentID::uid": "43882482-8cb7-4ecc-b76c-f85313b53913",
+            "ParentName": "ИТ дирекция",
+            "TimeZoneCodeName": "Default",
+            "TimeZoneID::int": 0,
+            "TimeZoneShortName": "UTC+03:00",
+            "TimeZoneUtcOffsetMinutes::int": 180,
+            "TypeID::int": 2
+          }
+        },
+        "RoleUsers": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "RoleUsersVirtual": {
+          ".table::int": 1,
+          "Rows": [
+            {
+              ".state::int": 2,
+              "RowID::uid": "5b35fbcc-4cb1-4436-81c0-f1628cc3aba5",
+              "UserID::uid": "68828ebc-53b5-40c8-ba01-2a0b1a03ac70",
+              "UserName": "Варламов С.В."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "f2e47579-8f83-4f97-b723-0b8541ddc59e",
+              "UserID::uid": "b437522f-509a-460d-b44b-3c528d8ba7d6",
+              "UserName": "Пятибратова А.В."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "da731524-c7c2-412c-b191-15bbf8107780",
+              "UserID::uid": "b3fe2d20-c072-4cc9-94a1-95f5122ff2df",
+              "UserName": "Крючков И.А."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "4a557031-0035-4865-8f57-1d38d0b9f3f1",
+              "UserID::uid": "687b21da-d4fc-41de-a080-f53113c286d3",
+              "UserName": "Сычев О.В."
+            }
+          ]
+        }
+      },
+      "TaskHistory": null,
+      "TaskHistoryGroups": null,
+      "Tasks": null,
+      "Topics": null,
+      "TypeCaption": "$CardTypes_TypesNames_DepartmentRole",
+      "TypeID::uid": "abe57cb7-e1cb-06f6-b7ca-ad1668bebd72",
+      "TypeName": "DepartmentRole",
+      "Version::int": 0
+    },
+    "FileMapping": null,
+    "Info": {
+      ".importVersion::int": 5
+    }
+  }
+]

@@ -1,0 +1,234 @@
+#tessa_exchange_format(Version:1, CreationTime:2020-12-25T19\:16\:09) {
+	#exchange_view(RowID:8c7f5186-eb34-43a6-bad2-f21f80d5ff34, Alias:PnrTenders, Caption:Тендерная документация, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2020-12-18T10\:09\:43, GroupName:Pnr) {
+		#metadata {
+			#view(DefaultSortColumn: DocNumber, DefaultSortDirection: desc, Paging: always, RowCountSubset: Count, QuickSearchParam: Number)
+			#column(Alias: DocID, Hidden: true)
+			#column(Alias: DocNumber, Caption: №, Hidden: true, SortBy: d.Number)
+			#column(Alias: DocFullNumber, Caption: Номер, SortBy: d.FullNumber)
+			#column(Alias: TenderContractTypeID, Hidden: true)
+			#column(Alias: TenderContractTypeName, Caption: Тип договора)
+			#column(Alias: DocSubject, Caption: Тема, SortBy: d.Subject)
+			#column(Alias: TenderInitiatorID, Hidden: true)
+			#column(Alias: TenderInitiatorName, Caption: Инициатор, Hidden: true)
+			#column(Alias: DocAuthorID, Hidden: true)
+			#column(Alias: DocAuthorName, Caption: Создал, SortBy: d.AuthorName)
+			#column(Alias: TenderProjectID, Hidden: true)
+			#column(Alias: TenderProjectName, Caption: Проект, SortBy: t.ProjectName)
+			#column(Alias: TenderPartnerName, Caption: Участники тендера)
+			#column(Alias: TenderEstimatedCost, Caption: Ориентировочная стоимость тендера, SortBy: t.EstimatedCost)
+			#column(Alias: InstModified, Caption: Изменено, SortBy: i.Modified, Type: Date)
+			#column(Alias: FdID, Hidden: true)
+			#column(Alias: FdMainCardId, Hidden: true)
+			#column(Alias: FdStateID, Hidden: true)
+			#column(Alias: FdStateName, Caption: Статус, SortBy: f.StateName)
+			#column(Alias: DocCreationDate, Caption: Дата создания, Type: Date, SortBy: d.CreationDate)
+			#column(Alias: TenderID, Hidden: true)
+			#column(Alias: TenderRegistrationNo, Caption: Рег. №, Hidden: true)
+			#column(Alias: TenderRegistrationDate, Caption: Дата регистрации, Hidden: true)
+			#column(Alias: TenderProjectDate, Caption: Дата проекта, Hidden: true)
+			#column(Alias: TenderProjectNo, Caption: Номер проекта, Hidden: true)
+			#column(Alias: TenderCFOID, Hidden: true)
+			#column(Alias: TenderCFOName, Caption: ЦФО, Hidden: true)
+			#column(Alias: TenderStartDate, Caption: Дата начала, Hidden: true)
+			#column(Alias: TenderProvidingTDDate, Caption: Дата предоставления ТД, Hidden: true)
+			#column(Alias: TenderPlannedDate, Caption: Планируемая дата тендера, Hidden: true)
+			#column(Alias: TenderRemainderBudgetFunds, Caption: Остаток бюджетных средств, Hidden: true)
+			#column(Alias: TenderPriceReferenceProposal, Caption: Стоимость по эталонному предложению, Hidden: true)
+			#column(Alias: TenderWinnerID, Hidden: true)
+			#column(Alias: TenderWinnerName, Caption: Победитель тендера, Hidden: true)
+			#column(Alias: TenderReceiptDate, Caption: Дата поступления, Hidden: true)
+			#column(Alias: TenderProtocolNo, Caption: Протокол №, Hidden: true)
+			#column(Alias: TenderIssueStatus, Caption: Статус вопроса, Hidden: true)
+			#column(Alias: TenderStatusID, Hidden: true)
+			#column(Alias: TenderStatusName, Caption: Статус тендера, Hidden: true)
+			#column(Alias: TenderComment, Caption: Комментарий, Hidden: true)
+			#column(Alias: TenderIsSVISApprovalRequired, Caption: Требуется согласование СВИС, Hidden: true)
+			#column(Alias: TenderIsSPiAApprovalRequired, Caption: Требуется согласование СПиА, Hidden: true)
+			#column(Alias: TenderGroupDocumentsID, Hidden: true)
+			#column(Alias: TenderGroupDocumentsName, Caption: Группа документов, Hidden: true)
+			#column(Alias: TenderBudgetSize, Caption: Размер бюджета, Hidden: true)
+			#column(Alias: TenderBudgetCommentID, Hidden: true)
+			#column(Alias: TenderBudgetCommentContent, Caption: Комментарий к бюджету, Hidden: true)
+			#column(Alias: TenderFinalCost, Caption: Итоговая стоимость тендера, Hidden: true)
+			#column(Alias: TenderStageID, Hidden: true)
+			#column(Alias: TenderStageName, Caption: Стадия реализации, Hidden: true)
+
+			#param(Alias: IsAuthor, Caption: Я создатель, Type: Boolean, AllowedOperands: IsTrue IsFalse)
+			#param(Alias: Bidder, Caption: Название контрагента, Multiple: true, Type: Guid, RefSection: Partners) {
+				#autocomplete(View: Partners, Param: Name, PopupColumns: 1 4 9)
+			}
+			#param(Alias: Number, Caption: Номер, Hidden: false, Type: String, Multiple: true)
+			#param(Alias: Project, Caption: Проект, Multiple: true, Type: Guid, RefSection: PnrProjects) {
+				#autocomplete(View: PnrProjects, Param: Name, PopupColumns: 1 2)
+			}
+			#param(Alias: State, Caption: Состояние, Hidden: false, Type: uniqueidentifier, RefSection: PnrFdCardStatesTenders, Multiple: true, AllowedOperands: Equality NonEquality IsNull IsNotNull) {
+				#autocomplete(View: PnrFdCardStatesTenders, Param: Name, PopupColumns: 1 2)
+				#dropdown(View: PnrFdCardStatesTenders, PopupColumns: 1 2)
+			}
+			#reference(ColPrefix: Doc, RefSection: DocumentCommonInfo, DisplayValueColumn: DocNumber, IsCard: true, OpenOnDoubleClick: true)
+			#reference(ColPrefix: Tender, RefSection: PnrTenders, DisplayValueColumn: TenderProjectName, IsCard: true, OpenOnDoubleClick: true)
+			#subset(Alias: ByState, Caption: По статусу, RefParam: State, RefColumn: StateID, CaptionColumn: StateName, CountColumn: SubCnt)
+			#subset(Alias: ByProject, Caption: По проекту, RefParam: Project, RefColumn: ProjectID, CaptionColumn: ProjectName, CountColumn: SubCnt)
+			#subset(Alias: Count)
+		}
+		#description {}
+		#ms_query {
+			;WITH
+			-- ДОЧЕРНИЕ ПРОЕКТЫ
+			     childs AS \(
+			         SELECT p.ID
+			         FROM PnrProjects p
+			         WHERE 1=1 
+			         \#param\(Project\, p.id\)
+			         UNION ALL
+			         SELECT p.ID
+			         FROM PnrProjects p
+			                INNER JOIN childs c
+			                    ON p.ParentProjectID = c.ID
+			     \)
+
+			select
+			    \#if\(Normal\) \{
+			    -- Tender - PnrTenders
+			    t.ID						as TenderID\,
+			    t.RegistrationNo			as TenderRegistrationNo\,
+			    t.RegistrationDate			as TenderRegistrationDate\,
+			    t.ProjectDate				as TenderProjectDate\,
+			    t.ProjectNo					as TenderProjectNo\,
+			    t.ProjectID					as TenderProjectID\,
+			    t.ProjectName				as TenderProjectName\,
+			    t.CFOID						as TenderCFOID\,
+			    t.CFOName					as TenderCFOName\,
+			    t.EstimatedCost				as TenderEstimatedCost\,
+			    t.StartDate					as TenderStartDate\,
+			    t.ProvidingTDDate 			as TenderProvidingTDDate\,
+			    t.PlannedDate				as TenderPlannedDate\,
+			    t.RemainderBudgetFunds 		as TenderRemainderBudgetFunds\,
+			    t.PriceReferenceProposal	as TenderPriceReferenceProposal\,
+				t.InitiatorID				as TenderInitiatorID\,
+			    t.InitiatorName				as TenderInitiatorName\,
+			    t.WinnerID					as TenderWinnerID\,
+			    t.WinnerName				as TenderWinnerName\,
+			    t.ReceiptDate				as TenderReceiptDate\,
+			    t.ProtocolNo				as TenderProtocolNo\,
+			    t.IssueStatus				as TenderIssueStatus\,
+			    t.StatusID					as TenderStatusID\,
+			    t.StatusName				as TenderStatusName\,
+			    t.Comment					as TenderComment\,
+			    t.IsSVISApprovalRequired	as TenderIsSVISApprovalRequired\,
+			    t.IsSPiAApprovalRequired	as TenderIsSPiAApprovalRequired\,
+			    t.GroupDocumentsID			as TenderGroupDocumentsID\,
+			    t.GroupDocumentsName		as TenderGroupDocumentsName\,
+			    t.BudgetSize				as TenderBudgetSize\,
+			    t.BudgetCommentID			as TenderBudgetCommentID\,
+			    t.BudgetCommentContent		as TenderBudgetCommentContent\,
+			    t.FinalCost					as TenderFinalCost\,
+			    t.StageID					as TenderStageID\,
+			    t.StageName					as TenderStageName\,
+			    t.ContractTypeID			as TenderContractTypeID\,
+			    t.ContractTypeName			as TenderContractTypeName\,
+			    
+			    t2.TenderPartnerName\,
+				  
+				-- Doc - DocumentCommonInfo
+				d.ID						as DocID\,
+			    d.Number					as DocNumber\,
+			    d.FullNumber				as DocFullNumber\,
+			    d.CreationDate				as DocCreationDate\,
+			    d.AuthorID					as DocAuthorID\,
+			    d.AuthorName				as DocAuthorName\,
+			    d.Subject					as DocSubject\,
+			    -- Fd - FdSatelliteCommonInfo
+			    f.ID						as FdID\,
+			    f.MainCardId				as FdMainCardId\,
+			    f.StateID					as FdStateID\,
+			    f.StateName					as FdStateName\,
+			    -- Inst - Instances
+			    i.Modified					as InstModified
+			    \} 
+			    
+			    \#if\(Count | ByState | ByProject\)\{
+			    	[t2].*
+			    \}
+			from
+			\(
+			    select DISTINCT
+			        \#if\(Normal\) \{
+			        t.ID\,
+			        STUFF\(\(
+					SELECT N'\, ' + bidders.PartnerName
+					FROM PnrTenderBidders AS bidders WITH\(NOLOCK\)
+					WHERE bidders.ID = t.ID
+					FOR XML PATH \(''\)
+				  \)\, 1\, 2\, N''\)           	as TenderPartnerName\,
+			        row_number\(\) over \(order by \#order_by\) as rn
+			        \}
+			        \#if\(Count\) \{
+			        count\(*\) as cnt
+			        \}
+					\#if\(ByState\)\{
+			        	COALESCE\([f].[StateID]\, NULL\) 							as [StateID]\,
+			        	COALESCE\([f].[StateName]\, N'Не указано'\) 				as [StateName]\,
+			    		count\(*\)												AS [SubCnt]
+			    	\}
+			        \#if\(ByProject\)\{
+			        	COALESCE\([t].[ProjectID]\, NULL\) 						as [ProjectID]\,
+			        	COALESCE\([t].[ProjectName]\, N'Не указан'\) 				as [ProjectName]\,
+			    		count\(*\)												AS [SubCnt]
+			    	\}
+			    from PnrTenders t with\(nolock\)
+			    left join FdSatelliteCommonInfo f with\(nolock\) on f.MainCardId = t.ID
+			    left join DocumentCommonInfo d with\(nolock\) on d.ID = t.ID
+			    left join Instances i with\(nolock\) on i.ID = t.ID
+			    \#if\(Bidder\) \{ 
+			    left join [PnrTenderBidders] as [bidders] ON [bidders].[ID] = [t].[ID]
+			    \}
+			    WHERE 1=1
+			    --where d.CardTypeID = '156df436-74e3-4e08-aba8-cbc609c6c1c7'
+			    	\#param\(Bidder\, [bidders].[PartnerID]\)
+			        \#param\(Number\, d.FullNumber\)
+			        \#param\(Subject\, d.Subject\)
+			        \#param\(State\, f.StateID\)
+			        \#if\(Project\) 
+			        \{ 
+			        	AND t.ProjectID IN 
+			        	\(
+			        		SELECT ID FROM childs
+			        	\)
+			        	
+			        \}
+			        
+			        \#if\(IsAuthor\) \{
+			        	\#if\(IsAuthor.CriteriaName == "IsTrue"\)
+			        	\{
+			        		AND d.AuthorID = \#param\(CurrentUserID\)
+			        	\}
+			        	\{
+			        		AND \(d.AuthorID IS NULL OR d.AuthorID <> \#param\(CurrentUserID\)\)
+			        	\}
+			        \}
+			        \#if\(ByState\) \{
+						GROUP BY [f].[StateID]\, [f].[StateName]
+					\}
+			        \#if\(ByProject\) \{
+						GROUP BY [t].[ProjectID]\, [t].[ProjectName]
+					\}
+			\) t2
+			\#if\(Normal\) \{
+			left join PnrTenders t with\(nolock\) on t.ID = t2.ID
+			left join FdSatelliteCommonInfo f with\(nolock\) on f.MainCardId = t2.ID
+			left join DocumentCommonInfo d with\(nolock\) on d.ID = t2.ID
+			left join Instances i with\(nolock\) on i.ID = t2.ID
+			\}
+			\#if\(PageOffset\) \{
+			where t2.rn >= \#param_expr\(PageOffset\) and t2.rn < \(\#param_expr\(PageOffset\) + \#param_expr\(PageLimit\)\)
+			\}
+			\#if\(Normal\) \{
+			order by t2.rn
+			\}
+			;
+		}
+		#pg_query {}
+		#role(RoleID:c365e148-71f9-4731-8025-3aeb5225af9f, ViewID:8c7f5186-eb34-43a6-bad2-f21f80d5ff34) 
+	}
+}

@@ -1,0 +1,123 @@
+#tessa_exchange_format(Version:1, CreationTime:2019-11-08T13\:43\:17) {
+	#exchange_view(RowID:726b9bca-5a95-4419-9935-4fc3f1809bea, Alias:FdCompletionOptions, Caption:Параметры завершения задания, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2019-11-07T14\:35\:41, GroupName:Fd Awf) {
+		#metadata {
+			#view(DefaultSortColumn: CompletionCaption, Paging: always, PageLimit: 10, RowCountSubset: Count)
+
+			#column(Alias: CompletionID, Caption: ID, Type: Guid, Hidden: true)
+			#column(Alias: CompletionCaption, Caption: Заголовок параметра завершения, Type: String, SortBy: locCaption.Value)
+			#column(Alias: CompletionName, Caption: Параметр завершения, Type: String)
+			#column(Alias: rn, Type: Int64, Hidden: true)
+
+			#param(Alias: Name, Caption: Название, Type: String)
+			#param(Alias: TaskTypeID, Caption: Тип задания, Type: Guid, Hidden: true, RefSection: FdTaskTypes){
+				#autocomplete(View: FdTaskTypes, Param: Caption, PopupColumns: 1 2)
+				#dropdown(View: FdTaskTypes, PopupColumns: 1 2)
+			}
+
+			#reference(ColPrefix: Completion, RefSection: FdCompletionOptions, DisplayValueColumn: CompletionCaption)
+
+			#subset(Alias: Count)
+		}
+		#description {
+			TODO\: Заменить на 
+
+			declare @x xml =
+			\(
+				select [Definition]
+				from [Tables] t
+				where
+					t.ID = '08cf782d-4130-4377-8a49-3e201a05d496'
+
+			\)
+
+			SELECT T.C.value\('./ID[1]'\, 'uniqueidentifier'\) as ID\,
+					T.C.value\('./Name[1]'\, 'nvarchar\(max\)'\) as Name\,
+					T.C.value\('./Caption[1]'\, 'nvarchar\(max\)'\) as Caption
+			from @x.nodes\('/TessaTable/TessaRecord'\) as T\(C\)
+			where T.C.value\('@Partition'\, 'uniqueidentifier'\) = 'c3b14969-a553-4005-9a07-e9705c15b1e1'
+			order by Caption
+
+			Чтобы отображать только варианты завершения из нашего решения.
+		}
+		#ms_query {
+			declare @taskCompIDs table \(ID uniqueidentifier\)
+			\#if\(TaskTypeID && !TaskTypeID.ValueIsNull\)
+			  \{
+				declare @x xml =
+				\(
+					select [Definition]
+					from [Types] t
+					where 
+						1=1
+						\#param\(TaskTypeID\,  t.ID\)
+				\)
+				insert into @taskCompIDs
+				SELECT cast\(T.C.value\('.'\, 'nvarchar\(36\)'\) as uniqueidentifier\) as activity
+				FROM @x.nodes\('\(/cardType/completion/@option\)'\) as T\(C\)
+			\}
+
+			select *
+			from
+			\(
+				SELECT 
+					\#if\(Normal\)\{
+						completions.[ID] as CompletionID
+					      \,locCaption.Value as CompletionCaption
+					      \,completions.[Name] as CompletionName
+					      \,row_number\(\) over \(order by \#order_by\) as rn
+				      \}
+				      \#if\(Count\)\{
+				      		count\(*\) as cnt
+				      \}
+				  FROM [CompletionOptions] completions with\(nolock\)
+				  inner join @taskCompIDs taskCompIDs on taskCompIDs.ID = completions.ID
+				  
+				  cross apply dbo.Localization\(completions.Caption\, \#param\(locale\)\) locCaption
+				  where 
+				  	1=1
+				  	\#param\(Name\, locCaption.Value\)
+			  \) t
+			  
+			  
+			  \#if\(PageOffset\) \{
+				where rn >= \#param\(PageOffset\) and rn < \(\#param\(PageOffset\) + \#param\(PageLimit\)\)
+			\}
+		}
+		#pg_query {
+			select
+			\#if\(Normal\)\{
+				"c"."ID" 				as "CompletionID"\,
+				"locCaption"."Value" 	as "CompletionCaption"\,
+				"c"."Name" 				as "CompletionName"\,
+				0\:\:int8 				as "rn"
+			\}
+			\#if\(Count\)\{
+				count\(*\) as "cnt"
+			\}
+			from "Types" as "t"
+			cross join lateral
+			\(
+				select \(xpath\('/completion/@option'\, "node"\)\)[1]\:\:text\:\:uuid as "OptionID"
+				from unnest\(xpath\('/cardType/completion'\, "t"."Definition"\)\) as "node"
+			\) as "t2"
+			inner join "CompletionOptions" as "c" 
+				on "c"."ID" = "t2"."OptionID"
+			cross join "Localization"\("c"."Caption"\, \#param\(locale\)\) as "locCaption"
+			where true
+				\#if\(TaskTypeID && TaskTypeID.CriteriaName != "IsNull"\)
+				\{
+					and "t"."ID" = \#param\(TaskTypeID\) 
+				\}
+				\{
+					and "t"."ID" = '00000000-0000-0000-0000-000000000000'
+				\}
+				\#param\(Name\, "locCaption"."Value"\)
+			\#if\(Normal\) \{
+			ORDER BY \#order_by
+			\}
+			\#if\(PageOffset\) \{
+			OFFSET \#param\(PageOffset\) - 1 LIMIT \#param\(PageLimit\)
+			\}
+		}
+	}
+}

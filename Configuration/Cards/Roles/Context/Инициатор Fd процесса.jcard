@@ -1,0 +1,55 @@
+﻿[
+  {
+    ".method::int": 2,
+    "Card": {
+      "Created::dtm": "2020-08-13T17:08:09.603Z",
+      "CreatedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "CreatedByName": "Admin",
+      "Files": null,
+      "Flags::int": 0,
+      "ID::uid": "47e91ffe-227e-4db2-a15a-524fda092d92",
+      "Info": null,
+      "Modified::dtm": "2020-08-13T17:08:09.603Z",
+      "ModifiedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "ModifiedByName": "Admin",
+      "Permissions": null,
+      "Sections": {
+        "ContextRoles": {
+          "Fields": {
+            "SqlText": "IF (SELECT AuthorID FROM DocumentCommonInfo WHERE ID = #context_card_id) IS NOT NULL\r\nBEGIN \r\nSELECT TOP(1) AuthorID, AuthorName FROM DocumentCommonInfo WHERE ID = #context_card_id \r\nEND\r\nELSE\r\nBEGIN\r\nSELECT TOP(1) th.UserID, th.UserName\r\nFROM TaskHistory th WITH(NOLOCK)\r\nLEFT JOIN FdCompletedTasks fsc WITH(NOLOCK) ON th.RowID=fsc.TaskID --если таск в завершённых этапах\r\nLEFT JOIN FdActiveTasks fat WITH(NOLOCK) ON th.RowID=fat.TaskID --если таск в активных\r\nINNER JOIN FdProcessInstances fpi WITH(NOLOCK) ON ((fsc.ProcessRowId = fpi.RowID) OR (fat.ProcessRowId = fpi.RowID)) --такс или в активных, или в завершённых этапах\r\nINNER JOIN FdSatelliteCommonInfo fsci ON fpi.ID=fsci.ID\r\nWHERE fsci.MainCardId = #context_card_id \r\nAND th.UserID IS NOT NULL\r\nORDER BY th.Created\r\nEND",
+            "SqlTextForCard": null,
+            "SqlTextForUser": null
+          }
+        },
+        "RoleDeputies": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "RoleDeputiesVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Roles": {
+          "Fields": {
+            "Description": null,
+            "Hidden": false,
+            "Name": "Инициатор Fd процесса",
+            "TypeID::int": 4
+          }
+        }
+      },
+      "TaskHistory": null,
+      "TaskHistoryGroups": null,
+      "Tasks": null,
+      "Topics": null,
+      "TypeCaption": "$CardTypes_TypesNames_ContextRole",
+      "TypeID::uid": "b672e00c-0241-0485-9b07-4764bc96c9d3",
+      "TypeName": "ContextRole",
+      "Version::int": 0
+    },
+    "FileMapping": null,
+    "Info": {
+      ".importVersion::int": 2
+    }
+  }
+]

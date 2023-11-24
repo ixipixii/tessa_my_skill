@@ -1,0 +1,191 @@
+#tessa_exchange_format(Version:1, CreationTime:2020-12-22T06\:55\:05) {
+	#exchange_view(RowID:d52c7a2d-e224-48e6-ba85-5231d1d706e9, Alias:PnrOrders, Caption:Приказы и распоряжения, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2020-12-22T06\:54\:26, GroupName:Pnr) {
+		#metadata {
+			#view(DefaultSortColumn: DocCreationDate, DefaultSortDirection: desc, Paging: always, RowCountSubset: Count, QuickSearchParam: Number)
+			#column(Alias: DocID, Hidden: true)
+			#column(Alias: DocNumber, Caption: №, Hidden: true, SortBy: d.Number)
+			#column(Alias: DocFullNumber, Caption: Номер, SortBy: d.FullNumber)
+			#column(Alias: OrderDocumentKindID, Hidden: true)
+			#column(Alias: OrderDocumentKindName, Caption: Вид документа)
+			#column(Alias: DocSubject, Caption: Тема, SortBy: d.Subject)
+			#column(Alias: OrderProjectID, Hidden: true)
+			#column(Alias: OrderProjectName, Caption: Проект, SortBy: t.ProjectName)
+			#column(Alias: OrderRegistrationDate, Caption: Дата регистрации, Type: Date, SortBy: t.RegistrationDate)
+			#column(Alias: DocAuthorID, Hidden: true)
+			#column(Alias: DocAuthorName, Caption: Создал, SortBy: d.AuthorName)
+			#column(Alias: InstModified, Caption: Изменено, SortBy: i.Modified, Type: Date)
+			#column(Alias: FdID, Hidden: true)
+			#column(Alias: FdMainCardId, Hidden: true)
+			#column(Alias: FdStateID, Hidden: true)
+			#column(Alias: FdStateName, Caption: Статус, SortBy: f.StateName)
+			#column(Alias: DocCreationDate, Caption: Дата создания, Type: Date, SortBy: d.CreationDate)
+			#column(Alias: OrderID, Hidden: true)
+			#column(Alias: OrderComments, Caption: Комментарии, Hidden: true)
+			#column(Alias: OrderOrganizationID, Hidden: true)
+			#column(Alias: OrderOrganizationName, Caption: Организация ГК Пионер, Hidden: true)
+			#column(Alias: OrderWriteOffID, Hidden: true)
+			#column(Alias: OrderWriteOffName, Caption: Списать в дело, Hidden: true)
+			#column(Alias: OrderWriteOffIndex, Caption: Индекс, Hidden: true)
+			#column(Alias: OrderDepartmentManagerID, Hidden: true)
+			#column(Alias: OrderDepartmentManagerName, Caption: Руководитель подразделения, Hidden: true)
+			#column(Alias: OrderHeadDirectorateID, Hidden: true)
+			#column(Alias: OrderHeadDirectorateName, Caption: Руководитель дирекции, Hidden: true)
+			#column(Alias: OrderLegalEntityIndexID, Hidden: true)
+			#column(Alias: OrderLegalEntityIndexIdx, Hidden: true)
+			#column(Alias: OrderProjectBlockID, Hidden: true)
+			#column(Alias: OrderProjectBlockName, Caption: Проект, Hidden: true)
+			#param(Alias: IsAuthor, Caption: Я создатель, Type: Boolean, AllowedOperands: IsTrue IsFalse)
+			#param(Alias: Number, Caption: Номер, Type: nvarchar, Multiple: true)
+			#param(Alias: Subject, Caption: Заголовок, Multiple: true, Type: $DocumentCommonInfo.Subject)
+			#param(Alias: Project, Caption: Проект, Multiple: true, Type: Guid, RefSection: PnrProjects) {
+				#autocomplete(View: PnrProjects, Param: Name, PopupColumns: 1 2)
+			}
+			#param(Alias: RegistrationDate, Caption: Дата регистрации, Multiple: true, Type: Date)
+			#param(Alias: Author, Caption: Создал, Multiple: true, Type: Guid, RefSection: PersonalRoles) {
+				#autocomplete(View: Users, Param: Name, PopupColumns: 1 4)
+			}
+			#param(Alias: State, Caption: Состояние, Hidden: false, Type: uniqueidentifier, RefSection: PnrFdCardStatesOrders, Multiple: true, AllowedOperands: Equality NonEquality IsNull IsNotNull) {
+				#autocomplete(View: PnrFdCardStatesOrders, Param: Name, PopupColumns: 1 2)
+				#dropdown(View: PnrFdCardStatesOrders, PopupColumns: 1 2)
+			}
+			#param(Alias: DocKind, Caption: Вид документа, Multiple: true, Type: Guid, RefSection: PnrDocumentKinds) {
+				#autocomplete(View: PnrDocumentKinds, Param: Name, PopupColumns: 1 2)
+				#dropdown(View: PnrDocumentKinds)
+			}
+			#reference(ColPrefix: Doc, RefSection: DocumentCommonInfo, DisplayValueColumn: DocNumber, IsCard: true, OpenOnDoubleClick: true)
+			#reference(ColPrefix: Order, RefSection: PnrOrder, DisplayValueColumn: OrderProjectName, IsCard: true, OpenOnDoubleClick: true)
+			#subset(Alias: ByState, Caption: По статусу, RefParam: State, RefColumn: StateID, CaptionColumn: StateName, CountColumn: SubCnt)
+			#subset(Alias: ByDocKind, Caption: По виду документа, RefParam: DocKind, RefColumn: DocKindID, CaptionColumn: DocKindName, CountColumn: SubCnt)
+			#subset(Alias: Count)
+		}
+		#description {}
+		#ms_query {
+			;WITH
+			-- ДОЧЕРНИЕ ПРОЕКТЫ
+			     childs AS \(
+			         SELECT p.ID
+			         FROM PnrProjects p
+			         WHERE 1=1 
+			         \#param\(Project\, p.id\)
+			         UNION ALL
+			         SELECT p.ID
+			         FROM PnrProjects p
+			                INNER JOIN childs c
+			                    ON p.ParentProjectID = c.ID
+			     \)
+
+			select
+			    \#if\(Normal\) \{
+			    -- Order - PnrOrders
+			    t.ID						as OrderID\,
+			    t.RegistrationDate			as OrderRegistrationDate\,
+			    t.ProjectID					as OrderProjectID\,
+				t.ProjectName				as OrderProjectName\,
+				t.Comments					as OrderComments\,
+			    t.DocumentKindID			as OrderDocumentKindID\,
+				t.DocumentKindName			as OrderDocumentKindName\,
+				t.OrganizationID			as OrderOrganizationID\,
+				t.OrganizationName			as OrderOrganizationName\,
+				t.WriteOffID				as OrderWriteOffID\,
+				t.WriteOffName				as OrderWriteOffName\,
+				t.WriteOffIdx				as OrderWriteOffIndex\,
+				t.DepartmentManagerID		as OrderDepartmentManagerID\,
+				t.DepartmentManagerName		as OrderDepartmentManagerName\,
+				t.HeadDirectorateID			as OrderHeadDirectorateID\,
+				t.HeadDirectorateName		as OrderHeadDirectorateName\,
+				t.LegalEntityIndexID		as OrderLegalEntityIndexID\,
+				t.LegalEntityIndexIdx		as OrderLegalEntityIndexIdx\,
+				t.ProjectBlockID			as OrderProjectBlockID\,
+				t.ProjectBlockName			as OrderProjectBlockName\,
+				-- Doc - DocumentCommonInfo
+				d.ID						as DocID\,
+			    d.Number					as DocNumber\,
+			    d.FullNumber				as DocFullNumber\,
+			    d.CreationDate				as DocCreationDate\,
+			    d.AuthorID					as DocAuthorID\,
+			    d.AuthorName				as DocAuthorName\,
+			    d.Subject					as DocSubject\,
+			    -- Fd - FdSatelliteCommonInfo
+			    f.ID						as FdID\,
+			    f.MainCardId				as FdMainCardId\,
+			    f.StateID					as FdStateID\,
+			    f.StateName					as FdStateName\,
+			    -- Inst - Instances
+			    i.Modified					as InstModified
+			    \} 
+			    \#if\(Count | ByState | ByDocKind\)\{
+			    t2.*
+			    \}
+			from
+			\(
+			    select
+			        \#if\(Normal\) \{
+			        t.ID\,
+			        row_number\(\) over \(order by \#order_by\) as rn
+			        \}
+			        \#if\(Count\) \{
+			        count\(*\) as cnt
+			        \}
+			        \#if\(ByState\)\{
+			        	COALESCE\([f].[StateID]\, NULL\) 							as [StateID]\,
+			        	COALESCE\([f].[StateName]\, N'Не указано'\) 				as [StateName]\,
+			    		count\(*\)												AS [SubCnt]
+			    	\}
+			        \#if\(ByDocKind\)\{
+			        	COALESCE\([t].[DocumentKindID]\, NULL\) 					as [DocKindID]\,
+			        	COALESCE\([t].[DocumentKindName]\, N'Не указан'\) 			as [DocKindName]\,
+			    		count\(*\)												AS [SubCnt]
+			    	\}
+			    from PnrOrder t with\(nolock\)
+			    left join FdSatelliteCommonInfo f with\(nolock\) on f.MainCardId = t.ID
+			    left join DocumentCommonInfo d with\(nolock\) on d.ID = t.ID
+			    left join Instances i with\(nolock\) on i.ID = t.ID
+			    where d.CardTypeID = 'df141f0f-7e73-48fb-9cdb-6d46665cc0fb'
+			        \#param\(Number\, d.FullNumber\)
+			        \#param\(Subject\, d.Subject\)
+			        \#if\(Project\) 
+			        \{ 
+			        	AND t.ProjectID IN 
+			        	\(
+			        		SELECT ID FROM childs
+			        	\)
+			        	
+			        \}
+			        \#param\(RegistrationDate\, t.RegistrationDate\)
+			        \#param\(Author\, d.AuthorID\)
+			        \#param\(State\, f.StateID\)
+			        \#param\(DocKind\, t.DocumentKindID\)
+			        \#if\(IsAuthor\) \{
+			        	\#if\(IsAuthor.CriteriaName == "IsTrue"\)
+			        	\{
+			        		AND d.AuthorID = \#param\(CurrentUserID\)
+			        	\}
+			        	\{
+			        		AND \(d.AuthorID IS NULL OR d.AuthorID <> \#param\(CurrentUserID\)\)
+			        	\}
+			        \}
+			        \#if\(ByState\) \{
+						GROUP BY [f].[StateID]\, [f].[StateName]
+					\}
+					\#if\(ByDocKind\) \{
+						GROUP BY [t].[DocumentKindID]\, [t].[DocumentKindName]
+					\}
+			\) t2
+			\#if\(Normal\) \{
+			left join PnrOrder t with\(nolock\) on t.ID = t2.ID
+			left join FdSatelliteCommonInfo f with\(nolock\) on f.MainCardId = t2.ID
+			left join DocumentCommonInfo d with\(nolock\) on d.ID = t2.ID
+			left join Instances i with\(nolock\) on i.ID = t2.ID
+			\}
+			\#if\(PageOffset\) \{
+			where t2.rn >= \#param_expr\(PageOffset\) and t2.rn < \(\#param_expr\(PageOffset\) + \#param_expr\(PageLimit\)\)
+			\}
+			\#if\(Normal\) \{
+			order by t2.rn
+			\}
+			;
+		}
+		#pg_query {}
+		#role(RoleID:c365e148-71f9-4731-8025-3aeb5225af9f, ViewID:d52c7a2d-e224-48e6-ba85-5231d1d706e9) 
+	}
+}

@@ -1,0 +1,47 @@
+﻿[
+  {
+    ".method::int": 2,
+    "Card": {
+      "Created::dtm": "2020-11-19T08:40:24.953Z",
+      "CreatedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "CreatedByName": "Admin",
+      "Files": null,
+      "Flags::int": 0,
+      "ID::uid": "8ca55dcc-6f87-46ac-b454-de4c1e163d19",
+      "Info": null,
+      "Modified::dtm": "2020-11-19T08:40:24.953Z",
+      "ModifiedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "ModifiedByName": "Admin",
+      "Permissions": null,
+      "Sections": {
+        "FileCategories": {
+          "Fields": {
+            "Name": "Справка по форме 6 ндфл (отражающая лиц, получивших доход)"
+          }
+        },
+        "PnrFileCategories_PartnerType": {
+          ".table::int": 1,
+          "Rows": [
+            {
+              "PartnerTypeID::int": 1,
+              "PartnerTypeName": "$PartnerType_LegalEntity",
+              "RowID::uid": "774da235-48b1-4dfe-9002-c3aa9cbd8d90"
+            }
+          ]
+        }
+      },
+      "TaskHistory": null,
+      "TaskHistoryGroups": null,
+      "Tasks": null,
+      "Topics": null,
+      "TypeCaption": "$CardTypes_TypesNames_FileCategory",
+      "TypeID::uid": "97182afc-43ce-4bd9-9c96-73a4d2c5d5eb",
+      "TypeName": "FileCategory",
+      "Version::int": 0
+    },
+    "FileMapping": null,
+    "Info": {
+      ".importVersion::int": 1
+    }
+  }
+]

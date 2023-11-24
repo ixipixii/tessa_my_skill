@@ -1,0 +1,227 @@
+﻿[
+  {
+    ".method::int": 2,
+    "Card": {
+      "Created::dtm": "2020-09-16T07:15:16.19Z",
+      "CreatedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "CreatedByName": "Admin",
+      "Files": null,
+      "Flags::int": 0,
+      "ID::uid": "d68529bd-08c6-46e0-9a7c-4261a4f21df6",
+      "Info": null,
+      "Modified::dtm": "2020-12-02T16:41:44.927Z",
+      "ModifiedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "ModifiedByName": "Admin",
+      "Permissions": null,
+      "Sections": {
+        "Condition_KrDepartmentCondition": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Condition_KrDocStateCondition": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Condition_KrDocTypeCondition": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Condition_KrPartnerCondition": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Condition_KrTaskTypeCondition": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Condition_KrUsersCondition": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "ConditionsVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "FdPermissionStates": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedCardRuleFields": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedCardRules": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedFileRuleCategories": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedFileRules": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedMandatoryRuleFields": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedMandatoryRuleOptions": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedMandatoryRules": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedMandatoryRuleTypes": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedTaskRuleFields": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedTaskRules": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedTaskRuleTypes": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedVisibilityRules": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionRoles": {
+          ".table::int": 1,
+          "Rows": [
+            {
+              "IsContext": false,
+              "RoleID::uid": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d",
+              "RoleName": "Все сотрудники",
+              "RowID::uid": "18b98985-4dca-44d0-bda1-c6403b11eb75"
+            }
+          ]
+        },
+        "KrPermissions": {
+          "Fields": {
+            "CanAddFiles": true,
+            "CanAddTopics": true,
+            "CanCreateCard": true,
+            "CanCreateResolutions": true,
+            "CanCreateTemplateAndCopy": true,
+            "CanDeleteCard": true,
+            "CanDeleteFiles": true,
+            "CanDeleteOwnFiles": true,
+            "CanEditCard": true,
+            "CanEditFiles": true,
+            "CanEditNumber": true,
+            "CanEditOwnFiles": true,
+            "CanEditRoute": true,
+            "CanFullRecalcRoute": true,
+            "CanReadCard": true,
+            "CanSignFiles": true,
+            "CanSkipStages": true,
+            "CanSubscribeForNotifications": true,
+            "CanSuperModeratorMode": true,
+            "Caption": "17.0 Дополнительное соглашение УК Глобальные права",
+            "Conditions": "[]",
+            "Description": null,
+            "IsDisabled": false,
+            "IsExtended": false,
+            "IsRequired": true,
+            "Permissions": "{$KrPermissions_CreateCard}\r\n{$KrPermissions_CreateTemplateAndCopy}\r\n{$KrPermissions_ReadCard}\r\n{$KrPermissions_EditCard}\r\n{$KrPermissions_EditRoute}\r\n{$KrPermissions_CanFullRecalcRoute}\r\n{$KrPermissions_CanSkipStages}\r\n{$KrPermissions_EditNumber}\r\n{$KrPermissions_SignFiles}\r\n{$KrPermissions_AddFiles}\r\n{$KrPermissions_EditOwnFiles}\r\n{$KrPermissions_EditFiles}\r\n{$KrPermissions_DeleteOwnFiles}\r\n{$KrPermissions_DeleteFiles}\r\n{$KrPermissions_DeleteCard}\r\n{$KrPermissions_CreateResolutions}\r\n{$KrPermissions_AddTopics}\r\n{$KrPermissions_SuperModeratorMode}\r\n{$KrPermissions_SubscribeForNotifications}",
+            "Roles": "Все сотрудники",
+            "States": "{$KrStates_Doc_Registration}\r\n{$KrStates_Doc_Registered}\r\n{$KrStates_Doc_Editing}\r\n{$KrStates_Doc_Signing}\r\n{$KrStates_Doc_Active}\r\n{$KrStates_Doc_Disapproved}\r\n{$KrStates_Doc_Declined}\r\n{$KrStates_Doc_Canceled}\r\n{$KrStates_Doc_Signed}\r\n{$KrStates_Doc_Draft}\r\n{$KrStates_Doc_Approved}",
+            "Types": "Дополнительное соглашение УК"
+          }
+        },
+        "KrPermissionStates": {
+          ".table::int": 1,
+          "Rows": [
+            {
+              "RowID::uid": "9eb5cc92-dde9-42b8-abab-7db30b96b7a3",
+              "StateID::int": 7,
+              "StateName": "$KrStates_Doc_Registration"
+            },
+            {
+              "RowID::uid": "10d3ad53-9bf3-4e4e-ac23-3d0e1b79377a",
+              "StateID::int": 6,
+              "StateName": "$KrStates_Doc_Registered"
+            },
+            {
+              "RowID::uid": "3195378b-37fe-4532-8634-bd7af2f6be19",
+              "StateID::int": 4,
+              "StateName": "$KrStates_Doc_Editing"
+            },
+            {
+              "RowID::uid": "9ceb603a-fc9f-46d0-b2c0-419f1751c7a3",
+              "StateID::int": 10,
+              "StateName": "$KrStates_Doc_Signing"
+            },
+            {
+              "RowID::uid": "a3790441-25d6-4269-8ef9-9945bb34e67d",
+              "StateID::int": 1,
+              "StateName": "$KrStates_Doc_Active"
+            },
+            {
+              "RowID::uid": "7a8848a6-c6dd-4e41-a14c-429f189cb47a",
+              "StateID::int": 3,
+              "StateName": "$KrStates_Doc_Disapproved"
+            },
+            {
+              "RowID::uid": "97a4ecb3-7743-4ec4-bead-172f7d0567f4",
+              "StateID::int": 9,
+              "StateName": "$KrStates_Doc_Declined"
+            },
+            {
+              "RowID::uid": "017510df-c42a-480f-8d32-286c3956a670",
+              "StateID::int": 5,
+              "StateName": "$KrStates_Doc_Canceled"
+            },
+            {
+              "RowID::uid": "7ae3b8b8-280a-4d7c-91b3-7c349a163ba4",
+              "StateID::int": 8,
+              "StateName": "$KrStates_Doc_Signed"
+            },
+            {
+              "RowID::uid": "4a7e4748-0c9b-4823-b5ef-971f33c2c2fd",
+              "StateID::int": 0,
+              "StateName": "$KrStates_Doc_Draft"
+            },
+            {
+              "RowID::uid": "ec5c1095-c9d5-4d96-b8fa-393b11d6e22b",
+              "StateID::int": 2,
+              "StateName": "$KrStates_Doc_Approved"
+            }
+          ]
+        },
+        "KrPermissionTypes": {
+          ".table::int": 1,
+          "Rows": [
+            {
+              "RowID::uid": "fbd8322b-dec7-4199-b135-d5156e6fa324",
+              "TypeCaption": "Дополнительное соглашение УК",
+              "TypeID::uid": "87adb0cb-7c5f-4c82-974f-5d4e3c4a050f",
+              "TypeIsDocType": false
+            }
+          ]
+        }
+      },
+      "TaskHistory": null,
+      "TaskHistoryGroups": null,
+      "Tasks": null,
+      "Topics": null,
+      "TypeCaption": "$CardTypes_TypesNames_KrPermissions",
+      "TypeID::uid": "fa9dbdac-8708-41df-bd72-900f69655dfa",
+      "TypeName": "KrPermissions",
+      "Version::int": 0
+    },
+    "FileMapping": null,
+    "Info": {
+      ".importVersion::int": 2
+    }
+  }
+]

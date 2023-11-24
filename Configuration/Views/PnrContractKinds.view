@@ -1,0 +1,25 @@
+#tessa_exchange_format(Version:1, CreationTime:2020-11-16T12\:23\:08) {
+	#exchange_view(RowID:74357125-510b-45be-bb28-3c9f036a408c, Alias:PnrContractKinds, Caption:Виды договора, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2020-11-16T12\:22\:50, GroupName:Pnr) {
+		#metadata {
+			#view(DefaultSortColumn: ContractKindName, DefaultSortDirection: asc, Paging: no, QuickSearchParam: Name)
+			#column(Alias: ContractKindID, Hidden: true)
+			#column(Alias: ContractKindName, Caption: Название, Hidden: false, SortBy: t.Name)
+			#column(Alias: ContractKindMDMName, Caption: Название в НСИ, Hidden: false, SortBy: t.MDMName)
+			#param(Alias: Name, Caption: Название, Hidden: false, Type: nvarchar, Multiple: true)
+			#reference(ColPrefix: ContractKind, RefSection: PnrContractKinds, DisplayValueColumn: ContractKindName, IsCard: true, OpenOnDoubleClick: true)
+		}
+		#description {}
+		#ms_query {
+			select
+			    t.ID as ContractKindID\,
+			    t.Name as ContractKindName\,
+			    t.MDMName as ContractKindMDMName
+			from PnrContractKinds t with\(nolock\)
+			where 1=1
+			    \#param_expr\(Name\, t.Name\)
+			order by \#order_by
+		}
+		#pg_query {}
+		#role(RoleID:7ff52dc0-ff6a-4c9d-ba25-b562c370004d, ViewID:74357125-510b-45be-bb28-3c9f036a408c) 
+	}
+}

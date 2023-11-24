@@ -1,0 +1,23 @@
+#tessa_exchange_format(Version:1, CreationTime:2020-08-20T11\:09\:09) {
+	#exchange_view(RowID:0797d1bd-a716-4b2f-ab0a-fced87a199f6, Alias:PnrSpecialPartnerSign, Caption:Особый статус контрагента, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2020-08-20T10\:56\:30, GroupName:Pnr) {
+		#metadata {
+			#view(DefaultSortColumn: SpecialSignName, DefaultSortDirection: asc, Paging: no, QuickSearchParam: Name)
+			#column(Alias: SpecialSignID, Hidden: true)
+			#column(Alias: SpecialSignName, Caption: Название, Hidden: false, SortBy: t.Name)
+			#param(Alias: Name, Caption: Название, Hidden: false, Type: nvarchar, Multiple: false)
+			#reference(ColPrefix: SpecialSign, RefSection: PnrSpecialPartnerSign, DisplayValueColumn: SpecialSignName, IsCard: false, OpenOnDoubleClick: false)
+		}
+		#description {}
+		#ms_query {
+			select
+			    t.ID as SpecialSignID\,
+			    t.Name as SpecialSignName
+			from PnrSpecialPartnerSign t with\(nolock\)
+			where 1=1
+			    \#param_expr\(Name\, t.Name\)
+			order by \#order_by
+		}
+		#pg_query {}
+		#role(RoleID:7ff52dc0-ff6a-4c9d-ba25-b562c370004d, ViewID:0797d1bd-a716-4b2f-ab0a-fced87a199f6) 
+	}
+}

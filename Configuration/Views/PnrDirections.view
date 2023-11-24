@@ -1,0 +1,25 @@
+#tessa_exchange_format(Version:1, CreationTime:2020-08-25T01\:57\:04) {
+	#exchange_view(RowID:f7bb46f9-3c37-423b-bb17-730f2b473157, Alias:PnrDirections, Caption:Направления, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2020-08-25T01\:56\:45, GroupName:Pnr) {
+		#metadata {
+			#view(DefaultSortColumn: DirectionName, DefaultSortDirection: asc, Paging: always, QuickSearchParam: Name)
+			#column(Alias: DirectionID, Hidden: true)
+			#column(Alias: DirectionName, Caption: Название, Hidden: false, SortBy: t.Name)
+			#column(Alias: DirectionDescription, Caption: Описание, Hidden: false)
+			#param(Alias: Name, Caption: Name, Hidden: false, Type: nvarchar, Multiple: true)
+			#reference(ColPrefix: Direction, RefSection: PnrDirections, DisplayValueColumn: DirectionName, IsCard: true, OpenOnDoubleClick: true)
+		}
+		#description {}
+		#ms_query {
+			select
+			    t.ID as DirectionID\,
+			    t.Name as DirectionName\,
+			    t.Description as DirectionDescription
+			from PnrDirections t with\(nolock\)
+			where 1=1
+			    \#param_expr\(Name\, t.Name\)
+			order by \#order_by
+		}
+		#pg_query {}
+		#role(RoleID:7ff52dc0-ff6a-4c9d-ba25-b562c370004d, ViewID:f7bb46f9-3c37-423b-bb17-730f2b473157) 
+	}
+}

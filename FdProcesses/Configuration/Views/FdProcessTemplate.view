@@ -1,0 +1,211 @@
+#tessa_exchange_format(Version:1, CreationTime:2019-11-08T13\:43\:17) {
+	#exchange_view(RowID:00def2d2-5fd0-4cc4-b5f8-9d69248ee6e5, Alias:FdProcessTemplate, Caption:Шаблоны процессов, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2019-11-08T09\:44\:57, GroupName:Fd Awf) {
+		#metadata {
+			#view(DefaultSortColumn: ProcessTemplateName, DefaultSortDirection: asc, Paging: always, RowCountSubset: Count, MultiSelect: true, QuickSearchParam: Name, PageLimit: 10)
+
+			#column(Alias: ProcessTemplateID, Caption: ID, Type: Guid, Hidden: true)
+			#column(Alias: ProcessTemplateName, Caption: Название, Type: String, SortBy: t.Name)
+			#column(Alias: ProcessTemplateCardTypeID, Caption: Тип карточки ID, Type: Guid, Hidden: true)
+			#column(Alias: ProcessTemplateCardTypeCaption, Caption: Тип карточки, Type: String, Localizable: true, sortBy: t.CardTypeCaption)
+			#column(Alias: ProcessTemplateStartTileCaption, Caption: Заголовок тайла запуска, Type: String, Hidden: true)
+			#column(Alias: ManageRoles, Caption: Запуск для ролей, Type: String)
+			#column(Alias: CardStates, Caption: Запуск в состояниях, Type: String)
+			#column(Alias: IsActive, Caption: Активен, Type: Boolean, SortBy: t.IsActive)
+			#column(Alias: AutoStartOnCardStore, Caption: Автозапуск, Type: Boolean, SortBy: t.AutoStartOnCardStore)
+			#column(Alias: UnlimitedActiveInstancesCount, Caption: Неогр. число акт. экз., Type: Boolean, SortBy: t.UnlimitedActiveInstancesCount)
+			#column(Alias: ProcessTemplateDescription, Caption: Описание, Type: String)
+			#column(Alias: rn, Type: Int64, Hidden: true)
+
+			#param(Alias: Name, Caption: Название, Multiple: true, Type: String)
+			#param(Alias: ExceptProcessID, Caption: ID Исключенного процесса, Hidden: true, Type: Guid)
+			#param(Alias: CardTypeID, Caption: Тип карточки, Multiple: true, Type: Guid, RefSection: FdCardTypes) {
+				#autocomplete(View: FdCardTypes, Param: Caption, PopupColumns: 1 2)
+				#dropdown(View: FdCardTypes, PopupColumns: 1 2)
+			}
+
+			#subset(Alias: ByCardType, Caption: По типу карточки, RefParam: CardTypeID, RefColumn: CardTypeID, CaptionColumn: CardTypeCaption, CountColumn: CardTypeCount)
+			#subset(Alias: Count)
+
+			#reference(ColPrefix: ProcessTemplate, RefSection: FdProcessTemplate, DisplayValueColumn: ProcessTemplateName, IsCard: true, OpenOnDoubleClick: true)
+		}
+		#description {}
+		#ms_query {
+			select
+				\#if\(Normal\) \{
+					t.ID as ProcessTemplateID\,
+					t.Name as ProcessTemplateName\,
+					t.Description as ProcessTemplateDescription\,
+					t.CardTypeID as ProcessTemplateCardTypeID\,
+					t.CardTypeCaption as ProcessTemplateCardTypeCaption\,
+					t.StartTileCaption as ProcessTemplateStartTileCaption\,
+					t.IsActive\,
+					t.AutoStartOnCardStore\,
+					t.UnlimitedActiveInstancesCount\,
+					t.ManageRoles\,
+					COALESCE\(t.CardStates\, N'Любое'\) as CardStates\,
+					t.rn
+				\}
+
+				\#if\(Count\) \{
+				[t].*
+				\}
+				
+				\#if\(ByCardType\) \{
+				[t].*
+				\}
+			from
+			\(
+				select
+				\#if\(Normal\) \{
+					t.ID\,
+					t.Name\,
+					t.Description\,
+					t.CardTypeID\,
+					t.CardTypeCaption\,
+					t.StartTileCaption\,
+					t.IsActive\,
+					t.AutoStartOnCardStore\,
+					t.UnlimitedActiveInstancesCount\,
+					STUFF\(\(
+								SELECT N'\, ' + [mpr].[RoleName]
+								FROM [FdProcessTemplate_ManageProcessRoles] AS [mpr] WITH \(NOLOCK\)
+								WHERE mpr.ID = t.ID and CanStartProcess = 1
+								ORDER BY [mpr].[RoleName]
+								FOR XML PATH \(''\)
+							\)\, 1\, 2\, N''\) as ManageRoles\,
+					STUFF\(\(
+								SELECT N'\, ' + [cs].[StateName]
+								FROM [FdProcessTemplate_CardStates] AS [cs] WITH \(NOLOCK\)
+								WHERE cs.ID = t.ID
+								ORDER BY [cs].[StateName]
+								FOR XML PATH \(''\)
+							\)\, 1\, 2\, N''\) as CardStates\,
+					row_number\(\) OVER \(ORDER BY \#order_by\) AS rn
+				\}
+				\#if\(Count\) \{
+					count\(*\) AS [cnt]
+				\}
+				\#if\(ByCardType\) \{
+					t.CardTypeID\,
+					t.CardTypeCaption\,
+					count\(*\) 			as CardTypeCount
+				\}
+				from FdProcessTemplate t with\(nolock\)
+				where 
+					1=1
+					\#param\(Name\, t.Name\)
+					\#if\(ExceptProcessID && ExceptProcessID.CriteriaName != "IsNull"\)\{
+						and \#param\(ExceptProcessID\) <> t.ID
+					\}
+					\#if\(CardTypeID && CardTypeID.CriteriaName != "IsNull"\)\{
+						and \#param\(CardTypeID\) = t.CardTypeID
+					\}
+				\#if\(ByCardType\) \{
+				GROUP BY t.CardTypeID\, t.CardTypeCaption
+				\}
+			\) as t
+			\#if\(Normal\) \{
+			\#if\(PageOffset\) \{
+			WHERE [t].[rn] >= \#param\(PageOffset\) AND [t].[rn] < \(\#param\(PageOffset\) + \#param\(PageLimit\)\)
+			\}
+			ORDER BY [t].[rn]
+			\}
+			\#if\(ByCardType\) \{
+			CROSS APPLY Localization\(t.CardTypeCaption\, \#param\(locale\)\) AS lCardTypeCaption
+			ORDER BY lCardTypeCaption.Value
+			\}
+		}
+		#pg_query {
+			select
+				\#if\(Normal\) \{
+					"t"."ID" 							as "ProcessTemplateID"\,
+					"t"."Name" 							as "ProcessTemplateName"\,
+					"t"."CardTypeID" 					as "ProcessTemplateCardTypeID"\,
+					"t"."CardTypeCaption" 				as "ProcessTemplateCardTypeCaption"\,
+					"t"."StartTileCaption" 				as "ProcessTemplateStartTileCaption"\,
+					"t"."ManageRoles"\,
+					COALESCE\("t"."CardStates"\, 'Любое'\) as "CardStates"\,
+					"t"."IsActive"\,
+					"t"."AutoStartOnCardStore"\,
+					"t"."UnlimitedActiveInstancesCount"\,
+					"t"."Description" 					as "ProcessTemplateDescription"\,
+					"t"."rn"
+				\}
+
+				\#if\(Count\) \{
+				"t".*
+				\}
+				
+				\#if\(ByCardType\) \{
+				"t".*
+				\}
+			from
+			\(
+				select
+				\#if\(Normal\) \{
+					"t"."ID"\,
+					"t"."Name"\,
+					"t"."Description"\,
+					"t"."CardTypeID"\,
+					"t"."CardTypeCaption"\,
+					"t"."StartTileCaption"\,
+					"t"."IsActive"\,
+					"t"."AutoStartOnCardStore"\,
+					"t"."UnlimitedActiveInstancesCount"\,
+					\(
+						select string_agg\("RoleName"\, '\, '\)
+						from
+						\(
+							SELECT "mpr"."RoleName"
+							FROM "FdProcessTemplate_ManageProcessRoles" AS "mpr"
+							WHERE "mpr"."ID" = "t"."ID" and "CanStartProcess" = true
+							ORDER BY "mpr"."RoleName"
+						\) as "mpr"
+					\) as "ManageRoles"\,
+					\(
+						select string_agg\("StateName"\, '\, '\)
+						from
+						\(
+							SELECT "cs"."StateName"
+							FROM "FdProcessTemplate_CardStates" AS "cs"
+							WHERE "cs"."ID" = "t"."ID"
+							ORDER BY "cs"."StateName"
+						\) as "cs"
+					\) as "CardStates"\,
+					0\:\:int8 AS "rn"
+				\}
+				\#if\(Count\) \{
+					count\(*\) AS "cnt"
+				\}
+				\#if\(ByCardType\) \{
+					"t"."CardTypeID"\,
+					"t"."CardTypeCaption"\,
+					count\(*\) 			as "CardTypeCount"
+				\}
+				from "FdProcessTemplate" "t"
+				where 
+					true
+					\#param\(Name\, "t"."Name"\)
+					\#if\(ExceptProcessID && ExceptProcessID.CriteriaName != "IsNull"\)\{
+						and \#param\(ExceptProcessID\) <> "t"."ID"
+					\}
+					\#if\(CardTypeID && CardTypeID.CriteriaName != "IsNull"\)\{
+						and \#param\(CardTypeID\) = "t"."CardTypeID"
+					\}
+				\#if\(ByCardType\) \{
+				GROUP BY "t"."CardTypeID"\, "t"."CardTypeCaption"
+				\}
+			\) as "t"
+			\#if\(Normal\) \{
+			ORDER BY \#order_by
+			\}
+			\#if\(PageOffset\) \{
+			OFFSET \#param\(PageOffset\) - 1 LIMIT \#param\(PageLimit\)
+			\}
+			\#if\(ByCardType\) \{
+			cross join "Localization"\("t"."CardTypeCaption"\, \#param\(locale\)\) AS "lCardTypeCaption"
+			ORDER BY "lCardTypeCaption"."Value"
+			\}
+		}
+	}
+}

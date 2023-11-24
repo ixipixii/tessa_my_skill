@@ -1,0 +1,180 @@
+#tessa_exchange_format(Version:1, CreatorName:Admin, CreationTime:2020-12-29T12\:59\:29) {
+	#exchange_workplace(RowID:ce6a1a26-ac52-4999-b66e-1866928f61ac, Alias:Fd Admin, FormatVersion:2) {
+		#role(RoleID:3db19fa0-228a-497f-873a-0250bf0a4ccb, WorkplaceID:ce6a1a26-ac52-4999-b66e-1866928f61ac) 
+		#role(RoleID:b437522f-509a-460d-b44b-3c528d8ba7d6, WorkplaceID:ce6a1a26-ac52-4999-b66e-1866928f61ac) 
+		#role(RoleID:9141b889-a4b1-47a9-9c95-ad9041002392, WorkplaceID:ce6a1a26-ac52-4999-b66e-1866928f61ac) 
+		#metadata {
+			#workplace(Alias:Fd Admin, OrderPos:2, CompositionId:ce6a1a26-ac52-4999-b66e-1866928f61ac, Version:51, FormatVersion:3, ParentCompositionId:1499e54e-4245-4489-9aeb-0c4a439c145f) {
+				#view(Alias:FdStageTemplate, Caption:Шаблоны этапов, CompositionId:04a4b351-e740-4a7d-8a5c-1fc4f11ae179, ShowMode:SelectionMode, IsNode:True, ParentCompositionId:ce6a1a26-ac52-4999-b66e-1866928f61ac, EnableAutoWidth:True) {
+					#layout(Caption:Шаблоны этапов, CompositionId:acb60c79-dfa8-471d-982e-c1cfa595cd89) {
+						#content {
+							#data_view(Alias:FdStageTemplate, CompositionId:04a4b351-e740-4a7d-8a5c-1fc4f11ae179) 
+						}
+					}
+				}
+				#view(Alias:FdProcessTemplate, Caption:Шаблоны процессов, CompositionId:02e813e3-d1f0-4ad1-86aa-a89133ce6476, OrderPos:1, IsNode:True, ParentCompositionId:ce6a1a26-ac52-4999-b66e-1866928f61ac, EnableAutoWidth:True) {
+					#layout(SplitState:HorizontalSplit, Caption:Шаблоны процессов, CompositionId:e8f75afc-3e28-4e8e-ac36-49f5ef7ba089) {
+						#layout(CompositionId:ef542611-e793-454d-9d08-58d5179a1284) {
+							#content {
+								#data_view(Alias:FdProcessTemplate, CompositionId:02e813e3-d1f0-4ad1-86aa-a89133ce6476) 
+							}
+						}
+						#layout(Caption:Шаблоны этапов, CompositionId:da85db0a-e2a8-47ca-a8fb-ecf9bf7701f9) {
+							#content {
+								#data_view(Alias:FdStageTemplateTree, CompositionId:78602282-81c8-49a6-a69b-9f480baf87c5) 
+							}
+						}
+					}
+					#subset_settings(Alias:ByCardType, Visibility:OpenedAsDefault, CompositionId:5eb6bfdb-b9cd-42bb-a321-810e1a840963, Caption:По типу карточки, ParentCompositionId:02e813e3-d1f0-4ad1-86aa-a89133ce6476, ExpandingMode:Expanded, OrderPos:0) {}
+					#view(Alias:FdStageTemplateTree, Caption:Шаблоны этапов, CompositionId:78602282-81c8-49a6-a69b-9f480baf87c5, OrderPos:1, ShowMode:NormalMode, ParentCompositionId:02e813e3-d1f0-4ad1-86aa-a89133ce6476, EnableAutoWidth:True) {
+						#master_link(SourceParam:ProcessTemplateID, LinkedColumn:ProcessTemplateID) 
+					}
+				}
+				#view(Alias:FdProcessTemplate, Caption:Процессы - документы \(незавершенные\), CompositionId:c7e0ff53-f1ec-4f6f-8bd0-296e16eff65c, OrderPos:2, ShowMode:NormalMode, IsNode:True, ParentCompositionId:ce6a1a26-ac52-4999-b66e-1866928f61ac, EnableAutoWidth:True) {
+					#layout(SplitState:HorizontalSplit, Caption:Шаблоны процессов, CompositionId:9d1fbd1b-e5e5-45c6-b7eb-1a1a5f007565) {
+						#layout(CompositionId:708de894-598b-45da-99e3-8842a1aaf8f2) {
+							#content {
+								#data_view(Alias:FdProcessTemplate, CompositionId:c7e0ff53-f1ec-4f6f-8bd0-296e16eff65c) 
+							}
+						}
+						#layout(Caption:$Views_DocumentAll_Caption, CompositionId:032e7fc2-1c68-4f76-bd1f-4c63d3c15167) {
+							#content {
+								#data_view(Alias:FdDocumentsAllTypes, CompositionId:c6d4365f-fb58-4d7b-96c5-6f46e4eb37b2) 
+							}
+						}
+					}
+					#view(Alias:FdDocumentsAllTypes, Caption:$Views_DocumentAll_Caption, CompositionId:c6d4365f-fb58-4d7b-96c5-6f46e4eb37b2, ParentCompositionId:c7e0ff53-f1ec-4f6f-8bd0-296e16eff65c, EnableAutoWidth:True) {
+						#master_link(SourceParam:ProcessTemplateID, LinkedColumn:ProcessTemplateID) 
+						#request_parameter {
+							#param(Alias:ProcessStateID, Caption:Process State ID, Hidden:True, Multiple:True, Type:Int16 Not Null, RefSection:, ConvertToUtc:True) {}
+							#request_criteria(Name:NonEquality) {
+								#criteria_value {
+									#value {
+										2
+									}
+									#text {
+										2
+									}
+								}
+							}
+						}
+					}
+				}
+				#view(Alias:FdProcessTemplate, Caption:Процессы - документы \(завершенные\), CompositionId:735b3383-28c1-484b-b453-8003adca0aeb, OrderPos:3, ShowMode:NormalMode, IsNode:True, ParentCompositionId:ce6a1a26-ac52-4999-b66e-1866928f61ac, EnableAutoWidth:True) {
+					#layout(SplitState:HorizontalSplit, Caption:Шаблоны процессов, CompositionId:76cae669-98ae-4cec-9b95-7e713d1214c5) {
+						#layout(CompositionId:2823f8ea-bebe-4833-82e5-3509e3f39fa1) {
+							#content {
+								#data_view(Alias:FdProcessTemplate, CompositionId:735b3383-28c1-484b-b453-8003adca0aeb) 
+							}
+						}
+						#layout(Caption:$Views_DocumentAll_Caption, CompositionId:37462f32-a9ef-4800-b7a1-10052095e0b1) {
+							#content {
+								#data_view(Alias:FdDocumentsAllTypes, CompositionId:0314b1de-3d43-4996-9b25-f1595a9e8b41) 
+							}
+						}
+					}
+					#view(Alias:FdDocumentsAllTypes, Caption:$Views_DocumentAll_Caption, CompositionId:0314b1de-3d43-4996-9b25-f1595a9e8b41, ParentCompositionId:735b3383-28c1-484b-b453-8003adca0aeb, EnableAutoWidth:True) {
+						#master_link(SourceParam:ProcessTemplateID, LinkedColumn:ProcessTemplateID) 
+						#request_parameter {
+							#param(Alias:ProcessStateID, Caption:Process State ID, Hidden:True, Multiple:True, Type:Int16 Not Null, RefSection:, ConvertToUtc:True) {}
+							#request_criteria(Name:Equality) {
+								#criteria_value {
+									#value {
+										2
+									}
+									#text {
+										2
+									}
+								}
+							}
+						}
+					}
+				}
+				#view(Alias:FdTaskTypes, Caption:Типы заданий, CompositionId:bdd0e948-3e70-4bcb-8919-4f17e1d5bc4e, OrderPos:4, IsNode:True, ParentCompositionId:ce6a1a26-ac52-4999-b66e-1866928f61ac, EnableAutoWidth:True) {
+					#layout(Caption:Типы заданий, CompositionId:1ff4de85-b10c-4d06-a49b-5c2154d6b5a8) {
+						#content {
+							#data_view(Alias:FdTaskTypes, CompositionId:bdd0e948-3e70-4bcb-8919-4f17e1d5bc4e) 
+						}
+					}
+				}
+				#view(Alias:FdCompletionOptions, Caption:Параметры завершения задания, CompositionId:0b347f13-af0b-471b-af33-242b3b9f814b, OrderPos:5, ShowMode:SelectionMode, IsNode:True, ParentCompositionId:ce6a1a26-ac52-4999-b66e-1866928f61ac, EnableAutoWidth:True) {
+					#layout(Caption:Параметры завершения задания, CompositionId:01186c7a-6766-4bed-b04b-2f6e07d2a51e) {
+						#content {
+							#data_view(Alias:FdCompletionOptions, CompositionId:0b347f13-af0b-471b-af33-242b3b9f814b) 
+						}
+					}
+				}
+				#view(Alias:FdCompletionConditions, Caption:Условие завершения, CompositionId:ee287a7e-1623-4530-bec9-a4505b6fa6f4, OrderPos:6, IsNode:True, ParentCompositionId:ce6a1a26-ac52-4999-b66e-1866928f61ac, EnableAutoWidth:True) {
+					#layout(Caption:Условие завершения, CompositionId:3b1d2f96-2150-4358-a663-6e700748d3f7) {
+						#content {
+							#data_view(Alias:FdCompletionConditions, CompositionId:ee287a7e-1623-4530-bec9-a4505b6fa6f4) 
+						}
+					}
+				}
+				#view(Alias:FdCardTypes, Caption:Типы карточек, CompositionId:ab5cf65b-e67e-4094-a97e-d20020771bd6, OrderPos:7, IsNode:True, ParentCompositionId:ce6a1a26-ac52-4999-b66e-1866928f61ac, EnableAutoWidth:True) {
+					#layout(Caption:Типы карточек, CompositionId:53651514-fb58-4c84-b8d1-ecb0581fd34b) {
+						#content {
+							#data_view(Alias:FdCardTypes, CompositionId:ab5cf65b-e67e-4094-a97e-d20020771bd6) 
+						}
+					}
+				}
+				#view(Alias:FdCardStates, Caption:Состояния карточек, CompositionId:6d4a6878-ca97-4316-9f16-5d9be7d0fd16, OrderPos:8, IsNode:True, ParentCompositionId:ce6a1a26-ac52-4999-b66e-1866928f61ac, EnableAutoWidth:True) {
+					#layout(Caption:Состояния карточек, CompositionId:371ec292-a383-418c-befe-9714dd52e0e3) {
+						#content {
+							#data_view(Alias:FdCardStates, CompositionId:6d4a6878-ca97-4316-9f16-5d9be7d0fd16) 
+						}
+					}
+				}
+				#view(Alias:FdCardTypeFields, Caption:Поля карточки, CompositionId:0e746fa7-05eb-4341-8618-65faf36e7a9e, OrderPos:9, IsNode:True, ParentCompositionId:ce6a1a26-ac52-4999-b66e-1866928f61ac, EnableAutoWidth:True) {
+					#layout(Caption:Поля карточки, CompositionId:434ece2f-8325-4295-9e72-cd07fe15dcc7) {
+						#content {
+							#data_view(Alias:FdCardTypeFields, CompositionId:0e746fa7-05eb-4341-8618-65faf36e7a9e) 
+						}
+					}
+				}
+				#view(Alias:FdCriteriaOperators, Caption:Операторы критериев, CompositionId:889ad645-f97e-404d-a4fc-d51f01e7270d, OrderPos:10, IsNode:True, ParentCompositionId:ce6a1a26-ac52-4999-b66e-1866928f61ac, EnableAutoWidth:True) {
+					#layout(Caption:Критерии, CompositionId:40f50fd3-d084-420c-a2ce-6ba97dc0a4e9) {
+						#content {
+							#data_view(Alias:FdCriteriaOperators, CompositionId:889ad645-f97e-404d-a4fc-d51f01e7270d) 
+						}
+					}
+				}
+				#view(Alias:FdCardTypeFieldsView, Caption:Поля типа карточки, CompositionId:0e63e0c2-119d-4636-9fcf-5844a91fe58d, OrderPos:11, IsNode:True, ParentCompositionId:ce6a1a26-ac52-4999-b66e-1866928f61ac, EnableAutoWidth:True) {
+					#layout(Caption:Поля типа карточки, CompositionId:f2db5dc3-fa08-4d7f-9637-c3bccc4955e0) {
+						#content {
+							#data_view(Alias:FdCardTypeFieldsView, CompositionId:0e63e0c2-119d-4636-9fcf-5844a91fe58d) 
+						}
+					}
+				}
+				#view(Alias:FdTaskTypeFieldsView, Caption:Поля типа задания, CompositionId:c8b698a1-b06a-451e-abad-37db551d0081, OrderPos:12, IsNode:True, ParentCompositionId:ce6a1a26-ac52-4999-b66e-1866928f61ac, EnableAutoWidth:True) {
+					#layout(Caption:Поля типа задания, CompositionId:d5a03129-a23f-4351-88b6-9ba4453a6771) {
+						#content {
+							#data_view(Alias:FdTaskTypeFieldsView, CompositionId:c8b698a1-b06a-451e-abad-37db551d0081) 
+						}
+					}
+				}
+				#view(Alias:FdStageTemplateCompletions, Caption:Параметры завершения этапа, CompositionId:24e2bfec-7c1b-4611-8a8c-eec5cc77faab, OrderPos:13, ShowMode:SelectionMode, IsNode:True, ParentCompositionId:ce6a1a26-ac52-4999-b66e-1866928f61ac, EnableAutoWidth:True) {
+					#layout(Caption:Параметры завершения этапа, CompositionId:be4f1ffb-9ecf-4edc-8c83-954dfed0f367) {
+						#content {
+							#data_view(Alias:FdStageTemplateCompletions, CompositionId:24e2bfec-7c1b-4611-8a8c-eec5cc77faab) 
+						}
+					}
+				}
+				#view(Alias:FdSpecialRoles, Caption:Особые роли, CompositionId:72849ced-04d9-4af0-9e44-15b7334f2c42, OrderPos:14, IsNode:True, ParentCompositionId:ce6a1a26-ac52-4999-b66e-1866928f61ac, EnableAutoWidth:True) {
+					#layout(Caption:Особые роли, CompositionId:4cc867a8-5f3c-4961-9d54-cf9223d6303f) {
+						#content {
+							#data_view(Alias:FdSpecialRoles, CompositionId:72849ced-04d9-4af0-9e44-15b7334f2c42) 
+						}
+					}
+				}
+				#view(Alias:PnrTemplateTypes, Caption:Шаблон, CompositionId:f7fac344-030c-45f0-8299-b5c179172c14, OrderPos:15, ShowMode:SelectionMode, IsNode:True, ParentCompositionId:ce6a1a26-ac52-4999-b66e-1866928f61ac, EnableAutoWidth:True) {
+					#layout(Caption:Шаблон, CompositionId:4e2381bb-90a8-4a61-906c-778a2d5e94c0) {
+						#content {
+							#data_view(Alias:PnrTemplateTypes, CompositionId:f7fac344-030c-45f0-8299-b5c179172c14) 
+						}
+					}
+				}
+			}
+		}
+	}
+}

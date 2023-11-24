@@ -1,0 +1,25 @@
+#tessa_exchange_format(Version:1, CreationTime:2020-08-20T11\:09\:09) {
+	#exchange_view(RowID:a64d1874-9901-41cf-81bc-692af3db3f10, Alias:PnrLegalEntitiesIndexes, Caption:Индексы юридических лиц, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2020-08-20T10\:28\:17, GroupName:Pnr) {
+		#metadata {
+			#view(DefaultSortColumn: LegalEntityName, DefaultSortDirection: asc, Paging: no, QuickSearchParam: Name)
+			#column(Alias: LegalEntityID, Hidden: true)
+			#column(Alias: LegalEntityName, Caption: Название, Hidden: false, SortBy: t.Name)
+			#column(Alias: LegalEntityIdx, Caption: Индекс, Hidden: false)
+			#param(Alias: Name, Caption: Название, Hidden: false, Type: nvarchar, Multiple: true)
+			#reference(ColPrefix: LegalEntity, RefSection: PnrLegalEntitiesIndexes, DisplayValueColumn: LegalEntityName, IsCard: true, OpenOnDoubleClick: true)
+		}
+		#description {}
+		#ms_query {
+			select
+			    t.ID as LegalEntityID\,
+			    t.Name as LegalEntityName\,
+			    t.Idx as LegalEntityIdx
+			from PnrLegalEntitiesIndexes t with\(nolock\)
+			where 1=1
+			    \#param_expr\(Name\, t.Name\)
+			order by \#order_by
+		}
+		#pg_query {}
+		#role(RoleID:7ff52dc0-ff6a-4c9d-ba25-b562c370004d, ViewID:a64d1874-9901-41cf-81bc-692af3db3f10) 
+	}
+}

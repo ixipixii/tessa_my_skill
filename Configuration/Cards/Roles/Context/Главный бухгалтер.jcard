@@ -1,0 +1,55 @@
+﻿[
+  {
+    ".method::int": 2,
+    "Card": {
+      "Created::dtm": "2020-08-13T17:08:09.003Z",
+      "CreatedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "CreatedByName": "Admin",
+      "Files": null,
+      "Flags::int": 0,
+      "ID::uid": "d1fbc241-b895-4182-a69f-33490add1b59",
+      "Info": null,
+      "Modified::dtm": "2020-10-26T09:22:08.117Z",
+      "ModifiedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "ModifiedByName": "Admin",
+      "Permissions": null,
+      "Sections": {
+        "ContextRoles": {
+          "Fields": {
+            "SqlText": "SELECT COALESCE(\n(SELECT [org].[ChiefAccountantProcessID] FROM [PnrOrganizations] AS [org] WITH(NOLOCK)\nLEFT JOIN [PnrContracts] AS [con] WITH(NOLOCK) ON [con].[OrganizationID] = [org].[ID]-- Договор\nWHERE [con].[ID] =  #context_card_id), \n(SELECT [org].[ChiefAccountantProcessID] FROM [PnrOrganizations] AS [org] WITH(NOLOCK)\nLEFT JOIN [PnrServiceNote] AS [con] WITH(NOLOCK) ON [con].[OrganizationID] = [org].[ID]-- Служебки\nWHERE [con].[ID] =  #context_card_id),\n(SELECT [org].[ChiefAccountantProcessID] FROM [PnrOrganizations] AS [org] WITH(NOLOCK)\nLEFT JOIN [PnrOutgoing] AS [con] WITH(NOLOCK) ON [con].[OrganizationID] = [org].[ID]-- ИСХ\nWHERE [con].[ID] =  #context_card_id),\n(SELECT [org].[ChiefAccountantProcessID] FROM [PnrOrganizations] AS [org] WITH(NOLOCK)\nLEFT JOIN [PnrOutgoingUK] AS [con] WITH(NOLOCK) ON [con].[OrganizationID] = [org].[ID]-- ИСХ УК\nWHERE [con].[ID] =  #context_card_id),\n(SELECT [org].[ChiefAccountantProcessID] FROM [PnrOrganizations] AS [org] WITH(NOLOCK)\nLEFT JOIN [PnrContractsUK] AS [con] WITH(NOLOCK) ON [con].[OrganizationID] = [org].[ID]-- Договор УК\nWHERE [con].[ID] =  #context_card_id),\n(SELECT [org].[ChiefAccountantProcessID] FROM [PnrOrganizations] AS [org] WITH(NOLOCK)\nLEFT JOIN [PnrIncomingOrganizations] AS [con] WITH(NOLOCK) ON [con].[OrganizationID] = [org].[ID]-- ВХ\nWHERE [con].[ID] =  #context_card_id),\n(SELECT [org].[ChiefAccountantProcessID] FROM [PnrOrganizations] AS [org] WITH(NOLOCK)\nLEFT JOIN [PnrIncomingUK] AS [con] WITH(NOLOCK) ON [con].[OrganizationID] = [org].[ID]-- ВХ УК\nWHERE [con].[ID] =  #context_card_id),\n(SELECT [org].[ChiefAccountantProcessID] FROM [PnrOrganizations] AS [org] WITH(NOLOCK)\nLEFT JOIN [PnrOrder] AS [con] WITH(NOLOCK) ON [con].[OrganizationID] = [org].[ID]-- Приказ и распоряжение\nWHERE [con].[ID] =  #context_card_id),\n(SELECT [org].[ChiefAccountantProcessID] FROM [PnrOrganizations] AS [org] WITH(NOLOCK)\nLEFT JOIN [PnrOrderUK] AS [con] WITH(NOLOCK) ON [con].[OrganizationID] = [org].[ID]-- Приказ и распоряжение УК\nWHERE [con].[ID] =  #context_card_id),\n(SELECT [org].[ChiefAccountantProcessID] FROM [PnrOrganizations] AS [org] WITH(NOLOCK)\nLEFT JOIN [PnrPowerAttorney] AS [con] WITH(NOLOCK) ON [con].[OrganizationID] = [org].[ID]-- Доверенность\nWHERE [con].[ID] =  #context_card_id),\n(SELECT [org].[ChiefAccountantProcessID] FROM [PnrOrganizations] AS [org] WITH(NOLOCK)\nLEFT JOIN [PnrSupplementaryAgreements] AS [con] WITH(NOLOCK) ON [con].[OrganizationID] = [org].[ID]-- ДС\nWHERE [con].[ID] =  #context_card_id),\n(SELECT [org].[ChiefAccountantProcessID] FROM [PnrOrganizations] AS [org] WITH(NOLOCK)\nLEFT JOIN [PnrSupplementaryAgreementsUK] AS [con] WITH(NOLOCK) ON [con].[OrganizationID] = [org].[ID]-- ДС УК\nWHERE [con].[ID] =  #context_card_id)\n) AS [UserID],\nCOALESCE(\n(SELECT [org].[ChiefAccountantProcessName] FROM [PnrOrganizations] AS [org] WITH(NOLOCK)\nLEFT JOIN [PnrContracts] AS [con] WITH(NOLOCK) ON [con].[OrganizationID] = [org].[ID]-- Договор\nWHERE [con].[ID] =  #context_card_id), \n(SELECT [org].[ChiefAccountantProcessName] FROM [PnrOrganizations] AS [org] WITH(NOLOCK)\nLEFT JOIN [PnrServiceNote] AS [con] WITH(NOLOCK) ON [con].[OrganizationID] = [org].[ID]-- Служебки\nWHERE [con].[ID] =  #context_card_id),\n(SELECT [org].[ChiefAccountantProcessName] FROM [PnrOrganizations] AS [org] WITH(NOLOCK)\nLEFT JOIN [PnrOutgoing] AS [con] WITH(NOLOCK) ON [con].[OrganizationID] = [org].[ID]-- ИСХ\nWHERE [con].[ID] =  #context_card_id),\n(SELECT [org].[ChiefAccountantProcessName] FROM [PnrOrganizations] AS [org] WITH(NOLOCK)\nLEFT JOIN [PnrOutgoingUK] AS [con] WITH(NOLOCK) ON [con].[OrganizationID] = [org].[ID]-- ИСХ УК\nWHERE [con].[ID] =  #context_card_id),\n(SELECT [org].[ChiefAccountantProcessName] FROM [PnrOrganizations] AS [org] WITH(NOLOCK)\nLEFT JOIN [PnrContractsUK] AS [con] WITH(NOLOCK) ON [con].[OrganizationID] = [org].[ID]-- Договор УК\nWHERE [con].[ID] =  #context_card_id),\n(SELECT [org].[ChiefAccountantProcessName] FROM [PnrOrganizations] AS [org] WITH(NOLOCK)\nLEFT JOIN [PnrIncomingOrganizations] AS [con] WITH(NOLOCK) ON [con].[OrganizationID] = [org].[ID]-- ВХ\nWHERE [con].[ID] =  #context_card_id),\n(SELECT [org].[ChiefAccountantProcessName] FROM [PnrOrganizations] AS [org] WITH(NOLOCK)\nLEFT JOIN [PnrIncomingUK] AS [con] WITH(NOLOCK) ON [con].[OrganizationID] = [org].[ID]-- ВХ УК\nWHERE [con].[ID] =  #context_card_id),\n(SELECT [org].[ChiefAccountantProcessName] FROM [PnrOrganizations] AS [org] WITH(NOLOCK)\nLEFT JOIN [PnrOrder] AS [con] WITH(NOLOCK) ON [con].[OrganizationID] = [org].[ID]-- Приказ и распоряжение\nWHERE [con].[ID] =  #context_card_id),\n(SELECT [org].[ChiefAccountantProcessName] FROM [PnrOrganizations] AS [org] WITH(NOLOCK)\nLEFT JOIN [PnrOrderUK] AS [con] WITH(NOLOCK) ON [con].[OrganizationID] = [org].[ID]-- Приказ и распоряжение УК\nWHERE [con].[ID] =  #context_card_id),\n(SELECT [org].[ChiefAccountantProcessName] FROM [PnrOrganizations] AS [org] WITH(NOLOCK)\nLEFT JOIN [PnrPowerAttorney] AS [con] WITH(NOLOCK) ON [con].[OrganizationID] = [org].[ID]-- Доверенность\nWHERE [con].[ID] =  #context_card_id),\n(SELECT [org].[ChiefAccountantProcessName] FROM [PnrOrganizations] AS [org] WITH(NOLOCK)\nLEFT JOIN [PnrSupplementaryAgreements] AS [con] WITH(NOLOCK) ON [con].[OrganizationID] = [org].[ID]-- ДС\nWHERE [con].[ID] =  #context_card_id),\n(SELECT [org].[ChiefAccountantProcessName] FROM [PnrOrganizations] AS [org] WITH(NOLOCK)\nLEFT JOIN [PnrSupplementaryAgreementsUK] AS [con] WITH(NOLOCK) ON [con].[OrganizationID] = [org].[ID]-- ДС УК\nWHERE [con].[ID] =  #context_card_id)\n) AS [UserName]",
+            "SqlTextForCard": null,
+            "SqlTextForUser": null
+          }
+        },
+        "RoleDeputies": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "RoleDeputiesVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Roles": {
+          "Fields": {
+            "Description": "Главный бухгалтер ЮЛ по полю организация ГК  Пионер для всех типов карточек",
+            "Hidden": false,
+            "Name": "Главный бухгалтер",
+            "TypeID::int": 4
+          }
+        }
+      },
+      "TaskHistory": null,
+      "TaskHistoryGroups": null,
+      "Tasks": null,
+      "Topics": null,
+      "TypeCaption": "$CardTypes_TypesNames_ContextRole",
+      "TypeID::uid": "b672e00c-0241-0485-9b07-4764bc96c9d3",
+      "TypeName": "ContextRole",
+      "Version::int": 0
+    },
+    "FileMapping": null,
+    "Info": {
+      ".importVersion::int": 10
+    }
+  }
+]

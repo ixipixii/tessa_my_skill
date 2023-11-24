@@ -1,0 +1,188 @@
+#tessa_exchange_format(Version:1, CreationTime:2020-12-11T18\:00\:57) {
+	#exchange_view(RowID:812d2e55-4b54-4bce-827e-91e1decbabc6, Alias:PnrPartnerRequests, Caption:Заявки на контрагента, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2020-12-11T18\:00\:33, GroupName:Pnr) {
+		#metadata {
+			#view(DefaultSortColumn: DocNumber, DefaultSortDirection: desc, Paging: always, RowCountSubset: Count, QuickSearchParam: Number)
+			#column(Alias: DocID, Hidden: true)
+			#column(Alias: DocNumber, Caption: №, Hidden: true, SortBy: d.Number)
+			#column(Alias: DocFullNumber, Caption: Номер)
+			#column(Alias: PR_RequestTypeID, Hidden: true)
+			#column(Alias: PR_RequestTypeName, Caption: Тип заявки)
+			#column(Alias: PR_ShortName, Caption: Краткое наименование)
+			#column(Alias: PR_TypeID, Hidden: true)
+			#column(Alias: PR_TypeName, Caption: Тип контрагента, Type: nvarchar, Localizable: true)
+			#column(Alias: PR_SpecialSignID, Hidden: true)
+			#column(Alias: PR_SpecialSignName, Caption: Особый признак)
+			#column(Alias: InstModified, Caption: Изменено, Type: Date)
+			#column(Alias: FdID, Hidden: true)
+			#column(Alias: FdMainCardId, Hidden: true)
+			#column(Alias: FdStateID, Hidden: true)
+			#column(Alias: FdStateName, Caption: Статус)
+			#column(Alias: DocCreationDate, Caption: Дата создания, Type: Date)
+			#column(Alias: DocAuthorID, Hidden: true)
+			#column(Alias: DocAuthorName, Caption: Создал, Hidden: true)
+			#column(Alias: PR_ID, Hidden: true)
+			#column(Alias: PR_RegistrationNo, Caption: Рег. №, Hidden: true)
+			#column(Alias: PR_RegistrationDate, Caption: Дата регистрации, Hidden: true)
+			#column(Alias: PR_PartnerID, Hidden: true)
+			#column(Alias: PR_PartnerName, Caption: Контрагент, Hidden: true)
+			#column(Alias: PR_Name, Caption: Наименование, Hidden: true)
+			#column(Alias: PR_FullName, Caption: Полное наименование, Hidden: true)
+			#column(Alias: PR_INN, Caption: ИНН, Hidden: true)
+			#column(Alias: PR_KPP, Caption: КПП, Hidden: true)
+			#column(Alias: PR_OGRN, Caption: ОГРН, Hidden: true)
+			#column(Alias: PR_Passport, Caption: Паспортные данные, Hidden: true)
+			#column(Alias: PR_Birthday, Caption: День рождения, Hidden: true)
+			#column(Alias: PR_CountryRegistrationID, Hidden: true)
+			#column(Alias: PR_CountryRegistrationName, Caption: Страна регистрации, Hidden: true)
+			#column(Alias: PR_Comment, Caption: Комментарии, Hidden: true)
+			#column(Alias: PR_RequiresApprovalCA, Caption: Требует согласование КА, Hidden: true)
+			#param(Alias: IsAuthor, Caption: Я создатель, Type: Boolean, AllowedOperands: IsTrue IsFalse)
+			#param(Alias: Number, Caption: Номер, Hidden: false, Type: nvarchar, Multiple: true)
+			#param(Alias: RequestType, Caption: Тип заявки, Multiple: true, Type: int, RefSection: PnrPartnerRequestTypes) {
+				#autocomplete(View: PnrPartnerRequestTypes, Param: Name, PopupColumns: 1)
+			}
+			#param(Alias: ShortName, Caption: Краткое наименование, Type: nvarchar, Multiple: true)
+			#param(Alias: Type, Caption: Тип контрагента, Multiple: true, Type: int, RefSection: PartnersTypes) {
+				#autocomplete(View: PartnersTypes, Param: Name, PopupColumns: 1)
+			}
+			#param(Alias: SpecialSign, Caption: Особый признак, Multiple: true, Type: Int32, RefSection: PnrSpecialPartnerSign) {
+				#autocomplete(View: PnrSpecialPartnerSign, Param: Name, PopupColumns: 1)
+			}
+			#param(Alias: CreationDate, Caption: Дата создания, Multiple: true, Type: DateTime)
+			#param(Alias: Author, Caption: Создал, Multiple: true, Type: Guid, RefSection: PersonalRoles) {
+				#autocomplete(View: Users, Param: Name, PopupColumns: 1 4)
+			}
+			#param(Alias: State, Caption: Состояние, Hidden: false, Type: uniqueidentifier, RefSection: PnrFdCardStatesRequest, Multiple: true, AllowedOperands: Equality NonEquality IsNull IsNotNull) {
+				#autocomplete(View: PnrFdCardStatesRequest, Param: Name, PopupColumns: 1 2)
+				#dropdown(View: PnrFdCardStatesRequest, PopupColumns: 1 2)
+			}
+			#reference(ColPrefix: Doc, RefSection: DocumentCommonInfo, DisplayValueColumn: DocNumber, IsCard: true, OpenOnDoubleClick: true)
+			#reference(ColPrefix: PR_, RefSection: PnrPartnerRequests, DisplayValueColumn: PR_ShortName, IsCard: true, OpenOnDoubleClick: true)
+			#subset(Alias: ByState, Caption: По статусу, RefParam: State, RefColumn: StateID, CaptionColumn: StateName, CountColumn: SubCnt)
+			#subset(Alias: ByRequestType, Caption: По типу заявки, RefParam: RequestType, RefColumn: RequestTypeID, CaptionColumn: RequestTypeName, CountColumn: SubCnt)
+			#subset(Alias: BySpecialSign, Caption: По особому признаку, RefParam: SpecialSign, RefColumn: SpecialSignID, CaptionColumn: SpecialSignName, CountColumn: SubCnt)
+			#subset(Alias: Count)
+		}
+		#description {}
+		#ms_query {
+			\#var\(UseCommonInfo\: Normal || IsAuthor\)
+
+			select
+			    \#if\(Normal\) \{
+			    -- PR - PnrPartnerRequests
+			    t.ID						as PR_ID\,
+			    t.RequestTypeID				as PR_RequestTypeID\,
+				t.RequestTypeName			as PR_RequestTypeName\,
+				t.RegistrationNo			as PR_RegistrationNo\,
+				t.RegistrationDate			as PR_RegistrationDate\,
+				t.PartnerID					as PR_PartnerID\,
+				t.PartnerName				as PR_PartnerName\,
+				t.Name						as PR_Name\,
+				t.FullName					as PR_FullName\,
+				t.ShortName					as PR_ShortName\,
+				t.TypeID					as PR_TypeID\,
+				t.TypeName					as PR_TypeName\,
+				t.INN						as PR_INN\,
+				t.KPP						as PR_KPP\,
+				t.OGRN						as PR_OGRN\,
+				t.Passport					as PR_Passport\,
+				t.Birthday					as PR_Birthday\,
+				t.CountryRegistrationID		as PR_CountryRegistrationID\,
+				t.CountryRegistrationName	as PR_CountryRegistrationName\,
+				t.Comment					as PR_Comment\,
+				t.RequiresApprovalCA		as PR_RequiresApprovalCA\,
+				t.SpecialSignID				as PR_SpecialSignID\,
+				t.SpecialSignName			as PR_SpecialSignName\,
+				-- Doc - DocumentCommonInfo
+				d.ID						as DocID\,
+			    d.Number					as DocNumber\,
+			    d.FullNumber				as DocFullNumber\,
+			    d.CreationDate				as DocCreationDate\,
+			    d.AuthorID					as DocAuthorID\,
+			    d.AuthorName				as DocAuthorName\,
+			    -- Fd - FdSatelliteCommonInfo
+			    f.ID						as FdID\,
+			    f.MainCardId				as FdMainCardId\,
+			    f.StateID					as FdStateID\,
+			    f.StateName					as FdStateName\,
+			    -- Inst - Instances
+			    i.Modified					as InstModified
+			    \} 
+			    \#if\(Count | ByState | ByRequestType | BySpecialSign\)\{
+			    	[t2].*
+			    \}
+			from
+			\(
+			    select
+			        \#if\(Normal\) \{
+			        t.ID\,
+			        row_number\(\) over \(order by \#order_by\) as rn
+			        \}
+			        \#if\(Count\) \{
+			        count\(*\) as cnt
+			        \}
+			        \#if\(ByState\)\{
+			        	COALESCE\([f].[StateID]\, NULL\) 							as [StateID]\,
+			        	COALESCE\([f].[StateName]\, N'Не указано'\) 				as [StateName]\,
+			    		count\(*\)												AS [SubCnt]
+			    	\}
+			        \#if\(ByRequestType\)\{
+			        	COALESCE\([t].[RequestTypeID]\, NULL\) 					as [RequestTypeID]\,
+			        	COALESCE\([t].[RequestTypeName]\, N'Не указан'\) 			as [RequestTypeName]\,
+			    		count\(*\)												AS [SubCnt]
+			    	\}
+			    	\#if\(BySpecialSign\)\{
+			        	COALESCE\([t].[SpecialSignID]\, NULL\) 					as [SpecialSignID]\,
+			        	COALESCE\([t].[SpecialSignName]\, N'Не указан'\) 			as [SpecialSignName]\,
+			    		count\(*\)												AS [SubCnt]
+			    	\}
+			    from PnrPartnerRequests t with\(nolock\)
+			    left join FdSatelliteCommonInfo f with\(nolock\) on f.MainCardId = t.ID
+			    left join DocumentCommonInfo d with\(nolock\) on d.ID = t.ID
+			    left join Instances i with\(nolock\) on i.ID = t.ID
+			    where d.CardTypeID = 'ca76dbb5-e4f0-46b7-b5fa-2f7f77c7cae2'
+			        \#param\(Number\, d.FullNumber\)
+			        \#param\(RequestType\, t.RequestTypeID\)
+			        \#param\(ShortName\, t.ShortName\)
+			        \#param\(Type\, t.TypeID\)
+			        \#param\(SpecialSign\, t.SpecialSignID\)
+			        \#param\(CreationDate\, d.CreationDate\)
+			        \#param\(Author\, d.AuthorID\)
+			        \#param\(State\, f.StateID\)
+			        \#if\(IsAuthor\) \{
+			        	\#if\(IsAuthor.CriteriaName == "IsTrue"\)
+			        	\{
+			        		AND d.AuthorID = \#param\(CurrentUserID\)
+			        	\}
+			        	\{
+			        		AND \(d.AuthorID IS NULL OR d.AuthorID <> \#param\(CurrentUserID\)\)
+			        	\}
+			        \}
+			        \#if\(ByState\) \{
+						GROUP BY [f].[StateID]\, [f].[StateName]
+					\}
+			        \#if\(ByRequestType\) \{
+						GROUP BY [t].[RequestTypeID]\, [t].[RequestTypeName]
+					\}
+			        \#if\(BySpecialSign\) \{
+						GROUP BY [t].[SpecialSignID]\, [t].[SpecialSignName]
+					\}
+			\) t2
+			\#if\(Normal\) \{
+			left join PnrPartnerRequests t with\(nolock\) on t.ID = t2.ID
+			left join FdSatelliteCommonInfo f with\(nolock\) on f.MainCardId = t2.ID
+			left join DocumentCommonInfo d with\(nolock\) on d.ID = t2.ID
+			left join Instances i with\(nolock\) on i.ID = t2.ID
+			\}
+			\#if\(PageOffset\) \{
+			where t2.rn >= \#param_expr\(PageOffset\) and t2.rn < \(\#param_expr\(PageOffset\) + \#param_expr\(PageLimit\)\)
+			\}
+			\#if\(Normal\) \{
+			order by t2.rn
+			\}
+			;
+		}
+		#pg_query {}
+		#role(RoleID:c365e148-71f9-4731-8025-3aeb5225af9f, ViewID:812d2e55-4b54-4bce-827e-91e1decbabc6) 
+	}
+}

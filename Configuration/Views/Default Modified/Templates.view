@@ -1,0 +1,159 @@
+#tessa_exchange_format(Version:1, CreationTime:2020-11-17T12\:53\:41) {
+	#exchange_view(RowID:edab4e60-c19e-49a2-979f-7634133c377e, Alias:Templates, Caption:Шаблоны, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2020-11-17T12\:43\:37, GroupName:System) {
+		#metadata {
+			#view(DefaultSortColumn: TemplateDate, DefaultSortDirection: desc, Paging: optional, RowCountSubset: Count, MultiSelect: true, QuickSearchParam: TemplateCaption)
+			#column(Alias: TemplateID, Hidden: true, Type: $Templates.ID)
+			#column(Alias: TemplateCaption, Caption: $Views_Templates_Name, Type: $Templates.Caption, SortBy: t.Caption)
+			#column(Alias: TemplateDescription, Caption: $Views_Templates_Description, Type: $Templates.Description, SortBy: t.Description)
+			#column(Alias: TypeID, Hidden: true, Type: $Templates.TypeID)
+			#column(Alias: TypeCaption, Caption: $Views_Templates_Type, Type: $Templates.TypeCaption, Localizable: true, SortBy: lTypeCaption.Value)
+			#column(Alias: TemplateDigest, Caption: $Views_Templates_Digest, Type: $Templates.Digest, SortBy: t.Digest)
+			#column(Alias: TemplateVersion, Caption: $Views_Templates_Version, Type: $Templates.Version, SortBy: t.Version)
+			#column(Alias: TemplateDate, Caption: $Views_Templates_Date, Type: $Instances.Created, SortBy: i.Created)
+			#column(Alias: UserID, Hidden: true, Type: $Instances.CreatedByID)
+			#column(Alias: UserName, Caption: $Views_Templates_User, Type: $Instances.CreatedByName, SortBy: i.CreatedByName)
+			#column(Alias: CardID, Hidden: true, Type: $Templates.CardID)
+			#column(Alias: rn, Hidden: true, Type: Int64)
+			#param(Alias: TemplateCaption, Caption: $Views_Templates_Name_Param, Type: String, Multiple: true)
+			#param(Alias: TemplateDescription, Caption: $Views_Templates_Description_Param, Multiple: true, Type: $Templates.Description)
+			#param(Alias: TypeID, Caption: $Views_Templates_Type_Param, Multiple: true, Type: $Templates.TypeID, RefSection: DocumentTypes) {
+				#autocomplete(View: DocumentTypes, Param: Caption)
+			}
+			#param(Alias: TemplateDigest, Caption: $Views_Templates_Digest_Param, Multiple: true, Type: $Templates.Digest)
+			#param(Alias: TemplateVersion, Caption: $Views_Templates_Version_Param, Type: $Templates.Version)
+			#param(Alias: TemplateDate, Caption: $Views_Templates_Date_Param, Multiple: true, Type: $Instances.Created)
+			#param(Alias: UserID, Caption: $Views_Templates_User_Param, Multiple: true, Type: $Instances.CreatedByID, RefSection: PersonalRoles) {
+				#autocomplete(View: Users, Param: Name, PopupColumns: 1 4)
+			}
+			#param(Alias: CardID, Caption: $Views_Templates_SourceCard, Hidden: true, Type: $Templates.CardID)
+			#reference(ColPrefix: Template, RefSection: Templates, DisplayValueColumn: TemplateCaption, IsCard: true, OpenOnDoubleClick: true)
+			#reference(ColPrefix: User, RefSection: Roles PersonalRoles, DisplayValueColumn: UserName, IsCard: true, OpenOnDoubleClick: false)
+			#subset(Alias: Count)
+			#extension(TypeName: Tessa.Extensions.Platform.Client.Cards.CreateFromTemplateOnDoubleClickExtension, Order: 0)
+		}
+		#description {}
+		#ms_query {
+			SELECT
+				[t].*
+			FROM \(
+				SELECT
+					\#columns \{
+					[t].[ID]								AS [TemplateID]\,
+					[t].[Caption]							AS [TemplateCaption]\,
+					[t].[Description]						AS [TemplateDescription]\,
+					[t].[TypeID]\,
+					[t].[TypeCaption]\,
+					[t].[Digest]							AS [TemplateDigest]\,
+					[t].[Version]							AS [TemplateVersion]\,
+					[i].[Created]							AS [TemplateDate]\,
+					[i].[CreatedByID]						AS [UserID]\,
+					[i].[CreatedByName]						AS [UserName]\,
+					[t].[CardID]\,
+					row_number\(\) OVER \(ORDER BY \#order_by\)	AS [rn]
+					\}
+					\#if\(Count\) \{
+					count\(*\) AS [cnt]
+					\}
+				FROM [Templates] AS [t] WITH \(NOLOCK\)
+				INNER JOIN [Instances] AS [i] WITH \(NOLOCK\)
+					ON [i].[ID] = [t].[ID]
+				CROSS APPLY [Localization]\([t].[TypeCaption]\, \#param\(locale\)\) AS [lTypeCaption]
+				\#if\(administrator\) \{
+				WHERE 1 = 1
+				\} \{	-- ELSE
+				WHERE \(
+						EXISTS\(
+							SELECT NULL
+							FROM [TemplateOpenRoles] AS [tr] WITH \(NOLOCK\)
+							INNER JOIN [RoleUsers] AS [ru] WITH \(NOLOCK\)
+								ON [ru].[ID] = [tr].[RoleID]
+							WHERE [tr].[ID] = [t].[ID]
+								\#param\(CurrentUserID\, [ru].[UserID]\)\)
+						OR
+						EXISTS\(
+							SELECT NULL
+							FROM [TemplateEditRoles] AS [tr] WITH \(NOLOCK\)
+							INNER JOIN [RoleUsers] AS [ru] WITH \(NOLOCK\)
+								ON [ru].[ID] = [tr].[RoleID]
+							WHERE [tr].[ID] = [t].[ID]
+								\#param\(CurrentUserID\, [ru].[UserID]\)\)
+						\)
+				\}
+					\#param\(TemplateCaption\, [t].[Caption]\)
+					\#param\(TemplateDigest\, [t].[Digest]\)
+					\#param\(TemplateVersion\, [t].[Version]\)
+					\#param\(TypeID\, [t].[TypeID]\)
+					\#param\(TemplateDate\, [i].[Created]\)
+					\#param\(UserID\, [i].[CreatedByID]\)
+					\#param\(TemplateDescription\, [t].[Description]\)
+					\#param\(CardID\, [t].[CardID]\)
+				\) AS [t]
+			\#if\(PageOffset\) \{
+			WHERE [t].[rn] >= \#param\(PageOffset\) AND [t].[rn] < \(\#param\(PageOffset\) + \#param\(PageLimit\)\)
+			\}
+			\#columns \{
+			ORDER BY [t].[rn]
+			\}
+		}
+		#pg_query {
+			SELECT
+				\#columns \{
+				"t"."ID"									AS "TemplateID"\,
+				"t"."Caption"								AS "TemplateCaption"\,
+				"t"."Description"							AS "TemplateDescription"\,
+				"t"."TypeID"\,
+				"t"."TypeCaption"\,
+				"t"."Digest"								AS "TemplateDigest"\,
+				"t"."Version"								AS "TemplateVersion"\,
+				"i"."Created"								AS "TemplateDate"\,
+				"i"."CreatedByID"							AS "UserID"\,
+				"i"."CreatedByName"							AS "UserName"\,
+				"t"."CardID"\,
+				0\:\:int8										AS "rn"
+				\}
+				\#if\(Count\) \{
+				count\(*\) AS "cnt"
+				\}
+			FROM "Templates" AS "t"
+			INNER JOIN "Instances" AS "i"
+				ON "i"."ID" = "t"."ID"
+			CROSS JOIN "Localization"\("t"."TypeCaption"\, \#param\(locale\)\) AS "lTypeCaption"
+			\#if\(administrator\) \{
+			WHERE true
+			\} \{	-- ELSE
+			WHERE \(
+					EXISTS\(
+						SELECT NULL
+						FROM "TemplateOpenRoles" AS "tr"
+						INNER JOIN "RoleUsers" AS "ru"
+							ON "ru"."ID" = "tr"."RoleID"
+						WHERE "tr"."ID" = "t"."ID"
+							\#param\(CurrentUserID\, "ru"."UserID"\)\)
+					OR
+					EXISTS\(
+						SELECT NULL
+						FROM "TemplateEditRoles" AS "tr"
+						INNER JOIN "RoleUsers" AS "ru"
+							ON "ru"."ID" = "tr"."RoleID"
+						WHERE "tr"."ID" = "t"."ID"
+							\#param\(CurrentUserID\, "ru"."UserID"\)\)
+					\)
+			\}
+				\#param\(TemplateCaption\, "t"."Caption"\)
+				\#param\(TemplateDigest\, "t"."Digest"\)
+				\#param\(TemplateVersion\, "t"."Version"\)
+				\#param\(TypeID\, "t"."TypeID"\)
+				\#param\(TemplateDate\, "i"."Created"\)
+				\#param\(UserID\, "i"."CreatedByID"\)
+				\#param\(TemplateDescription\, "t"."Description"\)
+				\#param\(CardID\, "t"."CardID"\)
+			\#if\(Normal\) \{
+			ORDER BY \#order_by
+			\}
+			\#if\(PageOffset\) \{
+			OFFSET \#param\(PageOffset\) - 1 LIMIT \#param\(PageLimit\)
+			\}
+		}
+		#role(RoleID:7ff52dc0-ff6a-4c9d-ba25-b562c370004d, ViewID:edab4e60-c19e-49a2-979f-7634133c377e) 
+	}
+}

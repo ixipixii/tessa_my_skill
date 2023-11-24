@@ -1,0 +1,169 @@
+#tessa_exchange_format(Version:1, CreationTime:2021-01-18T11\:02\:18) {
+	#exchange_view(RowID:b1bb4967-b1c0-49a7-9b6a-dffa58e1d54d, Alias:PnrTemplates, Caption:Шаблоны, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2021-01-18T11\:01\:27, GroupName:Pnr) {
+		#metadata {
+			#view(DefaultSortColumn: DocCreationDate, DefaultSortDirection: desc, Paging: always, RowCountSubset: Count, QuickSearchParam: Number)
+			#column(Alias: DocID, Hidden: true)
+			#column(Alias: DocNumber, Caption: №, Hidden: true, SortBy: d.Number)
+			#column(Alias: DocFullNumber, Caption: Номер, SortBy: d.FullNumber)
+			#column(Alias: DocCreationDate, Caption: Дата создания, Type: Date, SortBy: d.CreationDate)
+			#column(Alias: DocSubject, Caption: Описание, SortBy: d.Subject)
+			#column(Alias: TplProjectID, Hidden: true)
+			#column(Alias: TplProjectName, Caption: Проект, SortBy: t.ProjectName)
+			#column(Alias: TplOrganizationID, Hidden: true)
+			#column(Alias: TplOrganizationName, Caption: Организация ГК Пионер, SortBy: t.OrganizationName)
+			#column(Alias: DocAuthorID, Hidden: true)
+			#column(Alias: DocAuthorName, Caption: Автор, SortBy: d.AuthorName)
+			#column(Alias: FdID, Hidden: true)
+			#column(Alias: FdMainCardId, Hidden: true)
+			#column(Alias: FdStateID, Hidden: true)
+			#column(Alias: FdStateName, Caption: Статус, SortBy: f.StateName)
+			#column(Alias: TplID, Hidden: true)
+			#column(Alias: TplTemplateID, Hidden: true)
+			#column(Alias: TplTemplateName, Caption: Шаблон, Hidden: true)
+			#column(Alias: TplProjectNo, Caption: Номер проекта, Hidden: true)
+			#column(Alias: TplProjectDate, Caption: Дата проекта, Hidden: true)
+			#column(Alias: TplSubjectContract, Caption: Предмет договора, Hidden: false, SortBy: t.SubjectContract)
+			#column(Alias: TplCFOID, Hidden: true)
+			#column(Alias: TplCFOName, Caption: ЦФО, Hidden: true)
+			#column(Alias: TplContent, Caption: Содержание, Hidden: true)
+			#column(Alias: TplPublishID, Hidden: true)
+			#column(Alias: TplPublishName, Caption: Шаблоны к публикации в CRM, Hidden: true)
+			#column(Alias: TplStartDate, Caption: Дата начала, Hidden: true)
+			#column(Alias: TplResponsibleID, Hidden: true)
+			#column(Alias: TplResponsibleName, Caption: Ответственный, Hidden: true)
+			#param(Alias: Number, Caption: Номер, Hidden: false, Type: nvarchar, Multiple: true)
+			#param(Alias: CreationDate, Caption: Дата создания, Multiple: true, Type: Date)
+			#param(Alias: Subject, Caption: Описания, Multiple: true, Type: $DocumentCommonInfo.Subject)
+			#param(Alias: Project, Caption: Проект, Multiple: true, Type: Guid, RefSection: PnrProjects) {
+				#autocomplete(View: PnrProjects, Param: Name, PopupColumns: 1 2)
+			}
+			#param(Alias: Organization, Caption: Организация ГК Пионер, Multiple: true, Type: Guid, RefSection: PnrOrganizationsWithHidden) {
+				#autocomplete(View: PnrOrganizationsWithHidden, Param: Name, PopupColumns: 1)
+			}
+			#param(Alias: State, Caption: Состояние, Hidden: false, Type: uniqueidentifier, RefSection: PnrFdCardStatesTemplates, Multiple: true, AllowedOperands: Equality NonEquality IsNull IsNotNull) {
+				#autocomplete(View: PnrFdCardStatesTemplates, Param: Name, PopupColumns: 1 2)
+				#dropdown(View: PnrFdCardStatesTemplates, PopupColumns: 1 2)
+			}
+			#param(Alias: IsAuthor, Caption: Я создатель, Type: Boolean, AllowedOperands: IsTrue IsFalse)
+			#reference(ColPrefix: Doc, RefSection: DocumentCommonInfo, DisplayValueColumn: DocNumber, IsCard: true, OpenOnDoubleClick: true)
+			#reference(ColPrefix: Tpl, RefSection: PnrTemplates, DisplayValueColumn: TplTemplateName, IsCard: true, OpenOnDoubleClick: true)
+			#subset(Alias: ByState, Caption: По статусу, RefParam: State, RefColumn: StateID, CaptionColumn: StateName, CountColumn: SubCnt)
+			#subset(Alias: Count)
+		}
+		#description {}
+		#ms_query {
+			;WITH
+			-- ДОЧЕРНИЕ ПРОЕКТЫ
+			     childs AS \(
+			         SELECT p.ID
+			         FROM PnrProjects p
+			         WHERE 1=1 
+			         \#param\(Project\, p.id\)
+			         UNION ALL
+			         SELECT p.ID
+			         FROM PnrProjects p
+			                INNER JOIN childs c
+			                    ON p.ParentProjectID = c.ID
+			     \)
+
+			select
+			    \#if\(Normal\) \{
+			    -- Tpl - PnrTemplates
+			    t.ID						as TplID\,
+			    t.TemplateID				as TplTemplateID\,
+				t.TemplateName				as TplTemplateName\,
+				t.ProjectNo					as TplProjectNo\,
+				t.ProjectDate				as TplProjectDate\,
+				t.SubjectContract			as TplSubjectContract\,
+			    t.ProjectID					as TplProjectID\,
+				t.ProjectName				as TplProjectName\,
+				t.OrganizationID			as TplOrganizationID\,
+				t.OrganizationName			as TplOrganizationName\,
+				t.CFOID						as TplCFOID\,
+				t.CFOName					as TplCFOName\,
+				t.Content					as TplContent\,
+				t.PublishID					as TplPublishID\,
+				t.PublishName				as TplPublishName\,
+				t.StartDate					as TplStartDate\,
+				t.ResponsibleID				as TplResponsibleID\,
+				t.ResponsibleName			as TplResponsibleName\,
+				-- Doc - DocumentCommonInfo
+				d.ID						as DocID\,
+			    d.Number					as DocNumber\,
+			    d.FullNumber				as DocFullNumber\,
+			    d.CreationDate				as DocCreationDate\,
+			    d.AuthorID					as DocAuthorID\,
+			    d.AuthorName				as DocAuthorName\,
+			    d.Subject					as DocSubject\,
+			    -- Fd - FdSatelliteCommonInfo
+			    f.ID						as FdID\,
+			    f.MainCardId				as FdMainCardId\,
+			    f.StateID					as FdStateID\,
+			    f.StateName					as FdStateName
+			    \} 
+			    \#if\(Count | ByState\)\{
+			    	[t2].*
+			    \}
+			from
+			\(
+			    select
+			        \#if\(Normal\) \{
+			        t.ID\,
+			        row_number\(\) over \(order by \#order_by\) as rn
+			        \}
+			        \#if\(Count\) \{
+			        count\(*\) as cnt
+			        \}
+					\#if\(ByState\)\{
+			        	COALESCE\([f].[StateID]\, NULL\) 							as [StateID]\,
+			        	COALESCE\([f].[StateName]\, N'Не указано'\) 				as [StateName]\,
+			    		count\(*\)												AS [SubCnt]
+			    	\}
+			    from PnrTemplates t with\(nolock\)
+			    left join FdSatelliteCommonInfo f with\(nolock\) on f.MainCardId = t.ID
+			    left join DocumentCommonInfo d with\(nolock\) on d.ID = t.ID
+			    where 1=1
+			    --d.CardTypeID = 'dc10a79d-4bb2-4aad-acb8-82d5838408a9'
+			        \#param\(Number\, d.FullNumber\)
+			        \#param\(CreationDate\, CAST\(d.CreationDate as Date\)\)
+			        \#param\(Subject\, d.Subject\)
+			        \#if\(Project\) 
+			        \{ 
+			        	AND t.ProjectID IN 
+			        	\(
+			        		SELECT ID FROM childs
+			        	\)
+			        	
+			        \}
+			        \#param\(Organization\, t.OrganizationID\)
+			        \#param\(State\, f.StateID\)
+			        \#if\(IsAuthor\) \{
+			        	\#if\(IsAuthor.CriteriaName == "IsTrue"\)
+			        	\{
+			        		AND d.AuthorID = \#param\(CurrentUserID\)
+			        	\}
+			        	\{
+			        		AND \(d.AuthorID IS NULL OR d.AuthorID <> \#param\(CurrentUserID\)\)
+			        	\}
+			        \}
+			        \#if\(ByState\) \{
+						GROUP BY [f].[StateID]\, [f].[StateName]
+					\}
+			\) AS [t2]
+			\#if\(Normal\) \{
+			left join PnrTemplates t with\(nolock\) on t.ID = t2.ID
+			left join FdSatelliteCommonInfo f with\(nolock\) on f.MainCardId = t2.ID
+			left join DocumentCommonInfo d with\(nolock\) on d.ID = t2.ID
+			\}
+			\#if\(PageOffset\) \{
+			where t2.rn >= \#param_expr\(PageOffset\) and t2.rn < \(\#param_expr\(PageOffset\) + \#param_expr\(PageLimit\)\)
+			\}
+			\#if\(Normal\) \{
+			order by t2.rn
+			\}
+			;
+		}
+		#pg_query {}
+		#role(RoleID:c365e148-71f9-4731-8025-3aeb5225af9f, ViewID:b1bb4967-b1c0-49a7-9b6a-dffa58e1d54d) 
+	}
+}

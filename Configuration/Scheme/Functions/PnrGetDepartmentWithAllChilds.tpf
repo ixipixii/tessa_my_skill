@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SchemeFunction ID="2ac45cf5-3794-4dcb-a32b-187b31df7f07" Name="PnrGetDepartmentWithAllChilds" Group="Pnr">
+	<Description>Рекурсивно возвращает данные по текущему подразделению и всем его дочерним элементам</Description>
+	<Definition Dbms="SqlServer" IsExternal="true" />
+</SchemeFunction>

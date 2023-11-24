@@ -1,0 +1,188 @@
+﻿[
+  {
+    ".method::int": 2,
+    "Card": {
+      "Created::dtm": "2020-08-28T20:22:49.723Z",
+      "CreatedByID::uid": "11111111-1111-1111-1111-111111111111",
+      "CreatedByName": "System",
+      "Files": null,
+      "Flags::int": 0,
+      "ID::uid": "c3a4e197-9e56-4b42-86e5-a186fd321d0c",
+      "Info": null,
+      "Modified::dtm": "2020-08-28T20:22:49.723Z",
+      "ModifiedByID::uid": "11111111-1111-1111-1111-111111111111",
+      "ModifiedByName": "System",
+      "Permissions": null,
+      "Sections": {
+        "FmAddTopicInfoVirtual": {
+          "Fields": {
+            "Description": null,
+            "Title": null
+          }
+        },
+        "FmTopicParticipantsInfoVirtual": {
+          "Fields": {
+            "IsModerator": false,
+            "ReadOnly": false
+          }
+        },
+        "FmTopicParticipantsVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "FmTopicRoleParticipantsInfoVirtual": {
+          "Fields": {
+            "IsSubscribe": false,
+            "ReadOnly": false
+          }
+        },
+        "KrActiveTasksVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrAdditionalApprovalInfoUsersCardVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrAdditionalApprovalUsersCardVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrApprovalCommonInfoVirtual": {
+          "Fields": {
+            "ApprovedBy": null,
+            "AuthorComment": null,
+            "AuthorID": null,
+            "AuthorName": null,
+            "CurrentApprovalStageRowID": null,
+            "DisapprovedBy": null,
+            "MainCardID": null,
+            "StateChangedDateTimeUTC": null,
+            "StateID::int": 0,
+            "StateName": "$KrStates_Doc_Draft"
+          }
+        },
+        "KrApprovalHistoryVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrDialogButtonSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrForkNestedProcessesSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrForkSecondaryProcessesSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPerformersVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrStagesVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrUniversalTaskOptionsSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "PnrOrganizations": {
+          "Fields": {
+            "Abbreviation": "СИ",
+            "ActionStatus": null,
+            "Address": "191126, Санкт-Петербург г, Обводного Канала наб, дом № 93-А",
+            "AuthorityFSGSCode": null,
+            "AuthorityPFRCode": null,
+            "Bank": null,
+            "BIK": null,
+            "CertificateAuthorityCode": null,
+            "CertificateAuthorityName": null,
+            "CertificateSeriesNumber": null,
+            "ChiefAccountantID": null,
+            "ChiefAccountantName": null,
+            "ChiefAccountantProcessID::uid": "9863aa4e-766c-4f6f-97f1-66a4f7a022d3",
+            "ChiefAccountantProcessName": "Плотникова Е. А.",
+            "ContactInformation": null,
+            "CorrespondentAccount": null,
+            "CountryPermanentResidenceID": null,
+            "CountryPermanentResidenceName": null,
+            "CountryRegistrationID": null,
+            "CountryRegistrationName": null,
+            "FaxNumber": null,
+            "ForeignOrganization": null,
+            "ForeignOrganizationName": null,
+            "FullName": "Общество с ограниченной ответственностью \"СКИФ ИНВЕСТ\"",
+            "GeneralDirectorID": null,
+            "GeneralDirectorName": null,
+            "GroupDocuments": "ГКП",
+            "HeadLegalEntityDative": "Д.Г. Афонину",
+            "HeadLegalEntityGenitive": "Афонина Д.Г.",
+            "HeadLegalEntityID": null,
+            "HeadLegalEntityName": null,
+            "Idx": null,
+            "INN": "7838361791",
+            "INNBank": null,
+            "IsHidden": null,
+            "IssueDate": null,
+            "KPP": "783801001",
+            "LegalEntityIndex": null,
+            "MDMKey": "3c7c14ce-6551-11e7-bc20-005056ae703c",
+            "Name": "СКИФ ИНВЕСТ ООО",
+            "OGRN": null,
+            "OKATO": null,
+            "OKFSCode": null,
+            "OKFSName": null,
+            "OKOGU": null,
+            "OKOPFCode": null,
+            "OKOPFName": null,
+            "OKPO": null,
+            "OKPOCode": null,
+            "OKTMO": null,
+            "OKVEDCode": null,
+            "OKVEDCode2": null,
+            "OKVEDName": null,
+            "OKVEDName2": null,
+            "PartnerID": null,
+            "PartnerName": null,
+            "PartnerType": "ООО",
+            "PositionHeadLegalEntity": "Генеральный директор",
+            "PositionHeadLegalEntityDative": "Генеральному директору",
+            "PositionHeadLegalEntityGenitive": "Генерального директора",
+            "Prefix": null,
+            "ReferencePosition": null,
+            "RegistrationDate": null,
+            "RegistrationNumberFSS": null,
+            "RegistrationNumberPFR": null,
+            "RegistryCard": "2",
+            "Removed": null,
+            "SettlementAccount": null,
+            "ShortName": null,
+            "SubordinationCodeFSS": null,
+            "TaxAuthorityCode": null,
+            "TaxAuthorityName": null,
+            "TerritorialAuthorityFSSName": null,
+            "TerritorialAuthorityPFRName": null,
+            "Website": null,
+            "WorkPhone": null
+          }
+        }
+      },
+      "TaskHistory": null,
+      "TaskHistoryGroups": null,
+      "Tasks": null,
+      "Topics": null,
+      "TypeCaption": "Организация",
+      "TypeID::uid": "a668f7ea-efcd-47f0-a3c7-c4d1e7ed0bc8",
+      "TypeName": "PnrOrganization",
+      "Version::int": 0
+    },
+    "FileMapping": null,
+    "Info": {
+      ".importVersion::int": 1
+    }
+  }
+]

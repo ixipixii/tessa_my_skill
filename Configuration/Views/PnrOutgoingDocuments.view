@@ -1,0 +1,264 @@
+#tessa_exchange_format(Version:1, CreationTime:2021-01-18T09\:12\:47) {
+	#exchange_view(RowID:ff7826c8-d870-461b-a40f-1e45603a1250, Alias:PnrOutgoingDocuments, Caption:Исходящие, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2021-01-18T09\:00\:34, GroupName:Pnr) {
+		#metadata {
+			#view(DefaultSortColumn: DocCreationDate, DefaultSortDirection: desc, Paging: always, RowCountSubset: Count, QuickSearchParam: Number)
+			#column(Alias: DocID, Hidden: true)
+			#column(Alias: DocNumber, Caption: №, Hidden: true, SortBy: d.Number)
+			#column(Alias: DocFullNumber, Caption: Номер, SortBy: d.FullNumber)
+			#column(Alias: OutDocDocumentKindID, Hidden: true)
+			#column(Alias: OutDocDocumentKindIdx, Hidden: true)
+			#column(Alias: OutDocDocumentKindName, Caption: Вид исходящего документа)
+			#column(Alias: DocSubject, Caption: Заголовок, SortBy: d.Subject)
+			#column(Alias: OutDocRegistrationDate, Caption: Дата регистрации, Type: Date, SortBy: t.RegistrationDate)
+			#column(Alias: DocAuthorID, Hidden: true)
+			#column(Alias: DocAuthorName, Caption: Создал, Hidden: true)
+			#column(Alias: OutDocDestinationID, Hidden: true)
+			#column(Alias: OutDocDestinationName, Caption: Адресат, SortBy: t.DestinationName)
+			#column(Alias: OutDocProjectID, Hidden: true)
+			#column(Alias: OutDocProjectName, Caption: Проект, SortBy: t.ProjectName)
+			#column(Alias: OutDocOrganizationID, Hidden: true)
+			#column(Alias: OutDocOrganizationName, Caption: Организация ГК Пионер, SortBy: t.OrganizationName)
+			#column(Alias: InstModified, Caption: Изменено, SortBy: i.Modified, Type: Date)
+			#column(Alias: FdID, Hidden: true)
+			#column(Alias: FdMainCardId, Hidden: true)
+			#column(Alias: FdStateID, Hidden: true)
+			#column(Alias: FdStateName, Caption: Статус, SortBy: f.StateName)
+			#column(Alias: DocCreationDate, Caption: Дата создания, Type: Date, SortBy: d.CreationDate)
+
+			#column(Alias: DocDocTypeID, Hidden: true)
+			#column(Alias: DocDocTypeTitle, Caption: Тип документа, Hidden: true)
+			#column(Alias: OutDocID, Hidden: true)
+			#column(Alias: OutDocSummary, Caption: Краткое содержание, Hidden: true)
+			#column(Alias: OutDocLegalEntityIndexID, Hidden: true)
+			#column(Alias: OutDocLegalEntityIndexName, Caption: Индекс ЮЛ, Hidden: true)
+			#column(Alias: OutDocComments, Caption: Комментарии, Hidden: true)
+			#column(Alias: OutDocContacts, Caption: Контакты, Hidden: true)
+			#column(Alias: OutDocApartmentNumber, Caption: Номер квартиры, Hidden: true)
+			#column(Alias: OutDocComplaintKindID, Hidden: true)
+			#column(Alias: OutDocComplaintKindName, Caption: Вид рекламации, Hidden: true)
+			#column(Alias: OutDocComplaintFormatID, Hidden: true)
+			#column(Alias: OutDocComplaintFormatName, Caption: Формат рекламации, Hidden: true)
+			#column(Alias: OutDocFullName, Caption: ФИО, Hidden: true)
+			#column(Alias: OutDocDepartmentID, Hidden: true)
+			#column(Alias: OutDocDepartmentName, Caption: Наименование подразделения, Hidden: true)
+			#column(Alias: OutDocDepartmentIndex, Caption: Индекс подразделения, Hidden: true)
+			#column(Alias: OutDocSignatoryID, Hidden: true)
+			#column(Alias: OutDocSignatoryName, Caption: Подписант, Hidden: true)
+			#column(Alias: OutDocWriteOffID, Hidden: true)
+			#column(Alias: OutDocWriteOffName, Caption: Наименование подразделения, Hidden: true)
+			#column(Alias: OutDocWriteOffIndex, Caption: Индекс подразделения, Hidden: true)
+			#param(Alias: IsAuthor, Caption: Я создатель, Type: Boolean, AllowedOperands: IsTrue IsFalse)
+			#param(Alias: Destination, Caption: Адресат, Multiple: true, Type: Guid, RefSection: Partners) {
+				#autocomplete(View: Partners, Param: Name, PopupColumns: 1 4 9)
+			}
+			#param(Alias: LegalEntityIndex, Caption: Индекс юр.лица, Multiple: true, Type: Guid, RefSection: PnrLegalEntitiesIndexes) {
+				#autocomplete(View: PnrLegalEntitiesIndexes, Param: Name, PopupColumns: 1 2)
+			}
+			#param(Alias: Number, Caption: Номер, Hidden: false, Type: String, Multiple: true)
+			#param(Alias: Subject, Caption: $Views_Registers_Subject_Param, Multiple: true, Type: $DocumentCommonInfo.Subject)
+			#param(Alias: Project, Caption: Проект, Multiple: true, Type: Guid, RefSection: PnrProjects) {
+				#autocomplete(View: PnrProjects, Param: Name, PopupColumns: 1 2)
+			}
+			#param(Alias: RegistrationDate, Caption: Дата регистрации, Multiple: true, Type: Date)
+			#param(Alias: Organization, Caption: Организация ГК Пионер, Multiple: true, Type: Guid, RefSection: PnrOrganizationsWithHidden) {
+				#autocomplete(View: PnrOrganizationsWithHidden, Param: Name, PopupColumns: 1)
+			}
+			#param(Alias: ComplaintKind, Caption: Вид рекламации, Multiple: true, Type: Guid, RefSection: PnrComplaintKinds) {
+				#autocomplete(View: PnrComplaintKinds, Param: Name, PopupColumns: 1)
+			}
+			#param(Alias: ComplaintFormat, Caption: Формат рекламации, Multiple: true, Type: Guid, RefSection: PnrComplaintFormats) {
+				#autocomplete(View: PnrComplaintFormats, Param: Name, PopupColumns: 1)
+			}
+			#param(Alias: Author, Caption: Создал, Multiple: true, Type: Guid, RefSection: PersonalRoles) {
+				#autocomplete(View: Users, Param: Name, PopupColumns: 1 4)
+			}
+			#param(Alias: State, Caption: Состояние, Hidden: false, Type: uniqueidentifier, RefSection: PnrFdCardStatesOut, Multiple: true, AllowedOperands: Equality NonEquality IsNull IsNotNull) {
+				#autocomplete(View: PnrFdCardStatesOut, Param: Name, PopupColumns: 1 2)
+				#dropdown(View: PnrFdCardStatesOut, PopupColumns: 1 2)
+			}
+			#param(Alias: DocKind, Caption: Вид документа, Multiple: true, Type: Guid, RefSection: PnrOutgoingDocumentsKinds) {
+				#autocomplete(View: PnrOutgoingDocumentsKinds, Param: Name, PopupColumns: 1 2)
+				#dropdown(View: PnrOutgoingDocumentsKinds)
+			}
+			#param(Alias: CreationDate, Caption: Дата создания, Multiple: true, Type: DateTime)
+			#param(Alias: FullName, Caption: ФИО, Multiple: true, Type: String)
+			#reference(ColPrefix: Doc, RefSection: DocumentCommonInfo, DisplayValueColumn: DocNumber, IsCard: true, OpenOnDoubleClick: true)
+			#reference(ColPrefix: OutDoc, RefSection: PnrOutgoing, DisplayValueColumn: OutDocRegistrationDate, IsCard: true, OpenOnDoubleClick: true)
+			#subset(Alias: ByOrganization, Caption: По организации, RefParam: Organization, RefColumn: SubOrgID, CaptionColumn: SubOrgName, CountColumn: SubCnt)
+			#subset(Alias: ByState, Caption: По статусу, RefParam: State, RefColumn: StateID, CaptionColumn: StateName, CountColumn: SubCnt)
+			#subset(Alias: ByDocKind, Caption: По виду документа, RefParam: DocKind, RefColumn: DocKindID, CaptionColumn: DocKindName, CountColumn: SubCnt)
+			#subset(Alias: Count)
+		}
+		#description {}
+		#ms_query {
+			;WITH
+			-- ДОЧЕРНИЕ ПРОЕКТЫ
+			     childs AS \(
+			         SELECT p.ID
+			         FROM PnrProjects p
+			         WHERE 1=1 
+			         \#param\(Project\, p.id\)
+			         UNION ALL
+			         SELECT p.ID
+			         FROM PnrProjects p
+			                INNER JOIN childs c
+			                    ON p.ParentProjectID = c.ID
+			     \)
+
+			select
+			    \#if\(Normal\) \{
+			    -- OutDoc - PnrOutgoing
+			    t.ID						as OutDocID\,
+			    t.RegistrationDate			as OutDocRegistrationDate\,
+			    t.Summary					as OutDocSummary\,
+				t.DestinationID				as OutDocDestinationID\,
+				t.DestinationName			as OutDocDestinationName\,
+				t.LegalEntityIndexID		as OutDocLegalEntityIndexID\,
+				t.LegalEntityIndexName		as OutDocLegalEntityIndexName\,
+				t.ProjectID					as OutDocProjectID\,
+				t.ProjectName				as OutDocProjectName\,
+				t.OrganizationID			as OutDocOrganizationID\,
+			 -- t.OrganizationName			as OutDocOrganizationName\,
+				\(SELECT 
+				 STRING_AGG\(ISNULL\(OrganizationName\, ' '\)\, '\, '\)
+				 FROM PnrOutgoingOrganizations AS poo 
+				 WHERE poo.ID = t.ID\) 		as OutDocOrganizationName\,
+				t.Comments					as OutDocComments\,
+				t.Contacts					as OutDocContacts\,
+				t.ApartmentNumber			as OutDocApartmentNumber\,
+				t.ComplaintKindID			as OutDocComplaintKindID\,
+				t.ComplaintKindName			as OutDocComplaintKindName\,
+				t.FullName					as OutDocFullName\,
+				t.DepartmentID				as OutDocDepartmentID\,
+				t.DepartmentName			as OutDocDepartmentName\,
+				t.DepartmentIdx				as OutDocDepartmentIndex\,
+				t.SignatoryID				as OutDocSignatoryID\,
+				t.SignatoryName				as OutDocSignatoryName\,
+				t.DocumentKindID			as OutDocDocumentKindID\,
+				t.DocumentKindIdx			as OutDocDocumentKindIdx\,
+				t.DocumentKindName			as OutDocDocumentKindName\,
+				t.WriteOffID				as OutDocWriteOffID\,
+				t.WriteOffName				as OutDocWriteOffName\,
+				t.WriteOffIdx				as OutDocWriteOffIndex\,
+				t.ComplaintFormatID			as OutDocComplaintFormatID\,
+				t.ComplaintFormatName		as OutDocComplaintFormatName\,
+				-- Doc - DocumentCommonInfo
+				d.ID						as DocID\,
+			    d.Number					as DocNumber\,
+			    d.FullNumber				as DocFullNumber\,
+			    d.CreationDate				as DocCreationDate\,
+			    d.Subject					as DocSubject\,
+			    d.AuthorID					as DocAuthorID\,
+			    d.AuthorName				as DocAuthorName\,
+			    d.DocTypeID					as DocDocTypeID\,
+			    d.DocTypeTitle				as DocDocTypeTitle\,
+			    -- Fd - FdSatelliteCommonInfo
+			    f.ID						as FdID\,
+			    f.MainCardId				as FdMainCardId\,
+			    f.StateID					as FdStateID\,
+			    f.StateName					as FdStateName\,
+			    -- Inst - Instances
+			    i.Modified					as InstModified
+			    \} 
+			    \#if\(Count | ByOrganization | ByState | ByDocKind\)\{
+			    	[t2].*
+			    \}
+			from
+			\(
+			    select
+			        \#if\(Normal\) \{
+			        t.ID\,
+			        row_number\(\) over \(order by \#order_by\) as rn
+			        \}
+			        \#if\(Count\) \{
+			        count\(*\) as cnt
+			        \}
+			         \#if\(ByOrganization\)\{
+			        	COALESCE\([t].[OrganizationID]\, NULL\) 				as [SubOrgID]\,
+			        	COALESCE\([t].[OrganizationName]\, N'Не указана'\) 	as [SubOrgName]\,
+			    		count\(*\)												AS [SubCnt]
+			    	\}
+			        \#if\(ByState\)\{
+			        	COALESCE\([f].[StateID]\, NULL\) 							as [StateID]\,
+			        	COALESCE\([f].[StateName]\, N'Не указано'\) 				as [StateName]\,
+			    		count\(*\)												AS [SubCnt]
+			    	\}
+			    	\#if\(ByDocKind\)\{
+			        	COALESCE\([t].[DocumentKindID]\, NULL\) 					as [DocKindID]\,
+			        	COALESCE\([t].[DocumentKindName]\, N'Не указан'\) 			as [DocKindName]\,
+			    		count\(*\)												AS [SubCnt]
+			    	\}
+			    from PnrOutgoing t with\(nolock\)
+			    left join FdSatelliteCommonInfo f with\(nolock\) on f.MainCardId = t.ID
+			    left join DocumentCommonInfo d with\(nolock\) on d.ID = t.ID
+			    left join Instances i with\(nolock\) on i.ID = t.ID
+			    where d.CardTypeID = '40dab24a-0b6f-4609-947c-f1916348a540'
+			    	\#param\(Destination\, t.DestinationID\)
+			    	\#param\(LegalEntityIndex\, t.LegalEntityIndexID\)
+			        \#param\(Number\, d.FullNumber\)
+			        \#param\(Subject\, d.Subject\)
+			        \#if\(Project\) 
+			        \{ 
+			        	AND t.ProjectID IN 
+			        	\(
+			        		SELECT ID FROM childs
+			        	\)
+			        	
+			        \}
+			        \#param\(RegistrationDate\, t.RegistrationDate\)
+			        \#if\(Organization\)
+			        \{
+			        	AND
+			        		\(SELECT
+			        		STRING_AGG\(ISNULL\(OrganizationName\, ' '\)\, '\, '\)
+			        		FROM PnrOutgoingOrganizations AS poo
+			        		WHERE poo.ID = t.ID\)
+			        	LIKE
+			        		\(SELECT Name 
+			        		FROM PnrOrganizations 
+			        		WHERE ID = \#param\(Organization\)\)
+					\}
+			        \#param\(ComplaintKind\, t.ComplaintKindID\)
+			        \#param\(ComplaintFormat\, t.ComplaintFormatID\)
+			        \#param\(Author\, d.AuthorID\)
+			        \#param\(State\, f.StateID\)
+			        \#param\(CreationDate\, d.CreationDate\)
+			        \#param\(DocKind\, t.DocumentKindID\)
+			        \#param\(FullName\, t.FullName\)
+			        \#if\(IsAuthor\) \{
+			        	\#if\(IsAuthor.CriteriaName == "IsTrue"\)
+			        	\{
+			        		AND d.AuthorID = \#param\(CurrentUserID\)
+			        	\}
+			        	\{
+			        		AND \(d.AuthorID IS NULL OR d.AuthorID <> \#param\(CurrentUserID\)\)
+			        	\}
+			        \}
+			        \#if\(ByOrganization\) \{
+						GROUP BY [t].[OrganizationID]\, [t].[OrganizationName]
+					\}
+			        \#if\(ByState\) \{
+						GROUP BY [f].[StateID]\, [f].[StateName]
+					\}
+					\#if\(ByDocKind\) \{
+						GROUP BY [t].[DocumentKindID]\, [t].[DocumentKindName]
+					\}
+			\) t2
+			\#if\(Normal\) \{
+			left join PnrOutgoing t with\(nolock\) on t.ID = t2.ID
+			left join FdSatelliteCommonInfo f with\(nolock\) on f.MainCardId = t2.ID
+			left join DocumentCommonInfo d with\(nolock\) on d.ID = t2.ID
+			left join Instances i with\(nolock\) on i.ID = t2.ID
+			\}
+			\#if\(PageOffset\) \{
+			where t2.rn >= \#param_expr\(PageOffset\) and t2.rn < \(\#param_expr\(PageOffset\) + \#param_expr\(PageLimit\)\)
+			\}
+			\#if\(Normal\) \{
+			order by t2.rn
+			\}
+			;
+		}
+		#pg_query {}
+		#role(RoleID:c365e148-71f9-4731-8025-3aeb5225af9f, ViewID:ff7826c8-d870-461b-a40f-1e45603a1250) 
+	}
+}

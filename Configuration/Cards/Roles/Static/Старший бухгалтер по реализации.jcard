@@ -1,0 +1,82 @@
+﻿[
+  {
+    ".method::int": 2,
+    "Card": {
+      "Created::dtm": "2020-12-22T08:05:21.927Z",
+      "CreatedByID::uid": "b437522f-509a-460d-b44b-3c528d8ba7d6",
+      "CreatedByName": "Пятибратова А.В.",
+      "Files": null,
+      "Flags::int": 0,
+      "ID::uid": "1ec8cc62-9dac-4033-96f8-b48995391923",
+      "Info": null,
+      "Modified::dtm": "2020-12-24T06:42:49.793Z",
+      "ModifiedByID::uid": "b437522f-509a-460d-b44b-3c528d8ba7d6",
+      "ModifiedByName": "Пятибратова А.В.",
+      "Permissions": null,
+      "Sections": {
+        "RoleDeputies": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "RoleDeputiesVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Roles": {
+          "Fields": {
+            "AdSyncDate": null,
+            "AdSyncDisableUpdate": null,
+            "AdSyncDistinguishedName": null,
+            "AdSyncID": null,
+            "AdSyncIndependent": false,
+            "AdSyncWhenChanged": null,
+            "Description": null,
+            "Hidden": false,
+            "InheritTimeZone": true,
+            "Name": "Старший бухгалтер по реализации",
+            "ParentID": null,
+            "ParentName": null,
+            "TimeZoneCodeName": "Default",
+            "TimeZoneID::int": 0,
+            "TimeZoneShortName": "UTC+03:00",
+            "TimeZoneUtcOffsetMinutes::int": 180,
+            "TypeID::int": 0
+          }
+        },
+        "RoleUsers": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "RoleUsersVirtual": {
+          ".table::int": 1,
+          "Rows": [
+            {
+              ".state::int": 2,
+              "RowID::uid": "c3db9fc9-ade5-4f3e-a177-86f6d1738d81",
+              "UserID::uid": "b437522f-509a-460d-b44b-3c528d8ba7d6",
+              "UserName": "Пятибратова А.В."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "bddffee1-d37b-4864-98d1-e13e864977e6",
+              "UserID::uid": "f36c3331-6347-435f-ae85-4b92029477eb",
+              "UserName": "Никонова М. В."
+            }
+          ]
+        }
+      },
+      "TaskHistory": null,
+      "TaskHistoryGroups": null,
+      "Tasks": null,
+      "Topics": null,
+      "TypeCaption": "$CardTypes_TypesNames_StaticRole",
+      "TypeID::uid": "825dbacc-ddec-00d1-a550-2a837792542e",
+      "TypeName": "StaticRole",
+      "Version::int": 0
+    },
+    "FileMapping": null,
+    "Info": {
+      ".importVersion::int": 3
+    }
+  }
+]

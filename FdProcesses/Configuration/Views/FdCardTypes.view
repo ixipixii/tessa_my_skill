@@ -1,0 +1,107 @@
+#tessa_exchange_format(Version:1, CreationTime:2019-11-08T13\:43\:17) {
+	#exchange_view(RowID:4b107a0e-ba9a-480a-a6f9-7fbf02fab5cc, Alias:FdCardTypes, Caption:Типы карточек, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2019-11-07T14\:25\:20, GroupName:Fd Awf) {
+		#metadata {
+			#view(DefaultSortColumn: TypeCaption, DefaultSortDirection: asc, Paging: always, RowCountSubset: Count, QuickSearchParam: Caption)
+			#column(Alias: TypeID, Type: Guid,  Hidden: true)
+			#column(Alias: TypeCaption, Caption: $Views_Types_Name, Type: String, Hidden: false, Localizable: true, SortBy: t.LocalizedCaption)
+			#column(Alias: TypeName, Caption: $Views_Types_Alias, Type: String, SortBy: t.Name)
+			#column(Alias: rn, Type: Int64, Hidden: true)
+			#param(Alias: Caption, Caption: $Views_Types_Name_Param, Hidden: false, Type: String, Multiple: true)
+			#param(Alias: Name, Caption: $Views_Types_Alias_Param, Hidden: false, Type: String, Multiple: true)
+			#reference(ColPrefix: Type, RefSection: FdCardTypes, DisplayValueColumn: TypeCaption, IsCard: false, OpenOnDoubleClick: false)
+			#subset(Alias: Count)
+		}
+		#description {}
+		#ms_query {
+			select
+				t.*
+			from
+			\(
+				select
+					\#if\(Normal\) \{
+					t.ID as TypeID\,
+					t.Caption as TypeCaption\,
+					t.Name as TypeName\,
+					row_number\(\) over \(order by \#order_by\) as rn
+					\}
+					\#if\(Count\) \{
+					count\(*\) as cnt
+					\}
+				from \(
+					select
+						\#if\(Normal\) \{
+						t.ID\,
+						t.Caption\,
+						t.Name\,
+						\#if\(request.SortedBy\("TypeCaption"\)\) \{
+						locCaption.Value as LocalizedCaption\,
+						\}
+						\}
+						-- запрос выполняется примерно в 2 раза быстрее\, если флаги сначала вернуть в select во внутреннем запросе\, а затем проверить в where во внешнем запросе
+						t.Definition.value\('\(/cardType/@type\)[1]'\, 'int'\) as TypeInstance\,
+						t.Definition.value\('\(/cardType/@flags\)[1]'\, 'int'\) as TypeFlags\,
+						t.Definition.value\('\(/cardType/@group\)[1]'\, 'nvarchar\(100\)'\) as TypeGroup
+					from Types t with\(nolock\)
+					\#if\(Caption || Normal && request.SortedBy\("TypeCaption"\)\) \{
+					cross apply dbo.Localization\(t.Caption\, \#param\(locale\)\) locCaption
+					\}
+					where 1=1
+						\#param\(Name\, t.Name\)
+						\#param\(Caption\, locCaption.Value\)
+				\) t
+				where t.TypeInstance = 0		-- тип карточки\, а не файла или задания
+					and \(t.TypeFlags & 400\) = 0	-- 400 = 16 + 128 + 256; тип карточки не содержит флагов Hidden\, Singleton и Administrative
+					and \(t.TypeGroup is null or t.TypeGroup not in \(N'Settings'\, N'System'\, N'KrProcess'\, N'Roles'\)\)
+			\) t
+			\#if\(PageOffset\) \{
+			where t.rn >= \#param\(PageOffset\) and t.rn < \(\#param\(PageOffset\) + \#param\(PageLimit\)\)
+			\}
+			\#if\(Normal\) \{
+			order by t.rn
+			\}
+		}
+		#pg_query {
+			select
+				\#if\(Normal\) \{
+				"t"."ID" 		as "TypeID"\,
+				"t"."Caption" 	as "TypeCaption"\,
+				"t"."Name" 		as "TypeName"\,
+				0\:\:int8 		as "rn"
+				\}
+				\#if\(Count\) \{
+				count\(*\) as "cnt"
+				\}
+			from \(
+				select
+					\#if\(Normal\) \{
+					"t"."ID"\,
+					"t"."Caption"\,
+					"t"."Name"\,
+					\#if\(request.SortedBy\("TypeCaption"\)\) \{
+					"locCaption"."Value" as "LocalizedCaption"\,
+					\}
+					\}
+					-- запрос выполняется примерно в 2 раза быстрее\, если флаги сначала вернуть в SELECT во внутреннем запросе\, а затем проверить в WHERE во внешнем запросе
+					\(\(xpath\('/cardType/@type'\, "t"."Definition"\)\:\:text[]\)\:\:int[]\)[1]	AS "TypeInstance"\,
+					\(\(xpath\('/cardType/@flags'\, "t"."Definition"\)\:\:text[]\)\:\:int[]\)[1]	AS "TypeFlags"\,
+					\(\(xpath\('/cardType/@group'\, "t"."Definition"\)\:\:text[]\)\)[1]			AS "TypeGroup"
+				from "Types" as "t"
+				\#if\(Caption || Normal && request.SortedBy\("TypeCaption"\)\) \{
+				cross join "Localization"\("t"."Caption"\, \#param\(locale\)\) as "locCaption"
+				\}
+				where true
+					\#param\(Name\, "t"."Name"\)
+					\#param\(Caption\, "locCaption"."Value"\)
+			\) as "t"
+			where "t"."TypeInstance" = 0		-- тип карточки\, а не файла или задания
+				and \("t"."TypeFlags" & 400\) = 0	-- 400 = 16 + 128 + 256; тип карточки не содержит флагов Hidden\, Singleton и Administrative
+				and \("t"."TypeGroup" is null or "t"."TypeGroup" not in \('Settings'\, 'System'\, 'KrProcess'\, 'Roles'\)\)
+			\#if\(Normal\) \{
+			ORDER BY \#order_by
+			\}
+			\#if\(PageOffset\) \{
+			OFFSET \#param\(PageOffset\) - 1 LIMIT \#param\(PageLimit\)
+			\}
+		}
+	}
+}

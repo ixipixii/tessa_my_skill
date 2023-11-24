@@ -1,0 +1,248 @@
+#tessa_exchange_format(Version:1, CreationTime:2019-11-15T11\:46\:14) {
+	#exchange_view(RowID:fa7ba603-c794-46b6-b842-bd853bad5800, Alias:FdCardTypeFields, Caption:Поля карточки, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2019-11-15T11\:45\:48, GroupName:Fd Awf) {
+		#metadata {
+			#view(DefaultSortColumn: FieldCaption, Paging: always, PageLimit: 10, RowCountSubset: Count)
+
+			#column(Alias: FieldID, Caption: ID поля, Type: Guid, Hidden: true)
+			#column(Alias: FieldCaption, Caption: Поле, Type: String, Localizable: true, SortBy: locCaption.Value)
+			#column(Alias: FieldSectionTypeName, Caption: Тип секции, Type: String)
+			#column(Alias: FieldDataTypeID, Caption: ID типа данных, Type: Guid, Hidden: true)
+			#column(Alias: FieldDataTypeCaption, Caption: Тип данных, Type: String)
+			#column(Alias: FieldSectionID, Caption: ID секции, Type: Guid, Hidden: true)
+			#column(Alias: FieldSectionName, Caption: Имя секции, Type: String)
+			#column(Alias: FieldComplexColumnID, Caption: ComplexColumn, Type: Guid, Hidden: true)
+			#column(Alias: FieldPhysicalColumnID, Caption: Columns, Type: Guid, Hidden: true)
+			#column(Alias: FieldPhysicalColumnName, Caption: PhysicalColumnName, Type: String)
+			#column(Alias: FieldComplexColumnName, Caption: ComplexColumnName, Type: String)
+			#column(Alias: FieldComplexColumnReferencedTableID, Caption: ComplexColumnReferencedTableID, Type: Guid, Hidden: true)
+			#column(Alias: FieldComplexColumnReferencedTableName, Caption: ComplexColumnReferencedTableName, Type: String)
+
+			#column(Alias: rn, Type: Int64, Hidden: true)
+
+			#param(Alias: CardTypeID, Caption: ID Типа карточки, Type: Guid, Hidden: true)
+
+			#reference(ColPrefix: Field, RefSection: FdCardTypeFields, DisplayValueColumn: FieldCaption, IsCard: false, OpenOnDoubleClick: false)
+
+			#subset(Alias: Count)
+		}
+		#description {}
+		#ms_query {
+			declare @cardTypeXml xml =
+			\(
+				select [Definition]
+				from [Types] t
+				where 
+					1=1 
+					\#if\(CardTypeID && CardTypeID.CriteriaName != "IsNull"\)
+					\{
+						and t.ID = \#param\(CardTypeID\) 
+					\}
+					\{
+						and t.ID = '00000000-0000-0000-0000-000000000000'
+					\}
+			\)
+
+			select *
+			from
+			\(
+				SELECT 
+					\#if\(Normal\)\{
+						newid\(\) as FieldID\,
+						locCaption.Value as FieldCaption\,
+						SectionTypeName as FieldSectionTypeName\,
+						DataTypeID as FieldDataTypeID\,
+						case t.DataTypeID
+							when '1962C931-9C23-0EB9-903C-26BAC9EF3571' then N'Строка'
+							when 'C08B81F3-ED18-005A-BAE6-A61679812709' then N'Дата и время'
+							when '208E364E-94FE-0D64-BC27-6B4DC12D039C' then N'Ссылка'
+							when '5D95340A-0F22-0D14-B9D2-A5471F607261' then N'Список'
+							when 'B6038B72-342A-0C8D-AE2E-F2F3D122BAA9' then N'Таблица'
+							when '79633881-A684-010A-B1EA-027D714BDA5D' then N'Флажок'
+							when '01C2BB84-6B71-034E-859E-B6E2B64FF2F3' then N'Целое число'
+							when '65AD3578-B6A2-045F-9D55-C915A19DBC96' then N'Вещественное число'
+							when '2860B9FD-2592-0CA1-AE99-E8051A04D4BB' then N'Десятичное число'
+							else N'unknown'
+						end as FieldDataTypeCaption\,
+						SectionID as FieldSectionID\,
+						tables.Name as FieldSectionName\,
+						ComplexColumnID as FieldComplexColumnID\,
+						PhysicalColumnID as FieldPhysicalColumnID\,
+						t2.PhysicalColumnName as FieldPhysicalColumnName\,
+						t3.ComplexColumnName as FieldComplexColumnName\,
+						t3.ComplexColumnReferencedTableID as FieldComplexColumnReferencedTableID\,
+						t4.ComplexColumnReferencedTableName as FieldComplexColumnReferencedTableName\,
+					      row_number\(\) over \(order by \#order_by\) as rn
+				      \}
+				      \#if\(Count\)\{
+				      		count\(*\) as cnt
+				      \}
+				  FROM 
+				  \(
+				  	SELECT 
+				  			cast\(T.C.value\('@caption'\, 'nvarchar\(max\)'\) as nvarchar\(max\)\) as Caption\,
+							N'Строковая секция' as SectionTypeName\,
+							cast \(T.C.value\('@type'\, 'nvarchar\(36\)'\) as uniqueidentifier\) as DataTypeID\,
+							cast\(T.C.value\('@section'\, 'nvarchar\(36\)'\) as uniqueidentifier\) as SectionID\,
+							cast\(T.C.value\('@complexColumn'\, 'nvarchar\(36\)'\) as uniqueidentifier\) as ComplexColumnID\,
+							cast\(T.C.value\('@columns'\, 'nvarchar\(36\)'\) as uniqueidentifier\) as PhysicalColumnID
+					FROM @cardTypeXml.nodes\('\(/cardType/block/entry\)'\) as T\(C\)
+				
+					union all
+				
+					SELECT 
+							cast\(T.C.value\('@caption'\, 'nvarchar\(max\)'\) as nvarchar\(max\)\) as Caption\,
+							N'Коллекционная секция' as SectionTypeName\,
+							cast \(T.C.value\('@type'\, 'nvarchar\(36\)'\) as uniqueidentifier\) as DataTypeID\,
+							cast\(T.C.value\('@id'\, 'nvarchar\(36\)'\) as uniqueidentifier\) as SectionID\,
+							cast\(T.C.value\('./column[1]/@complexColumn'\, 'nvarchar\(36\)'\) as uniqueidentifier\) as ComplexColumnID\,
+							null as PhysicalColumnID
+					FROM @cardTypeXml.nodes\('\(/cardType/block/table\)'\) as T\(C\)
+				  	\) t
+					outer apply \(
+									SELECT top 1 
+										cast\(xmlPhysicalColumn.y.value\('@Name'\, 'nvarchar\(max\)'\) as nvarchar\(max\)\) as PhysicalColumnName
+									FROM 
+									\(
+										select [Definition]
+										from Tables t2
+										where t2.ID = t.SectionID -- ID секции
+									\) as xmldata \(x\)
+									cross apply x.nodes\('\(/SchemeTable/SchemePhysicalColumn\)'\) xmlPhysicalColumn\(y\)
+									where xmlPhysicalColumn.y.value\('@ID'\, 'nvarchar\(36\)'\) = t.PhysicalColumnID -- ID колонки SchemePhysicalColumn 
+					\) as t2
+					outer apply \(
+									SELECT top 1 
+										cast\(xmlReferencingColumn.z.value\('@Name'\, 'nvarchar\(max\)'\) as nvarchar\(max\)\) as ComplexColumnName\,
+										cast\(xmlReferencingColumn.z.value\('@ReferencedTable'\, 'nvarchar\(36\)'\) as uniqueidentifier\) as ComplexColumnReferencedTableID
+									FROM 
+									\(
+										select [Definition]
+										from Tables t
+										where t.ID = SectionID -- ID секции
+									\) as xmldata \(x\)
+									cross apply x.nodes\('\(/SchemeTable/SchemeComplexColumn\)'\) xmlReferencingColumn\(z\)
+									where xmlReferencingColumn.z.value\('@ID'\, 'nvarchar\(36\)'\) = ComplexColumnID -- ID колонки SchemeComplexColumn
+					\) as t3
+					outer apply \(
+						select top 1
+							Name as ComplexColumnReferencedTableName
+						from Tables with \(nolock\)
+						where ID = t3.ComplexColumnReferencedTableID
+					\) as t4
+				   	cross apply dbo.Localization\(t.Caption\, \#param\(locale\)\) locCaption
+				   	inner join [Tables] tables with\(nolock\) on t.SectionID = tables.ID
+				  	where 
+				  		1=1
+			  \) t
+			  
+			  
+			  \#if\(PageOffset\) \{
+				where rn >= \#param\(PageOffset\) and rn < \(\#param\(PageOffset\) + \#param\(PageLimit\)\)
+			\}
+		}
+		#pg_query {
+			SELECT 
+			\#if\(Normal\)\{
+				gen_random_uuid\(\) 		as "FieldID"\,
+				"locCaption"."Value" 	as "FieldCaption"\,
+				"SectionTypeName" 		as "FieldSectionTypeName"\,
+				"DataTypeID" 			as "FieldDataTypeID"\,
+				case "t1"."DataTypeID"
+					when '1962C931-9C23-0EB9-903C-26BAC9EF3571' then 'Строка'
+					when 'C08B81F3-ED18-005A-BAE6-A61679812709' then 'Дата и время'
+					when '208E364E-94FE-0D64-BC27-6B4DC12D039C' then 'Ссылка'
+					when '5D95340A-0F22-0D14-B9D2-A5471F607261' then 'Список'
+					when 'B6038B72-342A-0C8D-AE2E-F2F3D122BAA9' then 'Таблица'
+					when '79633881-A684-010A-B1EA-027D714BDA5D' then 'Флажок'
+					when '01C2BB84-6B71-034E-859E-B6E2B64FF2F3' then 'Целое число'
+					when '65AD3578-B6A2-045F-9D55-C915A19DBC96' then 'Вещественное число'
+					when '2860B9FD-2592-0CA1-AE99-E8051A04D4BB' then 'Десятичное число'
+					else 'unknown'
+				end as "FieldDataTypeCaption"\,
+				"SectionID" 							as "FieldSectionID"\,
+				"tables"."Name" 						as "FieldSectionName"\,
+				"ComplexColumnID" 						as "FieldComplexColumnID"\,
+				"PhysicalColumnID" 						as "FieldPhysicalColumnID"\,
+				"t2"."PhysicalColumnName" 				as "FieldPhysicalColumnName"\,
+				"t3"."ComplexColumnName" 				as "FieldComplexColumnName"\,
+				"t3"."ComplexColumnReferencedTableID" 	as "FieldComplexColumnReferencedTableID"\,
+				"t4"."ComplexColumnReferencedTableName" as "FieldComplexColumnReferencedTableName"\,
+			    0\:\:int8 								as "rn"
+			  \}
+			  \#if\(Count\)\{
+			  		count\(*\) as "cnt"
+			  \}
+			FROM "Types" as "t"
+			cross join lateral
+			\(
+				SELECT 
+					\(xpath\('/entry/@caption'\, node\)\)[1]\:\:text\:\:text 					AS "Caption"\,
+					'Строковая секция' 													AS "SectionTypeName"\,
+					\(xpath\('/entry/@type'\, node\)\)[1]\:\:text\:\:uuid 						AS "DataTypeID"\,
+					\(xpath\('/entry/@section'\, node\)\)[1]\:\:text\:\:uuid 					AS "SectionID"\,
+					\(xpath\('/entry/@complexColumn'\, node\)\)[1]\:\:text\:\:uuid 				AS "ComplexColumnID"\,
+					\(xpath\('/entry/@columns'\, node\)\)[1]\:\:text\:\:uuid 					AS "PhysicalColumnID"
+				FROM unnest\(xpath\('/cardType/block/entry'\, "t"."Definition"\)\) as node
+				
+				union all
+				
+				SELECT 
+					\(xpath\('/table/@caption'\, node\)\)[1]\:\:text\:\:text 					AS "Caption"\,
+					'Коллекционная секция' 												AS "SectionTypeName"\,
+					\(xpath\('/table/@type'\, node\)\)[1]\:\:text\:\:uuid 						AS "DataTypeID"\,
+					\(xpath\('/table/@id'\, node\)\)[1]\:\:text\:\:uuid 							AS "SectionID"\,
+					\(xpath\('/table/column[1]/@complexColumn'\, node\)\)[1]\:\:text\:\:uuid 	AS "ComplexColumnID"\,
+					\(xpath\('/table/@columns'\, node\)\)[1]\:\:text\:\:uuid 					AS "PhysicalColumnID"
+				FROM unnest\(xpath\('/cardType/block/table'\, "t"."Definition"\)\) as node
+			\) as "t1"
+			left join lateral \(
+				SELECT \(xpath\('/SchemePhysicalColumn/@Name'\, "xmlPhysicalColumnNode"\)\)[1]\:\:text\:\:text as "PhysicalColumnName"
+				FROM 
+				\(
+					select "Definition"
+					from "Tables" "t2"
+					where "t2"."ID" = "t1"."SectionID" -- ID секции
+				\) as "tableXml"
+				cross join unnest\(xpath\('/SchemeTable/SchemePhysicalColumn'\, "tableXml"."Definition"\)\) as "xmlPhysicalColumnNode"
+				where \(xpath\('/SchemePhysicalColumn/@ID'\, "xmlPhysicalColumnNode"\)\)[1]\:\:text\:\:uuid = "t1"."PhysicalColumnID" -- ID колонки SchemePhysicalColumn
+				limit\(1\)
+			\) as "t2" on true
+			left join lateral \(
+				SELECT
+					\(xpath\('/SchemeComplexColumn/@Name'\, "xmlReferencingColumnNode"\)\)[1]\:\:text\:\:text 			as "ComplexColumnName"\,
+					\(xpath\('/SchemeComplexColumn/@ReferencedTable'\, "xmlReferencingColumnNode"\)\)[1]\:\:text\:\:uuid as "ComplexColumnReferencedTableID"
+				FROM 
+				\(
+					select "Definition"
+					from "Tables" "t3"
+					where "t3"."ID" = "t1"."SectionID" -- ID секции
+				\) as "tableXml"
+				cross join unnest\(xpath\('/SchemeTable/SchemeComplexColumn'\, "tableXml"."Definition"\)\) as "xmlReferencingColumnNode"
+				where \(xpath\('/SchemeComplexColumn/@ID'\, "xmlReferencingColumnNode"\)\)[1]\:\:text\:\:uuid = "ComplexColumnID" -- ID колонки SchemeComplexColumn
+				limit\(1\)
+			\) as "t3" on true
+			left join lateral \(
+				select "Name" as "ComplexColumnReferencedTableName"
+				from "Tables"
+				where "ID" = "t3"."ComplexColumnReferencedTableID"
+				limit\(1\)
+			\) as "t4" on true
+			cross join "Localization"\("t1"."Caption"\, \#param\(locale\)\) as "locCaption"
+			inner join "Tables" "tables" on "t1"."SectionID" = "tables"."ID"
+			where true
+				\#if\(CardTypeID && CardTypeID.CriteriaName != "IsNull"\)
+				\{
+					and "t"."ID" = \#param\(CardTypeID\) 
+				\}
+				\{
+					and "t"."ID" = '00000000-0000-0000-0000-000000000000'
+				\}
+			\#if\(Normal\) \{
+			ORDER BY \#order_by
+			\}
+			\#if\(PageOffset\) \{
+			OFFSET \#param\(PageOffset\) - 1 LIMIT \#param\(PageLimit\)
+			\}
+		}
+	}
+}

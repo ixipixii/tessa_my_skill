@@ -1,0 +1,51 @@
+#tessa_exchange_format(Version:1, CreationTime:2020-11-10T06\:26\:26) {
+	#exchange_view(RowID:64e87dbc-793f-4819-ae95-2a952c801268, Alias:PnrContractTypes, Caption:Типы договора, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2020-11-06T15\:34\:34, GroupName:Pnr) {
+		#metadata {
+			#view(DefaultSortColumn: ContractTypeName, DefaultSortDirection: asc, RowCountSubset: cnt, Paging: always, QuickSearchParam: Name)
+			#column(Alias: ContractTypeID, Hidden: true)
+			#column(Alias: ContractTypeName, Caption: Название, Hidden: false, SortBy: tt.ContractTypeName)
+			#column(Alias: rn, 	Caption: Номер строки, 	Hidden: true)
+			#param(Alias: Name, Caption: Название, Hidden: false, Type: nvarchar, Multiple: true)
+			#reference(ColPrefix: ContractType, RefSection: PnrContractTypes, DisplayValueColumn: ContractTypeName, IsCard: true, OpenOnDoubleClick: true)
+			#subset(Alias: cnt)
+		}
+		#description {}
+		#ms_query {
+			SELECT tt.*
+			FROM
+			\(
+				SELECT
+					tt.*
+					\#if\(normal\) \{
+				    \,row_number\(\) OVER \(ORDER BY \#order_by\)					AS rn
+				    \}
+				FROM
+				\(
+					SELECT
+					\#if\(cnt\) \{ 
+						Count\(*\)											AS [cnt]
+					\}
+					\#if\(normal\) \{
+						t.ID as ContractTypeID\,
+			    		t.Name as ContractTypeName
+					\}
+					FROM PnrContractTypes t with\(nolock\)
+					WHERE 1=1
+						-- Застройщик
+						and t.ID <> '3cda221d-5f4d-45da-a868-2da092a2b4bd'
+						-- Прочие по проекту
+						and t.ID <> 'f88f7391-cdf4-4baf-b46e-8877d7384de6'
+					    \#param_expr\(Name\, t.Name\)
+				\) AS [tt]
+			\) AS [tt]
+			\#if\(PageOffset\) \{
+			WHERE [tt].[rn] >= \#param\(PageOffset\) AND [tt].[rn] < \(\#param\(PageOffset\) + \#param\(PageLimit\)\)
+			\}
+			\#if\(normal\) \{
+			ORDER BY \#order_by
+			\}
+		}
+		#pg_query {}
+		#role(RoleID:7ff52dc0-ff6a-4c9d-ba25-b562c370004d, ViewID:64e87dbc-793f-4819-ae95-2a952c801268) 
+	}
+}

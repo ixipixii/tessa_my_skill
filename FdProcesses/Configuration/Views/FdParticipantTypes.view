@@ -1,0 +1,61 @@
+#tessa_exchange_format(Version:1, CreationTime:2019-11-08T13\:43\:17) {
+	#exchange_view(RowID:2e91af1f-2b4f-4bcf-a39d-7699a8a99e06, Alias:FdParticipantTypes, Caption:Тип участника, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2019-11-07T15\:08\:48, GroupName:Fd Awf) {
+		#metadata {
+			#view(DefaultSortColumn: ParticipantTypeID, Paging: always, PageLimit: 10, RowCountSubset: Count, QuickSearchParam: Name)
+
+			#column(Alias: ParticipantTypeID, Caption: ID, Type: Int32, Hidden: true, SortBy: pt.ID)
+			#column(Alias: ParticipantTypeName, Caption: Название, Type: String, SortBy: pt.Name)
+			#column(Alias: rn, Type: Int64, Hidden: true)
+
+			#param(Alias: Name, Caption: Название, Hidden: false, Type: String, Multiple: false)
+
+			#reference(ColPrefix: ParticipantType, RefSection: FdParticipantTypes, DisplayValueColumn: ParticipantTypeName, IsCard: true, OpenOnDoubleClick: true)
+
+			#subset(Alias: Count)
+		}
+		#description {}
+		#ms_query {
+			select *
+			from
+			\(
+				SELECT 
+					\#if\(Normal\)\{
+						pt.[ID] as ParticipantTypeID
+					      \,pt.[Name] as ParticipantTypeName
+					      \,row_number\(\) over \(order by \#order_by\) as rn
+				      \}
+				      \#if\(Count\)\{
+				      		count\(*\) as cnt
+				      \}
+				  FROM [FdParticipantTypes] pt with\(nolock\)
+				  where 1=1
+					  \#param\(Name\, pt.Name\)
+			  \) t
+			  
+			  
+			  \#if\(PageOffset\) \{
+				where rn >= \#param\(PageOffset\) and rn < \(\#param\(PageOffset\) + \#param\(PageLimit\)\)
+			\}
+		}
+		#pg_query {
+			SELECT 
+			\#if\(Normal\)\{
+				"pt"."ID" 	as "ParticipantTypeID"\,
+				"pt"."Name" as "ParticipantTypeName"\,
+				0\:\:int8 	as "rn"
+			\}
+			\#if\(Count\)\{
+				count\(*\) as "cnt"
+			\}
+			FROM "FdParticipantTypes" "pt"
+			where true
+				\#param\(Name\, "pt"."Name"\)
+			\#if\(Normal\) \{
+			ORDER BY \#order_by
+			\}
+			\#if\(PageOffset\) \{
+			OFFSET \#param\(PageOffset\) - 1 LIMIT \#param\(PageLimit\)
+			\}
+		}
+	}
+}

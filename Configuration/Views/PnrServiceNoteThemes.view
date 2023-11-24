@@ -1,0 +1,31 @@
+#tessa_exchange_format(Version:1, CreationTime:2020-11-25T15\:16\:48) {
+	#exchange_view(RowID:5245aa99-0c86-4707-9a14-82964d440451, Alias:PnrServiceNoteThemes, Caption:Тематики служебных записок, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2020-11-25T14\:22\:13, GroupName:Pnr) {
+		#metadata {
+			#view(DefaultSortColumn: ServiceNoteThemeName, DefaultSortDirection: asc, Paging: no, QuickSearchParam: Name)
+			#column(Alias: ServiceNoteThemeID, Hidden: true)
+			#column(Alias: ServiceNoteThemeName, Caption: Название, Hidden: false, SortBy: t.Name)
+			#column(Alias: ServiceNoteTypeID, Hidden: true)
+			#column(Alias: ServiceNoteTypeName, Caption: Принадлежит к типу, Hidden: false, SortBy: t.Name)
+
+			#param(Alias: TypeID, Caption: TypeID, Hidden: true, Multiple: false, Type: $PnrServiceNoteTypes.ID)
+			#param(Alias: Name, Caption: Название, Hidden: false, Type: nvarchar, Multiple: true)
+
+			#reference(ColPrefix: ServiceNoteTheme, RefSection: PnrServiceNoteThemes, DisplayValueColumn: ServiceNoteThemeName, IsCard: true, OpenOnDoubleClick: true)
+		}
+		#description {}
+		#ms_query {
+			select
+			    t.ID as ServiceNoteThemeID\,
+			    t.Name as ServiceNoteThemeName\,
+			    t.TypeID as ServiceNoteTypeID\,
+			    t.TypeName as ServiceNoteTypeName
+			from PnrServiceNoteThemes t with\(nolock\)
+			where 1=1
+			    \#param_expr\(Name\, t.Name\)
+			    \#param_expr\(TypeID\, t.TypeID\)
+			order by \#order_by
+		}
+		#pg_query {}
+		#role(RoleID:7ff52dc0-ff6a-4c9d-ba25-b562c370004d, ViewID:5245aa99-0c86-4707-9a14-82964d440451) 
+	}
+}

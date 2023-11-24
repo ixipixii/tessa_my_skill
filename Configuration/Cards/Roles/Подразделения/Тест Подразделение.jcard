@@ -1,0 +1,104 @@
+﻿[
+  {
+    ".method::int": 2,
+    "Card": {
+      "Created::dtm": "2020-07-22T14:44:13.29Z",
+      "CreatedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "CreatedByName": "Admin",
+      "Files": null,
+      "Flags::int": 0,
+      "ID::uid": "e91e6300-ccd6-4b1c-ab57-4afd9f8ce2b1",
+      "Info": null,
+      "Modified::dtm": "2020-09-02T20:58:58.283Z",
+      "ModifiedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "ModifiedByName": "Admin",
+      "Permissions": null,
+      "Sections": {
+        "DepartmentRoles": {
+          "Fields": {
+            "ActionStatusID": null,
+            "ActionStatusName": null,
+            "CFOID::uid": "f1cc5fa0-c8b1-40b3-9376-03a6090b8183",
+            "CFOName": "Тест ЦФО",
+            "CuratorID": null,
+            "CuratorName": null,
+            "DepartmentTypeID::int": 1,
+            "DepartmentTypeName": "Подразделение",
+            "HeadUserID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+            "HeadUserName": "Admin"
+          }
+        },
+        "RoleDeputies": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "RoleDeputiesVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Roles": {
+          "Fields": {
+            "AdSyncDate": null,
+            "AdSyncDisableUpdate": null,
+            "AdSyncDistinguishedName": null,
+            "AdSyncID": null,
+            "AdSyncIndependent": false,
+            "AdSyncWhenChanged": null,
+            "Description": null,
+            "ExternalID": null,
+            "Hidden": false,
+            "Idx": "117630",
+            "InheritTimeZone": true,
+            "Name": "Тест \"Подразделение\"",
+            "ParentID": null,
+            "ParentName": null,
+            "TimeZoneCodeName": "Default",
+            "TimeZoneID::int": 0,
+            "TimeZoneShortName": "UTC+03:00",
+            "TimeZoneUtcOffsetMinutes::int": 180,
+            "TypeID::int": 2
+          }
+        },
+        "RoleUsers": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "RoleUsersVirtual": {
+          ".table::int": 1,
+          "Rows": [
+            {
+              ".state::int": 2,
+              "RowID::uid": "0612d109-e8b7-4c84-b7d0-e710e76ebcd4",
+              "UserID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+              "UserName": "Admin"
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "7d9ab5f7-913a-4956-a8e9-61957330f5dd",
+              "UserID::uid": "8f8458a4-a761-46db-a0ca-90e309b3466e",
+              "UserName": "Ivanov"
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "da95ca95-0c74-4d2e-8155-c7ccbfc0f227",
+              "UserID::uid": "ee5abfdc-f362-41fa-b535-d72e3dc0878c",
+              "UserName": "Alekseev"
+            }
+          ]
+        }
+      },
+      "TaskHistory": null,
+      "TaskHistoryGroups": null,
+      "Tasks": null,
+      "Topics": null,
+      "TypeCaption": "$CardTypes_TypesNames_DepartmentRole",
+      "TypeID::uid": "abe57cb7-e1cb-06f6-b7ca-ad1668bebd72",
+      "TypeName": "DepartmentRole",
+      "Version::int": 0
+    },
+    "FileMapping": null,
+    "Info": {
+      ".importVersion::int": 6
+    }
+  }
+]

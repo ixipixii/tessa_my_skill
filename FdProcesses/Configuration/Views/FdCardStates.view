@@ -1,0 +1,87 @@
+#tessa_exchange_format(Version:1, CreationTime:2019-11-15T11\:06\:56) {
+	#exchange_view(RowID:3298b359-2a42-44ac-b7b1-f77fcd999835, Alias:FdCardStates, Caption:Состояния карточек, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2019-11-15T11\:04\:16, GroupName:Fd Awf) {
+		#metadata {
+			#view(DefaultSortColumn: CardStateName, Paging: always, PageLimit: 10, RowCountSubset: Count, QuickSearchParam: Name)
+
+			#column(Alias: CardStateID, Caption: ID, Hidden: true, Type: Guid)
+			#column(Alias: CardStateName, Caption: Состояние карточки, Type: String, SortBy: cs.Name)
+			#column(Alias: CardStateCardTypeCaption, Caption: Тип карточки, Type: String, Localizable: true)
+			#column(Alias: rn, Hidden: true, Type: Int64)
+
+			#param(Alias: Name, Caption: Название, Hidden: false, Type: String, Multiple: false)
+			#param(Alias: CardType, Caption: Тип карточки, Hidden: true, Type: Guid, Multiple: false, RefSection: FdCardTypes) {
+				#autocomplete(View: FdCardTypes, Param: Caption, PopupColumns: 1 2)
+				#dropdown(View: FdCardTypes, PopupColumns: 1 2)
+			}
+			#param(Alias: CardTypeIDFromProcessTemplateID, Caption: ID Шаблона процесса, Hidden: true, Type: Guid, Multiple: false)
+			#reference(ColPrefix: CardState, RefSection: FdCardStates, DisplayValueColumn: CardStateName, IsCard: true, OpenOnDoubleClick: true)
+
+			#subset(Alias: Count) 
+		}
+		#description {}
+		#ms_query {
+			select *
+			from
+			\(
+				SELECT 
+					\#if\(Normal\)\{
+						cs.[ID] as CardStateID
+					      \,cs.[Name] as CardStateName
+					      \,cs.[CardTypeCaption] as CardStateCardTypeCaption
+					      \,row_number\(\) over \(order by \#order_by\) as rn
+				      \}
+				      \#if\(Count\)\{
+				      		count\(*\) as cnt
+				      \}
+				  FROM [FdCardState] cs with\(nolock\)
+				  where 1=1
+					  \#param\(Name\, cs.Name\)
+					  \#param\(CardType\, cs.CardTypeID\)
+					  \#if\(CardTypeIDFromProcessTemplateID\)\{
+					  	and cs.CardTypeID = 
+					  	\(
+					  		select top 1 pt.CardTypeID
+					  		from FdProcessTemplate pt with\(nolock\)
+					  		where pt.ID = \#param\(CardTypeIDFromProcessTemplateID\)
+					  	\)
+					  \}
+			  \) t
+			  
+			  
+			  \#if\(PageOffset\) \{
+				where rn >= \#param\(PageOffset\) and rn < \(\#param\(PageOffset\) + \#param\(PageLimit\)\)
+			\}
+		}
+		#pg_query {
+			SELECT 
+				\#if\(Normal\)\{
+				"cs"."ID" 				as "CardStateID"\,
+			    "cs"."Name" 			as "CardStateName"\,
+			    "cs"."CardTypeCaption" 	as "CardStateCardTypeCaption"\,
+			    0\:\:int8					as "rn"
+			    \}
+				\#if\(Count\)\{
+				count\(*\) as "cnt"
+				\}
+			FROM "FdCardState" as "cs"
+			where true
+				\#param\(Name\, "cs"."Name"\)
+				\#param\(CardType\, "cs"."CardTypeID"\)
+				\#if\(CardTypeIDFromProcessTemplateID\)\{
+					and "cs"."CardTypeID" = 
+					\(
+						select "pt"."CardTypeID"
+						from "FdProcessTemplate" as "pt"
+						where "pt"."ID" = \#param\(CardTypeIDFromProcessTemplateID\)
+						limit 1
+					\)
+				\}
+			\#if\(Normal\) \{
+			ORDER BY \#order_by
+			\}
+			\#if\(PageOffset\) \{
+			OFFSET \#param\(PageOffset\) - 1 LIMIT \#param\(PageLimit\)
+			\}
+		}
+	}
+}

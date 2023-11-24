@@ -1,0 +1,720 @@
+{
+  "Blocks": [
+    {
+      "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+      "BlockSettings": {
+        "AlwaysMultipleColumn": false,
+        "CollapsedByDefault": false,
+        "ColumnsCount::int": 1,
+        "DoNotCollapseWithTopBlock": false,
+        "HorizontalInterval::int": 5,
+        "IsHidden": false,
+        "LeftCaptions": false,
+        "StretchVertically": false,
+        "VerticalInterval::int": 5
+      },
+      "Caption": "Основные настройки",
+      "Controls": [
+        {
+          "BlockSettings": {
+            "ControlSpan": false,
+            "HideCaption": true
+          },
+          "Caption": "Использовать уведомления по заданиям",
+          "ComplexColumnID": null,
+          "ControlSettings": {
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            }
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": null,
+          "Order::int": 0,
+          "PhysicalColumnIDList": [
+            {
+              "::types": [
+                "uid"
+              ]
+            },
+            "f169a0bc-cef7-4c0d-a32a-5b02467333e4"
+          ],
+          "RequiredText": "",
+          "SectionID::uid": "8847585d-bb60-40df-980f-7fa30593cd3a",
+          "ToolTip": null,
+          "Type::uid": "79633881-a684-010a-b1ea-027d714bda5d"
+        },
+        {
+          "BlockSettings": {
+            "ControlSpan": false,
+            "HideCaption": false
+          },
+          "Caption": "Лист истории: Отображать сотрудников, входящих в роли активных заданий (число соответствует лимиту выводимых сотрудников)",
+          "ComplexColumnID": null,
+          "ControlSettings": {
+            "MaxValue": 9223372036854775807,
+            "MinValue": 0,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            }
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": null,
+          "Order::int": 1,
+          "PhysicalColumnIDList": [
+            {
+              "::types": [
+                "uid"
+              ]
+            },
+            "94cecdd0-e09c-4d0b-a4c1-917e2b5b0150"
+          ],
+          "RequiredText": "",
+          "SectionID::uid": "8847585d-bb60-40df-980f-7fa30593cd3a",
+          "ToolTip": "0 - не выводить вообще",
+          "Type::uid": "01c2bb84-6b71-034e-859e-b6e2b64ff2f3"
+        }
+      ],
+      "FormSettings": {
+        "HideCaption": false
+      },
+      "Name": "Block1",
+      "Order::int": 0
+    },
+    {
+      "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+      "BlockSettings": {
+        "AlwaysMultipleColumn": false,
+        "CollapsedByDefault": false,
+        "ColumnsCount::int": 1,
+        "DoNotCollapseWithTopBlock": false,
+        "HorizontalInterval::int": 5,
+        "IsHidden": false,
+        "LeftCaptions": false,
+        "StretchVertically": false,
+        "VerticalInterval::int": 5
+      },
+      "Caption": "$CardTypes_Blocks_Controls_CardTypes",
+      "Controls": [
+        {
+          "BlockSettings": {
+            "CaptionStyle": {
+              "TextColor": "#FF505050",
+              "TextStyle": {
+                "SelectedFontFamily": "Segoe UI, ./Fonts/#Open Sans",
+                "SelectedFontSize": 12.0,
+                "SelectedFontStretch": "Normal",
+                "SelectedFontStyle": "Normal",
+                "SelectedFontWeight": "Normal",
+                "SelectedTextBaseline": false,
+                "SelectedTextOverLine": false,
+                "SelectedTextStrikethrough": false,
+                "SelectedTextUnderline": false
+              }
+            },
+            "ControlSpan": true,
+            "HideCaption": true
+          },
+          "Caption": "$CardTypes_Blocks_Controls_CardTypes",
+          "Columns": [
+            {
+              "AggregationFormat": "",
+              "Alignment::int": 0,
+              "Caption": "Тип карточки",
+              "ComplexColumnID::uid": "0c4353bd-7c99-4885-a97d-41a61892593a",
+              "DisplayFormat": "",
+              "Flags::int": 0,
+              "HeaderAlignment::int": 2,
+              "MaxLength": null,
+              "Order::int": 0,
+              "OwnedComplexColumnID": null,
+              "OwnedOrderColumnID": null,
+              "OwnedPhysicalColumnIDList": [],
+              "OwnedSectionID": null,
+              "PhysicalColumnIDList": [],
+              "SelectableControlName": "",
+              "Separator": "",
+              "ToolTipLineLength::int": 100
+            },
+            {
+              "AggregationFormat": "",
+              "Alignment::int": 0,
+              "Caption": "Использовать процессы",
+              "ComplexColumnID": null,
+              "DisplayFormat": "",
+              "Flags::int": 0,
+              "HeaderAlignment::int": 2,
+              "MaxLength": null,
+              "Order::int": 1,
+              "OwnedComplexColumnID": null,
+              "OwnedOrderColumnID": null,
+              "OwnedPhysicalColumnIDList": [],
+              "OwnedSectionID": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::types": [
+                    "uid"
+                  ]
+                },
+                "e257885c-4156-46f2-ae2a-a1b91fdd52cf"
+              ],
+              "SelectableControlName": "",
+              "Separator": "",
+              "ToolTipLineLength::int": 100
+            },
+            {
+              "AggregationFormat": "",
+              "Alignment::int": 0,
+              "Caption": "Скрывать лист истории Fd",
+              "ComplexColumnID": null,
+              "DisplayFormat": "",
+              "Flags::int": 0,
+              "HeaderAlignment::int": 2,
+              "MaxLength": null,
+              "Order::int": 2,
+              "OwnedComplexColumnID": null,
+              "OwnedOrderColumnID": null,
+              "OwnedPhysicalColumnIDList": [],
+              "OwnedSectionID": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::types": [
+                    "uid"
+                  ]
+                },
+                "42b880da-9955-40fb-b304-9cead87428e6"
+              ],
+              "SelectableControlName": "",
+              "Separator": "",
+              "ToolTipLineLength::int": 100
+            },
+            {
+              "AggregationFormat": "",
+              "Alignment::int": 0,
+              "Caption": "Скрывать лист истории Kr",
+              "ComplexColumnID": null,
+              "DisplayFormat": "",
+              "Flags::int": 0,
+              "HeaderAlignment::int": 2,
+              "MaxLength": null,
+              "Order::int": 3,
+              "OwnedComplexColumnID": null,
+              "OwnedOrderColumnID": null,
+              "OwnedPhysicalColumnIDList": [],
+              "OwnedSectionID": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::types": [
+                    "uid"
+                  ]
+                },
+                "b43f2057-4be3-4866-bb55-796cc4c18f97"
+              ],
+              "SelectableControlName": "",
+              "Separator": "",
+              "ToolTipLineLength::int": 100
+            }
+          ],
+          "ControlSettings": {
+            "AutoSizeRowLimit::int": 25,
+            "CanSort": true,
+            "IsMultiselectable": true,
+            "MaxHeight::int": 800,
+            "OrderColumnID": null,
+            "ScrollWithMouse": false
+          },
+          "ControlType::int": 1,
+          "Flags::int": 0,
+          "Form": {
+            "Blocks": [
+              {
+                "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+                "BlockSettings": {
+                  "AlwaysMultipleColumn": false,
+                  "CollapsedByDefault": false,
+                  "ColumnsCount::int": 1,
+                  "DoNotCollapseWithTopBlock": false,
+                  "HorizontalInterval::int": 5,
+                  "IsHidden": false,
+                  "LeftCaptions": false,
+                  "StretchVertically": false,
+                  "VerticalInterval::int": 5
+                },
+                "Caption": "$CardTypes_Controls_CardType",
+                "Controls": [
+                  {
+                    "BlockSettings": {
+                      "ControlSpan": false,
+                      "HideCaption": false
+                    },
+                    "Caption": "$CardTypes_Controls_CardType",
+                    "ComplexColumnID::uid": "0c4353bd-7c99-4885-a97d-41a61892593a",
+                    "ControlSettings": {
+                      "ComboBoxMode": false,
+                      "ExtendendLocalization": false,
+                      "HideSelectorButton": false,
+                      "IsAllowOpenRefs": false,
+                      "ManualInput": false,
+                      "ManualInputColumnID": null,
+                      "MaxResultsCount::int": 15,
+                      "ParameterAlias": "Caption",
+                      "PopupColumnLengths": "",
+                      "PopupColumnLengthsComboBox": "",
+                      "PopupColumnsIndexes": "1,2",
+                      "PopupColumnsIndexesComboBox": "",
+                      "PopupScreenLengthPercent::int": 100,
+                      "RefSection": "FdCardTypes",
+                      "SearchDelay": null,
+                      "TextColor": "#FF000000",
+                      "TextStyle": {
+                        "SelectedFontFamily": "Segoe UI, ./Fonts/#Open Sans",
+                        "SelectedFontSize": 12.0,
+                        "SelectedFontStretch": "Normal",
+                        "SelectedFontStyle": "Normal",
+                        "SelectedFontWeight": "Normal",
+                        "SelectedTextBaseline": false,
+                        "SelectedTextOverLine": false,
+                        "SelectedTextStrikethrough": false,
+                        "SelectedTextUnderline": false
+                      },
+                      "ViewAlias": "FdCardTypes",
+                      "ViewAliasComboBox": "",
+                      "ViewMap": null,
+                      "ViewReferencePrefix": null
+                    },
+                    "ControlType::int": 0,
+                    "DisplayFormat": "{1}",
+                    "Flags::int": 0,
+                    "Name": null,
+                    "Order::int": 0,
+                    "PhysicalColumnIDList": [],
+                    "RequiredText": "",
+                    "SectionID::uid": "88fb6d3f-adef-433c-9e5b-88a884ee92d1",
+                    "ToolTip": null,
+                    "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+                  },
+                  {
+                    "BlockSettings": {
+                      "ControlSpan": false,
+                      "HideCaption": true
+                    },
+                    "Caption": "Использовать процессы",
+                    "ComplexColumnID": null,
+                    "ControlSettings": {
+                      "TextColor": "#FF000000",
+                      "TextStyle": {
+                        "SelectedFontFamily": "Segoe UI, ./Fonts/#Open Sans",
+                        "SelectedFontSize": 12.0,
+                        "SelectedFontStretch": "Normal",
+                        "SelectedFontStyle": "Normal",
+                        "SelectedFontWeight": "Normal",
+                        "SelectedTextBaseline": false,
+                        "SelectedTextOverLine": false,
+                        "SelectedTextStrikethrough": false,
+                        "SelectedTextUnderline": false
+                      }
+                    },
+                    "ControlType::int": 0,
+                    "DisplayFormat": "",
+                    "Flags::int": 0,
+                    "Name": "UseDocTypesControl",
+                    "Order::int": 1,
+                    "PhysicalColumnIDList": [
+                      {
+                        "::types": [
+                          "uid"
+                        ]
+                      },
+                      "e257885c-4156-46f2-ae2a-a1b91fdd52cf"
+                    ],
+                    "RequiredText": "",
+                    "SectionID::uid": "88fb6d3f-adef-433c-9e5b-88a884ee92d1",
+                    "ToolTip": null,
+                    "Type::uid": "79633881-a684-010a-b1ea-027d714bda5d"
+                  },
+                  {
+                    "BlockSettings": {
+                      "ControlSpan": false,
+                      "HideCaption": true
+                    },
+                    "Caption": "Скрывать лист истории Fd",
+                    "ComplexColumnID": null,
+                    "ControlSettings": {
+                      "TextColor": "#FF000000",
+                      "TextStyle": {
+                        "SelectedFontFamily": "Segoe UI",
+                        "SelectedFontSize": 12.0,
+                        "SelectedFontStretch": "Normal",
+                        "SelectedFontStyle": "Normal",
+                        "SelectedFontWeight": "Normal",
+                        "SelectedTextBaseline": false,
+                        "SelectedTextOverLine": false,
+                        "SelectedTextStrikethrough": false,
+                        "SelectedTextUnderline": false
+                      }
+                    },
+                    "ControlType::int": 0,
+                    "DisplayFormat": "",
+                    "Flags::int": 0,
+                    "Name": null,
+                    "Order::int": 2,
+                    "PhysicalColumnIDList": [
+                      {
+                        "::types": [
+                          "uid"
+                        ]
+                      },
+                      "42b880da-9955-40fb-b304-9cead87428e6"
+                    ],
+                    "RequiredText": "",
+                    "SectionID::uid": "88fb6d3f-adef-433c-9e5b-88a884ee92d1",
+                    "ToolTip": null,
+                    "Type::uid": "79633881-a684-010a-b1ea-027d714bda5d"
+                  },
+                  {
+                    "BlockSettings": {
+                      "ControlSpan": false,
+                      "HideCaption": true
+                    },
+                    "Caption": "Скрывать лист истории Kr",
+                    "ComplexColumnID": null,
+                    "ControlSettings": {
+                      "TextColor": "#FF000000",
+                      "TextStyle": {
+                        "SelectedFontFamily": "Segoe UI",
+                        "SelectedFontSize": 12.0,
+                        "SelectedFontStretch": "Normal",
+                        "SelectedFontStyle": "Normal",
+                        "SelectedFontWeight": "Normal",
+                        "SelectedTextBaseline": false,
+                        "SelectedTextOverLine": false,
+                        "SelectedTextStrikethrough": false,
+                        "SelectedTextUnderline": false
+                      }
+                    },
+                    "ControlType::int": 0,
+                    "DisplayFormat": "",
+                    "Flags::int": 0,
+                    "Name": null,
+                    "Order::int": 3,
+                    "PhysicalColumnIDList": [
+                      {
+                        "::types": [
+                          "uid"
+                        ]
+                      },
+                      "b43f2057-4be3-4866-bb55-796cc4c18f97"
+                    ],
+                    "RequiredText": "",
+                    "SectionID::uid": "88fb6d3f-adef-433c-9e5b-88a884ee92d1",
+                    "ToolTip": null,
+                    "Type::uid": "79633881-a684-010a-b1ea-027d714bda5d"
+                  }
+                ],
+                "FormSettings": {
+                  "HideCaption": true
+                },
+                "Name": "TypeSettingsBlock",
+                "Order::int": 0
+              }
+            ],
+            "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+            "FormSettings": {
+              "HorizontalInterval::int": 10,
+              "Interval::int": 10
+            }
+          },
+          "Name": "CardTypeControl",
+          "Order::int": 0,
+          "RequiredText": "",
+          "SectionID::uid": "88fb6d3f-adef-433c-9e5b-88a884ee92d1",
+          "ToolTip": null,
+          "Type::uid": "b6038b72-342a-0c8d-ae2e-f2f3d122baa9"
+        }
+      ],
+      "FormSettings": {
+        "HideCaption": false
+      },
+      "Name": "CardTypesBlock",
+      "Order::int": 1
+    },
+    {
+      "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+      "BlockSettings": {
+        "AlwaysMultipleColumn": false,
+        "CollapsedByDefault": false,
+        "ColumnsCount::int": 1,
+        "DoNotCollapseWithTopBlock": false,
+        "HorizontalInterval::int": 5,
+        "IsHidden": false,
+        "LeftCaptions": false,
+        "StretchVertically": false,
+        "VerticalInterval::int": 5
+      },
+      "Caption": "Типы заданий",
+      "Controls": [
+        {
+          "BlockSettings": {
+            "ControlSpan": true,
+            "HideCaption": false
+          },
+          "Caption": "Дополнительно включить возможность запроса комментария и доп. согласования/исполнения для след. типов заданий",
+          "Columns": [
+            {
+              "AggregationFormat": "",
+              "Alignment::int": 0,
+              "Caption": "Reference",
+              "ComplexColumnID::uid": "7e192c89-3427-4162-8e0e-e134f16cfe61",
+              "DisplayFormat": "{1} ({2})",
+              "Flags::int": 0,
+              "HeaderAlignment::int": 0,
+              "MaxLength": null,
+              "Order::int": 0,
+              "OwnedComplexColumnID": null,
+              "OwnedOrderColumnID": null,
+              "OwnedPhysicalColumnIDList": [],
+              "OwnedSectionID": null,
+              "PhysicalColumnIDList": [],
+              "SelectableControlName": "",
+              "Separator": "",
+              "ToolTipLineLength::int": 100
+            }
+          ],
+          "ControlSettings": {
+            "ExtendendLocalization": false,
+            "HideSelectorButton": false,
+            "IsAllowOpenRefs": false,
+            "LineBreakSetting": false,
+            "ManualInput": false,
+            "ManualInputColumnID": null,
+            "MaxResultsCount::int": 15,
+            "OrderColumnID": null,
+            "ParameterAlias": "Caption",
+            "PopupColumnLengths": "",
+            "PopupColumnsIndexes": "1, 2",
+            "PopupScreenLengthPercent::int": 100,
+            "RefSection": "FdTaskTypes",
+            "SearchDelay": null,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "ViewAlias": "FdTaskTypes",
+            "ViewMap": null,
+            "ViewReferencePrefix": null
+          },
+          "ControlType::int": 1,
+          "Flags::int": 0,
+          "Form": null,
+          "Name": null,
+          "Order::int": 0,
+          "RequiredText": "",
+          "SectionID::uid": "e89bb104-52dd-4d27-9abc-76a9bbaac832",
+          "ToolTip": null,
+          "Type::uid": "5d95340a-0f22-0d14-b9d2-a5471f607261"
+        }
+      ],
+      "FormSettings": {
+        "HideCaption": false
+      },
+      "Name": "Block2",
+      "Order::int": 2
+    }
+  ],
+  "Caption": "Настройка процессов",
+  "CompletionOptions": [],
+  "DigestFormat": null,
+  "Extensions": [
+    {
+      "ExtensionSettings": {
+        "ColumnID::uid": "32ed3ee3-2e51-4048-a8bb-0b46bc6a17cc",
+        "DescendingOrder": false,
+        "SectionID::uid": "a88ed4f8-dcce-400a-931f-99defee9949c"
+      },
+      "TypeID::uid": "10834416-179d-4fc5-89e7-82f58795167f"
+    },
+    {
+      "ExtensionSettings": {
+        "ColumnID::uid": "6f2418fb-a4f9-4b3a-bf33-eef3c27e2d8b",
+        "DescendingOrder": false,
+        "SectionID::uid": "0748a117-8a2a-4198-a994-15d91094d6b7"
+      },
+      "TypeID::uid": "10834416-179d-4fc5-89e7-82f58795167f"
+    },
+    {
+      "ExtensionSettings": {
+        "ColumnID::uid": "038c1808-7641-45c9-a606-156c01da20e9",
+        "DescendingOrder": false,
+        "SectionID::uid": "cfe4678d-369f-43a4-b103-32aecd9858a6"
+      },
+      "TypeID::uid": "10834416-179d-4fc5-89e7-82f58795167f"
+    }
+  ],
+  "Flags::int": 2432,
+  "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+  "Forms": [],
+  "FormSettings": {
+    "FilePreviewIsDisabled": false,
+    "HorizontalInterval::int": 10,
+    "Interval::int": 20
+  },
+  "Group": "Settings",
+  "ID::uid": "68f02cba-6fce-479f-aa86-55733bb092eb",
+  "InstanceType::int": 0,
+  "Name": "FdSettings",
+  "SchemeItems": [
+    {
+      "ColumnIDList": [
+        {
+          "::types": [
+            "uid",
+            "uid"
+          ]
+        },
+        "f169a0bc-cef7-4c0d-a32a-5b02467333e4",
+        "94cecdd0-e09c-4d0b-a4c1-917e2b5b0150"
+      ],
+      "SectionID::uid": "8847585d-bb60-40df-980f-7fa30593cd3a"
+    },
+    {
+      "ColumnIDList": [
+        {
+          "::types": [
+            "uid",
+            "uid",
+            "uid",
+            "uid"
+          ]
+        },
+        "0c4353bd-7c99-4885-a97d-41a61892593a",
+        "e257885c-4156-46f2-ae2a-a1b91fdd52cf",
+        "42b880da-9955-40fb-b304-9cead87428e6",
+        "b43f2057-4be3-4866-bb55-796cc4c18f97"
+      ],
+      "SectionID::uid": "88fb6d3f-adef-433c-9e5b-88a884ee92d1"
+    },
+    {
+      "ColumnIDList": [
+        {
+          "::types": [
+            "uid"
+          ]
+        },
+        "7e192c89-3427-4162-8e0e-e134f16cfe61"
+      ],
+      "SectionID::uid": "e89bb104-52dd-4d27-9abc-76a9bbaac832"
+    }
+  ],
+  "TabCaption": "$CardTypes_Tabs_GeneralSettings",
+  "TabOrder::int": 0,
+  "Validators": [
+    {
+      "TypeID::uid": "9b24ab01-5f46-05d1-bdfa-615212761dd8",
+      "ValidatorSettings": {
+        "ColumnID::uid": "529b5f7c-7639-447c-b781-9709f358f70b",
+        "ErrorMessage": "$CardTypes_Validators_AutomaticNumberAllocation",
+        "SectionID::uid": "949c3849-eb4b-4d64-9676-f14f9c40dbcf",
+        "Warning": false
+      }
+    },
+    {
+      "TypeID::uid": "9b24ab01-5f46-05d1-bdfa-615212761dd8",
+      "ValidatorSettings": {
+        "ColumnID::uid": "b17fcec6-a516-475f-aa0c-39e722883726",
+        "ErrorMessage": "$CardTypes_Validators_AutomaticNumberAllocation",
+        "SectionID::uid": "949c3849-eb4b-4d64-9676-f14f9c40dbcf",
+        "Warning": false
+      }
+    },
+    {
+      "TypeID::uid": "9b24ab01-5f46-05d1-bdfa-615212761dd8",
+      "ValidatorSettings": {
+        "ColumnID::uid": "d3a27eeb-e273-4b7c-8524-818d228d5fb7",
+        "ErrorMessage": "$CardTypes_Validators_CardType",
+        "SectionID::uid": "949c3849-eb4b-4d64-9676-f14f9c40dbcf",
+        "Warning": false
+      }
+    },
+    {
+      "TypeID::uid": "9cd89f16-8482-4382-943b-1db0469481ae",
+      "ValidatorSettings": {
+        "ColumnID::uid": "8b1844d9-dbfc-47f0-b01b-c7fb1e771d4d",
+        "ErrorMessage": null,
+        "ParentColumnID": null,
+        "ParentSectionID": null,
+        "RemoveDuplicates": true,
+        "SectionID::uid": "a88ed4f8-dcce-400a-931f-99defee9949c",
+        "Warning": false
+      }
+    },
+    {
+      "TypeID::uid": "9cd89f16-8482-4382-943b-1db0469481ae",
+      "ValidatorSettings": {
+        "ColumnID::uid": "a239a602-ccf6-4802-a4f7-1ff5cbdd416f",
+        "ErrorMessage": null,
+        "ParentColumnID": null,
+        "ParentSectionID": null,
+        "RemoveDuplicates": true,
+        "SectionID::uid": "0748a117-8a2a-4198-a994-15d91094d6b7",
+        "Warning": false
+      }
+    },
+    {
+      "TypeID::uid": "9cd89f16-8482-4382-943b-1db0469481ae",
+      "ValidatorSettings": {
+        "ColumnID::uid": "169054c6-fae6-456e-a180-450678c8ca62",
+        "ErrorMessage": null,
+        "ParentColumnID": null,
+        "ParentSectionID": null,
+        "RemoveDuplicates": true,
+        "SectionID::uid": "cfe4678d-369f-43a4-b103-32aecd9858a6",
+        "Warning": false
+      }
+    },
+    {
+      "TypeID::uid": "d57ef1a1-cfcd-0852-8a2c-ce527bc02aac",
+      "ValidatorSettings": {
+        "ErrorMessage": "$KrMessages_TaskAuthorsRequired",
+        "SectionID::uid": "0748a117-8a2a-4198-a994-15d91094d6b7",
+        "Warning": false
+      }
+    },
+    {
+      "TypeID::uid": "d57ef1a1-cfcd-0852-8a2c-ce527bc02aac",
+      "ValidatorSettings": {
+        "ErrorMessage": "$KrMessages_TaskAuthorReplacesRequired",
+        "SectionID::uid": "cfe4678d-369f-43a4-b103-32aecd9858a6",
+        "Warning": false
+      }
+    }
+  ]
+}

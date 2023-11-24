@@ -1,0 +1,188 @@
+﻿[
+  {
+    ".method::int": 2,
+    "Card": {
+      "Created::dtm": "2020-08-21T10:57:26.657Z",
+      "CreatedByID::uid": "11111111-1111-1111-1111-111111111111",
+      "CreatedByName": "System",
+      "Files": null,
+      "Flags::int": 0,
+      "ID::uid": "36f72e45-fb22-4f2b-ab8e-0f73ae0f67d3",
+      "Info": null,
+      "Modified::dtm": "2020-08-21T10:57:26.657Z",
+      "ModifiedByID::uid": "11111111-1111-1111-1111-111111111111",
+      "ModifiedByName": "System",
+      "Permissions": null,
+      "Sections": {
+        "FmAddTopicInfoVirtual": {
+          "Fields": {
+            "Description": null,
+            "Title": null
+          }
+        },
+        "FmTopicParticipantsInfoVirtual": {
+          "Fields": {
+            "IsModerator": false,
+            "ReadOnly": false
+          }
+        },
+        "FmTopicParticipantsVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "FmTopicRoleParticipantsInfoVirtual": {
+          "Fields": {
+            "IsSubscribe": false,
+            "ReadOnly": false
+          }
+        },
+        "KrActiveTasksVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrAdditionalApprovalInfoUsersCardVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrAdditionalApprovalUsersCardVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrApprovalCommonInfoVirtual": {
+          "Fields": {
+            "ApprovedBy": null,
+            "AuthorComment": null,
+            "AuthorID": null,
+            "AuthorName": null,
+            "CurrentApprovalStageRowID": null,
+            "DisapprovedBy": null,
+            "MainCardID": null,
+            "StateChangedDateTimeUTC": null,
+            "StateID::int": 0,
+            "StateName": "$KrStates_Doc_Draft"
+          }
+        },
+        "KrApprovalHistoryVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrDialogButtonSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrForkNestedProcessesSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrForkSecondaryProcessesSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPerformersVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrStagesVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrUniversalTaskOptionsSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "PnrOrganizations": {
+          "Fields": {
+            "Abbreviation": "ИИ",
+            "ActionStatus": null,
+            "Address": "Санкт-Петербург г, Восстания ул., дом № 6А, литера А, помещение 17-Н",
+            "AuthorityFSGSCode": null,
+            "AuthorityPFRCode": null,
+            "Bank": "Санкт-Петербургский РФ АО «Россельхо",
+            "BIK": "044030910",
+            "CertificateAuthorityCode": null,
+            "CertificateAuthorityName": null,
+            "CertificateSeriesNumber": "40702810335000800539",
+            "ChiefAccountantID::uid": "89cb4b5f-6f63-4b8b-b3f9-a7974b29be6a",
+            "ChiefAccountantName": "Кудрявцев К. В.",
+            "ChiefAccountantProcessID::uid": "9863aa4e-766c-4f6f-97f1-66a4f7a022d3",
+            "ChiefAccountantProcessName": "Плотникова Е. А.",
+            "ContactInformation": null,
+            "CorrespondentAccount": "30101810900000000910",
+            "CountryPermanentResidenceID": null,
+            "CountryPermanentResidenceName": null,
+            "CountryRegistrationID": null,
+            "CountryRegistrationName": null,
+            "FaxNumber": null,
+            "ForeignOrganization": null,
+            "ForeignOrganizationName": null,
+            "FullName": "Общество с ограниченной ответственностью  \"ИНВЕСТИЦИИ И ДЕВЕЛОПМЕНТ\"",
+            "GeneralDirectorID": null,
+            "GeneralDirectorName": null,
+            "GroupDocuments": null,
+            "HeadLegalEntityDative": "К.В. Кудрявцеву",
+            "HeadLegalEntityGenitive": "Кудрявцева Кирилла Вадимовича",
+            "HeadLegalEntityID::uid": "89cb4b5f-6f63-4b8b-b3f9-a7974b29be6a",
+            "HeadLegalEntityName": "Кудрявцев К. В.",
+            "Idx": "191025",
+            "INN": "7838380579",
+            "INNBank": null,
+            "IsHidden": null,
+            "IssueDate": null,
+            "KPP": "780201001",
+            "LegalEntityIndex": null,
+            "MDMKey": "533a9110-8e4f-11e6-83ca-005056ae703c",
+            "Name": "ИНВЕСТИЦИИ И ДЕВЕЛОПМЕНТ ООО",
+            "OGRN": null,
+            "OKATO": null,
+            "OKFSCode": null,
+            "OKFSName": null,
+            "OKOGU": null,
+            "OKOPFCode": null,
+            "OKOPFName": null,
+            "OKPO": "80511074",
+            "OKPOCode": null,
+            "OKTMO": null,
+            "OKVEDCode": null,
+            "OKVEDCode2": null,
+            "OKVEDName": null,
+            "OKVEDName2": null,
+            "PartnerID": null,
+            "PartnerName": null,
+            "PartnerType": "Общество",
+            "PositionHeadLegalEntity": "Генеральный директор",
+            "PositionHeadLegalEntityDative": "Генеральному директору",
+            "PositionHeadLegalEntityGenitive": "Генерального директора",
+            "Prefix": null,
+            "ReferencePosition": null,
+            "RegistrationDate": null,
+            "RegistrationNumberFSS": null,
+            "RegistrationNumberPFR": null,
+            "RegistryCard": "2",
+            "Removed": null,
+            "SettlementAccount": null,
+            "ShortName": null,
+            "SubordinationCodeFSS": null,
+            "TaxAuthorityCode": null,
+            "TaxAuthorityName": null,
+            "TerritorialAuthorityFSSName": null,
+            "TerritorialAuthorityPFRName": null,
+            "Website": null,
+            "WorkPhone": null
+          }
+        }
+      },
+      "TaskHistory": null,
+      "TaskHistoryGroups": null,
+      "Tasks": null,
+      "Topics": null,
+      "TypeCaption": "Организация",
+      "TypeID::uid": "a668f7ea-efcd-47f0-a3c7-c4d1e7ed0bc8",
+      "TypeName": "PnrOrganization",
+      "Version::int": 0
+    },
+    "FileMapping": null,
+    "Info": {
+      ".importVersion::int": 1
+    }
+  }
+]

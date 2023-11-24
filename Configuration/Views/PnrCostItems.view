@@ -1,0 +1,141 @@
+#tessa_exchange_format(Version:1, CreationTime:2020-12-11T10\:20\:04) {
+	#exchange_view(RowID:41deef9d-fd59-4fe7-a545-dd16fb23d0d1, Alias:PnrCostItems, Caption:Статьи затрат, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2020-12-11T10\:19\:36, GroupName:Pnr) {
+		#metadata {
+			#view(DefaultSortColumn: CostItemName, DefaultSortDirection: asc, RowCountSubset: cnt, Paging: always, QuickSearchParam: Name)
+			#column(Alias: CostItemID, Hidden: true)
+			#column(Alias: CostItemCode, Caption: Код, Hidden: false)
+			#column(Alias: CostItemName, Caption: Наименование, Hidden: false, SortBy: tt.CostItemName)
+			#column(Alias: CostItemIsGroup, Caption: Это группа, Hidden: false)
+			#column(Alias: CostItemParentCodifierID, Hidden: true)
+			#column(Alias: CostItemParentCodifierName, Caption: Родительская статья затрат, Hidden: false)
+			#column(Alias: CostItemCodifier, Caption: Кодификатор, Hidden: false)
+			#column(Alias: CostItemUsed, Caption: Используется, Hidden: false)
+			#column(Alias: CostItemConsumptionIncome, Caption: Расход/Доход, Hidden: false)
+			#column(Alias: CostItemItemType, Caption: Тип статьи, Hidden: false)
+			#column(Alias: CostItemIdentifierTreasury, Caption: Идентификатор Казна, Hidden: false)
+			#column(Alias: CostItemMDMKey, Caption: MDM-Key, Hidden: false)
+			#column(Alias: CostItemIsRemoved, Caption: Удалено, Hidden: false)
+			#column(Alias: CostItemDescription, Caption: Описание, Hidden: false)
+			#column(Alias: rn, 	Caption: Номер строки, 	Hidden: true)
+
+			#param(Alias: Name, Caption: Наименование, Hidden: false, Type: nvarchar, Multiple: true)
+			#param(Alias: CostID, Caption: Статья затрат, Hidden: true, Type: $PnrCostItems.ID)
+			#param(Alias: ParentCostID, Caption: Родительская статья затрат, Hidden: true, Multiple: true, Type: $PnrCostItems.ParentCodifierID, RefSection: PnrCostItems) {
+				#autocomplete(View: PnrCostItems, Param: Name, PopupColumns: 1 2)}
+				
+			#reference(ColPrefix: CostItem, RefSection: PnrCostItems, DisplayValueColumn: CostItemName, IsCard: true, OpenOnDoubleClick: true)
+
+			#subset(Alias: ByCost, Caption: Структура статей затрат, Kind: Tree, RefParam: CostID, TreeRefParam: ParentCostID, RefColumn: CostItemID, CaptionColumn: CostItemName, CountColumn: cnt, TreeHasChildrenColumn: HasChildren)
+			#subset(Alias: cnt)
+		}
+		#description {}
+		#ms_query {
+			\#if\(CostID\) \{
+			DECLARE @AllTreeElements TABLE\(ID uniqueidentifier\);
+
+			WITH
+			AboveTreeElements \(ID\, ParentID\) -- Элементы иерархии вверх по дереву
+			AS \(
+				SELECT ID\, ParentCodifierID
+				FROM [PnrCostItems]
+				WHERE id = \#param\(CostID\)
+				UNION ALL
+				SELECT [PnrCostItems].ID\, [PnrCostItems].ParentCodifierID
+				FROM [PnrCostItems]
+				JOIN AboveTreeElements 
+				ON [PnrCostItems].ID = AboveTreeElements.ParentID
+				\)
+			INSERT INTO @AllTreeElements
+				SELECT p.ID
+				FROM AboveTreeElements
+				JOIN PnrCFO p
+				ON AboveTreeElements.ID=p.ID;
+
+			WITH
+			UnderTreeElements \(ID\, ParentID\) -- Элементы иерархии вниз по дереву
+			AS \(
+				SELECT ID\, ParentCodifierID
+				FROM [PnrCostItems]
+				WHERE id = \#param\(CostID\)
+				UNION ALL
+				SELECT [PnrCostItems].ID\, [PnrCostItems].ParentCodifierID
+				FROM [PnrCostItems]
+				JOIN UnderTreeElements 
+				ON [PnrCostItems].ParentCodifierID = UnderTreeElements.ID
+				\)
+			INSERT INTO @AllTreeElements
+				SELECT p.ID
+				FROM UnderTreeElements
+				JOIN PnrCostItems p
+				ON UnderTreeElements.ID=p.ID;
+			\}
+
+			SELECT tt.*
+			FROM
+			\(
+				SELECT
+					tt.*
+					\#if\(normal\) \{
+				    \,row_number\(\) OVER \(ORDER BY \#order_by\)					AS rn
+				    \}
+				FROM
+				\(
+					SELECT
+					\#if\(cnt\) \{ 
+						Count\(*\)											AS [cnt]
+					\}
+					\#if\(normal\) \{
+						t.ID as CostItemID\,
+					    t.Name as CostItemName\,
+					    t.Code as CostItemCode\,
+					    t.IsGroup as CostItemIsGroup\,
+					    t.ParentCodifierID as CostItemParentCodifierID\,
+					    t.ParentCodifierName as CostItemParentCodifierName\,
+					    t.Codifier as CostItemCodifier\,
+					    t.Used as CostItemUsed\,
+					    t.ConsumptionIncome as CostItemConsumptionIncome\,
+					    t.ItemType as CostItemItemType\,
+					    t.IdentifierTreasury as CostItemIdentifierTreasury\,
+					    t.MDMKey as CostItemMDMKey\,
+					    t.IsRemoved as CostItemIsRemoved\,
+					    t.Description as CostItemDescription
+					\}
+					\#if\(ByCost\) \{
+					[t].[ID]								AS [CostItemID]\,
+					[t].[Name]								AS [CostItemName]\,
+					\(
+						SELECT count\(*\)
+						FROM [PnrCostItems] AS [ru] WITH \(NOLOCK\)
+						WHERE [ru].[ParentCodifierID] = [t].[ID]
+					\) AS [cnt]\,
+					CASE WHEN EXISTS \(
+						SELECT NULL
+						FROM [PnrCostItems] AS [r] WITH \(NOLOCK\)
+						WHERE [r].[ParentCodifierID] = [t].[ID]
+							\)
+						THEN CAST\(1 AS bit\)
+						ELSE CAST\(0 AS bit\)
+					END AS [HasChildren]
+					\}
+					FROM PnrCostItems t with\(nolock\)
+					WHERE 1=1
+						\#if\(CostID\) 
+						\{ AND [t].[ID] IN \(SELECT * FROM @AllTreeElements\) \}
+						\#param\(ParentCostID\, [t].[ParentCodifierID]\)
+					    \#param_expr\(Name\, t.Name\)
+				\) AS [tt]
+			\) AS [tt]
+			\#if\(PageOffset\) \{
+			WHERE [tt].[rn] >= \#param\(PageOffset\) AND [tt].[rn] < \(\#param\(PageOffset\) + \#param\(PageLimit\)\)
+			\}
+			\#if\(normal\) \{
+			ORDER BY \#order_by
+			\}
+			\#if\(ByCost\) \{
+			ORDER BY tt.CostItemName	
+					\}
+		}
+		#pg_query {}
+		#role(RoleID:7ff52dc0-ff6a-4c9d-ba25-b562c370004d, ViewID:41deef9d-fd59-4fe7-a545-dd16fb23d0d1) 
+	}
+}

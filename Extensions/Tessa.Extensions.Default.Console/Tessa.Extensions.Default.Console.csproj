@@ -1,0 +1,59 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <PackageId>Tessa.Extensions.Default.Console</PackageId>
+    <Version>3.4.0</Version>
+    <Authors>Syntellect</Authors>
+    <Company>Syntellect</Company>
+    <Product>Document automation system Tessa</Product>
+    <Copyright>Copyright © Syntellect 2019</Copyright>
+    <PackageProjectUrl>https://mytessa.ru/</PackageProjectUrl>
+    <Configurations>Debug;Release;Build</Configurations>
+    <RestoreSources>$(RestoreSources);../../Bin/packages;https://api.nuget.org/v3/index.json</RestoreSources>
+    <NoWarn>$(NoWarn);1701;1702;1998;3074</NoWarn>
+    <LangVersion>8</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Build|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Optimize>true</Optimize>
+    <NoWarn>$(NoWarn);0419;1572;1573;1574;1584;1587;1589;1591;1658;1701;1702;1705;1710;1711;1723;1734;1735;1998;3021;3074</NoWarn>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Tessa" Version="3.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CsvHelper" Version="12.2.1" />
+    <PackageReference Include="DocumentFormat.OpenXml" Version="2.9.1" />
+  </ItemGroup>
+
+  <Target Condition="'$(OS)' == 'Windows_NT'" Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="if exist &quot;$(ProjectDir)pre-build.bat&quot; call &quot;$(ProjectDir)pre-build.bat&quot; &quot;$(ProjectDir)..\..\&quot;" />
+  </Target>
+
+  <Target Condition="'$(OS)' == 'Unix'" Name="PreBuild-linux" BeforeTargets="PreBuildEvent">
+    <Exec Command=":" />
+  </Target>
+
+  <Target Condition="'$(OS)' == 'Windows_NT'" Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="if exist &quot;$(ProjectDir)post-build.bat&quot; call &quot;$(ProjectDir)post-build.bat&quot; &quot;$(ProjectDir)..\..\&quot;" />
+  </Target>
+
+  <Target Condition="'$(OS)' == 'Unix'" Name="PostBuild-linux" AfterTargets="PostBuildEvent">
+    <Exec Command=":" />
+  </Target>
+
+</Project>

@@ -1,0 +1,188 @@
+﻿[
+  {
+    ".method::int": 2,
+    "Card": {
+      "Created::dtm": "2020-07-22T13:16:53.84Z",
+      "CreatedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "CreatedByName": "Admin",
+      "Files": null,
+      "Flags::int": 0,
+      "ID::uid": "ddb40b53-f047-47a7-9045-c8a70f14c7ed",
+      "Info": null,
+      "Modified::dtm": "2020-09-02T21:07:45.147Z",
+      "ModifiedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "ModifiedByName": "Admin",
+      "Permissions": null,
+      "Sections": {
+        "FmAddTopicInfoVirtual": {
+          "Fields": {
+            "Description": null,
+            "Title": null
+          }
+        },
+        "FmTopicParticipantsInfoVirtual": {
+          "Fields": {
+            "IsModerator": false,
+            "ReadOnly": false
+          }
+        },
+        "FmTopicParticipantsVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "FmTopicRoleParticipantsInfoVirtual": {
+          "Fields": {
+            "IsSubscribe": false,
+            "ReadOnly": false
+          }
+        },
+        "KrActiveTasksVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrAdditionalApprovalInfoUsersCardVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrAdditionalApprovalUsersCardVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrApprovalCommonInfoVirtual": {
+          "Fields": {
+            "ApprovedBy": null,
+            "AuthorComment": null,
+            "AuthorID": null,
+            "AuthorName": null,
+            "CurrentApprovalStageRowID": null,
+            "DisapprovedBy": null,
+            "MainCardID": null,
+            "StateChangedDateTimeUTC": null,
+            "StateID::int": 0,
+            "StateName": "$KrStates_Doc_Draft"
+          }
+        },
+        "KrApprovalHistoryVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrDialogButtonSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrForkNestedProcessesSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrForkSecondaryProcessesSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPerformersVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrStagesVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrUniversalTaskOptionsSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "PnrOrganizations": {
+          "Fields": {
+            "Abbreviation": null,
+            "ActionStatus": null,
+            "Address": "Большой",
+            "AuthorityFSGSCode": null,
+            "AuthorityPFRCode": null,
+            "Bank": "Главный банк города",
+            "BIK": "325346351235235",
+            "CertificateAuthorityCode": null,
+            "CertificateAuthorityName": null,
+            "CertificateSeriesNumber": null,
+            "ChiefAccountantID::uid": "fd99d8ea-f1c1-4e73-87b1-87e34c91296a",
+            "ChiefAccountantName": "Харина Оксана",
+            "ChiefAccountantProcessID::uid": "ee5abfdc-f362-41fa-b535-d72e3dc0878c",
+            "ChiefAccountantProcessName": "Alekseev",
+            "ContactInformation": null,
+            "CorrespondentAccount": "124157476432523423534653",
+            "CountryPermanentResidenceID": null,
+            "CountryPermanentResidenceName": null,
+            "CountryRegistrationID": null,
+            "CountryRegistrationName": null,
+            "FaxNumber": null,
+            "ForeignOrganization": null,
+            "ForeignOrganizationName": null,
+            "FullName": null,
+            "GeneralDirectorID::uid": "fd99d8ea-f1c1-4e73-87b1-87e34c91296a",
+            "GeneralDirectorName": "Харина Оксана",
+            "GroupDocuments": null,
+            "HeadLegalEntityDative": null,
+            "HeadLegalEntityGenitive": null,
+            "HeadLegalEntityID": null,
+            "HeadLegalEntityName": null,
+            "Idx": null,
+            "INN": null,
+            "INNBank": "12425346363",
+            "IsHidden": null,
+            "IssueDate": null,
+            "KPP": null,
+            "LegalEntityIndex": null,
+            "MDMKey": null,
+            "Name": "Тест \"Пионер\"",
+            "OGRN": null,
+            "OKATO": null,
+            "OKFSCode": null,
+            "OKFSName": null,
+            "OKOGU": null,
+            "OKOPFCode": null,
+            "OKOPFName": null,
+            "OKPO": null,
+            "OKPOCode": null,
+            "OKTMO": null,
+            "OKVEDCode": null,
+            "OKVEDCode2": null,
+            "OKVEDName": null,
+            "OKVEDName2": null,
+            "PartnerID": null,
+            "PartnerName": null,
+            "PartnerType": null,
+            "PositionHeadLegalEntity": null,
+            "PositionHeadLegalEntityDative": null,
+            "PositionHeadLegalEntityGenitive": null,
+            "Prefix": null,
+            "ReferencePosition": null,
+            "RegistrationDate": null,
+            "RegistrationNumberFSS": null,
+            "RegistrationNumberPFR": null,
+            "RegistryCard": null,
+            "Removed": null,
+            "SettlementAccount": "1235434654756875685685",
+            "ShortName": null,
+            "SubordinationCodeFSS": null,
+            "TaxAuthorityCode": null,
+            "TaxAuthorityName": null,
+            "TerritorialAuthorityFSSName": null,
+            "TerritorialAuthorityPFRName": null,
+            "Website": null,
+            "WorkPhone": null
+          }
+        }
+      },
+      "TaskHistory": null,
+      "TaskHistoryGroups": null,
+      "Tasks": null,
+      "Topics": null,
+      "TypeCaption": "Организация",
+      "TypeID::uid": "a668f7ea-efcd-47f0-a3c7-c4d1e7ed0bc8",
+      "TypeName": "PnrOrganization",
+      "Version::int": 0
+    },
+    "FileMapping": null,
+    "Info": {
+      ".importVersion::int": 4
+    }
+  }
+]

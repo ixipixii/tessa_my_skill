@@ -1,0 +1,23 @@
+#tessa_exchange_format(Version:1, CreationTime:2020-08-25T01\:56\:02) {
+	#exchange_view(RowID:dfe63ce9-4cd1-4b2d-afa2-dfc25bcaf173, Alias:PnrCities, Caption:Города, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2020-08-25T01\:55\:48, GroupName:Pnr) {
+		#metadata {
+			#view(DefaultSortColumn: CityName, DefaultSortDirection: asc, Paging: always, QuickSearchParam: Name)
+			#column(Alias: CityID, Hidden: true)
+			#column(Alias: CityName, Caption: Название, Hidden: false, SortBy: t.Name)
+			#param(Alias: Name, Caption: Название, Hidden: false, Type: nvarchar, Multiple: true)
+			#reference(ColPrefix: City, RefSection: PnrCities, DisplayValueColumn: CityName, IsCard: true, OpenOnDoubleClick: true)
+		}
+		#description {}
+		#ms_query {
+			select
+			    t.ID as CityID\,
+			    t.Name as CityName
+			from PnrCities t with\(nolock\)
+			where 1=1
+			    \#param_expr\(Name\, t.Name\)
+			order by \#order_by
+		}
+		#pg_query {}
+		#role(RoleID:7ff52dc0-ff6a-4c9d-ba25-b562c370004d, ViewID:dfe63ce9-4cd1-4b2d-afa2-dfc25bcaf173) 
+	}
+}

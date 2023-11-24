@@ -1,0 +1,55 @@
+﻿[
+  {
+    ".method::int": 2,
+    "Card": {
+      "Created::dtm": "2020-11-15T16:04:02.657Z",
+      "CreatedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "CreatedByName": "Admin",
+      "Files": null,
+      "Flags::int": 0,
+      "ID::uid": "5a4ac92f-464c-4063-9556-804ddb03de16",
+      "Info": null,
+      "Modified::dtm": "2020-11-30T08:06:33.277Z",
+      "ModifiedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "ModifiedByName": "Admin",
+      "Permissions": null,
+      "Sections": {
+        "ContextRoles": {
+          "Fields": {
+            "SqlText": "DECLARE @isVarshav BIT;\r\nDECLARE @proj UNIQUEIDENTIFIER;\r\nSET @proj =\r\n(SELECT TOP 1 pid.ProjectID FROM (\r\n    SELECT [ProjectID]\r\n    FROM [PnrContracts] WITH(NOLOCK)\r\n    WHERE [ID] = #context_card_id\r\n    UNION\r\n    SELECT [ProjectID]\r\n    FROM [PnrSupplementaryAgreements] WITH(NOLOCK)\r\n    WHERE [ID] = #context_card_id\r\n) pid);\r\n\r\nSET @isVarshav = (SELECT IIF(EXISTS(SELECT p.ID\r\n            FROM PnrGetProjectWithAllParents(@proj) p\r\n            WHERE p.ID = '099b488f-f079-4bb2-a4da-3bec30dee752'), 1,0));\r\n\r\nSELECT TOP 1\r\n       IIF(@isVarshav = 1, CAST('42021e86-8d83-4fbb-af01-96b5949ef39e' AS uniqueidentifier), t.ProjectEconomistID) ProjectEconomistID,\r\n       IIF(@isVarshav = 1, CAST('Экономисты варшавская' AS NVARCHAR(25)), t.ProjectEconomistName) ProjectEconomistName\r\nFROM PnrGetProjectWithAllParents(@proj) t\r\nWHERE (@isVarshav = 1) OR\r\n      (@isVarshav = 0 AND t.ProjectEconomistID IS NOT NULL)\r\nORDER BY t.Level",
+            "SqlTextForCard": null,
+            "SqlTextForUser": null
+          }
+        },
+        "RoleDeputies": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "RoleDeputiesVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Roles": {
+          "Fields": {
+            "Description": null,
+            "Hidden": false,
+            "Name": "Экономист проекта для Договоров и ДС",
+            "TypeID::int": 4
+          }
+        }
+      },
+      "TaskHistory": null,
+      "TaskHistoryGroups": null,
+      "Tasks": null,
+      "Topics": null,
+      "TypeCaption": "$CardTypes_TypesNames_ContextRole",
+      "TypeID::uid": "b672e00c-0241-0485-9b07-4764bc96c9d3",
+      "TypeName": "ContextRole",
+      "Version::int": 0
+    },
+    "FileMapping": null,
+    "Info": {
+      ".importVersion::int": 5
+    }
+  }
+]

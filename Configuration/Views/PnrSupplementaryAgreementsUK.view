@@ -1,0 +1,243 @@
+#tessa_exchange_format(Version:1, CreationTime:2021-01-18T08\:57\:54) {
+	#exchange_view(RowID:ddd98d29-07b9-44fb-991c-f183d043e620, Alias:PnrSupplementaryAgreementsUK, Caption:Дополнительные соглашения УК ПС, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2021-01-18T08\:57\:09, GroupName:Pnr) {
+		#metadata {
+			#view(DefaultSortColumn: DocCreationDate, DefaultSortDirection: desc, Paging: always, RowCountSubset: Count, QuickSearchParam: FullNumberAndTheme)
+			#column(Alias: DocID, Hidden: true)
+			#column(Alias: DocNumber, Caption: №, Hidden: true, SortBy: d.Number)
+			#column(Alias: DocFullNumber, Caption: Номер, SortBy: d.FullNumber)
+			#column(Alias: SATypeID, Hidden: true)
+			#column(Alias: SATypeName, Caption: Тип договора)
+			#column(Alias: SASubject, Caption: Предмет договора, SortBy: t.Subject)
+			#column(Alias: SAPartnerID, Hidden: true)
+			#column(Alias: SAPartnerName, Caption: Контрагент, SortBy: t.PartnerName)
+			#column(Alias: SAOrganizationID, Hidden: true)
+			#column(Alias: SAOrganizationName, Caption: Организация ГК Пионер, SortBy: t.OrganizationName)
+			#column(Alias: DocAuthorID, Hidden: true)
+			#column(Alias: DocAuthorName, Caption: Создал, SortBy: d.AuthorName)
+			#column(Alias: SARegistrationDate, Caption: Дата регистрации, Type: Date, SortBy: t.RegistrationDate)
+			#column(Alias: SAFormID, Hidden: true)
+			#column(Alias: SAFormName, Caption: Форма договора, SortBy: t.FormName)
+			#column(Alias: SAAmount, Caption: Сумма договора, SortBy: t.Amount)
+			#column(Alias: InstModified, Caption: Изменено, SortBy: i.Modified, Type: Date)
+			#column(Alias: FdID, Hidden: true)
+			#column(Alias: FdMainCardId, Hidden: true)
+			#column(Alias: FdStateID, Hidden: true)
+			#column(Alias: FdStateName, Caption: Статус, SortBy: f.StateName)
+			#column(Alias: DocCreationDate, Caption: Дата создания, Type: Date, SortBy: d.CreationDate)
+			#column(Alias: DocDocTypeID, Hidden: true)
+			#column(Alias: DocDocTypeTitle, Caption: Тип документа, Hidden: true)
+			#column(Alias: SAID, Hidden: true)
+			#column(Alias: SAExternalNumber, Caption: № внешний, Hidden: true)
+			#column(Alias: SAVATRateID, Hidden: true)
+			#column(Alias: SAVATRateValue, Caption: Ставка НДС, Hidden: true)
+			#column(Alias: SAStartDate, Caption: Дата начала, Hidden: true)
+			#column(Alias: SAEndDate, Caption: Дата окончания, Hidden: true)
+			#column(Alias: SASettlementCurrencyID, Hidden: true)
+			#column(Alias: SASettlementCurrencyName, Caption: Валюта расчета наим, Hidden: true)
+			#column(Alias: SASettlementCurrencyCode, Caption: Валюта расчета, Hidden: true)
+			#column(Alias: SAPlannedActDate, Caption: Планируемая дата актирования, Hidden: true)
+			#column(Alias: SADevelopmentID, Hidden: true)
+			#column(Alias: SADevelopmentName, Caption: Разработка договора, Hidden: true)
+			#column(Alias: SAResponsibleID, Hidden: true)
+			#column(Alias: SAResponsibleName, Caption: Ответственный, Hidden: true)
+			#column(Alias: SACityID, Hidden: true)
+			#column(Alias: SACityName, Caption: Город, Hidden: true)
+			#column(Alias: SACFOID, Hidden: true)
+			#column(Alias: SACFOName, Caption: ЦФО, Hidden: true)
+			#column(Alias: SAKind1CID, Hidden: true)
+			#column(Alias: SAKind1CName, Caption: Вид договора 1С, Hidden: true)
+			#param(Alias: IsAuthor, Caption: Я создатель, Type: Boolean, AllowedOperands: IsTrue IsFalse)
+			#param(Alias: Organization, Caption: Организация ГК Пионер, Multiple: true, Type: Guid, RefSection: PnrOrganizationsWithHidden) {
+				#autocomplete(View: PnrOrganizationsWithHidden, Param: Name, PopupColumns: 1)
+			}
+			#param(Alias: Partner, Caption: Контрагент, Multiple: true, Type: Guid, RefSection: Partners) {
+				#autocomplete(View: Partners, Param: Name, PopupColumns: 1 4 9)
+			}
+			#param(Alias: FullNumber, Caption: Номер, Hidden: false, Type: nvarchar, Multiple: true)
+			#param(Alias: FullNumberAndTheme, Caption: Номер и тема, Type: nvarchar, Multiple: true)
+			#param(Alias: Subject, Caption: Предмет договора, Hidden: false, Type: nvarchar, Multiple: true)
+			#param(Alias: ContractForm, Caption: Форма договора, Multiple: true, Type: Guid, RefSection: PnrContractForms) {
+				#autocomplete(View: PnrContractForms, Param: Name, PopupColumns: 1)
+			}
+			#param(Alias: ContractType, Caption: Тип договора, Multiple: true, Type: Guid, RefSection: PnrContractTypes) {
+				#autocomplete(View: PnrContractTypes, Param: Name, PopupColumns: 1)
+			}
+			#param(Alias: Amount, Caption: Сумма договора, Multiple: true, Type: Decimal)
+			#param(Alias: StartDate, Caption: Дата начала, Multiple: true, Type: Date)
+			#param(Alias: EndDate, Caption: Дата окончания, Multiple: true, Type: Date)
+			#param(Alias: Author, Caption: Создал, Multiple: true, Type: Guid, RefSection: PersonalRoles) {
+				#autocomplete(View: Users, Param: Name, PopupColumns: 1 4)
+			}
+			#param(Alias: State, Caption: Состояние, Hidden: false, Type: uniqueidentifier, RefSection: PnrFdCardStatesSupAgrUK, Multiple: true, AllowedOperands: Equality NonEquality IsNull IsNotNull) {
+				#autocomplete(View: PnrFdCardStatesSupAgrUK, Param: Name, PopupColumns: 1 2)
+				#dropdown(View: PnrFdCardStatesSupAgrUK, PopupColumns: 1 2)
+			}
+			#param(Alias: CFO, Caption: ЦФО, Multiple: true, Type: Guid, RefSection: PnrCFO) {
+				#autocomplete(View: PnrCFO, Param: Name, PopupColumns: 1 2)
+			}
+			#param(Alias: IsFiles, Caption: Есть прикрепленные файлы, Type: Boolean, AllowedOperands: IsTrue)
+			#reference(ColPrefix: Doc, RefSection: DocumentCommonInfo, DisplayValueColumn: DocNumber, IsCard: true, OpenOnDoubleClick: true)
+			#reference(ColPrefix: Contract, RefSection: PnrSupplementaryAgreementsUK, DisplayValueColumn: SASubject, IsCard: true, OpenOnDoubleClick: true)
+			#subset(Alias: ByOrganization, Caption: По организации, RefParam: Organization, RefColumn: SubOrgID, CaptionColumn: SubOrgName, CountColumn: SubCnt)
+			#subset(Alias: ByContractType, Caption: По виду документа, RefParam: Organization, RefColumn: ContractTypeID, CaptionColumn: ContractTypeName, CountColumn: SubCnt)
+			#subset(Alias: ByState, Caption: По статусу, RefParam: State, RefColumn: StateID, CaptionColumn: StateName, CountColumn: SubCnt)
+			#subset(Alias: ByContractForm, Caption: По форме договора, RefParam: ContractForm, RefColumn: ContractFormID, CaptionColumn: ContractFormName, CountColumn: SubCnt)
+			#subset(Alias: ByCFO, Caption: По ЦФО, RefParam: CFO, RefColumn: CFOID, CaptionColumn: CFOName, CountColumn: SubCnt)
+			#subset(Alias: Count)
+		}
+		#description {}
+		#ms_query {
+			select
+			    \#if\(Normal\) \{
+			    -- SA - PnrSupplementaryAgreements
+			    t.ID						as SAID\,
+			    t.ExternalNumber			as SAExternalNumber\,
+			    t.RegistrationDate			as SARegistrationDate\,
+			    t.Subject					as SASubject\,
+			    t.OrganizationID			as SAOrganizationID\,
+				t.OrganizationName			as SAOrganizationName\,
+			    t.PartnerID					as SAPartnerID\,
+				t.PartnerName				as SAPartnerName\,
+				t.StartDate					as SAStartDate\,
+				t.EndDate					as SAEndDate\,
+				t.Amount					as SAAmount\,
+				t.SettlementCurrencyID		as SASettlementCurrencyID\,
+				t.SettlementCurrencyName	as SASettlementCurrencyName\,
+			    t.SettlementCurrencyCode	as SASettlementCurrencyCode\,
+			    t.VATRateID					as SAVATRateID\,
+				t.VATRateValue				as SAVATRateValue\,
+				t.ResponsibleID				as SAResponsibleID\,
+				t.ResponsibleName			as SAResponsibleName\,
+				t.CityID					as SACityID\,
+				t.CityName					as SACityName\,
+				t.CFOID						as SACFOID\,
+				t.CFOName					as SACFOName\,
+				t.FormID					as SAFormID\,
+				t.FormName					as SAFormName\,
+				t.DevelopmentID				as SADevelopmentID\,
+				t.DevelopmentName			as SADevelopmentName\,
+				t.TypeID					as SATypeID\,
+				t.TypeName					as SATypeName\,
+				t.Kind1CID					as SAKind1CID\,
+				t.Kind1CName				as SAKind1CName\,
+				t.PlannedActDate			as SAPlannedActDate\,
+				-- Doc - DocumentCommonInfo
+				d.ID						as DocID\,
+			    d.Number					as DocNumber\,
+			    d.FullNumber				as DocFullNumber\,
+			    d.CreationDate				as DocCreationDate\,
+			    d.AuthorID					as DocAuthorID\,
+			    d.AuthorName				as DocAuthorName\,
+			    d.DocTypeID					as DocDocTypeID\,
+			    d.DocTypeTitle				as DocDocTypeTitle\,
+			    -- Fd - FdSatelliteCommonInfo
+			    f.ID						as FdID\,
+			    f.MainCardId				as FdMainCardId\,
+			    f.StateID					as FdStateID\,
+			    f.StateName					as FdStateName\,
+			    -- Inst - Instances
+			    i.Modified					as InstModified
+			    \} 
+			    \#if\(Count | ByOrganization | ByContractType | ByState | ByContractForm | ByCFO\)\{
+			    	[t2].*
+			    \}
+			from
+			\(
+			    select
+			        \#if\(Normal\) \{
+			        t.ID\,
+			        row_number\(\) over \(order by \#order_by\) as rn
+			        \}
+			        \#if\(Count\) \{
+			        count\(*\) as cnt
+			        \}
+			        \#if\(ByOrganization\)\{
+			        	COALESCE\([t].[OrganizationID]\, NULL\) 					as [SubOrgID]\,
+			        	COALESCE\([t].[OrganizationName]\, N'Не указана'\) 		as [SubOrgName]\,
+			    		count\(*\)												AS [SubCnt]
+			    	\}
+			        \#if\(ByContractType\)\{
+			        	COALESCE\([t].[TypeID]\, NULL\) 							as [ContractTypeID]\,
+			        	COALESCE\([t].[TypeName]\, N'Не указан'\) 					as [ContractTypeName]\,
+			    		count\(*\)												AS [SubCnt]
+			    	\}
+			        \#if\(ByState\)\{
+			        	COALESCE\([f].[StateID]\, NULL\) 							as [StateID]\,
+			        	COALESCE\([f].[StateName]\, N'Не указано'\) 				as [StateName]\,
+			    		count\(*\)												AS [SubCnt]
+			    	\}
+			    	\#if\(ByContractForm\)\{
+			        	COALESCE\([t].[FormID]\, NULL\) 							as [ContractFormID]\,
+			        	COALESCE\([t].[FormName]\, N'Не указана'\) 				as [ContractFormName]\,
+			    		count\(*\)												AS [SubCnt]
+			    	\}
+			        \#if\(ByCFO\)\{
+			        	COALESCE\([t].[CFOID]\, NULL\) 							as [CFOID]\,
+			        	COALESCE\([t].[CFOName]\, N'Не указан'\) 					as [CFOName]\,
+			    		count\(*\)												AS [SubCnt]
+			    	\}
+			    from PnrSupplementaryAgreementsUK t with\(nolock\)
+			    left join FdSatelliteCommonInfo f with\(nolock\) on f.MainCardId = t.ID
+			    left join DocumentCommonInfo d with\(nolock\) on d.ID = t.ID
+			    left join Instances i with\(nolock\) on i.ID = t.ID
+			    where 1=1--d.CardTypeID = '87adb0cb-7c5f-4c82-974f-5d4e3c4a050f'
+			        \#if\(IsFiles\) \{
+			    		AND t.ID IN \(SELECT fi.ID FROM Files as fi with\(nolock\) WHERE fi.ID = t.ID\)
+			    	\}
+			        \#param\(Organization\, t.OrganizationID\)
+			    	\#param\(Partner\, t.PartnerID\)
+			        \#param\(FullNumber\, d.FullNumber\)
+			        \#param\(FullNumberAndTheme\, d.FullNumber + t.Subject\)
+			        \#param\(Subject\, t.Subject\)
+			        \#param\(ContractForm\, t.FormID\)
+			        \#param\(ContractType\, t.TypeID\)
+			        \#param\(Amount\, t.Amount\)
+			        \#param\(StartDate\, CAST\(t.StartDate as Date\)\)
+			        \#param\(EndDate\, CAST\(t.EndDate as Date\)\)
+			        \#param\(Author\, d.AuthorID\)
+			        \#param\(State\, f.StateID\)
+			        \#param\(CFO\, t.CFOID\)
+			        \#if\(IsAuthor\) \{
+			        	\#if\(IsAuthor.CriteriaName == "IsTrue"\)
+			        	\{
+			        		AND d.AuthorID = \#param\(CurrentUserID\)
+			        	\}
+			        	\{
+			        		AND \(d.AuthorID IS NULL OR d.AuthorID <> \#param\(CurrentUserID\)\)
+			        	\}
+			        \}
+			        \#if\(ByOrganization\) \{
+						GROUP BY [t].[OrganizationID]\, [t].[OrganizationName]
+					\}
+			        \#if\(ByContractType\) \{
+						GROUP BY [t].[TypeID]\, [t].[TypeName]
+					\}
+			        \#if\(ByState\) \{
+						GROUP BY [f].[StateID]\, [f].[StateName]
+					\}
+					\#if\(ByContractForm\) \{
+						GROUP BY [t].[FormID]\, [t].[FormName]
+					\}
+			        \#if\(ByCFO\) \{
+						GROUP BY [t].[CFOID]\, [t].[CFOName]
+					\}
+			\) t2
+			\#if\(Normal\) \{
+			left join PnrSupplementaryAgreementsUK t with\(nolock\) on t.ID = t2.ID
+			left join FdSatelliteCommonInfo f with\(nolock\) on f.MainCardId = t2.ID
+			left join DocumentCommonInfo d with\(nolock\) on d.ID = t2.ID
+			left join Instances i with\(nolock\) on i.ID = t2.ID
+			\}
+			\#if\(PageOffset\) \{
+			where t2.rn >= \#param_expr\(PageOffset\) and t2.rn < \(\#param_expr\(PageOffset\) + \#param_expr\(PageLimit\)\)
+			\}
+			\#if\(Normal\) \{
+			order by t2.rn
+			\}
+			;
+		}
+		#pg_query {}
+		#role(RoleID:c365e148-71f9-4731-8025-3aeb5225af9f, ViewID:ddd98d29-07b9-44fb-991c-f183d043e620) 
+		#role(RoleID:b620333e-0fcb-4b69-9576-02208bc8d0d4, ViewID:ddd98d29-07b9-44fb-991c-f183d043e620) 
+	}
+}

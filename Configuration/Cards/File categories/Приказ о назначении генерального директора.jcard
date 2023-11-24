@@ -1,0 +1,47 @@
+﻿[
+  {
+    ".method::int": 2,
+    "Card": {
+      "Created::dtm": "2020-08-26T07:24:06.82Z",
+      "CreatedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "CreatedByName": "Admin",
+      "Files": null,
+      "Flags::int": 0,
+      "ID::uid": "c6096f5a-e276-471b-9a05-aea8d57a28f5",
+      "Info": null,
+      "Modified::dtm": "2020-11-19T08:49:00.093Z",
+      "ModifiedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "ModifiedByName": "Admin",
+      "Permissions": null,
+      "Sections": {
+        "FileCategories": {
+          "Fields": {
+            "Name": "Приказ о назначении генерального директора *"
+          }
+        },
+        "PnrFileCategories_PartnerType": {
+          ".table::int": 1,
+          "Rows": [
+            {
+              "PartnerTypeID::int": 1,
+              "PartnerTypeName": "$PartnerType_LegalEntity",
+              "RowID::uid": "be9fc574-c69f-4615-addc-93239010028a"
+            }
+          ]
+        }
+      },
+      "TaskHistory": null,
+      "TaskHistoryGroups": null,
+      "Tasks": null,
+      "Topics": null,
+      "TypeCaption": "$CardTypes_TypesNames_FileCategory",
+      "TypeID::uid": "97182afc-43ce-4bd9-9c96-73a4d2c5d5eb",
+      "TypeName": "FileCategory",
+      "Version::int": 0
+    },
+    "FileMapping": null,
+    "Info": {
+      ".importVersion::int": 4
+    }
+  }
+]

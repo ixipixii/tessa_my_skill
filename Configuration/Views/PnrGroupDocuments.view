@@ -1,0 +1,24 @@
+#tessa_exchange_format(Version:1, CreationTime:2020-11-09T02\:52\:26) {
+	#exchange_view(RowID:31e6437b-7ada-4b1e-908f-c9ea6db76ded, Alias:PnrGroupDocuments, Caption:Группа организаций, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2020-11-09T02\:52\:18, GroupName:Pnr) {
+		#metadata {
+			#view(DefaultSortColumn: GroupDocumentName, DefaultSortDirection: asc, Paging: always, QuickSearchParam: Name)
+			#column(Alias: GroupDocumentID, Hidden: true)
+			#column(Alias: GroupDocumentName, Caption: Название, Hidden: false, SortBy: po.GroupDocuments)
+			#param(Alias: Name, Caption: Название, Hidden: false, Type: nvarchar, Multiple: true)
+			#reference(ColPrefix: GroupDocument, RefSection: PnrGroupDocuments, DisplayValueColumn: GroupDocumentName, IsCard: true, OpenOnDoubleClick: true)
+		}
+		#description {}
+		#ms_query {
+			SELECT
+				MIN\([po].[ID]\) AS GroupDocumentID\,
+				COALESCE\([po].[GroupDocuments]\, N'Не указано'\) AS GroupDocumentName
+			FROM PnrOrganizations AS po with\(nolock\)
+			WHERE 1=1
+			    \#param_expr\(Name\, po.GroupDocuments\)
+			GROUP BY GroupDocuments
+			ORDER BY \#order_by
+		}
+		#pg_query {}
+		#role(RoleID:7ff52dc0-ff6a-4c9d-ba25-b562c370004d, ViewID:31e6437b-7ada-4b1e-908f-c9ea6db76ded) 
+	}
+}

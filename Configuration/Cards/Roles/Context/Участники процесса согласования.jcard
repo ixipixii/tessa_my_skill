@@ -1,0 +1,55 @@
+﻿[
+  {
+    ".method::int": 2,
+    "Card": {
+      "Created::dtm": "2020-09-02T20:11:41.707Z",
+      "CreatedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "CreatedByName": "Admin",
+      "Files": null,
+      "Flags::int": 0,
+      "ID::uid": "2e184790-8e94-48a4-804a-d431f330d56f",
+      "Info": null,
+      "Modified::dtm": "2020-09-02T20:11:41.707Z",
+      "ModifiedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "ModifiedByName": "Admin",
+      "Permissions": null,
+      "Sections": {
+        "ContextRoles": {
+          "Fields": {
+            "SqlText": "select ru.UserID, ru.UserName\r\nfrom TaskHistory th with(nolock)\r\ninner join Roles r with(nolock) on r.ID = th.RoleID\r\nleft join RoleUsers ru with(nolock) on r.ID = ru.ID\r\nwhere r.TypeID != 1\r\n\tand ru.UserID is not null\r\n\tand th.ID = #context_card_id\r\n\tand th.TypeCaption LIKE N'%согласование%'\r\n\t#and_user_id_is(ru.UserID)\r\nunion\r\nselect RoleID, RoleName\r\nfrom TaskHistory th with(nolock)\r\ninner join Roles r with(nolock) on r.ID = th.RoleID\r\nwhere r.TypeID = 1\r\n\tand RoleID is not null\r\n\tand th.ID = #context_card_id\r\n\tand th.TypeCaption LIKE N'%согласование%'\r\n\t#and_user_id_is(th.RoleID)",
+            "SqlTextForCard": null,
+            "SqlTextForUser": null
+          }
+        },
+        "RoleDeputies": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "RoleDeputiesVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Roles": {
+          "Fields": {
+            "Description": "",
+            "Hidden": false,
+            "Name": "Участники процесса согласования",
+            "TypeID::int": 4
+          }
+        }
+      },
+      "TaskHistory": null,
+      "TaskHistoryGroups": null,
+      "Tasks": null,
+      "Topics": null,
+      "TypeCaption": "$CardTypes_TypesNames_ContextRole",
+      "TypeID::uid": "b672e00c-0241-0485-9b07-4764bc96c9d3",
+      "TypeName": "ContextRole",
+      "Version::int": 0
+    },
+    "FileMapping": null,
+    "Info": {
+      ".importVersion::int": 2
+    }
+  }
+]

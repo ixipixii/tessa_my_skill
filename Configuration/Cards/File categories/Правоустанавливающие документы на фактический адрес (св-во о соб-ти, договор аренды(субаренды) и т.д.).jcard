@@ -1,0 +1,52 @@
+﻿[
+  {
+    ".method::int": 2,
+    "Card": {
+      "Created::dtm": "2020-10-13T06:18:51.557Z",
+      "CreatedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "CreatedByName": "Admin",
+      "Files": null,
+      "Flags::int": 0,
+      "ID::uid": "9aaf86cf-0ad1-4993-abc4-32fe23629bed",
+      "Info": null,
+      "Modified::dtm": "2020-11-19T08:49:23.963Z",
+      "ModifiedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "ModifiedByName": "Admin",
+      "Permissions": null,
+      "Sections": {
+        "FileCategories": {
+          "Fields": {
+            "Name": "Правоустанавливающие документы на фактический адрес (св-во о соб-ти, договор аренды(субаренды) и т.д.)"
+          }
+        },
+        "PnrFileCategories_PartnerType": {
+          ".table::int": 1,
+          "Rows": [
+            {
+              "PartnerTypeID::int": 3,
+              "PartnerTypeName": "$PartnerType_SoleTrader",
+              "RowID::uid": "98fd48dc-6ab0-4af6-8f24-bbc9400ac97d"
+            },
+            {
+              "PartnerTypeID::int": 2,
+              "PartnerTypeName": "$PartnerType_Individual",
+              "RowID::uid": "68caacd7-5979-435f-a542-504352269ff6"
+            }
+          ]
+        }
+      },
+      "TaskHistory": null,
+      "TaskHistoryGroups": null,
+      "Tasks": null,
+      "Topics": null,
+      "TypeCaption": "$CardTypes_TypesNames_FileCategory",
+      "TypeID::uid": "97182afc-43ce-4bd9-9c96-73a4d2c5d5eb",
+      "TypeName": "FileCategory",
+      "Version::int": 0
+    },
+    "FileMapping": null,
+    "Info": {
+      ".importVersion::int": 4
+    }
+  }
+]

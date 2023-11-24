@@ -1,0 +1,23 @@
+#tessa_exchange_format(Version:1, CreationTime:2020-08-20T11\:09\:09) {
+	#exchange_view(RowID:2e425bdc-599d-4fb8-9332-920c24515dfd, Alias:PnrDownPayment, Caption:% авансового платежа, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2020-08-20T10\:56\:30, GroupName:Pnr) {
+		#metadata {
+			#view(DefaultSortColumn: DownPaymentID, DefaultSortDirection: asc, Paging: no, QuickSearchParam: Value)
+			#column(Alias: DownPaymentID, Hidden: true, SortBy: t.ID)
+			#column(Alias: DownPaymentValue, Caption: %, Hidden: false)
+			#param(Alias: Value, Caption: %, Hidden: false, Type: nvarchar, Multiple: false)
+			#reference(ColPrefix: DownPayment, RefSection: PnrDownPayment, DisplayValueColumn: DownPaymentValue, IsCard: false, OpenOnDoubleClick: false)
+		}
+		#description {}
+		#ms_query {
+			select
+			    t.ID as DownPaymentID\,
+			    t.Value as DownPaymentValue
+			from PnrDownPayment t with\(nolock\)
+			where 1=1
+			    \#param_expr\(Value\, t.Value\)
+			order by \#order_by
+		}
+		#pg_query {}
+		#role(RoleID:7ff52dc0-ff6a-4c9d-ba25-b562c370004d, ViewID:2e425bdc-599d-4fb8-9332-920c24515dfd) 
+	}
+}

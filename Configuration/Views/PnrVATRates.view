@@ -1,0 +1,25 @@
+#tessa_exchange_format(Version:1, CreationTime:2020-11-10T06\:24\:22) {
+	#exchange_view(RowID:14cfe0cd-91b5-4524-a6c1-9c8d3a17798f, Alias:PnrVATRates, Caption:Ставки НДС, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2020-11-09T21\:44\:59, GroupName:Pnr) {
+		#metadata {
+			#view(DefaultSortColumn: VATRateID, DefaultSortDirection: asc, Paging: no, QuickSearchParam: Name)
+			#column(Alias: VATRateID, Hidden: true, SortBy: t.ID)
+			#column(Alias: VATRateValue, Caption: Название, Hidden: false)
+			#param(Alias: Value, Caption: Значение, Hidden: false, Type: nvarchar, Multiple: false)
+			#param(Alias: Show0Hide18, Caption: Показать 0 Скрыть 18, Hidden: true, Type: bit, Multiple: false)
+			#reference(ColPrefix: VATRate, RefSection: PnrVATRates, DisplayValueColumn: VATRateValue, IsCard: false, OpenOnDoubleClick: false)
+		}
+		#description {}
+		#ms_query {
+			select
+			    t.ID as VATRateID\,
+			    t.Value as VATRateValue
+			from PnrVATRates t with\(nolock\)
+			where 1=1
+				and t.ID <> 3
+			    \#param_expr\(Name\, t.Name\)
+			order by \#order_by
+		}
+		#pg_query {}
+		#role(RoleID:7ff52dc0-ff6a-4c9d-ba25-b562c370004d, ViewID:14cfe0cd-91b5-4524-a6c1-9c8d3a17798f) 
+	}
+}

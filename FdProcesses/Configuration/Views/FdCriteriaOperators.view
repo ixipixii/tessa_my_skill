@@ -1,0 +1,43 @@
+#tessa_exchange_format(Version:1, CreationTime:2019-11-08T13\:43\:17) {
+	#exchange_view(RowID:24283261-f8e5-4b04-a4f4-f89569634dc7, Alias:FdCriteriaOperators, Caption:Операторы критериев, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2019-11-07T15\:02\:48, GroupName:Fd Awf) {
+		#metadata {
+			#view(Paging: no)
+
+			#column(Alias: CriteriaID, Type: Int16, Hidden: true)
+			#column(Alias: CriteriaCaption, Caption: Название, Type: String)
+			#column(Alias: CriteriaName, Caption: Name, Type: String)
+
+			#param(Alias: Caption, Caption: Название, Hidden: false, Type: String, Multiple: false)
+			#param(Alias: DataTypeID, Caption: Тип данных, Hidden: true, Type: Guid, Multiple: false)
+
+			#reference(ColPrefix: Criteria, RefSection: FdCriteriaOperator, DisplayValueColumn: CriteriaCaption, IsCard: false, OpenOnDoubleClick: false)
+		}
+		#description {}
+		#ms_query {
+			select
+				t.ID as CriteriaID\, 
+				t.Caption as CriteriaCaption\,
+				t.Name as CriteriaName
+			from FdCriteriaOperator t with\(nolock\)
+			inner join FdFieldDataType_CriteriaOperators t2 with\(nolock\) on t.ID = t2.CriteriaOperatorID \#param\(DataTypeID\, t2.DataTypeID\)
+			where 1=1
+				\#param\(Caption\, t.Caption\)
+			group by t.ID\, t.Caption\, t.Name
+			order by t.ID
+		}
+		#pg_query {
+			select
+				"t"."ID" as "CriteriaID"\, 
+				"t"."Caption" as "CriteriaCaption"\,
+				"t"."Name" as "CriteriaName"
+			from "FdCriteriaOperator" "t"
+			inner join "FdFieldDataType_CriteriaOperators" "t2"
+				on "t"."ID" = "t2"."CriteriaOperatorID"
+					\#param\(DataTypeID\, "t2"."DataTypeID"\)
+			where true
+				\#param\(Caption\, "t"."Caption"\)
+			group by "t"."ID"\, "t"."Caption"\, "t"."Name"
+			order by "t"."ID"
+		}
+	}
+}

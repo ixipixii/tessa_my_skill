@@ -1,0 +1,384 @@
+﻿[
+  {
+    ".method::int": 2,
+    "Card": {
+      "Created::dtm": "2020-08-24T15:42:30.913Z",
+      "CreatedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "CreatedByName": "Admin",
+      "Files": null,
+      "Flags::int": 0,
+      "ID::uid": "ca8a1ac2-e115-4e45-865e-fc7ee528b23c",
+      "Info": null,
+      "Modified::dtm": "2020-08-27T15:21:36.213Z",
+      "ModifiedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "ModifiedByName": "Admin",
+      "Permissions": null,
+      "Sections": {
+        "DepartmentRoles": {
+          "Fields": {
+            "ActionStatusID": null,
+            "ActionStatusName": null,
+            "CFOID::uid": "eca7e14e-75ac-431a-835d-ceeb99f77d49",
+            "CFOName": "Апарт-отели YES_Москва",
+            "CuratorID": null,
+            "CuratorName": null,
+            "DepartmentTypeID": null,
+            "DepartmentTypeName": null,
+            "HeadUserID": null,
+            "HeadUserName": null
+          }
+        },
+        "FmAddTopicInfoVirtual": {
+          "Fields": {
+            "Description": null,
+            "Title": null
+          }
+        },
+        "FmTopicParticipantsInfoVirtual": {
+          "Fields": {
+            "IsModerator": false,
+            "ReadOnly": false
+          }
+        },
+        "FmTopicParticipantsVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "FmTopicRoleParticipantsInfoVirtual": {
+          "Fields": {
+            "IsSubscribe": false,
+            "ReadOnly": false
+          }
+        },
+        "KrActiveTasksVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrAdditionalApprovalInfoUsersCardVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrAdditionalApprovalUsersCardVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrApprovalCommonInfoVirtual": {
+          "Fields": {
+            "ApprovedBy": null,
+            "AuthorComment": null,
+            "AuthorID": null,
+            "AuthorName": null,
+            "CurrentApprovalStageRowID": null,
+            "DisapprovedBy": null,
+            "MainCardID": null,
+            "StateChangedDateTimeUTC": null,
+            "StateID::int": 0,
+            "StateName": "$KrStates_Doc_Draft"
+          }
+        },
+        "KrApprovalHistoryVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrDialogButtonSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrForkNestedProcessesSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrForkSecondaryProcessesSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPerformersVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrStagesVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrUniversalTaskOptionsSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "RoleDeputies": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "RoleDeputiesVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Roles": {
+          "Fields": {
+            "AdSyncDate": null,
+            "AdSyncDisableUpdate": null,
+            "AdSyncDistinguishedName": null,
+            "AdSyncID": null,
+            "AdSyncIndependent": false,
+            "AdSyncWhenChanged": null,
+            "Description": null,
+            "ExternalID": null,
+            "Hidden": false,
+            "Idx": "1-0",
+            "InheritTimeZone": true,
+            "Name": "ГКП",
+            "ParentID": null,
+            "ParentName": null,
+            "TimeZoneCodeName": "Default",
+            "TimeZoneID::int": 0,
+            "TimeZoneShortName": "UTC+03:00",
+            "TimeZoneUtcOffsetMinutes::int": 180,
+            "TypeID::int": 2
+          }
+        },
+        "RoleUsers": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "RoleUsersVirtual": {
+          ".table::int": 1,
+          "Rows": [
+            {
+              ".state::int": 2,
+              "RowID::uid": "825e7f20-1974-4a31-be8f-ada6478aef90",
+              "UserID::uid": "cca862f2-b95e-4b78-af87-a30641458bab",
+              "UserName": "Gorchakova"
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "41db4793-c424-46be-a6a1-cac52b7ec543",
+              "UserID::uid": "456b08ca-21c2-49df-ba4f-cd5e87500ded",
+              "UserName": "Sharapov"
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "a03ef238-dd35-4019-8fa3-3ed6f49ea2a3",
+              "UserID::uid": "c122d6fa-0e31-4954-a0be-022f466c9745",
+              "UserName": "Колычев Я. В."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "60265a1b-6eb4-4a3e-9037-4af82e0a1f0a",
+              "UserID::uid": "3546a9e3-4d11-479b-b17f-0934d2f0836a",
+              "UserName": "Николышина И. Н."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "544ec38c-5814-4ce4-abc2-786ded2069fb",
+              "UserID::uid": "4075efc5-34e9-4230-b76a-0d2473ed8be4",
+              "UserName": "Корчагина О. С."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "4340043b-ca8d-48ad-91cf-05974fca4a98",
+              "UserID::uid": "8d9265e2-9213-4b8e-8fb1-0ddbd4bb4cb0",
+              "UserName": "Савельев С. А."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "1be32b42-e89d-4979-b4b4-81b4aa07504a",
+              "UserID::uid": "91d04680-a5aa-4a1e-974c-17f5c90090e1",
+              "UserName": "Осташкова Е. А."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "cfd68fd7-ce90-4ed9-b3ce-d48c839aed2e",
+              "UserID::uid": "07055b4c-0a4b-4cde-bd7e-21bb211e3ea5",
+              "UserName": "Макаров А. А."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "9c5d52d3-d954-44da-a4fe-a8a8debba1cc",
+              "UserID::uid": "b6c3d57c-774e-4072-a78a-343ca883b47f",
+              "UserName": "Сапронов О. И."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "58956b19-c6b3-45e8-ad35-15a0f7a579bc",
+              "UserID::uid": "eec234d3-c5c7-4f7e-9240-3ac0ba2d1cd8",
+              "UserName": "Шлык А. Н."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "1409c4e9-dbc1-4c76-8eb2-1274e28b7b98",
+              "UserID::uid": "648966df-5ec3-4cc8-859e-419988f079f7",
+              "UserName": "Филиппова Т. В."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "c6171651-2044-4990-bc18-d5f111cc38ed",
+              "UserID::uid": "ce14a2fd-4723-4470-a9f4-46832ce24dbe",
+              "UserName": "Ткачев С. В."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "74a9bab7-e0b7-4317-a00f-0f2e0958f9ab",
+              "UserID::uid": "e87ba1e6-e676-4de1-9d6b-49f924986b05",
+              "UserName": "Золотаревский В. А."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "f9c4b70a-97a7-4172-940a-1671125988d4",
+              "UserID::uid": "b04af302-b847-4aa1-a30a-506830520dc9",
+              "UserName": "Юрасов Ф. А."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "9321cb46-47ca-4b0d-9a8e-b7552f489de2",
+              "UserID::uid": "ee830715-e7f3-4aff-a598-5407d82da506",
+              "UserName": "Мехедова А. В."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "b9ffcf47-052e-4dc3-b702-32e0febd0e7f",
+              "UserID::uid": "da339a53-6797-421d-897c-66b86efe651c",
+              "UserName": "Ульянов А. Г."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "4a83b68e-fa63-400f-b9e0-ff61b98b11c2",
+              "UserID::uid": "0f050a21-7393-4024-8885-6d8412b2be9b",
+              "UserName": "Колпаков Илья В."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "87c34820-935a-4719-8c4f-d300c4c99fa8",
+              "UserID::uid": "fa506a63-c0e3-4997-bc19-752f41629b03",
+              "UserName": "Гуркин В. С."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "777d702d-afc5-4d43-ad38-90d806e28945",
+              "UserID::uid": "4a30aec5-f583-4d7c-8d5f-7c2db5e1d52a",
+              "UserName": "Старостенко Л. Ю."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "94afbdfb-ad68-49cb-aec9-e554615da82f",
+              "UserID::uid": "e326c6c1-720a-4072-b80e-9c6ff564864e",
+              "UserName": "Назарова О. Е."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "b9739312-7b7d-4b6a-8333-82fad925d370",
+              "UserID::uid": "4a28fad0-c230-4e6d-bffb-9ee4f23adfd9",
+              "UserName": "Дьяченко В. В."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "7ce5fc1e-366c-415e-81bb-1d89e7bb3ac5",
+              "UserID::uid": "4ccc4a93-fca0-4d5e-bfc9-a9077a1a0755",
+              "UserName": "Никитина О.А."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "d039fb0c-9dd0-4acd-a022-9ad3fa629ef7",
+              "UserID::uid": "35877040-14bd-4d8e-9a07-ab33a17b2748",
+              "UserName": "Бахаев В. А."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "9aafbef8-437b-4840-b905-66adba71eaa1",
+              "UserID::uid": "de5ed18c-324f-48c2-a7cb-b85c5fbb83b6",
+              "UserName": "Нигматуллина Э.Г."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "278e6009-dd3e-4f16-ae6b-a45ea2ce23f2",
+              "UserID::uid": "48c8a12a-5ce9-4c16-9101-b88a0b98c1e0",
+              "UserName": "Мартынов А. В."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "b27f8617-795f-44a8-9f8b-ceb19db5493e",
+              "UserID::uid": "8f8d5635-cec5-46d8-aff4-c3765ffa325f",
+              "UserName": "Тиханычев А.И."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "a7153065-52d7-4677-9296-2ec21729542d",
+              "UserID::uid": "17d652d7-f976-46cf-afe4-c64a9e0db2e5",
+              "UserName": "Стасенко В. И."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "4ad30a33-0d98-4d51-97f1-0752c89f1bf9",
+              "UserID::uid": "6c78f9d3-449a-4494-938c-c9bfecadd074",
+              "UserName": "Мануилова Е. А."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "5807ede6-b701-4d62-8fe0-39de9c0b61ca",
+              "UserID::uid": "5ede12e6-2a07-4cae-b321-d6a708070962",
+              "UserName": "Новоселов В. А."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "a22f24b4-f58f-4e0f-8d1a-d8a5a71bad8a",
+              "UserID::uid": "4c552576-51a5-43b6-8e26-e330620b4ea0",
+              "UserName": "Кямяря С. И."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "40f9d2ed-2840-4002-86e5-1681f4a9e39b",
+              "UserID::uid": "a5ef527c-3cf5-4995-a295-e483ae4db29e",
+              "UserName": "Колпаков Игорь В."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "6a4210bf-9df4-40ba-bab9-c1f31d8fd0b8",
+              "UserID::uid": "8778a450-8aec-4564-8ca1-eda6a8af8928",
+              "UserName": "Стратьева Ю.И."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "2fd6308e-c11f-487d-9ed8-f6cbfafdc53e",
+              "UserID::uid": "ea9e81cb-c811-4cd8-b56b-efc43f9f3500",
+              "UserName": "Перевалов А. В."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "66406be4-aa22-41f5-8a07-0b74eeb34eb9",
+              "UserID::uid": "b437522f-509a-460d-b44b-3c528d8ba7d6",
+              "UserName": "Пятибратова А.В."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "4255a661-9bb8-465c-af29-615f87ada113",
+              "UserID::uid": "3a093812-b710-4c0c-85bd-b6e97177c092",
+              "UserName": "tempconsultcrm"
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "be97d25f-6b64-4501-a312-fbecd5883d8a",
+              "UserID::uid": "28d73db4-5b91-4fd3-8b98-2440fe332aef",
+              "UserName": "Гореева Ж.А."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "a8895b50-142a-4ce0-9cfa-9e34ad9e246c",
+              "UserID::uid": "4df82a94-2234-4c4e-b3c3-c23b75693375",
+              "UserName": "Боркин Е.В."
+            }
+          ]
+        }
+      },
+      "TaskHistory": null,
+      "TaskHistoryGroups": null,
+      "Tasks": null,
+      "Topics": null,
+      "TypeCaption": "$CardTypes_TypesNames_DepartmentRole",
+      "TypeID::uid": "abe57cb7-e1cb-06f6-b7ca-ad1668bebd72",
+      "TypeName": "DepartmentRole",
+      "Version::int": 0
+    },
+    "FileMapping": null,
+    "Info": {
+      ".importVersion::int": 3
+    }
+  }
+]

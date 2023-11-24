@@ -1,0 +1,106 @@
+﻿[
+  {
+    ".method::int": 2,
+    "Card": {
+      "Created::dtm": "2020-08-16T14:41:51.067Z",
+      "CreatedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "CreatedByName": "Admin",
+      "Files": null,
+      "Flags::int": 0,
+      "ID::uid": "97a50f28-96e0-4581-9f7e-33c95f0970e4",
+      "Info": null,
+      "Modified::dtm": "2020-11-19T17:52:22.02Z",
+      "ModifiedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "ModifiedByName": "Admin",
+      "Permissions": null,
+      "Sections": {
+        "RoleDeputies": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "RoleDeputiesVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Roles": {
+          "Fields": {
+            "AdSyncDate": null,
+            "AdSyncDisableUpdate": null,
+            "AdSyncDistinguishedName": null,
+            "AdSyncID": null,
+            "AdSyncIndependent": false,
+            "AdSyncWhenChanged": null,
+            "Description": null,
+            "Hidden": false,
+            "InheritTimeZone": true,
+            "Name": "Руководитель отдела проектной и договорной работы",
+            "ParentID": null,
+            "ParentName": null,
+            "TimeZoneCodeName": "Default",
+            "TimeZoneID::int": 0,
+            "TimeZoneShortName": "UTC+03:00",
+            "TimeZoneUtcOffsetMinutes::int": 180,
+            "TypeID::int": 0
+          }
+        },
+        "RoleUsers": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "RoleUsersVirtual": {
+          ".table::int": 1,
+          "Rows": [
+            {
+              ".state::int": 2,
+              "RowID::uid": "b1efaa45-aeee-45d3-8864-4bca3ce7191d",
+              "UserID::uid": "fd99d8ea-f1c1-4e73-87b1-87e34c91296a",
+              "UserName": "Харина Оксана"
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "4f849a04-5e9f-41c6-868f-e11e2b12e3a7",
+              "UserID::uid": "ee5abfdc-f362-41fa-b535-d72e3dc0878c",
+              "UserName": "Alekseev"
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "e08e9d8f-2e5b-4323-aa16-069b55436433",
+              "UserID::uid": "9141b889-a4b1-47a9-9c95-ad9041002392",
+              "UserName": "Хрулев С.Д."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "a43e7f89-e430-4a01-b137-11e2f9f5766e",
+              "UserID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+              "UserName": "Admin"
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "b280af08-ad87-4dd3-8194-4afd050f01de",
+              "UserID::uid": "b437522f-509a-460d-b44b-3c528d8ba7d6",
+              "UserName": "Пятибратова А.В."
+            },
+            {
+              ".state::int": 2,
+              "RowID::uid": "38a855c1-5c0b-4053-afb8-7ce272f3f039",
+              "UserID::uid": "28d73db4-5b91-4fd3-8b98-2440fe332aef",
+              "UserName": "Гореева Ж.А."
+            }
+          ]
+        }
+      },
+      "TaskHistory": null,
+      "TaskHistoryGroups": null,
+      "Tasks": null,
+      "Topics": null,
+      "TypeCaption": "$CardTypes_TypesNames_StaticRole",
+      "TypeID::uid": "825dbacc-ddec-00d1-a550-2a837792542e",
+      "TypeName": "StaticRole",
+      "Version::int": 0
+    },
+    "FileMapping": null,
+    "Info": {
+      ".importVersion::int": 6
+    }
+  }
+]

@@ -1,0 +1,48 @@
+#tessa_exchange_format(Version:1, CreationTime:2020-12-28T12\:58\:21) {
+	#exchange_view(RowID:4d9f8334-f69e-42b4-9660-fa7b427ae56d, Alias:PnrCardCategories, Caption:Категории карточек, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2020-12-28T12\:13\:46, GroupName:System) {
+		#metadata {
+			#view(DefaultSortColumn: CardCategoryCardTypeName, DefaultSortDirection: asc, Paging: always, RowCountSubset: Count, QuickSearchParam: Name)
+			#column(Alias: CardCategoryID, Hidden: true, Type: $PnrCategory.ID)
+			#column(Alias: CardCategoryCardTypeID, Hidden: true, Type: $PnrCategory.ID)
+			#column(Alias: CardCategoryCardTypeName, Caption: Карточка, Type: $FileCategories.Name, Localizable: true, SortBy: [t].[CardTypeCaption])
+			#column(Alias: CardCategoryCategoryNames, Caption: Категории, Type: nvarchar)
+			#column(Alias: rn, Hidden: true, Type: Int64)
+			#param(Alias: Name, Caption: $Views_FileCategoriesFiltered_Name_Param, Multiple: true, Type: $FileCategories.Name)
+			#param(Alias: CardTypeID, Caption: ID Типа карточки, Type: Guid, Hidden: true)
+			#reference(ColPrefix: CardCategory, RefSection: PnrCardCategories, DisplayValueColumn: CardCategoryCardTypeName, IsCard: true, OpenOnDoubleClick: true)
+			#subset(Alias: Count)
+		}
+		#description {}
+		#ms_query {
+			SELECT
+				[t].*
+			FROM \(
+				SELECT
+					\#if\(Normal\) \{
+						[t].[ID]								AS [CardCategoryID]\,
+						[t].[CardTypeID]						AS [CardCategoryCardTypeID]\,
+						[t].[CardTypeCaption]					AS [CardCategoryCardTypeName]\,
+						\(SELECT CategoryName + '; '
+							FROM PnrCategoryCard AS cc WITH\(NOLOCK\)
+							WHERE cc.ID = t.ID
+							FOR XML PATH\(''\)\)       			AS [CardCategoryCategoryNames]\,
+						row_number\(\) OVER \(ORDER BY \#order_by\)	AS [rn]
+						\}
+					\#if\(Count\) \{
+						count\(*\) AS [cnt]
+						\}
+				FROM [PnrCategory] AS [t] WITH \(NOLOCK\)
+				WHERE 1 = 1
+					\#param\(CardTypeName\, [t].[CardTypeCaption]\)
+					\#param\(CardTypeID\, pc.CardTypeID\)
+				\) AS [t]
+			\#if\(PageOffset\) \{
+			WHERE [t].[rn] >= \#param\(PageOffset\) AND [t].[rn] < \(\#param\(PageOffset\) + \#param\(PageLimit\)\)
+			\}
+			\#if\(Normal\) \{
+			ORDER BY [t].[rn]
+			\}
+		}
+		#pg_query {}
+	}
+}

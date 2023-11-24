@@ -1,0 +1,330 @@
+﻿[
+  {
+    ".method::int": 2,
+    "Card": {
+      "Created::dtm": "2020-11-05T12:01:10.357Z",
+      "CreatedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "CreatedByName": "Admin",
+      "Files": null,
+      "Flags::int": 0,
+      "ID::uid": "2771107b-5b53-4214-a781-92483326138f",
+      "Info": null,
+      "Modified::dtm": "2020-11-05T12:04:09.15Z",
+      "ModifiedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "ModifiedByName": "Admin",
+      "Permissions": null,
+      "Sections": {
+        "Condition_KrDepartmentCondition": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Condition_KrDocStateCondition": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Condition_KrDocTypeCondition": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Condition_KrPartnerCondition": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Condition_KrTaskTypeCondition": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Condition_KrUsersCondition": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "ConditionsVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "FdPermissionStates": {
+          ".table::int": 1,
+          "Rows": [
+            {
+              "RowID::uid": "d7830f5d-45b1-4f9f-9d6d-1797a81a02d1",
+              "StateCardTypeCaption": "Договор",
+              "StateID::uid": "5b49161e-2f9c-4087-90ac-e9d62ee50ccf",
+              "StateName": "На доработке"
+            },
+            {
+              "RowID::uid": "e996efe6-0af8-411a-82e4-d93b555806d4",
+              "StateCardTypeCaption": "Договор",
+              "StateID::uid": "b012f42e-089e-498d-bcf8-ddfa81cdbb1c",
+              "StateName": "Не действует"
+            },
+            {
+              "RowID::uid": "0d383f07-0eea-47ea-a8dd-3441591ad058",
+              "StateCardTypeCaption": "Договор",
+              "StateID::uid": "a787669e-32f7-470a-839c-d916222fb9da",
+              "StateName": "Действует"
+            },
+            {
+              "RowID::uid": "04c9eef7-3d34-457a-81d9-147f3e740e7a",
+              "StateCardTypeCaption": "Договор",
+              "StateID::uid": "e093e1c4-3077-42f7-beae-db033f7868f3",
+              "StateName": "Проект"
+            },
+            {
+              "RowID::uid": "bfc1291f-ffc1-4514-b619-da7d02200299",
+              "StateCardTypeCaption": "Договор",
+              "StateID::uid": "129c1507-4405-47a5-8b21-96331c36d3c6",
+              "StateName": "На регистрации"
+            },
+            {
+              "RowID::uid": "d4db2b21-51f2-49fa-87e8-2a59016eaec6",
+              "StateCardTypeCaption": "Договор",
+              "StateID::uid": "8065ee25-07df-4c17-8b35-d542aaa3cbed",
+              "StateName": "На согласовании"
+            },
+            {
+              "RowID::uid": "6a9829f3-cd94-4e7a-ab26-f67dbb80cd7c",
+              "StateCardTypeCaption": "Договор",
+              "StateID::uid": "77246376-ffae-466e-bbc9-d70e0ffe8964",
+              "StateName": "На подписании"
+            },
+            {
+              "RowID::uid": "2faae639-bd14-4a1b-a2a8-f8cc1fd57b34",
+              "StateCardTypeCaption": "Договор",
+              "StateID::uid": "0555f281-03fe-45f7-9b93-8b840bba0f94",
+              "StateName": "Отозван"
+            },
+            {
+              "RowID::uid": "e495354d-f4a5-41cd-a6f5-60e6e65be339",
+              "StateCardTypeCaption": "Дополнительное соглашение",
+              "StateID::uid": "246a26a1-286f-4641-86eb-efe5dddc761f",
+              "StateName": "На согласовании"
+            },
+            {
+              "RowID::uid": "d27c7180-6a80-4b5f-a8c7-0b4d80065091",
+              "StateCardTypeCaption": "Дополнительное соглашение",
+              "StateID::uid": "5786054a-8e3b-4984-a404-f07017d8ecf8",
+              "StateName": "Проект"
+            },
+            {
+              "RowID::uid": "1aa0da78-d05f-4155-b97b-4e83798d5773",
+              "StateCardTypeCaption": "Дополнительное соглашение",
+              "StateID::uid": "9400577a-d014-4d38-86c0-dbaf57ae39f4",
+              "StateName": "На регистрации"
+            },
+            {
+              "RowID::uid": "7f537673-b10d-4fbb-8d46-f7222cad7628",
+              "StateCardTypeCaption": "Дополнительное соглашение",
+              "StateID::uid": "4223457f-0a88-4de2-ab2d-077f0eae9036",
+              "StateName": "Отозван"
+            },
+            {
+              "RowID::uid": "761bdd0a-52e2-41cc-87f4-6f0bbe5425f4",
+              "StateCardTypeCaption": "Дополнительное соглашение",
+              "StateID::uid": "ab447906-ca1f-4659-a86b-3fbd4d086cf4",
+              "StateName": "На доработке"
+            },
+            {
+              "RowID::uid": "ef580d9b-7aea-4ada-bb9d-19dd873b6e4c",
+              "StateCardTypeCaption": "Дополнительное соглашение",
+              "StateID::uid": "cbe51a1c-79b9-40a8-85b8-562593e3adf2",
+              "StateName": "На подписании"
+            },
+            {
+              "RowID::uid": "1d2c55c5-dada-4a4e-b2f1-8901c27166e7",
+              "StateCardTypeCaption": "Дополнительное соглашение",
+              "StateID::uid": "d3a97a2b-75b7-43ba-bb49-4e9f1c24c82f",
+              "StateName": "Не действует"
+            },
+            {
+              "RowID::uid": "2bc8af77-7320-481c-b410-d86944498658",
+              "StateCardTypeCaption": "Дополнительное соглашение",
+              "StateID::uid": "0ba2dd7f-4b31-419b-b02c-830b5608de79",
+              "StateName": "Действует"
+            }
+          ]
+        },
+        "KrPermissionExtendedCardRuleFields": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedCardRules": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedFileRuleCategories": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedFileRules": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedMandatoryRuleFields": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedMandatoryRuleOptions": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedMandatoryRules": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedMandatoryRuleTypes": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedTaskRuleFields": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedTaskRules": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedTaskRuleTypes": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedVisibilityRules": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionRoles": {
+          ".table::int": 1,
+          "Rows": [
+            {
+              "IsContext": false,
+              "RoleID::uid": "c2cde786-da4f-4a09-a626-5153a2d8549a",
+              "RoleName": "Договорной отдел",
+              "RowID::uid": "09d1e9ec-1292-4f62-b1f0-77477f087100"
+            }
+          ]
+        },
+        "KrPermissions": {
+          "Fields": {
+            "CanAddFiles": false,
+            "CanAddTopics": false,
+            "CanCreateCard": true,
+            "CanCreateResolutions": false,
+            "CanCreateTemplateAndCopy": true,
+            "CanDeleteCard": false,
+            "CanDeleteFiles": false,
+            "CanDeleteOwnFiles": false,
+            "CanEditCard": false,
+            "CanEditFiles": false,
+            "CanEditNumber": false,
+            "CanEditOwnFiles": false,
+            "CanEditRoute": false,
+            "CanFullRecalcRoute": false,
+            "CanReadCard": false,
+            "CanSignFiles": false,
+            "CanSkipStages": false,
+            "CanSubscribeForNotifications": false,
+            "CanSuperModeratorMode": false,
+            "Caption": "Договора и ДС ГК",
+            "Conditions": "[]",
+            "Description": null,
+            "IsDisabled": false,
+            "IsExtended": false,
+            "IsRequired": true,
+            "Permissions": "{$KrPermissions_CreateCard}\r\n{$KrPermissions_CreateTemplateAndCopy}",
+            "Roles": "Договорной отдел",
+            "States": "{$KrStates_Doc_Canceled}\r\n{$KrStates_Doc_Registered}\r\n{$KrStates_Doc_Editing}\r\n{$KrStates_Doc_Signing}\r\n{$KrStates_Doc_Registration}\r\n{$KrStates_Doc_Active}\r\n{$KrStates_Doc_Disapproved}\r\n{$KrStates_Doc_Declined}\r\n{$KrStates_Doc_Signed}\r\n{$KrStates_Doc_Draft}\r\n{$KrStates_Doc_Approved}",
+            "Types": "Договор\r\nДополнительное соглашение"
+          }
+        },
+        "KrPermissionStates": {
+          ".table::int": 1,
+          "Rows": [
+            {
+              "RowID::uid": "505ac35b-4daf-4907-9a7f-ab8171a73834",
+              "StateID::int": 5,
+              "StateName": "$KrStates_Doc_Canceled"
+            },
+            {
+              "RowID::uid": "3d3d6cfe-471c-4208-95ae-c4b4a8195163",
+              "StateID::int": 6,
+              "StateName": "$KrStates_Doc_Registered"
+            },
+            {
+              "RowID::uid": "eb97eeff-cdd2-4c49-8bd0-aa89b5df7e24",
+              "StateID::int": 4,
+              "StateName": "$KrStates_Doc_Editing"
+            },
+            {
+              "RowID::uid": "e0df3119-ffba-44f2-abf4-63f5b8be65ce",
+              "StateID::int": 10,
+              "StateName": "$KrStates_Doc_Signing"
+            },
+            {
+              "RowID::uid": "380bea88-2481-49f7-bf0e-c368a55b69fb",
+              "StateID::int": 7,
+              "StateName": "$KrStates_Doc_Registration"
+            },
+            {
+              "RowID::uid": "d35ba4a6-019b-4287-a944-f83a5cd9b68e",
+              "StateID::int": 1,
+              "StateName": "$KrStates_Doc_Active"
+            },
+            {
+              "RowID::uid": "57dbc17a-38f9-45e2-aee4-f69c725b7434",
+              "StateID::int": 3,
+              "StateName": "$KrStates_Doc_Disapproved"
+            },
+            {
+              "RowID::uid": "e904ea55-5515-42a6-b90c-62561800834a",
+              "StateID::int": 9,
+              "StateName": "$KrStates_Doc_Declined"
+            },
+            {
+              "RowID::uid": "c34bb20f-c7c2-4f48-9fea-81c5f1ded2c9",
+              "StateID::int": 8,
+              "StateName": "$KrStates_Doc_Signed"
+            },
+            {
+              "RowID::uid": "2c2ae7bd-87fb-4591-943b-3989d44c6cde",
+              "StateID::int": 0,
+              "StateName": "$KrStates_Doc_Draft"
+            },
+            {
+              "RowID::uid": "8bc63010-fa87-4281-9542-5eb885e337fb",
+              "StateID::int": 2,
+              "StateName": "$KrStates_Doc_Approved"
+            }
+          ]
+        },
+        "KrPermissionTypes": {
+          ".table::int": 1,
+          "Rows": [
+            {
+              "RowID::uid": "0fe5b7b9-d4a4-4c27-b312-e49d02781049",
+              "TypeCaption": "Договор",
+              "TypeID::uid": "1c7a5718-09ae-4f65-aa67-e66f23bb7aee",
+              "TypeIsDocType": false
+            },
+            {
+              "RowID::uid": "ef3b64e2-b694-40d9-9d0c-6245801cf1d5",
+              "TypeCaption": "Дополнительное соглашение",
+              "TypeID::uid": "f5a33228-32ae-483f-beca-8b2e3453a615",
+              "TypeIsDocType": false
+            }
+          ]
+        }
+      },
+      "TaskHistory": null,
+      "TaskHistoryGroups": null,
+      "Tasks": null,
+      "Topics": null,
+      "TypeCaption": "$CardTypes_TypesNames_KrPermissions",
+      "TypeID::uid": "fa9dbdac-8708-41df-bd72-900f69655dfa",
+      "TypeName": "KrPermissions",
+      "Version::int": 0
+    },
+    "FileMapping": null,
+    "Info": {
+      ".importVersion::int": 8
+    }
+  }
+]

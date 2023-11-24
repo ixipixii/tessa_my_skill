@@ -1,0 +1,200 @@
+#tessa_exchange_format(Version:1, CreationTime:2019-11-08T13\:43\:17) {
+	#exchange_view(RowID:849c5f2a-b7d1-4ada-8f06-265cb73fe018, Alias:FdDocumentsAllTypes, Caption:$Views_DocumentAll_Caption, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2019-11-08T13\:42\:09, GroupName:Fd Awf) {
+		#metadata {
+			#view(DefaultSortColumn: CreationDate, DefaultSortDirection: desc, Paging: always, RowCountSubset: Count, MultiSelect: true, QuickSearchParam: Number)
+			#column(Alias: DocID, Hidden: true, Type: $DocumentCommonInfo.ID)
+			#column(Alias: DocNumber, Caption: $Views_Registers_Number, Type: $DocumentCommonInfo.FullNumber)
+			#column(Alias: TypeName, Caption: $Views_Registers_Type, Type: $DocumentCommonInfo.DocTypeTitle, Localizable: true)
+			#column(Alias: DocSubject, Caption: $Views_Registers_Subject, Type: $DocumentCommonInfo.Subject)
+			#column(Alias: DocDescription, Caption: $Views_Registers_DocDescription, Hidden: true, Type: String)
+			#column(Alias: PartnerID, Hidden: true, Type: $DocumentCommonInfo.PartnerID)
+			#column(Alias: PartnerName, Caption: $Views_Registers_Partner, Type: $DocumentCommonInfo.PartnerName)
+			#column(Alias: AuthorID, Hidden: true, Type: $DocumentCommonInfo.AuthorID)
+			#column(Alias: AuthorName, Caption: $Views_Registers_Author, Type: $DocumentCommonInfo.AuthorName)
+			#column(Alias: RegistratorID, Hidden: true, Type: $DocumentCommonInfo.RegistratorID)
+			#column(Alias: RegistratorName, Caption: $Views_Registers_Registrator, Type: $DocumentCommonInfo.RegistratorName)
+			#column(Alias: DocDate, Caption: $Views_Registers_DocDate, Type: $DocumentCommonInfo.DocDate)
+			#column(Alias: CreationDate, Caption: $Views_Registers_CreationDate, Type: Date, SortBy: mi.CreationDate)
+			#column(Alias: Department, Caption: $Views_Registers_Department, Type: $DocumentCommonInfo.DepartmentName)
+			#column(Alias: FdState, Caption: $Views_Registers_State, Type: $KrApprovalCommonInfo.StateName, Localizable: true)
+			#param(Alias: Partner, Caption: $Views_Registers_Partner_Param, Multiple: true, Type: $DocumentCommonInfo.PartnerID, RefSection: Partners) {
+				#autocomplete(View: Partners, Param: Name, PopupColumns: 1 2)
+			}
+			#param(Alias: Number, Caption: $Views_Registers_Number_Param, Multiple: true, Type: $DocumentCommonInfo.FullNumber)
+			#param(Alias: Subject, Caption: $Views_Registers_Subject_Param, Multiple: true, Type: $DocumentCommonInfo.Subject)
+			#param(Alias: DocDate, Caption: $Views_Registers_DocDate_Param, Multiple: true, Type: Date)
+			#param(Alias: Author, Caption: $Views_Registers_Author_Param, Multiple: true, Type: $DocumentCommonInfo.AuthorID, RefSection: PersonalRoles, AllowedOperands: Equality NonEquality) {
+				#autocomplete(View: Users, Param: Name, PopupColumns: 1 4)
+			}
+			#param(Alias: Registrator, Caption: $Views_Registers_Registrator_Param, Multiple: true, Type: $DocumentCommonInfo.RegistratorID, RefSection: PersonalRoles, AllowedOperands: Equality NonEquality) {
+				#autocomplete(View: Users, Param: Name, PopupColumns: 1 4)
+			}
+			#param(Alias: Type, Caption: $Views_Registers_Type_Param, Multiple: true, Type: $DocumentCommonInfo.DocTypeID, RefSection: KrCardTypesVirtual) {
+				#autocomplete(View: KrTypesEffective, Param: Caption, PopupColumns: 1)
+				#dropdown(View: KrTypesEffective, PopupColumns: 1)
+			}
+			#param(Alias: Department, Caption: $Views_Registers_Department_Param, Type: $DocumentCommonInfo.DepartmentID, RefSection: DepartmentRoles) {
+				#autocomplete(View: Departments, Param: Name, PopupColumns: 1 3 5)
+			}
+			#param(Alias: CreationDate, Caption: $Views_Registers_CreationDate_Param, Type: $DocumentCommonInfo.CreationDate)
+			#param(Alias: LinkedDocID, Caption: LinkedDocID, Hidden: true, Type: $OutgoingRefDocs.ID, AllowedOperands: Equality)
+			#param(Alias: ProcessTemplateID, Caption: Process Template ID, Hidden: true, Type: Guid)
+			#param(Alias: ProcessStateID, Caption: Process State ID, Hidden: true, Type: Int16)
+			#reference(ColPrefix: Doc, RefSection: DocumentCommonInfo DocRefsSection, DisplayValueColumn: DocNumber, IsCard: true, OpenOnDoubleClick: true)
+			#reference(ColPrefix: Author, RefSection: Roles DurableRoles PersonalRoles, DisplayValueColumn: AuthorName, IsCard: true, OpenOnDoubleClick: false)
+			#reference(ColPrefix: Registrator, RefSection: Roles DurableRoles PersonalRoles, DisplayValueColumn: RegistratorName, IsCard: true, OpenOnDoubleClick: false)
+			#reference(ColPrefix: Partner, RefSection: Partners, DisplayValueColumn: PartnerName, IsCard: true, OpenOnDoubleClick: false)
+			#subset(Alias: Count)
+		}
+		#description {}
+		#ms_query {
+			DECLARE @Project nvarchar\(max\) = [dbo].[GetString]\(N'Views_Registers_Project_Sql'\, \#param\(locale\)\);
+
+			SELECT
+				\#if\(Normal\) \{
+				[t].[DocID]\,
+				[t].[DocNumber]\,
+				[t].[TypeName]\,
+				[t].[DocSubject]\,
+				COALESCE\([t].[DocNumber]\, N''\) + N'\, ' + COALESCE\([t].[DocSubject]\, N''\) AS [DocDescription]\, 	-- autocomplete
+				[t].[PartnerID]\,
+				[t].[PartnerName]\,
+				[t].[AuthorID]\,
+				[t].[AuthorName]\,
+				[t].[RegistratorID]\,
+				[t].[RegistratorName]\,
+				[t].[DocDate]\,
+				[t].[CreationDate]\,
+				[t].[Department]\,
+				[t].[FdState]
+				\}
+				\#if\(Count\) \{
+				[t].[cnt]
+				\}
+			FROM \(
+				SELECT
+					\#if\(Normal\) \{
+					[mi].[ID] AS [DocID]\,
+					[mi].[FullNumber] AS [DocNumber]\,
+					coalesce\([mi].[DocTypeTitle]\, [i].[TypeCaption]\) AS [TypeName]\,
+					[mi].[Subject] AS [DocSubject]\,
+					[mi].[PartnerID]\,
+					[mi].[PartnerName]\,
+					[mi].[AuthorID]\,
+					[mi].[AuthorName]\,
+					[mi].[RegistratorID]\,
+					[mi].[RegistratorName]\,
+					[mi].[DocDate]\,
+					CAST\([mi].[CreationDate] AS date\) AS [CreationDate]\,
+					[mi].[DepartmentName] AS [Department]\,
+					COALESCE\([fd].[StateName]\, @Project\) AS [FdState]\,
+					row_number\(\) OVER \(ORDER BY \#order_by\) AS [rn]
+					\}
+					\#if\(Count\) \{
+					count\(*\) AS [cnt]
+					\}
+				FROM [DocumentCommonInfo] AS [mi] WITH \(NOLOCK\)
+				inner join [Instances] as [i] with\(nolock\)
+					on [mi].[ID] = [i].[ID]
+				LEFT JOIN [FdSatelliteCommonInfo] AS [fd] WITH \(NOLOCK\)
+					ON [fd].[MainCardId] = [mi].[ID]
+				\#if \(ProcessTemplateID\) \{
+				inner join 
+				\(
+					select fsci.MainCardId
+					from FdSatelliteCommonInfo fsci
+					inner join FdProcessInstances fpi on fsci.ID = fpi.ID
+					where 
+						fpi.BasedOnProcessTemplateID = \#param\(ProcessTemplateID\)
+							\#param\(ProcessStateID\, fpi.StateID\)
+					group by fsci.MainCardId
+				\) fsci on mi.ID = fsci.MainCardId
+			    \}
+				WHERE 1 = 1
+						\#param\(Partner\, [mi].[PartnerID]\)
+						\#param\(Number\, [mi].[FullNumber]\)
+						\#param\(Subject\, [mi].[Subject]\)
+						\#param\(DocDate\, [mi].[DocDate]\)
+						\#if\(Type\) \{
+						AND \(1 = 1 \#param\(Type\, [mi].[DocTypeID]\) OR 1 = 1 \#param\(Type\, [mi].[CardTypeID]\)\)
+						\}
+						\#param\(Author\, [mi].[AuthorID]\)
+						\#param\(Registrator\, [mi].[RegistratorID]\)
+						\#param\(Department\, [mi].[DepartmentID]\)
+						\#param\(CreationDate\, [mi].[CreationDate]\)
+				\) AS [t]
+			\#if\(Normal\) \{
+			WHERE [t].[rn] >= \#param\(PageOffset\) AND [t].[rn] < \(\#param\(PageOffset\) + \#param\(PageLimit\)\)
+			\}
+			\#if\(PageOffset\) \{
+			ORDER BY [t].[rn]
+			\};
+		}
+		#pg_query {
+			DECLARE
+				"project" text;
+			BEGIN
+
+				"project" = "GetString"\('Views_Registers_Project_Sql'\, \#param\(locale\)\);
+
+				RETURN QUERY
+				SELECT
+					\#if\(Normal\) \{
+					"mi"."ID" AS "DocID"\,
+					"mi"."FullNumber" AS "DocNumber"\,
+					coalesce\("mi"."DocTypeTitle"\, "i"."TypeCaption"\) AS "TypeName"\,
+					"mi"."Subject" AS "DocSubject"\,
+					COALESCE\("mi"."FullNumber"\, ''\) || '\, ' || COALESCE\("mi"."Subject"\, ''\) AS "DocDescription"\,	-- autocomplete
+					"mi"."PartnerID"\,
+					"mi"."PartnerName"\,
+					"mi"."AuthorID"\,
+					"mi"."AuthorName"\,
+					"mi"."RegistratorID"\,
+					"mi"."RegistratorName"\,
+					"mi"."DocDate"\,
+					CAST\("mi"."CreationDate" AS date\) AS "CreationDate"\,
+					"mi"."DepartmentName" AS "Department"\,
+					COALESCE\("fd"."StateName"\, "project"\) AS "FdState"
+					\}
+					\#if\(Count\) \{
+					count\(*\) AS "cnt"
+					\}
+				FROM "DocumentCommonInfo" AS "mi"
+				inner join "Instances" as "i"
+					on "mi"."ID" = "i"."ID"
+				LEFT JOIN "FdSatelliteCommonInfo" AS "fd"
+					ON "fd"."MainCardId" = "mi"."ID"
+				\#if \(ProcessTemplateID\) \{
+				inner join 
+				\(
+					select "fsci"."MainCardId"
+					from "FdSatelliteCommonInfo" as "fsci"
+					inner join "FdProcessInstances" as "fpi" on "fsci"."ID" = "fpi"."ID"
+					where 
+						"fpi"."BasedOnProcessTemplateID" = \#param\(ProcessTemplateID\)
+							\#param\(ProcessStateID\, "fpi"."StateID"\)
+					group by "fsci"."MainCardId"
+				\) as "fsci" on "mi"."ID" = "fsci"."MainCardId"
+			    \}
+				WHERE true
+						\#param\(Partner\, "mi"."PartnerID"\)
+						\#param\(Number\, "mi"."FullNumber"\)
+						\#param\(Subject\, "mi"."Subject"\)
+						\#param\(DocDate\, "mi"."DocDate"\)
+						\#if\(Type\) \{
+						AND \(true \#param\(Type\, "mi"."DocTypeID"\) OR true \#param\(Type\, "mi"."CardTypeID"\)\)
+						\}
+						\#param\(Author\, "mi"."AuthorID"\)
+						\#param\(Registrator\, "mi"."RegistratorID"\)
+						\#param\(Department\, "mi"."DepartmentID"\)
+						\#param\(CreationDate\, "mi"."CreationDate"\)
+				\#if\(Normal\) \{
+				ORDER BY \#order_by
+				\}
+				\#if\(PageOffset\) \{
+				OFFSET \#param\(PageOffset\) - 1 LIMIT \#param\(PageLimit\)
+				\};
+			END;
+		}
+	}
+}

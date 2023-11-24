@@ -1,0 +1,257 @@
+﻿[
+  {
+    ".method::int": 2,
+    "Card": {
+      "Created::dtm": "2020-08-28T20:22:49.723Z",
+      "CreatedByID::uid": "11111111-1111-1111-1111-111111111111",
+      "CreatedByName": "System",
+      "Files": null,
+      "Flags::int": 0,
+      "ID::uid": "e0e133e3-b7d7-46bc-aa57-700a52c55b02",
+      "Info": {
+        ".satellite_krProcess": {
+          "Created::dtm": "2020-09-28T11:41:49.6Z",
+          "CreatedByID::uid": "b437522f-509a-460d-b44b-3c528d8ba7d6",
+          "CreatedByName": "Пятибратова А.В.",
+          "Files": null,
+          "Flags::int": 0,
+          "ID::uid": "a01dbd07-6f76-4cc5-9395-346dfbddd083",
+          "Info": null,
+          "Modified::dtm": "2020-09-28T11:41:49.6Z",
+          "ModifiedByID::uid": "b437522f-509a-460d-b44b-3c528d8ba7d6",
+          "ModifiedByName": "Пятибратова А.В.",
+          "Permissions": {
+            "CardPermissions::int": 87381,
+            "FilePermissions": null,
+            "Sections": null
+          },
+          "Sections": {
+            "KrActiveTasks": {
+              ".table::int": 1,
+              "Rows": null
+            },
+            "KrApprovalCommonInfo": {
+              "Fields": {
+                "ApprovedBy": null,
+                "AuthorComment": null,
+                "AuthorID": null,
+                "AuthorName": null,
+                "CurrentApprovalStageRowID": null,
+                "CurrentHistoryGroup": null,
+                "DisapprovedBy": null,
+                "Info": null,
+                "MainCardID::uid": "e0e133e3-b7d7-46bc-aa57-700a52c55b02",
+                "NestedWorkflowProcesses": null,
+                "StateChangedDateTimeUTC": null,
+                "StateID::int": 0,
+                "StateName": "$KrStates_Doc_Draft"
+              }
+            },
+            "KrApprovalHistory": {
+              ".table::int": 1,
+              "Rows": null
+            },
+            "KrStages": {
+              ".table::int": 1,
+              "Rows": null
+            },
+            "WorkflowCounters": {
+              ".table::int": 1,
+              "Rows": null
+            },
+            "WorkflowProcesses": {
+              ".table::int": 1,
+              "Rows": null
+            },
+            "WorkflowTasks": {
+              ".table::int": 1,
+              "Rows": null
+            }
+          },
+          "TaskHistory": null,
+          "TaskHistoryGroups": null,
+          "Tasks": null,
+          "Topics": null,
+          "TypeCaption": "$CardTypes_TypesNames_KrSatellite",
+          "TypeID::uid": "4115f07e-0aaa-4563-a749-0450c1a850af",
+          "TypeName": "KrSatellite",
+          "Version::int": 1
+        }
+      },
+      "Modified::dtm": "2020-09-28T11:41:49.583Z",
+      "ModifiedByID::uid": "b437522f-509a-460d-b44b-3c528d8ba7d6",
+      "ModifiedByName": "Пятибратова А.В.",
+      "Permissions": null,
+      "Sections": {
+        "FmAddTopicInfoVirtual": {
+          "Fields": {
+            "Description": null,
+            "Title": null
+          }
+        },
+        "FmTopicParticipantsInfoVirtual": {
+          "Fields": {
+            "IsModerator": false,
+            "ReadOnly": false
+          }
+        },
+        "FmTopicParticipantsVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "FmTopicRoleParticipantsInfoVirtual": {
+          "Fields": {
+            "IsSubscribe": false,
+            "ReadOnly": false
+          }
+        },
+        "KrActiveTasksVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrAdditionalApprovalInfoUsersCardVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrAdditionalApprovalUsersCardVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrApprovalCommonInfoVirtual": {
+          "Fields": {
+            "ApprovedBy": null,
+            "AuthorComment": null,
+            "AuthorID": null,
+            "AuthorName": null,
+            "CurrentApprovalStageRowID": null,
+            "DisapprovedBy": null,
+            "MainCardID": null,
+            "StateChangedDateTimeUTC": null,
+            "StateID::int": 0,
+            "StateName": "$KrStates_Doc_Draft"
+          }
+        },
+        "KrApprovalHistoryVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrDialogButtonSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrForkNestedProcessesSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrForkSecondaryProcessesSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPerformersVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrStagesVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrUniversalTaskOptionsSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "PnrOrganizations": {
+          "Fields": {
+            "Abbreviation": "ПС",
+            "ActionStatus": null,
+            "Address": "109263, г. Москва, ул. Чистова, \nд. 16, корп. 2, пом. V ",
+            "AuthorityFSGSCode": null,
+            "AuthorityPFRCode": null,
+            "Bank": "ПАО Сбербанк",
+            "BIK": "044525225",
+            "CertificateAuthorityCode": null,
+            "CertificateAuthorityName": null,
+            "CertificateSeriesNumber": "40702810838000107198",
+            "ChiefAccountantID::uid": "25adeaa4-8db7-4593-abe7-ce6e77b83525",
+            "ChiefAccountantName": "Любимов Д.В.",
+            "ChiefAccountantProcessID::uid": "b5269852-26f6-47da-aeed-eb1994bb4b82",
+            "ChiefAccountantProcessName": "Палабугина Ж.Л.",
+            "ContactInformation": null,
+            "CorrespondentAccount": "30101810400000000225",
+            "CountryPermanentResidenceID": null,
+            "CountryPermanentResidenceName": null,
+            "CountryRegistrationID": null,
+            "CountryRegistrationName": null,
+            "FaxNumber": "8(495) 212-10-60",
+            "ForeignOrganization": null,
+            "ForeignOrganizationName": null,
+            "FullName": "Общество с ограниченной ответственностью \"ПИОНЕР-СЕРВИС\"",
+            "GeneralDirectorID": null,
+            "GeneralDirectorName": null,
+            "GroupDocuments": "УК ПС",
+            "HeadLegalEntityDative": "Д.В. Любимову",
+            "HeadLegalEntityGenitive": "Любимова Дмитрия Владимировича",
+            "HeadLegalEntityID::uid": "25adeaa4-8db7-4593-abe7-ce6e77b83525",
+            "HeadLegalEntityName": "Любимов Д.В.",
+            "Idx": "109263",
+            "INN": "7704354231",
+            "INNBank": null,
+            "IsHidden": null,
+            "IssueDate": null,
+            "KPP": "772301001",
+            "LegalEntityIndex": "08",
+            "MDMKey": "07119f7a-12ca-11e6-94c6-005056bf03bd",
+            "Name": "ООО ПИОНЕР-СЕРВИС",
+            "OGRN": null,
+            "OKATO": "45286590000",
+            "OKFSCode": "16",
+            "OKFSName": null,
+            "OKOGU": "4210014",
+            "OKOPFCode": "12300",
+            "OKOPFName": null,
+            "OKPO": "02085621",
+            "OKPOCode": null,
+            "OKTMO": "45383000000",
+            "OKVEDCode": "70.22, 64.99, 68.10, 68.10.11, 68.10.12, 68.10.22, 68.10.23, 68.20, 68.20.2, 68.31, 68.31.1, 68.31.11, 68.31.2, 68.31.21, 68.31.",
+            "OKVEDCode2": null,
+            "OKVEDName": null,
+            "OKVEDName2": null,
+            "PartnerID::uid": "2a5e5c4a-9dad-4f7b-a870-2019a0af24fb",
+            "PartnerName": "ПИОНЕР-СЕРВИС ООО",
+            "PartnerType": "ООО",
+            "PositionHeadLegalEntity": "Директор",
+            "PositionHeadLegalEntityDative": "Директору",
+            "PositionHeadLegalEntityGenitive": "Директора",
+            "Prefix": null,
+            "ReferencePosition": null,
+            "RegistrationDate": null,
+            "RegistrationNumberFSS": null,
+            "RegistrationNumberPFR": null,
+            "RegistryCard": "1",
+            "Removed": null,
+            "SettlementAccount": null,
+            "ShortName": null,
+            "SubordinationCodeFSS": null,
+            "TaxAuthorityCode": null,
+            "TaxAuthorityName": null,
+            "TerritorialAuthorityFSSName": null,
+            "TerritorialAuthorityPFRName": null,
+            "Website": "www.pioneer.ru",
+            "WorkPhone": "8(495) 212-10-60"
+          }
+        }
+      },
+      "TaskHistory": null,
+      "TaskHistoryGroups": null,
+      "Tasks": null,
+      "Topics": null,
+      "TypeCaption": "Организация",
+      "TypeID::uid": "a668f7ea-efcd-47f0-a3c7-c4d1e7ed0bc8",
+      "TypeName": "PnrOrganization",
+      "Version::int": 0
+    },
+    "FileMapping": null,
+    "Info": {
+      ".importVersion::int": 2
+    }
+  }
+]

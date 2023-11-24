@@ -1,0 +1,157 @@
+#tessa_exchange_format(Version:1, CreationTime:2020-12-09T16\:15\:53) {
+	#exchange_view(RowID:306da52c-e688-4abf-bd05-b42444d131eb, Alias:PnrProjects, Caption:Проекты, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2020-12-09T15\:37\:17, GroupName:Pnr) {
+		#metadata {
+			#view(DefaultSortColumn: ProjectName, QuickSearchParam: Name, DefaultSortDirection: asc, RowCountSubset: Count, Paging: always, PageLimit: 20)
+			#column(Alias: ProjectID, Hidden: true)
+			#column(Alias: ProjectName, Caption: Название, Hidden: false, SortBy: tt.ProjectName)
+			#column(Alias: ProjectCode, Caption: Код, Hidden: false, SortBy: tt.ProjectCode)
+			#column(Alias: Description, Caption: Описание, Hidden: false, SortBy: tt.Description)
+			#column(Alias: EndDate, Caption: Дата окончания, Hidden: false, SortBy: tt.EndDate)
+			#column(Alias: ParentProjectID, Hidden: true)
+			#column(Alias: ParentProjectName, Caption: Родительский проект, Hidden: false, SortBy: tt.ParentProjectName)
+			#column(Alias: ProjectManagerID, Hidden: true)
+			#column(Alias: ProjectManagerName, Caption: Руководитель проекта, Hidden: false, SortBy: tt.ProjectManagerName)
+			#column(Alias: EstimatorID, Hidden: true)
+			#column(Alias: EstimatorName, Caption: Сметчик, Hidden: false, SortBy: tt.EstimatorName)
+			#column(Alias: GIPID, Hidden: true)
+			#column(Alias: GIPName, Caption: ГИП, Hidden: false, SortBy: tt.GIPName)
+			#column(Alias: ProjectAdministratorID, Hidden: true)
+			#column(Alias: ProjectAdministratorName, Caption: Администратор проекта, Hidden: false, SortBy: tt.ProjectAdministratorName)
+			#column(Alias: ProjectEconomistID, Hidden: true)
+			#column(Alias: ProjectEconomistName, Caption: Экономист проекта, Hidden: false, SortBy: tt.ProjectEconomistName)
+			#column(Alias: MDMKey, Caption: MDM-Key, Hidden: true, SortBy: tt.MDMKey)
+			#column(Alias: ProjectInArchive, Caption: В архиве, Hidden: true, SortBy: tt.InArchive)
+			#column(Alias: rn, 			Caption: Номер строки, 	Hidden: true)
+			#param(Alias: IsHidden, Caption: Скрыт при выборе, Hidden: false, Type: $PnrProjects.IsHidden, Multiple: true)
+			#param(Alias: Name, Caption: Название, Hidden: false, Type: nvarchar, Multiple: true)
+			#param(Alias: Code, Caption: Код, Hidden: false, Type: nvarchar, Multiple: true)
+			#param(Alias: ProjID, Caption: Проект, Hidden: true, Type: $PnrProjects.ID)
+			#param(Alias: ParentProjID, Caption: Родительский проект, Hidden: true, Multiple: true, Type: $PnrProjects.ParentProjectID, RefSection: PnrProjects) {
+				#autocomplete(View: PnrProjects, Param: Name, PopupColumns: 1 3 5)
+			}
+			#reference(ColPrefix: Project, RefSection: PnrProjects, DisplayValueColumn: ProjectName, IsCard: true, OpenOnDoubleClick: true)
+			#subset(Alias: ByProj, Caption: Структура проектов, Kind: Tree, RefParam: ProjID, TreeRefParam: ParentProjID, RefColumn: ProjectID, CaptionColumn: ProjectName, CountColumn: cnt, TreeHasChildrenColumn: HasChildren)
+			#subset(Alias: Count)
+		}
+		#description {}
+		#ms_query {
+			\#if\(ProjID\) \{ 
+			DECLARE @AllTreeElements TABLE\(ID uniqueidentifier\);
+
+			WITH
+			AboveTreeElements \(ID\, ParentProjectID\) -- Элементы иерархии вверх по дереву
+			AS \(
+				SELECT ID\, ParentProjectID 
+				FROM [PnrProjects] 
+				WHERE id = \#param\(ProjID\)
+				UNION ALL
+				SELECT [PnrProjects].ID\, [PnrProjects].ParentProjectID
+				FROM [PnrProjects] 
+				JOIN AboveTreeElements 
+				ON [PnrProjects].ID = AboveTreeElements.ParentProjectID
+				\)
+			INSERT INTO @AllTreeElements
+				SELECT p.ID
+				FROM AboveTreeElements
+				JOIN PnrProjects p 
+				ON AboveTreeElements.ID=p.ID;
+
+			WITH
+			UnderTreeElements \(ID\, ParentProjectID\) -- Элементы иерархии вниз по дереву
+			AS \(
+				SELECT ID\, ParentProjectID 
+				FROM [PnrProjects] 
+				WHERE id = \#param\(ProjID\)
+				UNION ALL
+				SELECT [PnrProjects].ID\, [PnrProjects].ParentProjectID
+				FROM [PnrProjects] 
+				JOIN UnderTreeElements 
+				ON [PnrProjects].ParentProjectID = UnderTreeElements.ID
+				\)
+			INSERT INTO @AllTreeElements
+				SELECT p.ID
+				FROM UnderTreeElements
+				JOIN PnrProjects p 
+				ON UnderTreeElements.ID=p.ID;
+			\}
+			 
+			 SELECT tt.*
+
+			FROM
+			\(
+				select
+					tt.*
+					\#if\(normal\) \{
+						\, row_number\(\) over \(order by \#order_by\) as rn
+				    \}
+				from
+					\(SELECT 
+				\#if\(Count\) \{ 
+					count\(*\)									as [cnt]
+				\}
+				\#if\(normal\) \{
+					t.ID as ProjectID\,
+				    t.Name as ProjectName\,
+				    t.Code as ProjectCode\,
+				    t.Description\,
+				    t.EndDate\,
+				    t.ParentProjectID\,
+				    t.ParentProjectName\,
+				    t.ProjectManagerID\,
+				    t.ProjectManagerName\,
+				    t.EstimatorID\,
+				    t.EstimatorName\,
+				    t.GIPID\,
+				    t.GIPName\,
+				    t.ProjectAdministratorID\,
+				    t.ProjectAdministratorName\,
+				    t.ProjectEconomistID\,
+				    t.ProjectEconomistName\,
+				    t.MDMKey\,
+				    t.InArchive as ProjectInArchive
+				    \}
+				\#if\(ByProj\) \{
+					[t].[ID]								AS [ProjectID]\,
+					[t].[Name]								AS [ProjectName]\,
+					\(
+						SELECT count\(*\)
+						FROM [PnrProjects] AS [ru] WITH \(NOLOCK\)
+						WHERE [ru].[ParentProjectID] = [t].[ID]
+					\) AS [cnt]\,
+					CASE WHEN EXISTS \(
+						SELECT NULL
+						FROM [PnrProjects] AS [r] WITH \(NOLOCK\)
+						WHERE [r].[ParentProjectID] = [t].[ID]
+							\)
+						THEN CAST\(1 AS bit\)
+						ELSE CAST\(0 AS bit\)
+					END AS [HasChildren]
+					\}
+				from PnrProjects t with\(nolock\)
+				where 1=1
+
+					
+					\#if\(ProjID\) \{ AND [t].[ID] IN \(SELECT * FROM @AllTreeElements\) \}
+							\#param\(ParentProjID\, [t].[ParentProjectID]\)
+				    \#param_expr\(Name\, t.Name\)
+				    \#param_expr\(Code\, t.Code\)
+				    /* Для отображения скрытых при выборе записей */
+				    \#if\(IsHidden\)
+				    \{ \#param\(IsHidden\, t.IsHidden\) \}
+				    \{ AND \(t.IsHidden is null OR t.IsHidden = 0\) \}
+				    \) as [tt]
+			\) as [tt]
+			\#if\(PageOffset\) \{
+			WHERE \([tt].[rn] >= \#param\(PageOffset\) AND [tt].[rn] < \(\#param\(PageOffset\) + \#param\(PageLimit\)\)\) -- or tt.ParentProjectID is not null
+			\}
+			\#if\(ByProj\) \{
+			ORDER BY [tt].[ProjectName]
+			\}
+			\#if\(normal\) \{
+			order by \#order_by
+			\}
+		}
+		#pg_query {}
+		#role(RoleID:7ff52dc0-ff6a-4c9d-ba25-b562c370004d, ViewID:306da52c-e688-4abf-bd05-b42444d131eb) 
+	}
+}

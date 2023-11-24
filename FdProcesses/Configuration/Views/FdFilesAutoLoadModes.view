@@ -1,0 +1,61 @@
+#tessa_exchange_format(Version:1, CreationTime:2019-11-08T13\:43\:17) {
+	#exchange_view(RowID:2b8a5b8a-9ef1-4af8-b731-690e29ca6116, Alias:FdFilesAutoLoadModes, Caption:Режимы автозагрузки файлов, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2019-11-07T15\:06\:04, GroupName:Fd Awf) {
+		#metadata {
+			#view(DefaultSortColumn: AutoLoadModeID, Paging: always, PageLimit: 10, RowCountSubset: Count, QuickSearchParam: Name)
+
+			#column(Alias: AutoLoadModeID, Caption: ID, Type: Int32, Hidden: true, SortBy: alm.ID)
+			#column(Alias: AutoLoadModeName, Caption: Название, Type: String, SortBy: alm.Name)
+			#column(Alias: rn, Type: Int64, Hidden: true)
+
+			#param(Alias: Name, Caption: Название, Hidden: false, Type: String, Multiple: false)
+
+			#reference(ColPrefix: AutoLoadMode, RefSection: FdFilesAutoLoadModes, DisplayValueColumn: AutoLoadModeName, IsCard: true, OpenOnDoubleClick: true)
+
+			#subset(Alias: Count)
+		}
+		#description {}
+		#ms_query {
+			select *
+			from
+			\(
+				SELECT 
+					\#if\(Normal\)\{
+						alm.[ID] as AutoLoadModeID
+					      \,alm.[Name] as AutoLoadModeName
+					      \,row_number\(\) over \(order by \#order_by\) as rn
+				      \}
+				      \#if\(Count\)\{
+				      		count\(*\) as cnt
+				      \}
+				  FROM [FdFilesAutoLoadModes] alm with\(nolock\)
+				  where 1=1
+					  \#param\(Name\, alm.Name\)
+			  \) t
+			  
+			  
+			  \#if\(PageOffset\) \{
+				where rn >= \#param\(PageOffset\) and rn < \(\#param\(PageOffset\) + \#param\(PageLimit\)\)
+			\}
+		}
+		#pg_query {
+			SELECT 
+			\#if\(Normal\)\{
+				"alm"."ID" 		as "AutoLoadModeID"\,
+				"alm"."Name" 	as "AutoLoadModeName"\,
+				0\:\:int8 		as "rn"
+			\}
+			\#if\(Count\)\{
+				count\(*\) as "cnt"
+			\}
+			FROM "FdFilesAutoLoadModes" "alm"
+			where true
+				\#param\(Name\, "alm"."Name"\)
+			\#if\(Normal\) \{
+			ORDER BY \#order_by
+			\}
+			\#if\(PageOffset\) \{
+			OFFSET \#param\(PageOffset\) - 1 LIMIT \#param\(PageLimit\)
+			\}
+		}
+	}
+}

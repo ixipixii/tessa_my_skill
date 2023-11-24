@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "es6",
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "sourceMap": true,
+    "outDir": "ts-build",
+    "jsx": "preserve",
+    "strictNullChecks": true,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+    "experimentalDecorators": true,
+    "paths": {
+      "common": ["dts/common"],
+      "common/*": ["dts/common/*"],
+      "ui": ["dts/ui"],
+      "ui/*": ["dts/ui/*"],
+      "components": ["dts/components"],
+      "components/*": ["dts/components/*"],
+      "tessa": ["dts/tessa"],
+      "tessa/*": ["dts/tessa/*"]
+    }
+  },
+  "include": [
+    "dts/global.d.ts",
+    "src",
+    "src/PnrScripts"
+  ],
+  "exclude": [
+    "node_modules",
+    "ts-build"
+  ]
+}

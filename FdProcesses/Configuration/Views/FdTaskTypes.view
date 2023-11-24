@@ -1,0 +1,78 @@
+#tessa_exchange_format(Version:1, CreationTime:2019-11-08T13\:43\:17) {
+	#exchange_view(RowID:bd73f78a-2dbe-49ca-aad0-9cbaaed3e03b, Alias:FdTaskTypes, Caption:Типы заданий, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2019-11-07T14\:53\:55, GroupName:Fd Awf) {
+		#metadata {
+			#view(DefaultSortColumn: TypeCaption, DefaultSortDirection: asc, Paging: always, RowCountSubset: Count, QuickSearchParam: Caption)
+			#column(Alias: TypeID, Type: Guid, Hidden: true)
+			#column(Alias: TypeCaption, Caption: $Views_TaskTypes_Name, Type: String, SortBy: locCaption.Value, Localizable: true)
+			#column(Alias: TypeName, Caption: $Views_TaskTypes_Alias, Type: String, SortBy: t.Name)
+			#column(Alias: rn, Type: Int64, Hidden: true)
+			#param(Alias: Caption, Caption: $Views_TaskTypes_Name_Param, Hidden: false, Type: String, Multiple: true)
+			#param(Alias: Name, Caption: $Views_TaskTypes_Alias_Param, Hidden: false, Type: String, Multiple: true)
+			#reference(ColPrefix: Type, RefSection: FdTaskTypes, DisplayValueColumn: TypeCaption, IsCard: false, OpenOnDoubleClick: false)
+			#subset(Alias: Count)
+		}
+		#description {}
+		#ms_query {
+			select
+				t.*
+			from
+			\(
+				select
+					\#if\(Normal\) \{
+					t.ID as TypeID\, 
+					t.Caption as TypeCaption\,
+					t.Name as TypeName\,
+					row_number\(\) over \(order by \#order_by\) as rn
+					\}
+					\#if\(Count\) \{
+					count\(*\) as cnt
+					\}
+				from Types t with\(nolock\)
+				\#if\(Caption || Normal && request.SortedBy\("TypeCaption"\)\) \{
+				cross apply dbo.Localization\(t.Caption\, \#param\(locale\)\) locCaption
+				\}
+				where
+					-- Проверяем что тип не hidden
+					\(t.Definition.value\('\(/cardType/@flags\)[1]'\, 'int'\) & 16\) = 0
+					and t.Definition.value\('\(/cardType/@type\)[1]'\, 'int'\) = 2
+					--and t.Definition.value\('\(/cardType/@group\)[1]'\, 'nvarchar\(100\)'\) = 'FdProcess'
+					\#param\(Name\, t.Name\)
+					\#param\(Caption\, locCaption.Value\)
+			\) t
+			\#if\(PageOffset\) \{
+			where t.rn >= \#param\(PageOffset\) and t.rn < \(\#param\(PageOffset\) + \#param\(PageLimit\)\)
+			\}
+			\#if\(Normal\) \{
+			order by t.rn
+			\}
+		}
+		#pg_query {
+			select
+				\#if\(Normal\) \{
+				"t"."ID" 		as "TypeID"\, 
+				"t"."Caption" 	as "TypeCaption"\,
+				"t"."Name" 		as "TypeName"\,
+				0\:\:int8 		as "rn"
+				\}
+				\#if\(Count\) \{
+				count\(*\) as "cnt"
+				\}
+			from "Types" "t"
+			\#if\(Caption || Normal && request.SortedBy\("TypeCaption"\)\) \{
+			cross join "Localization"\("t"."Caption"\, \#param\(locale\)\) "locCaption"
+			\}
+			where
+				-- Проверяем что тип не hidden
+				\(\(xpath\('/cardType/@flags'\, "t"."Definition"\)\)[1]\:\:text\:\:int & 16\) = 0
+				and \(xpath\('/cardType/@type'\, "t"."Definition"\)\)[1]\:\:text\:\:int = 2
+				\#param\(Name\, "t"."Name"\)
+				\#param\(Caption\, "locCaption"."Value"\)
+			\#if\(Normal\) \{
+			ORDER BY \#order_by
+			\}
+			\#if\(PageOffset\) \{
+			OFFSET \#param\(PageOffset\) - 1 LIMIT \#param\(PageLimit\)
+			\}
+		}
+	}
+}

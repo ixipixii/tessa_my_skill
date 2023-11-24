@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="Tessa.Extensions.Default.Client.Workplaces.TreeItemFilteringSettingsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:w="clr-namespace:Tessa.Extensions.Default.Client.Workplaces"
+             xmlns:markup="clr-namespace:Tessa.UI.Markup;assembly=Tessa.UI"
+             mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance d:Type={x:Type w:TreeItemFilteringSettingsViewModel},
+                                                   IsDesignTimeCreatable=False}"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Margin="3,7,3,2" Text="{markup:Localize WorkplaceFilteringExtension_RefSections}"/>
+            <w:StringsEditorView Grid.Row="1" DataContext="{Binding RefSections, Mode=OneTime}"/>
+        </Grid>
+        
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Margin="3,17,3,2" Text="{markup:Localize WorkplaceFilteringExtension_Parameters}"/>
+            <w:StringsEditorView Grid.Row="1" DataContext="{Binding Parameters, Mode=OneTime}"/>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,332 @@
+#tessa_exchange_format(Version:1, CreationTime:2020-11-11T13\:20\:36) {
+	#exchange_view(RowID:8b68754e-19c8-0984-aac8-51d8908acecf, Alias:Users, Caption:Сотрудники, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2020-11-11T13\:16\:53, GroupName:System) {
+		#metadata {
+			#view(DefaultSortColumn: UserName, DefaultSortDirection: asc, Paging: always, RowCountSubset: Count, MultiSelect: true, QuickSearchParam: Name)
+			#column(Alias: UserID, Hidden: true, Type: $Roles.ID)
+			#column(Alias: UserName, Caption: $Views_Users_Name, Type: $PersonalRoles.Name, SortBy: t.Name)
+			#column(Alias: Email, Caption: $Views_Users_Email, Type: $PersonalRoles.Email)
+			#column(Alias: Position, Caption: $Views_Users_Position, Type: $PersonalRoles.Position)
+			#column(Alias: Departments, Caption: $Views_Users_Departments, Type: String)
+			#column(Alias: StaticRoles, Caption: $Views_Users_StaticRoles, Type: String)
+			#param(Alias: Name, Caption: $Views_Users_Name_Param, Multiple: true, Type: $RoleUsers.UserName)
+			#param(Alias: RoleID, Caption: $Views_Users_Role_Param, Type: $RoleUsers.ID, RefSection: DurableRoles, AllowedOperands: Equality NonEquality, Hidden: true) {
+				#autocomplete(View: DurableRoles, Param: Name, RefPrefix: Role, PopupColumns: 1 3)
+			}
+			#param(Alias: DepartmentRoleID, Caption: Входит в подразделение, Hidden: true, Type: $RoleUsers.ID, RefSection: DurableRoles, AllowedOperands: Equality)
+			#param(Alias: StaticRoleID, Caption: Входит в статическую роль, Hidden: true, Type: $RoleUsers.ID, RefSection: DurableRoles, AllowedOperands: Equality)
+			#param(Alias: ParentRoleID, Caption: $Views_Users_ParentRole_Param, Hidden: true, Type: $Roles.ParentID)
+			#reference(ColPrefix: User, RefSection: Roles DurableRoles PersonalRoles PnrUsers, DisplayValueColumn: UserName, IsCard: true, OpenOnDoubleClick: true)
+			#subset(Alias: ByDepartment, Caption: $Views_Users_ByDepartment_Param, Kind: Tree, RefParam: DepartmentRoleID, TreeRefParam: ParentRoleID, RefColumn: RoleID, CaptionColumn: RoleName, CountColumn: cnt, TreeHasChildrenColumn: HasChildren)
+			#subset(Alias: ByStaticRole, Caption: $Views_Users_ByStaticRole_Param, Kind: Tree, RefParam: StaticRoleID, TreeRefParam: ParentRoleID, RefColumn: RoleID, CaptionColumn: RoleName, CountColumn: cnt, TreeHasChildrenColumn: HasChildren)
+			#subset(Alias: Count)
+		}
+		#description {}
+		#ms_query {
+			SELECT
+				\#if\(Normal\) \{
+				[t].[ID]					AS [UserID]\,
+				[pr].[Name]					AS [UserName]\,
+				[pr].[Email]\,
+				[pr].[Position]\,
+				STUFF\(\(
+					SELECT N'\, ' + [r].[Name]
+					FROM [RoleUsers] AS [ru] WITH \(NOLOCK\)
+					INNER JOIN [Roles] AS [r] WITH \(NOLOCK\)
+						ON [r].[ID] = [ru].[ID]
+						AND [r].[TypeID] = 2
+					WHERE [ru].[UserID] = [t].[ID]
+					ORDER BY [r].[Name]
+					FOR XML PATH\, TYPE
+				\).value\(N'.[1]'\, N'nvarchar\(max\)'\)\, 1\, 2\, N''\) AS [Departments]\,
+				STUFF\(\(
+					SELECT N'\, ' + [r].[Name]
+					FROM [RoleUsers] AS [ru] WITH \(NOLOCK\)
+					INNER JOIN [Roles] AS [r] WITH \(NOLOCK\)
+						ON [r].[ID] = [ru].[ID]
+						AND [r].[TypeID] = 0
+					WHERE [ru].[UserID] = [t].[ID]
+					ORDER BY [r].[Name]
+					FOR XML PATH\, TYPE
+				\).value\(N'.[1]'\, N'nvarchar\(max\)'\)\, 1\, 2\, N''\) AS [StaticRoles]
+				\} \{
+				[t].*
+				\}
+			FROM \(
+				SELECT
+					\#if\(Normal\) \{
+					[t].[ID]\,
+					row_number\(\) OVER \(ORDER BY \#order_by\) AS [rn]
+					\}
+					\#if\(ByDepartment || ByStaticRole\) \{
+					[t].[ID]	AS [RoleID]\,
+					[t].[Name]	AS [RoleName]\,
+					\(
+						SELECT count\(*\)
+						FROM [RoleUsers] AS [ru] WITH \(NOLOCK\)
+						WHERE [ru].[ID] = [t].[ID]
+							\#param\(Name\, [ru].[UserName]\)
+							\#if\(RoleID\) \{
+								\#if\(RoleID.CriteriaName == "Equality"\) \{
+							AND EXISTS \(
+								SELECT NULL
+								FROM [RoleUsers] AS [ru2] WITH \(NOLOCK\)
+								WHERE [ru2].[UserID] = [ru].[UserID]
+									\#param\(RoleID\, [ru2].[ID]\)\)
+								\}
+
+								\#if\(RoleID.CriteriaName == "NonEquality"\) \{
+							AND NOT EXISTS \(
+								SELECT NULL
+								FROM [RoleUsers] AS [ru2] WITH \(NOLOCK\)
+								WHERE [ru2].[UserID] = [ru].[UserID]
+									\#param\(RoleID\, [ru2].[ID]\)\)
+								\}
+							\}
+							\#if\(!ByDepartment && DepartmentRoleID\) \{
+							AND EXISTS \(
+								SELECT NULL
+								FROM [RoleUsers] AS [ru2] WITH \(NOLOCK\)
+								WHERE [ru2].[UserID] = [ru].[UserID]
+									\#param\(DepartmentRoleID\, [ru2].[ID]\)\)
+							\}
+							\#if\(!ByStaticRole && StaticRoleID\) \{
+							AND EXISTS \(
+								SELECT NULL
+								FROM [RoleUsers] AS [ru2] WITH \(NOLOCK\)
+								WHERE [ru2].[UserID] = [ru].[UserID]
+									\#param\(StaticRoleID\, [ru2].[ID]\)\)
+							\}
+					\)			AS [cnt]\,
+					CASE WHEN EXISTS \(
+							SELECT NULL
+							FROM [Roles] AS [r] WITH \(NOLOCK\)
+							WHERE [r].[ParentID] = [t].[ID]
+							\)
+						THEN CAST\(1 AS bit\)
+						ELSE CAST\(0 AS bit\)
+					END			AS [HasChildren]
+					\}
+					\#if\(Count\) \{
+					count\(*\) AS [cnt]
+					\}
+				FROM [Roles] AS [t] WITH \(NOLOCK\)
+				WHERE
+					\#if\(ByDepartment || ByStaticRole\) \{
+						-- тип роли [Подразделение] или [Статическая роль] в сабсете
+						\#if\(ByDepartment\) \{ [t].[TypeID] = 2 \} \{ [t].[TypeID] = 0 \}
+						\#param\(Role\, [t].[ID]\)
+						\#param\(ParentRoleID\, [t].[ParentID]\)
+					\} \{
+						-- тип роли [Сотрудник] в прочих случаях
+						[t].[TypeID] = 1
+						\#param\(Name\, [t].[Name]\)
+						\#if\(RoleID\) \{
+							\#if\(RoleID.CriteriaName == "Equality"\) \{
+						AND EXISTS \(
+							SELECT NULL
+							FROM [RoleUsers] AS [ru] WITH \(NOLOCK\)
+							WHERE [ru].[UserID] = [t].[ID]
+								\#param\(RoleID\, [ru].[ID]\)\)
+							\}
+
+							\#if\(RoleID.CriteriaName == "NonEquality"\) \{
+						AND NOT EXISTS \(
+							SELECT NULL
+							FROM [RoleUsers] AS [ru] WITH \(NOLOCK\)
+							WHERE [ru].[UserID] = [t].[ID]
+								\#param\(RoleID\, [ru].[ID]\)\)
+							\}
+						\}
+						\#if\(DepartmentRoleID\) \{
+						AND EXISTS \(
+							SELECT NULL
+							FROM [RoleUsers] AS [ru] WITH \(NOLOCK\)
+							WHERE [ru].[UserID] = [t].[ID]
+								\#param\(DepartmentRoleID\, [ru].[ID]\)\)
+						\}
+						\#if\(StaticRoleID\) \{
+						AND EXISTS \(
+							SELECT NULL
+							FROM [RoleUsers] AS [ru] WITH \(NOLOCK\)
+							WHERE [ru].[UserID] = [t].[ID]
+								\#param\(StaticRoleID\, [ru].[ID]\)\)
+						\}
+					\}
+					AND [t].[Hidden] = 0
+				\) AS [t]
+			\#if\(Normal\) \{
+			INNER JOIN [PersonalRoles] AS [pr] WITH \(NOLOCK\)
+				ON [pr].[ID] = [t].[ID]
+			\}
+			\#if\(PageOffset\) \{
+			WHERE [t].[rn] >= \#param\(PageOffset\) AND [t].[rn] < \(\#param\(PageOffset\) + \#param\(PageLimit\)\)
+			\}
+			\#if\(Normal\) \{
+			ORDER BY [t].[rn]
+			\}
+			\#if\(ByDepartment || ByStaticRole\) \{
+			ORDER BY [t].[RoleName]
+			\}
+		}
+		#pg_query {
+			SELECT
+				\#if\(Normal\) \{
+				"t"."ID"				AS "UserID"\,
+				"t"."Name"				AS "UserName"\,
+				"t"."Email"\,
+				"t"."Position"\,
+				\(
+					SELECT string_agg\("Name"\, '\, '\)
+					FROM \(
+						SELECT "r"."Name"
+						FROM "RoleUsers" AS "ru"
+						INNER JOIN "Roles" AS "r"
+							ON "r"."ID" = "ru"."ID"
+							AND "r"."TypeID" = 2
+						WHERE "ru"."UserID" = "t"."ID"
+						ORDER BY "r"."Name"\) AS "names"
+				\)						AS "Departments"\,
+				\(
+					SELECT string_agg\("Name"\, '\, '\)
+					FROM \(
+						SELECT "r"."Name"
+						FROM "RoleUsers" AS "ru"
+						INNER JOIN "Roles" AS "r"
+							ON "r"."ID" = "ru"."ID"
+							AND "r"."TypeID" = 0
+						WHERE "ru"."UserID" = "t"."ID"
+						ORDER BY "r"."Name"\) AS "names"
+				\)						AS "StaticRoles"
+				\} \{
+				"r".*
+				\}
+			FROM \(
+				SELECT
+					\#if\(Normal\) \{
+					"t"."ID"
+					\}
+					\#if\(ByDepartment || ByStaticRole\) \{
+					"t"."ID"	AS "RoleID"\,
+					"t"."Name"	AS "RoleName"\,
+					\(
+						SELECT count\(*\)
+						FROM "RoleUsers" AS "ru"
+						\#if\(!ShowHidden || ShowHidden.CriteriaName != "IsTrue"\) \{
+						INNER JOIN "Roles" AS "r"
+							ON "r"."ID" = "ru"."UserID"
+						\}
+						WHERE "ru"."ID" = "t"."ID"
+							\#param\(Name\, "ru"."UserName"\)
+							\#if\(!ShowHidden || ShowHidden.CriteriaName != "IsTrue"\) \{
+							AND "r"."Hidden" = false
+							\}
+							\#if\(RoleID\) \{
+								\#if\(RoleID.CriteriaName == "Equality"\) \{
+							AND EXISTS \(
+								SELECT NULL
+								FROM "RoleUsers" AS "ru2"
+								WHERE "ru2"."UserID" = "ru"."UserID"
+									\#param\(RoleID\, "ru2"."ID"\)\)
+								\}
+
+								\#if\(RoleID.CriteriaName == "NonEquality"\) \{
+							AND NOT EXISTS \(
+								SELECT NULL
+								FROM "RoleUsers" AS "ru2"
+								WHERE "ru2"."UserID" = "ru"."UserID"
+									\#param\(RoleID\, "ru2"."ID"\)\)
+								\}
+							\}
+							\#if\(!ByDepartment && DepartmentRoleID\) \{
+							AND EXISTS \(
+								SELECT NULL
+								FROM "RoleUsers" AS "ru2"
+								WHERE "ru2"."UserID" = "ru"."UserID"
+									\#param\(DepartmentRoleID\, "ru2"."ID"\)\)
+							\}
+							\#if\(!ByStaticRole && StaticRoleID\) \{
+							AND EXISTS \(
+								SELECT NULL
+								FROM "RoleUsers" AS "ru2"
+								WHERE "ru2"."UserID" = "ru"."UserID"
+									\#param\(StaticRoleID\, "ru2"."ID"\)\)
+							\}
+					\)			AS "cnt"\,
+					EXISTS \(
+						SELECT NULL
+						FROM "Roles" AS "r"
+						WHERE "r"."ParentID" = "t"."ID"
+							\#if\(!ShowHidden || ShowHidden.CriteriaName != "IsTrue"\) \{
+							AND "r"."Hidden" = false
+							\}
+					\)			AS "HasChildren"
+					\}
+					\#if\(Count\) \{
+					count\(*\) AS "cnt"
+					\}
+				FROM "Roles" AS "t"
+				WHERE
+					\#if\(ByDepartment || ByStaticRole\) \{
+						-- тип роли "Подразделение" или "Статическая роль" в сабсете
+						\#if\(ByDepartment\) \{ "t"."TypeID" = 2 \} \{ "t"."TypeID" = 0 \}
+						\#param\(Role\, "t"."ID"\)
+						\#param\(ParentRoleID\, "t"."ParentID"\)
+					\} \{
+						-- тип роли "Сотрудник" в прочих случаях
+						"t"."TypeID" = 1
+						\#param\(Name\, "t"."Name"\)
+						\#if\(RoleID\) \{
+							\#if\(RoleID.CriteriaName == "Equality"\) \{
+						AND EXISTS \(
+							SELECT NULL
+							FROM "RoleUsers" AS "ru"
+							WHERE "ru"."UserID" = "t"."ID"
+								\#param\(RoleID\, "ru"."ID"\)\)
+							\}
+
+							\#if\(RoleID.CriteriaName == "NonEquality"\) \{
+						AND NOT EXISTS \(
+							SELECT NULL
+							FROM "RoleUsers" AS "ru"
+							WHERE "ru"."UserID" = "t"."ID"
+								\#param\(RoleID\, "ru"."ID"\)\)
+							\}
+						\}
+						\#if\(DepartmentRoleID\) \{
+						AND EXISTS \(
+							SELECT NULL
+							FROM "RoleUsers" AS "ru"
+							WHERE "ru"."UserID" = "t"."ID"
+								\#param\(DepartmentRoleID\, "ru"."ID"\)\)
+						\}
+						\#if\(StaticRoleID\) \{
+						AND EXISTS \(
+							SELECT NULL
+							FROM "RoleUsers" AS "ru"
+							WHERE "ru"."UserID" = "t"."ID"
+								\#param\(StaticRoleID\, "ru"."ID"\)\)
+						\}
+						-- если параметр "показать скрытые" не задан или задан как не "да"\, то не будем отображать скрытые
+						\#if\(!ShowHidden || ShowHidden.CriteriaName != "IsTrue"\) \{
+						AND "t"."Hidden" = false
+						\}
+					\}
+				\#if\(Normal\) \{
+				ORDER BY \#order_by
+				\}
+				\#if\(PageOffset\) \{
+				OFFSET \#param\(PageOffset\) - 1 LIMIT \#param\(PageLimit\)
+				\}
+				\) AS "r"
+			\#if\(Normal\) \{
+			INNER JOIN "PersonalRoles" AS "t"
+				ON "t"."ID" = "r"."ID"
+			ORDER BY \#order_by
+			\}
+			\#if\(ByDepartment || ByStaticRole\) \{
+			ORDER BY "r"."RoleName"
+			\}
+		}
+		#role(RoleID:7ff52dc0-ff6a-4c9d-ba25-b562c370004d, ViewID:8b68754e-19c8-0984-aac8-51d8908acecf) 
+	}
+}

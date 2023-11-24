@@ -1,0 +1,172 @@
+﻿{
+  "Blocks": [],
+  "Caption": "Диалоги",
+  "CompletionOptions": [],
+  "DigestFormat": null,
+  "Extensions": [],
+  "Flags::int": 16,
+  "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+  "Forms": [
+    {
+      "Blocks": [
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": {
+            "AlwaysMultipleColumn": false,
+            "CollapsedByDefault": false,
+            "ColumnsCount::int": 1,
+            "DoNotCollapseWithTopBlock": false,
+            "HorizontalInterval::int": 5,
+            "IsHidden": false,
+            "VerticalInterval::int": 5
+          },
+          "Caption": "Основной блок",
+          "Controls": [
+            {
+              "BlockSettings": {
+                "ControlSpan": true,
+                "HideCaption": true
+              },
+              "Caption": "Этапы",
+              "Columns": [
+                {
+                  "AggregationFormat": "",
+                  "Alignment::int": 0,
+                  "Caption": "Этап",
+                  "ComplexColumnID::uid": "fb301778-a606-478c-aff5-656daf221fa1",
+                  "DisplayFormat": "{1}",
+                  "Flags::int": 0,
+                  "HeaderAlignment::int": 0,
+                  "MaxLength": null,
+                  "Order::int": 0,
+                  "OwnedComplexColumnID": null,
+                  "OwnedOrderColumnID": null,
+                  "OwnedPhysicalColumnIDList": [],
+                  "OwnedSectionID": null,
+                  "PhysicalColumnIDList": [],
+                  "SelectableControlName": "",
+                  "Separator": "",
+                  "ToolTipLineLength::int": 100
+                },
+                {
+                  "AggregationFormat": "",
+                  "Alignment::int": 0,
+                  "Caption": "Описание",
+                  "ComplexColumnID::uid": "fb301778-a606-478c-aff5-656daf221fa1",
+                  "DisplayFormat": "{2}",
+                  "Flags::int": 0,
+                  "HeaderAlignment::int": 0,
+                  "MaxLength": null,
+                  "Order::int": 1,
+                  "OwnedComplexColumnID": null,
+                  "OwnedOrderColumnID": null,
+                  "OwnedPhysicalColumnIDList": [],
+                  "OwnedSectionID": null,
+                  "PhysicalColumnIDList": [],
+                  "SelectableControlName": "",
+                  "Separator": "",
+                  "ToolTipLineLength::int": 100
+                },
+                {
+                  "AggregationFormat": "",
+                  "Alignment::int": 0,
+                  "Caption": "Тип задания",
+                  "ComplexColumnID::uid": "fb301778-a606-478c-aff5-656daf221fa1",
+                  "DisplayFormat": "{3}",
+                  "Flags::int": 0,
+                  "HeaderAlignment::int": 0,
+                  "MaxLength": null,
+                  "Order::int": 2,
+                  "OwnedComplexColumnID": null,
+                  "OwnedOrderColumnID": null,
+                  "OwnedPhysicalColumnIDList": [],
+                  "OwnedSectionID": null,
+                  "PhysicalColumnIDList": [],
+                  "SelectableControlName": "",
+                  "Separator": "",
+                  "ToolTipLineLength::int": 100
+                },
+                {
+                  "AggregationFormat": "",
+                  "Alignment::int": 0,
+                  "Caption": "Участники",
+                  "ComplexColumnID::uid": "fb301778-a606-478c-aff5-656daf221fa1",
+                  "DisplayFormat": "{4}",
+                  "Flags::int": 0,
+                  "HeaderAlignment::int": 0,
+                  "MaxLength": null,
+                  "Order::int": 3,
+                  "OwnedComplexColumnID": null,
+                  "OwnedOrderColumnID": null,
+                  "OwnedPhysicalColumnIDList": [],
+                  "OwnedSectionID": null,
+                  "PhysicalColumnIDList": [],
+                  "SelectableControlName": "",
+                  "Separator": "",
+                  "ToolTipLineLength::int": 100
+                }
+              ],
+              "ControlSettings": {
+                "AutoSizeRowLimit::int": 25,
+                "CanSort": true,
+                "IsMultiselectable": false,
+                "MaxHeight::int": 800,
+                "OrderColumnID": null
+              },
+              "ControlType::int": 1,
+              "Flags::int": 1,
+              "Form": {
+                "Blocks": [],
+                "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+                "FormSettings": {
+                  "Interval::int": 10
+                }
+              },
+              "Name": "FdStageTemplatesTable",
+              "Order::int": 0,
+              "RequiredText": "",
+              "SectionID::uid": "a14aa698-dd3c-49fd-89bb-52a2070d91fb",
+              "ToolTip": null,
+              "Type::uid": "b6038b72-342a-0c8d-ae2e-f2f3d122baa9"
+            }
+          ],
+          "FormSettings": {
+            "HideCaption": true
+          },
+          "Name": "MainBlock",
+          "Order::int": 0
+        }
+      ],
+      "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+      "FormSettings": {
+        "Interval::int": 10
+      },
+      "Name": "FdStageTemplatesTab",
+      "TabCaption": "Этапы",
+      "TabOrder::int": 1
+    }
+  ],
+  "FormSettings": {
+    "Interval::int": 10
+  },
+  "Group": "FdSystem",
+  "ID::uid": "38f636d6-d863-4c28-9a20-ab1dd23c3cf7",
+  "InstanceType::int": 0,
+  "Name": "FdDialogs",
+  "SchemeItems": [
+    {
+      "ColumnIDList": [
+        {
+          "::types": [
+            "uid"
+          ]
+        },
+        "fb301778-a606-478c-aff5-656daf221fa1"
+      ],
+      "SectionID::uid": "a14aa698-dd3c-49fd-89bb-52a2070d91fb"
+    }
+  ],
+  "TabCaption": "$CardTypes_Tabs_Card",
+  "TabOrder::int": 0,
+  "Validators": []
+}

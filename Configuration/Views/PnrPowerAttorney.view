@@ -1,0 +1,183 @@
+#tessa_exchange_format(Version:1, CreationTime:2021-01-18T10\:57\:52) {
+	#exchange_view(RowID:291d9be9-cdf9-4d38-a8b3-fa3307e07812, Alias:PnrPowerAttorney, Caption:Доверенности, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2021-01-18T10\:57\:39, GroupName:Pnr) {
+		#metadata {
+			#view(DefaultSortColumn: DocCreationDate, DefaultSortDirection: desc, Paging: always, RowCountSubset: Count, QuickSearchParam: Number)
+			#column(Alias: DocID, Hidden: true)
+			#column(Alias: DocNumber, Caption: №, Hidden: true, SortBy: d.Number)
+			#column(Alias: DocFullNumber, Caption: Номер, SortBy: d.FullNumber)
+			#column(Alias: PA_TypeID, Hidden: true)
+			#column(Alias: PA_TypeName, Caption: Тип доверенности, SortBy: t.TypeName)
+			#column(Alias: DocSubject, Caption: Тема, SortBy: d.Subject)
+			#column(Alias: PA_ProjectDate, Caption: Дата проекта, SortBy: t.ProjectDate, Type: Date)
+			#column(Alias: DocAuthorID, Hidden: true)
+			#column(Alias: DocAuthorName, Caption: Создал, SortBy: d.AuthorName)
+			#column(Alias: PA_OrganizationID, Hidden: true)
+			#column(Alias: PA_OrganizationName, Caption: Организация ГК Пионер, SortBy: t.OrganizationName)
+			#column(Alias: PA_DestinationID, Hidden: true)
+			#column(Alias: PA_DestinationName, Caption: Адресат, SortBy: t.DestinationName)
+			#column(Alias: InstModified, Caption: Изменено, SortBy: i.Modified, Type: Date)
+			#column(Alias: FdID, Hidden: true)
+			#column(Alias: FdMainCardId, Hidden: true)
+			#column(Alias: FdStateID, Hidden: true)
+			#column(Alias: FdStateName, Caption: Статус, SortBy: f.StateName)
+			#column(Alias: DocCreationDate, Caption: Дата создания, SortBy: d.CreationDate, Type: Date)
+			#column(Alias: PA_ID, Hidden: true)
+			#column(Alias: PA_ConfidantID, Hidden: true)
+			#column(Alias: PA_ConfidantName, Caption: Доверенное лицо, Hidden: true)
+			#column(Alias: PA_ConfidantNotEmployee, Caption: Доверенное лицо не сотрудник компании, Hidden: true)
+			#column(Alias: PA_Credentials, Caption: Полномочия по доверенности, Hidden: true)
+			#column(Alias: PA_StartDate, Caption: Дата начала, Hidden: true)
+			#column(Alias: PA_EndDate, Caption: Дата окончания, Hidden: true)
+			#column(Alias: PA_EmployeeID, Hidden: true)
+			#column(Alias: PA_EmployeeName, Caption: Сотрудник ГК Пионер, Hidden: true)
+			#column(Alias: PA_WriteOffID, Hidden: true)
+			#column(Alias: PA_WriteOffName, Caption: Списать в дело, Hidden: true)
+			#column(Alias: PA_WriteOffIndex, Caption: Индекс подразделения, Hidden: true)
+			#param(Alias: IsAuthor, Caption: Я создатель, Type: Boolean, AllowedOperands: IsTrue IsFalse)
+			#param(Alias: Organization, Caption: Организация ГК Пионер, Multiple: true, Type: Guid, RefSection: PnrOrganizationsWithHidden) {
+				#autocomplete(View: PnrOrganizationsWithHidden, Param: Name, PopupColumns: 1)
+			}
+			#param(Alias: Destination, Caption: Адресат, Multiple: true, Type: Guid, RefSection: Partners) {
+				#autocomplete(View: Partners, Param: Name, PopupColumns: 1 4)
+			}
+			#param(Alias: Number, Caption: Номер, Hidden: false, Type: String, Multiple: true)
+			#param(Alias: Subject, Caption: $Views_Registers_Subject_Param, Multiple: true, Type: $DocumentCommonInfo.Subject)
+			#param(Alias: ProjectDate, Caption: Дата проекта, Multiple: true, Type: Date)
+			#param(Alias: Confidant, Caption: Доверенное лицо, Multiple: true, Type: Guid, RefSection: PersonalRoles) {
+				#autocomplete(View: Users, Param: Name, PopupColumns: 1 4)
+			}
+			#param(Alias: Type, Caption: Тип доверенности, Multiple: true, Type: Guid, RefSection: PnrPowerAttorneyTypes) {
+				#autocomplete(View: PnrPowerAttorneyTypes, Param: Name, PopupColumns: 1)
+			}
+			#param(Alias: StartDate, Caption: Дата начала, Multiple: true, Type: Date)
+			#param(Alias: EndDate, Caption: Дата окончания, Multiple: true, Type: Date)
+			#param(Alias: Author, Caption: Создал, Multiple: true, Type: Guid, RefSection: PersonalRoles) {
+				#autocomplete(View: Users, Param: Name, PopupColumns: 1 4)
+			}
+			#param(Alias: State, Caption: Состояние, Hidden: false, Type: uniqueidentifier, RefSection: PnrFdCardStatesAttorney, Multiple: true, AllowedOperands: Equality NonEquality IsNull IsNotNull) {
+				#autocomplete(View: PnrFdCardStatesAttorney, Param: Name, PopupColumns: 1 2)
+				#dropdown(View: PnrFdCardStatesAttorney, PopupColumns: 1 2)
+			}
+			#param(Alias: CreationDate, Caption: Дата создания, Multiple: true, Type: DateTime)
+			#reference(ColPrefix: Doc, RefSection: DocumentCommonInfo, DisplayValueColumn: DocNumber, IsCard: true, OpenOnDoubleClick: true)
+			#reference(ColPrefix: PA_, RefSection: PnrPowerAttorney, DisplayValueColumn: PA_TypeName, IsCard: true, OpenOnDoubleClick: true)
+			#subset(Alias: ByState, Caption: По статусу, RefParam: State, RefColumn: StateID, CaptionColumn: StateName, CountColumn: SubCnt)
+			#subset(Alias: ByOrganization, Caption: По организации, RefParam: Organization, RefColumn: SubOrgID, CaptionColumn: SubOrgName, CountColumn: SubCnt)
+			#subset(Alias: Count)
+		}
+		#description {}
+		#ms_query {
+			\#var\(UseCommonInfo\: Normal || IsAuthor\)
+
+			select
+			    \#if\(Normal\) \{
+			    -- PA - PnrPowerAttorney
+			    t.ID						as PA_ID\,
+			    t.ProjectDate				as PA_ProjectDate\,
+			    t.OrganizationID			as PA_OrganizationID\,
+			    t.OrganizationName			as PA_OrganizationName\,
+			    t.ConfidantID				as PA_ConfidantID\,
+			    t.ConfidantName				as PA_ConfidantName\,
+			    t.ConfidantNotEmployee		as PA_ConfidantNotEmployee\,
+			    t.Credentials				as PA_Credentials\,
+			    t.DestinationID				as PA_DestinationID\,
+			    t.DestinationName			as PA_DestinationName\,
+			    t.StartDate					as PA_StartDate\,
+			    t.EndDate					as PA_EndDate\,
+			    t.EmployeeID				as PA_EmployeeID\,
+			    t.EmployeeName				as PA_EmployeeName\,
+			    t.TypeID					as PA_TypeID\,
+			    t.TypeName					as PA_TypeName\,
+			    t.WriteOffID				as PA_WriteOffID\,
+			    t.WriteOffName				as PA_WriteOffName\,
+			    t.WriteOffIdx				as PA_WriteOffIndex\,
+				-- Doc - DocumentCommonInfo
+				d.ID						as DocID\,
+			    d.Number					as DocNumber\,
+			    d.FullNumber				as DocFullNumber\,
+			    d.CreationDate				as DocCreationDate\,
+			    d.AuthorID					as DocAuthorID\,
+			    d.AuthorName				as DocAuthorName\,
+			    d.Subject					as DocSubject\,
+			    -- Fd - FdSatelliteCommonInfo
+			    f.ID						as FdID\,
+			    f.MainCardId				as FdMainCardId\,
+			    f.StateID					as FdStateID\,
+			    f.StateName					as FdStateName\,
+			    -- Inst - Instances
+			    i.Modified					as InstModified
+			    \}
+			    \#if\(Count | ByState| ByOrganization\)\{
+			    	[t2].*
+			    \}
+			from
+			\(
+			    select
+			        \#if\(Normal\) \{
+			        t.ID\,
+			        row_number\(\) over \(order by \#order_by\) as rn
+			        \}
+			        \#if\(Count\) \{
+			        count\(*\) as cnt
+			        \}
+			        \#if\(ByState\)\{
+			        	COALESCE\([f].[StateID]\, NULL\) 							as [StateID]\,
+			        	COALESCE\([f].[StateName]\, N'Не указано'\) 				as [StateName]\,
+			    		count\(*\)												AS [SubCnt]
+			    	\}
+			         \#if\(ByOrganization\)\{
+			        	COALESCE\([t].[OrganizationID]\, NULL\) 				as [SubOrgID]\,
+			        	COALESCE\([t].[OrganizationName]\, N'Не указана'\) 	as [SubOrgName]\,
+			    		count\(*\)												AS [SubCnt]
+			    	\}
+			    from PnrPowerAttorney t with\(nolock\)
+			    left join FdSatelliteCommonInfo f with\(nolock\) on f.MainCardId = t.ID
+			    left join DocumentCommonInfo d with\(nolock\) on d.ID = t.ID
+			    left join Instances i with\(nolock\) on i.ID = t.ID
+			    where d.CardTypeID = 'f9c07ae1-4e87-4cfe-8229-26ce6af5c326'
+			    	\#param\(Organization\, t.OrganizationID\)
+			    	\#param\(Destination\, t.DestinationID\)
+			        \#param\(Number\, d.FullNumber\)
+			        \#param\(Subject\, d.Subject\)
+			        \#param\(ProjectDate\, t.ProjectDate\)
+			        \#param\(Confidant\, t.ConfidantID\)
+			        \#param\(Type\, t.TypeID\)
+			        \#param\(StartDate\, t.StartDate\)
+			        \#param\(EndDate\, t.EndDate\)
+			        \#param\(Author\, d.AuthorID\)
+			        \#param\(State\, f.StateID\)
+			        \#param\(CreationDate\, d.CreationDate\)
+			        \#if\(IsAuthor\) \{
+			        	\#if\(IsAuthor.CriteriaName == "IsTrue"\)
+			        	\{
+			        		AND d.AuthorID = \#param\(CurrentUserID\)
+			        	\}
+			        	\{
+			        		AND \(d.AuthorID IS NULL OR d.AuthorID <> \#param\(CurrentUserID\)\)
+			        	\}
+			        \}
+			        \#if\(ByState\) \{
+						GROUP BY [f].[StateID]\, [f].[StateName]
+					\}
+			        \#if\(ByOrganization\) \{
+						GROUP BY [t].[OrganizationID]\, [t].[OrganizationName]
+					\}
+			\) t2
+			\#if\(Normal\) \{
+			left join PnrPowerAttorney t with\(nolock\) on t.ID = t2.ID
+			left join FdSatelliteCommonInfo f with\(nolock\) on f.MainCardId = t2.ID
+			left join DocumentCommonInfo d with\(nolock\) on d.ID = t2.ID
+			left join Instances i with\(nolock\) on i.ID = t2.ID
+			\}
+			\#if\(PageOffset\) \{
+			where t2.rn >= \#param_expr\(PageOffset\) and t2.rn < \(\#param_expr\(PageOffset\) + \#param_expr\(PageLimit\)\)
+			\}
+			\#if\(Normal\) \{
+			order by t2.rn
+			\}
+			;
+		}
+		#pg_query {}
+		#role(RoleID:c365e148-71f9-4731-8025-3aeb5225af9f, ViewID:291d9be9-cdf9-4d38-a8b3-fa3307e07812) 
+	}
+}

@@ -1,0 +1,47 @@
+#tessa_exchange_format(Version:1, CreationTime:2020-08-12T12\:09\:38) {
+	#exchange_view(RowID:67e0e026-8dbd-462a-93fa-9ec03636564f, Alias:Currencies, Caption:Валюты, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2020-07-20T13\:03\:47, GroupName:System) {
+		#metadata {
+			#view(DefaultSortColumn: CurrencyName, DefaultSortDirection: asc, Paging: no, MultiSelect: true, QuickSearchParam: Name)
+			#column(Alias: CurrencyID, Hidden: true, Type: $Currencies.ID)
+			#column(Alias: CurrencyName, Caption: $Views_Currencies_Name, Type: $Currencies.Name, SortBy: t.Name)
+			#column(Alias: CurrencyCaption, Caption: $Views_Currencies_Caption, Type: $Currencies.Caption, Localizable: true, SortBy: lCaption.Value)
+			#column(Alias: CurrencyCode, Caption: $Views_Currencies_Code, Type: $Currencies.Code, Localizable: false)
+			#column(Alias: CurrencyIsHidden, Caption: Скрывать при выборе, Type: Boolean, Localizable: false)
+			#column(Alias: CurrencyMDMKey, Caption: MDMKey, Type: String, Localizable: false)
+			#param(Alias: Name, Caption: $Views_Currencies_Name_Param, Type: String, Multiple: true)
+			#reference(ColPrefix: Currency, RefSection: Currencies, DisplayValueColumn: CurrencyName, IsCard: true, OpenOnDoubleClick: true)
+		}
+		#description {}
+		#ms_query {
+			SELECT
+				[t].[ID]		AS [CurrencyID]\,
+				[t].[Name]		AS [CurrencyName]\,
+				[t].[Caption]	AS [CurrencyCaption]\,
+				[t].[Code]		AS [CurrencyCode]\,
+				[t].[IsHidden]	AS [CurrencyIsHidden]\,
+				[t].[MDMKey]	AS [CurrencyMDMKey]
+			FROM [Currencies] AS [t] WITH \(NOLOCK\)
+			CROSS APPLY [Localization]\([t].[Caption]\, \#param\(locale\)\) AS [lCaption]
+			WHERE 1 = 1
+				\#if\(Name\) \{
+				AND \(1 = 1 \#param\(Name\, [t].[Name]\) OR 1 = 1 \#param\(Name\, [lCaption].[Value]\)\)
+				\}
+			ORDER BY \#order_by
+		}
+		#pg_query {
+			SELECT
+				"t"."ID"		AS "CurrencyID"\,
+				"t"."Name"		AS "CurrencyName"\,
+				"t"."Caption"	AS "CurrencyCaption"\,
+				"t"."Code"		AS "CurrencyCode"
+			FROM "Currencies" AS "t"
+			CROSS JOIN "Localization"\("t"."Caption"\, \#param\(locale\)\) AS "lCaption"
+			WHERE true
+				\#if\(Name\) \{
+				AND \(true \#param\(Name\, "t"."Name"\) OR true \#param\(Name\, "lCaption"."Value"\)\)
+				\}
+			ORDER BY \#order_by
+		}
+		#role(RoleID:7ff52dc0-ff6a-4c9d-ba25-b562c370004d, ViewID:67e0e026-8dbd-462a-93fa-9ec03636564f) 
+	}
+}

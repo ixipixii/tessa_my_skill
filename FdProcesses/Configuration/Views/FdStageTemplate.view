@@ -1,0 +1,88 @@
+#tessa_exchange_format(Version:1, CreationTime:2019-11-08T13\:43\:17) {
+	#exchange_view(RowID:97a02ae9-5f6e-4880-995b-ef88463b4036, Alias:FdStageTemplate, Caption:Шаблоны этапов, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2019-11-08T09\:42\:42, GroupName:Fd Awf) {
+		#metadata {
+			#view(DefaultSortColumn: StageTemplateOrder StageTemplateProcessTemplateName)
+
+			#column(Alias: StageTemplateID, Caption: ID, Type: Guid, Hidden: true)
+			#column(Alias: StageTemplateOrder, Caption: Порядок, Type: Int32, Hidden: true, SortBy: st.Order)
+			#column(Alias: StageTemplateName, Caption: Название, Type: String, SortBy: st.Name)
+			#column(Alias: StageTemplateDescription, Caption: Описание, Type: String)
+			#column(Alias: StageTemplateProcessTemplateName, Caption: Процесс, Type: String, SortBy: st.ProcessTemplateName)
+			#column(Alias: StageTemplateTaskTypeCaption, Caption: Тип задания, Type: String, Localizable: true)
+			#column(Alias: StageTemplateParticipants, Caption: Участники, Type: String)
+			#column(Alias: StageTemplateIsParallel, Caption: Параллельный, Type: Boolean)
+			#column(Alias: ParentStageTemplateID, Type: Guid, Hidden: true)
+
+
+			#param(Alias: ProcessTemplateID, Caption: ID Процесса шаблона, Hidden: true, Type: Guid)
+			#param(Alias: ExceptStageID, Caption: ID Исключенного этапа, Hidden: true, Type: Guid)
+			#param(Alias: Name, Caption: Название этапа, Hidden: false, Type: String)
+			#param(Alias: ParentStageTemplateID, Caption: ID родительского шаблона этапа, Hidden: true, Type: Guid)
+
+			#reference(ColPrefix: StageTemplate, RefSection: FdStageTemplate, DisplayValueColumn: StageTemplateName, IsCard: true, OpenOnDoubleClick: true)
+		}
+		#description {}
+		#ms_query {
+			select 
+				st.ID as StageTemplateID\,
+				st.[Order] as StageTemplateOrder\,
+				st.Name as StageTemplateName\,
+				st.Description as StageTemplateDescription\,
+				st.ProcessTemplateName as StageTemplateProcessTemplateName\,
+				st.TaskTypeCaption as StageTemplateTaskTypeCaption\,
+				stuff\(
+					\(
+						select N'\, ' + stp.ParticipantText
+						from FdStageTemplateParticipants stp with\(nolock\)
+						where stp.ID = st.ID
+						order by stp.[Order]
+						for xml path\(N''\)
+					\)\, 1\, 2\, N''\) as StageTemplateParticipants\,
+				st.IsParallel as StageTemplateIsParallel\,
+				st.ParentStageTemplateID
+			from FdStageTemplate st with\(nolock\)
+			where
+				1=1
+				\#param\(ProcessTemplateID\, st.ProcessTemplateID\)
+				\#if\(ExceptStageID\)\{
+					and \#param\(ExceptStageID\) <> st.ID
+				\}
+				\#param\(Name\, st.Name\)
+				\#param\(ParentStageTemplateID\, st.ParentStageTemplateID\)
+				
+			order by \#order_by
+		}
+		#pg_query {
+			select 
+				"st"."ID" 					as "StageTemplateID"\,
+				"st"."Order" 				as "StageTemplateOrder"\,
+				"st"."Name" 				as "StageTemplateName"\,
+				"st"."Description" 			as "StageTemplateDescription"\,
+				"st"."ProcessTemplateName" 	as "StageTemplateProcessTemplateName"\,
+				"st"."TaskTypeCaption" 		as "StageTemplateTaskTypeCaption"\,
+				\(
+					select string_agg\("ParticipantText"\, '\, '\)
+					from 
+					\(
+						select "stp"."ParticipantText"
+						from "FdStageTemplateParticipants" "stp"
+						where "stp"."ID" = "st"."ID"
+						order by "stp"."Order"
+					\) as "stp"
+				\) as "StageTemplateParticipants"\,
+				"st"."IsParallel" as "StageTemplateIsParallel"\,
+				"st"."ParentStageTemplateID"
+			from "FdStageTemplate" "st"
+			where
+				true
+				\#param\(ProcessTemplateID\, "st"."ProcessTemplateID"\)
+				\#if\(ExceptStageID\)\{
+					and \#param\(ExceptStageID\) <> "st"."ID"
+				\}
+				\#param\(Name\, "st"."Name"\)
+				\#param\(ParentStageTemplateID\, "st"."ParentStageTemplateID"\)
+				
+			order by \#order_by
+		}
+	}
+}

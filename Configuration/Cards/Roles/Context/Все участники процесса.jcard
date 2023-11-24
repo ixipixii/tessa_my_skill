@@ -1,0 +1,55 @@
+﻿[
+  {
+    ".method::int": 2,
+    "Card": {
+      "Created::dtm": "2020-09-02T19:26:54.173Z",
+      "CreatedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "CreatedByName": "Admin",
+      "Files": null,
+      "Flags::int": 0,
+      "ID::uid": "03ed8954-e2e0-4894-9137-93babf5c8ffd",
+      "Info": null,
+      "Modified::dtm": "2020-09-02T19:26:54.173Z",
+      "ModifiedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "ModifiedByName": "Admin",
+      "Permissions": null,
+      "Sections": {
+        "ContextRoles": {
+          "Fields": {
+            "SqlText": "select ru.UserID, ru.UserName\r\nfrom TaskHistory th with(nolock)\r\ninner join Roles r with(nolock) on r.ID = th.RoleID\r\nleft join RoleUsers ru with(nolock) on r.ID = ru.ID\r\nwhere r.TypeID != 1\r\n\tand ru.UserID is not null\r\n\tand th.ID = #context_card_id\r\nunion\r\nselect RoleID, RoleName\r\nfrom TaskHistory th with(nolock)\r\ninner join Roles r with(nolock) on r.ID = th.RoleID\r\nwhere r.TypeID = 1\r\n\tand RoleID is not null\r\n\tand th.ID = #context_card_id\r\nunion\r\nSELECT ru.UserID, ru.UserName\r\nFROM Instances inst WITH(NOLOCK)\r\nINNER JOIN FdSatelliteCommonInfo fdsci WITH(NOLOCK)\r\n\tON fdsci.MainCardId = inst.ID\r\nINNER JOIN FdParticipants fdp WITH(NOLOCK)\r\n\tON fdsci.ID = fdp.ID\r\nINNER JOIN Roles r with(nolock) on r.ID = fdp.ParticipantID\r\nLEFT JOIN RoleUsers ru with(nolock) on r.ID = ru.ID\r\nwhere r.TypeID != 1\r\n\tand ru.UserID is not null\r\n\tand inst.ID = #context_card_id\r\nUNION\r\nSELECT r.ID, r.Name\r\nFROM Instances inst WITH(NOLOCK)\r\nINNER JOIN FdSatelliteCommonInfo fdsci WITH(NOLOCK)\r\n\tON fdsci.MainCardId = inst.ID\r\nINNER JOIN FdParticipants fdp WITH(NOLOCK)\r\n\tON fdsci.ID = fdp.ID\r\nINNER JOIN Roles r with(nolock) on r.ID = fdp.ParticipantID\r\nwhere r.TypeID = 1\r\n\tand fdp.ParticipantID is not null\r\n\tand inst.ID = #context_card_id\r\nUNION\r\nSELECT ru.UserID, ru.UserName\r\nFROM Instances inst WITH(NOLOCK)\r\nINNER JOIN FdSatelliteCommonInfo fdsci WITH(NOLOCK)\r\n\tON fdsci.MainCardId = inst.ID\r\nINNER JOIN FdParticipants fdp WITH(NOLOCK)\r\n\tON fdsci.ID = fdp.ID\r\nINNER JOIN Roles r with(nolock) on r.ID = fdp.ParticipantID\r\nLEFT JOIN RoleUsers ru with(nolock) on r.ID = ru.ID\r\nwhere r.TypeID != 1\r\n\tand ru.UserID is not null\r\n\tand inst.ID = #context_card_id\r\nUNION\r\nSELECT r.ID, r.Name\r\nFROM Instances inst WITH(NOLOCK)\r\nINNER JOIN FdSatelliteCommonInfo fdsci WITH(NOLOCK)\r\n\tON fdsci.MainCardId = inst.ID\r\nINNER JOIN FdParticipantsRemaining fdpr WITH(NOLOCK)\r\n\tON fdsci.ID = fdpr.ID\r\nINNER JOIN Roles r with(nolock) on r.ID = fdpr.ParticipantID\r\nwhere r.TypeID = 1\r\n\tand fdpr.ParticipantID is not null\r\n\tand inst.ID = #context_card_id\r\n",
+            "SqlTextForCard": null,
+            "SqlTextForUser": null
+          }
+        },
+        "RoleDeputies": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "RoleDeputiesVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Roles": {
+          "Fields": {
+            "Description": null,
+            "Hidden": false,
+            "Name": "Все участники процесса",
+            "TypeID::int": 4
+          }
+        }
+      },
+      "TaskHistory": null,
+      "TaskHistoryGroups": null,
+      "Tasks": null,
+      "Topics": null,
+      "TypeCaption": "$CardTypes_TypesNames_ContextRole",
+      "TypeID::uid": "b672e00c-0241-0485-9b07-4764bc96c9d3",
+      "TypeName": "ContextRole",
+      "Version::int": 0
+    },
+    "FileMapping": null,
+    "Info": {
+      ".importVersion::int": 3
+    }
+  }
+]

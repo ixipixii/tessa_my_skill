@@ -1,0 +1,74 @@
+#tessa_exchange_format(Version:1, CreationTime:2019-11-08T13\:43\:17) {
+	#exchange_view(RowID:eff0998e-0605-4d20-9f50-bab86261e4cf, Alias:FdStageTemplateCompletions, Caption:Параметры завершения этапа, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2019-11-07T15\:19\:51, GroupName:Fd Awf) {
+		#metadata {
+			#view(DefaultSortColumn: StageTemplateCompletionOrder, Paging: always, PageLimit: 20, RowCountSubset: Count, QuickSearchParam: Description)
+
+			#column(Alias: StageTemplateCompletionRowID, Caption: RowID, Type: Guid, Hidden: true)
+			#column(Alias: StageTemplateCompletionDescription, Caption: Описание, Type: String, SortBy: t.Description)
+			#column(Alias: StageTemplateCompletionOrder, Caption: Порядок, Type: Int32, Hidden: true, SortBy: t.Order)
+			#column(Alias: rn, Type: Int64, Hidden: true)
+
+
+			#param(Alias: Description, Caption: Описание, Hidden: false, Type: String, Multiple: false)
+			#param(Alias: StageTemplateID, Caption: ID Шаблона этапа, Hidden: true, Type: Guid, Multiple: false)
+			#param(Alias: ParentStageTemplateID, Caption: ID Шаблона этапа родителя, Hidden: true, Type: Guid, Multiple: false)
+			#reference(ColPrefix: StageTemplateCompletion, RefSection: FdStageTemplateCompletions, DisplayValueColumn: StageTemplateCompletionDescription, IsCard: false, OpenOnDoubleClick: false)
+
+			#subset(Alias: Count) 
+		}
+		#description {}
+		#ms_query {
+			select *
+			from
+			\(
+				SELECT 
+					\#if\(Normal\)\{
+						t.[RowID] as StageTemplateCompletionRowID
+					      \,coalesce\(t.[Description]\, t.[CompletionText]\) as StageTemplateCompletionDescription
+					      \,t.[Order] as StageTemplateCompletionOrder
+					      \,row_number\(\) over \(order by \#order_by\) as rn
+				      \}
+				      \#if\(Count\)\{
+				      		count\(*\) as cnt
+				      \}
+				  FROM [FdStageTemplateCompletions] t with\(nolock\)
+				  left join FdStageTemplate st with\(nolock\)
+				  	on t.ID = st.ID
+				  where 1=1
+					  \#param\(Description\, coalesce\(t.[Description]\, t.[CompletionText]\)\)
+					  \#param\(StageTemplateID\, t.ID\)
+					  \#param\(ParentStageTemplateID\, st.ParentStageTemplateID\)
+			  \) t
+			  
+			  
+			  \#if\(PageOffset\) \{
+				where rn >= \#param\(PageOffset\) and rn < \(\#param\(PageOffset\) + \#param\(PageLimit\)\)
+			\}
+		}
+		#pg_query {
+			SELECT 
+			\#if\(Normal\)\{
+				"t"."RowID" 										as "StageTemplateCompletionRowID"\,
+				coalesce\("t"."Description"\, "t"."CompletionText"\) 	as "StageTemplateCompletionDescription"\,
+				"t"."Order" 										as "StageTemplateCompletionOrder"\,
+				0\:\:int8 											as "rn"
+			\}
+			\#if\(Count\)\{
+				count\(*\) as "cnt"
+			\}
+			FROM "FdStageTemplateCompletions" "t"
+			left join "FdStageTemplate" "st"
+				on "t"."ID" = "st"."ID"
+			where true
+				\#param\(Description\, coalesce\("t"."Description"\, "t"."CompletionText"\)\)
+				\#param\(StageTemplateID\, "t"."ID"\)
+			  	\#param\(ParentStageTemplateID\, "st"."ParentStageTemplateID"\)
+			\#if\(Normal\) \{
+			ORDER BY \#order_by
+			\}
+			\#if\(PageOffset\) \{
+			OFFSET \#param\(PageOffset\) - 1 LIMIT \#param\(PageLimit\)
+			\}
+		}
+	}
+}

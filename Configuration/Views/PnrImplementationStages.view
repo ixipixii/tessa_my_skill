@@ -1,0 +1,39 @@
+#tessa_exchange_format(Version:1, CreationTime:2020-10-22T14\:32\:11) {
+	#exchange_view(RowID:9da4b030-e3d4-47ad-a491-7699c4291a88, Alias:PnrImplementationStages, Caption:Стадии реализации, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2020-10-22T14\:30\:04, GroupName:Pnr) {
+		#metadata {
+			#view(DefaultSortColumn: StageParentName, DefaultSortDirection: asc, Paging: no, QuickSearchParam: Name)
+			#column(Alias: StageID, Hidden: true)
+			#column(Alias: StageName, Caption: Название, SortBy: t.Name)
+			#column(Alias: StageParentID, Hidden: true)
+			#column(Alias: StageParentName, Caption: Родительская стадия, SortBy: t.ParentStageName)
+			#column(Alias: StageIsExclude, Hidden: true)
+			#param(Alias: IsParentStage, Caption: Родительская стадия, Hidden: false, Type: bit, Multiple: true)
+			#param(Alias: Name, Caption: Название, Hidden: false, Type: nvarchar, Multiple: true)
+			#reference(ColPrefix: Stage, RefSection: PnrImplementationStages, DisplayValueColumn: StageName, IsCard: true, OpenOnDoubleClick: true)
+		}
+		#description {}
+		#ms_query {
+			select
+			    t.ID as StageID\,
+			    t.Name as StageName\,
+			    t.ParentStageID as StageParentID\,
+			    t.ParentStageName as StageParentName\,
+			    t.IsExcludeFromSelection as StageIsExclude
+			from PnrImplementationStages t with\(nolock\)
+			where 1=1
+				/* Для отображения Родительских стадий реализации */
+				\#if\(IsParentStage\)
+				\{ AND t.ParentStageID IS NULL \}
+				\{ 
+				
+					AND t.ParentStageID IS NOT NULL
+					OR t.ID = 'fb11d925-41e9-439f-9466-9961acbb8e36'
+					OR t.ID = 'f8ad40d3-6bf6-46b4-8b8d-8f935e4d375c'
+				\}
+			    \#param\(Name\, t.Name\)
+			order by \#order_by
+		}
+		#pg_query {}
+		#role(RoleID:7ff52dc0-ff6a-4c9d-ba25-b562c370004d, ViewID:9da4b030-e3d4-47ad-a491-7699c4291a88) 
+	}
+}

@@ -1,0 +1,23 @@
+#tessa_exchange_format(Version:1, CreationTime:2020-10-17T11\:21\:12) {
+	#exchange_view(RowID:b9a46075-1744-4e68-804e-829761b15069, Alias:PnrEmittedTaskStates, Caption:Cтатусы заданий от меня, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2020-10-15T16\:54\:43, GroupName:Pnr) {
+		#metadata {
+			#view(DefaultSortColumn: EmittedTaskStateName, DefaultSortDirection: asc, Paging: no, QuickSearchParam: Name)
+			#column(Alias: EmittedTaskStateID, Hidden: true)
+			#column(Alias: EmittedTaskStateName, Caption: Название, Localizable: true, Hidden: false, SortBy: t.Name)
+			#param(Alias: Name, Caption: Название, Type: nvarchar, Multiple: false)
+			#reference(ColPrefix: EmittedTaskState, RefSection: PnrEmittedTaskStates, DisplayValueColumn: EmittedTaskStateName, IsCard: false, OpenOnDoubleClick: false)
+		}
+		#description {}
+		#ms_query {
+			select
+			    t.ID as EmittedTaskStateID\,
+			    t.Name as EmittedTaskStateName
+			from TaskStates t with\(nolock\)
+			where 1=1
+			    \#param_expr\(Name\, t.Name\)
+			order by \#order_by
+		}
+		#pg_query {}
+		#role(RoleID:7ff52dc0-ff6a-4c9d-ba25-b562c370004d, ViewID:b9a46075-1744-4e68-804e-829761b15069) 
+	}
+}

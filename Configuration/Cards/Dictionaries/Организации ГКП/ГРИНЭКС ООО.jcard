@@ -1,0 +1,257 @@
+﻿[
+  {
+    ".method::int": 2,
+    "Card": {
+      "Created::dtm": "2020-08-21T10:57:26.657Z",
+      "CreatedByID::uid": "11111111-1111-1111-1111-111111111111",
+      "CreatedByName": "System",
+      "Files": null,
+      "Flags::int": 0,
+      "ID::uid": "221695f3-e5cb-4ad7-85ce-131a7e0dad3b",
+      "Info": {
+        ".satellite_krProcess": {
+          "Created::dtm": "2020-10-12T07:36:22.22Z",
+          "CreatedByID::uid": "11111111-1111-1111-1111-111111111111",
+          "CreatedByName": "System",
+          "Files": null,
+          "Flags::int": 0,
+          "ID::uid": "d109dac8-584c-4902-981b-70612ef23058",
+          "Info": null,
+          "Modified::dtm": "2020-10-12T07:36:22.22Z",
+          "ModifiedByID::uid": "11111111-1111-1111-1111-111111111111",
+          "ModifiedByName": "System",
+          "Permissions": {
+            "CardPermissions::int": 87381,
+            "FilePermissions": null,
+            "Sections": null
+          },
+          "Sections": {
+            "KrActiveTasks": {
+              ".table::int": 1,
+              "Rows": null
+            },
+            "KrApprovalCommonInfo": {
+              "Fields": {
+                "ApprovedBy": null,
+                "AuthorComment": null,
+                "AuthorID": null,
+                "AuthorName": null,
+                "CurrentApprovalStageRowID": null,
+                "CurrentHistoryGroup": null,
+                "DisapprovedBy": null,
+                "Info": null,
+                "MainCardID::uid": "221695f3-e5cb-4ad7-85ce-131a7e0dad3b",
+                "NestedWorkflowProcesses": null,
+                "StateChangedDateTimeUTC": null,
+                "StateID::int": 0,
+                "StateName": "$KrStates_Doc_Draft"
+              }
+            },
+            "KrApprovalHistory": {
+              ".table::int": 1,
+              "Rows": null
+            },
+            "KrStages": {
+              ".table::int": 1,
+              "Rows": null
+            },
+            "WorkflowCounters": {
+              ".table::int": 1,
+              "Rows": null
+            },
+            "WorkflowProcesses": {
+              ".table::int": 1,
+              "Rows": null
+            },
+            "WorkflowTasks": {
+              ".table::int": 1,
+              "Rows": null
+            }
+          },
+          "TaskHistory": null,
+          "TaskHistoryGroups": null,
+          "Tasks": null,
+          "Topics": null,
+          "TypeCaption": "$CardTypes_TypesNames_KrSatellite",
+          "TypeID::uid": "4115f07e-0aaa-4563-a749-0450c1a850af",
+          "TypeName": "KrSatellite",
+          "Version::int": 1
+        }
+      },
+      "Modified::dtm": "2020-10-12T07:36:22.197Z",
+      "ModifiedByID::uid": "11111111-1111-1111-1111-111111111111",
+      "ModifiedByName": "System",
+      "Permissions": null,
+      "Sections": {
+        "FmAddTopicInfoVirtual": {
+          "Fields": {
+            "Description": null,
+            "Title": null
+          }
+        },
+        "FmTopicParticipantsInfoVirtual": {
+          "Fields": {
+            "IsModerator": false,
+            "ReadOnly": false
+          }
+        },
+        "FmTopicParticipantsVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "FmTopicRoleParticipantsInfoVirtual": {
+          "Fields": {
+            "IsSubscribe": false,
+            "ReadOnly": false
+          }
+        },
+        "KrActiveTasksVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrAdditionalApprovalInfoUsersCardVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrAdditionalApprovalUsersCardVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrApprovalCommonInfoVirtual": {
+          "Fields": {
+            "ApprovedBy": null,
+            "AuthorComment": null,
+            "AuthorID": null,
+            "AuthorName": null,
+            "CurrentApprovalStageRowID": null,
+            "DisapprovedBy": null,
+            "MainCardID": null,
+            "StateChangedDateTimeUTC": null,
+            "StateID::int": 0,
+            "StateName": "$KrStates_Doc_Draft"
+          }
+        },
+        "KrApprovalHistoryVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrDialogButtonSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrForkNestedProcessesSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrForkSecondaryProcessesSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPerformersVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrStagesVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrUniversalTaskOptionsSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "PnrOrganizations": {
+          "Fields": {
+            "Abbreviation": "ГН",
+            "ActionStatus": null,
+            "Address": "г. Москва, ул. Пироговская М.,  д. 3, эт. 3, пом. I, ком. 19",
+            "AuthorityFSGSCode": "77-00",
+            "AuthorityPFRCode": null,
+            "Bank": "ПАО Сбербанк",
+            "BIK": "044525225",
+            "CertificateAuthorityCode": "",
+            "CertificateAuthorityName": "",
+            "CertificateSeriesNumber": "40702810738000051865",
+            "ChiefAccountantID::uid": "e7adc6a0-76f9-421a-a13d-87604fb44610",
+            "ChiefAccountantName": "Розанова Л. Н.",
+            "ChiefAccountantProcessID": null,
+            "ChiefAccountantProcessName": null,
+            "ContactInformation": "119435, Москва г, Пироговская М. ул., дом № 3, квартира Эт/Пом/Ком 3/I/19",
+            "CorrespondentAccount": "30101810400000000225",
+            "CountryPermanentResidenceID::uid": "61d2aa24-7e64-4f63-a75d-3998c236d265",
+            "CountryPermanentResidenceName": "РОССИЯ",
+            "CountryRegistrationID::uid": "61d2aa24-7e64-4f63-a75d-3998c236d265",
+            "CountryRegistrationName": "РОССИЯ",
+            "FaxNumber": null,
+            "ForeignOrganization": "Нет",
+            "ForeignOrganizationName": null,
+            "FullName": "Общество с ограниченной ответственностью \"ГРИНЭКС\"",
+            "GeneralDirectorID": null,
+            "GeneralDirectorName": null,
+            "GroupDocuments": "ГКП",
+            "HeadLegalEntityDative": "Семихатову Сергею Александровичу",
+            "HeadLegalEntityGenitive": "Семихатова Сергея Александровича",
+            "HeadLegalEntityID::uid": "a828ac1a-a658-483b-8f37-943ad469a82e",
+            "HeadLegalEntityName": "Семихатов С.А.",
+            "Idx": "119435",
+            "INN": "9704016268",
+            "INNBank": null,
+            "IsHidden": null,
+            "IssueDate": null,
+            "KPP": "770401001",
+            "LegalEntityIndex": null,
+            "MDMKey": "5f24b321-7422-11ea-ab58-005056bf2b25",
+            "Name": "ГРИНЭКС ООО",
+            "OGRN": "1207700145047",
+            "OKATO": "45286590000",
+            "OKFSCode": "16",
+            "OKFSName": "Частная собственность",
+            "OKOGU": "4210014",
+            "OKOPFCode": "12300",
+            "OKOPFName": "Общества с ограниченной ответственностью",
+            "OKPO": "43994577",
+            "OKPOCode": "43994005",
+            "OKTMO": "45383000000",
+            "OKVEDCode": "71.12.2",
+            "OKVEDCode2": "71.12.2",
+            "OKVEDName": null,
+            "OKVEDName2": "Деятельность заказчика-застройщика, генерального подрядчика",
+            "PartnerID::uid": "beb02dd8-66c1-4a20-96a1-3189228ce6c2",
+            "PartnerName": "ГРИНЭКС ООО",
+            "PartnerType": "Общество",
+            "PositionHeadLegalEntity": "Генеральный директор",
+            "PositionHeadLegalEntityDative": "Генеральному директору",
+            "PositionHeadLegalEntityGenitive": "Генерального директора",
+            "Prefix": "ГН",
+            "ReferencePosition": null,
+            "RegistrationDate::dtm": "2020-03-30T00:00:00Z",
+            "RegistrationNumberFSS": "773-806-8602  ",
+            "RegistrationNumberPFR": null,
+            "RegistryCard": "1",
+            "Removed": "Нет",
+            "SettlementAccount": null,
+            "ShortName": "ООО \"ГРИНЭКС\"",
+            "SubordinationCodeFSS": "77381",
+            "TaxAuthorityCode": "7704",
+            "TaxAuthorityName": "ИФНС России № 4 по г.Москве",
+            "TerritorialAuthorityFSSName": "Филиал №38 ГУ-МРО ФСС РФ",
+            "TerritorialAuthorityPFRName": null,
+            "Website": null,
+            "WorkPhone": "8(495)502-95-59"
+          }
+        }
+      },
+      "TaskHistory": null,
+      "TaskHistoryGroups": null,
+      "Tasks": null,
+      "Topics": null,
+      "TypeCaption": "Организация",
+      "TypeID::uid": "a668f7ea-efcd-47f0-a3c7-c4d1e7ed0bc8",
+      "TypeName": "PnrOrganization",
+      "Version::int": 0
+    },
+    "FileMapping": null,
+    "Info": {
+      ".importVersion::int": 2
+    }
+  }
+]

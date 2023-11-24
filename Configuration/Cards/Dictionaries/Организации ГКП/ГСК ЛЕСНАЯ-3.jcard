@@ -1,0 +1,257 @@
+﻿[
+  {
+    ".method::int": 2,
+    "Card": {
+      "Created::dtm": "2020-08-20T22:07:29.88Z",
+      "CreatedByID::uid": "11111111-1111-1111-1111-111111111111",
+      "CreatedByName": "System",
+      "Files": null,
+      "Flags::int": 0,
+      "ID::uid": "eb1b34ab-f993-4126-ae88-90a19ccdea5a",
+      "Info": {
+        ".satellite_krProcess": {
+          "Created::dtm": "2020-10-07T06:55:39.867Z",
+          "CreatedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+          "CreatedByName": "Admin",
+          "Files": null,
+          "Flags::int": 0,
+          "ID::uid": "ab09828d-55f0-47d4-ba13-96bd529a0161",
+          "Info": null,
+          "Modified::dtm": "2020-10-07T06:55:39.867Z",
+          "ModifiedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+          "ModifiedByName": "Admin",
+          "Permissions": {
+            "CardPermissions::int": 87381,
+            "FilePermissions": null,
+            "Sections": null
+          },
+          "Sections": {
+            "KrActiveTasks": {
+              ".table::int": 1,
+              "Rows": null
+            },
+            "KrApprovalCommonInfo": {
+              "Fields": {
+                "ApprovedBy": null,
+                "AuthorComment": null,
+                "AuthorID": null,
+                "AuthorName": null,
+                "CurrentApprovalStageRowID": null,
+                "CurrentHistoryGroup": null,
+                "DisapprovedBy": null,
+                "Info": null,
+                "MainCardID::uid": "eb1b34ab-f993-4126-ae88-90a19ccdea5a",
+                "NestedWorkflowProcesses": null,
+                "StateChangedDateTimeUTC": null,
+                "StateID::int": 0,
+                "StateName": "$KrStates_Doc_Draft"
+              }
+            },
+            "KrApprovalHistory": {
+              ".table::int": 1,
+              "Rows": null
+            },
+            "KrStages": {
+              ".table::int": 1,
+              "Rows": null
+            },
+            "WorkflowCounters": {
+              ".table::int": 1,
+              "Rows": null
+            },
+            "WorkflowProcesses": {
+              ".table::int": 1,
+              "Rows": null
+            },
+            "WorkflowTasks": {
+              ".table::int": 1,
+              "Rows": null
+            }
+          },
+          "TaskHistory": null,
+          "TaskHistoryGroups": null,
+          "Tasks": null,
+          "Topics": null,
+          "TypeCaption": "$CardTypes_TypesNames_KrSatellite",
+          "TypeID::uid": "4115f07e-0aaa-4563-a749-0450c1a850af",
+          "TypeName": "KrSatellite",
+          "Version::int": 1
+        }
+      },
+      "Modified::dtm": "2020-10-07T06:55:39.687Z",
+      "ModifiedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "ModifiedByName": "Admin",
+      "Permissions": null,
+      "Sections": {
+        "FmAddTopicInfoVirtual": {
+          "Fields": {
+            "Description": null,
+            "Title": null
+          }
+        },
+        "FmTopicParticipantsInfoVirtual": {
+          "Fields": {
+            "IsModerator": false,
+            "ReadOnly": false
+          }
+        },
+        "FmTopicParticipantsVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "FmTopicRoleParticipantsInfoVirtual": {
+          "Fields": {
+            "IsSubscribe": false,
+            "ReadOnly": false
+          }
+        },
+        "KrActiveTasksVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrAdditionalApprovalInfoUsersCardVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrAdditionalApprovalUsersCardVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrApprovalCommonInfoVirtual": {
+          "Fields": {
+            "ApprovedBy": null,
+            "AuthorComment": null,
+            "AuthorID": null,
+            "AuthorName": null,
+            "CurrentApprovalStageRowID": null,
+            "DisapprovedBy": null,
+            "MainCardID": null,
+            "StateChangedDateTimeUTC": null,
+            "StateID::int": 0,
+            "StateName": "$KrStates_Doc_Draft"
+          }
+        },
+        "KrApprovalHistoryVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrDialogButtonSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrForkNestedProcessesSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrForkSecondaryProcessesSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPerformersVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrStagesVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrUniversalTaskOptionsSettingsVirtual_Synthetic": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "PnrOrganizations": {
+          "Fields": {
+            "Abbreviation": "Л3",
+            "ActionStatus": null,
+            "Address": "Санкт-Петербург г, Новолитовская ул, дом № 10, литера Б, помещение 2-Н\n",
+            "AuthorityFSGSCode": null,
+            "AuthorityPFRCode": null,
+            "Bank": "ПАО \"БАНК \"САНКТ-ПЕТЕРБУРГ\" Г. САНКТ",
+            "BIK": "044030790",
+            "CertificateAuthorityCode": null,
+            "CertificateAuthorityName": null,
+            "CertificateSeriesNumber": "40703810990030000037",
+            "ChiefAccountantID::uid": "ba7b09e3-3db9-425e-9a03-22c23f10fd5c",
+            "ChiefAccountantName": "Павловская О. В.",
+            "ChiefAccountantProcessID::uid": "9863aa4e-766c-4f6f-97f1-66a4f7a022d3",
+            "ChiefAccountantProcessName": "Плотникова Е. А.",
+            "ContactInformation": null,
+            "CorrespondentAccount": null,
+            "CountryPermanentResidenceID": null,
+            "CountryPermanentResidenceName": null,
+            "CountryRegistrationID": null,
+            "CountryRegistrationName": null,
+            "FaxNumber": null,
+            "ForeignOrganization": null,
+            "ForeignOrganizationName": null,
+            "FullName": "ГАРАЖНО-СТРОИТЕЛЬНЫЙ КООПЕРАТИВ \"ЛЕСНАЯ-3\"",
+            "GeneralDirectorID": null,
+            "GeneralDirectorName": null,
+            "GroupDocuments": "ГСК",
+            "HeadLegalEntityDative": "О.В. Павловской",
+            "HeadLegalEntityGenitive": "Павловской Ольги Витальевны",
+            "HeadLegalEntityID::uid": "ba7b09e3-3db9-425e-9a03-22c23f10fd5c",
+            "HeadLegalEntityName": "Павловская О. В.",
+            "Idx": "194100",
+            "INN": "7802633931",
+            "INNBank": null,
+            "IsHidden": null,
+            "IssueDate": null,
+            "KPP": "780201001",
+            "LegalEntityIndex": "999",
+            "MDMKey": "dce93e6f-acf4-11e7-bf8f-005056ae703c",
+            "Name": "ГСК ЛЕСНАЯ-3",
+            "OGRN": null,
+            "OKATO": null,
+            "OKFSCode": null,
+            "OKFSName": null,
+            "OKOGU": null,
+            "OKOPFCode": null,
+            "OKOPFName": null,
+            "OKPO": null,
+            "OKPOCode": null,
+            "OKTMO": null,
+            "OKVEDCode": null,
+            "OKVEDCode2": null,
+            "OKVEDName": null,
+            "OKVEDName2": null,
+            "PartnerID": null,
+            "PartnerName": null,
+            "PartnerType": "ООО",
+            "PositionHeadLegalEntity": "Председатель",
+            "PositionHeadLegalEntityDative": "Председателю",
+            "PositionHeadLegalEntityGenitive": "Председателя",
+            "Prefix": null,
+            "ReferencePosition": null,
+            "RegistrationDate": null,
+            "RegistrationNumberFSS": null,
+            "RegistrationNumberPFR": null,
+            "RegistryCard": "2",
+            "Removed": null,
+            "SettlementAccount": null,
+            "ShortName": null,
+            "SubordinationCodeFSS": null,
+            "TaxAuthorityCode": null,
+            "TaxAuthorityName": null,
+            "TerritorialAuthorityFSSName": null,
+            "TerritorialAuthorityPFRName": null,
+            "Website": null,
+            "WorkPhone": null
+          }
+        }
+      },
+      "TaskHistory": null,
+      "TaskHistoryGroups": null,
+      "Tasks": null,
+      "Topics": null,
+      "TypeCaption": "Организация",
+      "TypeID::uid": "a668f7ea-efcd-47f0-a3c7-c4d1e7ed0bc8",
+      "TypeName": "PnrOrganization",
+      "Version::int": 0
+    },
+    "FileMapping": null,
+    "Info": {
+      ".importVersion::int": 2
+    }
+  }
+]

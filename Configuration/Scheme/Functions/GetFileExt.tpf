@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SchemeFunction ID="e15e3ff7-e552-4588-a756-e920517b15db" Name="GetFileExt" Group="System">
+	<Description>Функция, которая возвращает расширение файла (без ведущей точки) для заданного идентификатора версии файла.</Description>
+	<Definition Dbms="SqlServer" IsExternal="true" />
+	<Definition Dbms="PostgreSql" IsExternal="true" />
+</SchemeFunction>

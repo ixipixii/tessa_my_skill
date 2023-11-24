@@ -1,0 +1,776 @@
+#tessa_exchange_format(Version:1, CreationTime:2020-10-17T11\:27\:51) {
+	#exchange_view(RowID:b6e14161-038f-4060-bd35-66ba13da2cb8, Alias:EmittedTasks, Caption:Задания от меня, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2020-10-17T11\:26\:37, GroupName:System) {
+		#metadata {
+			#view(DefaultSortColumn: ModificationTime, DefaultSortDirection: desc, Paging: Always, RowCountSubset: Count)
+			#column(Alias: CardID, Hidden: true, Type: $Tasks.ID)
+			#column(Alias: TypeID, Hidden: true, Type: $Tasks.TypeID)
+			#column(Alias: TypeCaption, Caption: $Views_EmittedTasks_TaskType, Type: $TaskCommonInfo.KindCaption, Localizable: true)
+			#column(Alias: StateID, Hidden: true, Type: $Tasks.StateID)
+			#column(Alias: StateName, Caption: Статус, Type: $TaskStates.Name, Localizable: true)
+			#column(Alias: RoleID, Hidden: true, Type: $Tasks.RoleID)
+			#column(Alias: RoleName, Caption: $Views_EmittedTasks_Performer, Type: $Tasks.RoleName, Localizable: true, SortBy: t.RoleName)
+			#column(Alias: UserID, Hidden: true, Type: $Tasks.UserID)
+			#column(Alias: UserName, Caption: $Views_EmittedTasks_User, Type: $Tasks.UserName, SortBy: t.UserName)
+			#column(Alias: CardName, Caption: $Views_EmittedTasks_Card, Type: $DocumentCommonInfo.FullNumber, SortBy: dci.FullNumber)
+			#column(Alias: CardTypeID, Hidden: true, Type: $DocumentCommonInfo.DocTypeID)
+			#column(Alias: CardTypeName, Caption: $Views_EmittedTasks_CardType, Type: $DocumentCommonInfo.DocTypeTitle, Localizable: true)
+			#column(Alias: PlannedDate, Caption: $Views_EmittedTasks_Planned, Type: $Tasks.Planned, SortBy: t.Planned)
+			#column(Alias: ModificationTime, Caption: $Views_EmittedTasks_Modification, Type: $Tasks.Modified, SortBy: t.Modified)
+			#column(Alias: AuthorID, Hidden: true, Type: $Tasks.AuthorID)
+			#column(Alias: AuthorName, Caption: $Views_EmittedTasks_Author, Type: $Tasks.AuthorName, SortBy: t.AuthorName)
+			#column(Alias: rn, Hidden: true, Type: Int64)
+			#param(Alias: Status, Caption: $Views_EmittedTasks_State_Param, Hidden: true, Multiple: true, Type: $Tasks.StateID)
+			#param(Alias: TaskType, Caption: $Views_EmittedTasks_TaskType_Param, Hidden: true, Multiple: true, Type: $Tasks.TypeID)
+			#param(Alias: TaskTypeGrouped, Caption: $Views_EmittedTasks_TaskTypeGrouped_Param, Hidden: true, Type: $TaskCommonInfo.KindID, AllowedOperands: Equality)
+			#param(Alias: CardType, Caption: $Views_EmittedTasks_CardType_Param, Hidden: true, Multiple: true, Type: $DocumentCommonInfo.DocTypeID, AllowedOperands: Equality)
+			#param(Alias: TaskDateDueInterval, Caption: $Views_EmittedTasks_TaskDateDue_Param, Hidden: true, Type: Int32, AllowedOperands: Equality)
+			#param(Alias: Role, Caption: $Views_EmittedTasks_Performer_Param, Multiple: true, Type: $Roles.ParentID, RefSection: Roles, AllowedOperands: Equality NonEquality, Hidden: true) {
+				#autocomplete(View: Roles, Param: Name, PopupColumns: 1 3)
+			}
+			#param(Alias: State, Caption: Статус, Multiple: true, Type: $TaskStates.ID, RefSection: PnrEmittedTaskStates, AllowedOperands: Equality NonEquality) {
+				#autocomplete(View: PnrEmittedTaskStates, Param: Name, PopupColumns: 1)
+			}
+			#param(Alias: DocumentType, Caption: Тип документа, Multiple: true, Type: $Types.ID, RefSection: DocumentTypes, AllowedOperands: Equality NonEquality) {
+				#autocomplete(View: DocumentTypes, Param: Name, PopupColumns: 1)
+			}
+			#param(Alias: Author, Caption: Автор, Multiple: true, Type: $Tasks.AuthorID, RefSection: Roles, AllowedOperands: Equality NonEquality) {
+				#autocomplete(View: Roles, Param: Name, PopupColumns: 1 3)
+			}
+			#param(Alias: Number, Caption: Номер, Type: String, Multiple: true)
+			#reference(ColPrefix: Card, RefSection: tessa_Instances, DisplayValueColumn: CardName, IsCard: true, OpenOnDoubleClick: true)
+			#subset(Alias: Count)
+			#subset(Alias: ByStatus, Caption: По статусу, RefParam: Status, RefColumn: StateID, CaptionColumn: StateName, CountColumn: cnt)
+			#subset(Alias: ByTaskType, Caption: $Views_EmittedTasks_ByTaskType_Param, RefParam: TaskTypeGrouped, RefColumn: TypeID, CaptionColumn: TypeCaption, CountColumn: cnt)
+			#subset(Alias: ByCardType, Caption: $Views_EmittedTasks_ByCardType_Param, RefParam: CardType, RefColumn: CardTypeID, CaptionColumn: CardTypeName, CountColumn: cnt)
+			#subset(Alias: ByTaskDueDateInterval, Caption: $Views_EmittedTasks_ByTaskDueDate_Param, RefParam: TaskDateDueInterval, RefColumn: IntervalID, CaptionColumn: IntervalName, CountColumn: cnt)
+		}
+		#description {}
+		#ms_query {
+			\#if\(Normal\) \{
+			DECLARE @NoName			nvarchar\(max\);
+			\}
+
+			\#if\(ByTaskDueDateInterval || TaskDateDueInterval\) \{
+			DECLARE @MonthAgoStr		nvarchar\(max\);
+			DECLARE @WeekAgoStr			nvarchar\(max\);
+			DECLARE @YesterdayStr		nvarchar\(max\);
+			DECLARE @TodayStr			nvarchar\(max\);
+			DECLARE @TomorrowStr		nvarchar\(max\);
+			DECLARE @WeekStr			nvarchar\(max\);
+			DECLARE @MonthStr			nvarchar\(max\);
+
+			DECLARE @DT1				datetime;
+			DECLARE @DT2				datetime;
+			DECLARE @DT3				datetime;
+			DECLARE @Interval			int;
+			\}
+
+			\#if\(ByTaskType || TaskTypeGrouped\) \{
+			DECLARE @TypeGroupTaskID	uniqueidentifier;
+			DECLARE @TypeGroupTaskName	nvarchar\(max\);
+
+			DECLARE @TypeGroupEditID	uniqueidentifier;
+			DECLARE @TypeGroupEditName	nvarchar\(max\);
+			\}
+
+			\#if\(Normal\) \{
+			SET @NoName = [dbo].[GetString]\(N'Views_EmittedTasks_NoName_Sql'\, \#param\(locale\)\);
+			\}
+
+			\#if\(ByTaskDueDateInterval || TaskDateDueInterval\) \{
+			/*
+			-3 Просрочено на месяц
+			-2 Просрочено на неделю
+			-1 Вчера
+			0 Сегодня
+			1 Завтра
+			2 Неделя
+			3 Месяц
+			*/
+
+			SET @MonthAgoStr	= [dbo].[GetString]\(N'Views_EmittedTasks_MonthAgo_Sql'\, \#param\(locale\)\);
+			SET @WeekAgoStr		= [dbo].[GetString]\(N'Views_EmittedTasks_WeekAgo_Sql'\, \#param\(locale\)\);
+			SET @YesterdayStr	= [dbo].[GetString]\(N'Views_EmittedTasks_Yesterday_Sql'\, \#param\(locale\)\);
+			SET @TodayStr		= [dbo].[GetString]\(N'Views_EmittedTasks_Today_Sql'\, \#param\(locale\)\);
+			SET @TomorrowStr	= [dbo].[GetString]\(N'Views_EmittedTasks_Tomorrow_Sql'\, \#param\(locale\)\);
+			SET @WeekStr		= [dbo].[GetString]\(N'Views_EmittedTasks_WeekLater_Sql'\, \#param\(locale\)\);
+			SET @MonthStr		= [dbo].[GetString]\(N'Views_EmittedTasks_MonthLater_Sql'\, \#param\(locale\)\);
+
+			CREATE TABLE [\#intervals] \(
+				[Interval]	int				NOT NULL\,	-- номер интервала
+				[Caption]	nvarchar\(max\)	NOT NULL\,	-- название интервала
+				[DateFrom]	datetime		NOT NULL\,	-- дата начала интервала \(включительно\)
+				[DateTo]	datetime		NOT NULL\);	-- дата окончания интервала \(исключая\)
+
+			SET @DT1 = GETUTCDATE\(\);
+
+			-- Просрочено на месяц и более
+			-- Ищем день 20 рабочих дней тому назад и берем начало следующего астрономического дня
+			SET @DT2 = DATEADD\(day\, DATEDIFF\(day\, 0\, [dbo].[CalendarGetLastQuantStart]\(@DT1\, -20\)\)\, 1\);
+
+			INSERT INTO [\#intervals]
+			VALUES \(-3\, @MonthAgoStr\, '1753-01-01T00\:00\:00.000'\, @DT2\);
+
+			-- Просрочено на неделю \(от пяти до 20 рабочих дней\)
+			SET @DT3 = DATEADD\(day\, DATEDIFF\(day\, 0\, [dbo].[CalendarGetLastQuantStart]\(@DT1\, -5\)\)\, 1\);
+
+			INSERT INTO [\#intervals]
+			VALUES \(-2\, @WeekAgoStr\, @DT2\, @DT3\);
+
+			-- Вчера \(-1 рабочий день\)
+			SET @DT2 = DATEADD\(day\, DATEDIFF\(day\, 0\, @DT1\)\, 0\);
+
+			INSERT INTO [\#intervals]
+			VALUES \(-1\, @YesterdayStr\, @DT3\, @DT2\);
+
+			-- Сегодня \(текущий астрономический день\)
+			SET @DT3 = DATEADD\(day\, DATEDIFF\(day\, 0\, @DT1\)\, 1\);
+
+			INSERT INTO [\#intervals]
+			VALUES \(0\, @TodayStr\, @DT2\, @DT3\);
+
+			-- Завтра \(+1 рабочий день\)
+			SET @DT2 = DATEADD\(day\, DATEDIFF\(day\, 0\, [dbo].[CalendarGetLastQuantStart]\(@DT1\, 5\)\)\, 1\);
+
+			INSERT INTO [\#intervals]
+			VALUES \(1\, @TomorrowStr\, @DT3\, @DT2\);
+
+			-- Через неделю \(+5 рабочих дней\)
+			SET @DT3 = DATEADD\(day\, DATEDIFF\(day\, 0\, [dbo].[CalendarGetLastQuantStart]\(@DT1\, 20\)\)\, 1\);
+
+			INSERT INTO [\#intervals]
+			VALUES \(2\, @WeekStr\, @DT2\, @DT3\);
+
+			-- Через месяц \(+20 рабочих дней\)
+			INSERT INTO [\#intervals]
+			VALUES \(3\, @MonthStr\, @DT3\, '9999-12-31T23\:59\:59.996'\);
+			\}
+
+			\#if\(ByTaskType || TaskTypeGrouped\) \{
+			-- Группа ID типов заданий с одинаковым именем для объекдинения в сабсете
+			SET @TypeGroupTaskID = '928132fe-202d-4f9f-8ec5-5093ea2122d1';
+			SET @TypeGroupTaskName = N'$CardTypes_TypesNames_WfResolution';
+			\#var\(typeGroupTask\: "\('928132fe-202d-4f9f-8ec5-5093ea2122d1'\, '539ecfe8-5fb6-4681-8aa8-1ee4d9ef1dda'\, '85a5e8d7-a901-46df-9173-4d9a043ce6d3'\)"\)
+
+			SET @TypeGroupEditID = 'e19ca9b5-48be-4fdf-8dc5-78534b4767de';
+			SET @TypeGroupEditName = N'$CardTypes_TypesNames_KrEdit';
+			\#var\(typeGroupEdit\: "\('e19ca9b5-48be-4fdf-8dc5-78534b4767de'\, 'c9b93ae3-9b7b-4431-a306-aace4aea8732'\)"\)
+			\}
+
+			/* ОСНОВНАЯ ВЫБОРКА */
+
+			SELECT
+				\#if\(ByTaskDueDateInterval\) \{
+				/* Сабсет по интервалу завершения */
+				[\#intervals].[Interval] AS [IntervalID]\,
+				[\#intervals].[Caption] AS [IntervalName]\,
+				[t].[cnt]
+				\} \{
+				[t].*
+				\}
+			FROM \(
+				SELECT
+					\#if\(Normal\) \{
+					[t2].[ID] AS [CardID]\,
+					[t2].[TypeID]\,
+					COALESCE\([tt].[KindCaption]\, [t2].[TypeCaption]\) AS [TypeCaption]\,
+					[t2].[StateID]\,
+					[ts].[Name] AS [StateName]\,
+					[t2].[RoleID]\,
+					[t2].[RoleName]\,
+					[t2].[UserID]\,
+					[t2].[UserName]\,
+					COALESCE\([dci].[FullNumber]\, @NoName\) AS [CardName]\,
+					COALESCE\([dci].[DocTypeID]\, [i].[TypeID]\) AS [CardTypeID]\,
+					COALESCE\([dci].[DocTypeTitle]\, [i].[TypeCaption]\) AS [CardTypeName]\,
+					[t2].[Planned] AS [PlannedDate]\,
+					[t2].[Modified] AS [ModificationTime]\,
+					[t2].[AuthorID]\,
+					[t2].[AuthorName]\,
+					[t].[rn]
+					\}
+
+					\#if\(Count\) \{
+					[t].*
+					\}
+
+					\#if\(ByStatus || ByTaskType || ByCardType || ByTaskDueDateInterval\) \{
+					/* Сабсет по состоянию заданий */
+					/* Сабсет по типу карточки/документа */
+					/* Сабсет по типу заданий */
+					/* Сабсет по интервалу завершения */
+					[t].*\,
+					count\(*\) AS [cnt]
+					\}
+				FROM \(
+					SELECT
+						\#if\(Normal\) \{
+						[t].[RowID]\,
+						row_number\(\) OVER \(ORDER BY \#order_by\) AS [rn]
+						\}
+
+						\#if\(Count\) \{
+						count\(*\) AS [cnt]
+						\}
+
+						\#if\(ByStatus\) \{
+						[t].[StateID]\,
+						[ts].[Name] AS [StateName]
+						\}
+
+						\#if\(ByTaskType\) \{
+						COALESCE\([tt].[KindID]\, CASE
+							WHEN [t].[TypeID] IN \#eval\(typeGroupTask\) THEN @TypeGroupTaskID
+							WHEN [t].[TypeID] IN \#eval\(typeGroupEdit\) THEN @TypeGroupEditID
+							ELSE [t].[TypeID]
+						END\) AS [TypeID]\,
+						COALESCE\([tt].[KindCaption]\, CASE
+							WHEN [t].[TypeID] IN \#eval\(typeGroupTask\) THEN @TypeGroupTaskName
+							WHEN [t].[TypeID] IN \#eval\(typeGroupEdit\) THEN @TypeGroupEditName
+							ELSE COALESCE\([tt].[KindCaption]\, [t].[TypeCaption]\)
+						END\) AS [TypeCaption]
+						\}
+
+						\#if\(ByCardType\) \{
+						COALESCE\([dci].[DocTypeID]\, [i].[TypeID]\) AS [CardTypeID]\,
+						COALESCE\([dci].[DocTypeTitle]\, [i].[TypeCaption]\) AS [CardTypeName]
+						\}
+
+						\#if\(ByTaskDueDateInterval\) \{
+						[ddi].[Interval]\,
+						[ddi].[Caption] AS [IntervalName]
+						\}
+					FROM [Tasks] AS [t] WITH \(NOLOCK\)
+
+					\#if\(ByStatus || Status\) \{
+					INNER JOIN [TaskStates] AS [ts] WITH \(NOLOCK\)
+						ON [ts].[ID] = [t].[StateID]
+					\}
+
+					\#if\(ByCardType || CardType || DocumentType\) \{
+					INNER JOIN [Instances] AS [i] WITH \(NOLOCK\)
+						ON [i].[ID] = [t].[ID]
+					\}
+
+					\#if\(ByCardType || CardType || request.SortedBy\("CardName"\) || Number || DocumentType\) \{
+					LEFT JOIN [DocumentCommonInfo] AS [dci] WITH \(NOLOCK\)
+						ON [dci].[ID] = [t].[ID]
+					\}
+
+					\#if\(ByTaskType || TaskTypeGrouped\) \{
+					LEFT JOIN [TaskCommonInfo] AS [tt] WITH \(NOLOCK\)
+						ON [tt].[ID] = [t].[RowID]
+					\}
+
+					\#if\(ByTaskDueDateInterval\) \{
+					/* Сабсет по дате завершения задания - джойним интервалы для определения номера интервала */
+					INNER JOIN [\#intervals] AS [ddi]
+						ON [ddi].[DateFrom] <= [t].[Planned]
+						AND [ddi].[DateTo] > [t].[Planned]
+					\} \{
+					\#if\(TaskDateDueInterval\) \{
+					/* Сабсет по интервалу завершения - отрабатываем фильтрацию по номеру интервала */
+					INNER JOIN [\#intervals] AS [ddi]
+						ON [ddi].[Interval] = \#param\(TaskDateDueInterval\)
+						AND [ddi].[DateFrom] <= [t].[Planned]
+						AND [ddi].[DateTo] > [t].[Planned]
+					\}
+					\}
+
+					WHERE EXISTS \(
+							SELECT NULL
+							FROM [RoleUsers] AS [ru] WITH \(NOLOCK\)
+							WHERE [ru].[ID] = [t].[AuthorID]
+								AND [ru].[UserID] = \#param\(CurrentUserID\)
+						\)
+
+						\#param\(Status\, [t].[StateID]\)
+						\#param\(TaskType\, [t].[TypeID]\)
+
+						\#if\(CardType\) \{
+						AND COALESCE\([dci].[DocTypeID]\, [dci].[CardTypeID]\) = \#param\(CardType\)
+						\}
+
+						\#if\(TaskTypeGrouped\) \{
+						AND \(
+							\#param\(TaskTypeGrouped\) = [tt].[KindID]
+							OR
+							[tt].[KindID] IS NULL
+							AND \(
+								\#param\(TaskTypeGrouped\) = [t].[TypeID]
+								OR
+								\#param\(TaskTypeGrouped\) = @TypeGroupTaskID AND [t].[TypeID] IN \#eval\(typeGroupTask\)
+								OR
+								\#param\(TaskTypeGrouped\) = @TypeGroupEditID AND [t].[TypeID] IN \#eval\(typeGroupEdit\)
+							\)
+						\)
+						\}
+
+						\#if\(Role\) \{
+						/* Для поиска и по ролям к заданию */
+						AND \(
+							1 = 1 \#param\(Role\, [t].[RoleID]\)
+							OR EXISTS\(
+								SELECT NULL
+								FROM [Roles] AS [r] WITH \(NOLOCK\)
+								WHERE [r].[ID] = [t].[RoleID]
+									\#param\(Role\, [r].[ParentID]\)
+							\)
+						\)
+						\}
+						
+						\#if\(DocumentType\) \{
+						/* Для поиска по Типу документа */
+						AND \(
+							1 = 1 \#param\(DocumentType\, COALESCE\([dci].[DocTypeID]\, [i].[TypeID]\)\)
+							OR EXISTS\(
+								SELECT NULL
+								FROM [Types] AS [r] WITH \(NOLOCK\)
+								WHERE [r].[ID] = COALESCE\([dci].[DocTypeID]\, [i].[TypeID]\)
+									\#param\(DocumentType\, [r].[ID]\)
+							\)
+						\)
+						\}
+						
+						\#if\(State\) \{
+						/* Для поиска по Статусу */
+						AND \(
+							1 = 1 \#param\(State\, [t].[StateID]\)
+							OR EXISTS\(
+								SELECT NULL
+								FROM [TaskStates] AS [r] WITH \(NOLOCK\)
+								WHERE [r].[ID] = [t].[StateID]
+									\#param\(State\, [r].[ID]\)
+							\)
+						\)
+						\}
+						
+						\#if\(Author\) \{
+						/* Для поиска по Автору */
+						AND \(
+							1 = 1 \#param\(Author\, [t].[AuthorID]\)
+							OR EXISTS\(
+								SELECT NULL
+								FROM [Roles] AS [r] WITH \(NOLOCK\)
+								WHERE [r].[ID] = [t].[AuthorID]
+									\#param\(Author\, [r].[ID]\)
+							\)
+						\)
+						\}	
+						
+						/* Для поиска по Номеру */
+						\#param\(Number\, [dci].[FullNumber]\)			
+						
+					\) AS [t]
+
+				\#if\(Normal\) \{
+				INNER JOIN [Tasks] AS [t2] WITH \(NOLOCK\)
+					ON [t2].[RowID] = [t].[RowID]
+				INNER JOIN [TaskStates] AS [ts] WITH \(NOLOCK\)
+					ON [ts].[ID] = [t2].[StateID]
+				INNER JOIN [Instances] AS [i] WITH \(NOLOCK\)
+					ON [i].[ID] = [t2].[ID]
+				LEFT JOIN [DocumentCommonInfo] AS [dci] WITH \(NOLOCK\)
+					ON [dci].[ID] = [t2].[ID]
+				LEFT JOIN [TaskCommonInfo] AS [tt] WITH \(NOLOCK\)
+					ON [tt].[ID] = [t].[RowID]
+				\}
+
+				\#if\(PageOffset\) \{
+				WHERE [t].[rn] >= \#param\(PageOffset\) AND [t].[rn] < \#param\(PageOffset\) + \#param\(PageLimit\)
+				\}
+
+				\#if\(ByStatus\) \{
+				/* Сабсет по состоянию заданий */
+				GROUP BY [t].[StateID]\, [t].[StateName]
+				\}
+
+				\#if\(ByTaskType\) \{
+				/* Сабсет по типу заданий */
+				GROUP BY [t].[TypeID]\, [t].[TypeCaption]
+				\}
+
+				\#if\(ByCardType\) \{
+				/* Сабсет по типу заданий */
+				GROUP BY [t].[CardTypeID]\, [t].[CardTypeName]
+				\}
+
+				\#if\(ByTaskDueDateInterval\) \{
+				/* Сабсет по дате завершения задания */
+				GROUP BY [t].[Interval]\, [t].[IntervalName]
+				\}
+				\) AS [t]
+
+			\#if\(ByTaskDueDateInterval\) \{
+			RIGHT JOIN [\#intervals]
+				ON [\#intervals].[Interval] = [t].[Interval]
+			\}
+
+			\#if\(Normal\) \{
+			ORDER BY [t].[rn]
+			\}
+
+			\#if\(ByStatus\) \{
+			CROSS APPLY [Localization]\([t].[StateName]\, \#param\(locale\)\) AS [lStateName]
+			ORDER BY [lStateName].[Value]
+			\}
+
+			\#if\(ByTaskType\) \{
+			CROSS APPLY [Localization]\([t].[TypeCaption]\, \#param\(locale\)\) AS [lTypeCaption]
+			ORDER BY [lTypeCaption].[Value]
+			\}
+
+			\#if\(ByCardType\) \{
+			ORDER BY [t].[CardTypeName]
+			\}
+
+			\#if\(ByTaskDueDateInterval\) \{
+			ORDER BY [\#intervals].[Interval]
+			\}
+			;
+		}
+		#pg_query {
+			DECLARE
+				\#if\(Normal\) \{
+				"no_name"					text;
+				\}
+
+				\#if\(ByTaskDueDateInterval || TaskDateDueInterval\) \{
+				"month_ago_str"				text;
+				"week_ago_str"				text;
+				"yesterday_str"				text;
+				"today_str"					text;
+				"tomorrow_str"				text;
+				"week_str"					text;
+				"month_str"					text;
+
+				"dt_1"						timestamptz;
+				"dt_2"						timestamptz;
+				"dt_3"						timestamptz;
+				"interval"					int;
+				\}
+
+				\#if\(ByTaskType || TaskTypeGrouped\) \{
+				"type_group_task_id"		uuid;
+				"type_group_task_name"		text;
+
+				"type_group_edit_id"		uuid;
+				"type_group_edit_name"		text;
+				\}
+			BEGIN
+				\#if\(Normal\) \{
+				"no_name" = "GetString"\('Views_EmittedTasks_NoName_Sql'\, \#param\(locale\)\);
+				\}
+
+				\#if\(ByTaskDueDateInterval || TaskDateDueInterval\) \{
+				/*
+				-3 Просрочено на месяц
+				-2 Просрочено на неделю
+				-1 Вчера
+				0 Сегодня
+				1 Завтра
+				2 Неделя
+				3 Месяц
+				*/
+
+				"month_ago_str"	= "GetString"\('Views_EmittedTasks_MonthAgo_Sql'\, \#param\(locale\)\);
+				"week_ago_str"	= "GetString"\('Views_EmittedTasks_WeekAgo_Sql'\, \#param\(locale\)\);
+				"yesterday_str"	= "GetString"\('Views_EmittedTasks_Yesterday_Sql'\, \#param\(locale\)\);
+				"today_str"		= "GetString"\('Views_EmittedTasks_Today_Sql'\, \#param\(locale\)\);
+				"tomorrow_str"	= "GetString"\('Views_EmittedTasks_Tomorrow_Sql'\, \#param\(locale\)\);
+				"week_str"		= "GetString"\('Views_EmittedTasks_WeekLater_Sql'\, \#param\(locale\)\);
+				"month_str"		= "GetString"\('Views_EmittedTasks_MonthLater_Sql'\, \#param\(locale\)\);
+
+				CREATE TEMP TABLE IF NOT EXISTS "intervals" \(
+					"Interval"	int			NOT NULL\,	-- номер интервала
+					"Caption"	text		NOT NULL\,	-- название интервала
+					"DateFrom"	timestamptz	NOT NULL\,	-- дата начала интервала \(включительно\)
+					"DateTo"	timestamptz	NOT NULL\);	-- дата окончания интервала \(исключая\)
+
+				"dt_1" = current_timestamp;
+
+				-- Просрочено на месяц и более
+				-- Ищем день 20 рабочих дней тому назад и берем начало следующего астрономического дня
+				"dt_2" = date_trunc\('day'\, "CalendarGetLastQuantStart"\("dt_1"\, -20\) + interval '1 day'\);
+
+				INSERT INTO "intervals"
+				VALUES \(-3\, "month_ago_str"\, '-infinity'\, "dt_2"\);
+
+				-- Просрочено на неделю \(от пяти до 20 рабочих дней\)
+				"dt_3" = date_trunc\('day'\, "CalendarGetLastQuantStart"\("dt_1"\, -5\) + interval '1 day'\);
+
+				INSERT INTO "intervals"
+				VALUES \(-2\, "week_ago_str"\, "dt_2"\, "dt_3"\);
+
+				-- Вчера \(-1 рабочий день\)
+				"dt_2" = date_trunc\('day'\, "dt_1"\);
+
+				INSERT INTO "intervals"
+				VALUES \(-1\, "yesterday_str"\, "dt_3"\, "dt_2"\);
+
+				-- Сегодня \(текущий астрономический день\)
+				"dt_3" = date_trunc\('day'\, "dt_1" + interval '1 day'\);
+
+				INSERT INTO "intervals"
+				VALUES \(0\, "today_str"\, "dt_2"\, "dt_3"\);
+
+				-- Завтра \(+1 рабочий день\)
+				"dt_2" = date_trunc\('day'\, "CalendarGetLastQuantStart"\("dt_1"\, 5\) + interval '1 day'\);
+
+				INSERT INTO "intervals"
+				VALUES \(1\, "tomorrow_str"\, "dt_3"\, "dt_2"\);
+
+				-- Через неделю \(+5 рабочих дней\)
+				"dt_3" = date_trunc\('day'\, "CalendarGetLastQuantStart"\("dt_1"\, 20\) + interval '1 day'\);
+
+				INSERT INTO "intervals"
+				VALUES \(2\, "week_str"\, "dt_2"\, "dt_3"\);
+
+				-- Через месяц \(+20 рабочих дней\)
+				INSERT INTO "intervals"
+				VALUES \(3\, "month_str"\, "dt_3"\, 'infinity'\);
+				\}
+
+				\#if\(ByTaskType || TaskTypeGrouped\) \{
+				-- Группа ID типов заданий с одинаковым именем для объекдинения в сабсете
+				"type_group_task_id" = '928132fe-202d-4f9f-8ec5-5093ea2122d1';
+				"type_group_task_name" = '$CardTypes_TypesNames_WfResolution';
+				\#var\(typeGroupTask\: "\('928132fe-202d-4f9f-8ec5-5093ea2122d1'\, '539ecfe8-5fb6-4681-8aa8-1ee4d9ef1dda'\, '85a5e8d7-a901-46df-9173-4d9a043ce6d3'\)"\)
+
+				"type_group_edit_id" = 'e19ca9b5-48be-4fdf-8dc5-78534b4767de';
+				"type_group_edit_name" = '$CardTypes_TypesNames_KrEdit';
+				\#var\(typeGroupEdit\: "\('e19ca9b5-48be-4fdf-8dc5-78534b4767de'\, 'c9b93ae3-9b7b-4431-a306-aace4aea8732'\)"\)
+				\}
+
+				/* ОСНОВНАЯ ВЫБОРКА */
+				
+				RETURN QUERY
+				SELECT
+					\#if\(ByTaskDueDateInterval\) \{
+					/* Сабсет по интервалу завершения */
+					"intervals"."Interval" AS "IntervalID"\,
+					"intervals"."Caption" AS "IntervalName"\,
+					"t"."cnt"
+					\} \{
+					"t".*
+					\}
+				FROM \(
+					SELECT
+						\#if\(Normal\) \{
+						"t"."ID" AS "CardID"\,
+						"t"."TypeID"\,
+						COALESCE\("ti"."KindCaption"\, "t"."TypeCaption"\) AS "TypeCaption"\,
+						"t"."StateID"\,
+						"ts"."Name" AS "StateName"\,
+						"t"."RoleID"\,
+						"t"."RoleName"\,
+						"t"."UserID"\,
+						"t"."UserName"\,
+						COALESCE\("dci"."FullNumber"\, "no_name"\) AS "CardName"\,
+						COALESCE\("dci"."DocTypeID"\, "i"."TypeID"\) AS "CardTypeID"\,
+						COALESCE\("dci"."DocTypeTitle"\, "i"."TypeCaption"\) AS "CardTypeName"\,
+						"t"."Planned" AS "PlannedDate"\,
+						"t"."Modified" AS "ModificationTime"\,
+						"t"."AuthorID"\,
+						"t"."AuthorName"\,
+						0\:\:int8 AS "rn"
+						\}
+
+						\#if\(Count\) \{
+						"tt".*
+						\}
+
+						\#if\(ByStatus || ByTaskType || ByCardType || ByTaskDueDateInterval\) \{
+						/* Сабсет по состоянию заданий */
+						/* Сабсет по типу карточки/документа */
+						/* Сабсет по типу заданий */
+						/* Сабсет по интервалу завершения */
+						"tt".*\,
+						count\(*\) AS "cnt"
+						\}
+					FROM \(
+						SELECT
+							\#if\(Normal\) \{
+							"t"."RowID"
+							\}
+
+							\#if\(Count\) \{
+							count\(*\) AS "cnt"
+							\}
+
+							\#if\(ByStatus\) \{
+							"t"."StateID"\,
+							"ts"."Name" AS "StateName"
+							\}
+
+							\#if\(ByTaskType\) \{
+							COALESCE\("tt"."KindID"\, CASE
+								WHEN "t"."TypeID" IN \#eval\(typeGroupTask\) THEN "type_group_task_id"
+								WHEN "t"."TypeID" IN \#eval\(typeGroupEdit\) THEN "type_group_edit_id"
+								ELSE "t"."TypeID"
+							END\) AS "TypeID"\,
+							COALESCE\("tt"."KindCaption"\, CASE
+								WHEN "t"."TypeID" IN \#eval\(typeGroupTask\) THEN "type_group_task_name"
+								WHEN "t"."TypeID" IN \#eval\(typeGroupEdit\) THEN "type_group_edit_name"
+								ELSE COALESCE\("tt"."KindCaption"\, "t"."TypeCaption"\)
+							END\) AS "TypeCaption"
+							\}
+
+							\#if\(ByCardType\) \{
+							COALESCE\("dci"."DocTypeID"\, "i"."TypeID"\) AS "CardTypeID"\,
+							COALESCE\("dci"."DocTypeTitle"\, "i"."TypeCaption"\) AS "CardTypeName"
+							\}
+
+							\#if\(ByTaskDueDateInterval\) \{
+							"ddi"."Interval"\,
+							"ddi"."Caption" AS "IntervalName"
+							\}
+						FROM "Tasks" AS "t"
+
+						\#if\(ByStatus || Status\) \{
+						INNER JOIN "TaskStates" AS "ts"
+							ON "ts"."ID" = "t"."StateID"
+						\}
+
+						\#if\(ByCardType || CardType\) \{
+						INNER JOIN "Instances" AS "i"
+							ON "i"."ID" = "t"."ID"
+						\}
+
+						\#if\(ByCardType || CardType || request.SortedBy\("CardName"\)\) \{
+						LEFT JOIN "DocumentCommonInfo" AS "dci"
+							ON "dci"."ID" = "t"."ID"
+						\}
+
+						\#if\(ByTaskType || TaskTypeGrouped\) \{
+						LEFT JOIN "TaskCommonInfo" AS "tt"
+							ON "tt"."ID" = "t"."RowID"
+						\}
+
+						\#if\(ByTaskDueDateInterval\) \{
+						/* Сабсет по дате завершения задания - джойним интервалы для определения номера интервала */
+						INNER JOIN "intervals" AS "ddi"
+							ON "ddi"."DateFrom" <= "t"."Planned"
+							AND "ddi"."DateTo" > "t"."Planned"
+						\} \{
+						\#if\(TaskDateDueInterval\) \{
+						/* Сабсет по интервалу завершения - отрабатываем фильтрацию по номеру интервала */
+						INNER JOIN "intervals" AS "ddi"
+							ON "ddi"."Interval" = \#param\(TaskDateDueInterval\)
+							AND "ddi"."DateFrom" <= "t"."Planned"
+							AND "ddi"."DateTo" > "t"."Planned"
+						\}
+						\}
+
+						WHERE EXISTS \(
+								SELECT NULL
+								FROM "RoleUsers" AS "ru"
+								WHERE "ru"."ID" = "t"."AuthorID"
+									AND "ru"."UserID" = \#param\(CurrentUserID\)
+							\)
+
+							\#param\(Status\, "t"."StateID"\)
+							\#param\(TaskType\, "t"."TypeID"\)
+
+							\#if\(CardType\) \{
+							AND COALESCE\("dci"."DocTypeID"\, "dci"."CardTypeID"\) = \#param\(CardType\)
+							\}
+
+							\#if\(TaskTypeGrouped\) \{
+							AND \(
+								\#param\(TaskTypeGrouped\) = "tt"."KindID"
+								OR
+								"tt"."KindID" IS NULL
+								AND \(
+									\#param\(TaskTypeGrouped\) = "t"."TypeID"
+									OR
+									\#param\(TaskTypeGrouped\) = "type_group_task_id" AND "t"."TypeID" IN \#eval\(typeGroupTask\)
+									OR
+									\#param\(TaskTypeGrouped\) = "type_group_edit_id" AND "t"."TypeID" IN \#eval\(typeGroupEdit\)
+								\)
+							\)
+							\}
+
+							\#if\(Role\) \{
+							/* Для поиска и по ролям к заданию */
+							AND \(
+								true \#param\(Role\, "t"."RoleID"\)
+								OR EXISTS\(
+									SELECT NULL
+									FROM "Roles" AS "r"
+									WHERE "r"."ID" = "t"."RoleID"
+										\#param\(Role\, "r"."ParentID"\)
+								\)
+							\)
+							\}
+
+						\#if\(Normal\) \{
+						ORDER BY \#order_by
+						\}
+						\#if\(PageOffset\) \{
+						OFFSET \#param\(PageOffset\) - 1 LIMIT \#param\(PageLimit\)
+						\}
+						\) AS "tt"
+
+					\#if\(Normal\) \{
+					INNER JOIN "Tasks" AS "t"
+						ON "t"."RowID" = "tt"."RowID"
+					INNER JOIN "TaskStates" AS "ts"
+						ON "ts"."ID" = "t"."StateID"
+					INNER JOIN "Instances" AS "i"
+						ON "i"."ID" = "t"."ID"
+					LEFT JOIN "DocumentCommonInfo" AS "dci"
+						ON "dci"."ID" = "t"."ID"
+					LEFT JOIN "TaskCommonInfo" AS "ti"
+						ON "ti"."ID" = "tt"."RowID"
+					ORDER BY \#order_by
+					\}
+
+					\#if\(ByStatus\) \{
+					/* Сабсет по состоянию заданий */
+					GROUP BY "tt"."StateID"\, "tt"."StateName"
+					\}
+
+					\#if\(ByTaskType\) \{
+					/* Сабсет по типу заданий */
+					GROUP BY "tt"."TypeID"\, "tt"."TypeCaption"
+					\}
+
+					\#if\(ByCardType\) \{
+					/* Сабсет по типу заданий */
+					GROUP BY "tt"."CardTypeID"\, "tt"."CardTypeName"
+					\}
+
+					\#if\(ByTaskDueDateInterval\) \{
+					/* Сабсет по дате завершения задания */
+					GROUP BY "tt"."Interval"\, "tt"."IntervalName"
+					\}
+					\) AS "t"
+
+				\#if\(ByTaskDueDateInterval\) \{
+				RIGHT JOIN "intervals"
+					ON "intervals"."Interval" = "t"."Interval"
+				\}
+
+				\#if\(ByStatus\) \{
+				CROSS JOIN "Localization"\("t"."StateName"\, \#param\(locale\)\) AS "lStateName"
+				ORDER BY "lStateName"."Value"
+				\}
+
+				\#if\(ByTaskType\) \{
+				CROSS JOIN "Localization"\("t"."TypeCaption"\, \#param\(locale\)\) AS "lTypeCaption"
+				ORDER BY "lTypeCaption"."Value"
+				\}
+
+				\#if\(ByCardType\) \{
+				ORDER BY "t"."CardTypeName"
+				\}
+
+				\#if\(ByTaskDueDateInterval\) \{
+				ORDER BY "intervals"."Interval"
+				\};
+			END;
+		}
+		#role(RoleID:7ff52dc0-ff6a-4c9d-ba25-b562c370004d, ViewID:b6e14161-038f-4060-bd35-66ba13da2cb8) 
+	}
+}

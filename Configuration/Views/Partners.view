@@ -1,0 +1,134 @@
+#tessa_exchange_format(Version:1, CreationTime:2020-11-17T08\:18\:38) {
+	#exchange_view(RowID:f9e6f291-2de8-459c-8d05-420fb8cce90f, Alias:Partners, Caption:Контрагенты, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2020-11-17T08\:14\:25, GroupName:System) {
+		#metadata {
+			#view(DefaultSortColumn: PartnerName, DefaultSortDirection: asc, Paging: always, RowCountSubset: Count, MultiSelect: true, QuickSearchParam: Name)
+			#column(Alias: PartnerID, Hidden: true, Type: $Partners.ID)
+			#column(Alias: PartnerName, Caption: $Views_Partners_Name, Type: $Partners.Name, SortBy: t.Name)
+			#column(Alias: StatusName, Caption: Статус, Type: nvarchar, SortBy: t.Status)
+			#column(Alias: FullName, Caption: $Views_Partners_FullName, Type: $Partners.FullName, SortBy: t.FullName)
+			#column(Alias: TypeID, Hidden: true, Type: $Partners.TypeID)
+			#column(Alias: TypeName, Caption: $Views_Partners_Type, Type: $Partners.TypeName, Localizable: true, SortBy: t.TypeID)
+			#column(Alias: INN, Caption: $Views_Partners_INN, Type: $Partners.INN)
+			#column(Alias: KPP, Caption: $Views_Partners_KPP, Type: $Partners.KPP)
+			#column(Alias: OGRN, Hidden: true, Type: $Partners.OGRN)
+			#column(Alias: Comment, Hidden: true, Type: $Partners.Comment)
+			#param(Alias: IsHidden, Caption: Скрыт при выборе, Hidden: false, Type: $PnrProjects.IsHidden, Multiple: true)
+			#param(Alias: PartnerID, Caption: PartnerID, Hidden: true, Multiple: false, Type: $Partners.ID)
+			#param(Alias: Name, Caption: $Views_Partners_Name_Param, Multiple: true, Type: $Partners.Name)
+			#param(Alias: FullName, Caption: $Views_Partners_FullName_Param, Multiple: true, Type: $Partners.FullName)
+			#param(Alias: Type, Caption: $Views_Partners_Type_Param, Type: $Partners.TypeID, RefSection: PartnersTypes) {
+				#autocomplete(View: PartnersTypes, Param: Name, RefPrefix: Type, PopupColumns: 1)
+				#dropdown(View: PartnersTypes, PopupColumns: 1)
+			}
+			#param(Alias: INN, Caption: $Views_Partners_INN_Param, Multiple: true, Type: $Partners.INN)
+			#param(Alias: KPP, Caption: $Views_Partners_KPP_Param, Multiple: true, Type: $Partners.KPP)
+			#param(Alias: OGRN, Caption: $Views_Partners_OGRN_Param, Multiple: true, Type: $Partners.OGRN)
+			#param(Alias: Comment, Caption: $Views_Partners_Comment_Param, Multiple: true, Type: $Partners.Comment)
+			#param(Alias: Status, Caption: Статус, Multiple: true, Type: int, RefSection: PnrPartnersStatus) {
+				#autocomplete(View: PnrPartnersStatus, Param: Name, PopupColumns: 1)
+			}
+			#reference(ColPrefix: Partner, RefSection: Partners, DisplayValueColumn: PartnerName, IsCard: true, OpenOnDoubleClick: true)
+			#subset(Alias: ByStatus, Caption: По статусу, RefParam: Status, RefColumn: SubStatusID, CaptionColumn: SubStatusName, CountColumn: SubCnt)
+			#subset(Alias: Count)
+		}
+		#description {}
+		#ms_query {
+			SELECT
+				\#if\(Normal\) \{
+				[t].[ID]			AS [PartnerID]\,
+				[tt].[Name]			AS [PartnerName]\,
+				[tt].[FullName]\,
+				[tt].[TypeID]\,
+				[tt].[TypeName]\,
+				[tt].[INN]\,
+				[tt].[KPP]\,
+				[tt].[OGRN]\,
+				[tt].[Comment]\,
+				[tt].[StatusName]
+				\}
+				\#if\(Count | ByStatus\) \{
+				[t].*
+				\}
+			FROM \(
+				SELECT
+					\#if\(Normal\) \{
+					[t].[ID]\,
+					row_number\(\) OVER \(ORDER BY \#order_by\) AS [rn]
+					\}
+					\#if\(Count\) \{
+					count\(*\) AS [cnt]
+					\}
+					\#if\(ByStatus\)\{
+						COALESCE\([t].[StatusID]\, NULL\)				AS [SubStatusID]\,
+			        	COALESCE\([t].[StatusName]\, N'Не указан'\)	AS [SubStatusName]\,
+			    		count\(*\)								AS [SubCnt]
+			    	\}
+				FROM [Partners] AS [t] WITH \(NOLOCK\)
+				WHERE 1 = 1
+				    /* Для отображения скрытых при выборе записей */
+				    \#if\(IsHidden\)
+				    \{ \#param\(IsHidden\, t.IsHidden\) \}
+				    \{ AND \(t.IsHidden is null OR t.IsHidden = 0\) \}
+					\#param\(PartnerID\, [t].[ID]\)
+					\#if\(Name\) \{ 
+						AND \([t].[Name] LIKE '%'+ \#param\(Name\) + '%'
+						OR [t].[INN] LIKE '%'+ \#param\(Name\) + '%'\)
+					\}
+					\#param\(FullName\, [t].[FullName]\)
+					\#param\(Type\, [t].[TypeID]\)
+					\#param\(INN\, [t].[INN]\)
+					\#param\(KPP\, [t].[KPP]\)
+					\#param\(OGRN\, [t].[OGRN]\)
+					\#param\(Comment\, [t].[Comment]\)
+					\#param\(Status\, [t].[StatusID]\)
+					\#if\(ByStatus\) \{
+						GROUP BY [t].[StatusID]\, [t].[StatusName]
+					\}
+				\) AS [t]
+			\#if\(Normal\) \{
+			INNER JOIN [Partners] AS [tt] WITH \(NOLOCK\)
+				ON [tt].[ID] = [t].[ID]
+			\}
+			\#if\(PageOffset\) \{
+			WHERE [t].[rn] >= \#param\(PageOffset\) AND [t].[rn] < \(\#param\(PageOffset\) + \#param\(PageLimit\)\)
+			\}
+			\#if\(Normal\) \{
+			ORDER BY [t].[rn]
+			\}
+		}
+		#pg_query {
+			SELECT
+				\#if\(Normal\) \{
+				"t"."ID"			AS "PartnerID"\,
+				"t"."Name"			AS "PartnerName"\,
+				"t"."FullName"\,
+				"t"."TypeID"\,
+				"t"."TypeName"\,
+				"t"."INN"\,
+				"t"."KPP"\,
+				"t"."OGRN"\,
+				"t"."Comment"
+				\}
+				\#if\(Count\) \{
+				count\(*\) AS "cnt"
+				\}
+			FROM "Partners" AS "t"
+			WHERE true
+				\#param\(PartnerID\, "t"."ID"\)
+				\#param\(Name\, "t"."Name"\)
+				\#param\(FullName\, "t"."FullName"\)
+				\#param\(Type\, "t"."TypeID"\)
+				\#param\(INN\, "t"."INN"\)
+				\#param\(KPP\, "t"."KPP"\)
+				\#param\(OGRN\, "t"."OGRN"\)
+				\#param\(Comment\, "t"."Comment"\)
+			\#if\(Normal\) \{
+			ORDER BY \#order_by
+			\}
+			\#if\(PageOffset\) \{
+			OFFSET \#param\(PageOffset\) - 1 LIMIT \#param\(PageLimit\)
+			\}
+		}
+		#role(RoleID:7ff52dc0-ff6a-4c9d-ba25-b562c370004d, ViewID:f9e6f291-2de8-459c-8d05-420fb8cce90f) 
+	}
+}

@@ -1,0 +1,280 @@
+#tessa_exchange_format(Version:1, CreationTime:2021-01-19T11\:09\:53) {
+	#exchange_view(RowID:8b451b90-5a3a-41a1-8923-ea20f78ef5c8, Alias:PnrOrganizationsWithHidden, Caption:Организации ГКП, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2021-01-19T11\:09\:24, GroupName:Pnr) {
+		#metadata {
+			#view(DefaultSortColumn: OrganizationName, DefaultSortDirection: asc, RowCountSubset: cnt, Paging: always, QuickSearchParam: Name)
+			#column(Alias: OrganizationID, Hidden: true)
+			#column(Alias: OrganizationName, Caption: Наименование, Hidden: false, SortBy: tt.OrganizationName)
+			#column(Alias: FullName, Caption: Полное наименование, Hidden: false, SortBy: tt.FullName)
+			#column(Alias: ShortName, Caption: Сокращенное наименование, Hidden: true)
+			#column(Alias: Abbreviation, Caption: Аббревиатура, Hidden: true)
+			#column(Alias: GeneralDirectorID, Hidden: true)
+			#column(Alias: GeneralDirectorName, Caption: Генеральный директор, Hidden: true)
+			#column(Alias: PositionHeadLegalEntity, Caption: Должность руководителя ЮЛ, Hidden: true)
+			#column(Alias: PositionHeadLegalEntityDative, Caption: Должность руководителя ЮЛ в дательном падеже, Hidden: true)
+			#column(Alias: PositionHeadLegalEntityGenitive, Caption: Должность руководителя ЮЛ в родительном падеже, Hidden: true)
+			#column(Alias: HeadLegalEntityID, Hidden: true)
+			#column(Alias: HeadLegalEntityName, Caption: Руководитель ЮЛ, Hidden: false)
+			#column(Alias: HeadLegalEntityDative, Caption: Руководитель ЮЛ ФИО в дат. падеже, Hidden: true)
+			#column(Alias: HeadLegalEntityGenitive, Caption: Руководитель ЮЛ ФИО в род. падеже, Hidden: true)
+			#column(Alias: ChiefAccountantProcessID, Hidden: true)
+			#column(Alias: ChiefAccountantProcessName, Caption: Главный бухгалтер для процессов, Hidden: false)
+			#column(Alias: Idx, Caption: Индекс, Hidden: true)
+			#column(Alias: Address, Caption: Адрес, Hidden: true)
+			#column(Alias: Bank, Caption: Банк, Hidden: true)
+			#column(Alias: INNBank, Caption: ИНН, Hidden: true)
+			#column(Alias: BIK, Caption: БИК, Hidden: true)
+			#column(Alias: SettlementAccount, Caption: Расчетный счет, Hidden: true)
+			#column(Alias: CorrespondentAccount, Caption: Корр. счет №, Hidden: true)
+			#column(Alias: WorkPhone, Caption: Рабочий телефон, Hidden: true)
+			#column(Alias: FaxNumber, Caption: Номер факса, Hidden: true)
+			#column(Alias: Website, Caption: Сайт, Hidden: true)
+			#column(Alias: OKPOCode, Caption: Код по ОКПО, Hidden: true)
+			#column(Alias: OKATO, Caption: ОКАТО, Hidden: true)
+			#column(Alias: OKOGU, Caption: ОКОГУ, Hidden: true)
+			#column(Alias: OKTMO, Caption: ОКТМО, Hidden: true)
+			#column(Alias: GroupDocuments, Caption: Группа организаций, Hidden: false)
+			#column(Alias: RegistryCard, Caption: Учетная карточка, Hidden: true)
+			#column(Alias: ActionStatus, Caption: Статус действия, Hidden: true)
+			#column(Alias: ChiefAccountantID, Hidden: true)
+			#column(Alias: ChiefAccountantName, Caption: Главный бухгалтер, Hidden: true)
+			#column(Alias: OrganizationLegalEntityIndex, Caption: Индекс ЮЛ, Hidden: false, SortBy: tt.OrganizationLegalEntityIndex)
+			#column(Alias: Prefix, Caption: Префикс, Hidden: true)
+			#column(Alias: PartnerName, Caption: Контрагент, Hidden: false, SortBy: tt.PartnerName)
+			#column(Alias: PartnerType, Caption: Тип контрагента, Hidden: true)
+			#column(Alias: INN, Caption: ИНН, Hidden: false)
+			#column(Alias: KPP, Caption: КПП, Hidden: true)
+			#column(Alias: OKPO, Caption: ОКПО, Hidden: true)
+			#column(Alias: OGRN, Caption: ОГРН, Hidden: true)
+			#column(Alias: IssueDate, Caption: Дата выдачи, Hidden: true)
+			#column(Alias: RegistrationDate, Caption: Дата регистрации, Hidden: true)
+			#column(Alias: ForeignOrganization, Caption: Иностранная организация, Hidden: true)
+			#column(Alias: ForeignOrganizationName, Caption: Наименование иностранной организации, Hidden: true)
+			#column(Alias: TaxAuthorityCode, Caption: Код налогового органа, Hidden: true)
+			#column(Alias: TaxAuthorityName, Caption: Наименование налогового органа, Hidden: true)
+			#column(Alias: OKVEDCode, Caption: Код ОКВЭД, Hidden: true)
+			#column(Alias: OKVEDName, Caption: Наименование ОКВЭД, Hidden: true)
+			#column(Alias: OKVEDCode2, Caption: Код ОКВЭД 2, Hidden: true)
+			#column(Alias: OKVEDName2, Caption: Наименование ОКВЭД 2, Hidden: true)
+			#column(Alias: OKOPFCode, Caption: Код ОКОПФ, Hidden: true)
+			#column(Alias: OKOPFName, Caption: Наименование ОКОПФ, Hidden: true)
+			#column(Alias: OKFSCode, Caption: Код ОКФС, Hidden: true)
+			#column(Alias: OKFSName, Caption: Наименование ОКФС, Hidden: true)
+			#column(Alias: AuthorityPFRCode, Caption: Код органа ПФР, Hidden: true)
+			#column(Alias: TerritorialAuthorityPFRName, Caption: Наименование территориального органа ПФР, Hidden: true)
+			#column(Alias: RegistrationNumberPFR, Caption: Регистрационный номер ПФР, Hidden: true)
+			#column(Alias: AuthorityFSGSCode, Caption: Код органа ФСГС, Hidden: true)
+			#column(Alias: TerritorialAuthorityFSSName, Caption: Наименование территориального органа ФCC, Hidden: true)
+			#column(Alias: CertificateAuthorityCode, Caption: Свидетельство код органа, Hidden: true)
+			#column(Alias: CertificateAuthorityName, Caption: Свидетельство наименование органа, Hidden: true)
+			#column(Alias: CertificateSeriesNumber, Caption: Серия номер свидетельства, Hidden: true)
+			#column(Alias: RegistrationNumberFSS, Caption: Регистрационный номер ФСС, Hidden: true)
+			#column(Alias: SubordinationCodeFSS, Caption: Код подчиненности ФСС, Hidden: true)
+			#column(Alias: CountryPermanentResidenceName, Caption: Страна постоянного местонахождения, Hidden: true)
+			#column(Alias: CountryRegistrationName, Caption: Страна регистрации, Hidden: true)
+			#column(Alias: Removed, Caption: Удалено, Hidden: true, SortBy: tt.Removed)
+			#column(Alias: ReferencePosition, Caption: Эталонная позиция, Hidden: true)
+			#column(Alias: ContactInformation, Caption: Контактная информация, Hidden: true)
+			#column(Alias: MDMKey, Caption: MDM-Key, Hidden: true)
+			#column(Alias: rn, 	Caption: Номер строки, 	Hidden: true)
+			#param(Alias: IsHidden, Caption: Скрыт при выборе, Hidden: true, Type: $PnrProjects.IsHidden, Multiple: true)
+			#param(Alias: Name, Caption: Наименование, Hidden: false, Type: nvarchar, Multiple: true)
+			#param(Alias: GroupDocuments, Caption: Группа документов, Hidden: true, Type: nvarchar, Multiple: true)
+			#param(Alias: GroupOrganizations, Caption: Группа организаций, Multiple: false, Type: $PnrOrganizations.ID, RefSection: PnrGroupDocuments, AllowedOperands: Equality NonEquality, Hidden: false) {
+				#autocomplete(View: PnrGroupDocuments, Param: Name, PopupColumns: 1)
+				#dropdown(View: PnrGroupDocuments)}
+			#param(Alias: HeadLegalEntity, Caption: Руководитель ЮЛ, Multiple: true, Type: $PnrOrganizations.HeadLegalEntityID, RefSection: Roles, AllowedOperands: Equality NonEquality) {
+				#autocomplete(View: Roles, Param: Name, PopupColumns: 1)}
+			#param(Alias: ChiefAccountantProcess, Caption: Главный бухгалтер для процессов, Multiple: true, Type: $PnrOrganizations.ChiefAccountantProcessID, RefSection: Roles, AllowedOperands: Equality NonEquality) {
+				#autocomplete(View: Roles, Param: Name, PopupColumns: 1)}
+			#param(Alias: INN, Caption: ИНН, Hidden: false, Type: nvarchar, Multiple: true)
+			#reference(ColPrefix: Organization, RefSection: PnrOrganizationsWithHidden, DisplayValueColumn: OrganizationName, IsCard: true, OpenOnDoubleClick: true)
+			#subset(Alias: ByGroupDocuments, Caption: Группа организаций, RefParam: GroupDocuments, RefColumn: GroupDocumentsID, CaptionColumn: GroupDocumentsName, CountColumn: GroupDocumentsCount)
+			#subset(Alias: ByHeadLegalEntity, Caption: Руководитель ЮЛ, RefParam: HeadLegalEntity, RefColumn: HeadLegalEntityID, CaptionColumn: HeadLegalEntityName, CountColumn: HeadLegalEntityCount)
+			#subset(Alias: ByChiefAccountantProcess, Caption: Главный бухгалтер для процессов, RefParam: ChiefAccountantProcess, RefColumn: ChiefAccountantProcessID, CaptionColumn: ChiefAccountantProcessName, CountColumn: ChiefAccountantProcessCount)
+			#subset(Alias: cnt)
+		}
+		#description {}
+		#ms_query {
+			SELECT tt.*
+			FROM
+			\(
+				select
+					tt.*
+					\#if\(normal\) \{
+				    \,row_number\(\) over \(order by \#order_by\) 		as rn
+				    \}
+				from
+					\(SELECT 
+						\#if\(cnt\) \{ 
+							Count\(*\)									as [cnt]
+						\}
+						\#if\(normal\) \{
+							    t.ID as OrganizationID\,
+							    t.Name as OrganizationName\,
+							    t.FullName\,
+							    t.ShortName\,
+							    t.Abbreviation\,
+							    t.GeneralDirectorID\,
+							    t.GeneralDirectorName\,
+							    t.PositionHeadLegalEntity\,
+							    t.PositionHeadLegalEntityDative\,
+							    t.PositionHeadLegalEntityGenitive\,
+							    t.HeadLegalEntityID\,
+							    t.HeadLegalEntityName\,
+							    t.HeadLegalEntityDative\,
+							    t.HeadLegalEntityGenitive\,
+							    t.ChiefAccountantProcessID\,
+							    t.ChiefAccountantProcessName\,
+							    t.Idx\,
+							    t.Address\,
+							    t.Bank\,
+							    t.INNBank\,
+							    t.BIK\,
+							    t.SettlementAccount\,
+							    t.CorrespondentAccount\,
+							    t.WorkPhone\,
+							    t.FaxNumber\,
+							    t.Website\,
+							    t.OKPOCode\,
+							    t.OKATO\,
+							    t.OKOGU\,
+							    t.OKTMO\,
+							    t.GroupDocuments\,
+							    t.RegistryCard\,
+							    t.ActionStatus\,
+							    t.ChiefAccountantID\,
+							    t.ChiefAccountantName\,
+							    t.LegalEntityIndex as OrganizationLegalEntityIndex\,
+							    t.Prefix\,
+							    t.PartnerName\,
+							    t.PartnerType\,
+							    t.INN\,
+							    t.KPP\,
+							    t.OKPO\,
+							    t.OGRN\,
+							    t.IssueDate\,
+							    t.RegistrationDate\,
+							    t.ForeignOrganization\,
+							    t.ForeignOrganizationName\,
+							    t.TaxAuthorityCode\,
+							    t.TaxAuthorityName\,
+							    t.OKVEDCode\,
+							    t.OKVEDName\,
+							    t.OKVEDCode2\,
+							    t.OKVEDName2\,
+							    t.OKOPFCode\,
+							    t.OKOPFName\,
+							    t.OKFSCode\,
+							    t.OKFSName\,
+							    t.AuthorityPFRCode\,
+							    t.TerritorialAuthorityPFRName\,
+							    t.RegistrationNumberPFR\,
+							    t.AuthorityFSGSCode\,
+							    t.TerritorialAuthorityFSSName\,
+							    t.CertificateAuthorityCode\,
+							    t.CertificateAuthorityName\,
+							    t.CertificateSeriesNumber\,
+							    t.RegistrationNumberFSS\,
+							    t.SubordinationCodeFSS\,
+							    t.CountryPermanentResidenceName\,
+							    t.CountryRegistrationName\,
+							    t.Removed\,
+							    t.ReferencePosition\,
+							    t.ContactInformation\,
+							    t.MDMKey
+						    \}
+						    
+						    \#if\(ByGroupDocuments\)\{
+						    	[t].[GroupDocuments] as GroupDocumentsID\,
+						    	COALESCE\([t].[GroupDocuments]\, N'Не указано'\) as [GroupDocumentsName]\,
+						    	count\(*\) AS [GroupDocumentsCount]
+						    \}
+						    
+						    \#if\(ByChiefAccountantProcess\)\{
+						    	[t].[ChiefAccountantProcessID] as ChiefAccountantProcessID\,
+						    	COALESCE\([t].[ChiefAccountantProcessName]\, N'Не указано'\) as [ChiefAccountantProcessName]\,
+						    	count\(*\) AS [ChiefAccountantProcessCount]
+						    \}
+						    
+						    \#if\(ByHeadLegalEntity\)\{
+						    	[t].[HeadLegalEntityID]	as HeadLegalEntityID\,
+						    	COALESCE\([t].[HeadLegalEntityName]\, N'Не указано'\) as [HeadLegalEntityName]\,
+						    	count\(*\) AS [HeadLegalEntityCount]
+						    \}
+						    
+						    from PnrOrganizations t with\(nolock\)
+							where 1=1
+							
+							/* Для поиска по Наименованию */
+							\#param\(Name\, t.Name\)
+							
+							/* Для отображения скрытых при выборе записей */
+							\#if\(IsHidden\)
+							\{ \#param\(IsHidden\, t.IsHidden\) \}
+							\{ /* AND \(t.IsHidden is null OR t.IsHidden = 0\) */ \}
+							
+							/* Для поиска по Группе документов */
+							\#param\(GroupDocuments\, t.GroupDocuments\)
+							
+							\#if\(GroupOrganizations\)
+							\{
+								AND COALESCE\(t.GroupDocuments\, N'Не указано'\) = 
+								\(SELECT TOP 1 COALESCE\(GroupDocuments\, N'Не указано'\)
+								FROM PnrOrganizations
+								WHERE ID = \#param\(GroupOrganizations\)\)
+							\}
+							
+							/* Для поиска по Главному бухгалтеру для процессов */
+							\#if\(ChiefAccountantProcess\) \{
+								AND \(
+									1 = 1 \#param\(ChiefAccountantProcess\, [t].[ChiefAccountantProcessID]\)
+								OR EXISTS\(
+									SELECT NULL
+									FROM [Roles] AS [r] WITH \(NOLOCK\)
+									WHERE [r].[ID] = [t].[ChiefAccountantProcessID]
+									\#param\(ChiefAccountantProcess\, [r].[ID]\)
+									\)
+								\)
+							\}	
+							
+							/* Для поиска по Руководителю ЮЛ */
+							\#if\(HeadLegalEntity\) \{
+								AND \(
+									1 = 1 \#param\(HeadLegalEntity\, [t].[HeadLegalEntityID]\)
+								OR EXISTS\(
+									SELECT NULL
+									FROM [Roles] AS [r] WITH \(NOLOCK\)
+									WHERE [r].[ID] = [t].[HeadLegalEntityID]
+									\#param\(HeadLegalEntity\, [r].[ID]\)
+									\)
+								\)
+							\}
+							
+							/* Для поиска по Инн */
+							\#param\(INN\, t.INN\)
+							
+							\#if\(ByGroupDocuments\) \{
+								GROUP BY [t].[GroupDocuments]
+							\}	
+							
+							\#if\(ByChiefAccountantProcess\) \{
+								GROUP BY [t].[ChiefAccountantProcessID]\, [t].[ChiefAccountantProcessName]
+							\}	
+							
+							\#if\(ByHeadLegalEntity\) \{
+								GROUP BY [t].[HeadLegalEntityID]\, [t].[HeadLegalEntityName]
+							\}	
+							
+					\) as [tt]
+			\) as [tt]
+			\#if\(PageOffset\) \{
+			WHERE [tt].[rn] >= \#param\(PageOffset\) AND [tt].[rn] < \(\#param\(PageOffset\) + \#param\(PageLimit\)\)
+			\}
+			\#if\(normal\) \{
+			order by \#order_by
+			\}
+		}
+		#pg_query {}
+		#role(RoleID:7ff52dc0-ff6a-4c9d-ba25-b562c370004d, ViewID:8b451b90-5a3a-41a1-8923-ea20f78ef5c8) 
+	}
+}

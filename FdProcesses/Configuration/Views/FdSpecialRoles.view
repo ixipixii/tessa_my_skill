@@ -1,0 +1,73 @@
+#tessa_exchange_format(Version:1, CreationTime:2020-03-31T10\:47\:08) {
+	#exchange_view(RowID:b9759526-83f4-4805-8b79-c07fdf50ce65, Alias:FdSpecialRoles, Caption:Особые роли, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2020-03-30T08\:52\:27, GroupName:Fd Awf) {
+		#metadata {
+			#view(DefaultSortColumn: SpecialRoleName, Paging: always, PageLimit: 10, RowCountSubset: Count, QuickSearchParam: Name)
+
+			#column(Alias: SpecialRoleID, Caption: ID, Hidden: true, Type: Guid)
+			#column(Alias: SpecialRoleName, Caption: Название, Type: String, SortBy: sr.Name)
+			#column(Alias: rn, Hidden: true, Type: Int64)
+
+			#param(Alias: Name, Caption: Название, Hidden: false, Type: String, Multiple: false)
+
+			#reference(ColPrefix: SpecialRole, RefSection: FdSpecialRoles, DisplayValueColumn: SpecialRoleName, IsCard: true, OpenOnDoubleClick: true)
+
+			#subset(Alias: Count)
+		}
+		#description {}
+		#ms_query {
+			select *
+			from
+			\(
+				SELECT 
+					\#if\(Normal\)\{
+						sr.[ID] as SpecialRoleID
+					      \,sr.[Name] as SpecialRoleName
+					      \,row_number\(\) over \(order by \#order_by\) as rn
+				      \}
+				      \#if\(Count\)\{
+				      		count\(*\) as cnt
+				      \}
+				  FROM [FdSpecialRoles] sr with\(nolock\)
+				  where 1=1
+					  \#param\(Name\, sr.Name\)
+			  \) t
+			  
+			  
+			  \#if\(PageOffset\) \{
+				where rn >= \#param\(PageOffset\) and rn < \(\#param\(PageOffset\) + \#param\(PageLimit\)\)
+			\}
+		}
+		#pg_query {
+			SELECT 
+				\#if\(Normal\)\{
+				"cs"."ID" 				as "CardStateID"\,
+			    "cs"."Name" 			as "CardStateName"\,
+			    "cs"."CardTypeCaption" 	as "CardStateCardTypeCaption"\,
+			    0\:\:int8					as "rn"
+			    \}
+				\#if\(Count\)\{
+				count\(*\) as "cnt"
+				\}
+			FROM "FdCardState" as "cs"
+			where true
+				\#param\(Name\, "cs"."Name"\)
+				\#param\(CardType\, "cs"."CardTypeID"\)
+				\#if\(CardTypeIDFromProcessTemplateID\)\{
+					and "cs"."CardTypeID" = 
+					\(
+						select "pt"."CardTypeID"
+						from "FdProcessTemplate" as "pt"
+						where "pt"."ID" = \#param\(CardTypeIDFromProcessTemplateID\)
+						limit 1
+					\)
+				\}
+			\#if\(Normal\) \{
+			ORDER BY \#order_by
+			\}
+			\#if\(PageOffset\) \{
+			OFFSET \#param\(PageOffset\) - 1 LIMIT \#param\(PageLimit\)
+			\}
+		}
+		#role(RoleID:7ff52dc0-ff6a-4c9d-ba25-b562c370004d, ViewID:b9759526-83f4-4805-8b79-c07fdf50ce65) 
+	}
+}

@@ -1,0 +1,393 @@
+﻿[
+  {
+    ".method::int": 2,
+    "Card": {
+      "Created::dtm": "2020-11-05T12:27:20.62Z",
+      "CreatedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "CreatedByName": "Admin",
+      "Files": null,
+      "Flags::int": 0,
+      "ID::uid": "14882207-0714-451f-b814-5f4a9bef51cc",
+      "Info": null,
+      "Modified::dtm": "2020-11-10T19:59:34.923Z",
+      "ModifiedByID::uid": "3db19fa0-228a-497f-873a-0250bf0a4ccb",
+      "ModifiedByName": "Admin",
+      "Permissions": null,
+      "Sections": {
+        "Condition_KrDepartmentCondition": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Condition_KrDocStateCondition": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Condition_KrDocTypeCondition": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Condition_KrPartnerCondition": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Condition_KrTaskTypeCondition": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "Condition_KrUsersCondition": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "ConditionsVirtual": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "FdPermissionStates": {
+          ".table::int": 1,
+          "Rows": [
+            {
+              "RowID::uid": "8f874d40-921c-4c95-b92f-933b2fe354c9",
+              "StateCardTypeCaption": "Исходящий",
+              "StateID::uid": "b88ef534-3a57-466c-a27c-7497baa01102",
+              "StateName": "Проект"
+            },
+            {
+              "RowID::uid": "377f0e7f-1103-4d07-8d3a-8e3c439b9b30",
+              "StateCardTypeCaption": "Исходящий",
+              "StateID::uid": "332a1316-bad0-4672-bb5d-bc1fe16adf6b",
+              "StateName": "На доработке"
+            },
+            {
+              "RowID::uid": "497bc85e-8605-4a36-845b-c320a1205969",
+              "StateCardTypeCaption": "Акт",
+              "StateID::uid": "dc57f90b-d3d2-4551-b568-1d522690e488",
+              "StateName": "На доработке"
+            },
+            {
+              "RowID::uid": "11e059c9-6f61-45aa-bf46-056c9d69b950",
+              "StateCardTypeCaption": "Приказ и распоряжение",
+              "StateID::uid": "8f6ed467-61a4-4eb2-8c30-7e49ee84c5db",
+              "StateName": "Проект"
+            },
+            {
+              "RowID::uid": "7a928e53-13f8-45ab-bf77-ffcf8043c724",
+              "StateCardTypeCaption": "Регламентирующий документ (ВНД)",
+              "StateID::uid": "a7f3846a-3b55-4c79-9ac0-9070ca2d39f9",
+              "StateName": "Проект"
+            },
+            {
+              "RowID::uid": "08ccea1d-2ac3-4830-a66a-ceeec17ccf6b",
+              "StateCardTypeCaption": "Шаблон",
+              "StateID::uid": "2db198dd-6a58-4b1d-a90b-19be1b1e53f5",
+              "StateName": "Проект"
+            },
+            {
+              "RowID::uid": "670ee570-cf22-4c90-a17d-cdb8292572d6",
+              "StateCardTypeCaption": "Акт",
+              "StateID::uid": "d7352ee9-0e80-4e61-810f-2327fb3dc022",
+              "StateName": "Проект"
+            },
+            {
+              "RowID::uid": "58ac7d71-4e1d-43c8-9b50-4988dba11d04",
+              "StateCardTypeCaption": "Поручение",
+              "StateID::uid": "5ce92ed2-8e3f-47cc-914e-df6bf0b84a7e",
+              "StateName": "Проект"
+            },
+            {
+              "RowID::uid": "a47133d8-c8ed-4146-9ce7-fa4c32658b05",
+              "StateCardTypeCaption": "Доверенность",
+              "StateID::uid": "41aeda89-531c-41a5-a85b-ef4d80ca4bc4",
+              "StateName": "Проект"
+            },
+            {
+              "RowID::uid": "80222463-d9ee-4658-a2b3-8b729cb43d39",
+              "StateCardTypeCaption": "Приказ и распоряжение",
+              "StateID::uid": "cd619fb6-4efe-4ecb-840f-32b28c0472bb",
+              "StateName": "На доработке"
+            },
+            {
+              "RowID::uid": "7c70bca2-e910-4f22-a4b5-30f24c741de2",
+              "StateCardTypeCaption": "Регламентирующий документ (ВНД)",
+              "StateID::uid": "a42bc106-af9c-4a90-9374-427eb7daf35d",
+              "StateName": "На доработке"
+            },
+            {
+              "RowID::uid": "8ff56411-0df5-4cb8-84ae-aaeca7151c63",
+              "StateCardTypeCaption": "Доверенность",
+              "StateID::uid": "f13f8dde-2504-4d02-ad77-b90a6355b525",
+              "StateName": "На доработке"
+            },
+            {
+              "RowID::uid": "004070ad-7810-4b4f-a297-03acc6496798",
+              "StateCardTypeCaption": "Тендер",
+              "StateID::uid": "b5dd9d70-1baf-470f-8544-59d1c9b9e2f6",
+              "StateName": "Проект"
+            },
+            {
+              "RowID::uid": "184331b6-b6e0-445e-b818-722b368fa1c4",
+              "StateCardTypeCaption": "Тендер",
+              "StateID::uid": "c1b85e2a-ae5e-498d-b647-4e42a5c1b85a",
+              "StateName": "На доработке"
+            },
+            {
+              "RowID::uid": "f59b1ebb-8968-472f-b73e-47034f5d6a55",
+              "StateCardTypeCaption": "Шаблон",
+              "StateID::uid": "ff29dea4-6419-4208-b9ed-74fb6da2c4f7",
+              "StateName": "На доработке"
+            },
+            {
+              "RowID::uid": "c0301a1c-e39a-4253-b459-c8676e7229f0",
+              "StateCardTypeCaption": "Исходящий",
+              "StateID::uid": "c9470912-a808-4309-a2de-d3f889327bc3",
+              "StateName": "Исполнен"
+            },
+            {
+              "RowID::uid": "cfa7ea51-577e-413f-bea8-8411397b88a7",
+              "StateCardTypeCaption": "Исходящий",
+              "StateID::uid": "28dcd0bc-450c-45a5-8ca7-87ea87611e98",
+              "StateName": "На консолидации"
+            },
+            {
+              "RowID::uid": "7c2325c1-8b8b-4554-a2bb-a77517a9ca7b",
+              "StateCardTypeCaption": "Исходящий",
+              "StateID::uid": "e9af47c3-7adc-40b8-83fe-b95a6470ad3b",
+              "StateName": "Отозван"
+            },
+            {
+              "RowID::uid": "334bc42c-7de5-41a0-939c-f9c5e192295f",
+              "StateCardTypeCaption": "Исходящий",
+              "StateID::uid": "80dd75e5-ab95-4b90-b995-0003f6e94c98",
+              "StateName": "На исполнении"
+            },
+            {
+              "RowID::uid": "3d5703d7-d4a2-43c9-bba8-561c8a470689",
+              "StateCardTypeCaption": "Исходящий",
+              "StateID::uid": "91e9bca6-c547-40fe-96fe-0f1f3e32e6d2",
+              "StateName": "Зарегистрирован"
+            },
+            {
+              "RowID::uid": "3c22d7fe-57c1-4203-93e7-1484d7d27acd",
+              "StateCardTypeCaption": "Исходящий",
+              "StateID::uid": "526f0022-d9a9-4593-a4b6-9109281b6087",
+              "StateName": "На регистрации"
+            },
+            {
+              "RowID::uid": "794f7b35-a058-4fb6-905d-68f8780faef6",
+              "StateCardTypeCaption": "Исходящий",
+              "StateID::uid": "10748fa4-bb37-4609-85e6-baec77943f4a",
+              "StateName": "На согласовании"
+            }
+          ]
+        },
+        "KrPermissionExtendedCardRuleFields": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedCardRules": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedFileRuleCategories": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedFileRules": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedMandatoryRuleFields": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedMandatoryRuleOptions": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedMandatoryRules": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedMandatoryRuleTypes": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedTaskRuleFields": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedTaskRules": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedTaskRuleTypes": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionExtendedVisibilityRules": {
+          ".table::int": 1,
+          "Rows": null
+        },
+        "KrPermissionRoles": {
+          ".table::int": 1,
+          "Rows": [
+            {
+              "IsContext": true,
+              "RoleID::uid": "20d9bdeb-db40-45dd-bab4-9555c48840d7",
+              "RoleName": "Инициатор",
+              "RowID::uid": "02fbb5f8-8bd3-46a8-adf7-8b925058457f"
+            },
+            {
+              "IsContext": false,
+              "RoleID::uid": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d",
+              "RoleName": "Все сотрудники",
+              "RowID::uid": "070c36a7-ce6a-4133-86d0-a87cfc30a7ec"
+            }
+          ]
+        },
+        "KrPermissions": {
+          "Fields": {
+            "CanAddFiles": true,
+            "CanAddTopics": false,
+            "CanCreateCard": true,
+            "CanCreateResolutions": false,
+            "CanCreateTemplateAndCopy": true,
+            "CanDeleteCard": false,
+            "CanDeleteFiles": true,
+            "CanDeleteOwnFiles": true,
+            "CanEditCard": true,
+            "CanEditFiles": true,
+            "CanEditNumber": true,
+            "CanEditOwnFiles": true,
+            "CanEditRoute": true,
+            "CanFullRecalcRoute": false,
+            "CanReadCard": true,
+            "CanSignFiles": true,
+            "CanSkipStages": false,
+            "CanSubscribeForNotifications": false,
+            "CanSuperModeratorMode": false,
+            "Caption": "Создание и редактирование документов",
+            "Conditions": "[]",
+            "Description": "Исходящие\r\nАкты\r\nДоговора\r\nДС\r\nПриказы и распоряжения\r\nВНД\r\nДоверенности\r\nСлужебная записки\r\nТендеры\r\n",
+            "IsDisabled": false,
+            "IsExtended": false,
+            "IsRequired": false,
+            "Permissions": "{$KrPermissions_CreateCard}\r\n{$KrPermissions_CreateTemplateAndCopy}\r\n{$KrPermissions_ReadCard}\r\n{$KrPermissions_EditCard}\r\n{$KrPermissions_EditRoute}\r\n{$KrPermissions_EditNumber}\r\n{$KrPermissions_SignFiles}\r\n{$KrPermissions_AddFiles}\r\n{$KrPermissions_EditOwnFiles}\r\n{$KrPermissions_EditFiles}\r\n{$KrPermissions_DeleteOwnFiles}\r\n{$KrPermissions_DeleteFiles}",
+            "Roles": "Инициатор\r\nВсе сотрудники",
+            "States": "{$KrStates_Doc_Draft}\r\n{$KrStates_Doc_Editing}",
+            "Types": "Исходящий\r\nАкт\r\nДоверенность\r\nДоговор\r\nДоговор УК\r\nДополнительное соглашение\r\nДополнительное соглашение УК\r\nЗаявка на контрагента\r\nПоручение\r\nПриказ и распоряжение\r\nПриказ и распоряжение УК\r\nРегламентирующий документ (ВНД)\r\nСлужебная записка"
+          }
+        },
+        "KrPermissionStates": {
+          ".table::int": 1,
+          "Rows": [
+            {
+              "RowID::uid": "7dd316a8-5f20-4fbe-a7ec-4844187c93a9",
+              "StateID::int": 0,
+              "StateName": "$KrStates_Doc_Draft"
+            },
+            {
+              "RowID::uid": "75830c3c-3dc6-4343-a8da-7706b1a46a6f",
+              "StateID::int": 4,
+              "StateName": "$KrStates_Doc_Editing"
+            }
+          ]
+        },
+        "KrPermissionTypes": {
+          ".table::int": 1,
+          "Rows": [
+            {
+              "RowID::uid": "a752c9cc-9f76-45dc-86b4-bb18ad30f0cc",
+              "TypeCaption": "Исходящий",
+              "TypeID::uid": "40dab24a-0b6f-4609-947c-f1916348a540",
+              "TypeIsDocType": false
+            },
+            {
+              "RowID::uid": "019f2a95-7c11-46bc-ac53-51c9d1d67e92",
+              "TypeCaption": "Акт",
+              "TypeID::uid": "156df436-74e3-4e08-aba8-cbc609c6c1c7",
+              "TypeIsDocType": false
+            },
+            {
+              "RowID::uid": "89970480-2a1c-4009-9c6b-264739f25c04",
+              "TypeCaption": "Доверенность",
+              "TypeID::uid": "f9c07ae1-4e87-4cfe-8229-26ce6af5c326",
+              "TypeIsDocType": false
+            },
+            {
+              "RowID::uid": "1e828ab5-1ece-40be-9a5a-3256634e0732",
+              "TypeCaption": "Договор",
+              "TypeID::uid": "1c7a5718-09ae-4f65-aa67-e66f23bb7aee",
+              "TypeIsDocType": false
+            },
+            {
+              "RowID::uid": "9c267814-1f2b-43e3-ab45-7f14ff26f774",
+              "TypeCaption": "Договор УК",
+              "TypeID::uid": "25ea1e75-6ff9-4fd1-94e3-f6bc266d6544",
+              "TypeIsDocType": false
+            },
+            {
+              "RowID::uid": "2e99c042-25b7-49f7-a78e-b6b4f121f1ac",
+              "TypeCaption": "Дополнительное соглашение",
+              "TypeID::uid": "f5a33228-32ae-483f-beca-8b2e3453a615",
+              "TypeIsDocType": false
+            },
+            {
+              "RowID::uid": "2bdbc0d1-a13c-4f41-b81e-a24e0e5899cb",
+              "TypeCaption": "Дополнительное соглашение УК",
+              "TypeID::uid": "87adb0cb-7c5f-4c82-974f-5d4e3c4a050f",
+              "TypeIsDocType": false
+            },
+            {
+              "RowID::uid": "1ba90df3-f2cf-45f9-b3ca-7f2faf652046",
+              "TypeCaption": "Заявка на контрагента",
+              "TypeID::uid": "ca76dbb5-e4f0-46b7-b5fa-2f7f77c7cae2",
+              "TypeIsDocType": false
+            },
+            {
+              "RowID::uid": "a53c7dea-9b09-421b-b3d6-8ac778c04157",
+              "TypeCaption": "Поручение",
+              "TypeID::uid": "531e41ec-639f-41a9-9313-94f3eada0427",
+              "TypeIsDocType": false
+            },
+            {
+              "RowID::uid": "afb47887-7ed5-482c-83a0-2cd2d21be77d",
+              "TypeCaption": "Приказ и распоряжение",
+              "TypeID::uid": "df141f0f-7e73-48fb-9cdb-6d46665cc0fb",
+              "TypeIsDocType": false
+            },
+            {
+              "RowID::uid": "0d1eb7b3-197d-4e6b-8990-7a1294fba2a4",
+              "TypeCaption": "Приказ и распоряжение УК",
+              "TypeID::uid": "8d8d1098-3b12-4a77-a988-4278f11d9039",
+              "TypeIsDocType": false
+            },
+            {
+              "RowID::uid": "27935bfd-eb5a-4ab2-98b6-157d78ec9c0c",
+              "TypeCaption": "Регламентирующий документ (ВНД)",
+              "TypeID::uid": "cd45788f-1576-4836-83c1-c55714eba28a",
+              "TypeIsDocType": false
+            },
+            {
+              "RowID::uid": "9c0dfcd6-f90f-4630-a817-f68b32ec37a3",
+              "TypeCaption": "Служебная записка",
+              "TypeID::uid": "dceb0c7e-4147-410c-8a6c-f30781226007",
+              "TypeIsDocType": false
+            }
+          ]
+        }
+      },
+      "TaskHistory": null,
+      "TaskHistoryGroups": null,
+      "Tasks": null,
+      "Topics": null,
+      "TypeCaption": "$CardTypes_TypesNames_KrPermissions",
+      "TypeID::uid": "fa9dbdac-8708-41df-bd72-900f69655dfa",
+      "TypeName": "KrPermissions",
+      "Version::int": 0
+    },
+    "FileMapping": null,
+    "Info": {
+      ".importVersion::int": 27
+    }
+  }
+]

@@ -1,0 +1,82 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <Version>3.4.0</Version>
+    <Authors>Syntellect</Authors>
+    <Company>Syntellect</Company>
+    <Product>Document automation system Tessa</Product>
+    <Copyright>Copyright © Syntellect 2019</Copyright>
+    <PackageProjectUrl>https://mytessa.ru/</PackageProjectUrl>
+    <Configurations>Debug;Release;Build</Configurations>
+    <RestoreSources>$(RestoreSources);../../Bin/packages;https://api.nuget.org/v3/index.json</RestoreSources>
+    <NoWarn>$(NoWarn);1701;1702;1998;3074</NoWarn>
+    <LangVersion>8</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Build|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Optimize>true</Optimize>
+    <NoWarn>$(NoWarn);0419;1572;1573;1574;1584;1587;1589;1591;1658;1701;1702;1705;1710;1711;1723;1734;1735;1998;3021;3074</NoWarn>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="FileConverters\unoconv" />
+    <None Remove="Tessa.Extensions.Default.Chronos.csproj.DotSettings" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="FileConverters\unoconv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BitMiracle.LibTiff.NET" Version="2.4.633" />
+    <PackageReference Include="Microsoft.Exchange.WebServices.NETStandard" Version="1.1.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Chronos.Contracts" Version="3.4.0" />
+    <ProjectReference Include="..\Tessa.Extensions.Default.Server\Tessa.Extensions.Default.Server.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="**\*.sample" DependentUpon="%(Filename)" />
+    <None Update="configuration\*.xml" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="app.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="extensions.xml" CopyToOutputDirectory="Never" />
+    <None Update="plugins.xml" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <Target Condition="'$(OS)' == 'Windows_NT'" Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="if exist &quot;$(ProjectDir)pre-build.bat&quot; call &quot;$(ProjectDir)pre-build.bat&quot; &quot;$(ProjectDir)..\..\&quot;" />
+  </Target>
+
+  <Target Condition="'$(OS)' == 'Unix'" Name="PreBuild-linux" BeforeTargets="PreBuildEvent">
+    <Exec Command=":" />
+  </Target>
+
+  <Target Condition="'$(OS)' == 'Windows_NT'" Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="(mkdir &quot;$(ProjectDir)..\..\Bin\Tessa.Chronos\configuration&quot;)&gt;nul 2&gt;&amp;1&#xD;&#xA;xcopy &quot;$(ProjectDir)plugins.xml&quot; &quot;$(ProjectDir)..\..\Bin\Tessa.Chronos&quot; /Y /R /Q&gt;nul&#xD;&#xA;xcopy &quot;$(ProjectDir)extensions.xml&quot; &quot;$(ProjectDir)..\..\Bin\Tessa.Chronos&quot; /Y /R /Q&gt;nul&#xD;&#xA;xcopy &quot;$(ProjectDir)configuration\*.xml&quot; &quot;$(ProjectDir)..\..\Bin\Tessa.Chronos\configuration&quot; /Y /R /Q&gt;nul&#xD;&#xA;xcopy &quot;$(TargetDir)$(TargetFileName)&quot; &quot;$(ProjectDir)..\..\Bin\Tessa.Chronos&quot; /Y /R /Q&gt;nul&#xD;&#xA;xcopy &quot;$(TargetDir)$(TargetName).pdb&quot; &quot;$(ProjectDir)..\..\Bin\Tessa.Chronos&quot; /Y /R /Q&gt;nul&#xD;&#xA;copy /Y &quot;$(TargetDir)$(TargetFileName).config&quot; &quot;$(ProjectDir)..\..\Bin\Tessa.Chronos\app.config&quot;&gt;nul&#xD;&#xA;xcopy &quot;$(TargetDir)Tessa.Extensions.Default.Server.*&quot; &quot;$(ProjectDir)..\..\Bin\extensions\&quot; /Y /R /Q&gt;nul&#xD;&#xA;xcopy &quot;$(TargetDir)Tessa.Extensions.Default.Shared.*&quot; &quot;$(ProjectDir)..\..\Bin\extensions\&quot; /Y /R /Q&gt;nul&#xD;&#xA;del /Q &quot;$(TargetDir)Tessa.Extensions.Default.Server.*&quot;&#xD;&#xA;del /Q &quot;$(TargetDir)Tessa.Extensions.Default.Shared.*&quot;&#xD;&#xA;echo F|xcopy &quot;$(ProjectDir)extensions.service.xml&quot; &quot;$(ProjectDir)..\..\Bin\extensions\extensions.xml&quot; /Y /R /Q&gt;nul&#xD;&#xA;&#xD;&#xA;if exist &quot;$(ProjectDir)post-build.bat&quot; call &quot;$(ProjectDir)post-build.bat&quot; &quot;$(ProjectDir)..\..\&quot;" />
+  </Target>
+
+  <Target Condition="'$(OS)' == 'Unix'" Name="PostBuild-linux" AfterTargets="PostBuildEvent">
+    <Exec Command=":" />
+  </Target>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+</Project>

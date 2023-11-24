@@ -1,0 +1,168 @@
+#tessa_exchange_format(Version:1, CreationTime:2020-12-11T17\:53\:44) {
+	#exchange_view(RowID:b2830d1b-ca49-46ed-9938-9f766c55a90a, Alias:PnrErrands, Caption:Поручения, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2020-12-11T17\:53\:19, GroupName:Pnr) {
+		#metadata {
+			#view(DefaultSortColumn: DocCreationDate, DefaultSortDirection: desc, Paging: always, RowCountSubset: Count, QuickSearchParam: Number)
+			#column(Alias: DocID, Hidden: true)
+			#column(Alias: DocNumber, Caption: №, Hidden: true, SortBy: d.Number)
+			#column(Alias: DocFullNumber, Caption: Номер, SortBy: d.FullNumber)
+			#column(Alias: DocSubject, Caption: Тема, SortBy: d.Subject)
+			#column(Alias: ErrandProjectID, Hidden: true)
+			#column(Alias: ErrandProjectName, Caption: Проект, SortBy: t.ProjectName)
+			#column(Alias: DocAuthorID, Hidden: true)
+			#column(Alias: DocAuthorName, Caption: Создал, Hidden: true)
+			#column(Alias: InstModified, Caption: Изменено, SortBy: i.Modified, Type: Date)
+			#column(Alias: FdID, Hidden: true)
+			#column(Alias: FdMainCardId, Hidden: true)
+			#column(Alias: FdStateID, Hidden: true)
+			#column(Alias: FdStateName, Caption: Статус, SortBy: f.StateName)
+			#column(Alias: DocCreationDate, Caption: Дата создания, SortBy: d.CreationDate, Type: Date)
+			#column(Alias: ErrandID, Hidden: true)
+			#column(Alias: ErrandControllers, Caption: Контролеры)
+			#column(Alias: ErrandPeriodExecution, Caption: Срок исполнения, Hidden: true)
+
+			#column(Alias: ErrandPartnerID, Hidden: true)
+			#column(Alias: ErrandPartnerName, Caption: Контрагент, Hidden: true)
+			#column(Alias: ErrandOrganizationID, Hidden: true)
+			#column(Alias: ErrandOrganizationName, Caption: Организация ГК Пионер, Hidden: true)
+			#column(Alias: ErrandComment, Caption: Комментарий, Hidden: true)    
+
+			#param(Alias: IsAuthor, Caption: Я создатель, Type: Boolean, AllowedOperands: IsTrue IsFalse)
+			#param(Alias: Number, Caption: Номер, Hidden: false, Type: String, Multiple: true)
+			#param(Alias: Subject, Caption: $Views_Registers_Subject_Param, Multiple: true, Type: $DocumentCommonInfo.Subject)
+			#param(Alias: Project, Caption: Проект, Multiple: true, Type: Guid, RefSection: PnrProjects) {
+				#autocomplete(View: PnrProjects, Param: Name, PopupColumns: 1 2)
+			}
+			#param(Alias: CreationDate, Caption: Дата создания, Multiple: true, Type: DateTime)
+			#param(Alias: Author, Caption: Создал, Multiple: true, Type: Guid, RefSection: PersonalRoles) {
+				#autocomplete(View: Users, Param: Name, PopupColumns: 1 4)
+			}
+			#param(Alias: State, Caption: Состояние, Hidden: false, Type: uniqueidentifier, RefSection: PnrFdCardStatesErrands, Multiple: true, AllowedOperands: Equality NonEquality IsNull IsNotNull) {
+				#autocomplete(View: PnrFdCardStatesErrands, Param: Name, PopupColumns: 1 2)
+				#dropdown(View: PnrFdCardStatesErrands, PopupColumns: 1 2)
+			}
+			#reference(ColPrefix: Doc, RefSection: DocumentCommonInfo, DisplayValueColumn: DocNumber, IsCard: true, OpenOnDoubleClick: true)
+			#reference(ColPrefix: Errand, RefSection: PnrErrands, DisplayValueColumn: ErrandProjectName, IsCard: true, OpenOnDoubleClick: true)
+			#subset(Alias: ByState, Caption: $Views_Registers_ByState_Subset, RefParam: State, RefColumn: StateID, CaptionColumn: StateName, CountColumn: SubCnt)
+			#subset(Alias: Count)
+		}
+		#description {}
+		#ms_query {
+			\#var\(UseCommonInfo\: Normal || IsAuthor\)
+
+			;WITH
+			-- ДОЧЕРНИЕ ПРОЕКТЫ
+			     childs AS \(
+			         SELECT p.ID
+			         FROM PnrProjects p
+			         WHERE 1=1 
+			         \#param\(Project\, p.id\)
+			         UNION ALL
+			         SELECT p.ID
+			         FROM PnrProjects p
+			                INNER JOIN childs c
+			                    ON p.ParentProjectID = c.ID
+			     \)
+
+			select
+			    \#if\(Normal\) \{
+			    -- Errand - PnrErrands
+			    t.ID						as ErrandID\,
+			    t.ProjectID					as ErrandProjectID\,
+				t.ProjectName				as ErrandProjectName\,
+				\(SELECT c.ControllersName + '; ' -- список исполнителей для задачи через запятую
+				 FROM PnrErrandsControllers c
+				 WHERE c.id = t.id
+				 FOR XML PATH\(''\)\)			as ErrandControllers\,
+				t.PeriodExecution			as ErrandPeriodExecution\,
+				
+				t.PartnerID					as ErrandPartnerID\,
+			    t.PartnerName				as ErrandPartnerName\,
+			    t.OrganizationID			as ErrandOrganizationID\,
+			    t.OrganizationName			as ErrandOrganizationName\,
+			    t.Comment					as ErrandComment\,
+			    
+				-- Doc - DocumentCommonInfo
+				d.ID						as DocID\,
+			    d.Number					as DocNumber\,
+			    d.FullNumber				as DocFullNumber\,
+			    d.CreationDate				as DocCreationDate\,
+			    d.AuthorID					as DocAuthorID\,
+			    d.AuthorName				as DocAuthorName\,
+			    d.Subject					as DocSubject\,
+			    
+			    -- Fd - FdSatelliteCommonInfo
+			    f.ID						as FdID\,
+			    f.MainCardId				as FdMainCardId\,
+			    f.StateID					as FdStateID\,
+			    f.StateName					as FdStateName\,
+			    -- Inst - Instances
+			    i.Modified					as InstModified
+			    \} 
+			    
+			    \#if\(Count | ByState\)\{
+			    	[t2].*
+			    \}
+			from
+			\(
+			    select
+			        \#if\(Normal\) \{
+			        t.ID\,
+			        row_number\(\) over \(order by \#order_by\) as rn
+			        \}
+			        \#if\(Count\) \{
+			        count\(*\) as cnt
+			        \}
+			        \#if\(ByState\)\{
+			        	COALESCE\([f].[StateID]\, NULL\) 							as [StateID]\,
+			        	COALESCE\([f].[StateName]\, N'Не указано'\) 				as [StateName]\,
+			    		count\(*\)												AS [SubCnt]
+			    	\}
+			    from PnrErrands t with\(nolock\)
+			    left join FdSatelliteCommonInfo f with\(nolock\) on f.MainCardId = t.ID
+			    left join DocumentCommonInfo d with\(nolock\) on d.ID = t.ID
+			    left join Instances i with\(nolock\) on i.ID = t.ID
+			    where d.CardTypeID = '531e41ec-639f-41a9-9313-94f3eada0427'
+			        \#param\(Number\, d.FullNumber\)
+			        \#param\(Subject\, d.Subject\)
+			        \#if\(Project\) 
+			        \{ 
+			        	AND t.ProjectID IN 
+			        	\(
+			        		SELECT ID FROM childs
+			        	\)
+			        	
+			        \}
+			        \#param\(CreationDate\, d.CreationDate\)
+			        \#param\(Author\, d.AuthorID\)
+			        \#param\(State\, f.StateID\)
+			        \#if\(IsAuthor\) \{
+			        	\#if\(IsAuthor.CriteriaName == "IsTrue"\)
+			        	\{
+			        		AND d.AuthorID = \#param\(CurrentUserID\)
+			        	\}
+			        	\{
+			        		AND \(d.AuthorID IS NULL OR d.AuthorID <> \#param\(CurrentUserID\)\)
+			        	\}
+			        \}
+			        \#if\(ByState\) \{
+						GROUP BY [f].[StateID]\, [f].[StateName]
+					\}
+			\) t2
+			\#if\(Normal\) \{
+			left join PnrErrands t with\(nolock\) on t.ID = t2.ID
+			left join FdSatelliteCommonInfo f with\(nolock\) on f.MainCardId = t2.ID
+			left join DocumentCommonInfo d with\(nolock\) on d.ID = t2.ID
+			left join Instances i with\(nolock\) on i.ID = t2.ID
+			\}
+			\#if\(PageOffset\) \{
+			where t2.rn >= \#param_expr\(PageOffset\) and t2.rn < \(\#param_expr\(PageOffset\) + \#param_expr\(PageLimit\)\)
+			\}
+			\#if\(Normal\) \{
+			order by t2.rn
+			\}
+			;
+		}
+		#pg_query {}
+		#role(RoleID:c365e148-71f9-4731-8025-3aeb5225af9f, ViewID:b2830d1b-ca49-46ed-9938-9f766c55a90a) 
+	}
+}

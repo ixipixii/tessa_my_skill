@@ -1,0 +1,133 @@
+#tessa_exchange_format(Version:1, CreationTime:2020-12-09T16\:16\:21) {
+	#exchange_view(RowID:5a0cc17c-fa6e-4f3f-b268-bfc730ed75e1, Alias:PnrCFO, Caption:ЦФО, ModifiedById:3db19fa0-228a-497f-873a-0250bf0a4ccb, ModifiedByName:Admin, FormatVersion:2, ModifiedDateTime:2020-12-09T15\:50\:08, GroupName:Pnr) {
+		#metadata {
+			#view(DefaultSortColumn: CFOName, DefaultSortDirection: asc, Paging: always, QuickSearchParam: Name, RowCountSubset: cnt)
+			#column(Alias: CFOID, Hidden: true)
+			#column(Alias: CFOCode, Caption: Код, Hidden: false, SortBy: tt.CFOCode)
+			#column(Alias: CFOName, Caption: Наименование, Hidden: false, SortBy: tt.CFOName)
+			#column(Alias: CFOType, Caption: Вид ЦФО, Hidden: false, SortBy: tt.CFOType)
+			#column(Alias: CFODescription, Caption: Описание, Hidden: false, SortBy: tt.CFODescription)
+			#column(Alias: CFOUsed, Caption: Используется, Hidden: false, SortBy: tt.CFOUsed)
+			#column(Alias: CFOParentCFOID, Hidden: true)
+			#column(Alias: CFOParentCFOName, Caption: Родительский ЦФО, Hidden: false, SortBy: tt.CFOParentCFOName)
+			#column(Alias: CFOMDMKey, Caption: MDM-Key, Hidden: true)
+			#column(Alias: rn, 	Caption: Номер строки, 	Hidden: true)
+
+			#param(Alias: IsHidden, Caption: Скрыт при выборе, Hidden: false, Type: $PnrCFO.IsHidden, Multiple: true)
+			#param(Alias: Name, Caption: Наименование, Hidden: false, Type: nvarchar, Multiple: true)
+			#param(Alias: CFOID, Caption: ЦФО, Hidden: true, Type: $PnrCFO.ID)
+			#param(Alias: ParentCFOID, Caption: Родительский ЦФО, Hidden: true, Multiple: true, Type: $PnrCFO.ParentCFOID, RefSection: PnrCFO) {
+				#autocomplete(View: PnrCFO, Param: Name, PopupColumns: 1 2)}
+				
+			#reference(ColPrefix: CFO, RefSection: PnrCFO, DisplayValueColumn: CFOName, IsCard: true, OpenOnDoubleClick: true)
+
+			#subset(Alias: ByCfo, Caption: Структура ЦФО, Kind: Tree, RefParam: CFOID, TreeRefParam: ParentCFOID, RefColumn: CFOID, CaptionColumn: CFOName, CountColumn: cnt, TreeHasChildrenColumn: HasChildren)
+			#subset(Alias: cnt)
+		}
+		#description {}
+		#ms_query {
+			\#if\(CFOID\) \{
+			DECLARE @AllTreeElements TABLE\(ID uniqueidentifier\);
+
+			WITH
+			AboveTreeElements \(ID\, ParentID\) -- Элементы иерархии вверх по дереву
+			AS \(
+				SELECT ID\, ParentCFOID
+				FROM [PnrCFO]
+				WHERE id = \#param\(CFOID\)
+				UNION ALL
+				SELECT [PnrCFO].ID\, [PnrCFO].ParentCFOID
+				FROM [PnrCFO]
+				JOIN AboveTreeElements 
+				ON [PnrCFO].ID = AboveTreeElements.ParentID
+				\)
+			INSERT INTO @AllTreeElements
+				SELECT p.ID
+				FROM AboveTreeElements
+				JOIN PnrCFO p
+				ON AboveTreeElements.ID=p.ID;
+
+			WITH
+			UnderTreeElements \(ID\, ParentID\) -- Элементы иерархии вниз по дереву
+			AS \(
+				SELECT ID\, ParentCFOID
+				FROM [PnrCFO]
+				WHERE id = \#param\(CFOID\)
+				UNION ALL
+				SELECT [PnrCFO].ID\, [PnrCFO].ParentCFOID
+				FROM [PnrCFO]
+				JOIN UnderTreeElements 
+				ON [PnrCFO].ParentCFOID = UnderTreeElements.ID
+				\)
+			INSERT INTO @AllTreeElements
+				SELECT p.ID
+				FROM UnderTreeElements
+				JOIN PnrCFO p
+				ON UnderTreeElements.ID=p.ID;
+			\}
+
+			SELECT tt.*
+			FROM
+			\(
+				SELECT
+					tt.*
+					\#if\(normal\) \{
+				    \,row_number\(\) OVER \(ORDER BY \#order_by\)					AS rn
+				    \}
+				FROM
+				\(
+					SELECT
+					\#if\(cnt\) \{ 
+						Count\(*\)											AS [cnt]
+					\}
+					\#if\(normal\) \{
+					t.ID as CFOID\,
+				    t.Name as CFOName\,
+				    t.Code as CFOCode\,
+				    t.Type as CFOType\,
+				    t.Description as CFODescription\,
+				    t.Used as CFOUsed\,
+				    t.ParentCFOID as CFOParentCFOID\,
+				    t.ParentCFOName as CFOParentCFOName\,
+				    t.MDMKey as CFOMDMKey
+				    \}
+				    \#if\(ByCfo\) \{
+					[t].[ID]								AS [CFOID]\,
+					[t].[Name]								AS [CFOName]\,
+					\(
+						SELECT count\(*\)
+						FROM [PnrCFO] AS [ru] WITH \(NOLOCK\)
+						WHERE [ru].[ParentCFOID] = [t].[ID]
+					\) AS [cnt]\,
+					CASE WHEN EXISTS \(
+						SELECT NULL
+						FROM [PnrCFO] AS [r] WITH \(NOLOCK\)
+						WHERE [r].[ParentCFOID] = [t].[ID]
+							\)
+						THEN CAST\(1 AS bit\)
+						ELSE CAST\(0 AS bit\)
+					END AS [HasChildren]
+					\}
+				from PnrCFO t with\(nolock\)
+				where 1=1
+					\#if\(CFOID\) 
+					\{ AND [t].[ID] IN \(SELECT * FROM @AllTreeElements\) \}
+					\#param\(ParentCFOID\, [t].[ParentCFOID]\)
+				    \#param_expr\(Name\, t.Name\)
+				    /* Для отображения скрытых при выборе записей */
+				    \#if\(IsHidden\)
+				    \{ \#param\(IsHidden\, t.IsHidden\) \}
+				    \{ AND \(t.IsHidden is null OR t.IsHidden = 0\) \}
+				\) AS [tt]
+			\) AS [tt]
+			\#if\(PageOffset\) \{
+			WHERE [tt].[rn] >= \#param\(PageOffset\) AND [tt].[rn] < \(\#param\(PageOffset\) + \#param\(PageLimit\)\)
+			\}
+			\#if\(normal\) \{
+			ORDER BY \#order_by
+			\}
+		}
+		#pg_query {}
+		#role(RoleID:7ff52dc0-ff6a-4c9d-ba25-b562c370004d, ViewID:5a0cc17c-fa6e-4f3f-b268-bfc730ed75e1) 
+	}
+}
